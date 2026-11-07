@@ -40,6 +40,8 @@ py -X utf8 build/build.py --serve
 
 ## 构建副作用与上传
 
+推荐使用 `.github/workflows/deploy.yml`：main push 后构建并检查，`tools/publish_deploy.py` 把网站文件发布到 deploy，Hostinger 连接该分支自动更新。流程与一次性设置见 `docs/GITHUB_DEPLOYMENT.md`。下面的上传基线机制仅用于本地手动上传，不参与 GitHub 自动部署。
+
 - 构建清理 `public_html/` 子项，保留根目录与 `.vscode/`，随后重建输出。不要把手工内容放在输出目录。
 - 正常 CLI 构建还生成 `_work/upload/files/` 和 `UPLOAD.md`，会重建该上传暂存目录。
 - 差异基于上次 `--mark-uploaded` 基线；没有基线时列出全量。文本哈希忽略 CRLF 差异，ZIP 按条目名和 CRC 比较，不是直接比较 ZIP 字节。

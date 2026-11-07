@@ -11,6 +11,7 @@ HOW_IT_WORKS.md            数据流、构建与发布边界
 docs/
   CONTENT_WORKFLOWS.md     入库、复用和验收步骤
   WEBSITE_REVIEW.md        源码评估、优先级和验收建议
+  GITHUB_DEPLOYMENT.md     main → deploy → Hostinger 设置与排错
   archive/                历史说明，不作为当前规则
 library/                  内容源
   taxonomy.json           分类与展示分组
@@ -35,6 +36,7 @@ build/
   deploy.py               真正联网上传的独立脚本
 mcp-server/               本地 stdio MCP，server.py 与 requirements.txt
 tools/                    导入、缩略图、手机检查、触屏补丁
+.github/workflows/         自动构建、检查并发布 deploy 分支
 public_html/              生成的 Hostinger 网站
 _work/                    inbox、临时文件、上传包与本地基线
 UPLOAD_LOG.md             人工维护的变更/上传交接记录
@@ -51,6 +53,7 @@ UPLOAD_LOG.md             人工维护的变更/上传交接记录
 | 分类名称与分组 | `library/taxonomy.json`，同时检查 paths / 前端映射 |
 | 目录字段与公开过滤 | `build/catalog.py`、`build/build.py` |
 | AI 读取和导出行为 | `mcp-server/server.py`、共用 dlib / site_export |
+| GitHub 自动部署 | `.github/workflows/deploy.yml`、`tools/check_public_build.py`、`tools/publish_deploy.py` |
 
 ## 输出目录
 

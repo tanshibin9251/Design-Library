@@ -34,7 +34,13 @@ py -X utf8 build/build.py --serve
 
 提示词示例：「帮我找适合餐厅的模板，比较最相关的几个；读设计说明后导出到我指定的绝对路径，列出缺素材和使用限制。」
 
-## 上传 Hostinger
+## GitHub 自动部署到 Hostinger（推荐）
+
+push `main` 后，GitHub Actions 自动构建并检查网站，将 `public_html/` 的内容发布到 `deploy` 分支。Hostinger 连接 **deploy**，服务器目标目录为 **public_html**。首次 Actions 成功后才会出现 deploy 选项。
+
+日常只改 main 的源文件，不手动维护 deploy，也不把生成的 public_html 提交到 main。设置与排错见 [GitHub 部署说明](docs/GITHUB_DEPLOYMENT.md)。Actions 成功代表分支已生成；Hostinger 的部署结果仍需查看面板和网站。
+
+## 手动上传 Hostinger（备用）
 
 `public_html/` 是生成输出，不能只改它而不改源文件。构建会重建输出并生成 `_work/upload/UPLOAD.md` 与待上传文件。差异依据上次已上传基线；没有基线时为全量，不等于所有文件都在本轮修改。
 

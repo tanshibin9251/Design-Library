@@ -1,0 +1,36 @@
+name: Build Hostinger deploy branch
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hostinger-deploy
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Test deploy branch publishing
+        run: python tools/test_publish_deploy.py
+      - name: Build website
+        run: python build/build.py
+      - name: Check public output
+        run: python tools/check_public_build.py
+      - name: Publish website files to deploy branch
+        run: python tools/publish_deploy.py
