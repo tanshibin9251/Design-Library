@@ -10,7 +10,7 @@ if (!is_file($manifestFile) || !is_file($shellFile)) {
     exit("Design Library: data files are missing. Upload the whole folder (data/, includes/, assets/, api/), or run: python build/build.py");
 }
 $cssV = (string) @filemtime($root . '/assets/app.css');
-$jsV  = (string) @filemtime($root . '/assets/app.js');
+$jsV  = (string) max((int) @filemtime($root . '/assets/app.js'), (int) @filemtime($root . '/assets/library-state.js'));
 $etag = '"dl-' . filemtime($manifestFile) . '-' . $cssV . '-' . $jsV . '"';
 header('ETag: ' . $etag);
 header('Cache-Control: no-cache');
