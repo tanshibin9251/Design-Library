@@ -1,0 +1,954 @@
+{
+ "types": [
+  {
+   "id": "company",
+   "name": "Company Website"
+  },
+  {
+   "id": "landing",
+   "name": "Landing Page"
+  },
+  {
+   "id": "ecommerce",
+   "name": "E-commerce"
+  },
+  {
+   "id": "portfolio",
+   "name": "Portfolio"
+  },
+  {
+   "id": "blog",
+   "name": "Blog & Magazine"
+  }
+ ],
+ "industries": [
+  {
+   "id": "corporate",
+   "name": "Business & Consulting"
+  },
+  {
+   "id": "saas",
+   "name": "SaaS & Startup"
+  },
+  {
+   "id": "agency",
+   "name": "Agency & Studio"
+  },
+  {
+   "id": "fashion",
+   "name": "Fashion & Beauty"
+  },
+  {
+   "id": "media",
+   "name": "News & Magazine"
+  },
+  {
+   "id": "restaurant",
+   "name": "Restaurant & Cafe"
+  },
+  {
+   "id": "health",
+   "name": "Health & Wellness"
+  },
+  {
+   "id": "fitness",
+   "name": "Fitness & Sports"
+  },
+  {
+   "id": "construction",
+   "name": "Construction & Trades"
+  },
+  {
+   "id": "realestate",
+   "name": "Real Estate"
+  },
+  {
+   "id": "education",
+   "name": "Education & Courses"
+  },
+  {
+   "id": "medical",
+   "name": "Medical & Dental"
+  },
+  {
+   "id": "nonprofit",
+   "name": "Non-profit & Charity"
+  },
+  {
+   "id": "photography",
+   "name": "Photography"
+  },
+  {
+   "id": "events",
+   "name": "Events & Weddings"
+  },
+  {
+   "id": "travel",
+   "name": "Travel & Hotels"
+  },
+  {
+   "id": "automotive",
+   "name": "Automotive"
+  },
+  {
+   "id": "legal",
+   "name": "Legal & Finance"
+  },
+  {
+   "id": "tech",
+   "name": "IT & Technology"
+  },
+  {
+   "id": "music",
+   "name": "Music & Entertainment"
+  },
+  {
+   "id": "finance",
+   "name": "Finance & Banking"
+  },
+  {
+   "id": "beauty",
+   "name": "Beauty & Salon"
+  },
+  {
+   "id": "pets",
+   "name": "Pets & Veterinary"
+  },
+  {
+   "id": "agriculture",
+   "name": "Agriculture & Farming"
+  },
+  {
+   "id": "logistics",
+   "name": "Logistics & Transport"
+  },
+  {
+   "id": "interior",
+   "name": "Interior Design"
+  },
+  {
+   "id": "gaming",
+   "name": "Gaming & Esports"
+  },
+  {
+   "id": "government",
+   "name": "Government & Community"
+  },
+  {
+   "id": "homeservices",
+   "name": "Home Services"
+  },
+  {
+   "id": "faith",
+   "name": "Church & Faith"
+  },
+  {
+   "id": "coworking",
+   "name": "Coworking & Offices"
+  },
+  {
+   "id": "sports",
+   "name": "Sports & Outdoor Gear"
+  },
+  {
+   "id": "furniture",
+   "name": "Furniture & Home Decor"
+  },
+  {
+   "id": "massage",
+   "name": "Massage & Wellness"
+  },
+  {
+   "id": "language",
+   "name": "Language Learning"
+  },
+  {
+   "id": "coding",
+   "name": "Coding & Tech Skills"
+  },
+  {
+   "id": "arts",
+   "name": "Arts & Design Courses"
+  },
+  {
+   "id": "exam",
+   "name": "Exams & Certification"
+  },
+  {
+   "id": "culinary",
+   "name": "Recipes & Cooking"
+  },
+  {
+   "id": "lifestyle",
+   "name": "Life Skills & Know-how"
+  },
+  {
+   "id": "psychology",
+   "name": "Psychology & Mind"
+  }
+ ],
+ "styles": [
+  {
+   "id": "minimal",
+   "name": "Minimal & Clean",
+   "zh": "极简干净"
+  },
+  {
+   "id": "editorial",
+   "name": "Editorial & Magazine",
+   "zh": "杂志编辑"
+  },
+  {
+   "id": "bold",
+   "name": "Bold & Brutalist",
+   "zh": "粗犷大胆"
+  },
+  {
+   "id": "elegant",
+   "name": "Elegant & Luxury",
+   "zh": "优雅奢华"
+  },
+  {
+   "id": "corporate",
+   "name": "Corporate & Professional",
+   "zh": "商务专业"
+  },
+  {
+   "id": "playful",
+   "name": "Playful & Colorful",
+   "zh": "活泼多彩"
+  },
+  {
+   "id": "dark",
+   "name": "Dark & Moody",
+   "zh": "深色氛围"
+  },
+  {
+   "id": "organic",
+   "name": "Organic & Natural",
+   "zh": "自然有机"
+  },
+  {
+   "id": "retro",
+   "name": "Retro & Vintage",
+   "zh": "复古"
+  },
+  {
+   "id": "glass",
+   "name": "Glassmorphism",
+   "zh": "毛玻璃"
+  },
+  {
+   "id": "neobrutal",
+   "name": "Neo-Brutalism",
+   "zh": "新粗野主义"
+  },
+  {
+   "id": "swiss",
+   "name": "Swiss & Grid",
+   "zh": "瑞士网格"
+  },
+  {
+   "id": "geometric",
+   "name": "Geometric & Memphis",
+   "zh": "几何孟菲斯"
+  },
+  {
+   "id": "warm",
+   "name": "Warm & Handcrafted",
+   "zh": "温暖手作"
+  },
+  {
+   "id": "futuristic",
+   "name": "Futuristic & Gradient",
+   "zh": "未来渐变"
+  },
+  {
+   "id": "photo",
+   "name": "Photography-led",
+   "zh": "摄影主导"
+  },
+  {
+   "id": "typographic",
+   "name": "Typographic",
+   "zh": "字体主导"
+  },
+  {
+   "id": "pastel",
+   "name": "Pastel & Soft",
+   "zh": "粉彩柔和"
+  },
+  {
+   "id": "monochrome",
+   "name": "Monochrome",
+   "zh": "黑白单色"
+  },
+  {
+   "id": "maximal",
+   "name": "Maximalist",
+   "zh": "繁复华丽"
+  },
+  {
+   "id": "clay",
+   "name": "Claymorphism",
+   "zh": "黏土拟物"
+  },
+  {
+   "id": "aurora",
+   "name": "Aurora & Mesh Gradient",
+   "zh": "极光网格渐变"
+  },
+  {
+   "id": "bento",
+   "name": "Bento Grid",
+   "zh": "便当格"
+  },
+  {
+   "id": "artdeco",
+   "name": "Art Deco",
+   "zh": "装饰艺术"
+  },
+  {
+   "id": "scandi",
+   "name": "Scandinavian",
+   "zh": "北欧"
+  },
+  {
+   "id": "japanese",
+   "name": "Japanese Minimal",
+   "zh": "日式极简"
+  },
+  {
+   "id": "y2k",
+   "name": "Y2K",
+   "zh": "千禧风"
+  },
+  {
+   "id": "handdrawn",
+   "name": "Hand-drawn",
+   "zh": "手绘"
+  },
+  {
+   "id": "darkluxury",
+   "name": "Dark Luxury",
+   "zh": "暗黑奢华"
+  },
+  {
+   "id": "earthy",
+   "name": "Sustainable & Earthy",
+   "zh": "可持续大地色"
+  }
+ ],
+ "effect_groups": [
+  "Layout & Sections",
+  "Content",
+  "Interaction",
+  "Commerce & Media"
+ ],
+ "effect_cats": [
+  {
+   "group": "Layout & Sections",
+   "id": "hero",
+   "name": "Hero",
+   "zh": "首屏",
+   "desc": "Opening sections: headline, media and calls to action.",
+   "planned": []
+  },
+  {
+   "group": "Layout & Sections",
+   "id": "header",
+   "name": "Header & Navigation",
+   "zh": "页头导航",
+   "desc": "Sticky bars, mega menus, mobile drawers.",
+   "planned": []
+  },
+  {
+   "group": "Layout & Sections",
+   "id": "footer",
+   "name": "Footer",
+   "zh": "页脚",
+   "desc": "Link columns, newsletter blocks, back-to-top.",
+   "planned": []
+  },
+  {
+   "group": "Layout & Sections",
+   "id": "backgrounds",
+   "name": "Backgrounds",
+   "zh": "背景",
+   "desc": "Animated gradients, patterns, noise, particles.",
+   "planned": []
+  },
+  {
+   "group": "Layout & Sections",
+   "id": "dividers",
+   "name": "Section Dividers",
+   "zh": "分隔线",
+   "desc": "Waves, slants, curves between sections.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "headings",
+   "name": "Headings",
+   "zh": "标题",
+   "desc": "Eye-catching section titles.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "text",
+   "name": "Text",
+   "zh": "文字",
+   "desc": "Animated and decorated text.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "buttons",
+   "name": "Buttons",
+   "zh": "按钮",
+   "desc": "Hover, press and loading states.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "cards",
+   "name": "Cards",
+   "zh": "卡片",
+   "desc": "Hover-driven cards for blogs, products and teams.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "images",
+   "name": "Images & Gallery",
+   "zh": "图片画廊",
+   "desc": "Hover zoom, masks, masonry, lightbox.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "carousels",
+   "name": "Carousels & Sliders",
+   "zh": "轮播",
+   "desc": "Image, testimonial and logo sliders.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "marquee",
+   "name": "Marquee & Tickers",
+   "zh": "滚动字幕",
+   "desc": "Endless scrolling text and logos.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "stats",
+   "name": "Numbers & Stats",
+   "zh": "数字统计",
+   "desc": "Counters, progress bars, rings.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "accordion",
+   "name": "Accordion & Tabs",
+   "zh": "折叠标签页",
+   "desc": "FAQ lists, tabs, toggles.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "testimonials",
+   "name": "Testimonials",
+   "zh": "客户评价",
+   "desc": "Quotes, ratings, review walls.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "pricing",
+   "name": "Pricing",
+   "zh": "价格表",
+   "desc": "Plans, toggles, highlight cards.",
+   "planned": []
+  },
+  {
+   "group": "Content",
+   "id": "timeline",
+   "name": "Timeline & Steps",
+   "zh": "时间线步骤",
+   "desc": "Processes, roadmaps, histories.",
+   "planned": []
+  },
+  {
+   "group": "Interaction",
+   "id": "scroll",
+   "name": "Scroll",
+   "zh": "滚动",
+   "desc": "Reveal, parallax, sticky and progress effects.",
+   "planned": []
+  },
+  {
+   "group": "Interaction",
+   "id": "cursor",
+   "name": "Cursor",
+   "zh": "鼠标",
+   "desc": "Custom cursors, trails, magnetic hover.",
+   "planned": []
+  },
+  {
+   "group": "Interaction",
+   "id": "loaders",
+   "name": "Loaders & Preloaders",
+   "zh": "加载动画",
+   "desc": "Spinners, skeletons, page-intro screens.",
+   "planned": []
+  },
+  {
+   "group": "Interaction",
+   "id": "modal",
+   "name": "Modals & Popups",
+   "zh": "弹窗",
+   "desc": "Dialogs, drawers, toasts, cookie bars.",
+   "planned": []
+  },
+  {
+   "group": "Interaction",
+   "id": "forms",
+   "name": "Forms & Inputs",
+   "zh": "表单",
+   "desc": "Floating labels, validation, toggles.",
+   "planned": []
+  },
+  {
+   "group": "Commerce & Media",
+   "id": "ecom",
+   "name": "E-commerce",
+   "zh": "电商",
+   "desc": "Product cards, quick view, cart drawer.",
+   "planned": []
+  },
+  {
+   "group": "Commerce & Media",
+   "id": "icons",
+   "name": "Icons & Badges",
+   "zh": "图标徽章",
+   "desc": "Icon hovers, ribbons, status dots.",
+   "planned": []
+  },
+  {
+   "group": "Commerce & Media",
+   "id": "video",
+   "name": "Video & Audio",
+   "zh": "视频音频",
+   "desc": "Play buttons, custom players.",
+   "planned": []
+  },
+  {
+   "group": "Interaction",
+   "id": "widgets",
+   "name": "Widgets",
+   "zh": "小组件",
+   "desc": "Small floating helpers: chat buttons, status badges and live indicators.",
+   "planned": []
+  },
+  {
+   "group": "Layout & Sections",
+   "id": "nav",
+   "name": "Navigation",
+   "zh": "导航",
+   "desc": "Navigation patterns for mobile and desktop: tab bars, rails and command menus.",
+   "planned": []
+  }
+ ],
+ "palette_cats": [
+  {
+   "id": "neutral",
+   "name": "Neutral & Mono",
+   "zh": "中性黑白灰"
+  },
+  {
+   "id": "blue",
+   "name": "Blue & Corporate",
+   "zh": "蓝色商务"
+  },
+  {
+   "id": "green",
+   "name": "Green & Nature",
+   "zh": "绿色自然"
+  },
+  {
+   "id": "warm",
+   "name": "Warm & Sunset",
+   "zh": "暖色夕阳"
+  },
+  {
+   "id": "rose",
+   "name": "Rose & Beauty",
+   "zh": "玫瑰美妆"
+  },
+  {
+   "id": "purple",
+   "name": "Purple & Creative",
+   "zh": "紫色创意"
+  },
+  {
+   "id": "earth",
+   "name": "Earth & Coffee",
+   "zh": "大地咖啡"
+  },
+  {
+   "id": "pastel",
+   "name": "Pastel & Soft",
+   "zh": "粉彩柔和"
+  },
+  {
+   "id": "dark",
+   "name": "Dark & Moody",
+   "zh": "深色氛围"
+  },
+  {
+   "id": "neon",
+   "name": "Neon & Bold",
+   "zh": "霓虹大胆"
+  },
+  {
+   "id": "food",
+   "name": "Food & Restaurant",
+   "zh": "餐饮"
+  },
+  {
+   "id": "health",
+   "name": "Health & Medical",
+   "zh": "医疗健康"
+  },
+  {
+   "id": "edu",
+   "name": "Education & Kids",
+   "zh": "教育儿童"
+  },
+  {
+   "id": "luxury",
+   "name": "Real Estate & Luxury",
+   "zh": "地产奢华"
+  },
+  {
+   "id": "a11y",
+   "name": "High Contrast",
+   "zh": "高对比无障碍"
+  },
+  {
+   "id": "season",
+   "name": "Seasonal & Holiday",
+   "zh": "节日季节"
+  },
+  {
+   "id": "duo",
+   "name": "Duotone & Gradient",
+   "zh": "双色渐变"
+  }
+ ],
+ "transition_groups": [
+  "Soft",
+  "Slide",
+  "Wipe",
+  "3D",
+  "Pattern",
+  "Fx"
+ ],
+ "page_groups": [
+  "Main",
+  "Shop",
+  "Proof",
+  "Content",
+  "Special",
+  "Utility"
+ ],
+ "template_groups": [
+  {
+   "id": "business",
+   "name": "Business & Professional",
+   "zh": "商务专业",
+   "industries": [
+    "corporate",
+    "saas",
+    "agency",
+    "legal",
+    "finance",
+    "tech",
+    "coworking",
+    "government",
+    "exam"
+   ]
+  },
+  {
+   "id": "food",
+   "name": "Food & Drink",
+   "zh": "餐饮",
+   "industries": [
+    "restaurant",
+    "culinary"
+   ]
+  },
+  {
+   "id": "shop-fashion",
+   "name": "Shop, Fashion & Home",
+   "zh": "零售时尚家居",
+   "industries": [
+    "fashion",
+    "beauty",
+    "pets",
+    "furniture",
+    "interior"
+   ]
+  },
+  {
+   "id": "health-wellness",
+   "name": "Health & Wellness",
+   "zh": "健康身心",
+   "industries": [
+    "health",
+    "medical",
+    "massage",
+    "fitness",
+    "sports",
+    "psychology"
+   ]
+  },
+  {
+   "id": "creative-media",
+   "name": "Creative & Media",
+   "zh": "创意媒体",
+   "industries": [
+    "photography",
+    "music",
+    "media",
+    "arts",
+    "gaming"
+   ]
+  },
+  {
+   "id": "travel-events-property",
+   "name": "Travel, Events & Property",
+   "zh": "旅行活动地产",
+   "industries": [
+    "travel",
+    "events",
+    "realestate"
+   ]
+  },
+  {
+   "id": "learning",
+   "name": "Learning & Know-how",
+   "zh": "教学知识",
+   "industries": [
+    "education",
+    "language",
+    "coding",
+    "lifestyle"
+   ]
+  },
+  {
+   "id": "community",
+   "name": "Community & Faith",
+   "zh": "社群公益",
+   "industries": [
+    "nonprofit",
+    "faith"
+   ]
+  },
+  {
+   "id": "trades-industry",
+   "name": "Trades & Industry",
+   "zh": "工程工业",
+   "industries": [
+    "construction",
+    "automotive",
+    "logistics",
+    "agriculture",
+    "homeservices"
+   ]
+  }
+ ],
+ "domains": [
+  {
+   "id": "website",
+   "name": "Website",
+   "zh": "网站"
+  },
+  {
+   "id": "graphic",
+   "name": "Graphic",
+   "zh": "平面设计"
+  }
+ ],
+ "graphic_types": [
+  {
+   "id": "poster",
+   "name": "Poster",
+   "zh": "海报",
+   "desc": "Event, promo and announcement posters.",
+   "sizes": [
+    {
+     "label": "A-series poster",
+     "w": 1200,
+     "h": 1697
+    },
+    {
+     "label": "Instagram portrait 4:5",
+     "w": 1080,
+     "h": 1350
+    }
+   ]
+  },
+  {
+   "id": "thumbnail",
+   "name": "Thumbnail",
+   "zh": "视频缩略图",
+   "desc": "YouTube and video cover images, readable at 168px wide.",
+   "sizes": [
+    {
+     "label": "YouTube 16:9",
+     "w": 1280,
+     "h": 720
+    }
+   ]
+  },
+  {
+   "id": "banner",
+   "name": "Banner",
+   "zh": "横幅",
+   "desc": "Web hero, ad and social cover banners.",
+   "sizes": [
+    {
+     "label": "Wide 3:1",
+     "w": 1500,
+     "h": 500
+    },
+    {
+     "label": "Facebook cover",
+     "w": 1640,
+     "h": 624
+    }
+   ]
+  },
+  {
+   "id": "social",
+   "name": "Social post",
+   "zh": "社交帖文",
+   "desc": "Square posts, carousels and stories.",
+   "sizes": [
+    {
+     "label": "Instagram square",
+     "w": 1080,
+     "h": 1080
+    },
+    {
+     "label": "Story 9:16",
+     "w": 1080,
+     "h": 1920
+    }
+   ]
+  },
+  {
+   "id": "product",
+   "name": "Product image",
+   "zh": "产品图",
+   "desc": "Marketplace and shop product shots, hero cards and ads.",
+   "sizes": [
+    {
+     "label": "Square",
+     "w": 1080,
+     "h": 1080
+    }
+   ]
+  }
+ ],
+ "asset_groups": [
+  "Elements",
+  "Texture & Background",
+  "Photo & Scene",
+  "Brand"
+ ],
+ "asset_cats": [
+  {
+   "id": "line",
+   "group": "Elements",
+   "name": "Lines & rules",
+   "zh": "线条",
+   "desc": "Rules, dividers, arrows, brush strokes, registration marks."
+  },
+  {
+   "id": "shape",
+   "group": "Elements",
+   "name": "Shapes",
+   "zh": "形状",
+   "desc": "Circles, slashes, stars, bursts, blobs, dot grids."
+  },
+  {
+   "id": "frame",
+   "group": "Elements",
+   "name": "Frames",
+   "zh": "边框",
+   "desc": "Borders, arches, polaroids, tickets, viewfinders."
+  },
+  {
+   "id": "sticker",
+   "group": "Elements",
+   "name": "Stickers & badges",
+   "zh": "贴纸徽章",
+   "desc": "Badges, seals, ribbons, price tags."
+  },
+  {
+   "id": "icon",
+   "group": "Elements",
+   "name": "Icons",
+   "zh": "图标",
+   "desc": "24px stroke icons for events, shop and tech."
+  },
+  {
+   "id": "texture",
+   "group": "Texture & Background",
+   "name": "Textures & overlays",
+   "zh": "纹理叠层",
+   "desc": "Grain, paper, halftone, scanlines. Use with mix-blend-mode."
+  },
+  {
+   "id": "background",
+   "group": "Texture & Background",
+   "name": "Backgrounds",
+   "zh": "背景",
+   "desc": "Glows, soft meshes, rays, grids, stripes."
+  },
+  {
+   "id": "photo",
+   "group": "Photo & Scene",
+   "name": "Photos",
+   "zh": "实拍图",
+   "desc": "Your own or licensed photographs (kept local unless free to share)."
+  },
+  {
+   "id": "cutout",
+   "group": "Photo & Scene",
+   "name": "Cutouts",
+   "zh": "抠图",
+   "desc": "Transparent-background PNGs: products, people, hardware."
+  },
+  {
+   "id": "mockup",
+   "group": "Photo & Scene",
+   "name": "Mockups",
+   "zh": "样机",
+   "desc": "Phones, screens, packaging, posters on walls."
+  },
+  {
+   "id": "logo",
+   "group": "Brand",
+   "name": "Logos",
+   "zh": "标志",
+   "desc": "Client and organiser logos (local only)."
+  }
+ ]
+}

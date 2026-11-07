@@ -1,0 +1,47 @@
+<!-- FAQ Accordion — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-faq{width:min(760px,100%);display:grid;gap:1.6em}
+.fx-faq h2{font-size:clamp(2em,4.6vw,3em);text-align:center}
+.fx-faq .it{border-bottom:1px solid var(--border)}
+.fx-faq button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:1em;padding:1.2em .2em;cursor:pointer;font:600 1.12em var(--font-heading)}
+.fx-faq button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--radius)}
+.fx-faq .ic{flex:none;width:1.7em;height:1.7em;border-radius:50%;border:1.5px solid var(--primary);display:grid;place-items:center;position:relative;transition:transform calc(.35s/var(--speed)),background .3s}
+.fx-faq .ic::before,.fx-faq .ic::after{content:"";position:absolute;width:.7em;height:1.5px;background:var(--primary);transition:inherit}.fx-faq .ic::after{transform:rotate(90deg)}
+.fx-faq .it.open .ic{transform:rotate(180deg);background:var(--primary)}.fx-faq .it.open .ic::before,.fx-faq .it.open .ic::after{background:var(--on-primary)}.fx-faq .it.open .ic::after{transform:rotate(0)}
+.fx-faq .pn{display:grid;grid-template-rows:0fr;transition:grid-template-rows calc(.4s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-faq .it.open .pn{grid-template-rows:1fr}.fx-faq .pn>div{overflow:hidden}.fx-faq .pn p{padding:0 .2em 1.4em;opacity:.72;max-width:60ch}
+@media(prefers-reduced-motion:reduce){.fx-faq .pn,.fx-faq .ic{transition:none}}
+</style>
+
+<div class="fx fx-faq"><h2>Questions, answered</h2>
+<div class="it open"><button aria-expanded="true"><span>How long does a typical project take?</span><i class="ic"></i></button><div class="pn"><div><p>Most websites take four to eight weeks, depending on content and the number of custom pieces.</p></div></div></div>
+<div class="it"><button aria-expanded="false"><span>Can I edit the site myself afterwards?</span><i class="ic"></i></button><div class="pn"><div><p>Yes. Everything is built so you can update text, images and pages without touching code.</p></div></div></div>
+<div class="it"><button aria-expanded="false"><span>Do you offer ongoing support?</span><i class="ic"></i></button><div class="pn"><div><p>Monthly care plans cover updates, backups, small changes and a human to email.</p></div></div></div>
+<div class="it"><button aria-expanded="false"><span>What do you need from me to start?</span><i class="ic"></i></button><div class="pn"><div><p>A short brief, any existing brand assets, and a rough idea of what success looks like.</p></div></div></div></div>
+
+<script>
+document.querySelectorAll('.fx-faq .it button').forEach(function(b){b.addEventListener('click',function(){var it=b.parentElement,o=it.classList.toggle('open');b.setAttribute('aria-expanded',o)})});
+</script>

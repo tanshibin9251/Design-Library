@@ -1,0 +1,25 @@
+# Design Library — Hostinger / Apache / LiteSpeed
+Options -Indexes
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+AddType application/json .json
+AddType image/svg+xml .svg
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.(css|js|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(json|zip)$">
+    Header set Cache-Control "public, max-age=300"
+  </FilesMatch>
+</IfModule>
+
+# keep source/data folders private (the app reads them through PHP)
+RewriteEngine On
+RewriteRule ^(data|includes)(/|$) - [F,L]

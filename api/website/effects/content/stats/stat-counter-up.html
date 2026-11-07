@@ -1,0 +1,42 @@
+<!-- Counter Up — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-cnt{width:min(1000px,100%);text-align:center;display:grid;gap:2.4em;justify-items:center}
+.fx-cnt h2{font-size:clamp(2em,4.4vw,3em);max-width:18ch}
+.fx-cnt .row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2em;width:100%}
+.fx-cnt .st{padding:1.6em 1em;border-radius:var(--radius);border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 94%,var(--text))}
+.fx-cnt .n{font:600 clamp(2.2em,4.6vw,3.4em)/1 var(--font-heading);color:var(--primary);font-variant-numeric:tabular-nums}.fx-cnt .n sup{font-size:.5em;color:var(--accent);top:-.6em}
+.fx-cnt .l{margin-top:.5em;opacity:.65;font-size:.92em}.fx-cnt small{opacity:.5}
+@media(max-width:760px){.fx-cnt .row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+<div class="fx fx-cnt"><h2>Numbers that earned their place</h2><div class="row"><div class="st"><div class="n"><span data-to="240">0</span><sup>+</sup></div><div class="l">Projects shipped</div></div><div class="st"><div class="n"><span data-to="98">0</span><sup>%</sup></div><div class="l">Clients who return</div></div><div class="st"><div class="n"><span data-to="14">0</span></div><div class="l">Years in practice</div></div><div class="st"><div class="n"><span data-to="36">0</span><sup>k</sup></div><div class="l">Visitors a month</div></div></div><small>Click anywhere to replay</small></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-cnt');if(!root)return;function sp(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed'))||1}
+function run(){root.querySelectorAll('[data-to]').forEach(function(el){var to=+el.dataset.to,t0=null,d=1600/sp();function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){run();io.disconnect()}},{threshold:.3});io.observe(root)}else run();
+root.addEventListener('click',run)})();
+</script>

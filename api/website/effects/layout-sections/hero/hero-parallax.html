@@ -1,0 +1,64 @@
+<!-- Parallax Hero — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+@keyframes fxhp-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.fx-hpar{background:var(--surface)}
+.fx-hpar .hero{position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:14vh 1.25em 0;background:linear-gradient(180deg,var(--primary) 0%,color-mix(in srgb,var(--primary) 55%,var(--accent)) 78%);color:var(--on-primary);isolation:isolate}
+.fx-hpar .ly{position:absolute;left:-6%;right:-6%;bottom:-4%;pointer-events:none;will-change:transform;transform:translate3d(calc(var(--px,0)*var(--d,0)*1px),calc(var(--py,0)*var(--d,0)*.5px + var(--sy,0)*var(--k,0)*1px),0)}
+.fx-hpar .sun{left:auto;right:14%;bottom:auto;top:50%;width:min(22vmax,200px);aspect-ratio:1;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2.4em color-mix(in srgb,var(--accent) 22%,transparent),0 0 0 5em color-mix(in srgb,var(--accent) 12%,transparent);z-index:0}
+.fx-hpar .m{height:52%;z-index:1}
+.fx-hpar .m1{height:56%;background:color-mix(in srgb,var(--primary) 62%,var(--surface));clip-path:polygon(0 60%,12% 38%,24% 56%,38% 22%,52% 52%,66% 30%,80% 54%,92% 36%,100% 50%,100% 100%,0 100%)}
+.fx-hpar .m2{height:44%;z-index:2;background:color-mix(in srgb,var(--primary) 62%,#000);clip-path:polygon(0 54%,16% 30%,30% 58%,46% 18%,60% 50%,76% 28%,90% 52%,100% 38%,100% 100%,0 100%)}
+.fx-hpar .m3{height:30%;z-index:3;background:color-mix(in srgb,var(--primary) 30%,#000);clip-path:polygon(0 50%,20% 26%,38% 56%,58% 20%,78% 54%,100% 30%,100% 100%,0 100%)}
+.fx-hpar .m4{height:14%;z-index:4;background:var(--surface);clip-path:polygon(0 60%,25% 30%,55% 55%,80% 25%,100% 50%,100% 100%,0 100%)}
+.fx-hpar .in{position:relative;z-index:5;display:grid;gap:1.1em;justify-items:center;max-width:44em;--d:-6;transform:translate3d(calc(var(--px,0)*-6px),calc(var(--py,0)*-4px),0)}
+.fx-hpar .in>*{animation:fxhp-in calc(.9s/var(--speed)) cubic-bezier(.2,.8,.2,1) both}.fx-hpar .in>:nth-child(2){animation-delay:.1s}.fx-hpar .in>:nth-child(3){animation-delay:.2s}.fx-hpar .in>:nth-child(4){animation-delay:.3s}
+.fx-hpar .eye{font-size:.78em;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.fx-hpar h1{font-size:clamp(2.5em,6.4vw,5.2em);line-height:1.02;color:inherit}
+.fx-hpar .in p{font-size:1.15em;opacity:.9;max-width:32em}
+.fx-hpar .btn{margin-top:.4em;display:inline-flex;padding:.95em 1.7em;border-radius:var(--radius);background:var(--on-primary);color:var(--primary);font-weight:700;text-decoration:none;transition:transform calc(.25s/var(--speed))}
+.fx-hpar .btn:hover{transform:translateY(-2px)}.fx-hpar .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-hpar .next{padding:5em 1.25em 6em;text-align:center;display:grid;gap:.8em;justify-items:center}.fx-hpar .next h2{font-size:clamp(1.6em,3.4vw,2.2em)}.fx-hpar .next p{opacity:.7;max-width:46ch}
+@media(max-width:700px){.fx-hpar .sun{right:8%;top:52%}.fx-hpar .hero{padding-top:10vh}}
+@media(prefers-reduced-motion:reduce){.fx-hpar .in>*{animation:none}.fx-hpar .ly,.fx-hpar .in{transform:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-hpar .btn.is-tap{transform:translateY(-2px)}
+
+</style>
+
+<div class="fx fx-hpar"><section class="hero" aria-label="Introduction"><i class="ly sun" style="--d:30;--k:.35"></i><i class="ly m m1" style="--d:18;--k:.22"></i><i class="ly m m2" style="--d:-12;--k:.12"></i><i class="ly m m3" style="--d:-26;--k:.05"></i><i class="ly m m4" style="--d:-40;--k:0"></i>
+<div class="in"><span class="eye">Alpine retreats · Switzerland</span><h1>Higher ground for clearer thinking</h1><p>Small-group offsites above the cloud line. Move your pointer, or scroll, and the mountains move with you.</p><a class="btn" href="#">See the 2026 dates</a></div></section>
+<section class="next"><h2>Down in the valley</h2><p>The layers above sit at different depths, so they travel at different speeds, which the eye reads as distance.</p></section></div>
+
+<script>
+(function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;var r=document.querySelector('.fx-hpar');if(!r)return;var h=r.querySelector('.hero');
+h.addEventListener('pointermove',function(e){var b=h.getBoundingClientRect();r.style.setProperty('--px',((e.clientX-b.left)/b.width-.5)*2);r.style.setProperty('--py',((e.clientY-b.top)/b.height-.5)*2)});
+h.addEventListener('pointerleave',function(){r.style.setProperty('--px',0);r.style.setProperty('--py',0)});
+function s(){r.style.setProperty('--sy',Math.min(window.scrollY,innerHeight))}addEventListener('scroll',s,{passive:true});s()})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

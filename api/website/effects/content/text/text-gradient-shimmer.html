@@ -1,0 +1,34 @@
+<!-- Gradient Shimmer — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-shim{text-align:center;display:grid;gap:1em;justify-items:center;max-width:900px}
+.fx-shim .eye{font-size:.8em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-shim h1{font-size:clamp(2.6em,7vw,5.2em);line-height:1.04;background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fxshim calc(6s/var(--speed)) linear infinite}
+.fx-shim p{max-width:46ch;opacity:.68;font-size:1.15em}
+@keyframes fxshim{to{background-position:-200% center}}
+@media(prefers-reduced-motion:reduce){.fx-shim h1{animation:none}}
+</style>
+
+<div class="fx fx-shim"><span class="eye">Studio · Est. 2019</span><h1>Make something people remember</h1><p>We shape brands, websites and quiet little details that stay with people long after the tab is closed.</p></div>

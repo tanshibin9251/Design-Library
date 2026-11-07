@@ -1,0 +1,52 @@
+<!-- Budget slider with tiers — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-bgt{width:min(520px,100%)}
+.fx-bgt .top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:.8em}
+.fx-bgt .val{font:700 2.6em/1 var(--font-heading);color:var(--primary)}
+.fx-bgt .val small{font-size:.4em;opacity:.6;margin-right:.2em;font-family:var(--font-body)}
+.fx-bgt input{-webkit-appearance:none;appearance:none;width:100%;height:.6em;border-radius:99px;outline:none;background:linear-gradient(90deg,var(--accent) var(--p,30%),var(--border) var(--p,30%));cursor:pointer}
+.fx-bgt input::-webkit-slider-thumb{-webkit-appearance:none;width:1.7em;height:1.7em;border-radius:50%;background:var(--surface);border:3px solid var(--primary);box-shadow:0 2px 8px color-mix(in srgb,#000 25%,transparent)}
+.fx-bgt input::-moz-range-thumb{width:1.4em;height:1.4em;border-radius:50%;background:var(--surface);border:3px solid var(--primary)}
+.fx-bgt input:focus-visible{outline:2px solid var(--primary);outline-offset:6px}
+.fx-bgt .ticks{display:flex;justify-content:space-between;font-size:.8em;opacity:.6;margin-top:.6em}
+.fx-bgt .tier{margin-top:1.2em;padding:1em 1.1em;border-radius:var(--radius);background:color-mix(in srgb,var(--primary) 8%,var(--surface));border-left:4px solid var(--accent)}
+.fx-bgt .tier b{display:block;margin-bottom:.2em}
+</style>
+
+<div class="fx fx-bgt"><div class="top"><label for="fx-bgt-i"><b>Renovation budget</b></label><div class="val" aria-hidden="true"><small>RM</small><span id="fx-bgt-v">60,000</span></div></div><input id="fx-bgt-i" type="range" min="10000" max="300000" step="5000" value="60000"><div class="ticks" aria-hidden="true"><span>10k</span><span>100k</span><span>200k</span><span>300k</span></div><div class="tier" id="fx-bgt-t" aria-live="polite"></div></div>
+
+<script>
+(function(){var i=document.getElementById('fx-bgt-i'),v=document.getElementById('fx-bgt-v'),t=document.getElementById('fx-bgt-t');
+var tiers=[[40000,'Refresh','Paint, flooring touch-ups, lighting and fixtures for one or two rooms.'],[100000,'Room makeover','Kitchen or bathroom overhaul with new cabinetry and wet works.'],[200000,'Full home','Whole-unit renovation with new layout, electrical and carpentry.'],[1e9,'Premium rebuild','Structural changes, custom joinery and designer-grade finishes.']];
+function up(){var n=+i.value;v.textContent=n.toLocaleString('en-US');i.style.setProperty('--p',((n-i.min)/(i.max-i.min)*100)+'%');
+var k=tiers.find(function(x){return n<x[0]});t.innerHTML='<b>'+k[1]+'</b>'+k[2]}
+i.addEventListener('input',up);up()})();
+</script>

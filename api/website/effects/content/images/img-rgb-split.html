@@ -1,0 +1,70 @@
+<!-- RGB Split — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.ap-art{position:relative;overflow:hidden}.ap-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fx-rs{width:min(1060px,100%);display:grid;gap:1.6em}
+.fx-rs .top{display:flex;justify-content:space-between;align-items:end;gap:1em;flex-wrap:wrap}
+.fx-rs h2{font-size:clamp(1.8em,4vw,2.6em)}.fx-rs .top p{opacity:.6;font-size:.95em;max-width:32em}
+.fx-rs .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1em}
+.fx-rs figure{margin:0;display:grid;gap:.6em}
+.fx-rs figcaption{display:grid;gap:.1em}.fx-rs figcaption b{font:600 1em var(--font-heading)}.fx-rs figcaption span{font-size:.85em;opacity:.65}
+.rs{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;isolation:isolate;border:1px solid var(--border);background:var(--surface)}
+.rs-base,.rs-l{position:absolute;inset:0}
+.rs-base svg,.rs-l svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.rs-on{background:#000}.rs-on .rs-base{display:none}
+.rs-l{mix-blend-mode:screen;will-change:transform}
+.rs-r{filter:url(#rs-fr);transform:translate(calc(var(--vx,0)*-1px),calc(var(--vy,0)*-1px))}
+.rs-g{filter:url(#rs-fg)}
+.rs-b{filter:url(#rs-fb);transform:translate(calc(var(--vx,0)*1px),calc(var(--vy,0)*1px))}
+.rs-defs{position:absolute;width:0;height:0;overflow:hidden}
+@media(max-width:700px){.fx-rs .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fx-rs figure:last-child{grid-column:span 2}.fx-rs figure:last-child .rs{aspect-ratio:16/10}}
+
+</style>
+
+<div class="fx fx-rs"><svg class="rs-defs" aria-hidden="true" focusable="false"><filter id="rs-fr" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter><filter id="rs-fg" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter><filter id="rs-fb" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/></filter></svg><div class="top"><h2>RGB split</h2><p>The picture is three colour channels stacked. At rest they line up exactly; scroll quickly (or sweep the pointer across a picture) and red and blue slide apart, then slide back.</p></div><div class="grid">
+<figure><div class="rs" data-rs role="img" aria-label="Geometry placeholder art"><div class="rs-base"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" style="fill:var(--surface)"/><path d="M0 500V250a200 200 0 0 1 400 0v250z" style="fill:var(--primary)"/><circle cx="200" cy="215" r="82" style="fill:var(--accent)"/><rect x="0" y="330" width="200" height="170" style="fill:var(--secondary)"/><path d="M200 500a100 100 0 0 1 100-100 100 100 0 0 1 100 100z" style="fill:var(--surface)"/><polygon points="30,120 100,40 170,120" style="fill:var(--accent);opacity:.9"/><rect x="300" y="60" width="64" height="64" style="fill:none;stroke:var(--primary);stroke-width:5"/><circle cx="332" cy="92" r="9" style="fill:var(--primary)"/></svg></div></div><figcaption><b>Geometry</b><span>Scroll fast</span></figcaption></figure>
+<figure><div class="rs" data-rs role="img" aria-label="Portrait placeholder art"><div class="rs-base"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" style="fill:color-mix(in srgb,var(--secondary) 35%,var(--surface))"/><path d="M60 500V230a140 140 0 0 1 280 0v270z" style="fill:var(--accent);opacity:.9"/><circle cx="200" cy="215" r="150" fill="none" style="stroke:var(--surface)" stroke-width="2" stroke-dasharray="3 9"/><path d="M70 500c0-95 55-150 130-150s130 55 130 150z" style="fill:var(--primary)"/><rect x="178" y="310" width="44" height="52" rx="14" style="fill:color-mix(in srgb,var(--primary) 70%,#000)"/><ellipse cx="200" cy="255" rx="58" ry="70" style="fill:color-mix(in srgb,var(--primary) 70%,#000)"/><path d="M142 245c0-62 36-92 62-92 34 0 56 30 54 92-14-30-30-44-58-46-22 0-42 16-58 46z" style="fill:var(--primary)"/></svg></div></div><figcaption><b>Portrait</b><span>Scroll, or sweep across it</span></figcaption></figure>
+<figure><div class="rs" data-rs role="img" aria-label="Product placeholder art"><div class="rs-base"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="ap-r1" cx=".5" cy=".38" r=".7"><stop offset="0" style="stop-color:color-mix(in srgb,var(--surface) 88%,var(--accent))"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--surface) 55%,var(--secondary))"/></radialGradient><linearGradient id="ap-g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb,var(--primary) 80%,#000)"/><stop offset=".35" style="stop-color:var(--primary)"/><stop offset=".6" style="stop-color:color-mix(in srgb,var(--primary) 75%,#fff)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--primary) 70%,#000)"/></linearGradient></defs><rect width="400" height="500" fill="url(#ap-r1)"/><ellipse cx="200" cy="430" rx="120" ry="20" style="fill:#000;opacity:.18"/><rect x="60" y="410" width="280" height="90" style="fill:var(--surface)"/><rect x="60" y="410" width="280" height="4" style="fill:var(--border)"/><path d="M170 120h60v50c0 10 40 28 40 70v170c0 14-10 24-24 24H154c-14 0-24-10-24-24V240c0-42 40-60 40-70z" fill="url(#ap-g3)"/><rect x="176" y="92" width="48" height="34" rx="6" style="fill:var(--accent)"/><rect x="150" y="270" width="100" height="70" rx="6" style="fill:var(--surface);opacity:.92"/><rect x="164" y="286" width="48" height="6" style="fill:var(--primary)"/><rect x="164" y="300" width="72" height="4" style="fill:var(--secondary);opacity:.6"/><rect x="164" y="312" width="60" height="4" style="fill:var(--secondary);opacity:.6"/></svg></div></div><figcaption><b>Product</b><span>Faster means wider</span></figcaption></figure></div></div>
+
+<script>
+(function(){
+var tiles=[].slice.call(document.querySelectorAll('.fx-rs [data-rs]'));
+if(!tiles.length||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+function uid(s,n){return s.replace(/id="(ap-[a-z0-9]+)"/g,'id="$1-'+n+'"').replace(/url\(#(ap-[a-z0-9]+)\)/g,'url(#$1-'+n+')')}
+var uidn=0;
+tiles.forEach(function(t){var svg=t.querySelector('.rs-base').innerHTML;
+ ['r','g','b'].forEach(function(c){var l=document.createElement('div');l.className='rs-l rs-'+c;l.setAttribute('aria-hidden','true');l.innerHTML=uid(svg,++uidn);t.appendChild(l)});
+ t.classList.add('rs-on');t.__vx=0;
+ t.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var dx=e.movementX||0;t.__vx=Math.max(-22,Math.min(22,t.__vx+dx*.7));req()})});
+var vy=0,last=window.scrollY,raf=0;
+function cl(v,a){return v<-a?-a:v>a?a:v}
+function tick(){raf=0;var y=window.scrollY;vy+=((y-last)*.9-vy)*.35;last=y;var busy=Math.abs(vy)>.05;if(!busy)vy=0;
+ tiles.forEach(function(t){t.__vx*=.88;if(Math.abs(t.__vx)<.05)t.__vx=0;else busy=true;
+  t.style.setProperty('--vy',cl(vy,26).toFixed(1));t.style.setProperty('--vx',t.__vx.toFixed(1))});
+ if(busy)raf=requestAnimationFrame(tick)}
+function req(){if(!raf)raf=requestAnimationFrame(tick)}
+addEventListener('scroll',req,{passive:true});
+})();
+</script>

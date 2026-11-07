@@ -1,0 +1,55 @@
+<!-- Toggle switch — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-tgl{width:min(620px,100%);background:color-mix(in srgb,var(--surface) 94%,var(--text));border:1px solid var(--border);border-radius:calc(var(--radius) + 2px);padding:1.5em 1.6em 1em}
+.fx-tgl h3{font-size:1.35em;margin-bottom:.2em}.fx-tgl .sub{opacity:.62;font-size:.9em;margin-bottom:.6em}
+.fx-tgl .r{display:flex;align-items:center;justify-content:space-between;gap:1.2em;padding:1em 0;border-top:1px solid var(--border);cursor:pointer}
+.fx-tgl .r b{display:block;font-size:.98em}.fx-tgl .r small{display:block;opacity:.62;font-size:.85em;margin-top:.1em}
+.fx-tgl .sw{position:relative;flex:none;display:inline-block}
+.fx-tgl .sw input{appearance:none;-webkit-appearance:none;margin:0;display:block;cursor:pointer;width:3em;height:1.75em;border-radius:99px;background:color-mix(in srgb,var(--text) 22%,transparent);transition:background calc(.25s/var(--speed))}
+.fx-tgl .sw input::after{content:"";position:absolute;top:.2em;left:.2em;width:1.35em;height:1.35em;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.3);transition:transform calc(.3s/var(--speed)) cubic-bezier(.3,1.4,.5,1),width calc(.2s/var(--speed))}
+.fx-tgl .sw input:checked{background:var(--primary)}.fx-tgl .sw input:checked::after{transform:translateX(1.25em)}
+.fx-tgl .sw input:active::after{width:1.65em}.fx-tgl .sw input:checked:active::after{transform:translateX(.95em)}
+.fx-tgl .sw input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-tgl .sw input:disabled{opacity:.45;cursor:not-allowed}
+.fx-tgl .lb input{width:4.6em;border-radius:var(--radius)}.fx-tgl .lb input::after{border-radius:calc(var(--radius) - 3px);width:1.8em}
+.fx-tgl .lb input:checked::after{transform:translateX(2.4em)}.fx-tgl .lb input:checked:active::after{transform:translateX(2.15em)}
+.fx-tgl .lb::before,.fx-tgl .lb::after{position:absolute;top:50%;transform:translateY(-50%);font:800 .62em var(--font-body);letter-spacing:.06em;pointer-events:none}
+.fx-tgl .lb::before{content:"ON";left:.7em;color:var(--on-primary);opacity:0;transition:opacity .2s}
+.fx-tgl .lb::after{content:"OFF";right:.55em;color:color-mix(in srgb,var(--text) 55%,transparent);transition:opacity .2s}
+.fx-tgl .lb:has(input:checked)::before{opacity:1}.fx-tgl .lb:has(input:checked)::after{opacity:0}
+.fx-tgl .dn input{width:3.8em;height:2em;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 45%,#fff),color-mix(in srgb,var(--primary) 25%,#fff))}
+.fx-tgl .dn input::after{top:.25em;left:.25em;width:1.5em;height:1.5em;background:var(--accent);box-shadow:0 0 0 .18em color-mix(in srgb,var(--accent) 30%,transparent)}
+.fx-tgl .dn input:checked{background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 60%,#000),color-mix(in srgb,var(--primary) 35%,#000))}
+.fx-tgl .dn input:checked::after{transform:translateX(1.8em);background:#f4f1ea;box-shadow:inset -.4em -.15em 0 0 color-mix(in srgb,var(--primary) 45%,#000)}
+@media(prefers-reduced-motion:reduce){.fx-tgl .sw input,.fx-tgl .sw input::after,.fx-tgl .sw::before,.fx-tgl .sw::after{transition:none!important}}
+
+</style>
+
+<div class="fx fx-tgl"><h3>Preferences</h3><p class="sub">Tab to a switch and press Space to flip it.</p>
+<label class="r"><span><b>Email notifications</b><small>Weekly summary of activity on your projects</small></span><span class="sw"><input type="checkbox" role="switch" checked aria-label="Email notifications"></span></label>
+<label class="r"><span><b>Auto-save drafts</b><small>Keep a copy every few seconds</small></span><span class="sw lb"><input type="checkbox" role="switch" aria-label="Auto-save drafts"></span></label>
+<label class="r"><span><b>Dark appearance</b><small>Easier on the eyes at night</small></span><span class="sw dn"><input type="checkbox" role="switch" aria-label="Dark appearance"></span></label>
+<label class="r"><span><b>Beta features</b><small>Unavailable on your current plan</small></span><span class="sw"><input type="checkbox" role="switch" disabled aria-label="Beta features"></span></label></div>

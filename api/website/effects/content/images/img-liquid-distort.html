@@ -1,0 +1,98 @@
+<!-- Liquid Distort — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.ap-art{position:relative;overflow:hidden}.ap-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fx-ld{width:min(1060px,100%);display:grid;gap:1.6em}
+.fx-ld .top{display:flex;justify-content:space-between;align-items:end;gap:1em;flex-wrap:wrap}
+.fx-ld h2{font-size:clamp(1.8em,4vw,2.6em)}.fx-ld .top p{opacity:.6;font-size:.95em;max-width:30em}
+.fx-ld .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1em}
+.fx-ld figure{margin:0;display:grid;gap:.6em}
+.fx-ld figcaption{display:grid;gap:.1em}.fx-ld figcaption b{font:600 1em var(--font-heading)}.fx-ld figcaption span{font-size:.85em;opacity:.65}
+.ld{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;touch-action:pan-y;background:var(--surface);border:1px solid var(--border);isolation:isolate}
+.ld>svg,.ld>img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.ld>canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity calc(.4s/var(--speed))}
+.ld.ld-ready>canvas{opacity:1}
+@media(max-width:700px){.fx-ld .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fx-ld figure:last-child{grid-column:span 2}.fx-ld figure:last-child .ld{aspect-ratio:16/10}}
+
+</style>
+
+<div class="fx fx-ld"><div class="top"><h2>Liquid distort</h2><p>Move over a picture and it ripples away from the pointer, with a faint colour split at the edge of the wave. It settles flat when you stop.</p></div><div class="grid">
+<figure><div class="ld" data-ld role="img" aria-label="Fluid orb placeholder art"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="ap-g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--primary)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--primary) 55%,#000)"/></linearGradient><filter id="ap-b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="34"/></filter></defs><rect width="400" height="500" fill="url(#ap-g1)"/><g filter="url(#ap-b1)"><circle class="ap-f1" cx="130" cy="170" r="110" style="fill:var(--accent)"/><circle class="ap-f2" cx="290" cy="330" r="130" style="fill:var(--secondary);opacity:.9"/><circle class="ap-f3" cx="250" cy="130" r="70" style="fill:color-mix(in srgb,var(--accent) 50%,#fff)"/></g></svg></div><figcaption><b>Fluid orb</b><span>Move across it</span></figcaption></figure>
+<figure><div class="ld" data-ld role="img" aria-label="Portrait placeholder art"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" style="fill:color-mix(in srgb,var(--secondary) 35%,var(--surface))"/><path d="M60 500V230a140 140 0 0 1 280 0v270z" style="fill:var(--accent);opacity:.9"/><circle cx="200" cy="215" r="150" fill="none" style="stroke:var(--surface)" stroke-width="2" stroke-dasharray="3 9"/><path d="M70 500c0-95 55-150 130-150s130 55 130 150z" style="fill:var(--primary)"/><rect x="178" y="310" width="44" height="52" rx="14" style="fill:color-mix(in srgb,var(--primary) 70%,#000)"/><ellipse cx="200" cy="255" rx="58" ry="70" style="fill:color-mix(in srgb,var(--primary) 70%,#000)"/><path d="M142 245c0-62 36-92 62-92 34 0 56 30 54 92-14-30-30-44-58-46-22 0-42 16-58 46z" style="fill:var(--primary)"/></svg></div><figcaption><b>Portrait</b><span>Press and drag</span></figcaption></figure>
+<figure><div class="ld" data-ld role="img" aria-label="Film grain placeholder art"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="ap-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb,var(--accent) 80%,#fff)"/><stop offset=".55" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--primary)"/></linearGradient><filter id="ap-n1"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter></defs><rect width="400" height="500" fill="url(#ap-g2)"/><circle cx="200" cy="270" r="96" style="fill:color-mix(in srgb,var(--surface) 92%,var(--accent))"/><path d="M0 300h400v200H0z" style="fill:var(--primary);opacity:.9"/><path d="M0 345h400v14H0zM0 385h400v10H0zM0 420h400v6H0z" style="fill:var(--secondary);opacity:.55"/><rect width="400" height="500" filter="url(#ap-n1)" style="mix-blend-mode:multiply;opacity:.55"/></svg></div><figcaption><b>Film grain</b><span>Tap for a ripple</span></figcaption></figure></div></div>
+
+<script>
+(function(){
+var tiles=[].slice.call(document.querySelectorAll('.fx-ld [data-ld]'));
+if(!tiles.length||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+var VS='attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;gl_Position=vec4(p,0.,1.);}';
+var FS='precision mediump float;uniform sampler2D t;uniform vec2 m,sc;uniform float s,tm,asp;varying vec2 v;'+
+'void main(){vec2 d=v-m;d.x*=asp;float r=length(d);float f=smoothstep(.55,0.,r);float w=sin(r*26.-tm*5.)*f;'+
+'vec2 dir=r>.0001?d/r:vec2(0.);dir.x/=asp;vec2 u=v+dir*(w*.022*s)-(v-m)*f*.10*s;vec2 c=(u-.5)*sc+.5;float k=.006*s*f;'+
+'gl_FragColor=vec4(texture2D(t,c+dir*k).r,texture2D(t,c).g,texture2D(t,c-dir*k).b,1.);}';
+var VARS=['--primary','--secondary','--text','--accent','--surface','--border'];
+function svgImage(svg,host,cb){
+ var cs=getComputedStyle(host),css='svg{'+VARS.map(function(n){return n+':'+cs.getPropertyValue(n).trim()}).join(';')+'}';
+ var c=svg.cloneNode(true);c.setAttribute('xmlns','http://www.w3.org/2000/svg');c.setAttribute('width','800');c.setAttribute('height','1000');
+ var st=document.createElementNS('http://www.w3.org/2000/svg','style');st.textContent=css;c.insertBefore(st,c.firstChild);
+ var im=new Image();im.onload=function(){cb(im)};im.onerror=function(){};
+ im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(new XMLSerializer().serializeToString(c))}
+function init(el){
+ var cv=document.createElement('canvas');cv.setAttribute('aria-hidden','true');
+ var gl=cv.getContext('webgl',{premultipliedAlpha:false,antialias:false});if(!gl)return;
+ function sh(type,src){var o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null}
+ var vs=sh(gl.VERTEX_SHADER,VS),fs=sh(gl.FRAGMENT_SHADER,FS);if(!vs||!fs)return;
+ var pr=gl.createProgram();gl.attachShader(pr,vs);gl.attachShader(pr,fs);gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return;
+ gl.useProgram(pr);
+ var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+ var lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+ var U={};['t','m','sc','s','tm','asp'].forEach(function(n){U[n]=gl.getUniformLocation(pr,n)});
+ var src=el.querySelector('img')||el.querySelector('svg');if(!src)return;
+ function start(img){
+  var tx=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tx);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
+  try{gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img)}catch(e){return}
+  [[gl.TEXTURE_MIN_FILTER,gl.LINEAR],[gl.TEXTURE_MAG_FILTER,gl.LINEAR],[gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE],[gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE]].forEach(function(a){gl.texParameteri(gl.TEXTURE_2D,a[0],a[1])});
+  el.appendChild(cv);
+  var mx=.5,my=.5,s=0,tm=0,raf=0,last=0,W=0,H=0,iw=img.naturalWidth||img.width||800,ih=img.naturalHeight||img.height||1000,down=false;
+  function size(){var r=el.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);W=Math.max(2,Math.round(r.width*d));H=Math.max(2,Math.round(r.height*d));if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H}gl.viewport(0,0,W,H)}
+  function draw(){
+   var a=W/H,ia=iw/ih,sc=a>ia?[1,ia/a]:[a/ia,1];
+   gl.uniform1i(U.t,0);gl.uniform2f(U.m,mx,my);gl.uniform2f(U.sc,sc[0],sc[1]);gl.uniform1f(U.s,s);gl.uniform1f(U.tm,tm);gl.uniform1f(U.asp,a);
+   gl.drawArrays(gl.TRIANGLE_STRIP,0,4)}
+  function tick(now){raf=0;var dt=Math.min(.05,(now-last)/1000||.016);last=now;tm+=dt;s*=Math.pow(.04,dt);if(s<.004)s=0;size();draw();if(s>0||down)raf=requestAnimationFrame(tick)}
+  function kick(){if(!raf){last=performance.now();raf=requestAnimationFrame(tick)}}
+  function pos(e){var r=el.getBoundingClientRect();return[(e.clientX-r.left)/r.width,1-(e.clientY-r.top)/r.height]}
+  el.addEventListener('pointermove',function(e){var p=pos(e),dx=p[0]-mx,dy=p[1]-my;mx=p[0];my=p[1];
+   s=Math.min(1,Math.max(s,Math.sqrt(dx*dx+dy*dy)*14+(down?.5:0)));kick()});
+  el.addEventListener('pointerdown',function(e){var p=pos(e);mx=p[0];my=p[1];s=1;down=true;tm=0;kick()});
+  addEventListener('pointerup',function(){down=false});
+  el.addEventListener('pointerleave',function(){down=false});
+  size();draw();el.classList.add('ld-ready');
+  if(window.ResizeObserver)new ResizeObserver(function(){size();draw()}).observe(el);
+  el.__ld={poke:function(x,y,v){mx=x;my=y;s=v;kick()}}}
+ if(src.tagName==='IMG'){if(src.complete)start(src);else src.onload=function(){start(src)}}else svgImage(src,el,start)}
+tiles.forEach(init);
+})();
+</script>

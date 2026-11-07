@@ -1,0 +1,46 @@
+<!-- Scroll Reveal — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-rv{width:min(1000px,100%);display:grid;gap:5em;padding:2em 0 14vh}
+.fx-rv .hint{opacity:.5;font-size:.85em;text-align:center}
+.fx-rv h2{font-size:clamp(2em,5vw,3.4em);max-width:16ch}
+.fx-rv .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4em}
+.fx-rv .item{padding:1.5em;border:1px solid var(--border);border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 94%,var(--text))}
+.fx-rv .item b{display:block;font:600 1.3em var(--font-heading);margin-bottom:.3em}.fx-rv .item span{opacity:.68;font-size:.95em}
+.fx-rv [data-rv]{opacity:0;transform:translateY(28px);transition:opacity calc(.8s/var(--speed)) ease,transform calc(.8s/var(--speed)) cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0)*110ms/var(--speed))}
+.fx-rv [data-rv].in{opacity:1;transform:none}
+@media(max-width:760px){.fx-rv .row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.fx-rv [data-rv]{opacity:1;transform:none;transition:none}}
+</style>
+
+<div class="fx fx-rv"><p class="hint" data-rv>Scroll down ↓</p><h2 data-rv>Things appear when you’re ready for them</h2>
+<div class="row"><div class="item" data-rv style="--d:0"><b>Research</b><span>Listening first, so the work starts from something true.</span></div><div class="item" data-rv style="--d:1"><b>Design</b><span>Typography, colour and rhythm, tuned by hand.</span></div><div class="item" data-rv style="--d:2"><b>Build</b><span>Clean code that is quick, accessible and easy to hand over.</span></div></div>
+<h2 data-rv>Each section gets its own entrance</h2>
+<div class="row"><div class="item" data-rv style="--d:0"><b>Launch</b><span>Soft launches, honest checklists, no surprises.</span></div><div class="item" data-rv style="--d:1"><b>Care</b><span>We stay around after the site goes live.</span></div><div class="item" data-rv style="--d:2"><b>Grow</b><span>Small improvements, compounding over time.</span></div></div></div>
+
+<script>
+(function(){var els=document.querySelectorAll('.fx-rv [data-rv]');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.18});els.forEach(function(e){io.observe(e)})})();
+</script>

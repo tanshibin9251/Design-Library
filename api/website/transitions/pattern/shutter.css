@@ -1,0 +1,8 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@property --pt-s { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@keyframes pt-in { from { --pt-s:0% } to { --pt-s:100% } }
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;mix-blend-mode:normal;-webkit-mask-image:linear-gradient(#000 var(--pt-s),transparent var(--pt-s));mask-image:linear-gradient(#000 var(--pt-s),transparent var(--pt-s));-webkit-mask-size:100% 12.5vh;mask-size:100% 12.5vh;-webkit-mask-repeat:repeat-y;mask-repeat:repeat-y;}

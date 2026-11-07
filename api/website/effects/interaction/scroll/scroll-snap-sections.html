@@ -1,0 +1,63 @@
+<!-- Scroll snap sections — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-snp{width:min(1000px,100%);position:relative}
+.fx-snp .hint{opacity:.5;font-size:.85em;text-align:center;padding:1em 0}
+.fx-snp .wrap{position:relative}
+.fx-snp .vp{height:min(72vh,600px);overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth;border-radius:var(--radius);border:1px solid var(--border);outline-offset:3px}
+.fx-snp .pn{height:100%;scroll-snap-align:start;scroll-snap-stop:always;display:grid;align-content:center;gap:.5em;padding:2em 4.5em 2em 2.5em;color:var(--on-primary);background:var(--primary)}
+.fx-snp .pn:nth-child(2){background:var(--accent);color:var(--on-accent)}
+.fx-snp .pn:nth-child(3){background:var(--secondary)}
+.fx-snp .pn:nth-child(4){background:color-mix(in srgb,var(--primary) 60%,#000)}
+.fx-snp .n{font:700 clamp(4em,12vw,8em)/1 var(--font-heading);opacity:.28}
+.fx-snp h3{font-size:clamp(1.6em,4vw,2.6em)}.fx-snp .pn p{opacity:.9;max-width:36ch}
+.fx-snp .dots{position:absolute;right:1.1em;top:50%;transform:translateY(-50%);display:grid;gap:.7em}
+.fx-snp .dots button{width:.8em;height:.8em;padding:0;border-radius:50%;border:2px solid #fff;background:transparent;cursor:pointer;transition:background calc(.2s/var(--speed)),transform calc(.2s/var(--speed))}
+.fx-snp .dots button[aria-current=true]{background:#fff;transform:scale(1.25)}
+.fx-snp .dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.fx-snp .vp{scroll-behavior:auto}}
+
+</style>
+
+<div class="fx fx-snp"><p class="hint">Scroll (or use the dots) — each panel snaps into place</p>
+<div class="wrap"><div class="vp" tabindex="0" role="region" aria-label="Story panels">
+<section class="pn"><span class="n">1</span><h3>Discover</h3><p>Start with what people actually need, not what we assume.</p></section>
+<section class="pn"><span class="n">2</span><h3>Design</h3><p>Shape it with intent. Every choice earns its place.</p></section>
+<section class="pn"><span class="n">3</span><h3>Build</h3><p>Fast, accessible and easy to keep updating.</p></section>
+<section class="pn"><span class="n">4</span><h3>Launch</h3><p>Ship it, measure it, and keep improving.</p></section></div>
+<nav class="dots" aria-label="Panels"></nav></div></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-snp'),vp=root.querySelector('.vp'),ps=vp.querySelectorAll('.pn'),nav=root.querySelector('.dots');
+ps.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Go to panel '+(i+1));b.onclick=function(){vp.scrollTo({top:p.offsetTop})};nav.appendChild(b)});
+var bs=nav.querySelectorAll('button');
+function mark(){var i=Math.round(vp.scrollTop/vp.clientHeight);bs.forEach(function(b,j){b.setAttribute('aria-current',j===i)})}
+vp.addEventListener('scroll',mark,{passive:true});mark()})();
+</script>

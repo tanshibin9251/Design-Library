@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1080">
+<title>Clay Studio Product Card · 1080×1080</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fraunces:300,400,500,600,700,800|DM+Sans:300,400,500,600,700,800|Noto+Sans+SC:300,400,500,600,700,800&display=swap">
+<style>
+:root{--c-primary:#B8573B;--c-secondary:#E9C9B1;--c-text:#3A2A22;--c-accent:#7C8F6B;--c-surface:#F4E6D8;--c-border:#D8B9A0;--on-primary:#ffffff;--on-secondary:#111111;--on-accent:#ffffff;--on-surface:#111111;--f-head:'Fraunces','Noto Sans SC','Noto Serif SC',sans-serif;--f-body:'DM Sans','Noto Sans SC','Noto Serif SC',sans-serif}
+html,body{margin:0;background:#fff}
+</style></head><body>
+<style>
+.g-cl{position:relative;width:1080px;height:1080px;overflow:hidden;background:var(--c-surface);color:var(--c-text);font-family:var(--f-body);box-sizing:border-box}
+.g-cl *{box-sizing:border-box;margin:0}
+.g-cl .wall{position:absolute;inset:0 0 34% 0;background:linear-gradient(180deg,var(--c-secondary),var(--c-surface))}
+.g-cl .floor{position:absolute;inset:66% 0 0 0;background:var(--c-border);opacity:.35}
+.g-cl .sun{position:absolute;left:50%;top:150px;width:520px;height:520px;margin-left:-260px;border-radius:50%;background:var(--c-primary);opacity:.9}
+.g-cl .plinth{position:absolute;left:50%;bottom:150px;width:520px;height:150px;margin-left:-260px;border-radius:50% / 40%;background:var(--c-surface);box-shadow:0 30px 50px -18px rgba(58,42,34,.45),inset 0 -14px 0 var(--c-border)}
+.g-cl .item{position:absolute;left:50%;bottom:262px;width:230px;height:430px;margin-left:-115px;border-radius:44px 44px 28px 28px;background:linear-gradient(90deg,#fff 0%,var(--c-surface) 40%,var(--c-border) 100%);box-shadow:0 24px 40px -14px rgba(58,42,34,.45);display:flex;align-items:center;justify-content:center;text-align:center;font-size:21px;line-height:1.5;color:var(--c-text);padding:20px}
+.g-cl .item::before{content:"";position:absolute;left:50%;top:-70px;width:96px;height:80px;margin-left:-48px;border-radius:14px 14px 0 0;background:var(--c-text)}
+.g-cl .brand{position:absolute;left:64px;top:56px;font-family:var(--f-head);font-weight:600;font-size:40px;letter-spacing:-.01em}
+.g-cl .no{position:absolute;right:64px;top:64px;font-size:20px;letter-spacing:.24em;text-transform:uppercase}
+.g-cl .chip{position:absolute;display:flex;align-items:center;gap:12px;padding:14px 26px 14px 16px;border-radius:99px;background:var(--c-surface);border:2px solid var(--c-border);font-size:24px;font-weight:600;box-shadow:0 10px 24px -12px rgba(58,42,34,.5)}
+.g-cl .chip i{width:34px;height:34px;border-radius:50%;background:var(--c-accent);display:block}
+.g-cl .c1{left:64px;top:440px}.g-cl .c2{right:64px;top:360px}.g-cl .c3{right:84px;top:560px}
+.g-cl .name{position:absolute;left:64px;bottom:56px;font-family:var(--f-head);font-weight:500;font-size:64px;line-height:1;letter-spacing:-.02em}
+.g-cl .name small{display:block;font-family:var(--f-body);font-size:22px;letter-spacing:.2em;text-transform:uppercase;margin-top:12px;opacity:.7}
+.g-cl .price{position:absolute;right:64px;bottom:60px;font-family:var(--f-head);font-weight:600;font-size:56px;color:var(--c-primary)}
+</style>
+<div class="g-cl">
+  <div class="wall"></div><div class="floor"></div><div class="sun"></div>
+  <div class="plinth"></div>
+  <div class="item">缺图<br>产品抠图<br>(透明 PNG)</div>
+  <div class="brand">Terra &amp; Co.</div>
+  <div class="no">Nº 03 / Care</div>
+  <div class="chip c1"><i></i>Vegan</div>
+  <div class="chip c2"><i></i>50 ml</div>
+  <div class="chip c3"><i></i>Fragrance-free</div>
+  <div class="name">Clay Repair Serum<small>Barrier care</small></div>
+  <div class="price">$28</div>
+</div>
+
+</body></html>

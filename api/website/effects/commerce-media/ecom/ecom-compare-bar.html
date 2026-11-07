@@ -1,0 +1,56 @@
+<!-- Compare tray — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-cmp{width:min(820px,100%);position:relative;min-height:420px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.fx-cmp .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1em;padding:1.2em 1.2em 5.5em}
+.fx-cmp .it{display:flex;flex-direction:column;gap:.5em;font-size:.92em}
+.fx-cmp .it .fx-art{aspect-ratio:1;border-radius:calc(var(--radius)*.7)}
+.fx-cmp .it label{display:flex;align-items:center;gap:.5em;cursor:pointer;font-weight:700;font-size:.85em}
+.fx-cmp .it input{accent-color:var(--primary);width:1.1em;height:1.1em}
+.fx-cmp .tray{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:1em;padding:.9em 1.2em;background:var(--primary);color:var(--on-primary);transform:translateY(100%);transition:transform calc(.4s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-cmp .tray.on{transform:none}
+.fx-cmp .tray .th{display:flex;gap:.5em;flex:1}
+.fx-cmp .tray .th i{width:2.6em;aspect-ratio:1;border-radius:.5em;background:color-mix(in srgb,var(--on-primary) 25%,transparent);border:1px dashed color-mix(in srgb,var(--on-primary) 55%,transparent)}
+.fx-cmp .tray .th i.f{background:var(--accent);border:0}
+.fx-cmp .tray button{background:var(--accent);color:var(--on-accent);border:0;border-radius:99px;padding:.7em 1.4em;font:700 .95em var(--font-body);cursor:pointer}
+.fx-cmp .tray button:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:640px){.fx-cmp .grid{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){.fx-cmp .tray{transition:none}}
+</style>
+
+<div class="fx fx-cmp"><div class="grid"><div class="it"><div class="fx-art"></div><b>Aero Runner</b><label><input type="checkbox"> Compare</label></div><div class="it"><div class="fx-art a2"></div><b>Trail Pro</b><label><input type="checkbox"> Compare</label></div><div class="it"><div class="fx-art a3"></div><b>Road Lite</b><label><input type="checkbox"> Compare</label></div><div class="it"><div class="fx-art"></div><b>Track Spike</b><label><input type="checkbox"> Compare</label></div></div>
+<div class="tray" role="region" aria-label="Compare tray"><span id="fx-cmp-c" aria-live="polite">0 of 3 selected</span><div class="th"><i></i><i></i><i></i></div><button type="button" disabled>Compare</button></div></div>
+
+<script>
+(function(){var r=document.querySelector('.fx-cmp'),cs=r.querySelectorAll('input'),t=r.querySelector('.tray'),th=t.querySelectorAll('.th i'),c=r.querySelector('#fx-cmp-c'),b=t.querySelector('button');
+function up(e){var on=[].filter.call(cs,function(x){return x.checked});if(on.length>3&&e){e.target.checked=false;on.pop()}
+th.forEach(function(i,j){i.classList.toggle('f',j<on.length)});c.textContent=on.length+' of 3 selected'+(on.length===3?' (maximum)':'');t.classList.toggle('on',on.length>0);b.disabled=on.length<2}
+cs.forEach(function(x){x.onchange=up})})();
+</script>

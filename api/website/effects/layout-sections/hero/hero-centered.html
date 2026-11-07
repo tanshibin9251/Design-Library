@@ -1,0 +1,75 @@
+<!-- Centered Hero — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-hcen .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.9em 1.5em;border-radius:var(--radius);font:700 .95em var(--font-body);text-decoration:none;border:1.5px solid var(--primary);background:var(--primary);color:var(--on-primary);cursor:pointer;transition:transform calc(.25s/var(--speed)),box-shadow calc(.25s/var(--speed))}
+.fx-hcen .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px var(--primary)}
+.fx-hcen .btn.ghost{background:transparent;color:var(--primary)}
+.fx-hcen .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-hcen{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:5.5em 1.25em 0;background:var(--surface)}
+.fx-hcen::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),linear-gradient(var(--border) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,var(--border) 1px,transparent 1px) 0 0/48px 48px;-webkit-mask-image:radial-gradient(70% 70% at 50% 25%,#000,transparent);mask-image:radial-gradient(70% 70% at 50% 25%,#000,transparent);opacity:.8}
+.fx-hcen>*{position:relative}
+.fx-hcen .badge{display:inline-flex;align-items:center;gap:.7em;padding:.4em .5em .4em 1em;border-radius:999px;border:1px solid var(--border);background:var(--surface);font-size:.85em;font-weight:600;animation:fxhc-in calc(.7s/var(--speed)) both}
+.fx-hcen .badge b{padding:.2em .7em;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:.85em}
+.fx-hcen h1{font-size:clamp(2.5em,6.4vw,5.4em);line-height:1.02;max-width:13em;margin-top:.5em;animation:fxhc-in calc(.8s/var(--speed)) .08s both}
+.fx-hcen h1 em{font-style:italic;color:var(--primary)}
+.fx-hcen .lead{font-size:1.18em;opacity:.7;max-width:34em;margin-top:1.1em;animation:fxhc-in calc(.8s/var(--speed)) .16s both}
+.fx-hcen .cta{display:flex;gap:.8em;flex-wrap:wrap;justify-content:center;margin-top:1.8em;animation:fxhc-in calc(.8s/var(--speed)) .24s both}
+.fx-hcen .shot{width:min(980px,100%);margin-top:3.4em;border:1px solid var(--border);border-bottom:0;border-radius:calc(var(--radius)*1.5) calc(var(--radius)*1.5) 0 0;background:color-mix(in srgb,var(--surface) 92%,var(--text));padding:.8em .8em 0;box-shadow:0 -30px 80px -40px color-mix(in srgb,var(--primary) 60%,transparent);animation:fxhc-up calc(1.1s/var(--speed)) .3s cubic-bezier(.2,.8,.2,1) both;flex:1;min-height:14em}
+.fx-hcen .dots{display:flex;gap:.4em;padding:.2em .3em .8em}.fx-hcen .dots i{width:.65em;height:.65em;border-radius:50%;background:var(--border)}
+.fx-hcen .ui{display:grid;grid-template-columns:.7fr 2fr 1fr;gap:.8em;text-align:left}
+.fx-hcen .ui>div{border-radius:calc(var(--radius)*.7);border:1px solid var(--border);background:var(--surface);padding:.9em;display:grid;gap:.6em;align-content:start;font-size:.8em}
+.fx-hcen .ui .fx-art{aspect-ratio:16/8;border-radius:calc(var(--radius)*.6)}
+.fx-hcen .ui s{display:block;height:.6em;border-radius:99px;background:var(--border);text-decoration:none}.fx-hcen .ui s:nth-child(odd){width:70%}
+@keyframes fxhc-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fxhc-up{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@media(max-width:700px){.fx-hcen{padding-top:3.5em}.fx-hcen .ui{grid-template-columns:1fr 1.4fr}.fx-hcen .ui>div:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.fx-hcen *{animation:none!important}}
+/* touch: :hover mirrored as .is-tap */
+.fx-hcen .btn.is-tap{transform:translateY(-2px);box-shadow:0 12px 24px -14px var(--primary)}
+
+</style>
+
+<section class="fx fx-hcen"><span class="badge"><b>New</b>Version 3.0 is here</span>
+<h1>The calm way to run your <em>whole</em> studio</h1>
+<p class="lead">Projects, invoices and client feedback in one quiet workspace. No dashboards shouting at you.</p>
+<div class="cta"><a class="btn" href="#">Start for free</a><a class="btn ghost" href="#">Watch the tour</a></div>
+<div class="shot"><div class="dots"><i></i><i></i><i></i></div><div class="ui"><div><s></s><s></s><s></s><s></s><s></s></div><div><s></s><div class="fx-art"></div><s></s><s></s></div><div><s></s><s></s><s></s></div></div></div></section>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

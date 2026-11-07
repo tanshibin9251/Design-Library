@@ -1,0 +1,70 @@
+<!-- Text Scramble — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-sc{width:min(900px,100%);display:grid;gap:clamp(1.6em,5vw,2.6em)}
+.fx-sc .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-sc h2{font-size:clamp(2.2em,6vw,4.4em);line-height:1.05;letter-spacing:-.02em}
+.fx-sc .lead{max-width:34em;opacity:.72;font-size:1.05em}
+.sc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.sc-list li{border-bottom:1px solid var(--border)}
+.sc-list a{display:grid;grid-template-columns:3em minmax(0,1fr) auto;gap:1em;align-items:baseline;padding:1em .2em;color:inherit;text-decoration:none}
+.sc-list a:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.sc-list .no{font:600 .8em var(--font-heading);letter-spacing:.14em;color:var(--accent)}
+.sc-list .t{font:600 clamp(1.3em,3vw,2em) var(--font-heading)}.sc-list .d{opacity:.55;font-size:.88em}
+.fx-sc .rp{justify-self:start;border:2px solid var(--primary);background:transparent;color:var(--primary);border-radius:99px;padding:.6em 1.3em;font:700 .9em var(--font-body);cursor:pointer}
+.fx-sc .rp:hover,.fx-sc .rp.is-tap{background:var(--primary);color:var(--on-primary)}.fx-sc .rp:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.sc-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sc-w{white-space:nowrap}
+.sc-c.sc-u{color:var(--accent);opacity:.85;display:inline-block;text-align:center;overflow:visible}
+@media(max-width:700px){.sc-list a{grid-template-columns:2.4em minmax(0,1fr)}.sc-list .d{display:none}}
+
+</style>
+
+<div class="fx fx-sc"><div><span class="eye" data-sc>Transmission received</span><h2 data-sc>Decode the headline, one letter at a time.</h2></div><p class="lead">Text resolves out of noise from left to right. Letters keep their exact width while they flicker, so lines never jump or re-wrap.</p><ul class="sc-list"><li><a href="#" data-sc-row><span class="no">01</span><span class="t" data-sc>Signal</span><span class="d">Hover or focus a row</span></a></li><li><a href="#" data-sc-row><span class="no">02</span><span class="t" data-sc>Cipher</span><span class="d">to scramble it again</span></a></li><li><a href="#" data-sc-row><span class="no">03</span><span class="t" data-sc>Archive</span><span class="d">Tap on touch screens</span></a></li><li><a href="#" data-sc-row><span class="no">04</span><span class="t" data-sc>Broadcast</span><span class="d">Works on any text</span></a></li></ul><button type="button" class="rp">Replay</button></div>
+
+<script>
+(function(){
+var root=document.querySelector('.fx-sc');if(!root||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+var els=[].slice.call(root.querySelectorAll('[data-sc]')),G='!<>-_\\/[]{}=+*^?#%&',R=function(){return G.charAt(Math.floor(Math.random()*G.length))};
+els.forEach(function(el){var t=el.__t=el.textContent.replace(/\s+/g,' ').trim();el.textContent='';
+ var sr=document.createElement('span');sr.className='sc-sr';sr.textContent=t;el.appendChild(sr);
+ var box=document.createElement('span');box.setAttribute('aria-hidden','true');el.appendChild(box);el.__c=[];
+ t.split(' ').forEach(function(w,wi){if(wi)box.appendChild(document.createTextNode(' '));var ws=document.createElement('span');ws.className='sc-w';
+  w.split('').forEach(function(ch){var c=document.createElement('span');c.className='sc-c';c.textContent=ch;ws.appendChild(c);el.__c.push({el:c,ch:ch})});box.appendChild(ws)})});
+function run(el){if(el.__raf)cancelAnimationFrame(el.__raf);var cs=el.__c,t0=performance.now(),dur=700+cs.length*16;
+ cs.forEach(function(o){o.el.style.width='';o.el.textContent=o.ch;o.el.classList.remove('sc-u')});
+ cs.forEach(function(o){o.w=o.el.getBoundingClientRect().width;o.s=Math.random()*dur*.4;o.e=o.s+dur*.45+Math.random()*dur*.2;o.last=0;o.fin=false});
+ function f(now){var t=now-t0,done=true;
+  cs.forEach(function(o){if(o.fin)return;
+   if(t>=o.e){o.fin=true;o.el.textContent=o.ch;o.el.classList.remove('sc-u');o.el.style.width=''}
+   else{done=false;if(!o.el.classList.contains('sc-u')){o.el.classList.add('sc-u');o.el.style.width=o.w+'px'}if(now-o.last>55){o.el.textContent=R();o.last=now}}});
+  if(!done)el.__raf=requestAnimationFrame(f);else el.__raf=0}
+ el.__raf=requestAnimationFrame(f)}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);run(e.target)}})},{threshold:.4});els.forEach(function(el){io.observe(el)})}
+root.querySelectorAll('[data-sc-row]').forEach(function(a){var t=a.querySelector('[data-sc]'),go=function(e){if(e&&e.pointerType==='touch')return;run(t)};
+ a.addEventListener('pointerenter',go);a.addEventListener('focus',function(){run(t)});a.addEventListener('click',function(e){if(a.getAttribute('href')==='#'){e.preventDefault();run(t)}})});
+root.querySelector('.rp').addEventListener('click',function(){els.forEach(run)});
+})();
+</script>

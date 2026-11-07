@@ -1,0 +1,85 @@
+<!-- Toast — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-tst{position:relative;width:min(920px,100%);height:480px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:color-mix(in srgb,var(--surface) 94%,var(--text))}.fx-tst .pg{position:absolute;inset:0;padding:1.2em 1.5em;display:flex;flex-direction:column;gap:1em;overflow:hidden}
+.fx-tst .nv{display:flex;align-items:center;gap:1em;padding-bottom:.9em;border-bottom:1px solid var(--border)}
+.fx-tst .nv b{font:700 1.05em var(--font-heading);display:flex;align-items:center;gap:.5em}.fx-tst .nv b::before{content:"";width:.9em;height:.9em;border-radius:30%;background:var(--accent)}
+.fx-tst .nv i{width:3.4em;height:.55em;border-radius:9px;background:var(--border)}.fx-tst .nv i:nth-of-type(1){margin-left:auto}
+.fx-tst .pg h2{font-size:clamp(1.5em,4vw,2.1em);max-width:18ch;margin-top:.5em}
+.fx-tst .pg .lede{opacity:.66;max-width:44ch}
+.fx-tst .pg .row{display:flex;gap:.7em;flex-wrap:wrap;margin-top:.2em}
+.fx-tst .pg .sk{display:grid;grid-template-columns:repeat(3,1fr);gap:.8em;margin-top:auto}
+.fx-tst .pg .sk div{height:5.2em;border-radius:var(--radius);border:1px solid var(--border);background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 10%,transparent),color-mix(in srgb,var(--accent) 12%,transparent))}
+@media(max-width:560px){.fx-tst .pg .sk{grid-template-columns:1fr 1fr}.fx-tst .pg .sk div:nth-child(3){display:none}.fx-tst .nv i{display:none}}
+.fx-tst .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.7em 1.15em;border-radius:var(--radius);font:600 .92em var(--font-body);cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text);transition:background calc(.2s/var(--speed)),color calc(.2s/var(--speed)),transform calc(.2s/var(--speed)),border-color calc(.2s/var(--speed))}
+.fx-tst .btn:hover{border-color:var(--primary);color:var(--primary)}
+.fx-tst .btn.pri{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.fx-tst .btn.pri:hover{background:color-mix(in srgb,var(--primary) 85%,var(--text));color:var(--on-primary)}
+.fx-tst .btn.acc{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.fx-tst .btn:active{transform:translateY(1px)}
+.fx-tst :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fx-tst .stack{position:absolute;right:1em;bottom:1em;left:1em;display:flex;flex-direction:column;align-items:flex-end;gap:.6em;pointer-events:none}
+.fx-tst .t{pointer-events:auto;position:relative;overflow:hidden;width:min(360px,100%);display:grid;grid-template-columns:auto 1fr auto;gap:.8em;align-items:start;padding:.95em 1em 1.1em;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 18px 36px -16px rgba(0,0,0,.4);animation:fxtstin calc(.4s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-tst .t.out{animation:fxtstout calc(.3s/var(--speed)) ease forwards}
+.fx-tst .t .ic{width:1.9em;height:1.9em;border-radius:50%;display:grid;place-items:center;font-size:.85em;font-weight:700;background:var(--primary);color:var(--on-primary)}
+.fx-tst .t.ok .ic{background:var(--primary)}.fx-tst .t.warn .ic{background:var(--accent);color:var(--on-accent)}.fx-tst .t.info .ic{background:color-mix(in srgb,var(--text) 82%,var(--surface));color:var(--surface)}
+.fx-tst .t b{display:block;font-size:.95em}.fx-tst .t span{display:block;font-size:.85em;opacity:.68;margin-top:.1em}
+.fx-tst .t .act{all:unset;cursor:pointer;color:var(--primary);font-weight:700;font-size:.85em;margin-top:.45em;display:inline-block;text-decoration:underline;text-underline-offset:3px}
+.fx-tst .t .act:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fx-tst .t .cl{all:unset;cursor:pointer;width:1.8em;height:1.8em;display:grid;place-items:center;border-radius:50%;opacity:.5;font-size:.9em}.fx-tst .t .cl:hover{opacity:1;background:color-mix(in srgb,var(--text) 8%,transparent)}.fx-tst .t .cl:focus-visible{outline:2px solid var(--accent)}
+.fx-tst .t .pb{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform-origin:left;animation:fxtstbar 5s linear forwards}
+.fx-tst .t.paused .pb{animation-play-state:paused}
+@media(max-width:560px){.fx-tst{height:680px}}
+@keyframes fxtstin{from{opacity:0;transform:translateX(28px) scale(.97)}}
+@keyframes fxtstout{to{opacity:0;transform:translateX(28px) scale(.97)}}
+@keyframes fxtstbar{to{transform:scaleX(0)}}
+@media(prefers-reduced-motion:reduce){.fx-tst .t,.fx-tst .t.out{animation:none}.fx-tst .t .pb{display:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-tst .btn.is-tap{border-color:var(--primary);color:var(--primary)}
+.fx-tst .btn.pri.is-tap{background:color-mix(in srgb,var(--primary) 85%,var(--text));color:var(--on-primary)}
+.fx-tst .t .cl.is-tap{opacity:1;background:color-mix(in srgb,var(--text) 8%,transparent)}
+
+</style>
+
+<div class="fx fx-tst"><div class="pg"><div class="nv"><b>Fieldnote</b><i></i><i></i></div><h2>Try a notification</h2><p class="lede">Each button sends a different toast to the corner. They stack, pause when you hover and disappear on their own.</p><div class="row"><button class="btn pri" data-k="ok">Save changes</button><button class="btn" data-k="info">Share link</button><button class="btn acc" data-k="warn">Delete draft</button></div></div><div class="stack" role="status" aria-live="polite"></div></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-tst'),stack=root.querySelector('.stack');
+var M={ok:['&#10003;','Changes saved','Your edits to “Spring lookbook” are live.'],info:['i','Link copied','Anyone with the link can view this page.','Undo'],warn:['!','Draft moved to trash','“Untitled brief” will be deleted in 30 days.','Undo']};
+function toast(k){var m=M[k],t=document.createElement('div');t.className='t '+k;
+t.innerHTML='<span class="ic" aria-hidden="true">'+m[0]+'</span><div><b>'+m[1]+'</b><span>'+m[2]+'</span>'+(m[3]?'<button class="act">'+m[3]+'</button>':'')+'</div><button class="cl" aria-label="Dismiss">&#10005;</button><i class="pb"></i>';
+stack.appendChild(t);while(stack.children.length>3)stack.firstChild.remove();
+var left=5000,start,timer;function run(){start=Date.now();timer=setTimeout(close,left)}
+function close(){clearTimeout(timer);if(!t.parentNode)return;t.classList.add('out');setTimeout(function(){t.remove()},320)}
+t.addEventListener('mouseenter',function(){clearTimeout(timer);left-=Date.now()-start;t.classList.add('paused')});
+t.addEventListener('mouseleave',function(){t.classList.remove('paused');run()});
+t.querySelector('.cl').addEventListener('click',close);var a=t.querySelector('.act');if(a)a.addEventListener('click',close);run()}
+root.querySelectorAll('[data-k]').forEach(function(b){b.addEventListener('click',function(){toast(b.dataset.k)})});toast('ok')})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

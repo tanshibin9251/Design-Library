@@ -1,0 +1,77 @@
+<!-- Quote Slider — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-qs{width:min(820px,100%);display:grid;gap:1.6em;text-align:center;justify-items:center}
+.fx-qs .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-qs .stack{display:grid;width:100%}
+.fx-qs .sl{grid-area:1/1;margin:0;display:grid;gap:1.6em;justify-items:center;align-content:center;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity calc(.6s/var(--speed)) ease,transform calc(.6s/var(--speed)) ease,visibility 0s calc(.6s/var(--speed))}
+.fx-qs .sl.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.fx-qs blockquote{margin:0;font:500 clamp(1.4em,3.6vw,2.2em)/1.35 var(--font-heading);letter-spacing:-.01em;max-width:28ch}
+.fx-qs figcaption{display:flex;align-items:center;gap:.9em;text-align:left}
+.fx-qs .av{width:3em;height:3em;border-radius:50%;display:grid;place-items:center;font:700 .85em var(--font-body);color:var(--on-primary);flex:none}
+.fx-qs .av::before,.fx-qs .av::after{display:none}
+.fx-qs figcaption b{display:block}.fx-qs figcaption small{opacity:.62;font-size:.88em}
+.fx-qs .ctl{display:flex;align-items:center;gap:1.2em}
+.fx-qs .ctl>button{width:2.7em;height:2.7em;border-radius:50%;border:1.5px solid var(--primary);background:transparent;color:var(--primary);font-size:1em;cursor:pointer;transition:background .25s,color .25s}
+.fx-qs .ctl>button:hover{background:var(--primary);color:var(--on-primary)}
+.fx-qs .dots{display:flex;gap:.3em}.fx-qs .dots button{all:unset;box-sizing:border-box;padding:.5em;cursor:pointer}
+.fx-qs .dots button::before{content:"";display:block;width:.55em;height:.55em;border-radius:99px;background:color-mix(in srgb,var(--text) 22%,transparent);transition:width .3s,background .3s}
+.fx-qs .dots button[aria-current=true]::before{width:1.8em;background:var(--accent)}
+.fx-qs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.fx-qs .sl{transition:none;transform:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-qs .ctl>button.is-tap{background:var(--primary);color:var(--on-primary)}
+
+</style>
+
+<div class="fx fx-qs"><span class="eye">Kind words</span><div class="stack" aria-live="polite"><figure class="sl on"><blockquote>“We stopped dreading the quarterly rebrand. The team delivered a system our own designers now enjoy using.”</blockquote><figcaption><span class="av fx-art ">MO</span><span><b>Mara Okonkwo</b><small>Head of Brand, Northwind</small></span></figcaption></figure><figure class="sl"><blockquote>“It felt like working with an in-house team that happened to be brilliant. Calm, precise and never precious.”</blockquote><figcaption><span class="av fx-art a2">JL</span><span><b>Jonas Lindqvist</b><small>Founder, Fieldnote</small></span></figcaption></figure><figure class="sl"><blockquote>“Our conversion rate rose by a third and, more importantly, customers started writing to say the site felt kind.”</blockquote><figcaption><span class="av fx-art a3">PR</span><span><b>Priya Raman</b><small>COO, Harbor & Oak</small></span></figcaption></figure></div>
+<div class="ctl"><button aria-label="Previous quote">←</button><div class="dots"></div><button aria-label="Next quote">→</button></div></div>
+
+<script>
+(function(){document.querySelectorAll('.fx-qs').forEach(function(r){var sl=[].slice.call(r.querySelectorAll('.sl')),dots=r.querySelector('.dots'),i=0,t,hold=false;
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+sl.forEach(function(s,k){var b=document.createElement('button');b.setAttribute('aria-label','Show quote '+(k+1));b.addEventListener('click',function(){go(k)});dots.appendChild(b)});
+var ds=dots.children;
+function go(n){i=(n+sl.length)%sl.length;sl.forEach(function(s,k){s.classList.toggle('on',k===i);s.setAttribute('aria-hidden',k!==i)});for(var k=0;k<ds.length;k++)ds[k].setAttribute('aria-current',k===i)}
+var bs=r.querySelectorAll('.ctl>button');bs[0].addEventListener('click',function(){go(i-1)});bs[1].addEventListener('click',function(){go(i+1)});
+r.addEventListener('mouseenter',function(){hold=true});r.addEventListener('mouseleave',function(){hold=false});r.addEventListener('focusin',function(){hold=true});r.addEventListener('focusout',function(){hold=false});
+function sp(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed'))||1}
+if(!rm)(function loop(){t=setTimeout(function(){if(!hold)go(i+1);loop()},6500/sp())})();
+go(0)})})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

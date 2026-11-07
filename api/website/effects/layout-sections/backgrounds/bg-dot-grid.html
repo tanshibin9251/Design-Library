@@ -1,0 +1,53 @@
+<!-- Dot grid — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-dot{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;padding:2em;overflow:hidden;isolation:isolate;background:var(--surface)}
+.fx-dot .dots,.fx-dot .glow{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.fx-dot .dots{background-image:radial-gradient(color-mix(in srgb,var(--text) 26%,transparent) 1.3px,transparent 1.6px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 50% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 75% 70% at 50% 50%,#000 30%,transparent 100%)}
+.fx-dot .glow{overflow:hidden}
+.fx-dot .glow i{position:absolute;width:min(70vmin,520px);aspect-ratio:1;left:calc(50% - min(35vmin,260px));top:calc(50% - min(35vmin,260px));background-image:radial-gradient(var(--accent) 1.7px,transparent 2px);background-size:26px 26px;-webkit-mask-image:radial-gradient(circle,#000,transparent 68%);mask-image:radial-gradient(circle,#000,transparent 68%);animation:fxdotmove calc(14s/var(--speed)) ease-in-out infinite alternate}
+.fx-dot .glow i::after{content:"";position:absolute;inset:20%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
+.fx-dot .in{display:grid;gap:1.1em;justify-items:center;max-width:680px}
+.fx-dot .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-dot h1{font-size:clamp(2.4em,7vw,4.8em)}.fx-dot p{opacity:.7;font-size:1.12em;max-width:44ch}
+.fx-dot .row{display:flex;gap:.7em;flex-wrap:wrap;justify-content:center;margin-top:.3em}
+.fx-dot .b{padding:.85em 1.5em;border-radius:var(--radius);font-weight:700;text-decoration:none;border:1.5px solid var(--text);color:var(--text);transition:all calc(.25s/var(--speed))}
+.fx-dot .b.s{background:var(--text);color:var(--surface)}.fx-dot .b:hover{transform:translateY(-2px)}.fx-dot .b:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@keyframes fxdotmove{0%{transform:translate(-28vw,-14vh)}50%{transform:translate(10vw,16vh)}100%{transform:translate(26vw,-8vh)}}
+@media(prefers-reduced-motion:reduce){.fx-dot .glow i{animation:none}.fx-dot .b{transition:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-dot .b.is-tap{transform:translateY(-2px)}
+
+</style>
+
+<section class="fx fx-dot"><div class="dots"></div><div class="glow"><i></i></div><div class="in"><span class="eye">Field notes</span><h1>Graph paper for ideas not yet drawn</h1><p>A quiet dotted canvas for hero sections, with a soft pool of light that wanders across the grid.</p><div class="row"><a class="b s" href="#">Start sketching</a><a class="b" href="#">See examples</a></div></div></section>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

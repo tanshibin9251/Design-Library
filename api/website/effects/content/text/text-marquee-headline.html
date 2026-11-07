@@ -1,0 +1,57 @@
+<!-- Marquee headline — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-mqh{min-height:100vh;display:grid;align-content:center;gap:2.4em;overflow:hidden;padding:3em 0;background:var(--surface)}
+.fx-mqh .rw{overflow:hidden;white-space:nowrap}
+.fx-mqh .tr{display:inline-flex;width:max-content;animation:fxmqh calc(30s/var(--speed)) linear infinite}
+.fx-mqh .rw.rev .tr{animation-direction:reverse;animation-duration:calc(38s/var(--speed))}
+.fx-mqh .rw:hover .tr,.fx-mqh .rw:focus-within .tr{animation-play-state:paused}
+.fx-mqh .g{display:inline-flex;align-items:center;gap:.3em;padding-right:.3em;font:600 clamp(3.2em,12vw,9em)/1 var(--font-heading);letter-spacing:-.02em}
+.fx-mqh .g span{padding:0 .1em}
+.fx-mqh .g .o{color:transparent;-webkit-text-stroke:max(1.5px,.015em) var(--text)}
+.fx-mqh .rw.rev .g span:not(.o){color:var(--primary)}
+.fx-mqh .g b{font-size:.4em;color:var(--accent);padding:0 .35em;font-weight:400}
+.fx-mqh .mid{display:flex;justify-content:space-between;align-items:center;gap:1.5em;flex-wrap:wrap;width:min(1100px,90%);margin:0 auto}
+.fx-mqh .mid p{max-width:40ch;opacity:.7}
+.fx-mqh .mid a{padding:.85em 1.5em;border-radius:99px;background:var(--text);color:var(--surface);font-weight:700;text-decoration:none;transition:transform calc(.25s/var(--speed))}.fx-mqh .mid a:hover{transform:scale(1.05)}.fx-mqh .mid a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@keyframes fxmqh{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.fx-mqh .tr{animation:none}.fx-mqh .mid a{transition:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-mqh .rw.is-tap .tr{animation-play-state:paused}
+.fx-mqh .mid a.is-tap{transform:scale(1.05)}
+
+</style>
+
+<section class="fx fx-mqh" aria-label="Services"><div class="rw"><div class="tr"><div class="g"><span class="">Design</span><b aria-hidden="true">&#10033;</b><span class="o">Build</span><b aria-hidden="true">&#10033;</b><span class="">Launch</span><b aria-hidden="true">&#10033;</b><span class="o">Repeat</span><b aria-hidden="true">&#10033;</b></div><div class="g" aria-hidden="true"><span class="">Design</span><b aria-hidden="true">&#10033;</b><span class="o">Build</span><b aria-hidden="true">&#10033;</b><span class="">Launch</span><b aria-hidden="true">&#10033;</b><span class="o">Repeat</span><b aria-hidden="true">&#10033;</b></div></div></div>
+<div class="mid"><p>An independent studio making identities, websites and printed things for people who care about the small stuff.</p><a href="#">Start a project</a></div>
+<div class="rw rev"><div class="tr"><div class="g"><span class="o">Brand</span><b aria-hidden="true">&#10033;</b><span class="">Motion</span><b aria-hidden="true">&#10033;</b><span class="o">Web</span><b aria-hidden="true">&#10033;</b><span class="">Print</span><b aria-hidden="true">&#10033;</b></div><div class="g" aria-hidden="true"><span class="o">Brand</span><b aria-hidden="true">&#10033;</b><span class="">Motion</span><b aria-hidden="true">&#10033;</b><span class="o">Web</span><b aria-hidden="true">&#10033;</b><span class="">Print</span><b aria-hidden="true">&#10033;</b></div></div></div></section>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

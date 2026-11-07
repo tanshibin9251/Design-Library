@@ -1,0 +1,26 @@
+{
+ "name": "Design Library API",
+ "counts": {
+  "template": 82,
+  "effect": 122,
+  "transition": 22,
+  "graphic": 5,
+  "asset": 73,
+  "palette": 100
+ },
+ "endpoints": [
+  "catalog.json",
+  "taxonomy.json",
+  "palettes.json",
+  "website/templates/<group>/<slug>/<slug>.json",
+  "website/templates/<group>/<slug>/<slug>.site.json",
+  "website/templates/<group>/<slug>/<slug>-html-site.zip",
+  "website/templates/<group>/<slug>/<slug>-php-site.zip",
+  "website/templates/<group>/<slug>/<slug>-elementor-kit.zip",
+  "website/effects/<effect-group>/<category>/<slug>.html",
+  "website/transitions/<group>/<slug>.css",
+  "graphic/designs/<type>/<slug>.json",
+  "graphic/designs/<type>/<slug>.html",
+  "graphic/assets/<category>/<file>"
+ ]
+}

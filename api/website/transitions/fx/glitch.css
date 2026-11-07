@@ -1,0 +1,8 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@keyframes pt-out { 0%{transform:none;filter:none} 25%{transform:translateX(-2%) skewX(2deg);filter:hue-rotate(60deg) saturate(2)} 50%{transform:translateX(3%);filter:hue-rotate(-60deg) contrast(1.4);clip-path:inset(0 0 55% 0)} 75%{transform:translateX(-1%) skewX(-3deg);filter:hue-rotate(120deg);clip-path:inset(35% 0 20% 0)} 100%{opacity:0} }
+@keyframes pt-in { 0%{opacity:0;transform:translateX(3%) skewX(-3deg);filter:hue-rotate(90deg) saturate(2.5);clip-path:inset(10% 0 60% 0)} 35%{opacity:1;transform:translateX(-2%);filter:hue-rotate(-40deg);clip-path:inset(55% 0 10% 0)} 70%{transform:translateX(1%);filter:hue-rotate(20deg);clip-path:inset(0)} 100%{transform:none;filter:none;clip-path:inset(0)} }
+::view-transition-old(root){animation-name:pt-out;animation-timing-function:steps(8,end);z-index:1}
+::view-transition-new(root){animation-name:pt-in;animation-timing-function:steps(8,end);z-index:2}

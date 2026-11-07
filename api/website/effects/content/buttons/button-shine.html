@@ -1,0 +1,47 @@
+<!-- Shine Sweep — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-bsh{display:grid;gap:1.4em;justify-items:center;text-align:center}
+.fx-bsh h2{font-size:2.3em}.fx-bsh p{opacity:.6}.fx-bsh .row{display:flex;gap:1em;flex-wrap:wrap;justify-content:center}
+.fx-bsh .b{position:relative;overflow:hidden;padding:1em 1.9em;border-radius:var(--radius);border:0;font:700 .95em var(--font-body);color:var(--on-primary);cursor:pointer;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 55%,var(--accent)));box-shadow:0 12px 26px -12px var(--primary);transition:transform calc(.25s/var(--speed))}
+.fx-bsh .b.acc{color:var(--on-accent);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--primary)));box-shadow:0 12px 26px -12px var(--accent)}
+.fx-bsh .b.out{background:transparent;color:var(--primary);box-shadow:inset 0 0 0 1.5px var(--primary)}
+.fx-bsh .b::after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg)}
+.fx-bsh .b:hover{transform:translateY(-2px)}.fx-bsh .b:hover::after{left:140%;transition:left calc(.85s/var(--speed)) ease}
+@media(prefers-reduced-motion:reduce){.fx-bsh .b::after{display:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-bsh .b.is-tap{transform:translateY(-2px)}
+.fx-bsh .b.is-tap::after{left:140%;transition:left calc(.85s/var(--speed)) ease}
+
+</style>
+
+<div class="fx fx-bsh"><h2>Catch the light</h2><p>A glint on hover, nothing more.</p><div class="row"><button class="b">Start free trial</button><button class="b acc">Shop the collection</button><button class="b out">Contact sales</button></div></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

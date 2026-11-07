@@ -1,0 +1,69 @@
+<!-- Badge pulse — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-bdg{width:min(760px,100%);display:grid;gap:1.8em;background:color-mix(in srgb,var(--surface) 94%,var(--text));border:1px solid var(--border);border-radius:calc(var(--radius) + 2px);padding:1.6em}
+.fx-bdg h3{font-size:1.35em}
+.fx-bdg .tb{display:flex;flex-wrap:wrap;gap:1.4em 2em;align-items:center}
+.fx-bdg .lab{font-size:.72em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.5;display:block;margin-bottom:.8em}
+.fx-bdg .ib{position:relative;display:inline-grid;place-items:center;width:3em;height:3em;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}
+.fx-bdg .ib svg{width:1.3em;height:1.3em}.fx-bdg .ib:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fx-bdg .n{position:absolute;top:-.3em;right:-.3em;min-width:1.5em;height:1.5em;padding:0 .35em;border-radius:99px;background:var(--accent);color:var(--on-accent);font:800 .8em var(--font-body);display:grid;place-items:center;border:2px solid var(--surface)}
+.fx-bdg .n::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:var(--accent);z-index:-1;animation:fxbdgping calc(1.8s/var(--speed)) cubic-bezier(0,0,.2,1) infinite}
+.fx-bdg .av{position:relative;width:3em;height:3em;border-radius:50%;display:grid;place-items:center;font:700 .95em var(--font-heading);color:var(--on-primary);background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 50%,var(--accent)))}
+.fx-bdg .av.b{background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,var(--primary)));color:var(--on-accent)}
+.fx-bdg .av.c{background:color-mix(in srgb,var(--text) 18%,var(--surface));color:var(--text)}
+.fx-bdg .st{position:absolute;right:-.05em;bottom:-.05em;width:.95em;height:.95em;border-radius:50%;background:#2eb872;border:2.5px solid var(--bg,color-mix(in srgb,var(--surface) 94%,var(--text)))}
+.fx-bdg .st.on::after{content:"";position:absolute;inset:-2.5px;border-radius:50%;border:2px solid #2eb872;animation:fxbdgring calc(2s/var(--speed)) ease-out infinite}
+.fx-bdg .st.away{background:var(--accent)}.fx-bdg .st.off{background:color-mix(in srgb,var(--text) 35%,var(--surface))}
+.fx-bdg .pill{display:inline-flex;align-items:center;gap:.55em;padding:.45em .95em;border-radius:99px;font:800 .75em var(--font-body);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);background:var(--surface)}
+.fx-bdg .dot{position:relative;width:.7em;height:.7em;border-radius:50%;background:var(--accent)}
+.fx-bdg .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:fxbdgping calc(1.6s/var(--speed)) cubic-bezier(0,0,.2,1) infinite}
+.fx-bdg .pill.live{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}.fx-bdg .pill.live .dot{background:var(--on-accent)}
+.fx-bdg .new{position:relative;display:inline-block;padding:.3em .7em;border-radius:6px;background:var(--primary);color:var(--on-primary);font:800 .7em var(--font-body);letter-spacing:.1em;text-transform:uppercase;animation:fxbdgglow calc(2.4s/var(--speed)) ease-in-out infinite}
+.fx-bdg .menu{display:flex;gap:.5em;flex-wrap:wrap}
+.fx-bdg .menu a{display:inline-flex;align-items:center;gap:.6em;padding:.6em 1em;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);text-decoration:none;font-weight:600;font-size:.92em}
+.fx-bdg .menu a:hover{border-color:var(--primary)}.fx-bdg .menu a:focus-visible{outline:2px solid var(--accent)}
+@keyframes fxbdgping{75%,100%{transform:scale(2.1);opacity:0}}
+@keyframes fxbdgring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+@keyframes fxbdgglow{50%{box-shadow:0 0 0 .4em color-mix(in srgb,var(--primary) 22%,transparent)}}
+@media(prefers-reduced-motion:reduce){.fx-bdg .n::before,.fx-bdg .dot::after,.fx-bdg .st.on::after,.fx-bdg .new{animation:none}.fx-bdg .n::before,.fx-bdg .dot::after{display:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-bdg .menu a.is-tap{border-color:var(--primary)}
+
+</style>
+
+<div class="fx fx-bdg"><h3>Status at a glance</h3>
+<div class="tb"><div><span class="lab">Notifications</span><span style="display:flex;gap:1.1em"><button class="ib" aria-label="Messages, 3 unread"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path class="fl" d="m22 7-10 6L2 7"/></svg><span class="n">3</span></button><button class="ib" aria-label="Alerts, 12 unread"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="sw"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></g></svg><span class="n">12</span></button></span></div>
+<div><span class="lab">Presence</span><span style="display:flex;gap:1.3em"><span class="av">MK<i class="st on" role="img" aria-label="Online"></i></span><span class="av b">JL<i class="st away" role="img" aria-label="Away"></i></span><span class="av c">TS<i class="st off" role="img" aria-label="Offline"></i></span></span></div></div>
+<div class="tb"><div><span class="lab">Live &amp; new</span><span style="display:flex;gap:.8em;flex-wrap:wrap;align-items:center"><span class="pill live"><i class="dot"></i>Live now</span><span class="pill"><i class="dot"></i>Recording</span><span class="new">New</span></span></div></div>
+<div><span class="lab">In navigation</span><nav class="menu" aria-label="Demo"><a href="#">Inbox <span class="new">4 new</span></a><a href="#"><i class="dot"></i>Status</a><a href="#">Releases <span class="new">New</span></a></nav></div></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

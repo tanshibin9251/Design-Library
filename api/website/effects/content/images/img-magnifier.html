@@ -1,0 +1,53 @@
+<!-- Hover magnifier — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-mag{width:min(520px,100%)}
+.fx-mag .im{position:relative;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;cursor:crosshair;touch-action:none;--z:2.5}
+.fx-mag .im .fx-art{position:absolute;inset:0;border-radius:0}
+.fx-mag .im .fx-art::before{width:34%;right:12%;top:18%;opacity:.5}
+.fx-mag .lens{position:absolute;width:9em;height:9em;border-radius:50%;border:3px solid var(--surface);box-shadow:0 8px 24px color-mix(in srgb,#000 30%,transparent);pointer-events:none;overflow:hidden;opacity:0;transition:opacity calc(.2s/var(--speed));translate:-50% -50%}
+.fx-mag .im.on .lens{opacity:1}
+.fx-mag .lens .zoom{position:absolute;width:calc(100%*var(--z)*var(--wr,5));height:calc(100%*var(--z)*var(--hr,4))}
+.fx-mag .hint{margin-top:.7em;font-size:.88em;opacity:.65}
+@media(prefers-reduced-motion:reduce){.fx-mag .lens{transition:none}}
+</style>
+
+<div class="fx fx-mag"><div class="im" aria-label="Product image. Move the pointer to magnify."><div class="fx-art"></div><div class="lens" aria-hidden="true"><div class="zoom"></div></div></div><p class="hint">Move over the image to zoom</p></div>
+
+<script>
+(function(){var im=document.querySelector('.fx-mag .im'),lens=im.querySelector('.lens'),zoom=lens.querySelector('.zoom'),art=im.querySelector('.fx-art');
+var z=2.5;zoom.appendChild(art.cloneNode(true));var zi=zoom.firstChild;zi.style.cssText='position:absolute;left:0;top:0;border-radius:0';
+function move(e){var b=im.getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;
+if(x<0||y<0||x>b.width||y>b.height){im.classList.remove('on');return}
+im.classList.add('on');lens.style.left=x+'px';lens.style.top=y+'px';var lw=lens.offsetWidth;
+zi.style.width=b.width*z+'px';zi.style.height=b.height*z+'px';zoom.style.width=zi.style.width;zoom.style.height=zi.style.height;
+zoom.style.left=(lw/2-x*z)+'px';zoom.style.top=(lw/2-y*z)+'px'}
+im.addEventListener('pointermove',move);im.addEventListener('pointerdown',move);im.addEventListener('pointerleave',function(){im.classList.remove('on')})})();
+</script>

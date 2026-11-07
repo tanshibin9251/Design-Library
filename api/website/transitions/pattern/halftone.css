@@ -1,0 +1,8 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@property --pt-d { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@keyframes pt-in { from { --pt-d:0% } to { --pt-d:110% } }
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;mix-blend-mode:normal;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 var(--pt-d),transparent calc(var(--pt-d) + 4%));mask-image:radial-gradient(circle at 50% 50%,#000 var(--pt-d),transparent calc(var(--pt-d) + 4%));-webkit-mask-size:26px 26px;mask-size:26px 26px;-webkit-mask-repeat:repeat;mask-repeat:repeat;}
