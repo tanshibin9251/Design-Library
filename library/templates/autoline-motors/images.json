@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-car-driving-on-a-road-kMO2EtBVy04",
+      "author": "Luise and Nic",
+      "alt": "a car driving on a road",
+      "id": "car",
+      "url": "https://images.unsplash.com/photo-1662328775652-8ac570559613",
+      "original_width": 3521,
+      "original_height": 5282
+    },
+    {
+      "id": "workshop",
+      "author": "Winston Chen",
+      "source": "https://unsplash.com/photos/cars-being-repaired-in-a-workshop-VdXnpwrp1qc",
+      "url": "https://images.unsplash.com/photo-1767681092416-bccf9410bda4",
+      "alt": "Illustrative vehicle service workshop",
+      "original_width": 6000,
+      "original_height": 4000
+    }
+  ]
+}

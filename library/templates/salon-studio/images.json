@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "salon",
+      "author": "Vinicius \"amnx\" Amano",
+      "source": "https://unsplash.com/photos/a-woman-getting-her-hair-done-in-a-salon-lK8oXGycy88",
+      "url": "https://images.unsplash.com/photo-1675034743339-0b0747047727",
+      "alt": "Illustrative hair styling session",
+      "original_width": 6000,
+      "original_height": 4000
+    }
+  ]
+}

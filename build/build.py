@@ -9,6 +9,7 @@ import json, os, stat, shutil, sys, subprocess, webbrowser, hashlib, zipfile, da
 from html import escape as e
 from pathlib import Path
 import dlib, catalog, paths as PT, site_export as SE, ui_icons
+from template_review import inspect_template
 from dlib import ROOT, LIB, read
 
 OUT = ROOT / "public_html"
@@ -45,36 +46,12 @@ def js_safe(s):
 
 
 def guide_html(cat):
-    c = cat["counts"]
-    def pre(t): return f'<div class="gc"><button data-gcopy>Copy</button><pre>{e(t)}</pre></div>'
-    return f"""<h1>Guide</h1>
-<p>Everything in this library is plain HTML, CSS and a little JavaScript. Browse it here, change colours, fonts, width and spacing, then copy the code or download a whole site.</p>
-<table><tr><th>Templates</th><th>Effects</th><th>Page transitions</th><th>Palettes</th><th>Graphics</th></tr><tr><td>{c['template']} multi-page sites</td><td>{c['effect']} in {sum(1 for x in cat['taxonomy']['effect_cats'])} categories</td><td>{c['transition']}</td><td>{c['palette']}</td><td>{c.get('graphic', 0)} designs</td></tr></table>
-<p>The library has two sides: <b>Website</b> (templates, effects, page transitions) and <b>Graphic</b> (posters, thumbnails, banners, product images). Palettes are shared. Use the Website / Graphic switch at the top.</p>
-<h2>1 · Use it from VS Code with Claude Code (MCP)</h2>
-<p>The <code>mcp-server/</code> folder in the project lets Claude Code read this library directly. Put a <code>.mcp.json</code> in your website project:</p>
-{pre('{\n  "mcpServers": {\n    "design-library": {\n      "command": "python",\n      "args": ["/path/to/Design Library/mcp-server/server.py"]\n    }\n  }\n}')}
-<p>Install once: <code>pip install -r "Design Library/mcp-server/requirements.txt"</code>. Then just ask:</p>
-<ul><li>“Find a template for a dental clinic and export it as a PHP site into <code>./site</code>, primary colour #0E7490.”</li><li>“Add the <code>pricing-toggle</code> effect to my pricing page.”</li><li>“Use the <code>push</code> page transition across the whole site.”</li><li>“Give me Elementor Global Colors for <code>calm-spa</code>.”</li></ul>
-<p>Tools: <code>library_overview</code> · <code>search_library</code> · <code>get_template</code> · <code>get_page</code> · <code>export_site</code> · <code>get_effect</code> · <code>get_transition</code> · <code>get_palettes</code> · <code>get_style</code> · <code>get_elementor_item</code>.</p>
-<h2>2 · Use the JSON API (no install)</h2>
-<p>Everything below is a plain file on this site. Claude Code can fetch it with a link.</p>
-{pre('/api/catalog.json                       whole library: names, tags, pages, tokens\n/api/website/templates/<group>/<slug>/<slug>.json       one template with every page (preview format)\n/api/website/templates/<group>/<slug>/<slug>.site.json  portable site file (design-library-site@1)\n/api/website/templates/<group>/<slug>/<slug>-html-site.zip     ready-to-upload HTML site\n/api/website/templates/<group>/<slug>/<slug>-php-site.zip      ready-to-upload PHP site\n/api/website/templates/<group>/<slug>/<slug>-elementor-kit.zip globals + Claude Code prompt + reference HTML\n/api/website/effects/<effect-group>/<category>/<slug>.html     effect snippet\n/api/website/transitions/<group>/<slug>.css             page-transition CSS\n(old flat paths still redirect; see api/.htaccess)\n/api/palettes.json  /api/taxonomy.json')}
-<h2>3 · Add your own templates</h2>
-<p>In the project folder, <code>CLAUDE.md</code> explains how to ask Claude Code to collect templates from another folder or from a connection you give it. Under the hood it runs:</p>
-{pre('python tools/ingest_template.py <folder | .zip | .site.json> --slug my-site --name "My Site" \\\n    --types company,landing --ind restaurant --styles warm,playful\npython build/build.py')}
-<p>Templates exported from this site (<code>.site.json</code>) keep full colour/font customisation. Finished sites imported from elsewhere are shown as <b>Imported</b> templates: browse and download, but colours are edited in their own CSS.</p>
-<h2>4 · Page transitions</h2>
-<p>Built on the View Transitions API: multi-page sites use <code>@view-transition {{ navigation: auto }}</code>. Works in Chrome / Edge 126+ and Safari 18.2+; other browsers simply navigate normally. Choose one in a template’s <b>Customize › Page transition</b>; it is included in the export.</p>
-<h2>5 · Elementor</h2>
-<p>The Elementor download is a kit — global colours and fonts, a ready-made prompt for Claude Code, <code>tokens.css</code> and every page as reference HTML. It is not an Elementor import file; rebuild with native widgets through your Elementor MCP.</p>
-<h2>6 · Graphic designs</h2>
-<p>Each graphic is a fixed-size HTML/CSS composition (poster 1200×1697, YouTube thumbnail 1280×720, banner 1500×500, product image 1080×1080 …) with a <code>DESIGN.md</code> recipe: layout traits, a “don’t” list and copy tone. Open one, recolour it, copy the HTML, then ask Claude Code to make a new design from the recipe. Export PNG by screenshotting the page at its exact size.</p>
-{pre('/api/graphic/designs/<type>/<slug>.json   meta + HTML + DESIGN recipe\n/api/graphic/designs/<type>/<slug>.html   standalone page at exact canvas size')}
-<h2>Licence</h2>
-<p>Templates, effects and transitions in this library are self-made, with placeholder text and no third-party code. Fonts load from Google Fonts. Replace all placeholder copy and images.</p>"""
-
-
+    counts = cat["counts"]
+    summary = " · ".join(f"{counts.get(kind, 0)} {name}" for kind, name in
+                         (("template", "templates"), ("effect", "effects"),
+                          ("transition", "transitions"), ("graphic", "designs"),
+                          ("asset", "assets")))
+    return read(SRC / "guide.html").replace("{{COUNTS}}", summary)
 PV_HASH = {}
 TPL_GROUP = {}
 FX_DETAIL = {}
@@ -104,7 +81,8 @@ def build_manifest(cat):
     tax = dlib.taxonomy(); pal = dlib.palettes()
     tpls = []
     for s in dlib.template_slugs():
-        x = dlib.load_template(s, full=False); x.pop("dir")
+        x = dlib.load_template(s, full=False)
+        x["review"] = inspect_template(x.pop("dir"))
         if x["license"] == "local_only": continue          # 授权不允许公开分发：只留在本地库，不进 public_html
         x["live"] = live_for(x)
         x["pg"] = PT.template_group(x["ind"], s)           # template group: api/templates/<pg>/<slug>, previews/templates/<pg>/<slug>.jpg
@@ -144,7 +122,7 @@ if (!is_file($manifestFile) || !is_file($shellFile)) {
     exit("Design Library: data files are missing. Upload the whole folder (data/, includes/, assets/, api/), or run: python build/build.py");
 }
 $cssV = (string) @filemtime($root . '/assets/app.css');
-$jsV  = (string) @filemtime($root . '/assets/app.js');
+$jsV  = (string) max((int) @filemtime($root . '/assets/app.js'), (int) @filemtime($root . '/assets/library-state.js'));
 $etag = '"dl-' . filemtime($manifestFile) . '-' . $cssV . '-' . $jsV . '"';
 header('ETag: ' . $etag);
 header('Cache-Control: no-cache');
@@ -173,6 +151,7 @@ SHELL = """<!doctype html>
 %(sprite)s<div id="app"></div><div class="toast" id="toast"></div>
 <noscript><div class="ns"><h1>%(logo)s</h1><p>This library needs JavaScript to preview templates. The raw files are available at <a href="api/catalog.json">api/catalog.json</a>.</p></div></noscript>
 <script>window.DL_DATA={{DATA}};</script>
+<script src="assets/library-state.js?v={{JS_V}}"></script>
 <script src="assets/app.js?v={{JS_V}}"></script>
 </body></html>
 """ % dict(desc=e(SITE_DESC), sprite=ui_icons.sprite()[0], logo=ui_icons.logo_svg())
@@ -270,6 +249,7 @@ def build(quiet=False):
     w(OUT / "robots.txt", "User-agent: *\nDisallow: /\n")
     (OUT / "assets").mkdir(parents=True, exist_ok=True)
     shutil.copy(SRC / "app.js", OUT / "assets/app.js")
+    shutil.copy(SRC / "library-state.js", OUT / "assets/library-state.js")
     shutil.copy(SRC / "app.css", OUT / "assets/app.css"); w(OUT / "assets/favicon.svg", FAVICON)
     # ---- api
     tax = dlib.taxonomy(); pal = dlib.palettes()

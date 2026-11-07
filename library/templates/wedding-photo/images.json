@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "wedding",
+      "author": "Céline Druguet",
+      "source": "https://unsplash.com/photos/a-close-up-of-two-people-holding-hands-over-a-bouquet-of-flowers-Rnton6rhDe4",
+      "url": "https://images.unsplash.com/photo-1684244276932-6ae853774c4d",
+      "alt": "Wedding detail with hands and flowers",
+      "original_width": 4480,
+      "original_height": 6720
+    },
+    {
+      "source": "https://unsplash.com/photos/elegant-wedding-venue-with-chandeliers-and-floral-arrangements-AzvGCVHGPCE",
+      "author": "Konark Weddings",
+      "alt": "Elegant wedding venue with chandeliers and floral arrangements",
+      "id": "wedding-venue",
+      "url": "https://images.unsplash.com/photo-1773745060497-4cc1df774c72",
+      "original_width": 5989,
+      "original_height": 3993
+    }
+  ]
+}

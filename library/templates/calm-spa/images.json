@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-massage-room-is-clean-and-ready-for-a-session-oAvwAKFiU7Q",
+      "author": "Jakub Klucký",
+      "alt": "A massage room is clean and ready for a session",
+      "url": "https://images.unsplash.com/photo-1745327883290-1e9c6447b938",
+      "id": "spa-room",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "id": "treatment",
+      "author": "Edward Muntinga",
+      "source": "https://unsplash.com/photos/a-woman-getting-a-massage-from-a-man-in-a-white-shirt-Ob97XSSB1Wc",
+      "url": "https://images.unsplash.com/photo-1699523229232-dce23cce2f22",
+      "alt": "Illustrative manual therapy session",
+      "original_width": 6016,
+      "original_height": 4016
+    }
+  ]
+}

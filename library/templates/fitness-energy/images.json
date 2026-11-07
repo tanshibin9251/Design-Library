@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "gym",
+      "author": "Mark Bertulfo",
+      "source": "https://unsplash.com/photos/assorted-gym-equipment-inside-the-gym-XKimW0pke6w",
+      "url": "https://images.unsplash.com/photo-1561214078-f3247647fc5e",
+      "alt": "Gym interior and training equipment",
+      "original_width": 5184,
+      "original_height": 3456
+    }
+  ]
+}

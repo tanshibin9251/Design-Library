@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/fresh-vegetables-are-displayed-at-a-farmers-market-kT8sV5WZPJI",
+      "author": "David Trinks",
+      "alt": "Fresh vegetables are displayed at a farmer's market",
+      "url": "https://images.unsplash.com/photo-1751778682705-1823ca6e0949",
+      "id": "vegetables",
+      "original_width": 3600,
+      "original_height": 2400
+    },
+    {
+      "source": "https://unsplash.com/photos/a-woman-is-cooking-vegetables-dQZCfPMrQwE",
+      "author": "Sweet Life",
+      "alt": "a woman is cooking vegetables",
+      "url": "https://images.unsplash.com/photo-1683556262029-56f31fbf75ee",
+      "id": "cooking",
+      "original_width": 3840,
+      "original_height": 5760
+    }
+  ]
+}

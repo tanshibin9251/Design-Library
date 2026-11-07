@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/retro-diner-with-red-booths-and-chrome-stools-yM5qo0dXQUE",
+      "author": "T",
+      "alt": "Retro diner with red booths and chrome stools",
+      "id": "diner",
+      "url": "https://images.unsplash.com/photo-1767769354536-bf79c6881687",
+      "original_width": 1984,
+      "original_height": 2976
+    }
+  ]
+}

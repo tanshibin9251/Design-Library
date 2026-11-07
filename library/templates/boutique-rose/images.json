@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-clothing-store-with-clothes-on-racks-and-a-mirror-Ws0skj_Zzrg",
+      "author": "Marcin Dyguda",
+      "alt": "A clothing store with clothes on racks and a mirror",
+      "id": "fashion",
+      "url": "https://images.unsplash.com/photo-1726128449240-6569b63355d2",
+      "original_width": 4000,
+      "original_height": 6000
+    },
+    {
+      "source": "https://unsplash.com/photos/a-row-of-blue-towels-hanging-from-a-clothes-line-Pz8O67wagn0",
+      "author": "Dimaz Fakhruddin",
+      "alt": "a row of blue towels hanging from a clothes line",
+      "url": "https://images.unsplash.com/photo-1558703374-f9a51255e1cc",
+      "id": "indigo-cloth",
+      "original_width": 2143,
+      "original_height": 2679
+    }
+  ]
+}

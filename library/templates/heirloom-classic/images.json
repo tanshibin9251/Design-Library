@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "dining-room",
+      "author": "Clay Banks",
+      "source": "https://unsplash.com/photos/wooden-dining-table-and-chairs-in-sunlit-room-bcaFHquzu3M",
+      "url": "https://images.unsplash.com/photo-1773847521422-77ff84e29353",
+      "alt": "Wooden dining table and chairs in a sunlit room",
+      "original_width": 2267,
+      "original_height": 3400
+    },
+    {
+      "source": "https://unsplash.com/photos/a-neatly-made-bed-in-a-modern-hotel-room-mNdhu5gl_P4",
+      "author": "Meklay YOTKHAMSAY",
+      "alt": "A neatly made bed in a modern hotel room",
+      "id": "bedroom",
+      "url": "https://images.unsplash.com/photo-1772476361154-e894ba10d757",
+      "original_width": 6707,
+      "original_height": 4471
+    }
+  ]
+}

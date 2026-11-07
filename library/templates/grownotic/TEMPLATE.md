@@ -34,3 +34,6 @@ Home · Services · About · Contact · Portfolio · Case study · Blog · Singl
 ## 用法
 - 这是为一个具体品牌定制的模板：颜色字体可通过导出参数换，但构图围绕 logo 的圆环和箭头，换别的品牌时需要换掉 `#gn-mark`。
 - 文案取自 grownotic 项目的视觉稿（`PROJECTS/GROWNOTIC/INHOUSE/grownotic/demo/`），带 `[待你填]` 的都是还没确认的事实。
+
+## 共用交互基础（2026-11-07）
+构建与 MCP 读取 fragments 时，build/template_enhance.py 将共用键盘焦点、跳转正文、手机菜单补齐、页脚分组、无动作表单的本地验证/反馈和静态购物演示打入 nav/pages/footer；HTML、PHP、JSON 导出与预览共用，不依赖 Live。原有业务专属脚本保留。购物车仅本浏览器示例数据，不是真实库存、税费、支付或订单服务；表单不发送信息，勿填写真实凭据。可选 interactions.js 为本模板专属行为。未提供实际照片的位置保留缺图；具名人员、实际客户项目与效果对比不可用无关库存图替代。

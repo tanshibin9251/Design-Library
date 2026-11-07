@@ -48,7 +48,7 @@ def make_catalog(public=False):
         items.append(dict(
             id=f"template:{slug}", kind="template", slug=slug, name=x["name"], name_zh=x["zh"], tracks=["web", "elementor"], local_only=(x["license"] == "local_only"),
             summary=x["tag"], tags=x["types"] + x["ind"] + x["styles"], types=x["types"], industries=x["ind"], styles=x["styles"],
-            page_count=len(x["pagelist"]), pages=x["pagelist"], needs=["å…è´¹"], license="åº“å†…è‡ªæœ‰", format=x["format"],
+            page_count=len(x["pagelist"]), pages=x["pagelist"], needs=["å…è´¹"], license=x["license"], format=x["format"],
             tokens=dict(colors=x["colors"], fonts=x["fonts"], tok=x["tok"]), files=files,
             api=dict(full=f"/api/website/templates/{PT.tpl_rel(slug, x['ind'])}/{slug}.json", site_json=f"/api/website/templates/{PT.tpl_rel(slug, x['ind'])}/{slug}.site.json",
                      html_zip=f"/api/website/templates/{PT.tpl_rel(slug, x['ind'])}/{slug}-html-site.zip", php_zip=f"/api/website/templates/{PT.tpl_rel(slug, x['ind'])}/{slug}-php-site.zip"),
@@ -78,7 +78,7 @@ def make_catalog(public=False):
         items.append(dict(
             id=f"graphic:{g['slug']}", kind="graphic", slug=g["slug"], name=g["name"], name_zh=g["zh"], tracks=["graphic"], local_only=(g["license"] == "local_only"),
             summary=g["tag"], tags=[g["type"]] + g["styles"] + g["ind"], graphic_type=g["type"], size=sd, industries=g["ind"], styles=g["styles"],
-            needs=["HTML/CSSï¼ˆæµè§ˆå™¨æˆªå›¾å¯¼å‡º PNGï¼‰"], license="åº“å†…è‡ªæœ‰", tokens=dict(colors=g["colors"], fonts=g["fonts"]),
+            needs=["HTML/CSSï¼ˆæµè§ˆå™¨æˆªå›¾å¯¼å‡º PNGï¼‰"], license=g["license"], tokens=dict(colors=g["colors"], fonts=g["fonts"]),
             files=dict(dir=rel(d), meta=rel(d / "graphic.json"), html=rel(d / "graphic.html"), doc=rel(d / "DESIGN.md")),
             api=dict(full=f"/api/graphic/designs/{g['type']}/{g['slug']}.json", html=f"/api/graphic/designs/{g['type']}/{g['slug']}.html"),
             preview=f"/#/graphic/{g['slug']}"))

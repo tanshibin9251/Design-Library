@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/workshop-tools-are-scattered-on-a-work-table-f0T-eGanP_4",
+      "author": "Ben Spray",
+      "alt": "Workshop tools are scattered on a work table",
+      "id": "tools",
+      "url": "https://images.unsplash.com/photo-1745449064670-94bd0fc13df8",
+      "original_width": 4272,
+      "original_height": 2828
+    },
+    {
+      "id": "dining-room",
+      "author": "Clay Banks",
+      "source": "https://unsplash.com/photos/wooden-dining-table-and-chairs-in-sunlit-room-bcaFHquzu3M",
+      "url": "https://images.unsplash.com/photo-1773847521422-77ff84e29353",
+      "alt": "Wooden dining table and chairs in a sunlit room",
+      "original_width": 2267,
+      "original_height": 3400
+    }
+  ]
+}

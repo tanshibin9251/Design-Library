@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-brown-cocker-spaniel-dog-sitting-with-a-pink-leash-UBnGKGOJYBk",
+      "author": "Oleksandra Tsabii",
+      "alt": "A brown cocker spaniel dog sitting with a pink leash",
+      "url": "https://images.unsplash.com/photo-1780319985575-285d3fe93d8e",
+      "id": "pet-dog",
+      "original_width": 4936,
+      "original_height": 6582
+    }
+  ]
+}

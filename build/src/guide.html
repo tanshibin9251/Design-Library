@@ -1,0 +1,23 @@
+<h1>Find it. Try it. Make it yours.</h1>
+<p>设计资源库：先挑一个合适的设计，再预览、定制和导出。无需先安装 MCP。</p>
+<p class="guide-counts">{{COUNTS}}</p>
+<h2>1 · Browse and preview / 挑选与预览</h2>
+<ol><li>Choose <b>Website</b> for templates, effects and page transitions, or <b>Graphic</b> for designs and assets.</li><li>Search in the current category, or choose <b>All resources · 全库</b>. Filters apply when browsing one category.</li><li>Open a card and read <b>Overview</b>: page list, customization options and what still needs integration.</li><li>Preview Desktop, Tablet and Mobile. <b>Compare edits</b> compares the original with your version on desktop; it does not compare different templates.</li></ol>
+<p>Use <b>+ Compare</b> on template cards to compare up to three different candidates, then open <b>Compare templates</b>.</p>
+<p><b>Live</b> adds preview-only enhancements. Template-native interactions and exported behaviour should be checked in the downloaded files.</p>
+<h2>2 · Make a project shortlist / 按项目收藏</h2>
+<p>Tap a heart to add a resource to the active project. Open <b>My list</b> to create or switch projects, add a brief and copy an AI brief for Claude Code or Codex.</p>
+<p><b>Back up projects</b> saves your picks and notes as JSON. <b>Restore backup</b> adds projects without replacing existing ones. These lists live only in this browser; they are not an account or cloud sync. Preview color/font settings are not included in the project backup.</p>
+<h2>3 · Choose the right export / 选择导出格式</h2>
+<table><thead><tr><th>Your goal</th><th>Choose</th><th>What you get</th></tr></thead><tbody><tr><td>Static hosting / quick preview</td><td>HTML site</td><td>Pages and shared CSS. Open index.html.</td></tr><tr><td>Hostinger with PHP</td><td>PHP site</td><td>Pages with a shared header/footer. Requires PHP hosting.</td></tr><tr><td>WordPress / Elementor</td><td>Elementor reference</td><td>Style values, HTML and a prompt to rebuild with widgets. <b>Not an importable Kit.</b></td></tr><tr><td>AI handoff / portable source</td><td>JSON site</td><td>Tokens, navigation, footer and page source in one file.</td></tr></tbody></table>
+<p>Exports use the current customization settings. Imported full-page templates retain their own CSS and have different customization options. Effects provide snippets; graphics provide fixed-size HTML compositions; assets provide their source file.</p>
+<h2>4 · Know what is a demo / 分清演示与真实服务</h2>
+<p>Templates contain example text and business details. A form, checkout or booking page does not imply that email, payment, accounts or a booking backend is connected. Read the item’s notes, replace content and test the complete flow before launching a customer site.</p>
+<p>Images, external photos and Google Fonts can require an internet connection. Image counts and placeholder counts in Overview are source-inspection signals, not browser certification. External photographs retain their own licences and credits.</p>
+<h2>5 · Use Claude Code or Codex / 交给 AI</h2>
+<p>Start with <b>Copy AI brief</b> in My list. Fill in your goal, audience, real content and absolute project folder. Ask the agent to read the chosen design instructions before exporting.</p>
+<p>If <code>design-library</code> MCP is registered in your client: <code>library_overview → search_library → get_template / get_effect → export_site</code>. The local entry is <code>mcp-server/server.py</code>; dependencies are listed in <code>mcp-server/requirements.txt</code>. Claude Code and Codex manage MCP registration separately.</p>
+<p>Without MCP, an agent with access to the source project can read <code>library/catalog.json</code> and the resource’s documentation. Online public metadata is available at <code>/api/catalog.json</code>; template files are under <code>/api/website/templates/&lt;group&gt;/&lt;slug&gt;/</code>.</p>
+<h2>6 · Add resources / 收集新资源</h2>
+<p>The website is the browsing and reuse interface. Collection happens in the source project: put a resource in <code>_work/inbox/</code>, check its source and licence, classify and import it, then build. Follow <code>AGENTS.md</code>, <code>docs/CONTENT_WORKFLOWS.md</code> and <code>library/FORMAT.md</code>. Website deployment then follows the configured GitHub workflow.</p>
+<p>Unclear licences stay in the inbox. <code>local_only</code> resources stay local and must not enter the public site or downloadable source repository.</p>

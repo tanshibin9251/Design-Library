@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/hands-playing-a-digital-piano-keyboard-with-a-screen-wyfjQSV1skI",
+      "author": "Seungmin Yoon",
+      "alt": "Hands playing a digital piano keyboard with a screen",
+      "url": "https://images.unsplash.com/photo-1771209195708-f547e3649ae8",
+      "id": "piano",
+      "original_width": 6480,
+      "original_height": 4320
+    }
+  ]
+}

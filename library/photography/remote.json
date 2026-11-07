@@ -1,0 +1,367 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "checked_at": "2026-11-07",
+  "license_url": "https://unsplash.com/license",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-massage-room-is-clean-and-ready-for-a-session-oAvwAKFiU7Q",
+      "author": "Jakub Klucký",
+      "alt": "A massage room is clean and ready for a session",
+      "url": "https://images.unsplash.com/photo-1745327883290-1e9c6447b938",
+      "id": "spa-room",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "source": "https://unsplash.com/photos/a-brown-cocker-spaniel-dog-sitting-with-a-pink-leash-UBnGKGOJYBk",
+      "author": "Oleksandra Tsabii",
+      "alt": "A brown cocker spaniel dog sitting with a pink leash",
+      "url": "https://images.unsplash.com/photo-1780319985575-285d3fe93d8e",
+      "id": "pet-dog",
+      "original_width": 4936,
+      "original_height": 6582
+    },
+    {
+      "source": "https://unsplash.com/photos/a-row-of-blue-towels-hanging-from-a-clothes-line-Pz8O67wagn0",
+      "author": "Dimaz Fakhruddin",
+      "alt": "a row of blue towels hanging from a clothes line",
+      "url": "https://images.unsplash.com/photo-1558703374-f9a51255e1cc",
+      "id": "indigo-cloth",
+      "original_width": 2143,
+      "original_height": 2679
+    },
+    {
+      "source": "https://unsplash.com/photos/fresh-vegetables-are-displayed-at-a-farmers-market-kT8sV5WZPJI",
+      "author": "David Trinks",
+      "alt": "Fresh vegetables are displayed at a farmer's market",
+      "url": "https://images.unsplash.com/photo-1751778682705-1823ca6e0949",
+      "id": "vegetables",
+      "original_width": 3600,
+      "original_height": 2400
+    },
+    {
+      "source": "https://unsplash.com/photos/traditional-japanese-room-with-tatami-mats-and-shoji-screens-dEiBSNmahgw/",
+      "author": "5010",
+      "alt": "Traditional japanese room with tatami mats and shoji screens",
+      "url": "https://images.unsplash.com/photo-1759310707368-e36f321b3187",
+      "id": "tatami-room",
+      "original_width": 3701,
+      "original_height": 2463
+    },
+    {
+      "source": "https://unsplash.com/photos/hands-playing-a-digital-piano-keyboard-with-a-screen-wyfjQSV1skI",
+      "author": "Seungmin Yoon",
+      "alt": "Hands playing a digital piano keyboard with a screen",
+      "url": "https://images.unsplash.com/photo-1771209195708-f547e3649ae8",
+      "id": "piano",
+      "original_width": 6480,
+      "original_height": 4320
+    },
+    {
+      "source": "https://unsplash.com/photos/diverse-audience-attentively-listening-at-a-conference-event-CvG2lnWbm8s",
+      "author": "Carlos Gil",
+      "alt": "Diverse audience attentively listening at a conference event",
+      "url": "https://images.unsplash.com/photo-1769798643237-8642a3fbe5bc",
+      "id": "conference",
+      "original_width": 5000,
+      "original_height": 3333
+    },
+    {
+      "source": "https://unsplash.com/photos/hiker-with-poles-looks-out-over-a-rocky-mountainous-landscape-jgfcVkFXWCU",
+      "author": "Kyle Hinkson",
+      "alt": "Hiker with poles looks out over a rocky, mountainous landscape",
+      "url": "https://images.unsplash.com/photo-1771827680066-b4fbaff2ef3a",
+      "id": "hiking",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "source": "https://unsplash.com/photos/badminton-players-on-an-indoor-court-through-a-racket-pRUw9c66zJA",
+      "author": "Irish83",
+      "alt": "Badminton players on an indoor court through a racket",
+      "url": "https://images.unsplash.com/photo-1780233689566-55045608bd17",
+      "id": "badminton",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "source": "https://unsplash.com/photos/a-large-fireworks-is-lit-up-the-night-sky-0Q2VaquSlZM",
+      "author": "ayumi kubo",
+      "alt": "A large fireworks is lit up the night sky",
+      "url": "https://images.unsplash.com/photo-1723127220966-cf3c9e120a42",
+      "id": "fireworks",
+      "original_width": 4000,
+      "original_height": 6000
+    },
+    {
+      "source": "https://unsplash.com/photos/skincare-products-arranged-on-a-bathroom-counter-OZg4Mn3GP_s",
+      "author": "Ela De Pure",
+      "alt": "Skincare products arranged on a bathroom counter",
+      "url": "https://images.unsplash.com/photo-1774620714979-2c258294fa48",
+      "id": "skincare",
+      "original_width": 2400,
+      "original_height": 2400
+    },
+    {
+      "source": "https://unsplash.com/photos/modern-office-lounge-area-with-contemporary-furniture-QVVHV24DA_o",
+      "author": "Aalo Lens",
+      "alt": "Modern office lounge area with contemporary furniture",
+      "url": "https://images.unsplash.com/photo-1774953037913-af0cf688491a",
+      "id": "office",
+      "original_width": 4096,
+      "original_height": 2300
+    },
+    {
+      "source": "https://unsplash.com/photos/person-in-gloves-writing-on-clipboard-with-volunteers-in-background-HpW0eYZi0QI",
+      "author": "Vitaly Gariev",
+      "alt": "Person in gloves writing on clipboard with volunteers in background",
+      "url": "https://images.unsplash.com/photo-1758599668125-e154250f24bd",
+      "id": "volunteers",
+      "original_width": 3840,
+      "original_height": 2160
+    },
+    {
+      "source": "https://unsplash.com/photos/a-woman-is-cooking-vegetables-dQZCfPMrQwE",
+      "author": "Sweet Life",
+      "alt": "a woman is cooking vegetables",
+      "url": "https://images.unsplash.com/photo-1683556262029-56f31fbf75ee",
+      "id": "cooking",
+      "original_width": 3840,
+      "original_height": 5760
+    },
+    {
+      "source": "https://unsplash.com/photos/a-neatly-made-bed-in-a-modern-hotel-room-mNdhu5gl_P4",
+      "author": "Meklay YOTKHAMSAY",
+      "alt": "A neatly made bed in a modern hotel room",
+      "id": "bedroom",
+      "url": "https://images.unsplash.com/photo-1772476361154-e894ba10d757",
+      "original_width": 6707,
+      "original_height": 4471
+    },
+    {
+      "source": "https://unsplash.com/photos/a-car-driving-on-a-road-kMO2EtBVy04",
+      "author": "Luise and Nic",
+      "alt": "a car driving on a road",
+      "id": "car",
+      "url": "https://images.unsplash.com/photo-1662328775652-8ac570559613",
+      "original_width": 3521,
+      "original_height": 5282
+    },
+    {
+      "source": "https://unsplash.com/photos/assortment-of-handmade-ceramic-bowls-and-dishes-on-shelves-1FPwnKpLeOE",
+      "author": "Khanh Do",
+      "alt": "Assortment of handmade ceramic bowls and dishes on shelves",
+      "id": "ceramics",
+      "url": "https://images.unsplash.com/photo-1764072396689-953cc059db86",
+      "original_width": 3602,
+      "original_height": 2402
+    },
+    {
+      "source": "https://unsplash.com/photos/museum-exhibition-with-sculpture-and-artwork-on-walls-A7stKKNY1GQ",
+      "author": "Filipe Nobre",
+      "alt": "Museum exhibition with sculpture and artwork on walls",
+      "id": "gallery",
+      "url": "https://images.unsplash.com/photo-1774125553858-3f41e84d4e92",
+      "original_width": 3056,
+      "original_height": 4064
+    },
+    {
+      "source": "https://unsplash.com/photos/a-chef-presents-a-beautifully-plated-dish-6jVutqtcgQs",
+      "author": "Tommaso Ubezio",
+      "alt": "A chef presents a beautifully plated dish",
+      "id": "chef",
+      "url": "https://images.unsplash.com/photo-1750943082452-c714763f73b2",
+      "original_width": 4480,
+      "original_height": 6720
+    },
+    {
+      "source": "https://unsplash.com/photos/barista-prepares-coffee-with-siphon-brewer-in-cafe-EPNMqEzb7AY",
+      "author": "Harman Tatla",
+      "alt": "Barista prepares coffee with siphon brewer in cafe",
+      "id": "siphon",
+      "url": "https://images.unsplash.com/photo-1774014045872-3cc2b5e7e816",
+      "original_width": 7728,
+      "original_height": 5152
+    },
+    {
+      "source": "https://unsplash.com/photos/man-practicing-martial-arts-with-a-high-kick-B40LpIOuQaI",
+      "author": "Anastase Maragos",
+      "alt": "Man practicing martial arts with a high kick",
+      "id": "martial-arts",
+      "url": "https://images.unsplash.com/photo-1773289338368-e3683a97bc74",
+      "original_width": 4406,
+      "original_height": 6606
+    },
+    {
+      "source": "https://unsplash.com/photos/a-vinyl-record-spinning-on-a-turntable-in-low-light-DIGeBP4UEVk/",
+      "author": "Dmitry Spravko",
+      "alt": "A vinyl record spinning on a turntable in low light",
+      "id": "vinyl",
+      "url": "https://images.unsplash.com/photo-1781756547472-46813046281c",
+      "original_width": 5118,
+      "original_height": 7677
+    },
+    {
+      "source": "https://unsplash.com/photos/sunlight-filtering-through-dense-green-forest-canopy-d1fCH5ngIMs",
+      "author": "Ian Murray",
+      "alt": "Sunlight filtering through dense green forest canopy",
+      "id": "forest",
+      "url": "https://images.unsplash.com/photo-1769954305876-248e4d4cef76",
+      "original_width": 3966,
+      "original_height": 2389
+    },
+    {
+      "source": "https://unsplash.com/photos/workshop-tools-are-scattered-on-a-work-table-f0T-eGanP_4",
+      "author": "Ben Spray",
+      "alt": "Workshop tools are scattered on a work table",
+      "id": "tools",
+      "url": "https://images.unsplash.com/photo-1745449064670-94bd0fc13df8",
+      "original_width": 4272,
+      "original_height": 2828
+    },
+    {
+      "source": "https://unsplash.com/photos/sushi-chefs-preparing-food-in-a-japanese-restaurant-R0QqSK9wkFU/",
+      "author": "Johan Mouchet",
+      "alt": "Sushi chefs preparing food in a japanese restaurant",
+      "id": "sushi-chefs",
+      "url": "https://images.unsplash.com/photo-1752135534175-44aa59a1bb50",
+      "original_width": 5674,
+      "original_height": 3783
+    },
+    {
+      "id": "living-room",
+      "author": "Blake Wisz",
+      "source": "https://unsplash.com/photos/a-living-room-filled-with-furniture-and-a-large-window-hGFu6Wbu7Lw",
+      "url": "https://images.unsplash.com/photo-1639422947517-8910fd782193",
+      "alt": "Living room with a sofa and coffee table",
+      "original_width": 8161,
+      "original_height": 5441
+    },
+    {
+      "id": "dining-room",
+      "author": "Clay Banks",
+      "source": "https://unsplash.com/photos/wooden-dining-table-and-chairs-in-sunlit-room-bcaFHquzu3M",
+      "url": "https://images.unsplash.com/photo-1773847521422-77ff84e29353",
+      "alt": "Wooden dining table and chairs in a sunlit room",
+      "original_width": 2267,
+      "original_height": 3400
+    },
+    {
+      "id": "blue-sofa",
+      "author": "Kam Idris",
+      "source": "https://unsplash.com/photos/blue-sofa-beside-brown-wooden-table-wF9NH87U-2E",
+      "url": "https://images.unsplash.com/photo-1630585308572-f53438fc684f",
+      "alt": "Illustrative interior render with a blue sofa and wooden table",
+      "original_width": 2692,
+      "original_height": 3000
+    },
+    {
+      "id": "restaurant",
+      "author": "Antonio Araujo",
+      "source": "https://unsplash.com/photos/cozy-restaurant-interior-with-tables-and-seating-yQYtdkKOLnQ",
+      "url": "https://images.unsplash.com/photo-1776763255189-3c8237aec808",
+      "alt": "Restaurant interior with tables and seating",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "id": "dental",
+      "author": "Harold Hisona",
+      "source": "https://unsplash.com/photos/dentist-talking-to-patient-in-a-modern-dental-office-Bg81yWKZlMg",
+      "url": "https://images.unsplash.com/photo-1777331903190-341a3dd0441b",
+      "alt": "Illustrative dental consultation in a clinic",
+      "original_width": 3648,
+      "original_height": 2736
+    },
+    {
+      "id": "salon",
+      "author": "Vinicius \"amnx\" Amano",
+      "source": "https://unsplash.com/photos/a-woman-getting-her-hair-done-in-a-salon-lK8oXGycy88",
+      "url": "https://images.unsplash.com/photo-1675034743339-0b0747047727",
+      "alt": "Illustrative hair styling session",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "id": "classroom",
+      "author": "Yogendra Singh",
+      "source": "https://unsplash.com/photos/girls-in-classroom-M92wusZZ_qg",
+      "url": "https://images.unsplash.com/photo-1573894998033-c0cef4ed722b",
+      "alt": "Students learning in a classroom",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "id": "gym",
+      "author": "Mark Bertulfo",
+      "source": "https://unsplash.com/photos/assorted-gym-equipment-inside-the-gym-XKimW0pke6w",
+      "url": "https://images.unsplash.com/photo-1561214078-f3247647fc5e",
+      "alt": "Gym interior and training equipment",
+      "original_width": 5184,
+      "original_height": 3456
+    },
+    {
+      "id": "beach",
+      "author": "Colin Watts",
+      "source": "https://unsplash.com/photos/a-tropical-beach-with-palm-trees-and-clear-water-slj5hTTA8uM",
+      "url": "https://images.unsplash.com/photo-1734362849279-00f00f92430e",
+      "alt": "Palm trees and clear sea in the Maldives",
+      "original_width": 5978,
+      "original_height": 4000
+    },
+    {
+      "id": "workshop",
+      "author": "Winston Chen",
+      "source": "https://unsplash.com/photos/cars-being-repaired-in-a-workshop-VdXnpwrp1qc",
+      "url": "https://images.unsplash.com/photo-1767681092416-bccf9410bda4",
+      "alt": "Illustrative vehicle service workshop",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "id": "wedding",
+      "author": "Céline Druguet",
+      "source": "https://unsplash.com/photos/a-close-up-of-two-people-holding-hands-over-a-bouquet-of-flowers-Rnton6rhDe4",
+      "url": "https://images.unsplash.com/photo-1684244276932-6ae853774c4d",
+      "alt": "Wedding detail with hands and flowers",
+      "original_width": 4480,
+      "original_height": 6720
+    },
+    {
+      "id": "treatment",
+      "author": "Edward Muntinga",
+      "source": "https://unsplash.com/photos/a-woman-getting-a-massage-from-a-man-in-a-white-shirt-Ob97XSSB1Wc",
+      "url": "https://images.unsplash.com/photo-1699523229232-dce23cce2f22",
+      "alt": "Illustrative manual therapy session",
+      "original_width": 6016,
+      "original_height": 4016
+    },
+    {
+      "source": "https://unsplash.com/photos/a-clothing-store-with-clothes-on-racks-and-a-mirror-Ws0skj_Zzrg",
+      "author": "Marcin Dyguda",
+      "alt": "A clothing store with clothes on racks and a mirror",
+      "id": "fashion",
+      "url": "https://images.unsplash.com/photo-1726128449240-6569b63355d2",
+      "original_width": 4000,
+      "original_height": 6000
+    },
+    {
+      "source": "https://unsplash.com/photos/retro-diner-with-red-booths-and-chrome-stools-yM5qo0dXQUE",
+      "author": "T",
+      "alt": "Retro diner with red booths and chrome stools",
+      "id": "diner",
+      "url": "https://images.unsplash.com/photo-1767769354536-bf79c6881687",
+      "original_width": 1984,
+      "original_height": 2976
+    },
+    {
+      "source": "https://unsplash.com/photos/elegant-wedding-venue-with-chandeliers-and-floral-arrangements-AzvGCVHGPCE",
+      "author": "Konark Weddings",
+      "alt": "Elegant wedding venue with chandeliers and floral arrangements",
+      "id": "wedding-venue",
+      "url": "https://images.unsplash.com/photo-1773745060497-4cc1df774c72",
+      "original_width": 5989,
+      "original_height": 3993
+    }
+  ]
+}

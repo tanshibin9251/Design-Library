@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/diverse-audience-attentively-listening-at-a-conference-event-CvG2lnWbm8s",
+      "author": "Carlos Gil",
+      "alt": "Diverse audience attentively listening at a conference event",
+      "url": "https://images.unsplash.com/photo-1769798643237-8642a3fbe5bc",
+      "id": "conference",
+      "original_width": 5000,
+      "original_height": 3333
+    }
+  ]
+}

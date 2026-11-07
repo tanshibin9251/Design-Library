@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/man-practicing-martial-arts-with-a-high-kick-B40LpIOuQaI",
+      "author": "Anastase Maragos",
+      "alt": "Man practicing martial arts with a high kick",
+      "id": "martial-arts",
+      "url": "https://images.unsplash.com/photo-1773289338368-e3683a97bc74",
+      "original_width": 4406,
+      "original_height": 6606
+    }
+  ]
+}

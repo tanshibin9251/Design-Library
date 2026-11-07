@@ -32,7 +32,8 @@ def load_template(slug,full=True):
         if f.exists() and (full or p['slug']=='home'): homes[p['slug']]=read(f)
     x['pages']=homes
     x['dir']=d
-    return x
+    from template_enhance import enhance
+    return enhance(x)
 def load_effect(cat,slug):
     return jload(LIB/'effects'/cat/slug/'effect.json')
 def load_effects():

@@ -8,7 +8,7 @@
 
 | 模板 | 页数 | 行业 | 风格 | 格式 |
 |---|---|---|---|---|
-| [Modern SaaS](./templates/modern-saas/TEMPLATE.md)（`modern-saas`） | 22 | SaaS & Startup, IT & Technology | Minimal & Clean, Corporate & Professional | 完整可定制 |
+| [Modern SaaS](./templates/modern-saas/TEMPLATE.md)（`modern-saas`） | 23 | SaaS & Startup, IT & Technology | Minimal & Clean, Corporate & Professional | 完整可定制 |
 | [Enterprise Blue](./templates/enterprise-blue/TEMPLATE.md)（`enterprise-blue`） | 21 | Business & Consulting, IT & Technology | Corporate & Professional, Swiss & Grid | 完整可定制 |
 | [Fine Dining](./templates/fine-dining/TEMPLATE.md)（`fine-dining`） | 26 | Restaurant & Cafe | Elegant & Luxury, Dark & Moody | 完整可定制 |
 | [Boutique Rose](./templates/boutique-rose/TEMPLATE.md)（`boutique-rose`） | 24 | Fashion & Beauty | Elegant & Luxury, Editorial & Magazine, Minimal & Clean | 完整可定制 |

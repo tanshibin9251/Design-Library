@@ -15,14 +15,20 @@ const FG=[['type','Site type',DATA.types.map(([id,name])=>({id,name})),'types'],
 const TL=Object.fromEntries(DATA.types),IL=Object.fromEntries(DATA.inds.map(i=>[i.id,i.name])),YL=Object.fromEntries(DATA.styletax.map(i=>[i.id,i.name]));
 const DFX={primary:'#1f2a44',secondary:'#4b5675',text:'#1f2328',accent:'#e8590c',surface:'#faf8f5',border:'#e6e0d6',head:'Lora',body:'Mulish',radius:12,scale:100,speed:100};
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const sg=(k,d)=>{try{return localStorage.getItem(k)||d}catch(e){return d}},ss=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const sg=(k,d)=>{try{return localStorage.getItem(k)||d}catch(e){return d}},ss=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
 const S={live:true,theme:sg('theme','dark'),dom:sg('dom','website')==='graphic'?'graphic':'website',gf:{type:[],sty:[]},ac:'all',acol:'#111111',abg:'chk',sec:'template',q:'',f:{type:[],ind:[],sty:[]},soon:{},sort:'featured',ecat:'all',tech:'',route:null,page:'home',dev:'desktop',cmp:false,drawer:false,tab:'style',etab:null,pcat:'all',col:{}};
 if(S.dom==='graphic')S.sec='graphic';
+S.comparePicks=[];try{const picks=JSON.parse(sg('dl_compare','[]'));if(Array.isArray(picks))S.comparePicks=[...new Set(picks.filter(id=>typeof id==='string'&&DATA.templates.some(x=>x.slug===id)))].slice(0,3)}catch(e){}
+S.scope='current';S.filterQueries={};S.filterExpanded={};S.moreTools=false;
 const C={},CACHE={};
 /* ---------- favourites: kept in this browser only ---------- */
 let FAV=[];try{FAV=JSON.parse(sg('dl_favs','[]'))}catch(e){}FAV=Array.isArray(FAV)?FAV.filter(s=>typeof s==='string'&&s.includes(':')):[];
+let PROJECTS=DLState.migrate(sg('dl_projects_v1',''),FAV);
+const activeProject=()=>PROJECTS.projects.find(p=>p.id===PROJECTS.active);
+FAV=activeProject().items;
+function saveProjects(){activeProject().items=FAV;const stored=ss('dl_projects_v1',JSON.stringify(PROJECTS));ss('dl_favs',JSON.stringify(FAV));if(!stored)toast('Browser storage unavailable. Back up your projects before closing.')}
 const isFav=(k,s)=>FAV.includes(k+':'+s);
-function toggleFav(k,s){const key=k+':'+s,i=FAV.indexOf(key);i<0?FAV.push(key):FAV.splice(i,1);ss('dl_favs',JSON.stringify(FAV));return i<0}
+function toggleFav(k,s){const key=k+':'+s,i=FAV.indexOf(key);i<0?FAV.push(key):FAV.splice(i,1);saveProjects();return i<0}
 const items=k=>k==='effect'?DATA.effects:k==='transition'?DATA.transitions:k==='graphic'?DATA.graphics:k==='asset'?DATA.assets:DATA.templates;
 const esc=s=>s.replace(/&/g,'&amp;').replace(/"/g,'&quot;'),esc2=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1600)}
@@ -111,7 +117,7 @@ const ptUse=x=>`HOW TO USE — ${x.name}\n\n1) Static HTML / PHP site (multi-pag
 const go=h=>{location.hash=h};
 /* the list view lives in the URL (#/?s=template&ind=restaurant&sty=warm&q=cafe), so refresh, Back and shared links keep the same filters */
 function listQS(){const p=new URLSearchParams(),put=(k,v)=>{if(Array.isArray(v)?v.length:v)p.set(k,Array.isArray(v)?v.join(','):v)},sec=S.sec;
- p.set('s',sec);put('q',S.q.trim());
+ p.set('s',sec);put('q',S.q.trim());if(S.scope==='all')p.set('scope','all');
  if(sec==='template'){put('type',S.f.type);put('ind',S.f.ind);put('sty',S.f.sty);if(S.sort!=='featured')put('sort',S.sort)}
  else if(sec==='effect'){if(S.ecat!=='all')put('ec',S.ecat);put('tech',S.tech)}
  else if(sec==='transition')put('tg',S.tgrp);
@@ -119,18 +125,18 @@ function listQS(){const p=new URLSearchParams(),put=(k,v)=>{if(Array.isArray(v)?
  else if(S.ac!=='all')put('ac',S.ac);
  return'?'+p.toString().replace(/%2C/gi,',')}
 const lh=()=>'#/'+listQS();
-const backHash=()=>S.from==='saved'?'#/saved':lh();
+const backHash=()=>S.from==='saved'?'#/saved':S.from==='compare'?'#/compare':lh();
 function syncList(){try{const h=lh();if(location.hash!==h)history.replaceState(null,'',h)}catch(e){}}
 function applyQS(qs){const p=new URLSearchParams(qs),g=k=>p.get(k)||'',l=k=>g(k)?g(k).split(',').filter(Boolean):[],sec=g('s');
  if(!SEC.hasOwnProperty(sec))return;
- S.sec=sec;S.dom=(sec==='graphic'||sec==='asset')?'graphic':'website';ss('dom',S.dom);S.q=g('q');
+ S.sec=sec;S.dom=(sec==='graphic'||sec==='asset')?'graphic':'website';ss('dom',S.dom);S.q=g('q');S.scope=g('scope')==='all'?'all':'current';
  S.f={type:l('type'),ind:l('ind'),sty:l('sty')};FG.forEach(([k,,opts])=>{S.f[k]=S.f[k].filter(id=>opts.some(o=>o.id===id))});
  S.sort=['az','pages','newest'].includes(g('sort'))?g('sort'):'featured';
  S.ecat=g('ec')&&ecat(g('ec'))?g('ec'):'all';S.tech=['css','js'].includes(g('tech'))?g('tech'):'';
  S.tgrp=DATA.ptgroups.includes(g('tg'))?g('tg'):'';
  S.gf={type:l('gt').filter(id=>GT[id]),sty:l('gs').filter(id=>YL[id])};
  S.ac=g('ac')&&AC[g('ac')]?g('ac'):'all'}
-function parse(){const h=location.hash;S.guide=h==='#/guide';S.saved=h==='#/saved';const m=/^#\/(\w+)\/([\w-]+)(?:\/([\w-]+))?/.exec(h);S.route=m?{kind:m[1],slug:m[2]}:null;S.page=m&&m[3]?m[3]:'home';
+function parse(){const h=location.hash;S.guide=h==='#/guide';S.saved=h==='#/saved';S.comparing=h==='#/compare';const m=/^#\/(\w+)\/([\w-]+)(?:\/([\w-]+))?/.exec(h);S.route=m?{kind:m[1],slug:m[2]}:null;S.page=m&&m[3]?m[3]:'home';
  if(!m&&h.indexOf('#/?')===0)applyQS(h.slice(3));
  if(S.route){if(S.route.kind==='graphic'){S.dom='graphic';S.sec='graphic'}else if(S.route.kind==='asset'){S.dom='graphic';S.sec='asset'}else{S.dom='website';S.sec=SEC.hasOwnProperty(S.route.kind)?S.route.kind:'template'}}}
 addEventListener('hashchange',()=>{parse();S.drawer=false;S.etab=null;render()});
@@ -201,15 +207,20 @@ function list(){const q=S.q.trim().toLowerCase();let a;
  return a}
 const ecat=id=>DATA.ecats.find(c=>c.id===id);
 /* ---------- sidebar ---------- */
-function fgroup(g){const[k,title,opts,field]=g,T=DATA.templates,sel=S.f[k];
- const rows=opts.map(o=>({o,total:T.filter(x=>x[field].includes(o.id)).length,n:T.filter(x=>passes(x,k)&&x[field].includes(o.id)).length}));
- const live=rows.filter(r=>r.total).sort((a,b)=>b.total-a.total),soon=rows.filter(r=>!r.total),open=!S.col[k];
- const row=r=>`<button class="li fl ${sel.includes(r.o.id)?'on':''} ${r.n||sel.includes(r.o.id)?'':'dim'}" data-f="${k}:${r.o.id}"><i class="ck">${sel.includes(r.o.id)?I('check'):''}</i><span class="nm">${r.o.name}</span><span class="n">${r.n}</span></button>`;
- let h=`<div class="grp"><h6 class="tg" data-col="${k}"><span>${title}${sel.length?` <b class="badge">${sel.length}</b>`:''}</span><i>${I(open?'chd':'chr')}</i></h6>`;
- if(open){h+=live.map(row).join('');if(soon.length)h+=`<button class="li moresoon" data-soon="${k}">${S.soon[k]?'− Hide':'+ Show'} ${soon.length} coming soon</button>`+(S.soon[k]?soon.map(r=>`<div class="li soon"><i class="ck"></i><span class="nm">${r.o.name}</span><span class="n s">soon</span></div>`).join(''):'')}
+function fgroup(g){const[k,title,opts,field]=g,sel=S.f[k],query=(S.filterQueries[k]||'').toLowerCase();
+ const rows=opts.map(o=>({o,total:DATA.templates.filter(x=>x[field].includes(o.id)).length,n:DATA.templates.filter(x=>passes(x,k)&&x[field].includes(o.id)).length})).filter(r=>r.total).sort((a,b)=>b.total-a.total);
+ const matches=rows.filter(r=>!query||(r.o.name+' '+r.o.id+' '+(r.o.zh||'')).toLowerCase().includes(query));
+ const visible=query||S.filterExpanded[k]?matches:matches.filter((r,i)=>i<7||sel.includes(r.o.id));
+ const open=!S.col[k];let h=`<div class="grp"><button class="tg filter-heading" data-col="${k}" aria-expanded="${open}"><span>${title}${sel.length?' · '+sel.length:''}</span>${I(open?'chd':'chr')}</button>`;
+ if(open){if(rows.length>7)h+=`<input class="filter-search" data-filter-query="${k}" aria-label="Find ${title}" placeholder="Find ${title.toLowerCase()}…" value="${esc(S.filterQueries[k]||'')}">`;
+ h+=visible.map(r=>`<button class="li fl ${sel.includes(r.o.id)?'on':''} ${r.n||sel.includes(r.o.id)?'':'dim'}" data-f="${k}:${r.o.id}" aria-pressed="${sel.includes(r.o.id)}"><i class="ck">${sel.includes(r.o.id)?I('check'):''}</i><span class="nm">${r.o.name}</span><span class="n">${r.n}</span></button>`).join('');
+ if(!matches.length)h+='<p class="filter-none">No matching category</p>';
+ if(rows.length>7&&!query)h+=`<button class="li filter-more" data-filter-more="${k}">${S.filterExpanded[k]?'Show fewer':'Show all '+rows.length}</button>`;}
  return h+'</div>'}
+
 function sideHTML(){const cn=k=>items(k).length;
  let h=`<div class="mhead"><span>Filters</span><button class="btn ghost" data-sidetoggle aria-label="Close filters">${I('x')}</button></div><div class="grp nav"><h6>${DOMS[S.dom][0]}</h6>${DOMS[S.dom][3].map(k=>`<button data-sec="${k}" class="${S.sec===k?'on':''}"><span class="ic">${I(SEC[k][2])}</span>${SEC[k][0]}<span class="n">${cn(k)}</span></button>`).join('')}</div>`;
+ if(S.scope==='all'&&S.q.trim())return h+'<p class="scope-note">Searching all resources. Choose a category to use its filters.</p>';
  if(S.sec==='asset')h+=assetSide();
  else if(S.sec==='graphic')h+=gfilterHTML();
  else if(S.sec==='template'){if(nFilters())h+=`<button class="clearall" data-fclear>${I('reset')} Clear ${nFilters()} filter${nFilters()>1?'s':''}</button>`;h+=FG.map(fgroup).join('')}
@@ -220,7 +231,7 @@ function sideHTML(){const cn=k=>items(k).length;
  else h+=`<div class="grp"><h6>Style</h6><button class="li ${!S.tgrp?'on':''}" data-tgrp="">All<span class="n">${cn('transition')}</span></button>${DATA.ptgroups.map(g=>`<button class="li ${S.tgrp===g?'on':''}" data-tgrp="${g}">${g}<span class="n">${DATA.transitions.filter(t=>t.group===g).length}</span></button>`).join('')}</div><div class="callout" style="margin:0 0 0 0">${I('tr')}<span>Pick one here, or choose it inside any template's <b>Customize › Page transition</b>.</span></div>`;
  return h+`<div class="mfoot"><button class="btn dark block" data-sidetoggle>Show ${list().length} results</button></div>`}
 /* ---------- list ---------- */
-const pvImg=(k,x)=>`<img class="pimg" src="previews/website/${k==='t'?'templates/'+x.pg:'effects/'+x.eg+'/'+x.cat}/${x.slug}.jpg?v=${x.pv}" loading="lazy" decoding="async" width="640" height="400" alt="">`;
+const pvImg=(k,x)=>`<img class="pimg" src="previews/website/${k==='t'?'templates/'+x.pg:'effects/'+x.eg+'/'+x.cat}/${x.slug}.jpg?v=${x.pv}" loading="lazy" decoding="async" width="640" height="400" alt="" onerror="this.style.display='none';this.parentElement.classList.add('preview-missing')">`;
 function card(x,kind){const o=`data-open="${kind}/${x.slug}"`;if(kind==='graphic')return gcard(x);if(kind==='asset')return acard(x);
  if(kind==='effect'&&x.pv)return`<button class="card" ${o}><div class="thumb">${pvImg('e',x)}<span class="openchip">Preview ${I('ext')}</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="tag ${x.tech==='css'?'t-pk':'t-p'}">${x.tech==='css'?'Pure CSS':'Needs JS'}</span><span class="tag t-x">${ecat(x.cat).name}</span></div></div></button>`;
  if(kind==='template'&&x.pv){const sw=['primary','secondary','accent','surface','border'].map(k=>`<i style="background:${x.colors[k]}"></i>`).join('');return`<button class="card" ${o}><div class="thumb">${pvImg('t',x)}<span class="openchip">Open full screen ${I('ext')}</span><span class="pgs">${x.pagelist.length} pages</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="sw">${sw}</span>${x.types.slice(0,2).map(t=>`<span class="tag t-g">${TL[t]}</span>`).join('')}${x.styles.slice(0,2).map(t=>`<span class="tag t-p">${YL[t]}</span>`).join('')}</div></div></button>`}
@@ -230,24 +241,24 @@ function card(x,kind){const o=`data-open="${kind}/${x.slug}"`;if(kind==='graphic
  return`<button class="card" ${o}><div class="thumb"><iframe data-thumb srcdoc="${esc(thumbDoc(x))}" loading="lazy" tabindex="-1"></iframe><span class="openchip">Open full screen ${I('ext')}</span><span class="pgs">${x.pagelist.length} pages</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="sw">${sw}</span>${x.types.slice(0,2).map(t=>`<span class="tag t-g">${TL[t]}</span>`).join('')}${x.styles.slice(0,2).map(t=>`<span class="tag t-p">${YL[t]}</span>`).join('')}</div></div></button>`}
 /* heart button sits beside the card (a button can't live inside the card button) */
 const favBtn=(k,s,cls)=>{const on=isFav(k,s),t=on?'Remove from My list':'Save to My list';return`<button class="favb ${cls||''} ${on?'on':''}" data-fav="${k}:${s}" aria-pressed="${on}" aria-label="${t}" title="${t}">${I('heart')}</button>`};
-const cardW=(x,k)=>`<div class="cw">${card(x,k)}${favBtn(k,x.slug)}</div>`;
+const cardW=(x,k)=>`<div class="cw">${card(x,k)}${favBtn(k,x.slug)}${k==='template'?`<div class="capabilities"><span>${x.format==='documents'?'Imported pages':'Customizable'}</span><span>Frontend demo</span><button class="compare-pick ${S.comparePicks.includes(x.slug)?'on':''}" data-compare-pick="${x.slug}" aria-pressed="${S.comparePicks.includes(x.slug)}" aria-label="Compare ${esc(x.name)}">${S.comparePicks.includes(x.slug)?'✓ Compare':'+ Compare'}</button>${x.review&&x.review.images?'<span>Images included as references</span>':''}</div>`:''}</div>`;
 const fitThumbs=()=>$$('.thumb').forEach(t=>{const f=$('iframe',t);if(!f)return;if(t.dataset.gw){const w=+t.dataset.gw,h=+t.dataset.gh,k=Math.min(t.clientWidth/w,t.clientHeight/h);f.style.width=w+'px';f.style.height=h+'px';f.style.left=(t.clientWidth-w*k)/2+'px';f.style.top=(t.clientHeight-h*k)/2+'px';f.style.transform=`scale(${k})`}else f.style.transform=`scale(${t.clientWidth/1280})`});
 function fchips(){const out=[];FG.forEach(([k,,opts])=>S.f[k].forEach(id=>out.push(`<button class="fchip" data-f="${k}:${id}">${opts.find(o=>o.id===id).name}<i>×</i></button>`)));return out.length?`<div class="fchips">${out.join('')}<button class="fclear" data-fclear>Clear all</button></div>`:''}
-function listInner(){const a=list();let title=SEC[S.sec][0],l1,l2,tools='';
+function listInner(){if(S.scope==='all'&&S.q.trim())return globalSearchView();const a=list();let title=SEC[S.sec][0],l1,l2,tools='';
  if(S.sec==='effect'){const c=S.ecat==='all'?null:ecat(S.ecat);title=c?c.name:'Effects';l1=c?c.desc:'Hover, scroll, text and layout effects for every kind of site. Every one can be recoloured, re-fonted and re-timed in the preview.';l2=c?c.zh:'动效库：每个效果都可以改颜色、字体、圆角和速度。'}
  else if(S.sec==='asset'){const c=S.ac==='all'?null:AC[S.ac];title=c?c.name:'Assets';l1=c?c.desc:'The parts a graphic is built from: lines, shapes, frames, stickers, icons, textures, backgrounds, plus your own photos and cutouts. Recolour single-colour SVGs, copy them, or hand them to Claude Code as layers.';l2='素材库：线条、形状、边框、贴纸、图标、纹理、背景，以及你自己的照片和抠图。';
   tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.assets.length} assets</span></div>`}
  else if(S.sec==='graphic'){title='Graphic designs';l1='Posters, thumbnails, banners and product images as fixed-size, recolourable HTML/CSS designs. Each one has a recipe (layout traits plus a list of things to avoid) that Claude Code can follow to make a brand-new design.';l2='平面设计库：海报、缩略图、横幅、产品图。每张都有设计配方，可让 Claude Code 照着做出全新的图。';
   tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.graphics.length} designs</span></div>${gchips()}`}
  else if(S.sec==='transition'){l1='Smooth transitions between pages — pure CSS, using the View Transitions API. Try one here, then switch it on inside any template.';l2='页面转场：纯 CSS，可在任意模板的 Customize 里直接启用并预览。'}
- else{l1='Complete multi-page website templates. Open one full screen, click through every page from its menu, recolour and resize it, then copy the code or download the whole site.';l2='完整的多页面网站模板：全屏预览、点菜单浏览所有页面、改色改字体，最后复制代码或打包下载。';
-  tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.templates.length} templates</span><label class="sortl">Sort <select data-sort>${[['featured','Featured'],['az','A → Z'],['pages','Most pages'],['newest','Newest']].map(([v,n])=>`<option value="${v}" ${S.sort===v?'selected':''}>${n}</option>`).join('')}</select></label></div>${fchips()}`}
+ else{l1='Find a design. Preview it, make it yours, then export.';l2='选设计 → 预览 → 定制 → 导出。';
+  tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.templates.length} templates</span><label class="sortl">Sort <select data-sort>${[['featured','Featured'],['az','A → Z'],['pages','Most pages'],['newest','Reverse featured']].map(([v,n])=>`<option value="${v}" ${S.sort===v?'selected':''}>${n}</option>`).join('')}</select></label></div>${fchips()}`}
  let body;
  if(!a.length){if(S.sec==='effect'&&S.ecat!=='all'&&!S.q&&!S.tech){const c=ecat(S.ecat);body=`<div class="soonbox"><h3>Coming soon</h3><p>No ${c.name.toLowerCase()} effects yet — this category is ready and waiting.</p><div class="meta"><span class="lbl">Planned</span>${c.planned.map(p=>`<span class="tag t-x">${p}</span>`).join('')}</div></div>`}
   else{const qq=S.q.trim().toLowerCase(),sg2=qq&&S.sec==='template'?suggestions(qq):[],oh=qq?otherHits(qq):[];
    body=`<div class="empty">Nothing matches.${S.sec==='template'&&nFilters()?'<br><button class="btn" style="margin-top:18px;font-family:var(--fb)" data-fclear>Clear filters</button>':''}${sg2.length?`<div class="sugg"><span>Did you mean</span>${sg2.map(s=>`<button class="fchip" data-suggest="${s.k}:${s.id}">${s.name}</button>`).join('')}</div>`:''}${oh.length?`<div class="sugg"><span>Also found in</span>${oh.map(([k,n])=>`<button class="fchip" data-sec="${k}">${SEC[k][0]} · ${n}</button>`).join('')}</div>`:''}</div>`}}
  else body=`<div class="grid${S.sec==='asset'?' agrid':''}">${a.map(x=>cardW(x,S.sec)).join('')}</div>`;
- return`<div class="head"><div class="eyebrow"><span class="tag t-g">${SEC[S.sec][0]}</span><span>${S.sec==='template'?'HTML · CSS · JS · PHP · Elementor':S.sec==='effect'?'Copy-paste CSS & JS':S.sec==='graphic'?'HTML · CSS → PNG':S.sec==='asset'?'SVG · PNG · layers':'CSS · View Transitions'}</span></div><h1 class="title">${title}</h1><p class="lede">${l1}<span class="zh">${l2}</span></p></div>${S.sec==='template'?scenesHTML():''}${tools}${body}`}
+ return`<div class="head"><div class="eyebrow"><span class="tag t-g">${SEC[S.sec][0]}</span><span>${S.sec==='template'?'HTML · CSS · JS · PHP · Elementor':S.sec==='effect'?'Copy-paste CSS & JS':S.sec==='graphic'?'HTML · CSS → PNG':S.sec==='asset'?'SVG · PNG · layers':'CSS · View Transitions'}</span></div><h1 class="title">${title}</h1><p class="lede">${l1}<span class="zh">${l2}</span></p></div>${S.sec==='template'?scenesHTML():''}${searchTools()}${tools}${body}`}
 /* "I'm building…" shortcuts: each one just pre-selects site type / industry filters (ids from taxonomy.json) */
 const SCENES=[
  ['restaurant','Restaurant & café','餐厅 / 咖啡店',{ind:['restaurant','culinary']}],
@@ -261,7 +272,7 @@ const sceneN=f=>DATA.templates.filter(x=>FG.every(([k,,,fld])=>!f[k].length||f[k
 function scenesHTML(){if(nFilters()||S.q.trim())return'';
  const L=SCENES.map(([id,en,zh,f])=>({id,en,zh,n:sceneN(sceneF(f))})).filter(s=>s.n>=3);if(!L.length)return'';
  return`<div class="scenes"><span class="sl">I'm building<small>我要做</small></span>${L.map(s=>`<button class="scn" data-scene="${s.id}">${s.en}<small>${s.zh}</small><i>${s.n}</i></button>`).join('')}</div>`}
-function home(){return`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a>${domSwitch()}<div class="hr"><label class="search">${I('search')}<input id="q" placeholder="${S.dom==='graphic'?(S.sec==='asset'?'Search assets: frame, grain, arrow…':'Search posters, thumbnails, styles…'):'Search templates, pages, effects…'}" value="${S.q.replace(/"/g,'&quot;')}"><kbd>/</kbd></label><a class="toplink" href="#/saved" aria-label="My list">${I('heart')}<span class="lbl"> My list</span><b class="fcount">${FAV.length||''}</b></a><a class="toplink" href="#/guide">Guide</a>${themeBtn()}</div></div></header>
+function home(){return`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a>${domSwitch()}<div class="hr"><label class="search">${I('search')}<input id="q" aria-label="Search library" placeholder="${S.dom==='graphic'?(S.sec==='asset'?'Search assets: frame, grain, arrow…':'Search posters, thumbnails, styles…'):'Search templates, pages, effects…'}" value="${S.q.replace(/"/g,'&quot;')}"><kbd>/</kbd></label><a class="toplink" href="#/saved" aria-label="My list" title="Active project: ${esc(activeProject().name)}">${I('heart')}<span class="lbl"> My list</span><b class="fcount">${FAV.length||''}</b></a><a class="toplink" href="#/guide">Guide</a>${themeBtn()}</div></div></header>
  <div class="mbar" id="mbar">${mbarHTML()}</div><div class="sbk" data-sidetoggle></div>
  <div class="layout"><aside class="side" id="side">${sideHTML()}</aside><main id="main">${listInner()}</main></div>`}
 function mbarHTML(){const nf=S.sec==='asset'?(S.ac!=='all'?1:0):S.sec==='graphic'?nGF():S.sec==='template'?nFilters():(S.sec==='effect'&&S.ecat!=='all'?1:0)+(S.sec==='effect'&&S.tech?1:0);
@@ -287,9 +298,10 @@ function rawDrawer(x){const n=Object.keys(x.pages).length,pl=x.pagelist.find(p=>
  return h+'</div>'}
 EXPT.rawpage=x=>links(x.pages[S.page]||x.pages.home,q=>href(q,'html'));
 function drawerHTML(){const {kind}=S.route,x=cur();if(!x)return'';if(kind==='graphic')return gdrawer(x);if(kind==='template'&&x.format==='documents')return rawDrawer(x);
- const tabs=kind==='template'?[['style','Customize'],['exp','Export']]:[['style','Customize'],['exp','Code']];
+ const tabs=kind==='template'?[['info','Overview'],['style','Customize'],['exp','Export']]:[['style','Customize'],['exp','Code']];
  let h=`<div class="dtabs">${tabs.map(([k,n])=>`<button data-tab="${k}" class="${S.tab===k?'on':''}">${n}</button>`).join('')}<button class="x" data-drawer="close">×</button></div><div class="dbody">`;
  const t=st(kind,x);
+ if(S.tab==='info'&&kind==='template')return h+templateOverview(x)+'</div>';
  if(S.tab==='style'){
   if(kind==='effect')h+=`${palPicker()}<h5>Colors</h5>${crows(t,['primary','accent','surface','text'])}<div class="ratio" id="ratio"></div><h5>Fonts</h5><div class="frow"><label>Heading</label><select class="fs" data-font="head">${fopts(t.head,'Lora')}</select></div><div class="frow"><label>Body</label><select class="fs" data-font="body">${fopts(t.body,'Mulish')}</select></div><h5>Shape, size & motion</h5><div class="frow"><label>Corner radius <b id="v-radius">${t.radius}px</b></label><input type="range" data-r="radius" min="0" max="40" value="${t.radius}"></div><div class="frow"><label>Text size <b id="v-scale">${t.scale}%</b></label><input type="range" data-r="scale" min="70" max="140" value="${t.scale}"></div><div class="frow"><label>Animation speed <b id="v-speed">${t.speed}%</b></label><input type="range" data-r="speed" min="25" max="250" value="${t.speed}"></div><button class="btn block" data-reset>${I('reset')} Reset</button><div class="callout">${I('info')}<span>These settings apply to <b>every effect</b> you open, so you can pick a look once and browse the whole library in it.</span></div>`;
   else if(kind==='transition')h+=`${palPicker()}<h5>Colors</h5>${crows(t,['primary','accent','surface','text'])}<h5>Fonts</h5><div class="frow"><label>Heading</label><select class="fs" data-font="head">${fopts(t.head,'Lora')}</select></div><div class="frow"><label>Body</label><select class="fs" data-font="body">${fopts(t.body,'Mulish')}</select></div><h5>Transition</h5><div class="frow"><label>Duration <b id="v-dur">${t.dur}ms</b></label><input type="range" data-r="dur" min="200" max="1800" step="50" value="${t.dur}"></div><div class="frow"><label>Easing</label><select class="fs" data-ease>${PT_EASE.map(([v,n])=>`<option value="${v}" ${t.ease===v?'selected':''}>${n}</option>`).join('')}</select></div><div class="crow" style="grid-template-columns:30px 1fr 86px"><input type="color" data-k="color" value="${t.color}"><span>Flash colour<small>for Colour Flash</small></span><input type="text" data-t="color" value="${t.color}" maxlength="7" spellcheck="false"></div><button class="btn block" data-ptplay>${I('play')} Play transition</button><button class="btn block" data-reset style="margin-top:8px">${I('reset')} Reset</button>`;
@@ -302,11 +314,11 @@ function drawerHTML(){const {kind}=S.route,x=cur();if(!x)return'';if(kind==='gra
   h+=`<div class="etabs">${tb.map(([k,n])=>`<button class="btn ${S.etab===k?'on':''}" data-et="${k}">${n}</button>`).join('')}</div><div class="code"><button class="copy" data-copyfn="${S.etab}">Copy</button>${esc2(S.etab==='css'?ptSnippet(x):ptUse(x))}</div>`}
  else{
   const n=Object.keys(x.pages).length,pl=x.pagelist.find(p=>p.slug===S.page)||x.pagelist[0];
-  const tb=[['dl','Download'],['page','This page'],['css','Global CSS'],['tok','Tokens JSON'],['prompt','Claude Code prompt']];
+  const tb=[['dl','Download'],['page','This page'],['css','Global CSS'],['tok','Tokens JSON'],['prompt','AI build prompt']];
   if(!S.etab||!tb.find(a=>a[0]===S.etab))S.etab='dl';
   h+=`<div class="etabs">${tb.map(([k,nm])=>`<button class="btn ${S.etab===k?'on':''}" data-et="${k}">${nm}</button>`).join('')}</div>`;
   if(S.etab==='dl'){
-   h+=`<h5>Code</h5>${dlCard('HTML site','.zip','t-g',`${n} pages as plain .html files, one tokens.css, no dependencies. Open index.html to run it.`,'Download HTML site','zip-html')}${dlCard('PHP site','.zip','t-p',`Same pages as .php with a shared header and footer. Upload to public_html on Hostinger.`,'Download PHP site','zip-php')}<h5>Elementor</h5>${dlCard('Elementor kit','.zip','t-pk','Global style JSON, a ready-made Claude Code prompt, tokens.css and every page as reference HTML.','Download Elementor kit','zip-el')}<h5>JSON</h5>${dlCard('JSON site','.json','t-b',`One file with tokens, navigation, footer, CSS and all ${n} pages — made for Claude Code and MCP.`,'Download JSON site','json-site')}<div class="callout">${I('code')}<span>Every download uses your <b>current</b> colors, fonts, width, spacing and page transition. Change anything in Customize and download again.</span></div><div class="callout">${I('layers')}<span><b>Elementor note.</b> The kit is not an Elementor import file. Rebuild with native widgets — the prompt and globals make Claude Code do it quickly via MCP.</span></div>`}
+   h+=`<div class="export-help"><h4>Where will you use it?</h4><p><b>HTML</b> — static hosting or a local preview.<br><b>PHP</b> — Hostinger with shared header/footer.<br><b>Elementor reference</b> — rebuild with widgets; cannot be imported as a Kit.<br><b>JSON</b> — portable source for AI tools.</p><p>These are frontend examples. Connect forms, accounts and orders separately. Remote photos and fonts need internet.</p></div><h5>Code</h5>${dlCard('HTML site','.zip','t-g',`${n} pages as plain .html files, shared CSS. Open index.html; external photos and fonts need internet.`,'Download HTML site','zip-html')}${dlCard('PHP site','.zip','t-p',`Same pages as .php with a shared header and footer. Upload to public_html on Hostinger.`,'Download PHP site','zip-php')}<h5>Elementor</h5>${dlCard('Elementor reference','.zip','t-pk','Global style JSON, a ready-made Claude Code prompt, tokens.css and every page as reference HTML.','Download Elementor kit','zip-el')}<h5>JSON</h5>${dlCard('JSON site','.json','t-b',`One file with tokens, navigation, footer, CSS and all ${n} pages — made for Claude Code and MCP.`,'Download JSON site','json-site')}<div class="callout">${I('code')}<span>Every download uses your <b>current</b> colors, fonts, width, spacing and page transition. Change anything in Customize and download again.</span></div><div class="callout">${I('layers')}<span><b>Elementor note.</b> The kit is not an Elementor import file. Rebuild with native widgets — the prompt and globals make Claude Code do it quickly via MCP.</span></div>`}
   else if(S.etab==='page'){
    const code=pageFile(x,S.page,'html');
    h+=`<p class="pnote">Page: <b>${esc2(pl.label)}</b> — switch pages in the bar at the top.</p><div class="btnrow"><button class="btn dark" data-copyfn="page">Copy HTML</button><button class="btn" data-dl="page-html">${I('dl')} .html</button><button class="btn" data-copyfn="php">Copy PHP</button><button class="btn" data-dl="page-php">${I('dl')} .php</button><button class="btn" data-copyfn="widget">Copy for Elementor widget</button></div><div class="code small">${esc2(code.slice(0,2600))}<br>…<br><span class="faint">(${Math.round(code.length/1024)} KB — use Copy or Download for the whole file)</span></div>`}
@@ -318,12 +330,12 @@ function viewer(){const {kind,slug}=S.route,arr=items(kind),i=arr.findIndex(a=>a
  const pv=arr[(i-1+arr.length)%arr.length],nx=arr[(i+1)%arr.length],isT=kind==='template',isP=kind==='transition';
  const src=isT?previewDoc(x,S.page,false):x.demo,orig=isT?previewDoc({...x,slug:'__o'+x.slug},S.page,false):x.demo;
  const fr=(lab,lv)=>`<div class="pane">${lab?`<span class="plabel">${lab}</span>`:''}<div class="frame"><iframe ${lv?'data-live':''} srcdoc="${esc(lv?src:orig)}"></iframe></div></div>`;
- const stage=S.cmp&&!isP&&x.format!=='documents'?fr('Original',false)+fr('Your version',true):fr('',true);
- return`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div>${isT?pageSel(x):isP?`<button class="btn" data-ptplay>${I('play')} Play</button>`:''}<div class="dev">${DEVS.map(([k,n])=>`<button data-dev="${k}" class="${S.dev===k?'on':''}">${n}</button>`).join('')}</div><span class="sp"></span>${isP||x.format==='documents'?'':`<button class="btn ${S.cmp?'on':''}" data-cmp>${I('cmp')} Compare</button>`}${isT&&x.format!=='documents'&&(x.live||[]).length?`<button class="btn ${S.live?'on':''}" data-live title="Live effects in the preview">${I('fx')} Live</button>`:''}<button class="btn ghost" data-nav="${kind}/${pv.slug}" title="Previous (←)" aria-label="Previous">${I('chl')}</button><button class="btn ghost" data-nav="${kind}/${nx.slug}" title="Next (→)" aria-label="Next">${I('chr')}</button>${favBtn(kind,slug,'ibtn')}${themeBtn()}<button class="btn" data-drawer="exp">${isT?'Export':'Code'}</button><button class="btn dark" data-drawer="style">${x.format==='documents'?'Info':'Customize'}</button></div><div class="vstage ${S.dev}">${stage}<aside class="drawer ${S.drawer?'open':''}" id="drawer">${S.drawer?drawerHTML():''}</aside></div></div>`}
+ const stage=S.cmp&&canCompare()&&!isP&&x.format!=='documents'?fr('Original',false)+fr('Your version',true):fr('',true);
+ return`<div class="viewer library-viewer ${S.moreTools?'tools-open':''}"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div><button class="btn viewer-more" data-viewer-more aria-expanded="${S.moreTools}">More</button>${isT?pageSel(x):isP?`<button class="btn" data-ptplay>${I('play')} Play</button>`:''}<div class="dev">${DEVS.map(([k,n])=>`<button data-dev="${k}" class="${S.dev===k?'on':''}">${n}</button>`).join('')}</div><span class="sp"></span>${isP||x.format==='documents'?'':`<button class="btn ${S.cmp?'on':''}" data-cmp>${I('cmp')} Compare edits</button>`}${isT&&x.format!=='documents'&&(x.live||[]).length?`<button class="btn ${S.live?'on':''}" data-live title="Live effects in the preview">${I('fx')} Live</button>`:''}<button class="btn ghost" data-nav="${kind}/${pv.slug}" title="Previous (←)" aria-label="Previous">${I('chl')}</button><button class="btn ghost" data-nav="${kind}/${nx.slug}" title="Next (→)" aria-label="Next">${I('chr')}</button>${favBtn(kind,slug,'ibtn')}${themeBtn()}${isT?'<button class="btn" data-drawer="info">Overview</button>':''}<button class="btn" data-drawer="exp">${isT?'Export':'Code'}</button><button class="btn dark" data-drawer="style">${x.format==='documents'?'Info':'Customize'}</button></div><div class="vstage ${S.dev}">${stage}<aside class="drawer ${S.drawer?'open':''}" id="drawer">${S.drawer?drawerHTML():''}</aside></div></div>`}
 function syncRatio(){const e=$('#ratio');if(!e||!S.route)return;const t=st(S.route.kind,cur()),f=r=>`<b class="${r>=4.5?'good':'bad'}">${r.toFixed(1)}:1 ${I(r>=4.5?'check':'x')}</b>`;e.innerHTML=`Contrast · text/surface ${f(ratio(t.text,t.surface))} · primary/surface ${f(ratio(t.primary,t.surface))}`}
 function refreshDrawer(){const d=$('#drawer');if(!d)return;d.classList.toggle('open',S.drawer);d.innerHTML=S.drawer?drawerHTML():'';syncRatio()}
 function loadFull(x){if(x.loading)return;x.loading=true;
- fetch('api/website/templates/'+x.pg+'/'+x.slug+'/'+x.slug+'.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(j=>{x.pages=j.pages;if(j.nav!=null)x.nav=j.nav;if(j.foot!=null)x.foot=j.foot;x.full=true;x.loading=false;render()}).catch(()=>{x.loading=false;$('#app').innerHTML=`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button></div><div class="empty">Could not load this template.<br><small>Open the site through its web address (the template files are loaded from /api/).</small></div></div>`})}
+ fetch('api/website/templates/'+x.pg+'/'+x.slug+'/'+x.slug+'.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(j=>{x.pages=j.pages;if(j.nav!=null)x.nav=j.nav;if(j.foot!=null)x.foot=j.foot;x.full=true;x.loading=false;render()}).catch(()=>{x.loading=false;$('#app').innerHTML=`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button></div><div class="empty">Could not load this template.<br><small>Check your connection and try again.</small><br><button class="btn" data-retry>Try again</button></div></div>`})}
 const loadingView=x=>`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div></div><div class="loading"><i></i>Loading ${x.pagelist.length} pages…</div></div>`;
 function guideView(){return`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a><div class="hr"><a class="toplink" href="#/">${I('chl')} Library</a>${themeBtn()}</div></div></header><main class="guide">${DATA.guide}</main>`}
 /* ---------- My list: saved picks, with a ready-to-paste brief for Claude Code ---------- */
@@ -341,16 +353,18 @@ function pickLine(k,x){const q=v=>'"'+v+'"';
  if(k==='graphic'){const t=GST[x.slug];return`- Graphic ${q(x.name)} (${x.type} ${x.size.w}x${x.size.h}): get_graphic(${q(x.slug)}, format="doc") first, then export_graphic(slug=${q(x.slug)}, dest_dir="<project folder>"`+(t?`, ${KEYS.map(c=>`${c}=${q(t[c])}`).join(', ')}, heading_font=${q(t.head)}, body_font=${q(t.body)}`:'')+`)`+(t?'':'  # recipe defaults')}
  return`- Asset ${q(x.name)} (${x.cat}): get_asset(${q(x.slug)}${x.format==='svg'?', color='+q(S.acol):''}), or export_asset(${q(x.slug)}, dest_dir="<project folder>")`}
 function savedPrompt(){const E=savedEntries().filter(e=>e.x),lines=KORDER.map(k=>E.filter(e=>e.k===k).map(e=>pickLine(k,e.x))).flat();
- return`I picked these from Design Library. Use the design-library MCP if it is registered (library_overview, get_template, export_site …). If it is not, read library/catalog.json and each item's TEMPLATE.md / EFFECT.md / DESIGN.md instead.\n\n## My picks\n${lines.join('\n')}\n\n## How to work\n1. Read each pick's doc before building (get_template(slug, format="doc"), get_graphic(slug, format="doc")). Its composition traits and "don't" list are required, not optional.\n2. Brand colours and fonts go in through the parameters above. Do not export and then hand-edit hex values.\n3. All copy and images in the picks are placeholders. Replace them with my real content; where I have no image, mark it "缺图" and list what is missing.\n4. Chinese text needs a Noto Sans SC / Noto Serif SC fallback, and no italic on Chinese headings.\n5. Tell me which files you changed so I can upload them myself.\n\n## My project\n- Goal and audience: <what I am building, for whom>\n- Project folder (absolute path): <dest_dir>\n- Brand and content: <colours, fonts, logo, text, images>\n`}
+ return`Project: ${activeProject().name}\nBrief: ${activeProject().notes||'(add your brief)'}\n\nI picked these from Design Library. Use the design-library MCP if it is registered (library_overview, get_template, export_site …). If it is not, read library/catalog.json and each item's TEMPLATE.md / EFFECT.md / DESIGN.md instead.\n\n## My picks\n${lines.join('\n')}\n\n## How to work\n1. Read each pick's doc before building (get_template(slug, format="doc"), get_graphic(slug, format="doc")). Its composition traits and "don't" list are required, not optional.\n2. Brand colours and fonts go in through the parameters above. Do not export and then hand-edit hex values.\n3. All copy and images in the picks are placeholders. Replace them with my real content; where I have no image, mark it "缺图" and list what is missing.\n4. Chinese text needs a Noto Sans SC / Noto Serif SC fallback, and no italic on Chinese headings.\n5. Summarize changed files and checks. Follow the project instructions for publishing, and deploy only when authorized.\n\n## My project\n- Goal and audience: <what I am building, for whom>\n- Project folder (absolute path): <dest_dir>\n- Brand and content: <colours, fonts, logo, text, images>\n`}
 function savedInner(){const L=savedEntries(),ok=L.filter(e=>e.x),gone=L.filter(e=>!e.x);
- let h=`<div class="head"><div class="eyebrow"><span class="tag t-g">My list</span><span>Saved in this browser only</span></div><h1 class="title">My list</h1><p class="lede">Tap the heart on any card to keep it here, then hand your picks to Claude Code in one go.<span class="zh">点卡片上的爱心把候选收在这里；挑好后一键交给 Claude Code。只保存在这个浏览器里。</span></p></div>`;
+ let h=`<div class="head"><div class="eyebrow"><span class="tag t-g">My list</span><span>Saved in this browser only</span></div><h1 class="title">My list</h1><p class="lede">Collect designs for one project, add a brief, then copy it to your AI tool.<span class="zh">按项目收藏、写备注，再交给 Claude Code 或 Codex。只保存在此浏览器，可备份恢复。</span></p></div>`+projectControls();
  if(!L.length)return h+`<div class="empty">Nothing saved yet.<br><a class="btn" style="margin-top:18px;font-family:var(--fb)" href="${lh()}">Browse the library</a></div>`;
- h+=`<div class="stb"><span class="muted">${ok.length} saved</span><span class="sp"></span>${ok.length?`<button class="btn dark" data-savedcopy="prompt">${I('code')} Copy for Claude Code</button><button class="btn" data-savedcopy="slugs">Copy list</button>`:''}<button class="btn" data-savedclear>Clear all</button></div>`;
+ h+=`<div class="stb"><span class="muted">${ok.length} saved</span><span class="sp"></span>${ok.length?`<button class="btn dark" data-savedcopy="prompt">${I('code')} Copy AI brief</button><button class="btn" data-savedcopy="slugs">Copy list</button>`:''}<button class="btn" data-savedclear>Clear all</button></div>`;
+ if(S.clearPending)h+=`<div class="clear-confirm" role="alert"><p>Remove all ${FAV.length} picks from this project? Your other projects and notes will be kept.</p><button class="btn" data-confirm-clear>Remove these picks</button><button class="btn dark" data-cancel-clear>Keep picks</button></div>`;
  KORDER.forEach(k=>{const g=ok.filter(e=>e.k===k);if(g.length)h+=`<h2 class="sech">${SEC[k][0]}<em>${g.length}</em></h2><div class="grid${k==='asset'?' agrid':''}">${g.map(e=>cardW(e.x,k)).join('')}</div>`});
  if(gone.length)h+=`<div class="gonebox"><p>These saved items are no longer in the library:</p>${gone.map(e=>`<div class="gone"><code>${esc2(e.key)}</code><button class="btn" data-fav="${esc(e.key)}">Remove</button></div>`).join('')}</div>`;
  return h}
 const savedView=()=>`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a><div class="hr"><a class="toplink" href="${lh()}">${I('chl')} Library</a>${themeBtn()}</div></div></header><main class="savedpage" id="main">${savedInner()}</main>`;
 function render(){const wasRoute=!!$('.viewer');document.body.classList.remove('side-open');document.body.style.overflow=S.route?'hidden':'';
+ if(S.comparing){document.title='Compare templates · Design Library';$('#app').innerHTML=comparisonView();scrollTo(0,0);return}
  if(S.guide){document.title='Guide · Design Library';$('#app').innerHTML=guideView();scrollTo(0,0);return}
  if(S.route&&S.route.kind==='template'){const x=cur();if(x&&!x.full){document.title=x.name+' · Design Library';$('#app').innerHTML=loadingView(x);loadFull(x);return}}
  if(S.route&&S.route.kind==='asset'){const x=cur();if(x&&x.format==='svg'&&x.svg===undefined){document.title=x.name+' · Design Library';$('#app').innerHTML=`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b></div></div><div class="loading"><i></i>Loading…</div></div>`;
@@ -360,10 +374,11 @@ function render(){const wasRoute=!!$('.viewer');document.body.classList.remove('
  document.title=S.route&&cur()?cur().name+' · Design Library':'Design Library';
  if(S.saved&&!S.route)document.title='My list · Design Library';
  $('#app').innerHTML=S.route?(S.route.kind==='graphic'?gviewer():S.route.kind==='asset'?aviewer():viewer()):S.saved?savedView():home();
+ if(!S.route&&!S.saved)$('#app').insertAdjacentHTML('beforeend',comparisonTray());
  if(S.route){if(S.drawer)refreshDrawer();scrollTo(0,0);fitG()}else{fitThumbs();const q=$('#q');if(q&&S.focusQ){q.focus();q.setSelectionRange(q.value.length,q.value.length);S.focusQ=false}
   if(wasRoute&&S.listY)scrollTo(0,S.listY);else if(S.saved)scrollTo(0,0);
   if(!S.saved)syncList()}}
-function relist(){$('#main').innerHTML=listInner();$('#side').innerHTML=sideHTML();const mb=$('#mbar');if(mb)mb.innerHTML=mbarHTML();fitThumbs();syncList()}
+function relist(){$('#main').innerHTML=listInner();$('#side').innerHTML=sideHTML();const mb=$('#mbar');if(mb)mb.innerHTML=mbarHTML();fitThumbs();syncList();const tray=$('#compare-tray');if(tray)tray.outerHTML=comparisonTray();else $('#app').insertAdjacentHTML('beforeend',comparisonTray())}
 function setHash(){try{history.replaceState(null,'','#/'+S.route.kind+'/'+S.route.slug+(S.page&&S.page!=='home'?'/'+S.page:''))}catch(e){}}
 function pageWidget(x){const pg=x.pages[S.page]||x.pages.home;return`<style>\n${rootCSS(x,true)}\n${styleCSS(x)}</style>\n${links(x.nav,s=>href(s,'html'))}\n<main>${links(pg,s=>href(s,'html'))}</main>\n${links(x.foot,s=>href(s,'html'))}`}
 EXPT.widget=pageWidget;EXPT.tok=x=>elGlobals(x);
@@ -435,6 +450,21 @@ function aviewer(){const x=cur();if(!x)return'<div class="empty">Not found</div>
 function aSetColor(v){if(!/^#[0-9a-fA-F]{6}$/.test(v))return;S.acol=v;const p=$('#apreview');if(p)p.style.color=v;$$('[data-acolor]').forEach(e=>{if(e.value!==v)e.value=v})}
 EXPT.asvg=x=>acolored(x);
 EXPT.ause=x=>`Asset: ${x.name} (${x.slug}) — ${x.cat}, ${x.format}${x.w?', '+x.w+'×'+x.h:''}\nFile: library/assets/${x.cat}/${x.slug}/${x.file}\nPublic: /api/graphic/assets/${x.cat}/${x.file}\n`+(x.format==='svg'?`Single-colour SVG (fill = currentColor). Inline it and set CSS color: ${S.acol}.\n`:'Raster image: use as a layer (img / background-image).\n')+`Use it as one layer of a larger design. Keep colours on CSS variables where possible.`;
+
+/* ---------- search, template capabilities and project collections ---------- */
+
+function comparisonTray(){return S.comparePicks.length?`<aside id="compare-tray" class="compare-tray" aria-label="Template comparison"><span><b>${S.comparePicks.length}/3</b> templates selected</span><a class="btn dark" href="#/compare">Compare templates</a><button class="btn" data-compare-clear>Clear</button></aside>`:''}
+function comparisonView(){const picks=S.comparePicks.map(id=>DATA.templates.find(x=>x.slug===id)).filter(Boolean);return `<header class="top"><div class="in"><a class="brand" href="${lh()}">${LOGO}</a><div class="hr"><a class="toplink" href="${lh()}">Library</a>${themeBtn()}</div></div></header><main class="savedpage comparison-page"><div class="head"><h1 class="title">Compare templates</h1><p class="lede">Choose up to 3 templates with + Compare on their cards. <span class="zh">比较用途、定制范围和素材准备度；不只看页数。</span></p></div>${picks.length?`<div class="template-comparison">${picks.map(x=>`<article class="comparison-column">${x.pv?'<div class="thumb">'+pvImg('t',x)+'</div>':''}<h2>${esc2(x.name)}</h2><p>${esc2(x.zh||'')}</p><dl><dt>Best for</dt><dd>${esc2(x.tag||'')}</dd><dt>Pages</dt><dd>${x.pagelist.length}</dd><dt>Customization</dt><dd>${x.format==='documents'?'Imported CSS':'Colours, fonts and layout tokens'}</dd><dt>Images / placeholders</dt><dd>${x.review?.images||0} / ${x.review?.placeholders||0}</dd><dt>Functionality</dt><dd>Frontend example. Check integration needs in Overview.</dd><dt>Styles</dt><dd>${x.styles.map(id=>esc2(YL[id]||id)).join(' · ')}</dd></dl><button class="btn dark" data-open="template/${x.slug}">Open preview</button><button class="btn" data-compare-remove="${x.slug}">Remove</button></article>`).join('')}</div>`:'<div class="empty">No templates selected. <a href="'+lh()+'">Browse the library</a> and choose + Compare.</div>'}<p class="project-help">Source counts are not a quality score or a browser test. On mobile, swipe the comparison table horizontally.</p><a class="btn" href="${lh()}">Back to library</a></main>`}
+
+function canCompare(){return DLState.canCompare(innerWidth,S.dev)}
+function searchTools(){return `<div class="search-tools"><label>Search range <select data-search-scope aria-label="Search range"><option value="current" ${S.scope==='current'?'selected':''}>${SEC[S.sec][0]}</option><option value="all" ${S.scope==='all'?'selected':''}>All resources · 全库</option></select></label>${S.q?'<button class="btn" data-search-clear>Clear search</button>':''}<a href="#/guide">How to use · 使用指南 ↗</a></div>`}
+function globalSearchView(){const q=S.q.trim().toLowerCase(),groups=KORDER.map(k=>({k,a:items(k).filter(x=>matchQ(x,q))})),total=groups.reduce((n,g)=>n+g.a.length,0);
+ return `<div class="head"><h1 class="title">Search the library</h1><p class="lede">${total} matches for “${esc2(S.q)}” <span class="zh">跨 Website 与 Graphic 搜索</span></p></div>${searchTools()}${groups.filter(g=>g.a.length).map(g=>`<section class="search-group"><div class="search-group-heading"><h2>${SEC[g.k][0]} <small>${g.a.length}</small></h2><button class="btn" data-sec="${g.k}">Browse this category</button></div><div class="grid ${g.k==='asset'?'agrid':''}">${g.a.map(x=>cardW(x,g.k)).join('')}</div></section>`).join('')||'<div class="empty">No matches. Try fewer words or another topic.</div>'}`}
+function templateOverview(x){const r=x.review||{},imported=x.format==='documents';return `<div class="template-overview"><h2>${esc2(x.name)}</h2><p>${esc2(x.tag||'')}</p><div class="overview-facts"><div><b>${x.pagelist.length}</b><span>pages</span></div><div><b>${imported?'Imported':'Customizable'}</b><span>${imported?'edit original CSS':'colours · fonts · spacing'}</span></div><div><b>Frontend</b><span>backend not included</span></div></div><h5>Before you use it</h5><ul><li>Replace demo copy, business details and images.</li><li>Connect forms, bookings, accounts and payments to your own service.</li><li>Preview each relevant page on mobile and check the exported files.</li><li>External photos and fonts require internet. Preview Live effects may differ from the exported site.</li></ul><h5>Source inspection</h5><p>${r.images||0} image references · ${r.placeholders||0} image placeholders · ${r.forms||0} forms. These are structural counts, not a guarantee that functionality has been tested.</p><h5>Licence</h5><p>Code metadata: ${esc2(x.license||'See source documentation')}. External media retain their own terms; check any image credits.</p><h5>Pages</h5><div class="page-index">${x.pagelist.map(p=>`<button class="btn" data-overview-page="${p.slug}">${esc2(p.label)}</button>`).join('')}</div><div class="btnrow"><button class="btn dark" data-drawer="style">Customize</button><button class="btn" data-drawer="exp">Choose export</button></div></div>`}
+function projectControls(){const p=activeProject();return `<section class="project-controls"><div class="project-toolbar"><label>Project <select data-project-select aria-label="Project">${PROJECTS.projects.map(x=>`<option value="${x.id}" ${x.id===p.id?'selected':''}>${esc2(x.name)} (${x.items.length})</option>`).join('')}</select></label><label class="project-name-label">Project name<input id="project-name" maxlength="80" placeholder="Name a new project, or rename this one"></label><button class="btn" data-project-new>New project</button><button class="btn" data-project-rename>Rename</button><button class="btn" data-project-export>Back up projects</button><button class="btn" data-project-import>Restore backup</button><input type="file" id="project-import" accept="application/json,.json" hidden></div><label class="project-note">Project brief / 项目备注<textarea data-project-notes maxlength="4000" rows="3" placeholder="Goal, audience, brand and what to build…">${esc2(p.notes)}</textarea></label><p class="project-help">Saved only in this browser. Backups include picks and notes, not current preview customizations. Restore adds projects without replacing existing ones.</p></section>`}
+async function importProjects(input){const file=input.files&&input.files[0];if(!file)return;try{if(file.size>8000000)throw Error('Backup must be smaller than 8 MB.');PROJECTS=DLState.merge(PROJECTS,JSON.parse(await file.text()),Date.now());FAV=activeProject().items;saveProjects();render();toast('Projects restored; existing projects kept')}catch(error){toast(error.message||'Invalid backup')}finally{input.value=''}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-overview-page]');if(b&&S.route){const x=cur();if(!x||!x.pagelist.some(p=>p.slug===b.dataset.overviewPage))return;S.drawer=false;go('#/template/'+x.slug+'/'+b.dataset.overviewPage)}});
+
 /* ---------- events ---------- */
 function setDim(key,val,unit){const t=st('template',cur());if(unit){const base=px(cur().tok.pad,88);if(key==='w'){t.w=unit==='%'?Math.min(100,Math.round(t.w/REFW*100)):Math.round(t.w*REFW/1000)*10;if(unit==='px')t.w=Math.max(900,Math.min(1800,Math.round(t.w/10)*10));if(unit==='%')t.w=Math.max(50,t.w)}
   else{t.pad=unit==='%'?Math.round(t.pad/base*100):Math.round(t.pad/100*base);t.pad=unit==='%'?Math.max(50,Math.min(160,t.pad)):Math.max(24,Math.min(240,t.pad))}t[key+'U']=unit}
@@ -443,6 +473,17 @@ const ptDemo=()=>{const t=S.route.kind==='template'?st('template',cur()).ptdur:s
 const UNIT={radius:'px',ptdur:'ms',dur:'ms',scale:'%',speed:'%'};
 document.addEventListener('click',e=>{const c=s=>e.target.closest(s);let el;
  if(el=c('[data-gcopy]')){copy($('pre',el.parentElement).innerText,'Copied');return}
+ if(el=c('[data-compare-pick]')){const id=el.dataset.comparePick,i=S.comparePicks.indexOf(id);if(i<0&&S.comparePicks.length>=3){toast('Compare up to 3 templates at a time');return}if(i<0)S.comparePicks.push(id);else S.comparePicks.splice(i,1);ss('dl_compare',JSON.stringify(S.comparePicks));const y=scrollY;render();scrollTo(0,y);return}
+ if(c('[data-compare-clear]')){S.comparePicks=[];ss('dl_compare','[]');render();return}
+ if(el=c('[data-compare-remove]')){S.comparePicks=S.comparePicks.filter(id=>id!==el.dataset.compareRemove);ss('dl_compare',JSON.stringify(S.comparePicks));render();return}
+ if(c('[data-retry]')){render();return}
+ if(c('[data-viewer-more]')){S.moreTools=!S.moreTools;const view=$('.library-viewer');if(view)view.classList.toggle('tools-open',S.moreTools);const b=$('[data-viewer-more]');if(b)b.setAttribute('aria-expanded',S.moreTools);return}
+ if(c('[data-search-clear]')){S.q='';const q=$('#q');if(q){q.value='';q.focus()}relist();return}
+ if(el=c('[data-filter-more]')){S.filterExpanded[el.dataset.filterMore]=!S.filterExpanded[el.dataset.filterMore];$('#side').innerHTML=sideHTML();return}
+ if(c('[data-project-new]')){S.clearPending=false;const input=$('#project-name'),name=input.value.trim();if(!name){input.focus();toast('Enter a project name first');return}if(PROJECTS.projects.length>=30){toast('Maximum 30 projects');return}const p={id:'p-'+Date.now(),name:name.slice(0,80),items:[],notes:''};PROJECTS.projects.push(p);PROJECTS.active=p.id;FAV=p.items;saveProjects();render();return}
+ if(c('[data-project-rename]')){const input=$('#project-name'),name=input.value.trim();if(!name){input.focus();toast('Enter the new name first');return}activeProject().name=name.slice(0,80);saveProjects();render();return}
+ if(c('[data-project-export]')){saveProjects();download('design-library-projects.json',JSON.stringify(PROJECTS,null,2),'application/json');return}
+ if(c('[data-project-import]')){$('#project-import').click();return}
  if(c('[data-theme-toggle]')){S.theme=S.theme==='dark'?'light':'dark';applyTheme();$$('[data-theme-toggle]').forEach(b=>b.innerHTML=I(S.theme==='dark'?'sun':'moon'));return}
  if(c('[data-sidetoggle]')){document.body.classList.toggle('side-open');return}
  if(el=c('[data-dom]')){S.dom=el.dataset.dom;S.sec=DOMS[S.dom][3][0];S.q='';ss('dom',S.dom);render();return}
@@ -450,7 +491,7 @@ document.addEventListener('click',e=>{const c=s=>e.target.closest(s);let el;
  if(c('[data-gclear]')){S.gf={type:[],sty:[]};relist();return}
  if(el=c('[data-acat]')){S.ac=el.dataset.acat;relist();scrollTo(0,0);return}
  if(el=c('[data-abg]')){S.abg=el.dataset.abg;$$('[data-abg]').forEach(b=>b.classList.toggle('on',b===el));const g=$('#abg');if(g)g.className='abg '+S.abg;return}
- if(el=c('[data-sec]')){S.sec=el.dataset.sec;relist();return}
+ if(el=c('[data-sec]')){S.sec=el.dataset.sec;S.scope='current';S.dom=['graphic','asset'].includes(S.sec)?'graphic':'website';ss('dom',S.dom);render();return}
  if(el=c('[data-f]')){const[a,v]=el.dataset.f.split(':'),l=S.f[a],i=l.indexOf(v);i<0?l.push(v):l.splice(i,1);relist();return}
  if(c('[data-fclear]')){S.f={type:[],ind:[],sty:[]};relist();return}
  if(el=c('[data-soon]')){S.soon[el.dataset.soon]=!S.soon[el.dataset.soon];$('#side').innerHTML=sideHTML();return}
@@ -465,14 +506,16 @@ document.addEventListener('click',e=>{const c=s=>e.target.closest(s);let el;
   $$('.fcount').forEach(n=>n.textContent=FAV.length||'');
   if(S.saved&&!S.route){$('#main').innerHTML=savedInner();fitThumbs()}
   toast(on?'Saved to My list':'Removed from My list');return}
- if(el=c('[data-savedcopy]')){const p=el.dataset.savedcopy==='prompt';copy(p?savedPrompt():savedEntries().filter(e=>e.x).map(e=>e.key).join('\n'),p?'Copied. Paste it into Claude Code':'Copied');return}
- if(c('[data-savedclear]')){if(confirm('Remove all '+FAV.length+' saved items?')){FAV=[];ss('dl_favs','[]');$('#main').innerHTML=savedInner();$$('.fcount').forEach(n=>n.textContent='')}return}
- if(el=c('[data-open]')){if(!S.route){S.listY=scrollY;S.from=S.saved?'saved':'list'}S.page='home';go('#/'+el.dataset.open);return}
+ if(el=c('[data-savedcopy]')){const p=el.dataset.savedcopy==='prompt';copy(p?savedPrompt():savedEntries().filter(e=>e.x).map(e=>e.key).join('\n'),p?'Copied. Paste into Claude Code or Codex':'Copied');return}
+ if(c('[data-savedclear]')){S.clearPending=true;$('#main').innerHTML=savedInner();return}
+ if(c('[data-cancel-clear]')){S.clearPending=false;$('#main').innerHTML=savedInner();return}
+ if(c('[data-confirm-clear]')){FAV=[];saveProjects();S.clearPending=false;render();toast('Picks removed from this project');return}
+ if(el=c('[data-open]')){if(!S.route){S.listY=scrollY;S.from=S.saved?'saved':S.comparing?'compare':'list'}S.page='home';go('#/'+el.dataset.open);return}
  if(el=c('[data-nav]')){S.page='home';go('#/'+el.dataset.nav);return}
  if(c('[data-back]')){go(backHash());return}
- if(el=c('[data-dev]')){S.dev=el.dataset.dev;render();return}
+ if(el=c('[data-dev]')){S.dev=el.dataset.dev;if(!canCompare())S.cmp=false;render();return}
  if(c('[data-live]')){S.live=!S.live;render();return}
- if(c('[data-cmp]')){S.cmp=!S.cmp;render();return}
+ if(c('[data-cmp]')){if(!canCompare()){toast('Use desktop preview to compare edits');return}S.cmp=!S.cmp;render();return}
  if(c('[data-ptplay],[data-ptdemo]')){ptDemo();return}
  if(el=c('[data-drawer]')){const v=el.dataset.drawer;if(v==='close')S.drawer=false;else if(S.drawer&&S.tab===v)S.drawer=false;else{S.drawer=true;S.tab=v}refreshDrawer();return}
  if(el=c('[data-tab]')){S.tab=el.dataset.tab;refreshDrawer();return}
@@ -485,6 +528,8 @@ document.addEventListener('click',e=>{const c=s=>e.target.closest(s);let el;
  });
 document.addEventListener('input',e=>{const t=e.target;
  if(t.id==='q'){S.q=t.value;relist();return}
+ if(t.dataset.projectNotes!==undefined){activeProject().notes=t.value.slice(0,4000);saveProjects();return}
+ if(t.dataset.filterQuery!==undefined){const k=t.dataset.filterQuery,pos=t.selectionStart;S.filterQueries[k]=t.value;$('#side').innerHTML=sideHTML();const input=$('[data-filter-query="'+k+'"]');if(input){input.focus();input.setSelectionRange(pos,pos)}return}
  if(t.dataset.acolor!==undefined){aSetColor(t.value);return}
  if(!S.route)return;const k=S.route.kind,v=st(k,cur());
  if(t.dataset.k){v[t.dataset.k]=t.value;$(`[data-t=${t.dataset.k}]`).value=t.value}
@@ -493,6 +538,9 @@ document.addEventListener('input',e=>{const t=e.target;
  else if(t.dataset.dim||t.dataset.dimnum){const key=t.dataset.dim||t.dataset.dimnum;let val=+t.value;if(t.dataset.dimnum){if(!val)return;const r=[t.min,t.max].map(Number);val=Math.max(r[0],Math.min(r[1],val));$(`[data-dim=${key}]`).value=val}else $(`[data-dimnum=${key}]`).value=val;v[key]=val;$('#v-'+key).textContent=val+v[key+'U'];push();return}
  else return;push();syncRatio()});
 document.addEventListener('change',e=>{const t=e.target;
+ if(t.dataset.searchScope!==undefined){S.scope=t.value;relist();return}
+ if(t.dataset.projectSelect!==undefined){S.clearPending=false;PROJECTS.active=t.value;FAV=activeProject().items;saveProjects();render();return}
+ if(t.id==='project-import'){importProjects(t);return}
  if(t.dataset.sort!==undefined){S.sort=t.value;relist();return}
  if(t.dataset.pcat!==undefined){S.pcat=t.value;refreshDrawer();return}
  if(t.dataset.font&&S.route){st(S.route.kind,cur())[t.dataset.font]=t.value;push();return}
@@ -502,7 +550,7 @@ document.addEventListener('change',e=>{const t=e.target;
 addEventListener('message',e=>{const d=e.data;if(!d)return;
  if(d.type==='dl-ready'&&S.route)push();
  if(d.type==='dl-page'&&S.route){S.page=d.page;if(cur().format==='documents'){$$('iframe[data-live]').forEach(f=>f.srcdoc=rawDoc(cur(),S.page))}const s=$('[data-pagesel]');if(s)s.value=S.page;setHash();$$('iframe').forEach(f=>{if(f.contentWindow!==e.source)f.contentWindow.postMessage({type:'dl-goto',page:S.page},'*')});if(S.drawer&&S.tab==='exp'&&S.etab==='page')refreshDrawer()}});
-addEventListener('resize',()=>{fitThumbs();fitG()});
+addEventListener('resize',()=>{if(S.cmp&&!canCompare()){S.cmp=false;if(S.route)render()}fitThumbs();fitG()});
 (function(){let x0=null;addEventListener('touchstart',e=>{const s=e.target.closest&&e.target.closest('#side');x0=s&&document.body.classList.contains('side-open')?e.touches[0].clientX:null},{passive:true});addEventListener('touchend',e=>{if(x0===null)return;if(e.changedTouches[0].clientX-x0<-70)document.body.classList.remove('side-open');x0=null},{passive:true})})();
 addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('side-open')){document.body.classList.remove('side-open');return}const typing=/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
  if(e.key==='/'&&!typing&&!S.route){e.preventDefault();$('#q')&&$('#q').focus()}

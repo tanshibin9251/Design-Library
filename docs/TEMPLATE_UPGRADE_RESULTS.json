@@ -1,0 +1,1660 @@
+{
+  "date": "2026-11-07",
+  "scope": "One library-wide improvement pass; frontend demonstrations, not production backends. See per-template notes and retained asset requirements.",
+  "coverage": {
+    "templates": 82,
+    "declared_pages": 1289,
+    "new_photo_templates": 64,
+    "new_verified_photo_sources": 40,
+    "approved_cafe_photo_sources": 8,
+    "desktop_home_checks": 82,
+    "tablet_home_checks": 82,
+    "phone_export_pages": 1289,
+    "phone_viewport": "390 × 844 (Windows scrollbar reserves 15px; measured document width 375px)",
+    "tablet_viewport": "768 × 1024",
+    "desktop_viewport": "1440 × 900"
+  },
+  "checks_limit": "Geometry checks cover page width and selected visible text/form controls. Intentional scroll containers and hidden flip-card faces are excluded. This does not certify every business flow, visual detail, accessibility criterion or external link.",
+  "templates": [
+    {
+      "slug": "modern-saas",
+      "name": "Modern SaaS",
+      "pages": 23,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "CTA、页面名称、产品看板/15 个图解、交互 demo",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 44,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "enterprise-blue",
+      "name": "Enterprise Blue",
+      "pages": 21,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "四阶段交付图解、案例 CTA",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 59,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "fine-dining",
+      "name": "Fine Dining",
+      "pages": 26,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 73,
+        "forms": 4,
+        "blocked_forms": 4,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "boutique-rose",
+      "name": "Boutique Rose",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 68,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "bold-studio",
+      "name": "Bold Studio",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 86,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "calm-spa",
+      "name": "Calm Spa",
+      "pages": 25,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 80,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "magazine-classic",
+      "name": "Magazine Classic",
+      "pages": 25,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 89,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "restaurant-warm",
+      "name": "Restaurant Warm",
+      "pages": 25,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "米饭组合基础费、选菜/数量/购物车/结账、菜品文案",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 74,
+        "forms": 4,
+        "blocked_forms": 4,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "construction-pro",
+      "name": "Construction Pro",
+      "pages": 21,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "手机首屏/进度表裁切",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 48,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "fitness-energy",
+      "name": "Fitness Energy",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 68,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "neon-nexus",
+      "name": "Nexus AI",
+      "pages": 22,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 48,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "estate-prime",
+      "name": "Estate Prime",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 68,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "lens-light",
+      "name": "Lens & Light",
+      "pages": 23,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 60,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "dental-care",
+      "name": "Smile Dental",
+      "pages": 19,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 42,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "retro-diner",
+      "name": "Sunny's Diner",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 68,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "bright-academy",
+      "name": "Bright Academy",
+      "pages": 20,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 48,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "gilded-ledger",
+      "name": "Gilded Ledger",
+      "pages": 22,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 52,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "clay-beauty",
+      "name": "Clay Beauty Studio",
+      "pages": 25,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 74,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "nordic-interiors",
+      "name": "Nordic Interiors",
+      "pages": 21,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 52,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "pixel-arena",
+      "name": "Pixel Arena",
+      "pages": 25,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 73,
+        "forms": 4,
+        "blocked_forms": 4,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "aurora-cowork",
+      "name": "Aurora Cowork",
+      "pages": 22,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 48,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "quiet-grace",
+      "name": "Quiet Grace Community",
+      "pages": 20,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 42,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "green-acre",
+      "name": "Green Acre Farm",
+      "pages": 26,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 68,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "swiftline",
+      "name": "Swiftline Logistics",
+      "pages": 23,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 52,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "happy-paws",
+      "name": "Happy Paws",
+      "pages": 25,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 70,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "fixit-home",
+      "name": "FixIt Home Services",
+      "pages": 25,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 68,
+        "forms": 4,
+        "blocked_forms": 4,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "civic-hall",
+      "name": "Civic Hall",
+      "pages": 21,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 45,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "hope-foundation",
+      "name": "Hope Foundation",
+      "pages": 18,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 42,
+        "forms": 1,
+        "blocked_forms": 1,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "evergreen-weddings",
+      "name": "Evergreen Weddings",
+      "pages": 23,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 60,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "wanderlust-travel",
+      "name": "Wanderlust",
+      "pages": 23,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 68,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 1,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "autoline-motors",
+      "name": "Autoline Motors",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 68,
+        "forms": 4,
+        "blocked_forms": 4,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "lexington-law",
+      "name": "Lexington & Co",
+      "pages": 19,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 42,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "pulse-records",
+      "name": "Pulse Records",
+      "pages": 24,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 62,
+        "forms": 3,
+        "blocked_forms": 3,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "oakline-furniture",
+      "name": "Oakline Furniture",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "木材/尺寸/示例价格/缺货/询价与购物车联动",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 30,
+        "forms": 2,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "loft-industrial",
+      "name": "Loft Industrial",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 31,
+        "forms": 2,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "curve-modern",
+      "name": "Curve Modern",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 26,
+        "forms": 2,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "heirloom-classic",
+      "name": "Heirloom Classic",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 18,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "sprint-gear",
+      "name": "Sprint Gear",
+      "pages": 12,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 32,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "trailhead-outdoor",
+      "name": "Trailhead Outdoor",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 35,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "peak-performance",
+      "name": "Peak Performance",
+      "pages": 13,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": true,
+      "specific_changes": "产品标签/键盘操作、示例购物车",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 14,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "renovo-studio",
+      "name": "Renovo Studio",
+      "pages": 12,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 20,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "blueprint-build",
+      "name": "Blueprint Build",
+      "pages": 12,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 1,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 1,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "casa-makeover",
+      "name": "Casa Makeover",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 22,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 2,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "thai-touch",
+      "name": "Thai Touch",
+      "pages": 12,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 12,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 4,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "reflex-point",
+      "name": "Reflex Point",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 2,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 2,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "tuina-heritage",
+      "name": "Tuina Heritage",
+      "pages": 12,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 4,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "cafe-bakery",
+      "name": "Crumb & Co",
+      "pages": 10,
+      "foundation": false,
+      "photography": "existing approved demo",
+      "photo_sources": 8,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 20,
+        "remote_images": 20,
+        "placeholders": 1,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "salon-studio",
+      "name": "Maison Verde",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 25,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "tuition-centre",
+      "name": "BrightPath Tuition",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 5,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "auto-workshop",
+      "name": "Torque Garage",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 2,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "homestay-stays",
+      "name": "Rumah Singgah",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "手机搜索表单尺寸",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 18,
+        "forms": 2,
+        "blocked_forms": 1,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "folio-portfolio",
+      "name": "Aria Lim Portfolio",
+      "pages": 7,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 15,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "accounting-firm",
+      "name": "Verde & Co. Accountants",
+      "pages": 11,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 4,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "herbal-clinic",
+      "name": "Baoshan Herbal Clinic",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "手机首屏/药柜裁切",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 5,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "wedding-photo",
+      "name": "Frame & Vow",
+      "pages": 9,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 20,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "expo-summit",
+      "name": "Nexus Summit",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 21,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "cleaning-service",
+      "name": "Sparkle Nest",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "pet-boutique",
+      "name": "Pawsh Pet Boutique",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 23,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "app-landing",
+      "name": "Pocket App Landing",
+      "pages": 8,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": true,
+      "specific_changes": "应用商店演示反馈",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "court-line",
+      "name": "Court Line",
+      "pages": 9,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 7,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 1,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "aizome-goods",
+      "name": "Aizome Goods",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "tsukimi-ryokan",
+      "name": "Tsukimi Ryokan",
+      "pages": 13,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 1,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "diamond-shop",
+      "name": "Diamond Shop",
+      "pages": 15,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "数量按钮、运费总额、结账表单反馈",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 45,
+        "forms": 1,
+        "blocked_forms": 1,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "kissa-showa",
+      "name": "Kissa Maruyo",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "手机菜单板尺寸与虹吸咖啡主图",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "ippon-dojo",
+      "name": "Ippon Dojo",
+      "pages": 12,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 1,
+        "vectors": 1,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "hanabi-matsuri",
+      "name": "Hanabi Matsuri",
+      "pages": 11,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 1,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "commit-camp",
+      "name": "Commit Camp",
+      "pages": 11,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "plainspeak-english",
+      "name": "Plainspeak English",
+      "pages": 11,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "nihongo-path",
+      "name": "Nihongo Path",
+      "pages": 11,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 2,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "fermata-piano",
+      "name": "Fermata Piano",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 3,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "atelier-wall",
+      "name": "Atelier Wall",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "pass-lab",
+      "name": "Pass Lab",
+      "pages": 10,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 2,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "wok-and-steam",
+      "name": "Wok & Steam",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "washoku-note",
+      "name": "Washoku Note",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 12,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "sugar-and-crumb",
+      "name": "Sugar & Crumb",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 9,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "daily-table",
+      "name": "Daily Table",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 11,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "knack-index",
+      "name": "Knack Index",
+      "pages": 9,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "mind-notes",
+      "name": "Mind Notes",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 1,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 1,
+        "remote_images": 1,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 1,
+        "vectors": 0,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "petal-desk",
+      "name": "Petal Desk",
+      "pages": 9,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 4,
+        "blocked_forms": 0,
+        "vectors": 251,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "job-atlas",
+      "name": "Job Atlas",
+      "pages": 10,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 0,
+        "forms": 0,
+        "blocked_forms": 0,
+        "vectors": 141,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "blue-hour",
+      "name": "Blue Hour",
+      "pages": 9,
+      "foundation": true,
+      "photography": "curated external references",
+      "photo_sources": 2,
+      "mobile_menu_added": true,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 2,
+        "remote_images": 2,
+        "placeholders": 0,
+        "forms": 1,
+        "blocked_forms": 0,
+        "vectors": 59,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    },
+    {
+      "slug": "grownotic",
+      "name": "Grow Notic",
+      "pages": 11,
+      "foundation": true,
+      "photography": "original illustration / typography retained",
+      "photo_sources": 0,
+      "mobile_menu_added": false,
+      "specific_changes": "",
+      "source_signals": {
+        "images": 0,
+        "remote_images": 0,
+        "placeholders": 0,
+        "forms": 2,
+        "blocked_forms": 2,
+        "vectors": 2,
+        "check": "Source inspection; browser behaviour not certified"
+      },
+      "remaining_assets": "Named products, staff, verified customer cases and recipe-step photos require corresponding real assets; no unrelated stock image is substituted."
+    }
+  ]
+}

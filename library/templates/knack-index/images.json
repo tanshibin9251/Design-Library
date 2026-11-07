@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/sunlight-filtering-through-dense-green-forest-canopy-d1fCH5ngIMs",
+      "author": "Ian Murray",
+      "alt": "Sunlight filtering through dense green forest canopy",
+      "id": "forest",
+      "url": "https://images.unsplash.com/photo-1769954305876-248e4d4cef76",
+      "original_width": 3966,
+      "original_height": 2389
+    }
+  ]
+}

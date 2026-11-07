@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-chef-presents-a-beautifully-plated-dish-6jVutqtcgQs",
+      "author": "Tommaso Ubezio",
+      "alt": "A chef presents a beautifully plated dish",
+      "id": "chef",
+      "url": "https://images.unsplash.com/photo-1750943082452-c714763f73b2",
+      "original_width": 4480,
+      "original_height": 6720
+    },
+    {
+      "id": "restaurant",
+      "author": "Antonio Araujo",
+      "source": "https://unsplash.com/photos/cozy-restaurant-interior-with-tables-and-seating-yQYtdkKOLnQ",
+      "url": "https://images.unsplash.com/photo-1776763255189-3c8237aec808",
+      "alt": "Restaurant interior with tables and seating",
+      "original_width": 6000,
+      "original_height": 4000
+    }
+  ]
+}

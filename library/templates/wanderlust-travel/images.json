@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "beach",
+      "author": "Colin Watts",
+      "source": "https://unsplash.com/photos/a-tropical-beach-with-palm-trees-and-clear-water-slj5hTTA8uM",
+      "url": "https://images.unsplash.com/photo-1734362849279-00f00f92430e",
+      "alt": "Palm trees and clear sea in the Maldives",
+      "original_width": 5978,
+      "original_height": 4000
+    },
+    {
+      "source": "https://unsplash.com/photos/hiker-with-poles-looks-out-over-a-rocky-mountainous-landscape-jgfcVkFXWCU",
+      "author": "Kyle Hinkson",
+      "alt": "Hiker with poles looks out over a rocky, mountainous landscape",
+      "url": "https://images.unsplash.com/photo-1771827680066-b4fbaff2ef3a",
+      "id": "hiking",
+      "original_width": 6000,
+      "original_height": 4000
+    }
+  ]
+}

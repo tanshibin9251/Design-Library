@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "cake",
+      "author": "Just Capturing It",
+      "source": "https://unsplash.com/photos/a-decadent-chocolate-cake-with-slices-on-plates-cAy6uai7l5U",
+      "url": "https://images.unsplash.com/photo-1767044315790-bc0fe664fd0b",
+      "alt": "Chocolate cake and plated slices for a shared table",
+      "original_width": 4000,
+      "original_height": 5000
+    },
+    {
+      "id": "pastries",
+      "author": "Mimi Thian",
+      "source": "https://unsplash.com/photos/croissants-on-display-TG77ANwm3MQ",
+      "url": "https://images.unsplash.com/photo-1548538931-b47653628cdc",
+      "alt": "Fresh croissants arranged at a bakery counter",
+      "original_width": 2768,
+      "original_height": 1848
+    }
+  ]
+}

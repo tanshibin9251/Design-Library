@@ -88,7 +88,9 @@ def main():
     hashes = json.loads(hf.read_text(encoding="utf-8")) if hf.exists() else {}
     tmp = Path(tempfile.mkdtemp(prefix="dl-prev-"))
     jobs = []
-    runtime_hash = sha((LIB / "runtime/site.css").read_bytes())
+    runtime_hash = sha(*[(LIB / 'runtime' / name).read_bytes() for name in
+                         ('site.css','template-ux.css','template-ux.js','template-commerce.js')],
+                       (ROOT / 'build/template_enhance.py').read_bytes())
     # templates
     for d in sorted((PUB / "api/website/templates").glob("*/*")):
         if not d.is_dir() or (only and d.name not in only):
@@ -100,7 +102,8 @@ def main():
         key = "t-" + d.name
         h = sha(runtime_hash, (src / "template.json").read_bytes() if (src / "template.json").exists() else b"",
                 (src / "nav.html").read_bytes() if (src / "nav.html").exists() else b"",
-                (src / "pages/home.html").read_bytes() if (src / "pages/home.html").exists() else b"")
+                (src / "pages/home.html").read_bytes() if (src / "pages/home.html").exists() else b"",
+                (src / "interactions.js").read_bytes() if (src / "interactions.js").exists() else b"")
         dest = OUT / "templates" / d.parent.name / f"{d.name}.jpg"
         if not a.force and hashes.get(key) == h and dest.exists():
             continue

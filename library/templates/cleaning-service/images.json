@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "living-room",
+      "author": "Blake Wisz",
+      "source": "https://unsplash.com/photos/a-living-room-filled-with-furniture-and-a-large-window-hGFu6Wbu7Lw",
+      "url": "https://images.unsplash.com/photo-1639422947517-8910fd782193",
+      "alt": "Living room with a sofa and coffee table",
+      "original_width": 8161,
+      "original_height": 5441
+    }
+  ]
+}

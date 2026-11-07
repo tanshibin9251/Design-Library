@@ -28,6 +28,16 @@ jobs:
           python-version: '3.13'
       - name: Test deploy branch publishing
         run: python tools/test_publish_deploy.py
+      - name: Check browser state helpers
+        run: |
+          node --check build/src/app.js
+          node tools/test_library_state.cjs
+      - name: Check template upgrades
+        run: |
+          python tools/test_template_upgrades.py
+          node --check library/runtime/template-ux.js
+          node --check library/runtime/template-commerce.js
+          for file in library/templates/*/interactions.js; do node --check "$file"; done
       - name: Build website
         run: python build/build.py
       - name: Check public output

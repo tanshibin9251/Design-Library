@@ -33,6 +33,9 @@ build/
   build.py                网站、Guide、manifest、API、下载包、上传差异
   site_export.py          HTML / PHP / JSON / Elementor 参考包
   src/app.js、app.css     网站界面源码
+  src/library-state.js    项目收藏验证、迁移、备份合并
+  src/guide.html          网站使用指南正文
+  template_review.py      模板源码检查信号（非浏览器验收）
   deploy.py               真正联网上传的独立脚本
 mcp-server/               本地 stdio MCP，server.py 与 requirements.txt
 tools/                    导入、缩略图、手机检查、触屏补丁
@@ -47,7 +50,7 @@ UPLOAD_LOG.md             人工维护的变更/上传交接记录
 | 想改什么 | 源码位置 |
 |---|---|
 | 导航、搜索、收藏、筛选和预览 UI | `build/src/app.js`、`build/src/app.css` |
-| 网站 Guide | `build/build.py` 的 `guide_html()` |
+| 网站 Guide | `build/src/guide.html`；构建时注入数量 |
 | 模板内容、品牌变量 | `library/templates/<slug>/` |
 | 效果的实现和使用说明 | `library/effects/<cat>/<slug>/` |
 | 分类名称与分组 | `library/taxonomy.json`，同时检查 paths / 前端映射 |
@@ -68,3 +71,7 @@ UPLOAD_LOG.md             人工维护的变更/上传交接记录
 - 缩略图：`previews/website/templates/...`、`previews/website/effects/...`
 
 旧路径兼容跳转由生成的 `.htaccess` 负责；新文档和调用不要继续使用旧 URL。
+
+模板优化全量清单：`docs/TEMPLATE_IMPROVEMENT_QUEUE.md`，结构化数据：`docs/TEMPLATE_IMPROVEMENT_INVENTORY.json`；由 `tools/template_inventory.py` 生成。
+
+模板升级层：`build/template_enhance.py` 和 `library/runtime/template-{ux,commerce}.*`；专属交互：`library/templates/<slug>/interactions.js`。摄影索引与布局记录：`library/photography/`；`tools/apply_template_photography.py` 默认仅预览，显式 --apply 才修改模板源文件，不属于日常构建命令。

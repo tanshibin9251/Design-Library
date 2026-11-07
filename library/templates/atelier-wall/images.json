@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/museum-exhibition-with-sculpture-and-artwork-on-walls-A7stKKNY1GQ",
+      "author": "Filipe Nobre",
+      "alt": "Museum exhibition with sculpture and artwork on walls",
+      "id": "gallery",
+      "url": "https://images.unsplash.com/photo-1774125553858-3f41e84d4e92",
+      "original_width": 3056,
+      "original_height": 4064
+    },
+    {
+      "source": "https://unsplash.com/photos/assortment-of-handmade-ceramic-bowls-and-dishes-on-shelves-1FPwnKpLeOE",
+      "author": "Khanh Do",
+      "alt": "Assortment of handmade ceramic bowls and dishes on shelves",
+      "id": "ceramics",
+      "url": "https://images.unsplash.com/photo-1764072396689-953cc059db86",
+      "original_width": 3602,
+      "original_height": 2402
+    }
+  ]
+}

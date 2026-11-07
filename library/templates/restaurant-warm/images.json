@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "restaurant",
+      "author": "Antonio Araujo",
+      "source": "https://unsplash.com/photos/cozy-restaurant-interior-with-tables-and-seating-yQYtdkKOLnQ",
+      "url": "https://images.unsplash.com/photo-1776763255189-3c8237aec808",
+      "alt": "Restaurant interior with tables and seating",
+      "original_width": 6000,
+      "original_height": 4000
+    },
+    {
+      "source": "https://unsplash.com/photos/a-woman-is-cooking-vegetables-dQZCfPMrQwE",
+      "author": "Sweet Life",
+      "alt": "a woman is cooking vegetables",
+      "url": "https://images.unsplash.com/photo-1683556262029-56f31fbf75ee",
+      "id": "cooking",
+      "original_width": 3840,
+      "original_height": 5760
+    }
+  ]
+}

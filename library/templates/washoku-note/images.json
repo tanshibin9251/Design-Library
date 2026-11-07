@@ -1,0 +1,25 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/sushi-chefs-preparing-food-in-a-japanese-restaurant-R0QqSK9wkFU/",
+      "author": "Johan Mouchet",
+      "alt": "Sushi chefs preparing food in a japanese restaurant",
+      "id": "sushi-chefs",
+      "url": "https://images.unsplash.com/photo-1752135534175-44aa59a1bb50",
+      "original_width": 5674,
+      "original_height": 3783
+    },
+    {
+      "source": "https://unsplash.com/photos/fresh-vegetables-are-displayed-at-a-farmers-market-kT8sV5WZPJI",
+      "author": "David Trinks",
+      "alt": "Fresh vegetables are displayed at a farmer's market",
+      "url": "https://images.unsplash.com/photo-1751778682705-1823ca6e0949",
+      "id": "vegetables",
+      "original_width": 3600,
+      "original_height": 2400
+    }
+  ]
+}

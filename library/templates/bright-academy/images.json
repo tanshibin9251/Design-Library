@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "classroom",
+      "author": "Yogendra Singh",
+      "source": "https://unsplash.com/photos/girls-in-classroom-M92wusZZ_qg",
+      "url": "https://images.unsplash.com/photo-1573894998033-c0cef4ed722b",
+      "alt": "Students learning in a classroom",
+      "original_width": 6000,
+      "original_height": 4000
+    }
+  ]
+}

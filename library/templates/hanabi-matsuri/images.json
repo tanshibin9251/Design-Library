@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-large-fireworks-is-lit-up-the-night-sky-0Q2VaquSlZM",
+      "author": "ayumi kubo",
+      "alt": "A large fireworks is lit up the night sky",
+      "url": "https://images.unsplash.com/photo-1723127220966-cf3c9e120a42",
+      "id": "fireworks",
+      "original_width": 4000,
+      "original_height": 6000
+    }
+  ]
+}

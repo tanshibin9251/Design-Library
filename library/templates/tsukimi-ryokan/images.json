@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/traditional-japanese-room-with-tatami-mats-and-shoji-screens-dEiBSNmahgw/",
+      "author": "5010",
+      "alt": "Traditional japanese room with tatami mats and shoji screens",
+      "url": "https://images.unsplash.com/photo-1759310707368-e36f321b3187",
+      "id": "tatami-room",
+      "original_width": 3701,
+      "original_height": 2463
+    }
+  ]
+}

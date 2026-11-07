@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/barista-prepares-coffee-with-siphon-brewer-in-cafe-EPNMqEzb7AY",
+      "author": "Harman Tatla",
+      "alt": "Barista prepares coffee with siphon brewer in cafe",
+      "id": "siphon",
+      "url": "https://images.unsplash.com/photo-1774014045872-3cc2b5e7e816",
+      "original_width": 7728,
+      "original_height": 5152
+    }
+  ]
+}

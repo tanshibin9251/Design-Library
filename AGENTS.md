@@ -13,6 +13,7 @@
 | 初次进入 / 找文件 | `README.md`、`STRUCTURE.md` |
 | 构建、导出、排错 | `HOW_IT_WORKS.md` |
 | 入库、生成或复用设计 | `docs/CONTENT_WORKFLOWS.md`、`library/FORMAT.md`、目标条目的说明 |
+| 继续模板升级 / 查验收范围 | `docs/TEMPLATE_UPGRADE_STATUS.md`、目标模板 `TEMPLATE.md`；共用层在 `build/template_enhance.py` |
 | 改网站导航 / 收集体验 | `docs/WEBSITE_REVIEW.md`、`build/src/app.js`、`build/src/app.css` |
 
 数量、分类和公共路径以源码与实际生成结果为准：`library/taxonomy.json`、各条目元数据、`build/paths.py`。`library/catalog.json` 和 `library/INDEX.md` 是生成目录，可能尚未刷新。不要在规则里维护资源总数。
@@ -34,6 +35,7 @@
 - 模板 / Graphic 使用 `--c-*`、`--f-*` 等现有变量；effect 使用 `--primary`、`--font-heading` 等自身变量；转场使用 `--pt-*`。不要混用，也不要批量改掉 imported documents 的原始 CSS。
 - 示例文案与图片需按目标项目替换；缺素材标「缺图」。中文需合适 fallback，标题不斜体。不用 CSS 硬画写实人物或产品。
 - 动效提供 reduced-motion 降级；交互可键盘、触屏操作。390px / 768px 不横向溢出，触屏目标尽量至少 44px，不依赖 hover 显示必要信息。
+- 自定义 class 要检查样式实际命中；首屏、页脚与独立导出分别检查。fragments 的共用交互由 `template_enhance.py` 注入，专属行为放条目的 `interactions.js`，不要只修预览的 Live 层。
 - Elementor 导出是重建参考包，不是原生可导入 Kit；不要承诺 HTML/JS 效果能够直接转为原生 widget。Global Colors/Fonts 按当前项目要求由用户填写。
 
 ## 来源与可见性
@@ -56,6 +58,7 @@ py -X utf8 tools/mobile_audit.py --templates --all-pages --width 768
 
 - 纯文档修改：查文件路径、链接、命令与源码一致性，不为验证文档重建网站。
 - 内容 / 构建 / 前端修改：构建，按改动范围验证预览、复制、下载、筛选及深链接。UI 本身还要单独检查桌面、390px、768px；mobile_audit 主要检查资源 demo，不覆盖整个网站 UI。
+- 收藏或模板共用层变更，分别运行 `node tools/test_library_state.cjs`、`py -X utf8 tools/test_template_upgrades.py`。几何检查和编译检查不等于完整业务或无障碍验收。
 - `mobile_audit.py` 小触摸目标目前是警告且阈值 40px，退出 0 不能证明达到 44px 标准。
 - 缩略图变更：build → `py -X utf8 tools/gen_previews.py`（先查看支持的参数）→ build。`fx_touch_patch.py` 会批量写效果，必须先检查范围和差异，不能当只读检查运行。
 - 构建会重建输出并生成 `_work/upload/UPLOAD.md`。其差异相对上次已上传基线；本次变更范围另与构建前快照比较。

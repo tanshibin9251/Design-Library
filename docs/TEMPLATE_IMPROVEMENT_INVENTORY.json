@@ -1,0 +1,1855 @@
+[
+  {
+    "slug": "modern-saas",
+    "name": "Modern SaaS",
+    "zh": "现代 SaaS",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 22,
+    "industries": [
+      "saas",
+      "tech"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 59,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "已确认：试用/视频 CTA 目的不一致，Features 重名；优先产品界面和功能图；修正 CTA、价格/试用演示，不用风景替代产品；产品界面、技术图解或服务成果视觉；核对功能说明与 CTA"
+  },
+  {
+    "slug": "enterprise-blue",
+    "name": "Enterprise Blue",
+    "zh": "企业蓝",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 21,
+    "industries": [
+      "corporate",
+      "tech"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 60,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "团队/服务/案例示意视觉；服务详情、询盘与整齐页脚；产品界面、技术图解或服务成果视觉；核对功能说明与 CTA"
+  },
+  {
+    "slug": "fine-dining",
+    "name": "Fine Dining",
+    "zh": "高端餐饮",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 26,
+    "industries": [
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 73,
+      "forms": 4,
+      "blocked_forms": 4,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "boutique-rose",
+    "name": "Boutique Rose",
+    "zh": "精品玫瑰",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 24,
+    "industries": [
+      "fashion"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "系列与商品图、材质细节；尺码/颜色/购物车演示保持一致"
+  },
+  {
+    "slug": "bold-studio",
+    "name": "Bold Studio",
+    "zh": "粗犷工作室",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 24,
+    "industries": [
+      "agency"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 86,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "案例主视觉与交付细节；服务/案例/询价流程及页脚"
+  },
+  {
+    "slug": "calm-spa",
+    "name": "Calm Spa",
+    "zh": "宁静水疗",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 25,
+    "industries": [
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 80,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "服务场景和空间摄影；预约/计划选择与手机菜单完善"
+  },
+  {
+    "slug": "magazine-classic",
+    "name": "Magazine Classic",
+    "zh": "经典杂志",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 25,
+    "industries": [
+      "media"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 89,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "文章/内容封面与栏目层级；搜索、空结果、阅读及页脚"
+  },
+  {
+    "slug": "restaurant-warm",
+    "name": "Restaurant Warm",
+    "zh": "温暖餐饮",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 25,
+    "industries": [
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 74,
+      "forms": 4,
+      "blocked_forms": 4,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "已确认：结账总额与明细不符，存在重复页面名；首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "construction-pro",
+    "name": "Construction Pro",
+    "zh": "工程建筑",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 21,
+    "industries": [
+      "construction"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 48,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "项目/工序/团队示意摄影；询价表单、项目详情和页脚完善"
+  },
+  {
+    "slug": "fitness-energy",
+    "name": "Fitness Energy",
+    "zh": "活力健身",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 24,
+    "industries": [
+      "fitness"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "训练空间与课程特色图；课程选择/价格/预约状态完善"
+  },
+  {
+    "slug": "neon-nexus",
+    "name": "Nexus AI",
+    "zh": "未来科技",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 22,
+    "industries": [
+      "tech",
+      "saas"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 48,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "产品界面、技术图解或服务成果视觉；核对功能说明与 CTA；优先产品界面和功能图；修正 CTA、价格/试用演示，不用风景替代产品"
+  },
+  {
+    "slug": "estate-prime",
+    "name": "Estate Prime",
+    "zh": "豪宅地产",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 24,
+    "industries": [
+      "realestate"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "房源封面、室内/户型视觉；筛选、零结果、收藏和询盘演示"
+  },
+  {
+    "slug": "lens-light",
+    "name": "Lens & Light",
+    "zh": "镜头与光",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 23,
+    "industries": [
+      "photography"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 60,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "成套作品、项目封面与画廊；保留一致色调、裁切和作品顺序"
+  },
+  {
+    "slug": "dental-care",
+    "name": "Smile Dental",
+    "zh": "微笑牙科",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 19,
+    "industries": [
+      "medical",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 42,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "诊所/服务场景示意图；预约、验证与请求反馈，不宣称已预约；服务场景和空间摄影；预约/计划选择与手机菜单完善"
+  },
+  {
+    "slug": "retro-diner",
+    "name": "Sunny's Diner",
+    "zh": "阳光餐厅",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 24,
+    "industries": [
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "bright-academy",
+    "name": "Bright Academy",
+    "zh": "明亮学院",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 20,
+    "industries": [
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 48,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "gilded-ledger",
+    "name": "Gilded Ledger",
+    "zh": "金边金融",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 22,
+    "industries": [
+      "finance"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 52,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "优先数据图表和信息排版；补计算边界与咨询演示，摄影可选"
+  },
+  {
+    "slug": "clay-beauty",
+    "name": "Clay Beauty Studio",
+    "zh": "黏土美学",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 25,
+    "industries": [
+      "beauty",
+      "fashion"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 74,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "空间/服务/产品摄影；真实案例须有来源，不冒充库存图为成果；系列与商品图、材质细节；尺码/颜色/购物车演示保持一致"
+  },
+  {
+    "slug": "nordic-interiors",
+    "name": "Nordic Interiors",
+    "zh": "北欧室内",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 21,
+    "industries": [
+      "interior"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 52,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "空间大图、项目案例、材质细节和改造前后；页脚分组对齐"
+  },
+  {
+    "slug": "pixel-arena",
+    "name": "Pixel Arena",
+    "zh": "像素竞技场",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 25,
+    "industries": [
+      "gaming"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 73,
+      "forms": 4,
+      "blocked_forms": 4,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留游戏/插画风格；补活动/设备视觉、手机交互和性能检查"
+  },
+  {
+    "slug": "aurora-cowork",
+    "name": "Aurora Cowork",
+    "zh": "极光共享办公",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 22,
+    "industries": [
+      "coworking",
+      "tech"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 48,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "空间、设施与活动摄影；工位/方案选择与看场地请求；产品界面、技术图解或服务成果视觉；核对功能说明与 CTA"
+  },
+  {
+    "slug": "quiet-grace",
+    "name": "Quiet Grace Community",
+    "zh": "静恩社区",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 20,
+    "industries": [
+      "faith",
+      "nonprofit"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 42,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "社区/活动摄影；日程、信息层级、手机导航和页脚；项目与活动示意图；明确数据和捐赠按钮的演示边界"
+  },
+  {
+    "slug": "green-acre",
+    "name": "Green Acre Farm",
+    "zh": "绿野农场",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 26,
+    "industries": [
+      "agriculture"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "农场、时令食材和产品图；购物与订阅演示"
+  },
+  {
+    "slug": "swiftline",
+    "name": "Swiftline Logistics",
+    "zh": "迅捷物流",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 23,
+    "industries": [
+      "logistics"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 52,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留流程/轨迹图；可选运营摄影，明确查询和估算的演示数据"
+  },
+  {
+    "slug": "happy-paws",
+    "name": "Happy Paws",
+    "zh": "欢乐爪爪",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 25,
+    "industries": [
+      "pets"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 70,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "动物/空间/商品摄影；服务或商品选项与请求反馈"
+  },
+  {
+    "slug": "fixit-home",
+    "name": "FixIt Home Services",
+    "zh": "到家维修",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 25,
+    "industries": [
+      "homeservices",
+      "construction"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 4,
+      "blocked_forms": 4,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "服务/项目过程示意图；报价、服务区域与请求反馈；项目/工序/团队示意摄影；询价表单、项目详情和页脚完善"
+  },
+  {
+    "slug": "civic-hall",
+    "name": "Civic Hall",
+    "zh": "市政厅",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 21,
+    "industries": [
+      "government"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 45,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "任务/目录与可读性优先；可选社区摄影，补查询和无结果状态"
+  },
+  {
+    "slug": "hope-foundation",
+    "name": "Hope Foundation",
+    "zh": "希望基金会",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 18,
+    "industries": [
+      "nonprofit"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 42,
+      "forms": 1,
+      "blocked_forms": 1,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "项目与活动示意图；明确数据和捐赠按钮的演示边界"
+  },
+  {
+    "slug": "evergreen-weddings",
+    "name": "Evergreen Weddings",
+    "zh": "常青婚礼",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 23,
+    "industries": [
+      "events"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 60,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "活动/婚礼视觉、场地与项目封面；时间、票务与预约状态清楚；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "wanderlust-travel",
+    "name": "Wanderlust",
+    "zh": "漫游旅行",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 23,
+    "industries": [
+      "travel"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 1,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "目的地/房型/设施摄影、行程或入住流程；说明示意与实时数据边界"
+  },
+  {
+    "slug": "autoline-motors",
+    "name": "Autoline Motors",
+    "zh": "汽车行",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 24,
+    "industries": [
+      "automotive"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 68,
+      "forms": 4,
+      "blocked_forms": 4,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "车型/车间与服务过程；比较/规格/报价和查询演示"
+  },
+  {
+    "slug": "lexington-law",
+    "name": "Lexington & Co",
+    "zh": "莱克星顿律所",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 19,
+    "industries": [
+      "legal"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 42,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留文档式排版；可选空间图，完善服务详情、咨询和页脚"
+  },
+  {
+    "slug": "pulse-records",
+    "name": "Pulse Records",
+    "zh": "脉冲唱片",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 24,
+    "industries": [
+      "music"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 62,
+      "forms": 3,
+      "blocked_forms": 3,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "作品/演出或教学场景视觉；播放/课程/购物演示与触屏反馈"
+  },
+  {
+    "slug": "oakline-furniture",
+    "name": "Oakline Furniture",
+    "zh": "橡木线家具",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "furniture",
+      "interior"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 30,
+      "forms": 2,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "家具主图、材质/尺寸细节、场景图；补选项/价格/缺货演示；空间大图、项目案例、材质细节和改造前后；页脚分组对齐"
+  },
+  {
+    "slug": "loft-industrial",
+    "name": "Loft Industrial",
+    "zh": "工业阁楼",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "furniture",
+      "interior"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 31,
+      "forms": 2,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "家具主图、材质/尺寸细节、场景图；补选项/价格/缺货演示；空间大图、项目案例、材质细节和改造前后；页脚分组对齐"
+  },
+  {
+    "slug": "curve-modern",
+    "name": "Curve Modern",
+    "zh": "圆润现代",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "furniture"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 26,
+      "forms": 2,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "家具主图、材质/尺寸细节、场景图；补选项/价格/缺货演示"
+  },
+  {
+    "slug": "heirloom-classic",
+    "name": "Heirloom Classic",
+    "zh": "传世古典",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "furniture",
+      "interior"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 18,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "家具主图、材质/尺寸细节、场景图；补选项/价格/缺货演示；空间大图、项目案例、材质细节和改造前后；页脚分组对齐"
+  },
+  {
+    "slug": "sprint-gear",
+    "name": "Sprint Gear",
+    "zh": "冲刺装备",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 12,
+    "industries": [
+      "sports",
+      "fitness"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 32,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "训练空间与课程特色图；课程选择/价格/预约状态完善；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "trailhead-outdoor",
+    "name": "Trailhead Outdoor",
+    "zh": "山径户外",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "sports",
+      "travel"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 35,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "目的地/房型/设施摄影、行程或入住流程；说明示意与实时数据边界；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "peak-performance",
+    "name": "Peak Performance",
+    "zh": "巅峰科技",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 13,
+    "industries": [
+      "sports",
+      "tech"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 14,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "产品界面、技术图解或服务成果视觉；核对功能说明与 CTA"
+  },
+  {
+    "slug": "renovo-studio",
+    "name": "Renovo Studio",
+    "zh": "翻新工作室",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 12,
+    "industries": [
+      "interior",
+      "construction"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 20,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "空间大图、项目案例、材质细节和改造前后；页脚分组对齐；项目/工序/团队示意摄影；询价表单、项目详情和页脚完善；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "blueprint-build",
+    "name": "Blueprint Build",
+    "zh": "蓝图营造",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 12,
+    "industries": [
+      "construction",
+      "homeservices"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 1,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 1,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "项目/工序/团队示意摄影；询价表单、项目详情和页脚完善；服务/项目过程示意图；报价、服务区域与请求反馈"
+  },
+  {
+    "slug": "casa-makeover",
+    "name": "Casa Makeover",
+    "zh": "居家焕新",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 11,
+    "industries": [
+      "homeservices",
+      "interior"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 22,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 2,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "服务/项目过程示意图；报价、服务区域与请求反馈；空间大图、项目案例、材质细节和改造前后；页脚分组对齐；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "thai-touch",
+    "name": "Thai Touch",
+    "zh": "泰式触感",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 12,
+    "industries": [
+      "massage",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 12,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 4,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "空间、服务与技法示意摄影；预约选择和演示反馈；服务场景和空间摄影；预约/计划选择与手机菜单完善；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "reflex-point",
+    "name": "Reflex Point",
+    "zh": "足点",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 11,
+    "industries": [
+      "massage",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 2,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 2,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "空间、服务与技法示意摄影；预约选择和演示反馈；服务场景和空间摄影；预约/计划选择与手机菜单完善；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "tuina-heritage",
+    "name": "Tuina Heritage",
+    "zh": "推拿传承",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 12,
+    "industries": [
+      "massage",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 4,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "空间、服务与技法示意摄影；预约选择和演示反馈；服务场景和空间摄影；预约/计划选择与手机菜单完善；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "cafe-bakery",
+    "name": "Crumb & Co",
+    "zh": "面包咖啡馆",
+    "group": "已完成示范",
+    "priority": 0,
+    "pages": 10,
+    "industries": [
+      "restaurant"
+    ],
+    "signals": {
+      "images": 20,
+      "remote_images": 20,
+      "placeholders": 1,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "已批准的高清外链摄影 + 手机导航/表单演示 + 三栏页脚；不重复安排升级"
+  },
+  {
+    "slug": "salon-studio",
+    "name": "Maison Verde",
+    "zh": "绿荫美发沙龙",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 11,
+    "industries": [
+      "beauty",
+      "fashion"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 25,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "空间/服务/产品摄影；真实案例须有来源，不冒充库存图为成果；系列与商品图、材质细节；尺码/颜色/购物车演示保持一致；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "tuition-centre",
+    "name": "BrightPath Tuition",
+    "zh": "明途补习中心",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 11,
+    "industries": [
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 5,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "教学环境/课程封面；课程详情、课表与试课请求演示；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "auto-workshop",
+    "name": "Torque Garage",
+    "zh": "扭矩车厂",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 10,
+    "industries": [
+      "automotive",
+      "homeservices"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 2,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "车型/车间与服务过程；比较/规格/报价和查询演示；服务/项目过程示意图；报价、服务区域与请求反馈；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "homestay-stays",
+    "name": "Rumah Singgah",
+    "zh": "归栖民宿",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "travel",
+      "realestate"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 18,
+      "forms": 2,
+      "blocked_forms": 1,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "目的地/房型/设施摄影、行程或入住流程；说明示意与实时数据边界；房源封面、室内/户型视觉；筛选、零结果、收藏和询盘演示；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "folio-portfolio",
+    "name": "Aria Lim Portfolio",
+    "zh": "设计师作品集",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 7,
+    "industries": [
+      "agency",
+      "photography"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 15,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "案例主视觉与交付细节；服务/案例/询价流程及页脚；成套作品、项目封面与画廊；保留一致色调、裁切和作品顺序"
+  },
+  {
+    "slug": "accounting-firm",
+    "name": "Verde & Co. Accountants",
+    "zh": "会计师事务所",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 11,
+    "industries": [
+      "finance",
+      "legal"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 4,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "优先数据图表和信息排版；补计算边界与咨询演示，摄影可选；保留文档式排版；可选空间图，完善服务详情、咨询和页脚；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "herbal-clinic",
+    "name": "Baoshan Herbal Clinic",
+    "zh": "保善堂中医诊所",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "medical",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 5,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "诊所/服务场景示意图；预约、验证与请求反馈，不宣称已预约；服务场景和空间摄影；预约/计划选择与手机菜单完善；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "wedding-photo",
+    "name": "Frame & Vow",
+    "zh": "婚礼摄影",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 9,
+    "industries": [
+      "events",
+      "photography"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 20,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "活动/婚礼视觉、场地与项目封面；时间、票务与预约状态清楚；成套作品、项目封面与画廊；保留一致色调、裁切和作品顺序；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "expo-summit",
+    "name": "Nexus Summit",
+    "zh": "亚洲产品设计峰会",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "events",
+      "media"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 21,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "活动/婚礼视觉、场地与项目封面；时间、票务与预约状态清楚；文章/内容封面与栏目层级；搜索、空结果、阅读及页脚；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "cleaning-service",
+    "name": "Sparkle Nest",
+    "zh": "清洁到家",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 11,
+    "industries": [
+      "homeservices"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "服务/项目过程示意图；报价、服务区域与请求反馈；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "pet-boutique",
+    "name": "Pawsh Pet Boutique",
+    "zh": "宠物精品店",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "pets"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 23,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "动物/空间/商品摄影；服务或商品选项与请求反馈；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "app-landing",
+    "name": "Pocket App Landing",
+    "zh": "应用落地页",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 8,
+    "industries": [
+      "saas",
+      "tech"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": true,
+    "recommendation": "优先产品界面和功能图；修正 CTA、价格/试用演示，不用风景替代产品；产品界面、技术图解或服务成果视觉；核对功能说明与 CTA；页脚 class 与多栏 CSS 需专项核对（静态线索，非已复现 bug）"
+  },
+  {
+    "slug": "court-line",
+    "name": "Court Line",
+    "zh": "球场线",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 9,
+    "industries": [
+      "sports"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 7,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 1,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "按本模板用途补主视觉/特色图、导航和核心演示反馈，不统一换成摄影风格"
+  },
+  {
+    "slug": "aizome-goods",
+    "name": "Aizome Goods",
+    "zh": "藍染",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "fashion",
+      "interior"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "系列与商品图、材质细节；尺码/颜色/购物车演示保持一致；空间大图、项目案例、材质细节和改造前后；页脚分组对齐"
+  },
+  {
+    "slug": "tsukimi-ryokan",
+    "name": "Tsukimi Ryokan",
+    "zh": "月見荘",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 13,
+    "industries": [
+      "travel",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 1,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "目的地/房型/设施摄影、行程或入住流程；说明示意与实时数据边界；服务场景和空间摄影；预约/计划选择与手机菜单完善"
+  },
+  {
+    "slug": "diamond-shop",
+    "name": "Diamond Shop",
+    "zh": "菱形商店",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 15,
+    "industries": [
+      "sports"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 45,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "按本模板用途补主视觉/特色图、导航和核心演示反馈，不统一换成摄影风格"
+  },
+  {
+    "slug": "kissa-showa",
+    "name": "Kissa Maruyo",
+    "zh": "喫茶まるよ",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 11,
+    "industries": [
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "ippon-dojo",
+    "name": "Ippon Dojo",
+    "zh": "一本道場",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 12,
+    "industries": [
+      "fitness"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 1,
+      "vectors": 1,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "训练空间与课程特色图；课程选择/价格/预约状态完善"
+  },
+  {
+    "slug": "hanabi-matsuri",
+    "name": "Hanabi Matsuri",
+    "zh": "花火祭",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 11,
+    "industries": [
+      "events"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 1,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "活动/婚礼视觉、场地与项目封面；时间、票务与预约状态清楚"
+  },
+  {
+    "slug": "commit-camp",
+    "name": "Commit Camp",
+    "zh": "编程训练营",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 11,
+    "industries": [
+      "coding",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留 IDE/代码界面；课程/练习演示、键盘和手机菜单完善；教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "plainspeak-english",
+    "name": "Plainspeak English",
+    "zh": "英语课程",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 11,
+    "industries": [
+      "language",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留课程/学习界面；可选学习场景，补分级测试与选课反馈；教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "nihongo-path",
+    "name": "Nihongo Path",
+    "zh": "にほんごパス",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 11,
+    "industries": [
+      "language",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 2,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留课程/学习界面；可选学习场景，补分级测试与选课反馈；教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "fermata-piano",
+    "name": "Fermata Piano",
+    "zh": "钢琴课程",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 10,
+    "industries": [
+      "music",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 3,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "作品/演出或教学场景视觉；播放/课程/购物演示与触屏反馈；教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "atelier-wall",
+    "name": "Atelier Wall",
+    "zh": "美术课程",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 10,
+    "industries": [
+      "arts",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "作品和课程封面；保留画廊构图，补详情与交互反馈；教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "pass-lab",
+    "name": "Pass Lab",
+    "zh": "考证备考",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 10,
+    "industries": [
+      "exam",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 2,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留仪表/学习计划；补测验、解释与空状态，不必强加背景照片；教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "wok-and-steam",
+    "name": "Wok & Steam",
+    "zh": "家常中餐",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "culinary",
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "菜谱成品、食材与分步图片；不把随机菜品当同一道菜；首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "washoku-note",
+    "name": "Washoku Note",
+    "zh": "和食ノート",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "culinary",
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 12,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "菜谱成品、食材与分步图片；不把随机菜品当同一道菜；首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "sugar-and-crumb",
+    "name": "Sugar & Crumb",
+    "zh": "烘焙甜点",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "culinary",
+      "restaurant"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 9,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "菜谱成品、食材与分步图片；不把随机菜品当同一道菜；首屏餐饮摄影、菜品特色图、制作过程和空间图；商品与图像必须对应"
+  },
+  {
+    "slug": "daily-table",
+    "name": "Daily Table",
+    "zh": "家常餐桌",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "culinary",
+      "lifestyle"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 11,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "菜谱成品、食材与分步图片；不把随机菜品当同一道菜"
+  },
+  {
+    "slug": "knack-index",
+    "name": "Knack Index",
+    "zh": "生活知识",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 9,
+    "industries": [
+      "lifestyle",
+      "education"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "教学环境/课程封面；课程详情、课表与试课请求演示"
+  },
+  {
+    "slug": "mind-notes",
+    "name": "Mind Notes",
+    "zh": "心理学科普",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 10,
+    "industries": [
+      "psychology",
+      "health"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 1,
+      "vectors": 0,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "保留平静排版与图解；可选自然背景，检查动效降级及阅读体验；服务场景和空间摄影；预约/计划选择与手机菜单完善"
+  },
+  {
+    "slug": "petal-desk",
+    "name": "Petal Desk",
+    "zh": "花瓣项目台",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 9,
+    "industries": [
+      "agency",
+      "saas",
+      "homeservices"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 4,
+      "blocked_forms": 0,
+      "vectors": 251,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "案例主视觉与交付细节；服务/案例/询价流程及页脚；优先产品界面和功能图；修正 CTA、价格/试用演示，不用风景替代产品；服务/项目过程示意图；报价、服务区域与请求反馈"
+  },
+  {
+    "slug": "job-atlas",
+    "name": "Job Atlas",
+    "zh": "职业图鉴",
+    "group": "按行业补视觉与演示流程",
+    "priority": 2,
+    "pages": 10,
+    "industries": [
+      "education",
+      "lifestyle",
+      "media"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 0,
+      "blocked_forms": 0,
+      "vectors": 141,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "教学环境/课程封面；课程详情、课表与试课请求演示；文章/内容封面与栏目层级；搜索、空结果、阅读及页脚"
+  },
+  {
+    "slug": "blue-hour",
+    "name": "Blue Hour",
+    "zh": "蓝调时刻",
+    "group": "优先摄影与布局升级",
+    "priority": 1,
+    "pages": 9,
+    "industries": [
+      "travel",
+      "photography"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 1,
+      "blocked_forms": 0,
+      "vectors": 59,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "目的地/房型/设施摄影、行程或入住流程；说明示意与实时数据边界；成套作品、项目封面与画廊；保留一致色调、裁切和作品顺序"
+  },
+  {
+    "slug": "grownotic",
+    "name": "Grow Notic",
+    "zh": "成长轨道",
+    "group": "保留插画/排版，完善功能",
+    "priority": 3,
+    "pages": 11,
+    "industries": [
+      "agency",
+      "tech"
+    ],
+    "signals": {
+      "images": 0,
+      "remote_images": 0,
+      "placeholders": 0,
+      "forms": 2,
+      "blocked_forms": 2,
+      "vectors": 2,
+      "check": "Source inspection; browser behaviour not certified"
+    },
+    "footer_needs_review": false,
+    "recommendation": "案例主视觉与交付细节；服务/案例/询价流程及页脚；产品界面、技术图解或服务成果视觉；核对功能说明与 CTA"
+  }
+]

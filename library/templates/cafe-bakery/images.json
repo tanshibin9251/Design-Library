@@ -1,0 +1,79 @@
+{
+  "purpose": "Remote stock photography for template layout demonstration; replace with the customer's own photography. No photo binaries are stored or redistributed.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "morning",
+      "author": "Rizky Subagja",
+      "source": "https://unsplash.com/photos/latte-croissant-and-book-on-cafe-table-1k7TnX5GAww",
+      "url": "https://images.unsplash.com/photo-1542372147193-a7aca54189cd",
+      "alt": "Coffee and croissant on a sunlit wooden café table",
+      "original_width": 3235,
+      "original_height": 4852
+    },
+    {
+      "id": "bread",
+      "author": "Caramel",
+      "source": "https://unsplash.com/photos/a-stack-of-four-pieces-of-bread-sitting-on-top-of-a-table-U9-0JVdjCVo",
+      "url": "https://images.unsplash.com/photo-1677825948767-5d379d012bda",
+      "alt": "Slices of artisan sourdough showing the open crumb",
+      "original_width": 3761,
+      "original_height": 3761
+    },
+    {
+      "id": "croissant",
+      "author": "Olga Petnyunene",
+      "source": "https://unsplash.com/photos/a-close-up-of-a-croissant-on-a-white-surface-VgsizSk7py0",
+      "url": "https://images.unsplash.com/photo-1709798289100-7b46217e0325",
+      "alt": "Golden butter croissant with crisp pastry layers",
+      "original_width": 3000,
+      "original_height": 4000
+    },
+    {
+      "id": "pastries",
+      "author": "Mimi Thian",
+      "source": "https://unsplash.com/photos/croissants-on-display-TG77ANwm3MQ",
+      "url": "https://images.unsplash.com/photo-1548538931-b47653628cdc",
+      "alt": "Fresh croissants arranged at a bakery counter",
+      "original_width": 2768,
+      "original_height": 1848
+    },
+    {
+      "id": "coffee",
+      "author": "Joe Hepburn",
+      "source": "https://unsplash.com/photos/cup-of-cappuccino-2y4tsj5iouQ",
+      "url": "https://images.unsplash.com/photo-1577968897441-c1e88d1bda20",
+      "alt": "A cup of flat white coffee beside green foliage",
+      "original_width": 5333,
+      "original_height": 4000
+    },
+    {
+      "id": "interior",
+      "author": "Firda Faradiba",
+      "source": "https://unsplash.com/photos/a-bakery-and-coffee-shops-interior-is-shown-iTD5w0VxnpQ",
+      "url": "https://images.unsplash.com/photo-1749631236676-ebdcceb675f9",
+      "alt": "A warm café and bakery interior, used as a space mood reference",
+      "original_width": 3024,
+      "original_height": 4032
+    },
+    {
+      "id": "baking",
+      "author": "Diego Arenas de Rodrigo",
+      "source": "https://unsplash.com/photos/baker-scoring-dough-with-a-razor-blade-t51-WQwU2z4",
+      "url": "https://images.unsplash.com/photo-1767065886923-4784897b653f",
+      "alt": "A baker's hands carefully scoring dough before baking",
+      "original_width": 4004,
+      "original_height": 6000
+    },
+    {
+      "id": "cake",
+      "author": "Just Capturing It",
+      "source": "https://unsplash.com/photos/a-decadent-chocolate-cake-with-slices-on-plates-cAy6uai7l5U",
+      "url": "https://images.unsplash.com/photo-1767044315790-bc0fe664fd0b",
+      "alt": "Chocolate cake and plated slices for a shared table",
+      "original_width": 4000,
+      "original_height": 5000
+    }
+  ]
+}

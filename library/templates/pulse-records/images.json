@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/a-vinyl-record-spinning-on-a-turntable-in-low-light-DIGeBP4UEVk/",
+      "author": "Dmitry Spravko",
+      "alt": "A vinyl record spinning on a turntable in low light",
+      "id": "vinyl",
+      "url": "https://images.unsplash.com/photo-1781756547472-46813046281c",
+      "original_width": 5118,
+      "original_height": 7677
+    }
+  ]
+}

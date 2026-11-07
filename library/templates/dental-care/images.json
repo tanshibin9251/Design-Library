@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "id": "dental",
+      "author": "Harold Hisona",
+      "source": "https://unsplash.com/photos/dentist-talking-to-patient-in-a-modern-dental-office-Bg81yWKZlMg",
+      "url": "https://images.unsplash.com/photo-1777331903190-341a3dd0441b",
+      "alt": "Illustrative dental consultation in a clinic",
+      "original_width": 3648,
+      "original_height": 2736
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "purpose": "Curated external stock references for template demonstrations. Replace with project-specific imagery. No photo binaries stored.",
+  "license_url": "https://unsplash.com/license",
+  "checked_at": "2026-11-07",
+  "images": [
+    {
+      "source": "https://unsplash.com/photos/skincare-products-arranged-on-a-bathroom-counter-OZg4Mn3GP_s",
+      "author": "Ela De Pure",
+      "alt": "Skincare products arranged on a bathroom counter",
+      "url": "https://images.unsplash.com/photo-1774620714979-2c258294fa48",
+      "id": "skincare",
+      "original_width": 2400,
+      "original_height": 2400
+    }
+  ]
+}

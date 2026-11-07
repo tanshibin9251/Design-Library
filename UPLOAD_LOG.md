@@ -1,5 +1,43 @@
 # Design Library 上传记录（流水账）
 
+## 2026-11-07 · 资源库与全库模板升级（GitHub 发布批次）
+
+- 内容源：保留已批准 café 示范；其余 81 套基础交互/导航/页脚升级，64 套按行业配置外链摄影，另外 17 套保留插画/图解。修复重点模板的 CTA、产品演示、数量/费用/结账与规格缺货状态；更新 82 张生成缩略图。没有下载原始照片到库中。
+- 文档与 Agent：实际执行记录在 `docs/TEMPLATE_UPGRADE_STATUS.md`；保留具名商品、人员、真实案例和菜谱步骤的真实素材需求。共用规则放 AGENTS.md，CLAUDE.md 保持引用入口。
+- 验证：1,289 个独立 HTML 页在 390px 视口做几何检查；82 套首页另检 768px / 1440px。重点功能按执行记录单独操作。85 个独立 JavaScript 片段及 2 个 JSON 片段检查通过，收藏状态测试与模板回归检查通过；公开输出检查 980 文件、246 个有效 ZIP，无 local_only 目录条目；PHP 首页语法通过。局部几何检查不代表全部业务或无障碍认证。
+- 构建输出相对网站 UX 阶段开始快照：新增 1、修改 493、删除 0；逐文件清单见 `docs/RELEASE_FILE_CHANGES_2026-11-07.json`。该快照已含之前本地 café 示范；此前两条 café 记录中的文件也会随 main 全量重建发布，不能将本清单当服务器已上传基线。
+- 发布路线：按既有授权通过 main → Actions → deploy；本地已完成验收，GitHub/Hostinger 的实际结果以交付回报和平台状态为准。未运行 FTP 或 --mark-uploaded，本地 .vscode 未读取、未复制、未纳入发布。
+
+## 2026-11-07 · 资源库网站 UX 优化（本地完成）
+
+- 全库搜索、分类查找、Overview/导出说明、手机工具栏、三套模板比较、项目收藏/备注与 JSON 备份恢复；更新 Guide、架构与使用说明。其他模板仅整理 82 套建议清单，没有批量执行。
+- 验证：JavaScript 语法、收藏状态单测、本地构建；浏览器桌面/手机/平板、项目恢复与可取消清空、候选比较；公开输出检查 980 文件、246 个有效 ZIP，无 local_only 目录条目。检查副本排除本地 .vscode，未读取配置。
+- 相对网站阶段开始快照：新增 1，修改 6，删除 0。
+  - 新增：`assets/library-state.js`
+  - 修改：`api/catalog.json`
+  - 修改：`assets/app.css`
+  - 修改：`assets/app.js`
+  - 修改：`data/manifest.json`
+  - 修改：`includes/shell.html`
+  - 修改：`index.php`
+- 状态：本地生成，未 commit / push，未上传或标记已上传。模板统计为源码线索，未逐套完成浏览器验收。
+
+## 2026-11-07 · Crumb & Co 页脚整理（本地待评审）
+
+- 修复 `.cb-foot` 未命中共用 `.foot` 布局的问题，改为独立品牌 + 两组导航三栏；手机品牌整行、导航两栏。去除项目符号，显式设置可读的标题/链接色，统一 44px 导航点击高度。版权和隐私独立底栏，摄影署名折叠保留。
+- 源文件同步：`library/templates/cafe-bakery/footer.html`、`nav.html`、`TEMPLATE.md`、`library/styles/cafe-bakery/DESIGN.md`；更新预览缓存和项目排错记录。
+- 验证：实际桌面、手机、平板预览；没有页脚横向溢出，导航链接高度检查通过；三个导出 ZIP 完整性检查通过。所有模板页面共用此次页脚。
+- 本次相对改动前快照需发布的 6 个修改文件：`api/website/templates/food/cafe-bakery/` 下的 `cafe-bakery.json`、`cafe-bakery.site.json`、`cafe-bakery-html-site.zip`、`cafe-bakery-php-site.zip`、`cafe-bakery-elementor-kit.zip`，以及 `data/manifest.json`。缩略图已刷新但图片内容未变；无新增或删除文件。
+- 状态：仅本地更新，未 commit / push；评审后可通过 main → Actions → deploy 发布。未执行 FTP 或 `--mark-uploaded`。
+
+## 2026-11-07 · Crumb & Co 高清外链摄影示范（本地待评审，未上线）
+
+- 源库：`library/templates/cafe-bakery/` 的 7 个内容页、共享导航与样式、页脚来源、TEMPLATE.md、images.json；同步 `library/styles/cafe-bakery/DESIGN.md`。使用 8 张核验原始尺寸的远程摄影，不保存或打包照片原文件。已更新该模板网页缩略图。
+- 验证：10 页分别在 390px / 768px 的横向溢出审计通过；实际浏览图片、手机导航与本地下单演示反馈；三个导出 ZIP 保留外链且不含照片原文件；排除本机 `.vscode/` 后公开输出检查通过。
+- 本次构建内容差异（相对构建前快照）：修改 `api/website/templates/food/cafe-bakery/` 下的 `cafe-bakery.json`、`cafe-bakery.site.json`、`cafe-bakery-html-site.zip`、`cafe-bakery-php-site.zip`、`cafe-bakery-elementor-kit.zip`；修改 `data/manifest.json`、`previews/website/templates/food/cafe-bakery.jpg`。无新增网站资源。
+- 本地输出里的旧 `.gitignore` 被正常重建清理；不是网站资源，不需要据此删除服务器文件。其余 ZIP 的时间戳字节差异不算内容修改。构建产生的旧上传暂存副本删除已恢复，避免混入功能变更。
+- 状态：尚未 commit / push，Hostinger 尚未更新。评审后可走 main → Actions → deploy 自动部署，无需手工上传；若改用人工上传，只需上述 7 个修改文件。未运行 `--mark-uploaded`。
+
 > 从 `CLAUDE.md` 搬出来的（2026-10-20），避免 CLAUDE.md 太大。**规则不变：每次 `public_html/` 有更新，都要在回复里列出需要上传的文件，并把记录追加到这份文件的最上面（新的写最上面）。**
 
 ## 记录（新的写最上面）
