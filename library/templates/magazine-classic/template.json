@@ -1,0 +1,172 @@
+{
+ "format": "fragments",
+ "slug": "magazine-classic",
+ "name": "Magazine Classic",
+ "zh": "经典杂志",
+ "tag": "Authoritative, read-first. Newspaper columns, rules and hierarchy.",
+ "colors": {
+  "primary": "#18181B",
+  "secondary": "#991B1B",
+  "text": "#27272A",
+  "accent": "#DC2626",
+  "surface": "#FAFAFA",
+  "border": "#E5E5E5"
+ },
+ "fonts": {
+  "head": "Libre Baskerville",
+  "body": "Source Serif 4"
+ },
+ "tok": {
+  "radius": "2px",
+  "hlh": "1.18",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.005em",
+  "h1": "52px",
+  "h2": "34px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "fsb": "18px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "media"
+ ],
+ "styles": [
+  "editorial",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Subscribe",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Subscribe",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Sections",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Section",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Latest",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "archive",
+   "label": "Section page",
+   "group": "Special"
+  },
+  {
+   "slug": "author",
+   "label": "Author page",
+   "group": "Special"
+  },
+  {
+   "slug": "newsletter",
+   "label": "Newsletter",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

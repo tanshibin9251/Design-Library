@@ -1,0 +1,112 @@
+{
+ "format": "fragments",
+ "slug": "trailhead-outdoor",
+ "name": "Trailhead Outdoor",
+ "zh": "山径户外",
+ "tag": "Outdoor gear store organised by activity, with a trail-conditions strip, spec badges, a gear planner and rentals.",
+ "colors": {
+  "primary": "#2f4a3a",
+  "secondary": "#8a6f4e",
+  "text": "#25291f",
+  "accent": "#d8742a",
+  "surface": "#f1ede2",
+  "border": "#cfc7b3"
+ },
+ "fonts": {
+  "head": "Bitter",
+  "body": "Source Sans 3"
+ },
+ "tok": {
+  "hlh": "1.04",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.015em",
+  "h1": "84px",
+  "h2": "46px",
+  "h3": "22px",
+  "pad": "92px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "12px"
+ },
+ "types": [
+  "ecommerce"
+ ],
+ "industries": [
+  "sports",
+  "travel"
+ ],
+ "styles": [
+  "earthy",
+  "photo",
+  "organic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Gear by activity",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Pack",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "guides",
+   "label": "Trail guides",
+   "group": "Explore"
+  },
+  {
+   "slug": "guide",
+   "label": "Single guide",
+   "group": "Explore"
+  },
+  {
+   "slug": "packing",
+   "label": "Packing lists",
+   "group": "Explore"
+  },
+  {
+   "slug": "rentals",
+   "label": "Rent gear",
+   "group": "Explore"
+  },
+  {
+   "slug": "stores",
+   "label": "Outfitter shops",
+   "group": "Support"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Support"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "slug": "blob-b",
+ "name": "Blob B",
+ "zh": "有机团块 B",
+ "cat": "shape",
+ "file": "blob-b.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "organic",
+  "blob",
+  "soft"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

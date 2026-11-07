@@ -1,0 +1,18 @@
+{
+ "slug": "crosshair",
+ "name": "Crosshair mark",
+ "zh": "准星标记",
+ "cat": "line",
+ "file": "crosshair.svg",
+ "format": "svg",
+ "width": 80,
+ "height": 80,
+ "tags": [
+  "registration",
+  "tech",
+  "print"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

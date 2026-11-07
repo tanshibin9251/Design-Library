@@ -1,0 +1,8 @@
+{
+ "slug": "reveal",
+ "name": "Reveal",
+ "zh": "揭开",
+ "tag": "The old page slides away to reveal the new one beneath.",
+ "group": "Slide",
+ "license": "自写，无第三方代码"
+}

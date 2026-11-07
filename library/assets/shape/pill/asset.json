@@ -1,0 +1,17 @@
+{
+ "slug": "pill",
+ "name": "Pill",
+ "zh": "胶囊",
+ "cat": "shape",
+ "file": "pill.svg",
+ "format": "svg",
+ "width": 300,
+ "height": 100,
+ "tags": [
+  "basic",
+  "label"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

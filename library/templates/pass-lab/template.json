@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "pass-lab",
+ "name": "Pass Lab",
+ "zh": "考证备考",
+ "tag": "Exam & certification prep dashboard: announcement bar, readiness gauge hero, pass-rate cards, timed practice quiz with explanations and a live study-plan builder.",
+ "colors": {
+  "primary": "#1b2733",
+  "secondary": "#5b6b7b",
+  "text": "#1b2733",
+  "accent": "#f0a202",
+  "surface": "#f5f7fa",
+  "border": "#d7dde4"
+ },
+ "fonts": {
+  "head": "Wix Madefor Display",
+  "body": "Wix Madefor Text"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.03em",
+  "h1": "68px",
+  "h2": "42px",
+  "h3": "22px",
+  "pad": "88px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "12px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "exam",
+  "education"
+ ],
+ "styles": [
+  "corporate",
+  "minimal",
+  "bento"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Prepare"
+  },
+  {
+   "slug": "exams",
+   "label": "Exams",
+   "group": "Prepare"
+  },
+  {
+   "slug": "exam",
+   "label": "Exam: Project Management (PMP)",
+   "group": "Prepare"
+  },
+  {
+   "slug": "practice",
+   "label": "Practice test",
+   "group": "Prepare"
+  },
+  {
+   "slug": "planner",
+   "label": "Study planner",
+   "group": "Prepare"
+  },
+  {
+   "slug": "results",
+   "label": "Pass stories",
+   "group": "Prove"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "Prove"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Prove"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

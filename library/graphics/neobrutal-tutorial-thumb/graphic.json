@@ -1,0 +1,13 @@
+{
+ "slug": "neobrutal-tutorial-thumb",
+ "name": "Neobrutal Tutorial Thumbnail",
+ "zh": "新粗野教学缩略图",
+ "tag": "黄底黑粗线硬阴影，超大 3 词标题 + 人像抠图位 + 贴纸角标，缩到 168px 仍然读得清。",
+ "type": "thumbnail",
+ "size": {"label": "YouTube 16:9", "w": 1280, "h": 720},
+ "styles": ["neobrutal", "bold", "playful"],
+ "industries": ["coding", "education"],
+ "colors": {"primary": "#FFD83D", "secondary": "#3D5AFE", "text": "#111111", "accent": "#FF4D6D", "surface": "#FFF4C2", "border": "#111111"},
+ "fonts": {"head": "Bricolage Grotesque", "body": "DM Sans"},
+ "license": "库内自有"
+}

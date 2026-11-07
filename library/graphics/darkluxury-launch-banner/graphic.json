@@ -1,0 +1,13 @@
+{
+ "slug": "darkluxury-launch-banner",
+ "name": "Dark Luxury Launch Banner",
+ "zh": "黑金新品发布横幅",
+ "tag": "近黑底 + 细金线拱形相框 + 衬线标题，居右留白，适合香水 / 珠宝 / 高端新品发布。",
+ "type": "banner",
+ "size": {"label": "Wide 3:1", "w": 1500, "h": 500},
+ "styles": ["darkluxury", "artdeco", "elegant"],
+ "industries": ["fashion", "beauty"],
+ "colors": {"primary": "#C9A45C", "secondary": "#1A1714", "text": "#F3EBDD", "accent": "#E7CF9A", "surface": "#0E0C0A", "border": "#5B4A29"},
+ "fonts": {"head": "Cormorant Garamond", "body": "Jost"},
+ "license": "库内自有"
+}

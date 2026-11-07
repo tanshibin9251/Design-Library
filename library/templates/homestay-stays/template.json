@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "homestay-stays",
+ "name": "Rumah Singgah",
+ "zh": "归栖民宿",
+ "tag": "Warm homestay booking site with a floating search bar, stay cards with amenity chips, a photo-mosaic detail page and a real availability calendar.",
+ "colors": {
+  "primary": "#4d7c0f",
+  "secondary": "#8a6d3b",
+  "text": "#24231b",
+  "accent": "#f59e0b",
+  "surface": "#faf6ea",
+  "border": "#e6dec7"
+ },
+ "fonts": {
+  "head": "Spectral",
+  "body": "Be Vietnam Pro"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "-.015em",
+  "h1": "76px",
+  "h2": "40px",
+  "h3": "20px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "14px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "travel",
+  "realestate"
+ ],
+ "styles": [
+  "warm",
+  "photo",
+  "organic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Stay"
+  },
+  {
+   "slug": "stays",
+   "label": "All stays",
+   "group": "Stay"
+  },
+  {
+   "slug": "stay",
+   "label": "Stay detail",
+   "group": "Stay"
+  },
+  {
+   "slug": "availability",
+   "label": "Availability",
+   "group": "Stay"
+  },
+  {
+   "slug": "experiences",
+   "label": "Experiences",
+   "group": "Explore"
+  },
+  {
+   "slug": "guide",
+   "label": "Local guide",
+   "group": "Explore"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact host",
+   "group": "Explore"
+  },
+  {
+   "slug": "faq",
+   "label": "Booking FAQ",
+   "group": "Explore"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

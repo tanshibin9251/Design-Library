@@ -1,0 +1,13 @@
+{
+ "slug": "clay-studio-product-card",
+ "name": "Clay Studio Product Card",
+ "zh": "陶土影棚产品图",
+ "tag": "陶土色影棚背景 + 圆形基座 + 软阴影，产品居中，四角卖点标签，适合护肤 / 家居小件。",
+ "type": "product",
+ "size": {"label": "Square", "w": 1080, "h": 1080},
+ "styles": ["clay", "pastel", "minimal"],
+ "industries": ["beauty", "lifestyle"],
+ "colors": {"primary": "#B8573B", "secondary": "#E9C9B1", "text": "#3A2A22", "accent": "#7C8F6B", "surface": "#F4E6D8", "border": "#D8B9A0"},
+ "fonts": {"head": "Fraunces", "body": "DM Sans"},
+ "license": "库内自有"
+}

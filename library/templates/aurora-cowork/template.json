@@ -1,0 +1,158 @@
+{
+ "format": "fragments",
+ "slug": "aurora-cowork",
+ "name": "Aurora Cowork",
+ "zh": "极光共享办公",
+ "tag": "Warm light coworking site: floating pill nav, a clickable floor plan with prices, membership 'keys' and a week-at-a-glance events strip.",
+ "colors": {
+  "primary": "#232a3b",
+  "secondary": "#b9c9a3",
+  "text": "#2a2f3d",
+  "accent": "#e2725b",
+  "surface": "#f7f3ec",
+  "border": "#ddd5c6"
+ },
+ "fonts": {
+  "head": "Urbanist",
+  "body": "DM Sans"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.03em",
+  "h1": "88px",
+  "h2": "46px",
+  "h3": "24px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "22px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "coworking",
+  "tech"
+ ],
+ "styles": [
+  "playful",
+  "bento",
+  "warm"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Spaces",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Space",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Membership",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Member Stories",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Member story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Community",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Book a tour",
+   "group": "Special"
+  },
+  {
+   "slug": "schedule",
+   "label": "Events",
+   "group": "Special"
+  },
+  {
+   "slug": "features",
+   "label": "Amenities",
+   "group": "Special"
+  },
+  {
+   "slug": "signup",
+   "label": "Join Aurora",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

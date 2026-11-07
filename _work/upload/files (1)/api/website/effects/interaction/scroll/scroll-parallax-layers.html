@@ -1,0 +1,61 @@
+<!-- Parallax layers — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-plx{background:var(--surface)}
+.fx-plx .stage{position:relative;height:min(92vh,760px);overflow:hidden;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 55%,#fff),color-mix(in srgb,var(--primary) 18%,var(--surface)))}
+.fx-plx .ly{position:absolute;left:0;right:0;bottom:-12%;height:70%;will-change:transform;transform:translate3d(0,calc(var(--y,0)*var(--k,0)*1px),0)}
+.fx-plx .ly svg{display:block;width:100%;height:100%}
+.fx-plx .sun{position:absolute;right:16%;top:16%;width:clamp(70px,12vw,150px);aspect-ratio:1;border-radius:50%;background:color-mix(in srgb,var(--accent) 35%,#fff);will-change:transform;transform:translate3d(0,calc(var(--y,0)*.12px),0)}
+.fx-plx .ttl{position:absolute;left:0;right:0;top:22%;width:min(1000px,90%);margin:0 auto;will-change:transform,opacity;transform:translate3d(0,calc(var(--y,0)*.5px),0);opacity:calc(1 - var(--y,0)/520)}
+.fx-plx .ttl .k{font-size:.78em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--primary)}
+.fx-plx .ttl h2{font-size:clamp(2.2em,6.5vw,4.6em);margin:.25em 0 .2em;max-width:12ch;color:var(--primary)}
+.fx-plx .ttl p{opacity:.8;max-width:34ch;color:var(--primary)}
+.fx-plx .l1 svg{fill:color-mix(in srgb,var(--primary) 30%,var(--surface))}
+.fx-plx .l2 svg{fill:color-mix(in srgb,var(--primary) 58%,var(--surface))}
+.fx-plx .l3 svg{fill:var(--primary)}
+.fx-plx .after{width:min(680px,90%);margin:0 auto;padding:4em 0 6em}
+.fx-plx .after h3{font-size:1.8em;margin-bottom:.5em}.fx-plx .after p{opacity:.8;line-height:1.7}
+@media(prefers-reduced-motion:reduce){.fx-plx .ly,.fx-plx .sun,.fx-plx .ttl{transform:none!important;opacity:1!important}}
+
+</style>
+
+<div class="fx fx-plx"><div class="stage"><div class="sun"></div>
+<div class="ttl"><span class="k">Highlands · Est. 1998</span><h2>Higher ground, slower days</h2><p>Scroll and watch each ridge drift at its own pace.</p></div>
+<div class="ly l1" style="--k:.18"><svg viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220 L180 120 L330 200 L520 60 L700 190 L880 100 L1050 180 L1200 130 L1200 400 L0 400Z"/></svg></div>
+<div class="ly l2" style="--k:.34"><svg viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><path d="M0 260 L150 190 L300 250 L470 140 L640 250 L820 170 L1000 260 L1200 200 L1200 400 L0 400Z"/></svg></div>
+<div class="ly l3" style="--k:.55"><svg viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><path d="M0 320 L200 270 L380 320 L560 240 L760 320 L960 270 L1200 330 L1200 400 L0 400Z"/></svg></div></div>
+<div class="after"><h3>Depth without weight</h3><p>Parallax works best when it is subtle and purposeful: background layers move slowly, foreground layers faster. Keep the effect to one hero moment, and never let it fight with reading.</p></div></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-plx'),st=root.querySelector('.stage'),els=st.querySelectorAll('.ly,.sun,.ttl'),tk=false;
+function upd(){tk=false;var r=st.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;els.forEach(function(e){e.style.setProperty('--y',-r.top)})}
+function req(){if(!tk){tk=true;requestAnimationFrame(upd)}}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd()}})();
+</script>

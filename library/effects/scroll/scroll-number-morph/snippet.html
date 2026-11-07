@@ -1,0 +1,74 @@
+<!-- Number Morph — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-nm{width:100%;max-width:100%}
+.nm-sec{--k:0;position:relative}
+.nm-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5em,5vw,4em);align-items:center;padding:clamp(2em,6vw,4em) clamp(1em,6vw,4em);background:var(--surface);overflow:hidden}
+.nm-copy{display:grid;gap:.6em;align-content:center}
+.nm-eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.nm-num{display:flex;align-items:baseline;gap:.1em;font:800 clamp(4.4em,15vw,9.5em)/.95 var(--font-heading);letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--primary)}
+.nm-num small{font-size:.4em;color:var(--accent);letter-spacing:0}
+.nm-labels{display:grid}.nm-l{grid-area:1/1;margin:0;font-size:clamp(1.1em,2.4vw,1.5em);max-width:16em;opacity:var(--v,1)}
+.nm-l:not(:first-child){opacity:var(--v,0)}
+.nm-svg{width:min(100%,62svh);aspect-ratio:1;justify-self:center;display:block;overflow:visible}
+.nm-svg polygon{fill:color-mix(in srgb,var(--ca,var(--primary)) calc((1 - var(--k))*100%),var(--cb,var(--accent)));stroke:none}
+.nm-dots{display:none}
+.nm-on .nm-sec{height:calc(var(--n)*100svh + 60svh)}
+.nm-on .nm-stage{position:sticky;top:0;height:100svh;min-height:520px}
+.nm-on .nm-dots{display:flex;gap:.5em;position:absolute;left:clamp(1em,6vw,4em);bottom:clamp(1em,5svh,2.2em)}
+.nm-dots i{width:.7em;height:.7em;border-radius:50%;background:var(--border);transition:background calc(.3s/var(--speed)),transform calc(.3s/var(--speed))}
+.nm-dots i.on{background:var(--accent);transform:scale(1.4)}
+@media(max-width:700px){.nm-stage{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:center;gap:1em}.nm-svg{order:-1;width:min(70%,36svh)}.nm-copy{justify-items:start}}
+
+</style>
+
+<div class="fx fx-nm"><section class="nm-sec" data-nm style="--n:3"><div class="nm-stage"><div class="nm-copy"><span class="nm-eye">Studio, by the numbers</span><div class="nm-num" aria-live="off"><b data-nn>12</b><small data-ns>+</small></div><div class="nm-labels"><p class="nm-l">Projects in our first year</p><p class="nm-l">Clients across nine countries</p><p class="nm-l">Products shipped, and counting</p><p class="nm-l">Hours of craft every quarter</p></div></div><svg class="nm-svg" viewBox="-100 -100 200 200" role="img" aria-label="A shape that morphs from circle to square to triangle to star"><polygon points="0.0,-90.0 6.3,-89.8 12.5,-89.1 18.7,-88.0 24.8,-86.5 30.8,-84.6 36.6,-82.2 42.3,-79.5 47.7,-76.3 52.9,-72.8 57.9,-68.9 62.5,-64.7 66.9,-60.2 70.9,-55.4 74.6,-50.3 77.9,-45.0 80.9,-39.5 83.4,-33.7 85.6,-27.8 87.3,-21.8 88.6,-15.6 89.5,-9.4 89.9,-3.1 89.9,3.1 89.5,9.4 88.6,15.6 87.3,21.8 85.6,27.8 83.4,33.7 80.9,39.5 77.9,45.0 74.6,50.3 70.9,55.4 66.9,60.2 62.5,64.7 57.9,68.9 52.9,72.8 47.7,76.3 42.3,79.5 36.6,82.2 30.8,84.6 24.8,86.5 18.7,88.0 12.5,89.1 6.3,89.8 0.0,90.0 -6.3,89.8 -12.5,89.1 -18.7,88.0 -24.8,86.5 -30.8,84.6 -36.6,82.2 -42.3,79.5 -47.7,76.3 -52.9,72.8 -57.9,68.9 -62.5,64.7 -66.9,60.2 -70.9,55.4 -74.6,50.3 -77.9,45.0 -80.9,39.5 -83.4,33.7 -85.6,27.8 -87.3,21.8 -88.6,15.6 -89.5,9.4 -89.9,3.1 -89.9,-3.1 -89.5,-9.4 -88.6,-15.6 -87.3,-21.8 -85.6,-27.8 -83.4,-33.7 -80.9,-39.5 -77.9,-45.0 -74.6,-50.3 -70.9,-55.4 -66.9,-60.2 -62.5,-64.7 -57.9,-68.9 -52.9,-72.8 -47.7,-76.3 -42.3,-79.5 -36.6,-82.2 -30.8,-84.6 -24.8,-86.5 -18.7,-88.0 -12.5,-89.1 -6.3,-89.8"/></svg><div class="nm-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div></div></section></div>
+
+<script>
+(function(){
+var sec=document.querySelector('.fx-nm [data-nm]');if(!sec||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+var root=sec.parentNode,poly=sec.querySelector('polygon'),svg=sec.querySelector('.nm-svg'),nn=sec.querySelector('[data-nn]'),ns=sec.querySelector('[data-ns]'),labs=[].slice.call(sec.querySelectorAll('.nm-l')),dots=[].slice.call(sec.querySelectorAll('.nm-dots i'));
+var VAL=[12,48,150,1200],SUF=['+','+','+','h'],COL=['var(--primary)','var(--accent)','var(--secondary)','var(--primary)'],M=90,N=VAL.length,PI=Math.PI;
+function mod(a,b){return((a%b)+b)%b}
+var SH=[function(){return .9},
+ function(t){var c=Math.abs(Math.cos(t)),s=Math.abs(Math.sin(t));return .68/Math.pow(Math.pow(c,10)+Math.pow(s,10),.1)},
+ function(t){var f=mod(t+PI/2,2*PI/3)-PI/3;return .475/Math.cos(f)},
+ function(t){var u=mod(t+PI/2,2*PI/5)/(PI/5),tr=u<1?u:2-u;return .95-.55*tr}];
+var RAD=SH.map(function(f){var a=[];for(var k=0;k<M;k++)a.push(f(k/M*2*PI-PI/2));return a});
+root.classList.add('nm-on');
+function cl(v){return v<0?0:v>1?1:v}
+function ez(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+var raf=0;
+function upd(){raf=0;var r=sec.getBoundingClientRect(),vh=innerHeight||800,tot=Math.max(1,r.height-vh),p=cl(-r.top/tot),q=p*(N-1),i=Math.min(N-2,Math.floor(q)),t=ez(q-i),j=i+1;
+ var a=RAD[i],b=RAD[j],o=[];for(var k=0;k<M;k++){var th=k/M*2*PI-PI/2,rr=(a[k]+(b[k]-a[k])*t)*100;o.push((rr*Math.cos(th)).toFixed(1)+','+(rr*Math.sin(th)).toFixed(1))}
+ poly.setAttribute('points',o.join(' '));svg.style.transform='rotate('+(q*40).toFixed(1)+'deg)';
+ sec.style.setProperty('--ca',COL[i]);sec.style.setProperty('--cb',COL[j]);sec.style.setProperty('--k',t.toFixed(3));
+ var v=Math.round(VAL[i]+(VAL[j]-VAL[i])*t);nn.textContent=v.toLocaleString('en-US');ns.textContent=t<.5?SUF[i]:SUF[j];
+ labs.forEach(function(l,s){l.style.setProperty('--v',cl(1-Math.abs(q-s)*3).toFixed(2))});
+ dots.forEach(function(d,s){d.classList.toggle('on',s===Math.round(q))})}
+function req(){if(!raf)raf=requestAnimationFrame(upd)}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd();
+})();
+</script>

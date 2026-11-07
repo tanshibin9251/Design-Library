@@ -1,0 +1,123 @@
+{
+ "format": "fragments",
+ "slug": "diamond-shop",
+ "name": "Diamond Shop",
+ "zh": "菱形商店",
+ "tag": "Dark-and-bone sports-gear store: warm black with oxblood glow, bone-paper product sections, one brand red, condensed caps headings, slanted product plates and a size-first product page with an Ask-on-WhatsApp button.",
+ "colors": {
+  "primary": "#0c0809",
+  "secondary": "#2a0a10",
+  "text": "#1a1213",
+  "accent": "#ce2128",
+  "surface": "#ffffff",
+  "border": "#e3dfdb"
+ },
+ "fonts": {
+  "head": "Saira",
+  "body": "Hanken Grotesk"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "700",
+  "hcase": "uppercase",
+  "hls": ".01em",
+  "h1": "96px",
+  "h2": "56px",
+  "h3": "26px",
+  "h1big": "120px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "ecommerce",
+  "company"
+ ],
+ "industries": [
+  "sports"
+ ],
+ "styles": [
+  "bold",
+  "geometric",
+  "playful"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "category",
+   "label": "Category",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "my-account",
+   "label": "My account",
+   "group": "Shop"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shipping-policy",
+   "label": "Shipping policy",
+   "group": "Policies"
+  },
+  {
+   "slug": "refund-policy",
+   "label": "Refund policy",
+   "group": "Policies"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Policies"
+  },
+  {
+   "slug": "terms",
+   "label": "Terms & conditions",
+   "group": "Policies"
+  },
+  {
+   "slug": "cookie-policy",
+   "label": "Cookie policy",
+   "group": "Policies"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

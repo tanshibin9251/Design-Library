@@ -1,0 +1,70 @@
+<!-- Page Intro — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-pi{position:relative;overflow:hidden;min-height:100vh;background:var(--surface);display:grid;place-items:center;text-align:center;padding:2em}
+.fx-pi .hero{display:grid;gap:1.1em;justify-items:center;max-width:760px}
+.fx-pi .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-pi h1{font-size:clamp(2.6em,7vw,5em)}.fx-pi h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}.fx-pi h1 .ln span{display:block}
+.fx-pi p{opacity:.68;font-size:1.12em;max-width:42ch}
+.fx-pi .rp{margin-top:.5em;padding:.7em 1.4em;border-radius:99px;border:1.5px solid var(--primary);background:transparent;color:var(--primary);font:700 .9em var(--font-body);cursor:pointer;transition:background .25s,color .25s}
+.fx-pi .rp:hover{background:var(--primary);color:var(--on-primary)}.fx-pi .rp:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-pi .ov{position:absolute;inset:0;z-index:10;color:var(--on-primary);display:grid;place-items:center}
+.fx-pi .cu{position:absolute;left:0;right:0;height:50%;background:var(--primary);transition:transform calc(.95s/var(--speed)) cubic-bezier(.77,0,.18,1)}
+.fx-pi .cu.t{top:0}.fx-pi .cu.b{bottom:0}
+.fx-pi .mid{position:relative;display:grid;gap:1.1em;justify-items:center;width:min(22em,80%);transition:opacity calc(.45s/var(--speed)),transform calc(.45s/var(--speed))}
+.fx-pi .brand{font:600 clamp(1.6em,4vw,2.4em) var(--font-heading);letter-spacing:-.01em}
+.fx-pi .bar{width:100%;height:2px;background:color-mix(in srgb,var(--on-primary) 25%,transparent);overflow:hidden}
+.fx-pi .bar i{display:block;height:100%;width:100%;background:var(--accent);transform:scaleX(var(--p,0));transform-origin:left}
+.fx-pi .num{font:600 .9em var(--font-body);font-variant-numeric:tabular-nums;letter-spacing:.14em;opacity:.8}
+.fx-pi.done .mid{opacity:0;transform:translateY(-1em)}
+.fx-pi.done .cu.t{transform:translateY(-101%)}.fx-pi.done .cu.b{transform:translateY(101%)}
+.fx-pi.gone .ov{display:none}
+.fx-pi .hero>*{transition:opacity calc(.8s/var(--speed)) ease,transform calc(.8s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-pi:not(.done):not(.gone) .hero>*{opacity:0;transform:translateY(1.2em)}
+.fx-pi.done .hero>*:nth-child(2){transition-delay:calc(.45s/var(--speed))}.fx-pi.done .hero>*:nth-child(3){transition-delay:calc(.6s/var(--speed))}.fx-pi.done .hero>*:nth-child(4){transition-delay:calc(.75s/var(--speed))}
+@media(prefers-reduced-motion:reduce){.fx-pi .cu,.fx-pi .mid,.fx-pi .hero>*{transition:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-pi .rp.is-tap{background:var(--primary);color:var(--on-primary)}
+
+</style>
+
+<section class="fx fx-pi"><div class="hero"><span class="eye">Atelier Rosa</span><h1>Design that arrives gently</h1><p>This is the page behind the intro. The curtain lifts once everything is ready.</p><button class="rp" type="button">Replay intro</button></div>
+<div class="ov" role="status" aria-label="Loading page"><div class="cu t"></div><div class="cu b"></div><div class="mid"><span class="brand">Atelier Rosa</span><div class="bar"><i></i></div><span class="num">0%</span></div></div></section>
+
+<script>
+(function(){document.querySelectorAll('.fx-pi').forEach(function(r){var ov=r.querySelector('.ov'),bar=r.querySelector('.bar i'),num=r.querySelector('.num'),b=r.querySelector('.rp'),raf,t1;
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function sp(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed'))||1}
+function finish(){r.classList.add('done');ov.setAttribute('aria-hidden','true');t1=setTimeout(function(){r.classList.add('gone')},(rm?0:1100)/sp())}
+function start(){cancelAnimationFrame(raf);clearTimeout(t1);r.classList.remove('done','gone');ov.removeAttribute('aria-hidden');bar.style.setProperty('--p',0);num.textContent='0%';
+if(rm){finish();return}
+var t0=null,D=2200/sp();function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/D,1),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;bar.style.setProperty('--p',e);num.textContent=Math.round(e*100)+'%';if(p<1)raf=requestAnimationFrame(f);else setTimeout(finish,250)}
+raf=requestAnimationFrame(f)}
+b.addEventListener('click',start);start()})})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

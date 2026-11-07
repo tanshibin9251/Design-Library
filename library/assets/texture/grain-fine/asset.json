@@ -1,0 +1,18 @@
+{
+ "slug": "grain-fine",
+ "name": "Fine grain",
+ "zh": "细颗粒",
+ "cat": "texture",
+ "file": "grain-fine.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 600,
+ "tags": [
+  "grain",
+  "film",
+  "overlay"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

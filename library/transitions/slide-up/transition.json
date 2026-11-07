@@ -1,0 +1,8 @@
+{
+ "slug": "slide-up",
+ "name": "Slide Up",
+ "zh": "上滑",
+ "tag": "New page rises from below while the old one lifts away.",
+ "group": "Slide",
+ "license": "自写，无第三方代码"
+}

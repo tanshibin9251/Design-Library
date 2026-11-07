@@ -1,0 +1,79 @@
+<!-- Sticky Shrink Header — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-hshr .pg{width:min(980px,100%);margin:0 auto;padding:3em 1.25em 6em;display:grid;gap:3.5em}
+.fx-hshr .pg section{display:grid;gap:.9em}
+.fx-hshr .pg .k{font-size:.75em;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.fx-hshr .pg h2{font-size:clamp(1.6em,3.4vw,2.2em)}
+.fx-hshr .pg p{opacity:.7;max-width:60ch}
+.fx-hshr .pg .fx-art{aspect-ratio:21/9;border-radius:var(--radius);margin-top:.4em}
+.fx-hshr .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.9em 1.5em;border-radius:var(--radius);font:700 .95em var(--font-body);text-decoration:none;border:1.5px solid var(--primary);background:var(--primary);color:var(--on-primary);cursor:pointer;transition:transform calc(.25s/var(--speed)),box-shadow calc(.25s/var(--speed))}
+.fx-hshr .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px var(--primary)}
+.fx-hshr .btn.ghost{background:transparent;color:var(--primary)}
+.fx-hshr .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-hshr{background:var(--surface)}
+.fx-hshr .hd{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:1em;padding:1.9em max(5vw,1.25em);background:var(--surface);border-bottom:1px solid transparent;transition:padding calc(.35s/var(--speed)) ease,background calc(.35s/var(--speed)),box-shadow calc(.35s/var(--speed)),border-color calc(.35s/var(--speed))}
+.fx-hshr .logo{display:inline-flex;align-items:center;gap:.55em;font:600 1.6em var(--font-heading);color:var(--text);text-decoration:none;transition:font-size calc(.35s/var(--speed)) ease}
+.fx-hshr .logo i{width:.8em;height:.8em;border-radius:30%;background:linear-gradient(135deg,var(--primary),var(--accent))}
+.fx-hshr nav{display:flex;gap:2em}.fx-hshr nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:.95em;opacity:.75;transition:opacity .2s}.fx-hshr nav a:hover,.fx-hshr nav a.on{opacity:1}
+.fx-hshr nav a:focus-visible,.fx-hshr .logo:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+.fx-hshr .btn{padding:.7em 1.2em;transition:padding calc(.35s/var(--speed)) ease,transform .25s}
+.fx-hshr.sm .hd{padding:.65em max(5vw,1.25em);background:color-mix(in srgb,var(--surface) 84%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-color:var(--border);box-shadow:0 14px 30px -24px rgba(0,0,0,.55)}
+.fx-hshr.sm .logo{font-size:1.2em}.fx-hshr.sm .btn{padding:.5em 1em}
+.fx-hshr .intro{width:min(980px,100%);margin:0 auto;padding:5em 1.25em 0;display:grid;gap:1em}
+.fx-hshr .intro .k{font-size:.78em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.fx-hshr .intro h1{font-size:clamp(2.4em,6vw,4.4em);max-width:13em}.fx-hshr .intro p{opacity:.7;max-width:46ch;font-size:1.1em}
+@media(max-width:700px){.fx-hshr nav{display:none}.fx-hshr .hd{padding:1.3em 1.25em}.fx-hshr .logo{font-size:1.35em}}
+@media(prefers-reduced-motion:reduce){.fx-hshr .hd,.fx-hshr .logo,.fx-hshr .btn{transition:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-hshr .btn.is-tap{transform:translateY(-2px);box-shadow:0 12px 24px -14px var(--primary)}
+.fx-hshr nav a.is-tap{opacity:1}
+
+</style>
+
+<div class="fx fx-hshr"><header class="hd"><a class="logo" href="#"><i></i>Fieldnote</a><nav aria-label="Main"><a class="on" href="#">Work</a><a href="#">Studio</a><a href="#">Journal</a><a href="#">Contact</a></nav><a class="btn" href="#">Start a project</a></header>
+<div class="intro"><span class="k">Scroll to see it shrink ↓</span><h1>A header that gets out of your way</h1><p>Generous at the top of the page, compact once you are reading. It stays within reach without taking over the screen.</p></div><main class="pg">
+<section><span class="k">Journal</span><h2>Notes on slow, careful design</h2><p>We write about the small decisions that make a website feel calm: spacing, rhythm, the weight of a heading and the pause before a transition.</p><div class="fx-art"></div></section>
+<section><span class="k">Case study</span><h2>A brand built from three colours</h2><p>Restraint turned out to be the most generous thing we could offer. Fewer parts, better parts, and a lot more room to breathe.</p><div class="fx-art a2"></div></section>
+<section><span class="k">Guide</span><h2>Choosing type that gets along</h2><p>A serif with some warmth, a sans with some backbone, and the patience to test them at every size before saying yes.</p><div class="fx-art a3"></div></section>
+</main></div>
+
+<script>
+(function(){var r=document.querySelector('.fx-hshr');if(!r)return;function u(){r.classList.toggle('sm',window.scrollY>24)}addEventListener('scroll',u,{passive:true});u()})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

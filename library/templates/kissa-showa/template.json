@@ -1,0 +1,102 @@
+{
+ "format": "fragments",
+ "slug": "kissa-showa",
+ "name": "Kissa Maruyo",
+ "zh": "喫茶まるよ",
+ "tag": "Showa-era Japanese coffee house: striped awning header, enamel-plate logo, dotted-leader menu board, open/closed sign and special of the day by weekday.",
+ "colors": {
+  "primary": "#4a2a1a",
+  "secondary": "#b8873a",
+  "text": "#3a2418",
+  "accent": "#2f8f78",
+  "surface": "#f7eed8",
+  "border": "#dcc9a0"
+ },
+ "fonts": {
+  "head": "Kaisei Decol",
+  "body": "M PLUS Rounded 1c"
+ },
+ "tok": {
+  "hlh": "1.3",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".08em",
+  "h1": "72px",
+  "h2": "40px",
+  "h3": "24px",
+  "pad": "96px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "12px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "restaurant"
+ ],
+ "styles": [
+  "japanese",
+  "retro",
+  "warm"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Café"
+  },
+  {
+   "slug": "menu",
+   "label": "Menu",
+   "group": "Café"
+  },
+  {
+   "slug": "morning",
+   "label": "Morning set",
+   "group": "Café"
+  },
+  {
+   "slug": "beans",
+   "label": "Roasted beans",
+   "group": "Café"
+  },
+  {
+   "slug": "story",
+   "label": "Our story",
+   "group": "Shop"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Shop"
+  },
+  {
+   "slug": "news",
+   "label": "Notice board",
+   "group": "Shop"
+  },
+  {
+   "slug": "access",
+   "label": "Access & hours",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

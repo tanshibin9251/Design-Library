@@ -1,0 +1,100 @@
+{
+ "format": "fragments",
+ "slug": "job-atlas",
+ "name": "Job Atlas",
+ "zh": "职业图鉴",
+ "tag": "A field guide to every job: specimen plates for 24 fields, a sundial for the working day, salary ladders, subway career paths, role compare, interest match and career-switch map.",
+ "colors": {
+  "primary": "#1b3a4b",
+  "secondary": "#5b57a6",
+  "text": "#22303a",
+  "accent": "#c98a1b",
+  "surface": "#f4eee2",
+  "border": "#d9cfbd"
+ },
+ "fonts": {
+  "head": "Zilla Slab",
+  "body": "Lato"
+ },
+ "tok": {
+  "hlh": "1.08",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "-.015em",
+  "h1": "72px",
+  "h2": "42px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "10px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "education",
+  "lifestyle",
+  "media"
+ ],
+ "styles": [
+  "editorial",
+  "retro",
+  "typographic",
+  "warm"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home: the atlas",
+   "group": "Explore"
+  },
+  {
+   "slug": "browse",
+   "label": "All fields (plates)",
+   "group": "Explore"
+  },
+  {
+   "slug": "domain",
+   "label": "Field: Banking",
+   "group": "Explore"
+  },
+  {
+   "slug": "role",
+   "label": "Role profile: Credit Analyst",
+   "group": "Explore"
+  },
+  {
+   "slug": "search",
+   "label": "Search roles",
+   "group": "Explore"
+  },
+  {
+   "slug": "match",
+   "label": "Match me",
+   "group": "Tools"
+  },
+  {
+   "slug": "compare",
+   "label": "Compare two roles",
+   "group": "Tools"
+  },
+  {
+   "slug": "switch",
+   "label": "Switch careers",
+   "group": "Tools"
+  },
+  {
+   "slug": "method",
+   "label": "Method & sources",
+   "group": "About"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

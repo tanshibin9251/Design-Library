@@ -1,0 +1,53 @@
+<style>
+/* Sprint Gear — tokens only */
+.sg-tick{background:var(--c-accent);color:var(--c-primary);overflow:hidden;border-bottom:3px solid var(--c-primary)}
+.sg-tick div{display:flex;gap:36px;width:max-content;white-space:nowrap;padding:7px 0;font:400 15px var(--f-head);letter-spacing:.12em;text-transform:uppercase;animation:sg-t 26s linear infinite}
+@keyframes sg-t{to{transform:translateX(-50%)}}
+.sg-head{background:var(--c-surface);border-bottom:3px solid var(--c-primary);position:sticky;top:0;z-index:40}
+.sg-head .in{max-width:var(--w);margin:auto;display:flex;align-items:center;gap:26px;padding:10px 20px}
+.sg-logo{font:400 38px/1 var(--f-head);text-transform:uppercase;text-decoration:none;font-style:italic;transform:skew(-8deg);display:inline-block;background:var(--c-primary);color:var(--c-accent);padding:.05em .4em}
+.sg-head ul{display:flex;gap:6px;list-style:none;margin-left:auto;font:700 14px var(--f-body);text-transform:uppercase;letter-spacing:.04em}
+.sg-head ul>li>a{display:block;padding:.55em 1em;text-decoration:none;border:3px solid transparent;transform:skew(-8deg)}
+.sg-head ul>li>a:hover{border-color:var(--c-primary);background:var(--c-accent)}
+.sg-cart{background:var(--c-secondary);color:var(--c-surface);padding:.55em 1.1em;font:700 14px var(--f-body);text-transform:uppercase;text-decoration:none;border:3px solid var(--c-primary);box-shadow:4px 4px 0 var(--c-primary);transform:skew(-8deg)}
+.sg-head .more{position:relative}
+.sg-hero{position:relative;background:var(--c-accent);border-bottom:3px solid var(--c-primary);overflow:hidden}
+.sg-hero .in{max-width:var(--w);margin:auto;padding:clamp(30px,5vw,70px) 20px;display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:center;position:relative;z-index:2}
+.sg-hero h1{font:400 clamp(72px,14vw,210px)/.82 var(--f-head);text-transform:uppercase;letter-spacing:-.01em;font-style:italic}
+.sg-hero h1 span{display:block;-webkit-text-stroke:3px var(--c-primary);color:transparent}
+.sg-hero p{max-width:34ch;font:600 20px/1.35 var(--f-body);margin:22px 0}
+.sg-cutout{position:relative;aspect-ratio:1;display:grid;place-items:center}
+.sg-cutout .ph{position:absolute;inset:6%;border-radius:0;border:3px solid var(--c-primary);box-shadow:12px 12px 0 var(--c-primary);rotate:-6deg}
+.sg-sticker{position:absolute;right:0;top:0;z-index:3;width:130px;height:130px;background:var(--c-secondary);color:var(--c-surface);clip-path:polygon(50% 0,61% 12%,76% 6%,80% 22%,95% 25%,89% 40%,100% 50%,89% 60%,95% 75%,80% 78%,76% 94%,61% 88%,50% 100%,39% 88%,24% 94%,20% 78%,5% 75%,11% 60%,0 50%,11% 40%,5% 25%,20% 22%,24% 6%,39% 12%);display:grid;place-items:center;text-align:center;font:400 22px/1 var(--f-head);text-transform:uppercase;rotate:12deg}
+.sg-btn{display:inline-block;background:var(--c-primary);color:var(--c-accent);border:3px solid var(--c-primary);padding:.85em 1.7em;font:700 15px var(--f-body);text-transform:uppercase;letter-spacing:.05em;text-decoration:none;box-shadow:6px 6px 0 var(--c-secondary);transition:translate .12s,box-shadow .12s}
+.sg-btn:hover{translate:3px 3px;box-shadow:3px 3px 0 var(--c-secondary)}
+.sg-btn.w{background:var(--c-surface);color:var(--c-primary);box-shadow:6px 6px 0 var(--c-primary)}
+.sg-rail{display:grid;grid-template-columns:70px 1fr;border-bottom:3px solid var(--c-primary)}
+.sg-rail aside{border-right:3px solid var(--c-primary);background:var(--c-primary);color:var(--c-accent);display:grid;place-items:center}
+.sg-rail aside span{writing-mode:vertical-rl;rotate:180deg;font:400 34px var(--f-head);letter-spacing:.14em;text-transform:uppercase;padding:20px 0}
+.sg-scroll{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory}
+.sg-card{flex:0 0 min(340px,80vw);scroll-snap-align:start;border-right:3px solid var(--c-primary);text-decoration:none;position:relative;background:var(--c-surface);display:block}
+.sg-card .ph{border-radius:0;aspect-ratio:1/1.1;border-bottom:3px solid var(--c-primary)}
+.sg-card .m{padding:14px 16px 18px}
+.sg-card h3{font:400 30px/1 var(--f-head);text-transform:uppercase}
+.sg-card .pr{position:absolute;right:12px;top:12px;background:var(--c-primary);color:var(--c-accent);padding:.3em .7em;font:400 24px var(--f-head);rotate:4deg}
+.sg-card .tag{display:inline-block;background:var(--c-secondary);color:var(--c-surface);padding:.1em .6em;font:700 11px var(--f-body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.sg-grid{display:grid;grid-template-columns:repeat(4,1fr);border:3px solid var(--c-primary)}
+.sg-grid .sg-card{border-right:3px solid var(--c-primary);border-bottom:3px solid var(--c-primary)}
+.sg-grid .sg-card:nth-child(4n){border-right:0}
+.sg-count{display:grid;grid-template-columns:repeat(4,auto);gap:10px;justify-content:start;margin:14px 0}
+.sg-count div{background:var(--c-primary);color:var(--c-accent);padding:.3em .6em;text-align:center;min-width:76px}
+.sg-count b{display:block;font:400 44px/1 var(--f-head)}.sg-count small{font:700 10px var(--f-body);letter-spacing:.14em;text-transform:uppercase}
+.sg-big{font:400 clamp(60px,10vw,150px)/.85 var(--f-head);text-transform:uppercase;-webkit-text-stroke:2px var(--c-primary);color:transparent;font-style:italic}
+.sg-sizes{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:10px 0 20px}
+.sg-sizes button{border:3px solid var(--c-primary);background:var(--c-surface);color:var(--c-primary);padding:.8em 0;font:400 20px var(--f-head);cursor:pointer}
+.sg-sizes button[aria-pressed=true]{background:var(--c-primary);color:var(--c-accent)}
+.sg-sizes button:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.sg-buy{position:sticky;top:90px;border:3px solid var(--c-primary);padding:24px;background:var(--c-surface);box-shadow:10px 10px 0 var(--c-primary)}
+.sg-pdp{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+.sg-foot{background:var(--c-primary);color:var(--c-surface)}
+.sg-foot .big{font:400 clamp(70px,16vw,260px)/.8 var(--f-head);text-transform:uppercase;font-style:italic;color:var(--c-accent);padding:30px 0 0}
+@media(max-width:900px){.sg-hero .in,.sg-pdp{grid-template-columns:1fr}.sg-head ul{display:none}.sg-grid{grid-template-columns:repeat(2,1fr)}.sg-grid .sg-card:nth-child(2n){border-right:0}.sg-rail{grid-template-columns:44px 1fr}.sg-rail aside span{font-size:22px}.sg-buy{position:static}}
+@media(prefers-reduced-motion:reduce){.sg-tick div{animation:none}.sg-btn{transition:none}}
+.sg-head .more{position:relative}.sg-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(2,minmax(150px,1fr));gap:20px 34px;padding:22px 26px;background:var(--c-surface);color:var(--c-primary);border:3px solid var(--c-primary);box-shadow:8px 8px 0 var(--c-primary);min-width:380px;z-index:50;text-align:left;font-family:var(--f-body)}.sg-head .more:hover .dd,.sg-head .more:focus-within .dd{display:grid}.sg-head .dd h4{font:400 20px var(--f-head);letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}.sg-head .dd a{display:block;padding:3px 0;font:600 14px var(--f-body);text-transform:none;border:0;transform:none;letter-spacing:0;text-decoration:none;color:inherit}.sg-head .dd a:hover{background:var(--c-accent);border:0}
+/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.sg-rail>div{min-width:0}.sg-hero h1{font-size:clamp(54px,17vw,96px)}.sg-hero h1 span{-webkit-text-stroke-width:2px}.sg-sticker{width:96px;height:96px;font-size:16px}.sg-cutout .ph{box-shadow:7px 7px 0 var(--c-primary)}.sg-buy{box-shadow:6px 6px 0 var(--c-primary)}.sg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sg-card h3{font-size:22px}.sg-card .pr{font-size:18px}.sg-count div{min-width:60px}.sg-big{font-size:clamp(44px,14vw,80px)}}</style><div class="sg-tick" aria-hidden="true"><div><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span><span>Free shipping over RM 199</span><span>★</span><span>Next drop: Friday 8pm</span><span>★</span><span>30-day run-in guarantee</span><span>★</span></div></div><header class="sg-head"><div class="in"><a class="sg-logo" href="{{p:home}}">Sprint</a><ul><li><a href="{{p:shop}}">Run</a></li><li><a href="{{p:shop}}">Train</a></li><li><a href="{{p:shop}}">Court</a></li><li><a href="{{p:drops}}">Drops</a></li><li><a href="{{p:athletes}}">Squad</a></li><li class="more"><a href="#" tabindex="0">All ▾</a><div class="dd"><div><h4>Main</h4><a href="{{p:home}}">Home</a><a href="{{p:drops}}">Drops</a><a href="{{p:athletes}}">Squad</a></div><div><h4>Shop</h4><a href="{{p:shop}}">Shop all</a><a href="{{p:product}}">Product</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a></div><div><h4>Support</h4><a href="{{p:size-guide}}">Size & fit</a><a href="{{p:stores}}">Stores</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="sg-cart" href="{{p:cart}}">Cart 2</a></div></header>

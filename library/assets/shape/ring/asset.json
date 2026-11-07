@@ -1,0 +1,18 @@
+{
+ "slug": "ring",
+ "name": "Ring",
+ "zh": "圆环",
+ "cat": "shape",
+ "file": "ring.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "basic",
+  "ring",
+  "outline"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

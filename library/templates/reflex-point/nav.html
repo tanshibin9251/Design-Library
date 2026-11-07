@@ -1,0 +1,49 @@
+<style>
+/* Reflex Point — japanese minimal, tokens only */
+.rp-head{position:fixed;left:0;top:0;bottom:0;width:84px;border-right:1px solid var(--c-border);background:var(--c-surface);z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 0}
+.rp-logo{writing-mode:vertical-rl;font:500 22px var(--f-head);letter-spacing:.5em;text-decoration:none;color:var(--c-primary)}
+.rp-logo i{display:block;width:12px;height:12px;border-radius:50%;background:var(--c-accent);margin-bottom:14px}
+.rp-menu{writing-mode:vertical-rl;display:flex;gap:26px;list-style:none;font:500 14px var(--f-body);letter-spacing:.3em}
+.rp-menu a{text-decoration:none}.rp-menu a:hover{color:var(--c-accent)}
+.rp-menu .more{position:relative}
+.rp-rsv{writing-mode:vertical-rl;background:var(--c-primary);color:var(--on-primary);padding:18px 11px;font:500 13px var(--f-body);letter-spacing:.4em;text-decoration:none}
+.rp-main{margin-left:84px}
+.rp-hero{min-height:100vh;display:grid;grid-template-columns:1fr 1.15fr}
+.rp-hero .l{padding:clamp(40px,7vw,110px) clamp(24px,5vw,80px);display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.rp-hero h1{writing-mode:vertical-rl;font-size:clamp(40px,6vw,var(--h1));font-weight:500;letter-spacing:.14em;line-height:1.4;height:min(60vh,520px);color:var(--c-primary)}
+.rp-hero .en{font:400 13px var(--f-body);letter-spacing:.34em;text-transform:uppercase;color:var(--c-secondary)}
+.rp-hero p{max-width:34ch;font:400 17px/2 var(--f-body)}
+.rp-hero .r{position:relative}
+.rp-hero .r .ph{position:absolute;inset:0;border-radius:0;height:100%}
+.rp-hero .r .sun{position:absolute;right:12%;top:14%;width:clamp(70px,9vw,130px);aspect-ratio:1;border-radius:50%;background:var(--c-accent);z-index:2}
+.rp-line{display:flex;align-items:center;gap:18px;margin:0 0 30px;font:400 12px var(--f-body);letter-spacing:.34em;text-transform:uppercase;color:var(--c-secondary)}
+.rp-line::after{content:"";flex:1;height:1px;background:var(--c-border)}
+.rp-sec{padding:var(--pad) clamp(24px,6vw,100px)}
+.rp-sec h2{font-weight:500;letter-spacing:.06em;color:var(--c-primary)}
+.rp-tx{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--c-border)}
+.rp-tx a{padding:34px 26px 38px;border-right:1px solid var(--c-border);border-bottom:1px solid var(--c-border);text-decoration:none;display:grid;gap:14px;align-content:start}
+.rp-tx a:nth-child(3n){border-right:0}
+.rp-tx a:hover{background:color-mix(in srgb,var(--c-primary) 6%,var(--c-surface))}
+.rp-tx .no{font:400 13px var(--f-body);letter-spacing:.3em;color:var(--c-accent)}
+.rp-tx h3{font:500 26px var(--f-head);letter-spacing:.08em;color:var(--c-primary)}
+.rp-tx .jp{font:500 13px var(--f-body);letter-spacing:.3em;color:var(--c-secondary)}
+.rp-tx .pr{font:500 15px var(--f-body);margin-top:6px}
+.rp-foot{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:var(--pad) clamp(24px,6vw,100px);border-top:1px solid var(--c-border)}
+.rp-map{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.rp-foot-svg{width:100%;max-width:340px;justify-self:center}
+.rp-foot-svg path.z{fill:color-mix(in srgb,var(--c-primary) 8%,var(--c-surface));stroke:var(--c-primary);stroke-width:1.3;cursor:pointer;transition:fill .2s}
+.rp-foot-svg path.z:hover,.rp-foot-svg path.z:focus-visible{fill:color-mix(in srgb,var(--c-accent) 55%,var(--c-surface));outline:none}
+.rp-foot-svg path.z.on{fill:var(--c-accent)}
+.rp-list{border-top:1px solid var(--c-border)}
+.rp-list div{display:grid;grid-template-columns:90px 1fr auto;gap:20px;padding:22px 0;border-bottom:1px solid var(--c-border);align-items:baseline}
+.rp-list b{font:500 24px var(--f-head);letter-spacing:.1em;color:var(--c-primary)}
+.rp-list .pr{font:500 18px var(--f-body)}
+.rp-btn{display:inline-block;border:1px solid var(--c-primary);padding:1em 2.4em;font:500 13px var(--f-body);letter-spacing:.4em;text-decoration:none;color:var(--c-primary);background:none}
+.rp-btn:hover,.rp-btn.f{background:var(--c-primary);color:var(--on-primary)}
+.rp-tk{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--c-border)}
+.rp-tk>div{padding:44px 28px;border-right:1px solid var(--c-border);text-align:center}.rp-tk>div:last-child{border:0}
+.rp-tk .n{font:500 clamp(46px,5vw,72px)/1 var(--f-head);color:var(--c-accent)}
+.rp-tk h3{font:500 20px var(--f-head);letter-spacing:.12em;margin:10px 0}
+@media(max-width:900px){.rp-head{position:static;width:auto;flex-direction:row;border-right:0;border-bottom:1px solid var(--c-border);padding:14px 20px}.rp-logo,.rp-menu,.rp-rsv{writing-mode:horizontal-tb}.rp-logo i{display:inline-block;margin:0 10px 0 0}.rp-menu{display:none}.rp-rsv{padding:10px 18px}.rp-main{margin-left:0}.rp-hero,.rp-map,.rp-foot{grid-template-columns:1fr}.rp-hero h1{height:auto;writing-mode:horizontal-tb;letter-spacing:.06em}.rp-hero .r{min-height:300px}.rp-tx,.rp-tk{grid-template-columns:1fr}.rp-tx a,.rp-tk>div{border-right:0}}
+.rp-head .more{position:relative}.rp-head .dd{position:absolute;left:100%;top:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:0;writing-mode:horizontal-tb;}.rp-head .more:hover .dd,.rp-head .more:focus-within .dd{display:grid}.rp-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.rp-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.rp-head .dd a:hover{color:var(--c-accent);opacity:1}
+.rp-head .dd{top:auto;bottom:0}h1,h2,h3,h4{color:var(--c-primary)}/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.rp-sec{padding-left:18px;padding-right:18px}.rp-hero .l{padding:36px 18px;gap:24px}.rp-hero h1{font-size:clamp(36px,11vw,54px)}.rp-list div{grid-template-columns:64px 1fr;gap:12px}.rp-list .pr{display:none}.rp-tk .n{font-size:48px}}</style><header class="rp-head"><a class="rp-logo" href="{{p:home}}"><i></i>足 ・ Reflex Point</a><ul class="rp-menu"><li><a href="{{p:treatments}}">施術 Treatments</a></li><li><a href="{{p:map}}">足裏 Map</a></li><li><a href="{{p:tickets}}">回数券 Tickets</a></li><li class="more"><a href="#" tabindex="0">他 More</a><div class="dd"><div><h4>Practice</h4><a href="{{p:home}}">Home</a><a href="{{p:treatments}}">Treatments</a><a href="{{p:map}}">Reflex map</a><a href="{{p:tickets}}">Course tickets</a><a href="{{p:practitioner}}">Practitioner</a></div><div><h4>Visit</h4><a href="{{p:reserve}}">Reserve</a><a href="{{p:access}}">Access & hours</a><a href="{{p:notes}}">Journal</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="rp-rsv" href="{{p:reserve}}">予約 Reserve</a></header><div class="rp-main">

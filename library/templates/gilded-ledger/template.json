@@ -1,0 +1,157 @@
+{
+ "format": "fragments",
+ "slug": "gilded-ledger",
+ "name": "Gilded Ledger",
+ "zh": "金边金融",
+ "tag": "Ledger-paper private office: ruled background with copper margin line, at-a-glance account sheet, Roman-numeral sections, allocation illustration and plain fee table.",
+ "colors": {
+  "primary": "#26282b",
+  "secondary": "#8d8a82",
+  "text": "#26282b",
+  "accent": "#b4683a",
+  "surface": "#f4f1ea",
+  "border": "#d9d4c7"
+ },
+ "fonts": {
+  "head": "Cardo",
+  "body": "Albert Sans"
+ },
+ "tok": {
+  "hlh": "1.15",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.005em",
+  "h1": "76px",
+  "h2": "42px",
+  "h3": "24px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "finance"
+ ],
+ "styles": [
+  "editorial",
+  "corporate",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Private Banking",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Fees",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Client Outcomes",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Client outcome",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Insights",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Private consultation",
+   "group": "Special"
+  },
+  {
+   "slug": "process",
+   "label": "Process",
+   "group": "Special"
+  },
+  {
+   "slug": "industries",
+   "label": "Client types",
+   "group": "Special"
+  },
+  {
+   "slug": "resources",
+   "label": "Resources",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

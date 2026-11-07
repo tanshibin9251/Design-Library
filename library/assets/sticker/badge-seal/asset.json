@@ -1,0 +1,18 @@
+{
+ "slug": "badge-seal",
+ "name": "Round seal",
+ "zh": "圆形印章",
+ "cat": "sticker",
+ "file": "badge-seal.svg",
+ "format": "svg",
+ "width": 240,
+ "height": 240,
+ "tags": [
+  "seal",
+  "award",
+  "official"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

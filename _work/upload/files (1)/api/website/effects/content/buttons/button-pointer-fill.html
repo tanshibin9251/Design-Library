@@ -1,0 +1,59 @@
+<!-- Pointer Fill Button — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-pf{width:min(900px,100%);display:grid;gap:1.6em;justify-items:start}
+.fx-pf h2{font-size:clamp(1.8em,4vw,2.6em)}.fx-pf p{opacity:.6;max-width:32em}
+.fx-pf .row{display:flex;flex-wrap:wrap;gap:1.4em;align-items:center;padding:1.4em 1.2em}
+.pf{--x:50%;--y:50%;--r:0px;--s:0;--c:var(--primary);--oc:var(--on-primary);position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:.6em;padding:1em 1.9em;border-radius:999px;border:2px solid var(--c);background:transparent;color:var(--c);font:700 1em var(--font-body);cursor:pointer;transition:color calc(.35s/var(--speed)),transform calc(.4s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.pf::before{content:"";position:absolute;z-index:-1;left:var(--x);top:var(--y);width:calc(var(--r)*2);height:calc(var(--r)*2);margin:calc(var(--r)*-1) 0 0 calc(var(--r)*-1);border-radius:50%;background:var(--c);transform:scale(var(--s));transition:transform calc(.5s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.pf.is-in{color:var(--oc);--s:1}
+.pf-a{--c:var(--accent);--oc:var(--on-accent)}
+.pf-ic{padding:0;width:3.6em;height:3.6em;justify-content:center}
+.pf-ic svg{width:1.4em;height:1.4em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pf:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.pf,.pf::before{transition:none}}
+
+</style>
+
+<div class="fx fx-pf"><h2>Pointer fill</h2><p>The colour floods in from the exact point where your pointer enters, and drains out towards the point where it leaves. The button also leans a little towards the pointer.</p><div class="row"><button type="button" class="pf"><span>Start a project</span></button><button type="button" class="pf pf-a"><span>View the work</span></button><button type="button" class="pf pf-ic" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+
+<script>
+(function(){
+var bs=[].slice.call(document.querySelectorAll('.fx-pf .pf'));
+var rm=(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches);
+function geom(b,e){var r=b.getBoundingClientRect(),x=e?e.clientX-r.left:r.width/2,y=e?e.clientY-r.top:r.height/2;
+ x=Math.max(0,Math.min(r.width,x));y=Math.max(0,Math.min(r.height,y));
+ b.style.setProperty('--x',x+'px');b.style.setProperty('--y',y+'px');b.style.setProperty('--r',Math.hypot(Math.max(x,r.width-x),Math.max(y,r.height-y))+'px')}
+bs.forEach(function(b){var t=0;
+ function inn(e){geom(b,e);b.classList.add('is-in')}
+ function out(e){clearTimeout(t);geom(b,e);b.classList.remove('is-in');b.style.transform=''}
+ b.addEventListener('pointerenter',function(e){if(e.pointerType==='touch')return;inn(e)});
+ b.addEventListener('pointerleave',function(e){if(e.pointerType==='touch')return;out(e)});
+ b.addEventListener('pointermove',function(e){if(rm||e.pointerType==='touch')return;var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*.2).toFixed(1)+'px)'});
+ b.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;inn(e);clearTimeout(t);t=setTimeout(function(){out(null)},650)});
+ b.addEventListener('focus',function(){if(b.matches(':focus-visible'))inn(null)});
+ b.addEventListener('blur',function(){out(null)})});
+})();
+</script>

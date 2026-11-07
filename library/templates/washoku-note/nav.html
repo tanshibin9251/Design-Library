@@ -1,0 +1,87 @@
+<style>
+/* Washoku Note — Japanese home-cooking notebook, tokens only */
+body{background-color:var(--c-surface);background-image:linear-gradient(color-mix(in srgb,var(--c-secondary) 28%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--c-secondary) 28%,transparent) 1px,transparent 1px);background-size:28px 28px}
+.wn-head{padding:clamp(16px,2.4vw,28px) clamp(16px,4vw,56px) 0;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.wn-logo{text-decoration:none;color:var(--c-primary);display:block}
+.wn-logo b{display:block;font:600 clamp(26px,3vw,36px)/1.1 var(--f-head);letter-spacing:.04em}
+.wn-logo small{font:500 12px var(--f-body);letter-spacing:.24em;color:var(--c-secondary);text-transform:uppercase}
+.wn-tabs{position:fixed;right:0;top:140px;z-index:40;display:flex;flex-direction:column;gap:6px;list-style:none}
+.wn-tabs a{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 14px 0 12px;background:var(--c-surface);border:2px solid var(--c-primary);border-right:0;border-radius:12px 0 0 12px;text-decoration:none;font:500 14px var(--f-head);color:var(--c-primary);writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:.1em;padding:14px 10px;min-height:96px;transition:transform .2s,background .2s;transform:translateX(8px)}
+.wn-tabs a:hover{transform:translateX(0);background:var(--c-accent);color:var(--on-accent)}
+.wn-tabs li:nth-child(2) a{background:color-mix(in srgb,var(--c-secondary) 50%,var(--c-surface))}.wn-tabs li:nth-child(4) a{background:color-mix(in srgb,var(--c-accent) 35%,var(--c-surface))}
+.wn-tabs .more{position:relative}
+.wn-tabs .dd{position:absolute;right:100%;top:0;display:none;min-width:240px;padding:18px 22px;background:var(--c-surface);border:2px solid var(--c-primary);writing-mode:horizontal-tb;margin-right:6px}
+.wn-tabs .more:hover .dd,.wn-tabs .more:focus-within .dd{display:grid}
+.wn-tabs .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent);margin:8px 0 4px}
+.wn-tabs .dd a{writing-mode:horizontal-tb;display:block;min-height:0;border:0;padding:5px 0;background:none;transform:none;font:500 14px var(--f-body);letter-spacing:0;color:var(--c-text)}
+.wn-m{display:none}
+.wn-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;border:2px solid var(--c-primary);border-radius:10px;padding:0 14px;font:700 12px var(--f-body);letter-spacing:.14em;background:var(--c-surface)}
+.wn-m summary::-webkit-details-marker{display:none}
+.wn-m nav{position:absolute;left:12px;right:12px;top:100%;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:14px;padding:8px 18px;display:grid;z-index:50}
+.wn-m nav a{padding:12px 0;border-bottom:1px dashed var(--c-border);text-decoration:none;font:500 15px var(--f-body);min-height:44px}
+@media(max-width:900px){.wn-tabs{display:none}.wn-m{display:block;position:relative}}
+.wn-main{padding:0 clamp(16px,6vw,110px)}
+.wn-sec{padding:clamp(28px,4vw,60px) 0}
+.wn-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,70px);align-items:center;padding:clamp(28px,5vw,70px) 0}
+.wn-hero h1{font:600 clamp(40px,6vw,var(--h1))/1.2 var(--f-head);color:var(--c-primary);letter-spacing:.02em}
+.wn-hero h1 u{text-decoration:none;background:linear-gradient(transparent 65%,color-mix(in srgb,var(--c-accent) 45%,transparent) 65% 92%,transparent 92%)}
+.wn-hero p{font:500 17px/1.9 var(--f-body);max-width:42ch;margin:18px 0 24px}
+@media(max-width:860px){.wn-hero{grid-template-columns:1fr}}
+.wn-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;background:var(--c-primary);color:var(--on-primary);border:2px solid var(--c-primary);text-decoration:none;font:600 15px var(--f-head);letter-spacing:.06em;border-radius:6px;cursor:pointer;box-shadow:3px 3px 0 var(--c-accent)}
+.wn-btn:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--c-accent)}
+.wn-btn.o{background:var(--c-surface);color:var(--c-primary)}
+.wn-note{position:relative;background:#fff;background:color-mix(in srgb,var(--c-surface) 25%,#fff);border:2px solid var(--c-primary);border-radius:4px;padding:clamp(20px,2.6vw,34px);box-shadow:5px 5px 0 color-mix(in srgb,var(--c-primary) 18%,transparent)}
+.wn-note::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:color-mix(in srgb,var(--c-accent) 55%,transparent);transform:rotate(-2deg);border-left:2px dotted color-mix(in srgb,var(--c-primary) 30%,transparent);border-right:2px dotted color-mix(in srgb,var(--c-primary) 30%,transparent)}
+.wn-note.r::before{transform:rotate(3deg);background:color-mix(in srgb,var(--c-secondary) 70%,transparent)}
+.wn-note h3{font:600 24px var(--f-head);letter-spacing:.04em;color:var(--c-primary);margin-bottom:6px}
+.wn-note .jp{font:500 13px var(--f-body);letter-spacing:.2em;color:var(--c-accent)}
+.wn-hd{display:flex;align-items:center;gap:14px;margin:0 0 26px}
+.wn-hd h2{font:600 clamp(24px,3vw,var(--h2)) var(--f-head);color:var(--c-primary);letter-spacing:.04em;background:linear-gradient(transparent 70%,color-mix(in srgb,var(--c-secondary) 45%,transparent) 70%);padding:0 6px}
+.wn-hd span{font:500 12px var(--f-body);letter-spacing:.24em;color:var(--c-secondary);text-transform:uppercase}
+.wn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px) clamp(16px,2vw,30px)}
+.wn-card{display:block;text-decoration:none;color:inherit}
+.wn-card:nth-child(2n){transform:rotate(.7deg)}.wn-card:nth-child(3n){transform:rotate(-.6deg)}
+.wn-card .ph{aspect-ratio:4/3;border:2px solid var(--c-primary);background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--c-secondary) 30%,var(--c-surface)) 0 10px,color-mix(in srgb,var(--c-secondary) 14%,var(--c-surface)) 10px 20px);margin-bottom:12px;position:relative}
+.wn-card .ph::after{content:"缺图";position:absolute;right:8px;bottom:6px;font:600 10px var(--f-body);letter-spacing:.14em}
+.wn-card .m{font:500 13px var(--f-body);color:var(--c-secondary);display:flex;gap:12px}
+@media(max-width:860px){.wn-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.wn-grid{grid-template-columns:1fr}}
+
+/* builder */
+.wn-build{display:grid;grid-template-columns:1fr minmax(260px,420px);gap:clamp(24px,4vw,56px);align-items:start}
+@media(max-width:900px){.wn-build{grid-template-columns:1fr}}
+.wn-step{margin-bottom:26px}
+.wn-step h3{font:600 20px var(--f-head);letter-spacing:.04em;margin-bottom:10px;display:flex;gap:10px;align-items:center}
+.wn-step h3 i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--c-accent);color:var(--on-accent);font:600 16px var(--f-head);font-style:normal}
+.wn-opts{display:flex;gap:8px;flex-wrap:wrap}
+.wn-opts button{min-height:46px;padding:0 18px;border:2px solid var(--c-primary);border-radius:999px;background:var(--c-surface);color:var(--c-primary);font:500 15px var(--f-body);cursor:pointer}
+.wn-opts button[aria-pressed=true]{background:var(--c-primary);color:var(--on-primary)}
+.wn-bowl{position:sticky;top:20px}
+.wn-bowl h3{font:600 26px var(--f-head);letter-spacing:.04em;margin-bottom:12px}
+.wn-bowl ul{list-style:none}.wn-bowl li{padding:8px 0;border-bottom:1px dashed var(--c-secondary);font:500 15px var(--f-body);display:flex;justify-content:space-between;gap:10px}
+.wn-bowl .t{font:600 13px var(--f-body);color:var(--c-accent);letter-spacing:.14em;margin-top:14px}
+.wn-bowl p{font:500 15px/1.8 var(--f-body);margin-top:10px}
+@media(max-width:900px){.wn-bowl{position:static}}
+.wn-months{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:26px}
+.wn-months button{min-height:48px;border:2px solid var(--c-primary);background:var(--c-surface);font:600 15px var(--f-head);cursor:pointer;color:var(--c-primary);border-radius:6px}
+.wn-months button[aria-pressed=true]{background:var(--c-accent);color:var(--on-accent)}
+@media(max-width:600px){.wn-months{grid-template-columns:repeat(4,1fr)}}
+.wn-ing{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(20px,4vw,50px);list-style:none}
+.wn-ing li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--c-secondary);font:500 15px var(--f-body)}
+.wn-ing li b{font-weight:600}
+.wn-steps{counter-reset:s;list-style:none;display:grid;gap:18px}
+.wn-steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px}
+.wn-steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border:2px solid var(--c-primary);border-radius:50%;font:600 20px var(--f-head);background:var(--c-surface)}
+.wn-steps p{font:500 16px/1.9 var(--f-body)}
+.wn-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:start}
+@media(max-width:860px){.wn-two{grid-template-columns:1fr}}
+.wn-foot{margin-top:clamp(40px,6vw,90px);border-top:2px solid var(--c-primary);padding:clamp(30px,4vw,56px) clamp(16px,6vw,110px) 22px;background:color-mix(in srgb,var(--c-surface) 85%,#fff)}
+.wn-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,6vw,90px)}
+.wn-foot .big{font:600 28px var(--f-head);letter-spacing:.06em}
+.wn-foot h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:8px}
+.wn-foot ul{list-style:none}.wn-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:500 14px var(--f-body);min-height:32px}
+.wn-foot .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wn-foot .copy{margin-top:24px;font:500 12px var(--f-body);color:var(--c-secondary)}
+@media(max-width:800px){.wn-foot .top{grid-template-columns:1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+@media(prefers-reduced-motion:reduce){.wn-tabs a,.wn-btn{transition:none}}
+</style><header class="wn-head"><a class="wn-logo" href="{{p:home}}"><b>和食ノート</b><small>Washoku Note · Japanese home cooking</small></a><details class="wn-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">Recipes</a><a href="{{p:recipe}}">Recipe: Teriyaki chicken</a><a href="{{p:soup}}">Miso soup builder</a><a href="{{p:basics}}">Basics: dashi & rice</a><a href="{{p:seasonal}}">Seasonal ingredients</a><a href="{{p:about}}">About the notebook</a><a href="{{p:faq}}">FAQ</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details></header><ul class="wn-tabs"><li><a href="{{p:recipes}}">レシピ</a></li><li><a href="{{p:soup}}">味噌汁</a></li><li><a href="{{p:seasonal}}">旬</a></li><li><a href="{{p:basics}}">基本</a></li><li class="more"><a href="#" tabindex="0">他</a><div class="dd"><h4>Notes</h4><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">Recipes</a><a href="{{p:recipe}}">Recipe: Teriyaki chicken</a><a href="{{p:soup}}">Miso soup builder</a><a href="{{p:basics}}">Basics: dashi & rice</a><a href="{{p:seasonal}}">Seasonal ingredients</a><h4>Kitchen</h4><a href="{{p:about}}">About the notebook</a><a href="{{p:faq}}">FAQ</a><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></li></ul><div class="wn-main">

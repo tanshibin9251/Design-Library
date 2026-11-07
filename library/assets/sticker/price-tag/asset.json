@@ -1,0 +1,18 @@
+{
+ "slug": "price-tag",
+ "name": "Price tag",
+ "zh": "价签",
+ "cat": "sticker",
+ "file": "price-tag.svg",
+ "format": "svg",
+ "width": 240,
+ "height": 160,
+ "tags": [
+  "price",
+  "shop",
+  "tag"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

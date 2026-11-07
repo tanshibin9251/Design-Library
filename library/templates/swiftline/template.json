@@ -1,0 +1,162 @@
+{
+ "format": "fragments",
+ "slug": "swiftline",
+ "name": "Swiftline Logistics",
+ "zh": "迅捷物流",
+ "tag": "Logistics site with tracking built into the header, a parcel timeline that responds to the number, and a zone/weight/speed price calculator.",
+ "colors": {
+  "primary": "#1c2b39",
+  "secondary": "#6b7a86",
+  "text": "#1c2b39",
+  "accent": "#00b894",
+  "surface": "#f5f8fa",
+  "border": "#d3dde3"
+ },
+ "fonts": {
+  "head": "Exo 2",
+  "body": "Assistant"
+ },
+ "tok": {
+  "hlh": "1.08",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.005em",
+  "h1": "76px",
+  "h2": "42px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "800",
+  "stat": "var(--c-accent)",
+  "radius": "10px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "logistics"
+ ],
+ "styles": [
+  "corporate",
+  "futuristic",
+  "bold"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Rates",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Customer Stories",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Customer story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "News",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "tracking",
+   "label": "Track a shipment",
+   "group": "Special"
+  },
+  {
+   "slug": "quote",
+   "label": "Get a quote",
+   "group": "Special"
+  },
+  {
+   "slug": "service-areas",
+   "label": "Our network",
+   "group": "Special"
+  },
+  {
+   "slug": "industries",
+   "label": "Industries we serve",
+   "group": "Special"
+  },
+  {
+   "slug": "process",
+   "label": "How shipping works",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+<!-- Scroll Zoom Pin — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.ap-art{position:relative;overflow:hidden}.ap-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fx-zp{width:100%;max-width:100%}
+.zp-sec{--z:1;--o:1;--c:1;position:relative}
+.zp-on .zp-sec{height:320svh}
+.zp-stage{position:relative;height:100svh;min-height:520px;overflow:hidden;background:var(--surface);display:grid;place-items:center}
+.zp-sec:not(.zp-live) .zp-stage{height:auto;min-height:0;aspect-ratio:4/3}
+.zp-on .zp-stage{position:sticky;top:0}
+.zp-pic{position:absolute;inset:0;clip-path:inset(calc((1 - var(--z))*28%) calc((1 - var(--z))*34%) calc((1 - var(--z))*28%) calc((1 - var(--z))*34%) round calc((1 - var(--z))*var(--radius)))}
+.zp-pic .ap-art{position:absolute;inset:0;border-radius:0;border:0;transform:scale(calc(.5 + .5*var(--z)));will-change:transform}
+.zp-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(10,12,18,.62));opacity:var(--o)}
+.zp-lead{position:absolute;top:clamp(1.2em,7svh,3.4em);left:0;right:0;text-align:center;display:grid;gap:.4em;opacity:calc(1 - var(--z)*2.2);pointer-events:none;padding:0 1em}
+.zp-lead h2{font-size:clamp(1.8em,4.4vw,3em)}.zp-lead span{font-size:.8em;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.zp-over{position:absolute;left:0;right:0;bottom:clamp(1.4em,9svh,4em);padding:0 clamp(1.2em,6vw,4em);max-width:calc(100% - 24em);color:#fff;opacity:var(--o);transform:translateY(calc((1 - var(--o))*34px));display:grid;gap:.5em}
+.zp-over small{font-size:.8em;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.zp-over h3{font-size:clamp(2.1em,5.4vw,4.2em);line-height:1.02;max-width:8.5em}
+.zp-card{position:absolute;right:clamp(1em,5vw,4em);bottom:clamp(1em,6svh,3em);width:min(22em,calc(100% - 2em));background:var(--surface);color:var(--text);border-radius:var(--radius);padding:1.4em 1.5em;display:grid;gap:.7em;box-shadow:0 20px 50px rgba(0,0,0,.28);transform:translateY(calc((1 - var(--c))*130%));opacity:calc(.2 + .8*var(--c))}
+.zp-card b{font:600 1.25em var(--font-heading)}.zp-card p{opacity:.72;font-size:.95em}
+.zp-card a{justify-self:start;background:var(--primary);color:var(--on-primary);padding:.65em 1.2em;border-radius:calc(var(--radius)*.6);text-decoration:none;font-weight:600;font-size:.92em}
+.zp-card a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.zp-sec:not(.zp-live) .zp-over{position:absolute}
+@media(max-width:700px){.zp-pic{clip-path:inset(calc((1 - var(--z))*22%) calc((1 - var(--z))*22%) calc((1 - var(--z))*22%) calc((1 - var(--z))*22%) round calc((1 - var(--z))*var(--radius)))}
+.zp-card{left:1em;right:1em;width:auto;bottom:1em}.zp-over{bottom:clamp(11em,34svh,15em);max-width:100%}}
+@media(prefers-reduced-motion:reduce){.zp-pic .ap-art{transform:none}}
+
+</style>
+
+<div class="fx fx-zp"><section class="zp-sec" data-zp><div class="zp-stage"><div class="zp-pic"><div class="ap-art" role="img" aria-label="Sunset over a horizon, placeholder art"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="ap-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb,var(--accent) 80%,#fff)"/><stop offset=".55" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--primary)"/></linearGradient><filter id="ap-n1"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter></defs><rect width="400" height="500" fill="url(#ap-g2)"/><circle cx="200" cy="270" r="96" style="fill:color-mix(in srgb,var(--surface) 92%,var(--accent))"/><path d="M0 300h400v200H0z" style="fill:var(--primary);opacity:.9"/><path d="M0 345h400v14H0zM0 385h400v10H0zM0 420h400v6H0z" style="fill:var(--secondary);opacity:.55"/><rect width="400" height="500" filter="url(#ap-n1)" style="mix-blend-mode:multiply;opacity:.55"/></svg></div></div><div class="zp-lead"><h2>One frame, one story</h2><span>Scroll to step inside</span></div><div class="zp-over"><small>Chapter one</small><h3>The light stays after the day is done</h3></div><div class="zp-card"><b>Then the next scene</b><p>When the picture fills the screen, a card rises from below with the next idea, so the story never leaves the page.</p><a href="#">Continue</a></div></div></section></div>
+
+<script>
+(function(){
+var sec=document.querySelector('.fx-zp [data-zp]');if(!sec)return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var root=sec.parentNode;root.classList.add('zp-on');sec.classList.add('zp-live');
+var raf=0;
+function cl(v){return v<0?0:v>1?1:v}
+function ez(t){return 1-Math.pow(1-t,3)}
+function upd(){raf=0;var r=sec.getBoundingClientRect(),vh=window.innerHeight||800,tot=Math.max(1,r.height-vh);
+ var p=cl(-r.top/tot);
+ sec.style.setProperty('--z',ez(cl(p/.5)).toFixed(3));
+ sec.style.setProperty('--o',cl((p-.42)/.2).toFixed(3));
+ sec.style.setProperty('--c',ez(cl((p-.7)/.28)).toFixed(3))}
+function req(){if(!raf)raf=requestAnimationFrame(upd)}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd();
+})();
+</script>

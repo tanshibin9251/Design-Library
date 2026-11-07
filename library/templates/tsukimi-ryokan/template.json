@@ -1,0 +1,113 @@
+{
+ "format": "fragments",
+ "slug": "tsukimi-ryokan",
+ "name": "Tsukimi Ryokan",
+ "zh": "月見荘",
+ "tag": "Japanese night inn: live moon-phase hero behind a shoji lattice, sliding fusuma room panels, kaiseki timeline.",
+ "colors": {
+  "primary": "#efe6d0",
+  "secondary": "#a79d88",
+  "text": "#e2dac8",
+  "accent": "#c8442f",
+  "surface": "#14120f",
+  "border": "#322e27"
+ },
+ "fonts": {
+  "head": "Yuji Syuku",
+  "body": "Noto Sans JP"
+ },
+ "tok": {
+  "hlh": "1.3",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".1em",
+  "h1": "84px",
+  "h2": "42px",
+  "h3": "24px",
+  "pad": "120px",
+  "ew": "400",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "travel",
+  "health"
+ ],
+ "styles": [
+  "japanese",
+  "darkluxury",
+  "elegant"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Stay"
+  },
+  {
+   "slug": "rooms",
+   "label": "Rooms",
+   "group": "Stay"
+  },
+  {
+   "slug": "room",
+   "label": "Room: Tsuki",
+   "group": "Stay"
+  },
+  {
+   "slug": "plans",
+   "label": "Plans & rates",
+   "group": "Stay"
+  },
+  {
+   "slug": "reserve",
+   "label": "Reserve",
+   "group": "Stay"
+  },
+  {
+   "slug": "kaiseki",
+   "label": "Kaiseki dinner",
+   "group": "Experience"
+  },
+  {
+   "slug": "onsen",
+   "label": "Onsen",
+   "group": "Experience"
+  },
+  {
+   "slug": "seasons",
+   "label": "Four seasons",
+   "group": "Experience"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Experience"
+  },
+  {
+   "slug": "access",
+   "label": "Access",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "format": "fragments",
+ "slug": "nihongo-path",
+ "name": "Nihongo Path",
+ "zh": "にほんごパス",
+ "tag": "Playful pastel Japanese-learning platform: floating pill nav, kana tile hero, winding learning-path map with tap-to-open units and a hiragana chart with quiz.",
+ "colors": {
+  "primary": "#c2386b",
+  "secondary": "#6cc6b4",
+  "text": "#3a2230",
+  "accent": "#ffb703",
+  "surface": "#fff6f1",
+  "border": "#f1d9cf"
+ },
+ "fonts": {
+  "head": "Mochiy Pop One",
+  "body": "Zen Kaku Gothic Antique"
+ },
+ "tok": {
+  "hlh": "1.25",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".02em",
+  "h1": "84px",
+  "h2": "44px",
+  "h3": "26px",
+  "pad": "90px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "24px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "language",
+  "education"
+ ],
+ "styles": [
+  "japanese",
+  "playful",
+  "pastel"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Learn"
+  },
+  {
+   "slug": "path",
+   "label": "Learning path",
+   "group": "Learn"
+  },
+  {
+   "slug": "kana",
+   "label": "Kana practice",
+   "group": "Learn"
+  },
+  {
+   "slug": "courses",
+   "label": "Courses",
+   "group": "Learn"
+  },
+  {
+   "slug": "course",
+   "label": "Course: JLPT N5",
+   "group": "Learn"
+  },
+  {
+   "slug": "lesson",
+   "label": "Lesson",
+   "group": "Learn"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "School"
+  },
+  {
+   "slug": "teachers",
+   "label": "Teachers",
+   "group": "School"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "School"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+<section class="pagehead alt"><div class="wrap"><div class="crumbs"><a href="{{p:home}}">Home</a><span>/</span><b>Models</b></div><h1 style="">One API, three models</h1><p class="lead">Pick by quality, speed and price. Switch with a single string.</p></div></section><section class="nx-sec" style="padding-top:0"><div class="nx-tbl"><div class="nx-row hd"><span>Model</span><span>Context</span><span>Price / 1M tokens</span><span>Best for</span></div><div class="nx-row"><span><b>nexus-2</b><small>Flagship</small></span><span>200k</span><span>$3 in · $15 out</span><span>Reasoning, agents, long documents</span></div><div class="nx-row"><span><b>nexus-2-mini</b><small>Fast</small></span><span>128k</span><span>$0.30 in · $1.20 out</span><span>Chat, classification, support</span></div><div class="nx-row"><span><b>nexus-embed</b><small>Retrieval</small></span><span>8k</span><span>$0.05</span><span>Search, clustering, RAG</span></div></div></section><section class="nx-sec" style="padding-top:0"><div class="nx-code"><span class="s">// swap models by changing one string</span>
+client.messages.create({
+  model: <span class="k">"nexus-2-mini"</span>,
+  max_tokens: 256,
+  messages: [{ role: <span class="k">"user"</span>, content: <span class="k">"Hello"</span> }]
+})</div></section>

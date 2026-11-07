@@ -1,0 +1,17 @@
+{
+ "slug": "map-pin",
+ "name": "Map pin",
+ "zh": "定位",
+ "cat": "icon",
+ "file": "map-pin.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "location",
+  "venue"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

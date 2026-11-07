@@ -1,0 +1,17 @@
+{
+ "slug": "quarter-circle",
+ "name": "Quarter circle",
+ "zh": "四分之一圆",
+ "cat": "shape",
+ "file": "quarter-circle.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "basic",
+  "corner"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

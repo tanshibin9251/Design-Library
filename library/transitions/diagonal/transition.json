@@ -1,0 +1,8 @@
+{
+ "slug": "diagonal",
+ "name": "Diagonal Wipe",
+ "zh": "斜向擦除",
+ "tag": "A slanted edge sweeps across the screen.",
+ "group": "Wipe",
+ "license": "自写，无第三方代码"
+}

@@ -1,0 +1,12 @@
+{
+ "slug": "stat-counter-up",
+ "cat": "stats",
+ "name": "Counter Up",
+ "zh": "数字滚动",
+ "tech": "js",
+ "tag": "Numbers count up smoothly when they scroll into view.",
+ "bleed": false,
+ "css": ".fx-cnt{width:min(1000px,100%);text-align:center;display:grid;gap:2.4em;justify-items:center}\n.fx-cnt h2{font-size:clamp(2em,4.4vw,3em);max-width:18ch}\n.fx-cnt .row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2em;width:100%}\n.fx-cnt .st{padding:1.6em 1em;border-radius:var(--radius);border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 94%,var(--text))}\n.fx-cnt .n{font:600 clamp(2.2em,4.6vw,3.4em)/1 var(--font-heading);color:var(--primary);font-variant-numeric:tabular-nums}.fx-cnt .n sup{font-size:.5em;color:var(--accent);top:-.6em}\n.fx-cnt .l{margin-top:.5em;opacity:.65;font-size:.92em}.fx-cnt small{opacity:.5}\n@media(max-width:760px){.fx-cnt .row{grid-template-columns:repeat(2,minmax(0,1fr))}}",
+ "html": "<div class=\"fx fx-cnt\"><h2>Numbers that earned their place</h2><div class=\"row\"><div class=\"st\"><div class=\"n\"><span data-to=\"240\">0</span><sup>+</sup></div><div class=\"l\">Projects shipped</div></div><div class=\"st\"><div class=\"n\"><span data-to=\"98\">0</span><sup>%</sup></div><div class=\"l\">Clients who return</div></div><div class=\"st\"><div class=\"n\"><span data-to=\"14\">0</span></div><div class=\"l\">Years in practice</div></div><div class=\"st\"><div class=\"n\"><span data-to=\"36\">0</span><sup>k</sup></div><div class=\"l\">Visitors a month</div></div></div><small>Click anywhere to replay</small></div>",
+ "js": "(function(){var root=document.querySelector('.fx-cnt');if(!root)return;function sp(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed'))||1}\nfunction run(){root.querySelectorAll('[data-to]').forEach(function(el){var to=+el.dataset.to,t0=null,d=1600/sp();function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})}\nif('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){run();io.disconnect()}},{threshold:.3});io.observe(root)}else run();\nroot.addEventListener('click',run)})();"
+}

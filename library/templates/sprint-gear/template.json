@@ -1,0 +1,107 @@
+{
+ "format": "fragments",
+ "slug": "sprint-gear",
+ "name": "Sprint Gear",
+ "zh": "冲刺装备",
+ "tag": "Neobrutalist sportswear store in volt yellow and black, with a skewed nav, drop countdown and sticky buy card.",
+ "colors": {
+  "primary": "#0d0d0d",
+  "secondary": "#ff3b2f",
+  "text": "#0d0d0d",
+  "accent": "#d9ff1f",
+  "surface": "#ffffff",
+  "border": "#0d0d0d"
+ },
+ "fonts": {
+  "head": "Bebas Neue",
+  "body": "Archivo"
+ },
+ "tok": {
+  "hlh": ".9",
+  "hw": "400",
+  "hcase": "uppercase",
+  "hls": ".005em",
+  "h1": "120px",
+  "h2": "64px",
+  "h3": "28px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-secondary)",
+  "radius": "0"
+ },
+ "types": [
+  "ecommerce"
+ ],
+ "industries": [
+  "sports",
+  "fitness"
+ ],
+ "styles": [
+  "neobrutal",
+  "bold",
+  "maximal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop all",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "drops",
+   "label": "Drops",
+   "group": "Main"
+  },
+  {
+   "slug": "athletes",
+   "label": "Squad",
+   "group": "Main"
+  },
+  {
+   "slug": "size-guide",
+   "label": "Size & fit",
+   "group": "Support"
+  },
+  {
+   "slug": "stores",
+   "label": "Stores",
+   "group": "Support"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Support"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

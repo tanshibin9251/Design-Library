@@ -1,0 +1,28 @@
+<style>
+/* Aria Lim — tokens only */
+.fo-head{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(16px,3vw,36px);mix-blend-mode:difference;color:#fff}
+.fo-head a{text-decoration:none;color:inherit}
+.fo-logo{font:400 22px var(--f-head);font-style:italic}
+.fo-head ul{display:flex;gap:22px;list-style:none;font:500 14px var(--f-body);text-transform:uppercase;letter-spacing:.1em}
+.fo-head .more{position:relative}
+.fo-wrap{padding:0 clamp(16px,3vw,36px)}
+.fo-hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:28px}
+.fo-hero h1{font:400 clamp(60px,15vw,var(--h1));line-height:.86;letter-spacing:-.03em;color:var(--c-text)}
+.fo-hero h1 i{color:var(--c-accent)}
+.fo-meta{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:24px;font:500 15px var(--f-body);border-top:1px solid var(--c-text);padding-top:14px}
+.fo-idx{border-top:1px solid var(--c-text)}
+.fo-row{display:grid;grid-template-columns:60px 1fr 200px 90px;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-border);text-decoration:none;position:relative;transition:padding .25s}
+.fo-row:hover{padding-left:16px;background:color-mix(in srgb,var(--c-accent) 14%,transparent)}
+.fo-row .n{font:500 14px var(--f-body);opacity:.5}.fo-row h3{font:400 clamp(28px,4.4vw,60px)/1 var(--f-head);letter-spacing:-.02em}
+.fo-row span{font:500 14px var(--f-body);opacity:.7}
+.fo-row .ph{position:absolute;right:140px;top:50%;translate:0 -50%;width:180px;aspect-ratio:4/3;opacity:0;pointer-events:none;transition:opacity .2s;border-radius:6px;z-index:2}
+.fo-row:hover .ph{opacity:1}
+.fo-sec{padding:var(--pad) 0}
+.fo-big{font:400 clamp(30px,5vw,64px)/1.08 var(--f-head);letter-spacing:-.02em;max-width:22ch}
+.fo-cv{width:100%;border-collapse:collapse;font:500 16px var(--f-body)}.fo-cv td{padding:14px 0;border-top:1px solid var(--c-border);vertical-align:top}.fo-cv td:first-child{width:160px;opacity:.55}
+.fo-mail{display:block;font:400 clamp(30px,7vw,100px)/1 var(--f-head);letter-spacing:-.03em;text-decoration:none;color:var(--c-text);border-bottom:2px solid var(--c-text);padding-bottom:10px}
+.fo-mail:hover{color:var(--c-accent);border-color:var(--c-accent)}
+.fo-foot{padding:30px clamp(16px,3vw,36px);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--c-text);font:500 14px var(--f-body)}
+@media(max-width:760px){.fo-head ul{display:none}.fo-row{grid-template-columns:36px 1fr;gap:6px 12px}.fo-row span{grid-column:2}.fo-row .ph{display:none}}
+html,body{overflow-x:clip}img,svg{max-width:100%}.fo-head .more{position:relative}.fo-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;background:var(--c-surface);border:1px solid var(--c-text);mix-blend-mode:normal;color:var(--c-text);}.fo-head .more:hover .dd,.fo-head .more:focus-within .dd{display:grid}.fo-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.fo-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.fo-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3{color:var(--c-text)}</style><header class="fo-head"><a class="fo-logo" href="{{p:home}}">Aria Lim</a><ul><li><a href="{{p:work}}">Work</a></li><li><a href="{{p:about}}">About</a></li><li><a href="{{p:contact}}">Contact</a></li><li class="more"><a href="#" tabindex="0">Index</a><div class="dd"><div><h4>Folio</h4><a href="{{p:home}}">Index</a><a href="{{p:work}}">Work</a><a href="{{p:project}}">Project</a><a href="{{p:about}}">About & CV</a><a href="{{p:contact}}">Contact</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul></header><div style="height:0"></div>

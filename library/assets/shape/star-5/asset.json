@@ -1,0 +1,17 @@
+{
+ "slug": "star-5",
+ "name": "Star 5",
+ "zh": "五角星",
+ "cat": "shape",
+ "file": "star-5.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "star",
+  "rating"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

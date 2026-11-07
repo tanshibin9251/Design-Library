@@ -1,0 +1,18 @@
+{
+ "slug": "frame-film",
+ "name": "Film strip",
+ "zh": "胶卷",
+ "cat": "frame",
+ "file": "frame-film.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 140,
+ "tags": [
+  "film",
+  "video",
+  "retro"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

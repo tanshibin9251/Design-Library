@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "daily-table",
+ "name": "Daily Table",
+ "zh": "家常餐桌",
+ "tag": "Home-cooking recipe site built around a weekly meal planner: week board hero, filterable recipe rows, planner with auto-merged shopping list saved locally.",
+ "colors": {
+  "primary": "#3a2745",
+  "secondary": "#7a5a8a",
+  "text": "#2e2433",
+  "accent": "#d8472b",
+  "surface": "#fffaf0",
+  "border": "#e6dccb"
+ },
+ "fonts": {
+  "head": "Alegreya",
+  "body": "Alegreya Sans"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.015em",
+  "h1": "88px",
+  "h2": "44px",
+  "h3": "26px",
+  "pad": "80px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "14px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "culinary",
+  "lifestyle"
+ ],
+ "styles": [
+  "editorial",
+  "warm",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Cook"
+  },
+  {
+   "slug": "recipes",
+   "label": "All recipes",
+   "group": "Cook"
+  },
+  {
+   "slug": "recipe",
+   "label": "Recipe: Sheet-pan chicken",
+   "group": "Cook"
+  },
+  {
+   "slug": "planner",
+   "label": "Weekly planner",
+   "group": "Plan"
+  },
+  {
+   "slug": "shopping",
+   "label": "Shopping list",
+   "group": "Plan"
+  },
+  {
+   "slug": "staples",
+   "label": "Pantry staples",
+   "group": "Plan"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Table"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Table"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

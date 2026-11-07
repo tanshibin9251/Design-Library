@@ -1,0 +1,18 @@
+{
+ "slug": "rays-burst",
+ "name": "Light rays",
+ "zh": "放射光线",
+ "cat": "background",
+ "file": "rays-burst.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 600,
+ "tags": [
+  "rays",
+  "burst",
+  "retro"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

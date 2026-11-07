@@ -1,0 +1,76 @@
+<!-- Open-now badge with weekly hours — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-opn{width:min(420px,100%)}
+.fx-opn .tools{display:flex;gap:.6em;align-items:center;margin-bottom:1em;font-size:.82em;opacity:.8}
+.fx-opn select{font:600 1em var(--font-body);padding:.35em .6em;border:1px solid var(--border);border-radius:calc(var(--radius)*.5);background:var(--surface);color:var(--text)}
+.fx-opn .card{border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+.fx-opn .top{display:flex;gap:.8em;align-items:center;padding:1em 1.1em;width:100%;border:0;background:none;color:var(--text);cursor:pointer;text-align:left;font:inherit}
+.fx-opn .dot{width:.8em;height:.8em;border-radius:50%;background:var(--c);box-shadow:0 0 0 0 color-mix(in srgb,var(--c) 55%,transparent);flex:none}
+.fx-opn [data-s=open]{--c:var(--accent)}.fx-opn [data-s=soon]{--c:var(--secondary)}.fx-opn [data-s=closed]{--c:color-mix(in srgb,var(--text) 45%,var(--surface))}
+.fx-opn [data-s=open] .dot{animation:fx-opn-p 2s infinite}
+@keyframes fx-opn-p{70%{box-shadow:0 0 0 .6em transparent}}
+.fx-opn .top b{display:block}.fx-opn .top small{opacity:.7}
+.fx-opn .top .chev{margin-left:auto;transition:transform calc(.25s/var(--speed))}
+.fx-opn .top[aria-expanded=true] .chev{transform:rotate(180deg)}
+.fx-opn .tbl{display:grid;grid-template-rows:0fr;transition:grid-template-rows calc(.3s/var(--speed))}
+.fx-opn .tbl.on{grid-template-rows:1fr}
+.fx-opn .tbl>div{overflow:hidden}
+.fx-opn ul{list-style:none;margin:0;padding:.2em 1.1em 1em;display:grid;gap:.15em;font-size:.92em}
+.fx-opn li{display:flex;justify-content:space-between;padding:.4em .6em;border-radius:.5em}
+.fx-opn li.today{background:color-mix(in srgb,var(--accent) 16%,var(--surface));font-weight:700}
+@media(prefers-reduced-motion:reduce){.fx-opn [data-s=open] .dot{animation:none}.fx-opn .tbl,.fx-opn .top .chev{transition:none}}
+</style>
+
+<div class="fx fx-opn"><div class="tools"><label for="fx-opn-sim">Preview as</label><select id="fx-opn-sim"><option value="">Live (now)</option><option value="2,15,0">Tuesday 3:00pm</option><option value="6,21,20">Saturday 9:20pm</option><option value="1,9,0">Monday 9:00am</option><option value="0,11,0,2026-10-20">Public holiday</option></select></div>
+<div class="card" id="fx-opn-c" data-s="closed"><button class="top" type="button" aria-expanded="false" aria-controls="fx-opn-t"><i class="dot"></i><span><b id="fx-opn-a">…</b><small id="fx-opn-b"></small></span><span class="chev" aria-hidden="true">▾</span></button><div class="tbl" id="fx-opn-t"><div><ul id="fx-opn-l"></ul></div></div></div></div>
+
+<script>
+(function(){
+/* ── edit these ─────────────────────────────── */
+var TZ='Asia/Kuala_Lumpur';
+var HOURS=[[11,20],[10,22],[10,22],[10,22],[10,22],[10,23],[10,23]]; /* Sun..Sat as [open,close] hours; null = closed */
+var HOLIDAYS=['2026-10-20','2026-12-25']; /* yyyy-mm-dd */
+/* ───────────────────────────────────────────── */
+var D=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var r=document.querySelector('.fx-opn'),c=r.querySelector('#fx-opn-c'),a=r.querySelector('#fx-opn-a'),bb=r.querySelector('#fx-opn-b'),l=r.querySelector('#fx-opn-l'),t=r.querySelector('#fx-opn-t'),tb=r.querySelector('.top'),sim=r.querySelector('#fx-opn-sim');
+function fmt(h){var m=Math.round((h%1)*60),H=Math.floor(h),s=H>=12?'pm':'am',x=H%12||12;return x+(m?':'+('0'+m).slice(-2):'')+s}
+function now(){var v=sim.value;if(v){var p=v.split(',');return{d:+p[0],t:+p[1]+(+p[2])/60,date:p[3]||''}}
+ try{var f=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',hour:'numeric',minute:'numeric',hour12:false,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),o={};f.forEach(function(x){o[x.type]=x.value});
+ return{d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),t:(+o.hour%24)+(+o.minute)/60,date:o.year+'-'+o.month+'-'+o.day}}catch(e){var n=new Date();return{d:n.getDay(),t:n.getHours()+n.getMinutes()/60,date:''}}}
+function nextOpen(n){for(var i=0;i<8;i++){var d=(n.d+i)%7,h=HOURS[d];if(!h)continue;if(i===0&&n.t>=h[0])continue;return{day:i===0?'today':i===1?'tomorrow':D[d],h:h[0]}}return null}
+function draw(){var n=now(),h=HOURS[n.d],hol=HOLIDAYS.indexOf(n.date)>-1,s,A,B;
+ if(!hol&&h&&n.t>=h[0]&&n.t<h[1]){var left=h[1]-n.t;if(left<=1){s='soon';A='Closing soon';B='Closes at '+fmt(h[1])}else{s='open';A='Open now';B='Until '+fmt(h[1])+' today'}}
+ else{s='closed';A=hol?'Closed for the holiday':'Closed now';var o=nextOpen(n);B=o?'Opens '+o.day+' at '+fmt(o.h):'See hours'}
+ c.dataset.s=s;a.textContent=A;bb.textContent=B;
+ l.innerHTML=D.map(function(x,i){return '<li'+(i===n.d?' class="today"':'')+'><span>'+x+'</span><span>'+(HOURS[i]?fmt(HOURS[i][0])+' – '+fmt(HOURS[i][1]):'Closed')+'</span></li>'}).join('')}
+tb.onclick=function(){var o=tb.getAttribute('aria-expanded')!=='true';tb.setAttribute('aria-expanded',o);t.classList.toggle('on',o)};
+sim.onchange=draw;draw();setInterval(draw,60000)})();
+</script>

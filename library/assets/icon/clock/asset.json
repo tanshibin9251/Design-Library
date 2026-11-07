@@ -1,0 +1,17 @@
+{
+ "slug": "clock",
+ "name": "Clock",
+ "zh": "时钟",
+ "cat": "icon",
+ "file": "clock.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "time",
+  "event"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

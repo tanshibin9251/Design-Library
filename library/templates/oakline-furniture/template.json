@@ -1,0 +1,112 @@
+{
+ "format": "fragments",
+ "slug": "oakline-furniture",
+ "name": "Oakline Furniture",
+ "zh": "橡木线家具",
+ "tag": "Made-to-order solid-wood furniture store in oak, walnut and terracotta, with shop-the-room hotspots, wood swatches and lead-time labels.",
+ "colors": {
+  "primary": "#6b4a2f",
+  "secondary": "#2f3b34",
+  "text": "#2b231c",
+  "accent": "#b85c2e",
+  "surface": "#f5efe4",
+  "border": "#dccfb9"
+ },
+ "fonts": {
+  "head": "Young Serif",
+  "body": "Figtree"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "400",
+  "hcase": "none",
+  "hls": "-.02em",
+  "h1": "88px",
+  "h2": "48px",
+  "h3": "22px",
+  "pad": "104px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "6px"
+ },
+ "types": [
+  "ecommerce"
+ ],
+ "industries": [
+  "furniture",
+  "interior"
+ ],
+ "styles": [
+  "scandi",
+  "photo",
+  "earthy"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop all",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "about",
+   "label": "Our workshop",
+   "group": "Main"
+  },
+  {
+   "slug": "materials",
+   "label": "Woods & finishes",
+   "group": "Special"
+  },
+  {
+   "slug": "delivery",
+   "label": "Delivery & assembly",
+   "group": "Special"
+  },
+  {
+   "slug": "contact",
+   "label": "Showroom",
+   "group": "Main"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "slug": "arch",
+ "name": "Arch",
+ "zh": "拱形",
+ "cat": "shape",
+ "file": "arch.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 280,
+ "tags": [
+  "arch",
+  "luxury",
+  "frame"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

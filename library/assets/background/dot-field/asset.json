@@ -1,0 +1,18 @@
+{
+ "slug": "dot-field",
+ "name": "Dot field",
+ "zh": "点阵背景",
+ "cat": "background",
+ "file": "dot-field.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 400,
+ "tags": [
+  "dots",
+  "pattern",
+  "soft"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

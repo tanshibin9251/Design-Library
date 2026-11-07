@@ -1,0 +1,42 @@
+<!-- Typewriter — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-type{text-align:center;display:grid;gap:1.1em;justify-items:center}
+.fx-type h1{font-size:clamp(2.4em,6.4vw,4.8em);line-height:1.1}
+.fx-type .w{color:var(--accent);border-right:.07em solid currentColor;padding-right:.06em;animation:fxcaret .9s steps(1) infinite}
+.fx-type p{opacity:.65;font-size:1.1em;max-width:44ch}
+@keyframes fxcaret{50%{border-color:transparent}}
+@media(prefers-reduced-motion:reduce){.fx-type .w{animation:none}}
+</style>
+
+<div class="fx fx-type"><h1>We design <br><span class="w" data-words='["brands.","websites.","experiences.","things you’ll love."]'>brands.</span></h1><p>An independent studio for people who care about the details.</p></div>
+
+<script>
+(function(){document.querySelectorAll('.fx-type .w').forEach(function(el){var ws=JSON.parse(el.getAttribute('data-words')),wi=0,ci=ws[0].length,del=true;
+function sp(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed'))||1}
+function tick(){var w=ws[wi];if(del){ci--;el.textContent=w.slice(0,ci);if(ci<=0){del=false;wi=(wi+1)%ws.length}return setTimeout(tick,45/sp())}
+ci++;el.textContent=ws[wi].slice(0,ci);if(ci>=ws[wi].length){del=true;return setTimeout(tick,1500/sp())}setTimeout(tick,85/sp())}
+setTimeout(tick,1400)})})();
+</script>

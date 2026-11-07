@@ -1,0 +1,18 @@
+{
+ "slug": "rule-thick",
+ "name": "Thick rule",
+ "zh": "粗横线",
+ "cat": "line",
+ "file": "rule-thick.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 24,
+ "tags": [
+  "rule",
+  "divider",
+  "bold"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

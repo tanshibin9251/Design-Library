@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1080">
+<title>GPU Expo Poster · 1080×1350</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded:300,400,500,600,700,800|Jost:300,400,500,600,700,800|Noto+Sans+SC:300,400,500,600,700,800&display=swap">
+<style>
+:root{--c-primary:#FF6A00;--c-secondary:#1A1D22;--c-text:#F4F4F2;--c-accent:#FFB070;--c-surface:#0B0D10;--c-border:#2A2E35;--on-primary:#ffffff;--on-secondary:#ffffff;--on-accent:#111111;--on-surface:#ffffff;--f-head:'Unbounded','Noto Sans SC','Noto Serif SC',sans-serif;--f-body:'Jost','Noto Sans SC','Noto Serif SC',sans-serif}
+html,body{margin:0;background:#fff}
+</style></head><body>
+<style>
+.g-gx{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--c-surface);color:var(--c-text);font-family:var(--f-body);box-sizing:border-box}
+.g-gx *{box-sizing:border-box;margin:0}
+.g-gx .bg{position:absolute;inset:0;background:radial-gradient(820px 560px at 50% 27%,rgba(255,106,0,.26),transparent 70%),linear-gradient(180deg,#14171c 0%,var(--c-surface) 58%,#07080a 100%)}
+.g-gx .grid{position:absolute;inset:0;background-image:linear-gradient(var(--c-border) 1px,transparent 1px),linear-gradient(90deg,var(--c-border) 1px,transparent 1px);background-size:72px 72px;opacity:.26;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 15%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 30%,#000 15%,transparent 72%)}
+.g-gx .band{position:absolute;right:-110px;top:-50px;width:560px;height:250px;background:linear-gradient(100deg,rgba(255,255,255,.10),rgba(255,255,255,0));transform:skewX(-32deg)}
+.g-gx .dots{position:absolute;right:0;top:0;width:380px;height:220px;background-image:radial-gradient(var(--c-primary) 2.8px,transparent 3.4px);background-size:16px 16px;-webkit-mask-image:linear-gradient(225deg,#000,transparent 70%);mask-image:linear-gradient(225deg,#000,transparent 70%);opacity:.8}
+/* header: organizer logo slot (replace with the real logo PNG) */
+.g-gx .org{position:absolute;left:56px;top:46px;height:64px;display:flex;align-items:center;gap:14px}
+.g-gx .org svg{width:58px;height:58px}
+.g-gx .org b{font:500 30px/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase}
+.g-gx .org b i{font-style:normal;color:var(--c-primary)}
+.g-gx .ed{position:absolute;right:56px;top:72px;font:600 17px/1 var(--f-body);letter-spacing:.4em;text-transform:uppercase}
+.g-gx .presents{position:absolute;left:0;right:0;top:158px;text-align:center;font:500 18px/1 var(--f-body);letter-spacing:.7em;text-transform:uppercase;color:var(--c-mute,#9AA0AA)}
+/* the graphics card */
+.g-gx .gpu{position:absolute;left:60px;top:226px;width:960px;height:410px}
+.g-gx .glow{position:absolute;left:5%;right:5%;bottom:-70px;height:120px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,106,0,.55),transparent 70%)}
+.g-gx .bracket{position:absolute;left:-26px;top:28px;width:34px;height:336px;border-radius:6px 0 0 6px;background:linear-gradient(90deg,#8d939c,#d9dde3 55%,#9aa0a9)}
+.g-gx .bracket i{position:absolute;left:8px;width:18px;height:34px;border-radius:3px;background:#101215}
+.g-gx .bracket i:nth-child(1){top:46px}.g-gx .bracket i:nth-child(2){top:98px}.g-gx .bracket i:nth-child(3){top:150px}.g-gx .bracket i:nth-child(4){top:202px;height:66px}
+.g-gx .power{position:absolute;right:70px;top:-16px;width:130px;height:30px;border-radius:5px 5px 0 0;background:#0b0c0e;border:2px solid #2a2e35;border-bottom:0}
+.g-gx .power::after{content:"";position:absolute;inset:7px 10px 0;background:repeating-linear-gradient(90deg,#3a3f48 0 10px,transparent 10px 16px)}
+.g-gx .body{position:absolute;left:0;top:0;width:960px;height:364px;clip-path:polygon(0 9%,4.5% 0,95.5% 0,100% 10%,100% 91%,95.5% 100%,4.5% 100%,0 90%);background:linear-gradient(160deg,#323843 0%,#1a1d23 45%,#0e1013 100%)}
+.g-gx .body::before{content:"";position:absolute;left:0;right:0;top:0;height:26px;background:repeating-linear-gradient(90deg,#0b0c0e 0 3px,#2c3139 3px 8px);opacity:.9}
+.g-gx .strip{position:absolute;left:5%;right:5%;top:30px;height:5px;border-radius:3px;background:linear-gradient(90deg,transparent,var(--c-primary) 18%,#ffd2a8 50%,var(--c-primary) 82%,transparent);box-shadow:0 0 18px var(--c-primary)}
+.g-gx .slash{position:absolute;left:0;bottom:0;width:300px;height:12px;background:var(--c-primary);transform-origin:left bottom}
+.g-gx .model{position:absolute;right:48px;bottom:20px;font:600 15px/1 var(--f-head);letter-spacing:.34em;color:#8b919b;text-transform:uppercase}
+.g-gx .fan{position:absolute;top:62px;width:272px;height:272px;border-radius:50%;background:#0a0b0d;border:10px solid #21252c;box-shadow:0 0 0 2px #3a404a,0 0 34px rgba(255,106,0,.35),inset 0 0 30px #000}
+.g-gx .fan.a{left:48px}.g-gx .fan.b{left:344px}.g-gx .fan.c{left:640px}
+.g-gx .fan::before{content:"";position:absolute;inset:12px;border-radius:50%;background:repeating-conic-gradient(from 12deg,#4a505b 0 17deg,#171a1f 17deg 51.43deg);-webkit-mask-image:radial-gradient(circle,transparent 0 22%,#000 23%);mask-image:radial-gradient(circle,transparent 0 22%,#000 23%)}
+.g-gx .fan::after{content:"";position:absolute;inset:4px;border-radius:50%;border:5px solid var(--c-primary);box-shadow:0 0 16px var(--c-primary),inset 0 0 16px rgba(255,106,0,.55)}
+.g-gx .fan s{position:absolute;inset:12px;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,0,0,0),rgba(0,0,0,.6) 14%,rgba(0,0,0,0) 28%,rgba(0,0,0,.6) 42%,rgba(0,0,0,0) 56%,rgba(0,0,0,.6) 70%,rgba(0,0,0,0) 84%)}
+.g-gx .fan i{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a3f49,#0d0f12);border:4px solid #3a404a}
+.g-gx .fan i::after{content:"";position:absolute;inset:26px;border-radius:50%;background:var(--c-primary);box-shadow:0 0 14px var(--c-primary)}
+.g-gx .fingers{position:absolute;left:150px;top:364px;width:520px;height:30px;border-radius:0 0 4px 4px;background:repeating-linear-gradient(90deg,#d9a441 0 6px,#6f5320 6px 8px)}
+.g-gx .ph{position:absolute;left:0;right:0;top:404px;text-align:center;font-size:14px;letter-spacing:.16em;color:#6c727c}
+/* stats */
+.g-gx .rib{position:absolute;top:676px;height:58px;display:flex;align-items:center;gap:12px;padding:0 24px;background:rgba(255,106,0,.16);border-top:2px solid var(--c-primary);border-bottom:2px solid var(--c-primary);font:800 26px/1 var(--f-head)}
+.g-gx .rib small{font:500 14px/1.2 var(--f-body);letter-spacing:.26em;text-transform:uppercase;color:var(--c-accent)}
+.g-gx .rib.l{left:0;width:300px;padding-left:56px}
+.g-gx .rib.r{right:0;width:300px;justify-content:flex-end;padding-right:56px}
+/* title + info */
+.g-gx .t1{position:absolute;left:0;right:0;top:770px;text-align:center;font:800 78px/1 var(--f-head);text-transform:uppercase}
+.g-gx .t2{position:absolute;left:0;right:0;top:858px;text-align:center;font:800 236px/1 var(--f-head);text-transform:uppercase}
+.g-gx .t2 i{font-style:normal;color:var(--c-primary)}
+.g-gx .info{position:absolute;left:0;right:0;top:1124px;text-align:center}
+.g-gx .when{font:500 25px/1.2 var(--f-body);letter-spacing:.1em;text-transform:uppercase}
+.g-gx .when b{display:inline-block;width:2px;height:24px;background:var(--c-primary);margin:0 18px;vertical-align:-4px}
+.g-gx .venue{margin-top:12px;font:700 27px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase}
+.g-gx .addr{margin-top:5px;font:400 21px/1.3 var(--f-body);color:#9AA0AA}
+.g-gx .url{position:absolute;left:50%;bottom:38px;transform:translateX(-50%);display:flex;align-items:center}
+.g-gx .url span{display:block;padding:13px 38px;background:var(--c-primary);color:var(--on-primary);font:700 22px/1 var(--f-body);letter-spacing:.12em;text-transform:lowercase}
+.g-gx .url::before,.g-gx .url::after{content:"";width:110px;height:46px;background-image:radial-gradient(var(--c-primary) 2.2px,transparent 2.8px);background-size:10px 10px}
+.g-gx .url::before{-webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000)}
+.g-gx .url::after{-webkit-mask-image:linear-gradient(270deg,transparent,#000);mask-image:linear-gradient(270deg,transparent,#000)}
+</style>
+<div class="g-gx">
+  <div class="bg"></div><div class="grid"></div><div class="band"></div><div class="dots"></div>
+  <div class="org" data-slot="logo">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M52 18A26 26 0 1 0 56 36" fill="none" stroke="#ececec" stroke-width="7" stroke-linecap="round"/><path d="M24 44 L46 22 M46 22 L30 22 M46 22 L46 38" stroke="#FF6A00" stroke-width="8" stroke-linecap="square" fill="none"/></svg>
+    <b>Organ<i>izer</i></b>
+  </div>
+  <div class="ed">Edition 01 · 2026</div>
+  <div class="presents">Presents</div>
+
+  <div class="gpu">
+    <div class="glow"></div>
+    <div class="bracket"><i></i><i></i><i></i><i></i></div>
+    <div class="power"></div>
+    <div class="body">
+      <div class="strip"></div>
+      <div class="slash"></div>
+      <div class="fan a"><s></s><i></i></div>
+      <div class="fan b"><s></s><i></i></div>
+      <div class="fan c"><s></s><i></i></div>
+      <div class="model">Ultra 9000 · 24GB</div>
+    </div>
+    <div class="fingers"></div>
+    <div class="ph">缺图 · 可换成显卡 / 展位实拍</div>
+  </div>
+
+  <div class="rib l">50+<small>Brands</small></div>
+  <div class="rib r"><small>Live rigs</small>300+</div>
+
+  <div class="t1">PC Gaming</div>
+  <div class="t2">Ex<i>p</i>o</div>
+
+  <div class="info">
+    <div class="when">10:00 AM – 8:00 PM<b></b>14 – 16 NOVEMBER 2026</div>
+    <div class="venue">Venue Name · Exhibition Hall</div>
+    <div class="addr">123 Anywhere St., Any City, ST 12345</div>
+  </div>
+
+  <div class="url"><span>www.yourevent.com</span></div>
+</div>
+
+</body></html>

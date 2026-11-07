@@ -1,0 +1,17 @@
+{
+ "slug": "diamond",
+ "name": "Diamond",
+ "zh": "菱形",
+ "cat": "shape",
+ "file": "diamond.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "basic",
+  "diamond"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

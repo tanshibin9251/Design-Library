@@ -1,0 +1,108 @@
+{
+ "format": "fragments",
+ "slug": "tuina-heritage",
+ "name": "Tuina Heritage",
+ "zh": "推拿传承",
+ "tag": "Art deco Chinese medical massage clinic: vermilion hero with radiating gold lines, hanzi cards, master profile and a body-constitution check.",
+ "colors": {
+  "primary": "#a52a1d",
+  "secondary": "#6d5a3a",
+  "text": "#1d1814",
+  "accent": "#c9a04a",
+  "surface": "#f6eedd",
+  "border": "#ddd0b0"
+ },
+ "fonts": {
+  "head": "Limelight",
+  "body": "Nunito Sans"
+ },
+ "tok": {
+  "hlh": "1.06",
+  "hw": "400",
+  "hcase": "uppercase",
+  "hls": ".02em",
+  "h1": "84px",
+  "h2": "46px",
+  "h3": "22px",
+  "pad": "96px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "massage",
+  "health"
+ ],
+ "styles": [
+  "artdeco",
+  "earthy",
+  "elegant"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Clinic"
+  },
+  {
+   "slug": "services",
+   "label": "Treatments",
+   "group": "Clinic"
+  },
+  {
+   "slug": "constitution",
+   "label": "Body constitution check",
+   "group": "Clinic"
+  },
+  {
+   "slug": "conditions",
+   "label": "Conditions we treat",
+   "group": "Clinic"
+  },
+  {
+   "slug": "master",
+   "label": "Master practitioner",
+   "group": "Clinic"
+  },
+  {
+   "slug": "pricing",
+   "label": "Fees",
+   "group": "Clinic"
+  },
+  {
+   "slug": "book",
+   "label": "Book a consultation",
+   "group": "Visit"
+  },
+  {
+   "slug": "stories",
+   "label": "Patient stories",
+   "group": "Visit"
+  },
+  {
+   "slug": "contact",
+   "label": "Visit the clinic",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

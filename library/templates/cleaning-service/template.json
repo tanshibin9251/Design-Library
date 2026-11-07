@@ -1,0 +1,102 @@
+{
+ "format": "fragments",
+ "slug": "cleaning-service",
+ "name": "Sparkle Nest",
+ "zh": "清洁到家",
+ "tag": "Fresh home-cleaning site with an instant-quote card in the hero, service cards with from-prices, plan tiers and area pills.",
+ "colors": {
+  "primary": "#0c4a6e",
+  "secondary": "#475569",
+  "text": "#0f172a",
+  "accent": "#5eead4",
+  "surface": "#fbfdfd",
+  "border": "#d8e6ea"
+ },
+ "fonts": {
+  "head": "Comfortaa",
+  "body": "Open Sans"
+ },
+ "tok": {
+  "hlh": "1.08",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "68px",
+  "h2": "40px",
+  "h3": "22px",
+  "pad": "80px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "20px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "homeservices"
+ ],
+ "styles": [
+  "pastel",
+  "minimal",
+  "playful"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Clean"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Clean"
+  },
+  {
+   "slug": "quote",
+   "label": "Instant quote",
+   "group": "Clean"
+  },
+  {
+   "slug": "plans",
+   "label": "Plans",
+   "group": "Clean"
+  },
+  {
+   "slug": "areas",
+   "label": "Service areas",
+   "group": "Clean"
+  },
+  {
+   "slug": "how",
+   "label": "How it works",
+   "group": "Clean"
+  },
+  {
+   "slug": "reviews",
+   "label": "Reviews",
+   "group": "Clean"
+  },
+  {
+   "slug": "contact",
+   "label": "Book",
+   "group": "Clean"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Clean"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

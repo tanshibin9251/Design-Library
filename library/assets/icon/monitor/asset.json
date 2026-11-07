@@ -1,0 +1,18 @@
+{
+ "slug": "monitor",
+ "name": "Monitor",
+ "zh": "显示器",
+ "cat": "icon",
+ "file": "monitor.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "screen",
+  "pc",
+  "tech"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

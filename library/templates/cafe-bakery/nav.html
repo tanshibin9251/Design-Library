@@ -1,0 +1,41 @@
+<style>
+/* Crumb & Co — tokens only */
+.cb-strip{background:var(--c-primary);color:var(--on-primary);font:500 13px var(--f-body);text-align:center;padding:8px;letter-spacing:.04em}
+.cb-head{background:var(--c-surface);border-bottom:2px dashed color-mix(in srgb,var(--c-primary) 40%,transparent);position:sticky;top:0;z-index:40}
+.cb-head .in{max-width:var(--w);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
+.cb-logo{font:400 30px var(--f-head);text-decoration:none;color:var(--c-primary);display:flex;align-items:center;gap:10px}
+.cb-logo i{width:38px;height:38px;border-radius:50%;background:var(--c-accent);display:grid;place-items:center;color:var(--c-surface);font:400 18px var(--f-head);font-style:normal;rotate:-8deg}
+.cb-head ul{display:flex;gap:6px;list-style:none;font:600 15px var(--f-body)}
+.cb-head ul>li>a{display:block;padding:.5em .9em;border-radius:99px;text-decoration:none}
+.cb-head ul>li>a:hover{background:color-mix(in srgb,var(--c-accent) 18%,var(--c-surface))}
+.cb-btn{display:inline-block;background:var(--c-accent);color:var(--c-surface);padding:.8em 1.5em;border-radius:99px;font:700 15px var(--f-body);text-decoration:none;border:2px solid var(--c-primary);box-shadow:3px 3px 0 var(--c-primary)}
+.cb-btn:hover{translate:1px 1px;box-shadow:2px 2px 0 var(--c-primary)}.cb-btn.o{background:var(--c-surface);color:var(--c-primary)}
+.cb-hero{max-width:var(--w);margin:auto;padding:clamp(28px,5vw,64px) 20px;display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+.cb-hero h1{font-size:clamp(46px,7.4vw,var(--h1));line-height:.98;color:var(--c-primary)}
+.cb-hero h1 em{font-style:normal;color:var(--c-accent);display:inline-block;rotate:-2deg}
+.cb-hero p{font:500 19px/1.55 var(--f-body);max-width:38ch;margin:18px 0 26px}
+.cb-board{background:color-mix(in srgb,var(--c-text) 92%,var(--c-primary));color:var(--c-surface);border-radius:16px;border:10px solid color-mix(in srgb,var(--c-primary) 60%,var(--c-text));padding:22px 24px;transform:rotate(1.5deg);box-shadow:8px 10px 0 color-mix(in srgb,var(--c-primary) 30%,transparent)}
+.cb-board h3{font:400 28px var(--f-head);color:var(--c-surface);border-bottom:2px dashed color-mix(in srgb,var(--c-surface) 40%,transparent);padding-bottom:8px;margin-bottom:10px}
+.cb-board li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:7px 0;font:500 17px var(--f-body)}
+.cb-board li s{opacity:.45}.cb-board li b{color:color-mix(in srgb,var(--c-accent) 60%,#fff)}
+.cb-board small{display:block;opacity:.6;margin-top:8px;font-size:13px}
+.cb-sec{padding:var(--pad) 20px}.cb-sec>.in{max-width:var(--w);margin:auto}
+.cb-ttl{text-align:center;margin-bottom:36px}.cb-ttl small{font:700 12px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-accent)}.cb-ttl h2{margin-top:6px}
+.cb-tags{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cb-tag{background:var(--c-surface);border:2px solid var(--c-primary);border-radius:6px 6px 18px 18px;padding:0 0 16px;text-align:center;position:relative;margin-top:14px}
+.cb-tag::before{content:"";position:absolute;left:50%;top:-14px;width:16px;height:16px;border-radius:50%;background:var(--c-surface);border:2px solid var(--c-primary);translate:-50% 0}
+.cb-tag .ph{aspect-ratio:1;border-radius:4px 4px 0 0;border:0;border-bottom:2px solid var(--c-primary)}
+.cb-tag h3{font:400 22px var(--f-head);margin:12px 8px 2px;color:var(--c-primary)}.cb-tag p{font-size:14px;opacity:.75;padding:0 12px}
+.cb-tag .pr{display:inline-block;margin-top:8px;background:var(--c-accent);color:var(--c-surface);padding:.1em .8em;border-radius:99px;font:700 15px var(--f-body)}
+.cb-menu{display:grid;grid-template-columns:1fr 1fr;gap:10px 56px}
+.cb-it{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:baseline;padding:10px 0}
+.cb-it b{font:400 21px var(--f-head);color:var(--c-primary)}.cb-it i{border-bottom:2px dotted color-mix(in srgb,var(--c-primary) 45%,transparent)}.cb-it span{font:700 17px var(--f-body)}
+.cb-it p{grid-column:1/-1;margin:-4px 0 0;opacity:.7;font-size:14px}
+.cb-slot{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 18px}
+.cb-slot label{position:relative}.cb-slot input{position:absolute;opacity:0}
+.cb-slot span{display:inline-block;padding:.55em 1em;border:2px solid var(--c-primary);border-radius:99px;font:700 14px var(--f-body);cursor:pointer}
+.cb-slot input:checked+span{background:var(--c-primary);color:var(--on-primary)}.cb-slot input:focus-visible+span{outline:3px solid var(--c-accent)}
+.cb-foot{background:var(--c-primary);color:var(--on-primary)}
+@media(max-width:800px){.cb-head ul{display:none}.cb-hero{grid-template-columns:1fr}.cb-tags{grid-template-columns:repeat(2,minmax(0,1fr))}.cb-menu{grid-template-columns:1fr}.cb-board{transform:none}}
+html,body{overflow-x:clip}img,svg{max-width:100%}.cb-head .more{position:relative}.cb-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:18px;border:2px solid var(--c-primary);}.cb-head .more:hover .dd,.cb-head .more:focus-within .dd{display:grid}.cb-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.cb-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.cb-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3{color:var(--c-primary)}</style><div class="cb-strip">Fresh from the oven at 6:30am · Sold out? Order ahead and never miss your loaf</div><header class="cb-head"><div class="in"><a class="cb-logo" href="{{p:home}}"><i>C</i>Crumb &amp; Co</a><ul><li><a href="{{p:menu}}">Menu</a></li><li><a href="{{p:bakes}}">Today’s bakes</a></li><li><a href="{{p:catering}}">Catering</a></li><li><a href="{{p:story}}">Story</a></li><li class="more"><a href="#" tabindex="0">More ▾</a><div class="dd"><div><h4>Café</h4><a href="{{p:home}}">Home</a><a href="{{p:menu}}">Menu</a><a href="{{p:bakes}}">Today’s bakes</a><a href="{{p:order}}">Order ahead</a><a href="{{p:catering}}">Catering</a></div><div><h4>Visit</h4><a href="{{p:story}}">Our story</a><a href="{{p:visit}}">Find us</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="cb-btn" href="{{p:order}}">Order ahead</a></div></header>

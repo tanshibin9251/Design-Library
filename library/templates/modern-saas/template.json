@@ -1,0 +1,157 @@
+{
+ "format": "fragments",
+ "slug": "modern-saas",
+ "name": "Modern SaaS",
+ "zh": "现代 SaaS",
+ "tag": "Clean, confident, product-first. Calm motion.",
+ "colors": {
+  "primary": "#4F46E5",
+  "secondary": "#0F172A",
+  "text": "#1E293B",
+  "accent": "#0E7490",
+  "surface": "#F8FAFC",
+  "border": "#E2E8F0"
+ },
+ "fonts": {
+  "head": "Inter",
+  "body": "Inter"
+ },
+ "tok": {
+  "radius": "14px",
+  "hlh": "1.08",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.025em",
+  "h1": "68px",
+  "h2": "42px",
+  "h3": "21px",
+  "pad": "96px",
+  "ew": "500",
+  "stat": "var(--c-primary)"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "saas",
+  "tech"
+ ],
+ "styles": [
+  "minimal",
+  "corporate"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Features",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Customers",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Customer Story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Blog",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "features",
+   "label": "Features",
+   "group": "Special"
+  },
+  {
+   "slug": "integrations",
+   "label": "Integrations",
+   "group": "Special"
+  },
+  {
+   "slug": "changelog",
+   "label": "Changelog",
+   "group": "Special"
+  },
+  {
+   "slug": "signup",
+   "label": "Sign up",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

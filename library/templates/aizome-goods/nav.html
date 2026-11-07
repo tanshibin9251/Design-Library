@@ -1,0 +1,146 @@
+<style>
+/* Aizome Goods — japanese indigo craft shop, tokens only */
+.az-strip{background:var(--c-primary);color:var(--on-primary);text-align:center;font:500 12px var(--f-body);letter-spacing:.22em;padding:10px 14px}
+.az-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:0 clamp(18px,4vw,52px);min-height:84px;border-bottom:1px solid var(--c-border);background:var(--c-surface);position:sticky;top:0;z-index:50}
+.az-menu{display:flex;gap:clamp(18px,2.6vw,38px);list-style:none;font:500 14px var(--f-body);letter-spacing:.14em;align-items:center}
+.az-menu.r{justify-content:flex-end}
+.az-menu a{text-decoration:none;display:inline-block;padding:10px 0;min-height:44px;line-height:1.25}
+.az-menu a:hover{color:var(--c-accent)}
+.az-menu .jp{display:block;font:400 11px var(--f-body);letter-spacing:.3em;color:var(--c-secondary);margin-top:4px}
+.az-logo{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--c-primary);line-height:1}
+.az-seal{display:grid;place-items:center;width:32px;height:32px;background:var(--c-accent);color:var(--on-accent);font:500 17px var(--f-head);border-radius:0}
+.az-logo b{font:500 15px var(--f-head);letter-spacing:.42em;margin-right:-.42em}
+.az-cart{border:1px solid var(--c-primary);padding:.55em 1.1em!important;min-height:0!important}
+.az-more{position:relative}
+.az-more .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:20px 34px;padding:24px 28px;background:var(--c-surface);border:1px solid var(--c-border);min-width:640px;z-index:60;text-align:left;letter-spacing:0}
+.az-more:hover .dd,.az-more:focus-within .dd{display:grid}
+.az-more .dd h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;margin:0 0 8px;color:var(--c-secondary)}
+.az-more .dd a{display:block;padding:5px 0;min-height:0;font:500 14px var(--f-body);letter-spacing:0}
+.az-m{display:none}
+.az-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;font:500 13px var(--f-body);letter-spacing:.2em}
+.az-m summary::-webkit-details-marker{display:none}
+.az-m nav{position:absolute;left:0;right:0;top:100%;background:var(--c-surface);border-bottom:1px solid var(--c-border);padding:14px 20px 22px;display:grid;gap:2px}
+.az-m nav a{padding:12px 4px;text-decoration:none;font:500 15px var(--f-body);border-bottom:1px solid var(--c-border);min-height:44px}
+@media(max-width:900px){.az-head{grid-template-columns:auto 1fr auto;min-height:70px}.az-head .az-menu{display:none}.az-m{display:block}.az-logo{align-items:flex-start;flex-direction:row;align-items:center}.az-logo b{margin:0;letter-spacing:.3em}}
+
+.az-sec{padding:var(--pad) clamp(20px,5vw,80px)}
+.az-line{display:flex;align-items:center;gap:18px;margin:0 0 34px;font:500 12px var(--f-body);letter-spacing:.34em;text-transform:uppercase;color:var(--c-secondary)}
+.az-line::after{content:"";flex:1;height:1px;background:var(--c-border)}
+.az-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:.9em 2.2em;border:1px solid var(--c-primary);background:var(--c-primary);color:var(--on-primary);font:500 14px var(--f-body);letter-spacing:.24em;text-decoration:none;cursor:pointer;transition:background .25s,color .25s}
+.az-btn:hover{background:transparent;color:var(--c-primary)}
+.az-btn.o{background:transparent;color:var(--c-primary)}.az-btn.o:hover{background:var(--c-primary);color:var(--on-primary)}
+.az-ph{position:relative;width:100%;aspect-ratio:3/4;background:
+  repeating-linear-gradient(90deg,transparent 0 11px,color-mix(in srgb,var(--c-primary) 14%,transparent) 11px 12px),
+  repeating-linear-gradient(0deg,transparent 0 11px,color-mix(in srgb,var(--c-primary) 14%,transparent) 11px 12px),
+  color-mix(in srgb,var(--c-primary) 18%,var(--c-surface))}
+.az-ph::after{content:attr(data-l);position:absolute;left:12px;bottom:10px;font:600 10px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-primary)}
+.az-ph.w{aspect-ratio:16/10}.az-ph.sq{aspect-ratio:1}
+
+/* hero: noren curtain */
+.az-noren{position:relative;padding:0 clamp(20px,5vw,80px)}
+.az-rod{height:8px;background:var(--c-primary);margin:0 calc(-1*clamp(20px,5vw,80px))}
+.az-curt{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,1.4vw,18px);padding:0 clamp(0px,3vw,60px);align-items:start}
+.az-p{display:flex;flex-direction:column;justify-content:space-between;align-items:center;height:var(--h);min-height:240px;padding:26px 10px 22px;color:var(--on-primary);text-decoration:none;background:color-mix(in srgb,var(--c-primary) var(--m),#fff);transform-origin:50% 0;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.az-p:hover,.az-p:focus-visible{transform:rotate(-1.6deg) skewX(-1deg)}
+.az-p:nth-child(even):hover{transform:rotate(1.6deg) skewX(1deg)}
+.az-p .v{writing-mode:vertical-rl;font:500 clamp(20px,2.4vw,30px) var(--f-head);letter-spacing:.4em}
+.az-p i{font:400 11px var(--f-body);letter-spacing:.26em;text-transform:uppercase;font-style:normal;opacity:.85}
+.az-p.lt{color:var(--c-primary)}
+.az-hero-txt{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,6vw,100px);align-items:end;padding:clamp(40px,6vw,84px) 0 clamp(50px,7vw,100px)}
+.az-hero-txt h1{font-size:clamp(40px,6.4vw,var(--h1));color:var(--c-primary);letter-spacing:.06em}
+.az-hero-txt .en{display:block;font:500 12px var(--f-body);letter-spacing:.34em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:22px}
+.az-hero-txt p{font:400 16px/2 var(--f-body);max-width:40ch}
+@media(max-width:800px){.az-curt{grid-template-columns:repeat(5,minmax(0,1fr));padding:0}.az-p{min-height:190px;padding:18px 4px 14px}.az-p i{display:none}.az-hero-txt{grid-template-columns:1fr}}
+
+/* products */
+.az-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.4vw,36px) clamp(14px,2vw,28px)}
+.az-card{display:grid;gap:6px;text-decoration:none;align-content:start}
+.az-card .no{font:500 11px var(--f-body);letter-spacing:.3em;color:var(--c-accent);margin-top:10px}
+.az-card h3{font:500 19px var(--f-head);letter-spacing:.08em;color:var(--c-primary)}
+.az-card .jp{font:400 12px var(--f-body);letter-spacing:.26em;color:var(--c-secondary)}
+.az-card .pr{font:500 15px var(--f-body);margin-top:2px}
+.az-card .dots{display:flex;gap:6px;margin-top:4px}.az-card .dots i{width:12px;height:12px;border-radius:50%;border:1px solid var(--c-border)}
+.az-card .az-ph{transition:filter .4s}.az-card:hover .az-ph{filter:saturate(1.3) brightness(.96)}
+@media(max-width:1000px){.az-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.az-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* shade picker */
+.az-shades{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--c-border)}
+.az-shades button{border:0;border-right:1px solid var(--c-border);padding:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit;display:grid;grid-template-rows:150px auto;min-height:44px}
+.az-shades button:last-child{border-right:0}
+.az-shades .sw{background:color-mix(in srgb,var(--c-primary) var(--m),#fff);position:relative;transition:transform .35s}
+.az-shades .lb{padding:14px 12px 16px;display:grid;gap:4px}
+.az-shades .lb b{font:500 17px var(--f-head);letter-spacing:.14em;color:var(--c-primary)}
+.az-shades .lb span{font:400 11px var(--f-body);letter-spacing:.14em;color:var(--c-secondary)}
+.az-shades button[aria-pressed=true] .sw::after{content:"";position:absolute;left:50%;bottom:-1px;width:14px;height:14px;background:var(--c-surface);transform:translateX(-50%) rotate(45deg) translateY(50%);border:1px solid var(--c-border);border-width:1px 0 0 1px}
+.az-shades button[aria-pressed=true]{background:color-mix(in srgb,var(--c-primary) 5%,var(--c-surface))}
+.az-shade-info{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,4vw,60px);align-items:center;padding:32px 6px 0}
+.az-shade-info .big{font:500 clamp(54px,7vw,100px)/1 var(--f-head);color:var(--c-primary);letter-spacing:.06em}
+.az-shade-info p{max-width:52ch;line-height:1.9}
+.az-shade-info .dip{text-align:center;font:400 12px var(--f-body);letter-spacing:.2em;color:var(--c-secondary)}
+.az-shade-info .dip b{display:block;font:500 clamp(36px,5vw,64px)/1 var(--f-head);color:var(--c-accent)}
+@media(max-width:800px){.az-shades{grid-template-columns:repeat(3,1fr)}.az-shades button:nth-child(3n){border-right:0}.az-shades button:nth-child(-n+3){border-bottom:1px solid var(--c-border)}.az-shade-info{grid-template-columns:1fr;text-align:left}}
+
+/* story band */
+.az-story{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.az-story .mark{font:500 clamp(120px,18vw,260px)/.9 var(--f-head);color:color-mix(in srgb,var(--c-primary) 10%,var(--c-surface));margin-bottom:-.2em}
+.az-steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--c-border)}
+.az-steps>div{padding:28px 22px 30px 0;border-right:1px solid var(--c-border);padding-left:22px}
+.az-steps>div:first-child{padding-left:0}.az-steps>div:last-child{border-right:0}
+.az-steps .n{font:500 12px var(--f-body);letter-spacing:.3em;color:var(--c-accent)}
+.az-steps h3{font:500 20px var(--f-head);letter-spacing:.1em;margin:8px 0 6px}
+.az-steps p{font-size:14px;opacity:.8;line-height:1.8}
+@media(max-width:800px){.az-story{grid-template-columns:1fr}.az-steps{grid-template-columns:1fr 1fr}.az-steps>div{border-bottom:1px solid var(--c-border);padding-left:0}.az-steps>div:nth-child(2n){border-right:0;padding-left:18px}}
+
+/* lists */
+.az-post{display:grid;grid-template-columns:110px 1fr auto;gap:24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--c-border);text-decoration:none}
+.az-post:last-child{border-bottom:1px solid var(--c-border)}
+.az-post time{font:500 12px var(--f-body);letter-spacing:.2em;color:var(--c-secondary)}
+.az-post h3{font:500 21px var(--f-head);letter-spacing:.06em}
+.az-post:hover h3{color:var(--c-accent)}
+.az-post .tg{font:500 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-secondary)}
+@media(max-width:700px){.az-post{grid-template-columns:1fr;gap:6px}}
+.az-pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.az-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.az-pdp h1{font-size:clamp(30px,4vw,48px);letter-spacing:.08em}
+.az-pdp .pr{font:500 24px var(--f-body);margin:14px 0 20px}
+.az-opt{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 22px}
+.az-opt label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--c-border);padding:.6em 1em;min-height:44px;cursor:pointer;font:500 13px var(--f-body);letter-spacing:.1em}
+.az-opt input{width:auto;accent-color:var(--c-primary)}
+.az-opt i{width:16px;height:16px;border-radius:50%;background:color-mix(in srgb,var(--c-primary) var(--m),#fff);border:1px solid var(--c-border)}
+.az-lbl{font:600 11px var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--c-secondary)}
+.az-tbl{width:100%;border-collapse:collapse;font-size:15px}
+.az-tbl th,.az-tbl td{padding:16px 10px;border-top:1px solid var(--c-border);text-align:left;vertical-align:middle}
+.az-tbl th{font:600 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-secondary)}
+.az-tbl tr:last-child td{border-bottom:1px solid var(--c-border)}
+.az-cartwrap{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(28px,5vw,70px);align-items:start}
+.az-sum{border:1px solid var(--c-border);padding:30px;display:grid;gap:14px}
+.az-sum div{display:flex;justify-content:space-between;font-size:15px}
+.az-sum .t{border-top:1px solid var(--c-border);padding-top:16px;font:500 20px var(--f-head)}
+@media(max-width:800px){.az-pdp,.az-cartwrap{grid-template-columns:1fr}.az-tbl{font-size:14px}}
+
+/* footer */
+.az-foot{margin-top:var(--pad);color:var(--c-primary)}
+.az-wave{height:28px;background:
+ radial-gradient(circle at 50% 100%,transparent 0 34%,currentColor 34% 38%,transparent 38% 52%,currentColor 52% 56%,transparent 56% 70%,currentColor 70% 74%,transparent 74%) 0 0/56px 28px,
+ radial-gradient(circle at 50% 100%,transparent 0 34%,currentColor 34% 38%,transparent 38% 52%,currentColor 52% 56%,transparent 56% 70%,currentColor 70% 74%,transparent 74%) 28px 14px/56px 28px;opacity:.28}
+.az-foot-in{background:var(--c-primary);color:var(--on-primary);padding:clamp(48px,6vw,84px) clamp(20px,5vw,80px) 28px}
+.az-foot-top{display:grid;grid-template-columns:1.2fr 2fr;gap:clamp(30px,6vw,100px)}
+.az-foot h4{font:700 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-bottom:12px;color:var(--on-primary)}
+.az-foot ul{list-style:none;display:grid;gap:4px}.az-foot li a{text-decoration:none;display:inline-block;padding:6px 0;font-size:14px;opacity:.88;min-height:32px}
+.az-foot li a:hover{opacity:1;text-decoration:underline}
+.az-foot .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.az-foot .big{font:500 28px var(--f-head);letter-spacing:.3em}
+.az-foot .copy{margin-top:40px;padding-top:18px;border-top:1px solid color-mix(in srgb,var(--on-primary) 25%,transparent);font-size:12px;letter-spacing:.14em;opacity:.7}
+@media(max-width:800px){.az-foot-top{grid-template-columns:1fr}.az-foot .cols{grid-template-columns:1fr 1fr}}
+html,body{overflow-x:clip}img,video,svg{max-width:100%}
+@media(max-width:700px){.az-sec{padding-left:18px;padding-right:18px}}
+@media(prefers-reduced-motion:reduce){.az-p,.az-p:hover{transition:none;transform:none}}
+</style>
+<div class="az-strip">全国送料無料 · Free delivery over RM 250 · Hand-dyed in small lots</div>
+<header class="az-head">
+<ul class="az-menu"><li><a href="{{p:shop}}">Shop<span class="jp">商品</span></a></li><li><a href="{{p:shades}}">Shades<span class="jp">色見本</span></a></li><li><a href="{{p:story}}">Dye house<span class="jp">染工房</span></a></li></ul>
+<details class="az-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:shop}}">Shop all</a><a href="{{p:product}}">Product</a><a href="{{p:shades}}">Shade guide</a><a href="{{p:cart}}">Cart</a><a href="{{p:story}}">Our dye house</a><a href="{{p:care}}">Care guide</a><a href="{{p:journal}}">Journal</a><a href="{{p:contact}}">Contact</a><a href="{{p:shipping}}">Shipping & returns</a><a href="{{p:faq}}">FAQ</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details>
+<a class="az-logo" href="{{p:home}}"><span class="az-seal">藍</span><b>AIZOME</b></a>
+<ul class="az-menu r"><li><a href="{{p:care}}">Care<span class="jp">手入れ</span></a></li><li class="az-more"><a href="#" tabindex="0">More<span class="jp">他</span></a><div class="dd"><div><h4>Shop</h4><a href="{{p:home}}">Home</a><a href="{{p:shop}}">Shop all</a><a href="{{p:product}}">Product</a><a href="{{p:shades}}">Shade guide</a><a href="{{p:cart}}">Cart</a></div><div><h4>Story</h4><a href="{{p:story}}">Our dye house</a><a href="{{p:care}}">Care guide</a><a href="{{p:journal}}">Journal</a></div><div><h4>Help</h4><a href="{{p:contact}}">Contact</a><a href="{{p:shipping}}">Shipping & returns</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li><li><a class="az-cart" href="{{p:cart}}">Cart · 0</a></li></ul>
+</header>

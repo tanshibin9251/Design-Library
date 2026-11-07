@@ -1,0 +1,10 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@property --pt-r { syntax:'<length>'; inherits:false; initial-value:0px; }
+@property --pt-a { syntax:'<angle>'; inherits:false; initial-value:-180deg; }
+@keyframes pt-in { from { --pt-r:0px; --pt-a:-180deg } to { --pt-r:125vmax; --pt-a:0deg } }
+@keyframes pt-out { from {  } to { transform:scale(.94);filter:brightness(.6) } }
+::view-transition-old(root){animation-name:pt-out;z-index:1;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;z-index:2;mix-blend-mode:normal;clip-path:polygon(calc(50vw + var(--pt-r)*cos(var(--pt-a) + 0deg)) calc(50vh + var(--pt-r)*sin(var(--pt-a) + 0deg)),calc(50vw + var(--pt-r)*cos(var(--pt-a) + 90deg)) calc(50vh + var(--pt-r)*sin(var(--pt-a) + 90deg)),calc(50vw + var(--pt-r)*cos(var(--pt-a) + 180deg)) calc(50vh + var(--pt-r)*sin(var(--pt-a) + 180deg)),calc(50vw + var(--pt-r)*cos(var(--pt-a) + 270deg)) calc(50vh + var(--pt-r)*sin(var(--pt-a) + 270deg)));}

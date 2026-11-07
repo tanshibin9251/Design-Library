@@ -1,0 +1,57 @@
+<style>
+/* Blueprint Build — drafting sheet, tokens only */
+body{background-image:linear-gradient(color-mix(in srgb,var(--c-text) 7%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--c-text) 7%,transparent) 1px,transparent 1px),linear-gradient(color-mix(in srgb,var(--c-text) 3.5%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--c-text) 3.5%,transparent) 1px,transparent 1px);background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+.bp-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--c-surface) 94%,transparent);border-bottom:1px solid var(--c-text);backdrop-filter:blur(6px)}
+.bp-head .in{max-width:var(--w);margin:auto;display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;padding:0 20px}
+.bp-logo{font:700 18px var(--f-head);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:16px 26px 16px 0;border-right:1px solid var(--c-text);display:flex;gap:10px;align-items:center}
+.bp-logo svg{width:26px;height:26px}
+.bp-head ul{display:flex;gap:26px;list-style:none;font:500 12.5px var(--f-head);letter-spacing:.08em;text-transform:uppercase}
+.bp-head ul a{text-decoration:none}.bp-head ul a:hover{color:var(--c-accent)}
+.bp-tb{font:500 11px var(--f-head);letter-spacing:.1em;text-align:right;opacity:.75;border-left:1px solid var(--c-text);padding-left:18px;line-height:1.5}
+.bp-sheet{max-width:var(--w);margin:24px auto;padding:0;border:2px solid var(--c-text);position:relative}
+.bp-sheet::before{content:"";position:absolute;inset:6px;border:1px solid var(--c-text);pointer-events:none;opacity:.5}
+.bp-hero{display:grid;grid-template-columns:1.1fr 1fr;border-bottom:1px solid var(--c-text)}
+.bp-hero>div{padding:clamp(30px,4vw,64px)}
+.bp-hero>div+div{border-left:1px solid var(--c-text);display:grid;place-items:center;position:relative}
+.bp-hero h1{font-size:clamp(34px,5.2vw,var(--h1));font-weight:700;line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+.bp-hero h1 mark{background:var(--c-accent);color:var(--c-surface);padding:0 .15em}
+.bp-hero p{max-width:44ch;margin:22px 0 28px;font:400 18px/1.55 var(--f-body)}
+.bp-label{font:500 11px var(--f-head);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent)}
+.bp-btn{display:inline-block;border:1px solid var(--c-accent);background:var(--c-accent);color:var(--c-surface);padding:.85em 1.5em;font:700 13px var(--f-head);letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.bp-btn.o{background:none;color:var(--c-text);border-color:var(--c-text)}.bp-btn:hover{background:var(--c-text);color:var(--c-surface);border-color:var(--c-text)}
+.bp-plan{width:100%;max-width:440px;aspect-ratio:1}
+.bp-plan svg{width:100%;height:100%;overflow:visible}
+.bp-plan .w{fill:none;stroke:var(--c-text);stroke-width:3}.bp-plan .t{fill:none;stroke:var(--c-text);stroke-width:1;stroke-dasharray:4 4}.bp-plan .d{stroke:var(--c-accent);stroke-width:1;fill:none}
+.bp-plan text{font:500 9px var(--f-head);fill:var(--c-text);letter-spacing:.1em}.bp-plan text.a{fill:var(--c-accent)}
+.bp-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--c-text)}
+.bp-row>div{padding:24px;border-right:1px solid var(--c-text)}.bp-row>div:last-child{border:0}
+.bp-row b{display:block;font:700 clamp(30px,3.6vw,50px)/1 var(--f-head);color:var(--c-accent)}
+.bp-row span{font:500 11px var(--f-head);letter-spacing:.14em;text-transform:uppercase}
+.bp-sec{padding:clamp(28px,4vw,56px);border-bottom:1px solid var(--c-text)}
+.bp-sec>h2{font-size:clamp(26px,3.4vw,var(--h2));text-transform:uppercase;font-weight:700;letter-spacing:-.01em;margin:6px 0 28px}
+.bp-svc{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--c-text)}
+.bp-svc>div{padding:22px;border-right:1px solid var(--c-text);border-bottom:1px solid var(--c-text)}
+.bp-svc>div:nth-child(3n){border-right:0}.bp-svc>div:nth-last-child(-n+3){border-bottom:0}
+.bp-svc .no{font:700 13px var(--f-head);color:var(--c-accent)}.bp-svc h3{font-size:19px;text-transform:uppercase;margin:6px 0}
+.bp-gantt{border:1px solid var(--c-text);font:500 12px var(--f-head)}
+.bp-gantt .r{display:grid;grid-template-columns:200px repeat(12,1fr);border-bottom:1px solid color-mix(in srgb,var(--c-text) 30%,transparent);align-items:center}
+.bp-gantt .r:last-child{border:0}.bp-gantt .r>span{padding:10px 12px;letter-spacing:.06em}
+.bp-gantt .r.h{background:color-mix(in srgb,var(--c-text) 8%,transparent);text-transform:uppercase;letter-spacing:.1em}.bp-gantt .r.h span{text-align:center;padding:8px 0}.bp-gantt .r.h span:first-child{text-align:left;padding-left:12px}
+.bp-gantt .bar{height:16px;background:var(--c-accent);grid-column:var(--s)/span var(--l);margin:8px 0;position:relative}
+.bp-gantt .bar::after{content:attr(data-w);position:absolute;left:100%;top:50%;translate:6px -50%;font-size:10px;opacity:.7;white-space:nowrap}
+.bp-reg{width:100%;border-collapse:collapse;font:500 13px var(--f-head)}
+.bp-reg th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--c-text);text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--c-accent)}
+.bp-reg td{padding:14px 12px;border-bottom:1px dashed color-mix(in srgb,var(--c-text) 40%,transparent)}
+.bp-reg tr:hover td{background:color-mix(in srgb,var(--c-accent) 10%,transparent)}
+.bp-reg a{text-decoration:none;font-weight:700}
+.bp-calc{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.bp-calc .box{border:1px solid var(--c-text);padding:24px}
+.bp-calc label{display:flex;justify-content:space-between;font:600 12px var(--f-head);letter-spacing:.08em;text-transform:uppercase;margin:16px 0 6px}
+.bp-calc input[type=range]{width:100%;accent-color:var(--c-accent)}
+.bp-calc .tot{font:700 clamp(36px,5vw,64px)/1 var(--f-head);color:var(--c-accent)}
+.bp-foot{max-width:var(--w);margin:0 auto 24px;border:2px solid var(--c-text);padding:30px;display:grid;grid-template-columns:2fr repeat(3,1fr);gap:24px}
+.bp-foot h4{font:700 11px var(--f-head);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:8px}
+.bp-foot ul{list-style:none;display:grid;gap:4px;font:500 13px var(--f-head)}.bp-foot a{text-decoration:none}
+@media(max-width:900px){.bp-head ul,.bp-tb{display:none}.bp-head .in{grid-template-columns:1fr}.bp-hero,.bp-calc,.bp-foot{grid-template-columns:1fr}.bp-hero>div+div{border-left:0;border-top:1px solid var(--c-text)}.bp-row{grid-template-columns:1fr 1fr}.bp-svc{grid-template-columns:1fr}.bp-gantt{overflow-x:auto}.bp-gantt .r{min-width:720px}}
+.bp-head .more{position:relative}.bp-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:0;}.bp-head .more:hover .dd,.bp-head .more:focus-within .dd{display:grid}.bp-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.bp-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.bp-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3,h4{color:var(--c-text)}/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.bp-reg{display:block;overflow-x:auto;white-space:nowrap}.bp-sheet{margin:12px 8px}.bp-hero h1{font-size:clamp(30px,9.5vw,48px)}.bp-hero>div{padding:24px 18px}.bp-sec{padding:24px 16px}.bp-calc .box{padding:16px}.bp-row b{font-size:28px}.bp-logo{padding-right:0;border-right:0}}</style><header class="bp-head"><div class="in"><a class="bp-logo" href="{{p:home}}"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 29V13L16 4l13 9v16z"/><path d="M12 29v-9h8v9M3 13h26M8 9v-3"/></svg>Gridline Build</a><ul><li><a href="{{p:services}}">Services</a></li><li><a href="{{p:process}}">Schedule</a></li><li><a href="{{p:quote}}">Quick quote</a></li><li><a href="{{p:projects}}">Register</a></li><li class="more"><a href="#" tabindex="0">Sheets ▾</a><div class="dd"><div><h4>Sheet</h4><a href="{{p:home}}">Home</a><a href="{{p:services}}">Services</a><a href="{{p:process}}">Schedule of works</a><a href="{{p:quote}}">Quick quote</a><a href="{{p:projects}}">Project register</a><a href="{{p:project}}">Project file</a></div><div><h4>Reference</h4><a href="{{p:materials}}">Spec library</a><a href="{{p:licences}}">Licences & safety</a><a href="{{p:contact}}">Site enquiry</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><div class="bp-tb">DWG NO. GB-001 / REV C<br>SCALE 1:50 · A1</div></div></header>

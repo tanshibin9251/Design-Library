@@ -1,0 +1,108 @@
+{
+ "format": "fragments",
+ "slug": "renovo-studio",
+ "name": "Renovo Studio",
+ "zh": "翻新工作室",
+ "tag": "Editorial design-and-build renovation studio: magazine masthead, project index with spec lists, before/after slider and an open investment guide.",
+ "colors": {
+  "primary": "#1b2a41",
+  "secondary": "#5c677d",
+  "text": "#14181f",
+  "accent": "#c4553a",
+  "surface": "#ecebe6",
+  "border": "#cfcdc5"
+ },
+ "fonts": {
+  "head": "Libre Bodoni",
+  "body": "Work Sans"
+ },
+ "tok": {
+  "hlh": ".95",
+  "hw": "500",
+  "hcase": "none",
+  "hls": "-.03em",
+  "h1": "150px",
+  "h2": "56px",
+  "h3": "28px",
+  "pad": "104px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "portfolio"
+ ],
+ "industries": [
+  "interior",
+  "construction"
+ ],
+ "styles": [
+  "editorial",
+  "monochrome",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Studio"
+  },
+  {
+   "slug": "projects",
+   "label": "Projects",
+   "group": "Studio"
+  },
+  {
+   "slug": "project",
+   "label": "Case study",
+   "group": "Studio"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Studio"
+  },
+  {
+   "slug": "process",
+   "label": "How we work",
+   "group": "Studio"
+  },
+  {
+   "slug": "investment",
+   "label": "Investment guide",
+   "group": "Studio"
+  },
+  {
+   "slug": "about",
+   "label": "The studio",
+   "group": "Studio"
+  },
+  {
+   "slug": "visit",
+   "label": "Book a site visit",
+   "group": "Contact"
+  },
+  {
+   "slug": "journal",
+   "label": "Notes",
+   "group": "Contact"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Contact"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "slug": "badge-starburst-24",
+ "name": "Starburst badge",
+ "zh": "24 角爆炸徽章",
+ "cat": "sticker",
+ "file": "badge-starburst-24.svg",
+ "format": "svg",
+ "width": 240,
+ "height": 240,
+ "tags": [
+  "badge",
+  "sale",
+  "new"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

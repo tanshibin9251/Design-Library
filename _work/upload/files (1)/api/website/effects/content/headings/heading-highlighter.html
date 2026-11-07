@@ -1,0 +1,52 @@
+<!-- Highlighter — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+@keyframes fxhh-a{to{background-size:100% var(--h,62%)}}@keyframes fxhh-b{to{background-size:100% var(--h,62%)}}
+.fx-hhl{width:min(900px,100%);display:grid;gap:1.6em;text-align:center;justify-items:center}
+.fx-hhl .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+.fx-hhl h1{font-size:clamp(2.3em,5.8vw,4.4em);line-height:1.22;max-width:14em}
+.fx-hhl mark{--c:color-mix(in srgb,var(--accent) 48%,transparent);color:inherit;padding:0 .14em;margin:0 -.04em;background:linear-gradient(var(--c),var(--c)) 0 90%/0 var(--h,62%) no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:.12em;animation:fxhh-a calc(.9s/var(--speed)) cubic-bezier(.6,.1,.2,1) .5s forwards}
+.fx-hhl mark:hover{animation-name:fxhh-b}
+.fx-hhl mark.p{--c:color-mix(in srgb,var(--primary) 30%,transparent);animation-delay:1.2s}
+.fx-hhl mark.thin{--h:30%;--c:color-mix(in srgb,var(--accent) 70%,transparent);background-position:0 96%;animation-delay:1.9s}
+.fx-hhl p{font-size:1.15em;line-height:1.9;max-width:36em;opacity:.85}
+.fx-hhl p mark{animation-delay:2.4s;--c:color-mix(in srgb,var(--primary) 24%,transparent)}
+.fx-hhl small{opacity:.5;font-size:.85em}
+@media(prefers-reduced-motion:reduce){.fx-hhl mark{animation:none;background-size:100% var(--h,62%)}}
+/* touch: :hover mirrored as .is-tap */
+.fx-hhl mark.is-tap{animation-name:fxhh-b}
+
+</style>
+
+<div class="fx fx-hhl"><span class="eye">Writing that sticks</span>
+<h1>Ideas worth <mark>highlighting</mark>, details worth <mark class="p">remembering</mark>, words worth <mark class="thin">underlining</mark></h1>
+<p>Good emphasis is quiet. A single stroke behind the <mark>one phrase</mark> you want people to take away is usually all it takes.</p><small>Hover a highlight to replay it</small></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

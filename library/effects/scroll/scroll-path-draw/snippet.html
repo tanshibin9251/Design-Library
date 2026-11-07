@@ -1,0 +1,74 @@
+<!-- Path Draw — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-pd{width:min(960px,100%);display:grid;gap:1.4em}
+.fx-pd .top{display:grid;gap:.4em}.fx-pd h2{font-size:clamp(1.8em,4vw,2.6em)}.fx-pd .top p{opacity:.6;max-width:30em}
+.pd-wrap{position:relative;padding-bottom:2em}
+.pd-svg{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.pd-bg{fill:none;stroke:var(--border);stroke-width:3;stroke-linecap:round;stroke-dasharray:2 9}
+.pd-fg{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+.pd-i{position:relative;min-height:clamp(12em,36svh,17em);display:flex;align-items:flex-start}
+.pd-i .pd-dot{position:absolute;top:.9em;left:var(--mx);width:2.5em;height:2.5em;margin:-1.25em 0 0 -1.25em;border-radius:50%;background:var(--surface);border:3px solid var(--accent);display:grid;place-items:center;font:700 .85em var(--font-heading);color:var(--accent);transition:background calc(.3s/var(--speed)),color calc(.3s/var(--speed)),transform calc(.3s/var(--speed));z-index:1}
+.pd-i .pd-dot.on,.pd-i.on .pd-dot{background:var(--accent);color:var(--on-accent);transform:scale(1.12)}
+.pd-i:nth-of-type(odd){--mx:34%;padding-right:calc(66% + 2.2em);justify-content:flex-end;text-align:right}
+.pd-i:nth-of-type(even){--mx:66%;padding-left:calc(66% + 2.2em)}
+.pd-i .tx{display:grid;gap:.4em;max-width:100%}.pd-i h3{font-size:clamp(1.25em,2.6vw,1.7em)}.pd-i p{opacity:.7;font-size:.95em}
+.pd-live .pd-i .tx{opacity:.35;transform:translateY(10px);transition:opacity calc(.5s/var(--speed)),transform calc(.5s/var(--speed))}
+.pd-live .pd-i.on .tx{opacity:1;transform:none}
+@media(max-width:700px){.pd-i:nth-of-type(n){--mx:1.25em;padding-left:3.6em;padding-right:0;justify-content:flex-start;text-align:left}}
+@media(prefers-reduced-motion:reduce){.pd-live .pd-i .tx{opacity:1;transform:none;transition:none}}
+
+</style>
+
+<div class="fx fx-pd"><div class="top"><h2>Path draw</h2><p>A line follows your scroll through the page. Each stop lights up when the line reaches it.</p></div><div class="pd-wrap" data-pd><svg class="pd-svg" aria-hidden="true"><path class="pd-bg"/><path class="pd-fg"/></svg>
+<article class="pd-i"><span class="pd-dot" aria-hidden="true">1</span><div class="tx"><h3>Brief</h3><p>We start by listening: goals, limits, the people you want to reach.</p></div></article>
+<article class="pd-i"><span class="pd-dot" aria-hidden="true">2</span><div class="tx"><h3>Sketch</h3><p>Rough shapes and a few honest questions, long before pixels.</p></div></article>
+<article class="pd-i"><span class="pd-dot" aria-hidden="true">3</span><div class="tx"><h3>Build</h3><p>A working page in days, not a flat picture of one.</p></div></article>
+<article class="pd-i"><span class="pd-dot" aria-hidden="true">4</span><div class="tx"><h3>Polish</h3><p>Motion, type and small details that make it feel finished.</p></div></article>
+<article class="pd-i"><span class="pd-dot" aria-hidden="true">5</span><div class="tx"><h3>Launch</h3><p>Ship it, watch it, and keep improving what people actually use.</p></div></article></div></div>
+
+<script>
+(function(){
+var wrap=document.querySelector('.fx-pd [data-pd]');if(!wrap||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+var svg=wrap.querySelector('svg'),bg=wrap.querySelector('.pd-bg'),fg=wrap.querySelector('.pd-fg'),items=[].slice.call(wrap.querySelectorAll('.pd-i')),dots=items.map(function(i){return i.querySelector('.pd-dot')});
+wrap.parentNode.classList.add('pd-live');
+var L=0,samp=[],P=[],raf=0;
+function build(){var wr=wrap.getBoundingClientRect(),W=wrap.offsetWidth,H=wrap.offsetHeight;svg.setAttribute('viewBox','0 0 '+W+' '+H);
+ P=dots.map(function(d){var r=d.getBoundingClientRect();return{x:r.left-wr.left+r.width/2,y:r.top-wr.top+r.height/2}});
+ var d='M'+P[0].x+' 0 L'+P[0].x+' '+P[0].y;
+ for(var i=1;i<P.length;i++){var a=P[i-1],b=P[i],m=(a.y+b.y)/2;d+=' C'+a.x+' '+m+' '+b.x+' '+m+' '+b.x+' '+b.y}
+ bg.setAttribute('d',d);fg.setAttribute('d',d);L=fg.getTotalLength();fg.style.strokeDasharray=L+' '+L;
+ samp=[];for(var s=0;s<=240;s++){var l=L*s/240,pt=fg.getPointAtLength(l);samp.push([l,pt.y])}
+ upd()}
+function lenAt(y){var lo=0,hi=samp.length-1;if(y<=samp[0][1])return 0;if(y>=samp[hi][1])return L;
+ while(hi-lo>1){var m=(lo+hi)>>1;if(samp[m][1]<y)lo=m;else hi=m}return samp[lo][0]+(samp[hi][0]-samp[lo][0])*((y-samp[lo][1])/Math.max(1e-6,samp[hi][1]-samp[lo][1]))}
+function upd(){raf=0;if(!L)return;var r=wrap.getBoundingClientRect(),vh=innerHeight||800,head=vh*.62-r.top,len=lenAt(head);
+ fg.style.strokeDashoffset=(L-len).toFixed(1);
+ items.forEach(function(it,i){it.classList.toggle('on',head>=P[i].y-4)})}
+function req(){if(!raf)raf=requestAnimationFrame(upd)}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',function(){setTimeout(build,100)});
+build();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(build);
+})();
+</script>

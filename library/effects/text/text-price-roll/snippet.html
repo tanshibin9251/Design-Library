@@ -1,0 +1,54 @@
+<!-- Rolling price digits — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-prl{width:min(480px,100%);text-align:center}
+.fx-prl .seg{display:inline-flex;border:1px solid var(--border);border-radius:99px;padding:.25em;margin-bottom:1.4em}
+.fx-prl .seg button{border:0;background:none;color:var(--text);padding:.55em 1.2em;border-radius:99px;font:700 .9em var(--font-body);cursor:pointer;transition:all calc(.25s/var(--speed))}
+.fx-prl .seg button[aria-pressed=true]{background:var(--primary);color:var(--on-primary)}
+.fx-prl .amt{display:flex;justify-content:center;align-items:flex-end;font:700 clamp(3em,10vw,5em)/1 var(--font-heading);color:var(--primary);height:1.05em;overflow:hidden}
+.fx-prl .amt small{font:600 .3em var(--font-body);margin:0 .4em .3em 0;opacity:.6}
+.fx-prl .col{display:inline-block;height:1.05em;overflow:hidden}
+.fx-prl .col>span{display:flex;flex-direction:column;transition:transform calc(.7s/var(--speed)) cubic-bezier(.2,.9,.25,1)}
+.fx-prl .col>span>i{font-style:normal;height:1.05em;line-height:1.05em;text-align:center}
+.fx-prl .sep{display:inline-block;line-height:1.05em}
+.fx-prl p{margin-top:.8em;opacity:.7;font-size:.92em}
+@media(prefers-reduced-motion:reduce){.fx-prl .col>span{transition:none}}
+</style>
+
+<div class="fx fx-prl"><div class="seg" role="group" aria-label="Package"><button type="button" aria-pressed="true" data-v="12800">Basic</button><button type="button" aria-pressed="false" data-v="28500">Standard</button><button type="button" aria-pressed="false" data-v="64900">Premium</button></div><div class="amt" aria-hidden="true"><small>RM</small><span id="fx-prl-a" style="display:flex"></span></div><p id="fx-prl-t" aria-live="polite">RM 12,800 — Basic package</p></div>
+
+<script>
+(function(){var r=document.querySelector('.fx-prl'),bs=r.querySelectorAll('.seg button'),a=r.querySelector('#fx-prl-a'),t=r.querySelector('#fx-prl-t'),cols=[];
+function build(n){a.innerHTML='';cols=[];var s=n.toLocaleString('en-US');for(var i=0;i<s.length;i++){if(s[i]===','){var c=document.createElement('span');c.className='sep';c.textContent=',';a.appendChild(c);cols.push(null);continue}
+var col=document.createElement('span');col.className='col';var in_=document.createElement('span');for(var d=0;d<10;d++){var e=document.createElement('i');e.textContent=d;in_.appendChild(e)}col.appendChild(in_);a.appendChild(col);cols.push(in_)}}
+function set(n){var s=n.toLocaleString('en-US');if(cols.length!==s.length)build(n);for(var i=0;i<s.length;i++){if(cols[i])cols[i].style.transform='translateY(-'+(+s[i]*10)+'%)'}}
+bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});var n=+b.dataset.v;set(n);t.textContent='RM '+n.toLocaleString('en-US')+' — '+b.textContent+' package'}});
+build(12800);requestAnimationFrame(function(){set(12800)})})();
+</script>

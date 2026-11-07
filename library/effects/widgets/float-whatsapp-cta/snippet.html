@@ -1,0 +1,86 @@
+<!-- Floating WhatsApp chat — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-wa{width:min(560px,100%)}
+.fx-wa .stage{position:relative;height:440px;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(180deg,color-mix(in srgb,var(--primary) 6%,var(--surface)),var(--surface));overflow:hidden}
+.fx-wa .stage>p{padding:1.2em;opacity:.55;font-size:.9em}
+.fx-wa .fab{position:absolute;right:1.1em;bottom:1.1em;width:3.6em;height:3.6em;border-radius:50%;border:0;background:var(--accent);color:var(--on-accent);cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 24px -6px color-mix(in srgb,var(--accent) 70%,#000);z-index:3}
+.fx-wa .fab svg{width:1.7em;height:1.7em;transition:transform calc(.3s/var(--speed))}
+.fx-wa .fab[aria-expanded=true] svg{transform:rotate(90deg) scale(.9)}
+.fx-wa .fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--accent);animation:fx-wa-p 2.6s infinite}
+.fx-wa .fab[aria-expanded=true]::before{animation:none;opacity:0}
+@keyframes fx-wa-p{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.fx-wa .badge{position:absolute;right:-.2em;top:-.2em;min-width:1.4em;height:1.4em;border-radius:99px;background:var(--primary);color:var(--on-primary);font:700 .72em var(--font-body);display:none;place-items:center;border:2px solid var(--surface)}
+.fx-wa .badge.on{display:grid}
+.fx-wa .panel{position:absolute;right:1.1em;bottom:5.6em;width:min(310px,calc(100% - 2.2em));background:var(--surface);border-radius:calc(var(--radius)*1.2);box-shadow:0 20px 50px -12px color-mix(in srgb,#000 35%,transparent);overflow:hidden;transform-origin:100% 100%;transform:scale(.85) translateY(10px);opacity:0;pointer-events:none;transition:opacity calc(.28s/var(--speed)),transform calc(.28s/var(--speed)) cubic-bezier(.2,.9,.3,1.1);z-index:2;border:1px solid var(--border)}
+.fx-wa .panel.on{transform:none;opacity:1;pointer-events:auto}
+.fx-wa .hd{background:var(--primary);color:var(--on-primary);padding:1em 1.1em;display:flex;gap:.8em;align-items:center}
+.fx-wa .av{width:2.6em;height:2.6em;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:700 .95em var(--font-heading);position:relative;flex:none}
+.fx-wa .av i{position:absolute;right:-1px;bottom:-1px;width:.8em;height:.8em;border-radius:50%;background:var(--accent);border:2px solid var(--primary)}
+.fx-wa .av.off i{background:color-mix(in srgb,var(--on-primary) 45%,var(--primary))}
+.fx-wa .hd b{display:block}.fx-wa .hd small{opacity:.8;font-size:.82em}
+.fx-wa .bd{padding:1em 1.1em 1.2em;background:color-mix(in srgb,var(--primary) 5%,var(--surface))}
+.fx-wa .bub{background:var(--surface);padding:.7em .9em;border-radius:.2em 1em 1em 1em;font-size:.92em;box-shadow:0 1px 2px color-mix(in srgb,#000 10%,transparent);margin-bottom:.9em}
+.fx-wa .qs{display:grid;gap:.5em}
+.fx-wa .qs a{display:block;padding:.65em .9em;border:1px solid var(--accent);border-radius:99px;text-decoration:none;color:var(--text);font:600 .88em var(--font-body);transition:all calc(.2s/var(--speed))}
+.fx-wa .qs a:hover,.fx-wa .qs a:focus-visible{background:var(--accent);color:var(--on-accent)}
+@media(prefers-reduced-motion:reduce){.fx-wa .fab::before{animation:none}.fx-wa .panel,.fx-wa .fab svg{transition:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-wa .qs a.is-tap{background:var(--accent);color:var(--on-accent)}
+
+</style>
+
+<div class="fx fx-wa"><div class="stage"><p>Your page content — the chat button stays in the corner.</p>
+<div class="panel" id="fx-wa-p" role="dialog" aria-label="Chat on WhatsApp"><div class="hd"><span class="av" id="fx-wa-av">B<i></i></span><div><b>Baan Sabai</b><small id="fx-wa-s">…</small></div></div><div class="bd"><div class="bub" id="fx-wa-m">Hi! How can we help today?</div><div class="qs" id="fx-wa-q"></div></div></div>
+<button class="fab" type="button" aria-expanded="false" aria-controls="fx-wa-p" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H11l-5 4v-4H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm3 5.200v1.600h8V8.200zm0 3.400v1.600h5v-1.600z"/></svg><span class="badge" id="fx-wa-b">1</span></button></div></div>
+
+<script>
+(function(){
+/* ── edit these ─────────────────────────────── */
+var CFG={phone:'60123456789',tz:'Asia/Kuala_Lumpur',open:10,close:22,
+ online:'Online · replies in minutes',offline:'Offline · we reply at 10am',
+ qs:['Book a treatment','Ask about prices','Opening hours','Group bookings'],greet:'Hi! How can we help today?'};
+/* ───────────────────────────────────────────── */
+var r=document.querySelector('.fx-wa'),fab=r.querySelector('.fab'),p=r.querySelector('#fx-wa-p'),q=r.querySelector('#fx-wa-q'),b=r.querySelector('#fx-wa-b');
+function hr(){try{return +new Intl.DateTimeFormat('en-GB',{timeZone:CFG.tz,hour:'numeric',hour12:false}).format(new Date())%24}catch(e){return new Date().getHours()}}
+var on=hr()>=CFG.open&&hr()<CFG.close;
+r.querySelector('#fx-wa-s').textContent=on?CFG.online:CFG.offline;r.querySelector('#fx-wa-av').classList.toggle('off',!on);r.querySelector('#fx-wa-m').textContent=CFG.greet;
+CFG.qs.forEach(function(t){var a=document.createElement('a');a.href='https://wa.me/'+CFG.phone+'?text='+encodeURIComponent('Hi, '+t.toLowerCase()+'?');a.target='_blank';a.rel='noopener';a.textContent=t;q.appendChild(a)});
+var seen=false;setTimeout(function(){if(!seen)b.classList.add('on')},2500);
+p.inert=true;
+function set(o){fab.setAttribute('aria-expanded',o);p.classList.toggle('on',o);p.inert=!o;if(o){seen=true;b.classList.remove('on');p.querySelector('a').focus({preventScroll:true})}}
+fab.onclick=function(){set(fab.getAttribute('aria-expanded')!=='true')};
+r.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('on')){set(false);fab.focus()}});
+document.addEventListener('click',function(e){if(!r.querySelector('.stage').contains(e.target)&&p.classList.contains('on'))set(false)})})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

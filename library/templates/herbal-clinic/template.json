@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "herbal-clinic",
+ "name": "Baoshan Herbal Clinic",
+ "zh": "保善堂中医诊所",
+ "tag": "Bilingual TCM clinic site with a herb-drawer cabinet hero, 四诊 consultation flow, one-character condition cards and physician profiles.",
+ "colors": {
+  "primary": "#2f6f5e",
+  "secondary": "#8b6b4a",
+  "text": "#1f2a26",
+  "accent": "#b83a2a",
+  "surface": "#f6f4ec",
+  "border": "#d9d6c6"
+ },
+ "fonts": {
+  "head": "Noto Serif SC",
+  "body": "Noto Sans SC"
+ },
+ "tok": {
+  "hlh": "1.12",
+  "hw": "700",
+  "hcase": "none",
+  "hls": ".02em",
+  "h1": "60px",
+  "h2": "38px",
+  "h3": "20px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "8px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "medical",
+  "health"
+ ],
+ "styles": [
+  "earthy",
+  "organic",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "首页 Home",
+   "group": "Clinic"
+  },
+  {
+   "slug": "treatments",
+   "label": "诊疗 Treatments",
+   "group": "Clinic"
+  },
+  {
+   "slug": "herbs",
+   "label": "药材 Herbs",
+   "group": "Clinic"
+  },
+  {
+   "slug": "practitioners",
+   "label": "医师 Practitioners",
+   "group": "Clinic"
+  },
+  {
+   "slug": "conditions",
+   "label": "病症 Conditions",
+   "group": "Clinic"
+  },
+  {
+   "slug": "book",
+   "label": "预约 Book",
+   "group": "Visit"
+  },
+  {
+   "slug": "visit",
+   "label": "到访 Visit",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

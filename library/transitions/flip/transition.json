@@ -1,0 +1,8 @@
+{
+ "slug": "flip",
+ "name": "Flip",
+ "zh": "翻转",
+ "tag": "A 3D turn between pages. Bold — use sparingly.",
+ "group": "3D",
+ "license": "自写，无第三方代码"
+}

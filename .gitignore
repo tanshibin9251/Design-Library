@@ -1,0 +1,5 @@
+.vscode/sftp.json
+__pycache__/
+*.pyc
+public_html/
+.DS_Store

@@ -1,0 +1,18 @@
+{
+ "slug": "bolt",
+ "name": "Bolt",
+ "zh": "闪电",
+ "cat": "icon",
+ "file": "bolt.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "power",
+  "energy",
+  "gaming"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

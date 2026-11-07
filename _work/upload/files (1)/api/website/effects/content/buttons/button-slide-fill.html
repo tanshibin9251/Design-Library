@@ -1,0 +1,53 @@
+<!-- Slide Fill — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-bsf{display:grid;gap:1.4em;justify-items:center;text-align:center}
+.fx-bsf h2{font-size:2.3em}.fx-bsf p{opacity:.6}
+.fx-bsf .row{display:flex;gap:1em;flex-wrap:wrap;justify-content:center}
+.fx-bsf .b{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.7em;border-radius:var(--radius);font:700 .95em var(--font-body);text-decoration:none;border:1.5px solid var(--primary);color:var(--primary);transition:color calc(.35s/var(--speed)) ease}
+.fx-bsf .b::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--primary);transform:translateX(-101%);transition:transform calc(.45s/var(--speed)) cubic-bezier(.7,0,.2,1)}
+.fx-bsf .b:hover{color:var(--on-primary)}.fx-bsf .b:hover::before{transform:none}
+.fx-bsf .solid{background:var(--primary);color:var(--on-primary)}.fx-bsf .solid::before{background:var(--accent)}
+.fx-bsf .solid:hover{color:var(--on-accent);border-color:var(--accent)}
+.fx-bsf .pill{border-radius:999px;border-color:var(--accent);color:var(--accent)}.fx-bsf .pill::before{background:var(--accent)}.fx-bsf .pill:hover{color:var(--on-accent)}
+.fx-bsf .b i{font-style:normal;transition:transform calc(.35s/var(--speed))}.fx-bsf .b:hover i{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.fx-bsf .b,.fx-bsf .b::before,.fx-bsf .b i{transition:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-bsf .b.is-tap{color:var(--on-primary)}
+.fx-bsf .b.is-tap::before{transform:none}
+.fx-bsf .solid.is-tap{color:var(--on-accent);border-color:var(--accent)}
+.fx-bsf .pill.is-tap{color:var(--on-accent)}
+.fx-bsf .b.is-tap i{transform:translateX(4px)}
+
+</style>
+
+<div class="fx fx-bsf"><h2>Buttons with a little manners</h2><p>Hover each one.</p><div class="row"><a class="b" href="#">Get started <i>→</i></a><a class="b solid" href="#">Book a demo</a><a class="b pill" href="#">Learn more</a></div></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

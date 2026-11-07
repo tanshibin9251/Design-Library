@@ -1,0 +1,18 @@
+{
+ "slug": "dot-grid",
+ "name": "Dot grid 6×6",
+ "zh": "点阵 6×6",
+ "cat": "shape",
+ "file": "dot-grid.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "dots",
+  "grid",
+  "pattern"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

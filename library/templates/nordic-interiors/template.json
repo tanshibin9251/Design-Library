@@ -1,0 +1,152 @@
+{
+ "format": "fragments",
+ "slug": "nordic-interiors",
+ "name": "Nordic Interiors",
+ "zh": "北欧室内",
+ "tag": "Interior studio built around materials and light: staggered room panels with swatch dots, filterable material library and a time-of-day light study.",
+ "colors": {
+  "primary": "#4a4f5c",
+  "secondary": "#9aa597",
+  "text": "#2e3138",
+  "accent": "#b98f6c",
+  "surface": "#f5f2ee",
+  "border": "#dcd6cc"
+ },
+ "fonts": {
+  "head": "Marcellus",
+  "body": "Outfit"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".01em",
+  "h1": "104px",
+  "h2": "52px",
+  "h3": "24px",
+  "pad": "88px",
+  "ew": "400",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "portfolio",
+  "company"
+ ],
+ "industries": [
+  "interior"
+ ],
+ "styles": [
+  "scandi",
+  "minimal",
+  "earthy"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Design Fees",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Projects",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Project",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "process",
+   "label": "Process",
+   "group": "Special"
+  },
+  {
+   "slug": "booking",
+   "label": "Book a consultation",
+   "group": "Special"
+  },
+  {
+   "slug": "resources",
+   "label": "Material library",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

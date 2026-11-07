@@ -1,0 +1,102 @@
+{
+ "format": "fragments",
+ "slug": "accounting-firm",
+ "name": "Verde & Co. Accountants",
+ "zh": "会计师事务所",
+ "tag": "Trustworthy accountancy site with a ledger-card hero, upfront deadline calendar, practice lists and fixed-fee packages.",
+ "colors": {
+  "primary": "#14532d",
+  "secondary": "#6b6b5a",
+  "text": "#1c1f1c",
+  "accent": "#b45309",
+  "surface": "#fbfaf5",
+  "border": "#dad8c9"
+ },
+ "fonts": {
+  "head": "Literata",
+  "body": "Public Sans"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "60px",
+  "h2": "38px",
+  "h3": "22px",
+  "pad": "80px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "8px"
+ },
+ "types": [
+  "company"
+ ],
+ "industries": [
+  "finance",
+  "legal"
+ ],
+ "styles": [
+  "corporate",
+  "editorial",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Firm"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Firm"
+  },
+  {
+   "slug": "service",
+   "label": "Tax service",
+   "group": "Firm"
+  },
+  {
+   "slug": "deadlines",
+   "label": "Tax calendar",
+   "group": "Resources"
+  },
+  {
+   "slug": "pricing",
+   "label": "Fees",
+   "group": "Firm"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Firm"
+  },
+  {
+   "slug": "resources",
+   "label": "Guides",
+   "group": "Resources"
+  },
+  {
+   "slug": "contact",
+   "label": "Free consultation",
+   "group": "Resources"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Resources"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

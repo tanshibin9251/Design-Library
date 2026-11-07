@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "wok-and-steam",
+ "name": "Wok & Steam",
+ "zh": "家常中餐",
+ "tag": "Chinese home-cooking recipe site: red seal logo, a CSS plate with steam, round dish thumbnails, serving-scaler ingredient card and a 'what to eat today' roller.",
+ "colors": {
+  "primary": "#2b1d16",
+  "secondary": "#4f7f6f",
+  "text": "#2b1d16",
+  "accent": "#c8372d",
+  "surface": "#f9f3e6",
+  "border": "#e2d4b8"
+ },
+ "fonts": {
+  "head": "ZCOOL XiaoWei",
+  "body": "Noto Sans SC"
+ },
+ "tok": {
+  "hlh": "1.15",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".03em",
+  "h1": "96px",
+  "h2": "44px",
+  "h3": "24px",
+  "pad": "88px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "18px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "culinary",
+  "restaurant"
+ ],
+ "styles": [
+  "warm",
+  "earthy",
+  "handdrawn"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Cook"
+  },
+  {
+   "slug": "recipes",
+   "label": "All recipes",
+   "group": "Cook"
+  },
+  {
+   "slug": "recipe",
+   "label": "Recipe: Mapo tofu",
+   "group": "Cook"
+  },
+  {
+   "slug": "picker",
+   "label": "What to eat today",
+   "group": "Cook"
+  },
+  {
+   "slug": "techniques",
+   "label": "Techniques",
+   "group": "Learn"
+  },
+  {
+   "slug": "pantry",
+   "label": "The pantry",
+   "group": "Learn"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Kitchen"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Kitchen"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

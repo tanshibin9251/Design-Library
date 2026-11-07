@@ -1,0 +1,152 @@
+{
+ "format": "fragments",
+ "slug": "construction-pro",
+ "name": "Construction Pro",
+ "zh": "工程建筑",
+ "tag": "Contractor with a warning-stripe header and a live programme chart: building type, area and finish stretch the phases and update the budget.",
+ "colors": {
+  "primary": "#2f3437",
+  "secondary": "#8a9099",
+  "text": "#25282a",
+  "accent": "#f5a300",
+  "surface": "#eceae5",
+  "border": "#c9c6bd"
+ },
+ "fonts": {
+  "head": "Roboto Slab",
+  "body": "Roboto"
+ },
+ "tok": {
+  "hlh": "1.08",
+  "hw": "700",
+  "hcase": "uppercase",
+  "hls": ".005em",
+  "h1": "68px",
+  "h2": "40px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "construction"
+ ],
+ "styles": [
+  "bold",
+  "corporate",
+  "geometric"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Packages",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Projects",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Project",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "News",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "process",
+   "label": "Process",
+   "group": "Special"
+  },
+  {
+   "slug": "quote",
+   "label": "Request a quote",
+   "group": "Special"
+  },
+  {
+   "slug": "service-areas",
+   "label": "Service areas",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

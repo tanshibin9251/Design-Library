@@ -1,0 +1,18 @@
+{
+ "slug": "rule-dashed",
+ "name": "Dashed rule",
+ "zh": "虚线",
+ "cat": "line",
+ "file": "rule-dashed.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 24,
+ "tags": [
+  "rule",
+  "divider",
+  "dashed"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

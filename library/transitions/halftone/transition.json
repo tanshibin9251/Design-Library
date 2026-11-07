@@ -1,0 +1,8 @@
+{
+ "slug": "halftone",
+ "name": "Halftone dots",
+ "zh": "网点扩散",
+ "tag": "A halftone grid of dots swells until the next page is fully printed.",
+ "group": "Pattern",
+ "license": "自写，无第三方代码"
+}

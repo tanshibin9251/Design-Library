@@ -1,0 +1,40 @@
+<style>
+/* BrightPath Tuition — tokens only */
+.tc-head{background:var(--c-primary);color:var(--on-primary);position:sticky;top:0;z-index:40}
+.tc-head .in{max-width:var(--w);margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px}
+.tc-logo{font:800 24px var(--f-head);text-decoration:none;display:flex;align-items:center;gap:8px}
+.tc-logo i{width:34px;height:34px;border-radius:10px;background:var(--c-accent);color:var(--c-text);display:grid;place-items:center;font-style:normal;font:800 18px var(--f-head);rotate:-6deg}
+.tc-head ul{display:flex;gap:4px;list-style:none;font:600 14px var(--f-body)}
+.tc-head ul>li>a{display:block;padding:.55em 1em;border-radius:10px;text-decoration:none}
+.tc-head ul>li>a:hover{background:color-mix(in srgb,var(--on-primary) 14%,transparent)}
+.tc-btn{background:var(--c-accent);color:var(--c-text);padding:.75em 1.4em;border-radius:12px;font:800 14px var(--f-body);text-decoration:none;display:inline-block}
+.tc-btn.o{background:none;color:var(--c-primary);box-shadow:inset 0 0 0 2px var(--c-primary)}
+.tc-hero{background:var(--c-primary);color:var(--on-primary);position:relative;overflow:hidden}
+.tc-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(color-mix(in srgb,var(--on-primary) 7%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--on-primary) 7%,transparent) 1px,transparent 1px);background-size:36px 36px}
+.tc-hero .in{position:relative;max-width:var(--w);margin:auto;padding:clamp(34px,6vw,84px) 20px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center}
+.tc-hero h1{font-size:clamp(40px,6.4vw,var(--h1));line-height:1.02;color:var(--on-primary)}
+.tc-hero h1 mark{background:var(--c-accent);color:var(--c-text);padding:0 .15em;border-radius:8px}
+.tc-hero p{font:500 18px/1.6 var(--f-body);max-width:44ch;margin:16px 0 26px;opacity:.92}
+.tc-score{background:var(--c-surface);color:var(--c-text);border-radius:20px;padding:22px;box-shadow:8px 8px 0 var(--c-accent)}
+.tc-score h3{font:800 14px var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--c-primary);margin-bottom:12px}
+.tc-score li{list-style:none;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:7px 0;font:700 16px var(--f-body)}
+.tc-score .bar{height:10px;border-radius:99px;background:var(--c-border);overflow:hidden}.tc-score .bar i{display:block;height:100%;width:var(--w);background:var(--c-primary)}
+.tc-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--c-border);max-width:var(--w);margin:auto}
+.tc-nums div{padding:26px 20px;border-right:1px solid var(--c-border);text-align:center}.tc-nums div:last-child{border:0}
+.tc-nums b{display:block;font:800 clamp(30px,4vw,48px)/1 var(--f-head);color:var(--c-primary)}.tc-nums span{font:600 13px var(--f-body);opacity:.7}
+.tc-sec{padding:var(--pad) 20px}.tc-sec>.in{max-width:var(--w);margin:auto}
+.tc-lv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tc-lc{border:2px solid var(--c-text);border-radius:18px;padding:22px;background:var(--c-surface);box-shadow:5px 5px 0 var(--c-text)}
+.tc-lc small{font:800 12px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--c-primary)}.tc-lc h3{font:800 24px var(--f-head);margin:6px 0 8px}
+.tc-lc ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}.tc-lc li{background:color-mix(in srgb,var(--c-accent) 35%,var(--c-surface));border-radius:8px;padding:.15em .6em;font:700 13px var(--f-body)}
+.tc-tt{width:100%;border-collapse:separate;border-spacing:6px;font:600 14px var(--f-body);min-width:620px}
+.tc-tt th{text-align:left;padding:8px;font:800 12px var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--c-primary)}
+.tc-tt td{border-radius:10px;padding:10px;background:color-mix(in srgb,var(--c-primary) 8%,var(--c-surface));vertical-align:top}
+.tc-tt td.b{background:color-mix(in srgb,var(--c-accent) 40%,var(--c-surface))}.tc-tt td small{display:block;opacity:.7;font-weight:500}
+.tc-wrap{overflow-x:auto}
+.tc-th{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tc-thc{text-align:center}.tc-thc .ph{aspect-ratio:1;border-radius:50%;border:4px solid var(--c-accent)}.tc-thc h3{font:800 18px var(--f-head);margin-top:10px}.tc-thc small{opacity:.7}
+.tc-foot{background:var(--c-text);color:var(--c-surface)}
+@media(max-width:800px){.tc-head ul{display:none}.tc-hero .in,.tc-lv{grid-template-columns:1fr}.tc-nums{grid-template-columns:1fr 1fr}.tc-nums div:nth-child(2){border-right:0}.tc-th{grid-template-columns:1fr 1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}.tc-head .more{position:relative}.tc-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:14px;}.tc-head .more:hover .dd,.tc-head .more:focus-within .dd{display:grid}.tc-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.tc-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.tc-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3{color:var(--c-text)}</style><header class="tc-head"><div class="in"><a class="tc-logo" href="{{p:home}}"><i>B</i>BrightPath</a><ul><li><a href="{{p:programmes}}">Programmes</a></li><li><a href="{{p:timetable}}">Timetable</a></li><li><a href="{{p:teachers}}">Teachers</a></li><li><a href="{{p:results}}">Results</a></li><li class="more" style="position:relative"><a href="#" tabindex="0">More ▾</a><div class="dd"><div><h4>Learn</h4><a href="{{p:home}}">Home</a><a href="{{p:programmes}}">Programmes</a><a href="{{p:timetable}}">Timetable</a><a href="{{p:teachers}}">Teachers</a><a href="{{p:results}}">Results</a></div><div><h4>Enrol</h4><a href="{{p:fees}}">Fees</a><a href="{{p:trial}}">Book a trial class</a><a href="{{p:contact}}">Contact</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="tc-btn" href="{{p:trial}}">Free trial class</a></div></header>

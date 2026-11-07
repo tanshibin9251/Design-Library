@@ -1,0 +1,102 @@
+{
+ "format": "fragments",
+ "slug": "tuition-centre",
+ "name": "BrightPath Tuition",
+ "zh": "明途补习中心",
+ "tag": "Grid-paper tuition centre site with a grade-movement scorecard, level cards, a real weekly timetable and a free-trial form.",
+ "colors": {
+  "primary": "#1e3a8a",
+  "secondary": "#475569",
+  "text": "#111827",
+  "accent": "#fde047",
+  "surface": "#fffdf5",
+  "border": "#e5e1c8"
+ },
+ "fonts": {
+  "head": "Baloo 2",
+  "body": "Lexend"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "76px",
+  "h2": "44px",
+  "h3": "24px",
+  "pad": "80px",
+  "ew": "800",
+  "stat": "var(--c-primary)",
+  "radius": "16px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "education"
+ ],
+ "styles": [
+  "playful",
+  "geometric",
+  "bold"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Learn"
+  },
+  {
+   "slug": "programmes",
+   "label": "Programmes",
+   "group": "Learn"
+  },
+  {
+   "slug": "timetable",
+   "label": "Timetable",
+   "group": "Learn"
+  },
+  {
+   "slug": "teachers",
+   "label": "Teachers",
+   "group": "Learn"
+  },
+  {
+   "slug": "results",
+   "label": "Results",
+   "group": "Learn"
+  },
+  {
+   "slug": "fees",
+   "label": "Fees",
+   "group": "Enrol"
+  },
+  {
+   "slug": "trial",
+   "label": "Book a trial class",
+   "group": "Enrol"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Enrol"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Enrol"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

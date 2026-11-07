@@ -1,0 +1,68 @@
+<!-- Big Link Footer — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+@keyframes fxfb-x{to{transform:translateX(0)}}
+.fx-fbig{display:flex;flex-direction:column;background:var(--surface)}
+.fx-fbig .page{flex:1;display:grid;align-content:center;justify-items:center;text-align:center;gap:.8em;padding:4em 1.25em}.fx-fbig .page h1{font-size:clamp(1.8em,4vw,2.8em)}.fx-fbig .page p{opacity:.65}
+.fx-fbig .ft{background:var(--primary);color:var(--on-primary);padding:3.6em max(5vw,1.25em) 1.8em}
+.fx-fbig .fi{width:min(1180px,100%);margin:0 auto}
+.fx-fbig .lead{font-size:.78em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.65;margin-bottom:1.4em}
+.fx-fbig ul{list-style:none;margin:0;padding:0;border-top:1px solid color-mix(in srgb,var(--on-primary) 28%,transparent)}
+.fx-fbig li{border-bottom:1px solid color-mix(in srgb,var(--on-primary) 28%,transparent)}
+.fx-fbig li a{position:relative;overflow:hidden;isolation:isolate;display:grid;grid-template-columns:3em 1fr auto;align-items:center;gap:1em;padding:.35em .6em;color:inherit;text-decoration:none;transition:color calc(.4s/var(--speed))}
+.fx-fbig li a::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--on-primary);transform:scaleY(0);transform-origin:bottom;transition:transform calc(.45s/var(--speed)) cubic-bezier(.7,0,.2,1)}
+.fx-fbig li a:hover,.fx-fbig li a:focus-visible{color:var(--primary)}.fx-fbig li a:hover::before,.fx-fbig li a:focus-visible::before{transform:none}
+.fx-fbig li a:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.fx-fbig .n{font-size:.8em;font-weight:700;opacity:.6;font-variant-numeric:tabular-nums}
+.fx-fbig .t{font:600 clamp(2.2em,7.4vw,5.6em)/1.15 var(--font-heading);letter-spacing:-.02em;transition:transform calc(.45s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-fbig li a:hover .t,.fx-fbig li a:focus-visible .t{transform:translateX(.25em)}
+.fx-fbig .ar{font-size:clamp(1.6em,4vw,3em);transform:translateX(-1.2em);opacity:0;transition:transform calc(.45s/var(--speed)) cubic-bezier(.2,.8,.2,1),opacity calc(.3s/var(--speed))}
+.fx-fbig li a:hover .ar,.fx-fbig li a:focus-visible .ar{transform:none;opacity:1}
+.fx-fbig .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6em;margin-top:2.4em;font-size:.92em}
+.fx-fbig .meta h3{font:700 .72em var(--font-body);letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:.7em}.fx-fbig .meta p{opacity:.9;line-height:1.6}
+.fx-fbig .meta a{color:inherit;text-underline-offset:.25em}.fx-fbig .meta a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-fbig .bot{display:flex;justify-content:space-between;gap:1em;flex-wrap:wrap;margin-top:2.4em;font-size:.82em;opacity:.7}
+@media(max-width:700px){.fx-fbig li a{grid-template-columns:2.2em 1fr auto}.fx-fbig .meta{grid-template-columns:1fr 1fr}.fx-fbig .ar{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.fx-fbig *{transition:none!important}}
+/* touch: :hover mirrored as .is-tap */
+.fx-fbig li a.is-tap{color:var(--primary)}
+.fx-fbig li a.is-tap::before{transform:none}
+.fx-fbig li a.is-tap .t{transform:translateX(.25em)}
+.fx-fbig li a.is-tap .ar{transform:none;opacity:1}
+
+</style>
+
+<div class="fx fx-fbig"><div class="page"><h1>The page ends, the conversation doesn't</h1><p>Hover or tab through the links below.</p></div>
+<footer class="ft"><div class="fi"><div class="lead">Let's make something</div>
+<ul><li><a href="#"><span class="n">01</span><span class="t">Start a project</span><span class="ar" aria-hidden="true">→</span></a></li><li><a href="#"><span class="n">02</span><span class="t">See our work</span><span class="ar" aria-hidden="true">→</span></a></li><li><a href="#"><span class="n">03</span><span class="t">Read the journal</span><span class="ar" aria-hidden="true">→</span></a></li><li><a href="#"><span class="n">04</span><span class="t">Join the team</span><span class="ar" aria-hidden="true">→</span></a></li></ul>
+<div class="meta"><div><h3>Say hello</h3><p><a href="#">hello@fieldnote.studio</a><br>+351 21 555 0142</p></div><div><h3>Visit</h3><p>Rua da Rosa 114<br>1200-387 Lisbon</p></div><div><h3>Follow</h3><p><a href="#">Instagram</a> · <a href="#">Dribbble</a><br><a href="#">LinkedIn</a></p></div></div>
+<div class="bot"><span>© 2026 Fieldnote Studio</span><span>Made slowly, in Lisbon</span></div></div></footer></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

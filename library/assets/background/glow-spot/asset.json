@@ -1,0 +1,18 @@
+{
+ "slug": "glow-spot",
+ "name": "Glow spot",
+ "zh": "光晕",
+ "cat": "background",
+ "file": "glow-spot.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 600,
+ "tags": [
+  "glow",
+  "light",
+  "tech"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

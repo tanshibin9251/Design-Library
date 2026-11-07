@@ -1,0 +1,18 @@
+{
+ "slug": "stripes-diagonal",
+ "name": "Diagonal stripes",
+ "zh": "斜纹",
+ "cat": "background",
+ "file": "stripes-diagonal.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 400,
+ "tags": [
+  "stripes",
+  "sport",
+  "pattern"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

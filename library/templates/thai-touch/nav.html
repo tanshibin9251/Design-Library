@@ -1,0 +1,52 @@
+<style>
+/* Thai Touch — warm hand-drawn, tokens only */
+.tt-top{background:var(--c-primary);color:var(--on-primary);text-align:center;font:500 13px var(--f-body);padding:8px;letter-spacing:.04em}
+.tt-head{background:var(--c-surface);position:relative;z-index:40}
+.tt-head .in{max-width:var(--w);margin:auto;display:flex;flex-direction:column;align-items:center;padding:20px 20px 0}
+.tt-logo{font:400 38px/1 var(--f-head);text-decoration:none;color:var(--c-primary);text-align:center}
+.tt-logo small{display:block;font:600 11px var(--f-body);letter-spacing:.42em;text-transform:uppercase;color:var(--c-accent);margin-top:6px}
+.tt-orn{width:230px;height:18px;margin:10px auto 0;color:var(--c-accent)}
+.tt-head ul{display:flex;gap:34px;list-style:none;justify-content:center;font:700 15px var(--f-body);padding:12px 0 16px;flex-wrap:wrap}
+.tt-head ul a{text-decoration:none;position:relative}.tt-head ul a:hover{color:var(--c-accent)}
+.tt-head ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:5px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3 T30 3 T40 3' fill='none' stroke='%23b8860b' stroke-width='1.6'/%3E%3C/svg%3E") center/20px 5px repeat-x;opacity:0}
+.tt-head ul a:hover::after{opacity:1}
+.tt-btn{display:inline-block;background:var(--c-accent);color:var(--on-accent);padding:.9em 1.9em;border-radius:99px;font:700 15px var(--f-body);text-decoration:none;border:2px solid var(--c-accent);position:relative}
+.tt-btn::after{content:"";position:absolute;inset:-6px;border:1.5px dashed var(--c-accent);border-radius:99px;opacity:.55}
+.tt-btn.o{background:none;color:var(--c-primary);border-color:var(--c-primary)}.tt-btn.o::after{border-color:var(--c-primary)}
+.tt-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;max-width:var(--w);margin:auto;padding:clamp(20px,4vw,50px) 20px 0}
+.tt-hero h1{font-size:clamp(46px,7vw,var(--h1));line-height:1;font-weight:400;color:var(--c-primary)}
+.tt-hero h1 em{font-style:normal;color:var(--c-accent);position:relative;white-space:nowrap}
+.tt-hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.18em;height:.3em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C40 2 80 12 120 6 S180 3 198 8' fill='none' stroke='%23b8860b' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.tt-hero p{max-width:40ch;margin:24px 0 30px;font:500 19px/1.6 var(--f-body)}
+.tt-arch{position:relative;justify-self:center;width:min(100%,460px);aspect-ratio:3/4}
+.tt-arch .ph{position:absolute;inset:0;border-radius:230px 230px 20px 20px;border:2px solid var(--c-primary)}
+.tt-arch::before{content:"";position:absolute;inset:-14px;border:1.5px dashed var(--c-accent);border-radius:244px 244px 28px 28px}
+.tt-arch .lotus{position:absolute;left:50%;bottom:-26px;translate:-50% 0;width:96px;height:56px;background:var(--c-surface);padding:0 10px;color:var(--c-accent)}
+.tt-sec{padding:var(--pad) 20px}.tt-sec>.in{max-width:var(--w);margin:auto}
+.tt-title{text-align:center;margin-bottom:46px}.tt-title h2{font-weight:400;color:var(--c-primary)}.tt-title p{max-width:50ch;margin:10px auto 0;opacity:.8}
+.tt-title .tt-orn{margin-bottom:8px}
+.tt-menu{max-width:860px;margin:auto}
+.tt-item{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:12px;padding:20px 0;border-bottom:1.5px dashed color-mix(in srgb,var(--c-primary) 30%,transparent);text-decoration:none}
+.tt-item h3{font:400 28px var(--f-head);color:var(--c-primary)}
+.tt-item .dots{border-bottom:2px dotted color-mix(in srgb,var(--c-text) 40%,transparent);transform:translateY(-6px);min-width:40px}
+.tt-item .pr{font:700 20px var(--f-head);color:var(--c-accent);white-space:nowrap}
+.tt-item p{grid-column:1/-1;font:500 15px var(--f-body);opacity:.78;margin-top:-4px;max-width:60ch}
+.tt-item small{font:700 12px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--c-secondary)}
+.tt-item:hover h3{color:var(--c-accent)}
+.tt-cat{font:700 13px var(--f-body);letter-spacing:.3em;text-transform:uppercase;color:var(--c-accent);margin:36px 0 4px;text-align:center}
+.tt-th{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tt-th figure{margin:0;text-align:center}
+.tt-th .ph{aspect-ratio:3/4;border-radius:120px 120px 14px 14px;border:2px solid var(--c-primary);margin-bottom:14px}
+.tt-th h3{font:400 24px var(--f-head);color:var(--c-primary)}.tt-th small{font:600 13px var(--f-body);opacity:.7;display:block;margin-top:3px}
+.tt-quote{background:var(--c-primary);color:var(--on-primary);text-align:center;padding:70px 20px;position:relative}
+.tt-quote blockquote{font:400 clamp(24px,3.2vw,40px)/1.35 var(--f-head);max-width:800px;margin:auto}
+.tt-quote cite{display:block;margin-top:18px;font:600 13px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-accent);font-style:normal}
+.tt-pk{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tt-pkc{border:2px solid var(--c-primary);border-radius:200px 200px 20px 20px;padding:70px 28px 30px;text-align:center;background:var(--c-surface);position:relative}
+.tt-pkc h3{font:400 30px var(--f-head);color:var(--c-primary)}.tt-pkc .pr{font:700 30px var(--f-head);color:var(--c-accent);margin:10px 0}
+.tt-pkc p{margin-bottom:22px}
+.tt-form{max-width:640px;margin:auto;border:2px solid var(--c-primary);border-radius:22px;padding:34px;background:var(--c-surface)}
+.tt-foot{background:var(--c-secondary);color:var(--on-secondary,#fff)}
+@media(max-width:900px){.tt-hero{grid-template-columns:1fr;text-align:center}.tt-hero p{margin-inline:auto}.tt-th{grid-template-columns:1fr 1fr}.tt-pk{grid-template-columns:1fr}.tt-head ul{gap:16px}}
+.tt-head .more{position:relative}.tt-head .dd{position:absolute;left:50%;translate:-50% 0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:20px;border:2px solid var(--c-primary);}.tt-head .more:hover .dd,.tt-head .more:focus-within .dd{display:grid}.tt-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.tt-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.tt-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3,h4{color:var(--c-primary)}/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.tt-item{grid-template-columns:1fr auto;gap:4px 12px}.tt-item .dots{display:none}.tt-item h3{font-size:22px}.tt-item .pr{white-space:normal;text-align:right;font-size:16px;max-width:9em}.tt-hero h1{font-size:clamp(40px,12vw,60px)}.tt-th{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.tt-th .ph{border-radius:70px 70px 12px 12px}.tt-arch::before{inset:-8px}.tt-btn::after{inset:-4px}}</style><div class="tt-top">First visit? Enjoy a complimentary herbal tea ritual and 15-minute foot soak.</div><header class="tt-head"><div class="in"><a class="tt-logo" href="{{p:home}}">Baan Sabai<small>Thai Massage &amp; Spa</small></a><svg class="tt-orn" viewBox="0 0 230 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 9h84M144 9h84"/><path d="M115 2c-6 4-6 10 0 14 6-4 6-10 0-14zM103 6c-6 0-9 4-7 8 5 0 8-3 7-8zM127 6c6 0 9 4 7 8-5 0-8-3-7-8z"/></svg><ul><li><a href="{{p:menu}}">Treatments</a></li><li><a href="{{p:therapists}}">Therapists</a></li><li><a href="{{p:packages}}">Packages</a></li><li><a href="{{p:vouchers}}">Vouchers</a></li><li><a href="{{p:story}}">Our story</a></li><li class="more"><a href="#" tabindex="0">More ▾</a><div class="dd"><div><h4>Spa</h4><a href="{{p:home}}">Home</a><a href="{{p:menu}}">Treatment menu</a><a href="{{p:treatment}}">Treatment</a><a href="{{p:therapists}}">Our therapists</a><a href="{{p:packages}}">Couple & group packages</a><a href="{{p:vouchers}}">Gift vouchers</a></div><div><h4>Visit</h4><a href="{{p:book}}">Book a treatment</a><a href="{{p:story}}">Our story</a><a href="{{p:find}}">Find us</a><a href="{{p:faq}}">Before you come</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li><li><a class="tt-btn" style="padding:.5em 1.3em" href="{{p:book}}">Book now</a></li></ul></div></header>

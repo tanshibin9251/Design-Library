@@ -1,0 +1,141 @@
+{
+ "format": "fragments",
+ "slug": "lexington-law",
+ "name": "Lexington & Co",
+ "zh": "莱克星顿律所",
+ "tag": "Broadsheet-style law firm: masthead with double rule, three-column front page with A–Z practice index, ask-a-partner callback and a three-question triage.",
+ "colors": {
+  "primary": "#2e3440",
+  "secondary": "#6e7a85",
+  "text": "#232830",
+  "accent": "#a1453b",
+  "surface": "#f6f5f1",
+  "border": "#d6d6d0"
+ },
+ "fonts": {
+  "head": "Domine",
+  "body": "Public Sans"
+ },
+ "tok": {
+  "hlh": "1.15",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.005em",
+  "h1": "62px",
+  "h2": "38px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company"
+ ],
+ "industries": [
+  "legal"
+ ],
+ "styles": [
+  "editorial",
+  "corporate",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Practice Areas",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Practice area",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Fees",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Case Results",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Case result",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Insights",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Free consultation",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

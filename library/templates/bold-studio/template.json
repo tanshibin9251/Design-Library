@@ -1,0 +1,168 @@
+{
+ "format": "fragments",
+ "slug": "bold-studio",
+ "name": "Bold Studio",
+ "zh": "粗犷工作室",
+ "tag": "High contrast, oversized type. Black or white with one coral accent.",
+ "colors": {
+  "primary": "#18181B",
+  "secondary": "#BE123C",
+  "text": "#18181B",
+  "accent": "#E11D48",
+  "surface": "#FAFAFA",
+  "border": "#E4E4E7"
+ },
+ "fonts": {
+  "head": "Anton",
+  "body": "Work Sans"
+ },
+ "tok": {
+  "radius": "0",
+  "hlh": ".95",
+  "hw": "400",
+  "hcase": "uppercase",
+  "hls": ".01em",
+  "h1": "120px",
+  "h2": "64px",
+  "h3": "28px",
+  "pad": "100px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "h1big": "170px"
+ },
+ "types": [
+  "portfolio",
+  "company"
+ ],
+ "industries": [
+  "agency"
+ ],
+ "styles": [
+  "bold",
+  "typographic",
+  "swiss"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Rates",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Work",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Project",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "process",
+   "label": "Process",
+   "group": "Special"
+  },
+  {
+   "slug": "showreel",
+   "label": "Showreel",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

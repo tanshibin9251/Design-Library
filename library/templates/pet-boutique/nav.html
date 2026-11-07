@@ -1,0 +1,33 @@
+<style>
+/* Pawsh — tokens only */
+.pb-bar{background:var(--c-text);color:var(--c-surface);font:600 12.5px var(--f-body);letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:8px}
+.pb-head{background:var(--c-surface);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--c-border)}
+.pb-head .in{max-width:var(--w);margin:auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:12px 20px}
+.pb-head ul{display:flex;gap:22px;list-style:none;font:600 14px var(--f-body);letter-spacing:.06em;text-transform:uppercase}.pb-head ul.r{justify-content:flex-end}
+.pb-head ul a{text-decoration:none}.pb-head ul a:hover{color:var(--c-accent)}
+.pb-logo{font:700 32px var(--f-head);text-decoration:none;letter-spacing:-.03em}.pb-logo b{color:var(--c-accent)}
+.pb-hero{background:var(--c-primary);color:var(--on-primary);overflow:hidden}
+.pb-hero .in{max-width:var(--w);margin:auto;padding:clamp(30px,5vw,70px) 20px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.pb-hero h1{font:700 clamp(42px,7vw,var(--h1));line-height:.95;letter-spacing:-.04em;color:var(--on-primary)}
+.pb-hero h1 em{font-style:normal;color:var(--c-accent)}
+.pb-hero p{font:400 18px/1.6 var(--f-body);max-width:38ch;margin:16px 0 24px;opacity:.9}
+.pb-btn{background:var(--c-accent);color:var(--c-primary);padding:.85em 1.6em;border-radius:99px;font:700 14px var(--f-body);letter-spacing:.04em;text-decoration:none;display:inline-block}
+.pb-btn.o{background:none;color:var(--c-text);box-shadow:inset 0 0 0 2px var(--c-text)}
+.pb-orb{position:relative;aspect-ratio:1;max-width:460px;justify-self:center;width:100%}
+.pb-orb .ph{position:absolute;inset:6%;border-radius:50%;border:6px solid var(--c-accent)}
+.pb-orb .bd{position:absolute;right:-2%;top:10%;background:var(--c-accent);color:var(--c-primary);width:30%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;font:700 14px/1.1 var(--f-body);rotate:12deg}
+.pb-sec{padding:var(--pad) 20px}.pb-sec>.in{max-width:var(--w);margin:auto}
+.pb-cat{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center}
+.pb-cat a{text-decoration:none}.pb-cat .ph{aspect-ratio:1;border-radius:50%;border:2px solid var(--c-border);transition:border-color .2s,transform .2s}.pb-cat a:hover .ph{border-color:var(--c-accent);transform:translateY(-4px)}
+.pb-cat span{display:block;margin-top:10px;font:700 15px var(--f-body)}
+.pb-pr{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 16px}
+.pb-p{text-decoration:none;display:block}.pb-p .ph{aspect-ratio:1;border-radius:20px}
+.pb-p small{display:block;margin-top:10px;font:700 11px var(--f-body);letter-spacing:.12em;text-transform:uppercase;opacity:.6}.pb-p h3{font:700 18px var(--f-head)}.pb-p b{font:700 16px var(--f-body);color:var(--c-accent)}
+.pb-gr{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pb-gc{border:2px solid var(--c-text);border-radius:24px;padding:24px;background:var(--c-surface)}
+.pb-gc h3{font:700 22px var(--f-head)}.pb-gc .sz{display:grid;gap:0;margin:14px 0;border-top:1px solid var(--c-border)}.pb-gc .sz div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--c-border);font:600 15px var(--f-body)}
+.pb-foot{background:var(--c-text);color:var(--c-surface)}
+@media(max-width:820px){.pb-head .in{grid-template-columns:auto 1fr}.pb-head ul.l{display:none}.pb-head ul.r a:not(.c){display:none}.pb-hero .in,.pb-gr{grid-template-columns:1fr}.pb-cat{grid-template-columns:repeat(3,1fr)}.pb-pr{grid-template-columns:repeat(2,minmax(0,1fr))}.pb-orb{max-width:300px}}
+@media(prefers-reduced-motion:reduce){.pb-cat .ph{transition:none}}
+html,body{overflow-x:clip}img,svg{max-width:100%}.pb-head .more{position:relative}.pb-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:16px;}.pb-head .more:hover .dd,.pb-head .more:focus-within .dd{display:grid}.pb-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.pb-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.pb-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3{color:var(--c-text)}.pb-hero h1{color:var(--on-primary)}</style><div class="pb-bar">Free delivery over RM 150 · Same-day in KL</div><header class="pb-head"><div class="in"><ul class="l"><li><a href="{{p:shop}}">Shop</a></li><li><a href="{{p:grooming}}">Grooming</a></li><li><a href="{{p:membership}}">Club</a></li></ul><a class="pb-logo" href="{{p:home}}">paw<b>sh</b></a><ul class="r"><li><a href="{{p:journal}}">Journal</a></li><li><a href="{{p:visit}}">Visit</a></li><li class="more" style="position:relative"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Shop</h4><a href="{{p:home}}">Home</a><a href="{{p:shop}}">Shop</a><a href="{{p:product}}">Product</a></div><div><h4>Spa</h4><a href="{{p:grooming}}">Grooming</a><a href="{{p:membership}}">Membership</a><a href="{{p:journal}}">Journal</a><a href="{{p:visit}}">Visit</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li><li><a class="c" href="{{p:shop}}">Bag (0)</a></li></ul></div></header>

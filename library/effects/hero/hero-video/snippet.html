@@ -1,0 +1,73 @@
+<!-- Video Hero — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+@keyframes fxhv-bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fxhv-blob{to{transform:translate(12vmax,6vmax) scale(1.25)}}
+@keyframes fxhv-ring{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.8);opacity:0}}
+@keyframes fxhv-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.fx-hvid{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:3em max(5vw,1.5em);color:#fff;background:var(--primary);isolation:isolate}
+.fx-hvid .film{position:absolute;inset:0;z-index:-2;background:linear-gradient(115deg,var(--primary),color-mix(in srgb,var(--accent) 70%,var(--primary)),color-mix(in srgb,var(--primary) 55%,#000),var(--primary));background-size:300% 300%;animation:fxhv-bg calc(16s/var(--speed)) ease infinite}
+.fx-hvid .blob{position:absolute;z-index:-2;border-radius:50%;filter:blur(70px);opacity:.55;animation:fxhv-blob calc(14s/var(--speed)) ease-in-out infinite alternate}
+.fx-hvid .b1{width:34vmax;height:34vmax;left:-6%;top:-12%;background:var(--accent)}.fx-hvid .b2{width:28vmax;height:28vmax;right:4%;bottom:-8%;background:color-mix(in srgb,var(--primary) 40%,#fff);animation-delay:-6s}
+.fx-hvid .shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.18) 60%,rgba(0,0,0,.28))}
+.fx-hvid .grain{position:absolute;inset:0;z-index:-1;opacity:.14;mix-blend-mode:overlay;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.5) 0 1px,transparent 1px 3px)}
+.fx-hvid .top{position:absolute;top:2em;left:max(5vw,1.5em);right:max(5vw,1.5em);display:flex;justify-content:space-between;font-size:.8em;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.fx-hvid .rec{display:inline-flex;align-items:center;gap:.6em}.fx-hvid .rec i{width:.6em;height:.6em;border-radius:50%;background:#ff4d4d}
+.fx-hvid .copy{display:grid;gap:1.1em;max-width:40em;margin-bottom:2.4em;transition:opacity calc(.5s/var(--speed)),transform calc(.5s/var(--speed))}
+.fx-hvid h1{font-size:clamp(2.4em,6vw,5em);line-height:1.02;color:#fff}
+.fx-hvid .copy p{font-size:1.15em;opacity:.88;max-width:32em}
+.fx-hvid .play{position:absolute;right:max(5vw,1.5em);top:50%;transform:translateY(-50%);width:6em;height:6em;border:0;border-radius:50%;cursor:pointer;background:#fff;color:#111;display:grid;place-items:center;transition:transform calc(.3s/var(--speed))}
+.fx-hvid .play::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #fff;animation:fxhv-ring calc(2.4s/var(--speed)) ease-out infinite}
+.fx-hvid .play:hover{transform:translateY(-50%) scale(1.07)}.fx-hvid .play:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.fx-hvid .ic{width:0;height:0;border-style:solid;border-width:.8em 0 .8em 1.3em;border-color:transparent transparent transparent currentColor;margin-left:.3em}
+.fx-hvid.is-playing .ic{width:1.2em;height:1.4em;border:0;margin:0;background:linear-gradient(90deg,currentColor 0 36%,transparent 36% 64%,currentColor 64%)}
+.fx-hvid.is-playing .play::before{animation:none;opacity:0}
+.fx-hvid.is-playing .copy{opacity:0;transform:translateY(16px);pointer-events:none}
+.fx-hvid.is-playing .play{top:auto;bottom:4.6em;transform:scale(.55);transform-origin:right bottom}.fx-hvid.is-playing .play:hover{transform:scale(.6)}
+.fx-hvid .bar{display:flex;align-items:center;gap:1em;font-size:.82em;font-variant-numeric:tabular-nums}
+.fx-hvid .track{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden}
+.fx-hvid .track i{display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(.04);animation:fxhv-bar calc(90s/var(--speed)) linear forwards;animation-play-state:paused}
+.fx-hvid.is-playing .track i{animation-play-state:running}
+@media(max-width:700px){.fx-hvid .play{width:4.6em;height:4.6em;top:30%}.fx-hvid.is-playing .play{bottom:4.4em}.fx-hvid .copy{margin-bottom:1.6em}}
+@media(prefers-reduced-motion:reduce){.fx-hvid .film,.fx-hvid .blob,.fx-hvid .play::before{animation:none}.fx-hvid .track i{animation:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-hvid .play.is-tap{transform:translateY(-50%) scale(1.07)}
+.fx-hvid.is-playing .play.is-tap{transform:scale(.6)}
+
+</style>
+
+<section class="fx fx-hvid"><i class="film"></i><i class="blob b1"></i><i class="blob b2"></i><i class="shade"></i><i class="grain"></i>
+<div class="top"><span class="rec"><i></i>Showreel</span><span>2025 — 1:30</span></div>
+<div class="copy"><h1>Stories told in motion</h1><p>A small film studio making title sequences, brand films and the occasional music video.</p></div>
+<button class="play" type="button" aria-label="Play showreel" aria-pressed="false"><span class="ic"></span></button>
+<div class="bar"><span>0:00</span><span class="track"><i></i></span><span>1:30</span></div></section>
+
+<script>
+(function(){document.querySelectorAll('.fx-hvid').forEach(function(r){var b=r.querySelector('.play');b.addEventListener('click',function(){var p=r.classList.toggle('is-playing');b.setAttribute('aria-pressed',p);b.setAttribute('aria-label',p?'Pause showreel':'Play showreel')})})})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

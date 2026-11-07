@@ -1,0 +1,13 @@
+{
+ "slug": "swiss-event-poster",
+ "name": "Swiss Event Poster",
+ "zh": "瑞士网格活动海报",
+ "tag": "红白瑞士网格，巨型无衬线标题 + 等宽小字信息表，适合展览 / 开放日 / 演讲活动。",
+ "type": "poster",
+ "size": {"label": "A-series poster", "w": 1200, "h": 1697},
+ "styles": ["swiss", "typographic"],
+ "industries": ["events", "arts"],
+ "colors": {"primary": "#D7261E", "secondary": "#111111", "text": "#111111", "accent": "#111111", "surface": "#F2EFE9", "border": "#111111"},
+ "fonts": {"head": "Archivo", "body": "IBM Plex Mono"},
+ "license": "库内自有"
+}

@@ -1,0 +1,172 @@
+{
+ "format": "fragments",
+ "slug": "happy-paws",
+ "name": "Happy Paws",
+ "zh": "欢乐爪爪",
+ "tag": "Pet care with a tilted polaroid wall of pets, pill nav with dotted underline, monthly care-plan cards and a pet-age calculator.",
+ "colors": {
+  "primary": "#2f4b7c",
+  "secondary": "#8ad0c7",
+  "text": "#26334d",
+  "accent": "#ff8a5b",
+  "surface": "#f4f9ff",
+  "border": "#d5e3f2"
+ },
+ "fonts": {
+  "head": "Sniglet",
+  "body": "Varela Round"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": ".005em",
+  "h1": "84px",
+  "h2": "44px",
+  "h3": "24px",
+  "pad": "76px",
+  "ew": "800",
+  "stat": "var(--c-accent)",
+  "radius": "26px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "pets"
+ ],
+ "styles": [
+  "playful",
+  "warm",
+  "pastel"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Vet Care",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Grooming Prices",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Pet Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Pet Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Pet story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Pet Tips",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Book a visit",
+   "group": "Special"
+  },
+  {
+   "slug": "process",
+   "label": "Grooming day",
+   "group": "Special"
+  },
+  {
+   "slug": "service-areas",
+   "label": "Pet taxi areas",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

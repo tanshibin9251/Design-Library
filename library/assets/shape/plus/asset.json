@@ -1,0 +1,17 @@
+{
+ "slug": "plus",
+ "name": "Plus",
+ "zh": "加号",
+ "cat": "shape",
+ "file": "plus.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "basic",
+  "cross"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

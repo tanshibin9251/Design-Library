@@ -1,0 +1,8 @@
+{
+ "slug": "cover",
+ "name": "Cover",
+ "zh": "覆盖",
+ "tag": "New page slides over the old one, which dims behind it.",
+ "group": "Slide",
+ "license": "自写，无第三方代码"
+}

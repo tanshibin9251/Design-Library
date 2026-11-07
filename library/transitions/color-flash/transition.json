@@ -1,0 +1,8 @@
+{
+ "slug": "color-flash",
+ "name": "Colour Flash",
+ "zh": "颜色闪过",
+ "tag": "Page fades to a brand colour, then up into the next page.",
+ "group": "Soft",
+ "license": "自写，无第三方代码"
+}

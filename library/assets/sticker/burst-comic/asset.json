@@ -1,0 +1,18 @@
+{
+ "slug": "burst-comic",
+ "name": "Comic burst",
+ "zh": "漫画爆炸",
+ "cat": "sticker",
+ "file": "burst-comic.svg",
+ "format": "svg",
+ "width": 240,
+ "height": 240,
+ "tags": [
+  "comic",
+  "pop",
+  "sale"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

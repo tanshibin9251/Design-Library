@@ -1,0 +1,8 @@
+{
+ "slug": "curtain-split",
+ "name": "Curtain split",
+ "zh": "幕布拉开",
+ "tag": "The new page opens from a centre seam like a stage curtain while the old page recedes.",
+ "group": "Wipe",
+ "license": "自写，无第三方代码"
+}

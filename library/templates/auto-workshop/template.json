@@ -1,0 +1,97 @@
+{
+ "format": "fragments",
+ "slug": "auto-workshop",
+ "name": "Torque Garage",
+ "zh": "扭矩车厂",
+ "tag": "Honest workshop site with a licence-plate status lookup, size-based service packages and a job-card progress tracker.",
+ "colors": {
+  "primary": "#1f2f46",
+  "secondary": "#5b6676",
+  "text": "#14181f",
+  "accent": "#ffc400",
+  "surface": "#f4f5f6",
+  "border": "#cfd3d8"
+ },
+ "fonts": {
+  "head": "Rubik",
+  "body": "Roboto Condensed"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "700",
+  "hcase": "uppercase",
+  "hls": "-.01em",
+  "h1": "84px",
+  "h2": "46px",
+  "h3": "22px",
+  "pad": "80px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "company"
+ ],
+ "industries": [
+  "automotive",
+  "homeservices"
+ ],
+ "styles": [
+  "bold",
+  "corporate",
+  "geometric"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Garage"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Garage"
+  },
+  {
+   "slug": "packages",
+   "label": "Service packages",
+   "group": "Garage"
+  },
+  {
+   "slug": "tracker",
+   "label": "Track your car",
+   "group": "Garage"
+  },
+  {
+   "slug": "book",
+   "label": "Book a slot",
+   "group": "Book"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Book"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Book"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Book"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

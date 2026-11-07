@@ -1,0 +1,148 @@
+{
+ "format": "fragments",
+ "slug": "quiet-grace",
+ "name": "Quiet Grace Community",
+ "zh": "静恩社区",
+ "tag": "Community gathering site: announcement bar, printed order-of-gathering card, 7-day weekly rhythm with today highlighted and a pinned noticeboard.",
+ "colors": {
+  "primary": "#38536b",
+  "secondary": "#8aa0b3",
+  "text": "#2b3440",
+  "accent": "#e0a458",
+  "surface": "#fbf6ee",
+  "border": "#e3d9c6"
+ },
+ "fonts": {
+  "head": "Lora",
+  "body": "Nunito Sans"
+ },
+ "tok": {
+  "hlh": "1.2",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "0",
+  "h1": "68px",
+  "h2": "40px",
+  "h3": "24px",
+  "pad": "76px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "6px"
+ },
+ "types": [
+  "company",
+  "blog"
+ ],
+ "industries": [
+  "faith",
+  "nonprofit"
+ ],
+ "styles": [
+  "warm",
+  "editorial",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Gatherings",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Gathering",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Giving",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Community Work",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Outreach",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Reflections",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Plan a visit",
+   "group": "Special"
+  },
+  {
+   "slug": "schedule",
+   "label": "Weekly rhythm",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

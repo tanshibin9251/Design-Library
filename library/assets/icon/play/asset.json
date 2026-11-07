@@ -1,0 +1,17 @@
+{
+ "slug": "play",
+ "name": "Play",
+ "zh": "播放",
+ "cat": "icon",
+ "file": "play.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "video",
+  "media"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

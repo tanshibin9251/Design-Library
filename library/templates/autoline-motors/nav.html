@@ -1,0 +1,112 @@
+<style>
+.am-nav{display:flex;list-style:none;align-items:center;gap:4px}
+.am-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:inherit}
+.am-nav .more{position:relative}
+.am-nav .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:16px 26px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:620px;z-index:60;text-align:left;box-shadow:0 26px 50px -28px rgba(0,0,0,.4)}
+.am-nav .more:hover .dd,.am-nav .more:focus-within .dd{display:grid}
+.am-nav .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent);margin-bottom:6px}
+.am-nav .dd a{display:block;min-height:0;padding:5px 0;color:var(--c-text);background:none;border:0;border-radius:0;font:500 15px var(--f-body);letter-spacing:0;text-transform:none}
+.am-m{display:none;position:relative;margin-left:auto}
+.am-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;padding:0 14px;border:2px solid currentColor;font:700 12px var(--f-body);letter-spacing:.14em}
+.am-m summary::-webkit-details-marker{display:none}
+.am-m nav{position:absolute;right:0;top:100%;min-width:250px;background:var(--c-surface);color:var(--c-text);border:2px solid var(--c-primary);padding:8px 18px;display:grid;z-index:60}
+.am-m nav a{padding:12px 0;border-bottom:1px solid var(--c-border);text-decoration:none;font:600 15px var(--f-body);min-height:44px}
+@media(max-width:900px){.am-nav{display:none}.am-m{display:block}}
+.am-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,5vw,80px)}
+.am-foot .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.am-foot h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:10px}
+.am-foot ul{list-style:none}.am-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:500 15px var(--f-body);min-height:34px;color:inherit}
+.am-foot .copy{margin-top:24px;font:500 12px var(--f-body);opacity:.75}
+@media(max-width:860px){.am-foot .top{grid-template-columns:1fr}.am-foot .cols{grid-template-columns:1fr 1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+/* Autoline Motors v2 — dealership with side-by-side spec comparison, tokens only */
+.am-head{display:flex;align-items:center;gap:20px;padding:0 clamp(14px,4vw,56px);min-height:74px;background:var(--c-surface);position:sticky;top:0;z-index:50;border-bottom:2px solid var(--c-primary)}
+.am-logo{font:700 24px var(--f-head);letter-spacing:.06em;text-transform:uppercase;color:var(--c-primary);text-decoration:none;display:flex;align-items:center;gap:10px}
+.am-logo i{width:34px;height:12px;background:var(--c-accent);transform:skewX(-24deg);display:inline-block}
+.am-nav{margin-left:auto}.am-nav a{padding:0 14px;font:600 14px var(--f-head);letter-spacing:.08em;text-transform:uppercase;color:var(--c-text)}.am-nav a:hover{color:var(--c-accent)}
+.am-cta{background:var(--c-primary);color:var(--on-primary)!important;margin-left:8px;padding:0 20px!important}
+.am-sec{padding:clamp(34px,5vw,72px) clamp(14px,4vw,56px)}
+.am-hero{padding:clamp(28px,5vw,64px) clamp(14px,4vw,56px) 0}
+.am-hero h1{font:700 clamp(34px,5.6vw,var(--h1))/1.04 var(--f-head);letter-spacing:.01em;text-transform:uppercase;color:var(--c-primary);max-width:18ch}
+.am-hero p{font:400 19px/1.7 var(--f-body);margin:14px 0 0;max-width:46ch}
+.am-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:var(--c-accent);color:var(--on-accent);font:700 14px var(--f-head);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,12px 100%)}
+.am-btn:hover{background:var(--c-primary);color:var(--on-primary)}
+.am-cars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(20px,3vw,40px)}
+@media(max-width:860px){.am-cars{grid-template-columns:1fr}}
+.am-car{border:2px solid var(--c-border);background:var(--c-surface);position:relative;transition:border-color .2s}
+.am-car:has(input:checked){border-color:var(--c-accent);box-shadow:0 0 0 2px var(--c-accent)}
+.am-car .im{aspect-ratio:16/9;background:linear-gradient(120deg,var(--a),var(--b));position:relative;overflow:hidden}
+.am-car .im::before{content:"";position:absolute;left:10%;right:10%;bottom:24%;height:26%;background:var(--c-primary);opacity:.85;clip-path:polygon(0 100%,8% 40%,28% 0,70% 0,92% 45%,100% 100%)}
+.am-car .im::after{content:"缺图";position:absolute;right:10px;top:8px;font:700 10px var(--f-body);letter-spacing:.14em;background:var(--c-surface);padding:2px 8px}
+.am-car .b{padding:16px 18px 18px;display:grid;gap:6px}
+.am-car h3{font:700 22px var(--f-head);text-transform:uppercase;letter-spacing:.02em}.am-car .pr{font:700 20px var(--f-body);color:var(--c-primary)}
+.am-car .cmp{display:flex;align-items:center;gap:10px;font:700 13px var(--f-body);letter-spacing:.08em;text-transform:uppercase;min-height:44px;cursor:pointer;margin-top:4px}
+.am-car .cmp input{width:22px;height:22px;accent-color:var(--c-accent);padding:0;min-height:0}
+.am-tb{margin-top:clamp(20px,3vw,40px);border:2px solid var(--c-primary);overflow:auto;background:var(--c-surface)}
+.am-tb table{width:100%;border-collapse:collapse;font:500 16px var(--f-body);min-width:560px}
+.am-tb th,.am-tb td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--c-border)}
+.am-tb th{font:700 13px var(--f-head);letter-spacing:.12em;text-transform:uppercase;background:var(--c-primary);color:var(--on-primary)}
+.am-tb td:first-child{font:700 13px var(--f-head);letter-spacing:.08em;text-transform:uppercase;color:var(--c-secondary)}
+.am-tb td.best{font-weight:800;color:var(--c-accent)}
+.am-tb .empty{padding:24px;text-align:center;font:600 16px var(--f-body);color:var(--c-secondary)}
+.am-fin{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,44px);align-items:center;background:var(--c-primary);color:var(--on-primary);padding:clamp(22px,3vw,44px)}
+@media(max-width:800px){.am-fin{grid-template-columns:1fr}}
+.am-fin h2{font:700 clamp(26px,3.4vw,40px)/1.1 var(--f-head);text-transform:uppercase;color:var(--on-primary)}
+.am-fin label{display:grid;gap:4px;font:700 12px var(--f-head);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}.am-fin label span{font:700 18px var(--f-body);color:var(--c-accent);letter-spacing:0}
+.am-fin input[type=range]{accent-color:var(--c-accent);padding:0;border:0;background:none;min-height:44px;width:100%}
+.am-fin .o{font:700 clamp(34px,5vw,56px)/1 var(--f-head);color:var(--on-primary)}.am-fin .o small{font:500 15px var(--f-body);display:block;opacity:.8}
+.am-foot{background:var(--c-primary);color:var(--on-primary);margin-top:clamp(30px,5vw,70px);padding:clamp(34px,5vw,60px) clamp(14px,4vw,56px) 22px;border-top:6px solid var(--c-accent)}
+.am-foot .big{font:700 28px var(--f-head);text-transform:uppercase;letter-spacing:.06em}
+.am .pagehead{background:var(--c-primary);color:var(--on-primary)}.am .pagehead h1,.am .pagehead .lead,.am .pagehead .crumbs,.am .pagehead .eyebrow{color:var(--on-primary)}.am .card,.am .scard,.am .qcard,.am .pcard,.am .person{background:var(--c-surface);border:1px solid var(--c-primary);box-shadow:none}.am .eyebrow{display:inline-block;border-left:4px solid var(--c-accent);padding-left:10px;letter-spacing:.2em}.am .alt{background:color-mix(in srgb,var(--c-secondary) 12%,var(--c-surface))}/*presets*/
+
+.am .svc{display:block;border:2px solid var(--c-primary)}
+.am .scard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 150px 110px;gap:0;align-items:stretch;border:0;border-bottom:1px solid var(--c-border);border-radius:0;background:none;box-shadow:none;padding:0}
+.am .scard:nth-child(even){background:color-mix(in srgb,var(--c-secondary) 12%,var(--c-surface))}
+.am .scard .ph{display:none}.am .scard .b{display:contents}
+.am .scard h3{padding:18px;font-size:19px;border-right:1px solid var(--c-border)}
+.am .scard p{padding:18px;margin:0;border-right:1px solid var(--c-border);opacity:.85;font-size:15px}
+.am .scard .m{display:contents}.am .scard .m b{padding:18px;border-right:1px solid var(--c-border);font-size:15px}.am .scard .m span{padding:18px;font-size:14px;opacity:.75}
+@media(max-width:820px){.am .scard{grid-template-columns:1fr 1fr}.am .scard h3{grid-column:1/-1;border-right:0}.am .scard p{grid-column:1/-1;border-right:0;padding-top:0}}
+
+.am .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--c-primary)}
+.am .person{display:grid;grid-template-columns:110px 1fr;gap:4px 18px;align-items:center;padding:20px 20px 20px 0;border:0;border-bottom:1px solid var(--c-border);border-radius:0;background:none;box-shadow:none;text-align:left}
+.am .person .ph{grid-row:span 2;aspect-ratio:1!important}
+@media(max-width:700px){.am .tgrid{grid-template-columns:1fr}}
+
+.am .qgrid{display:block;border-top:2px solid var(--c-primary)}.am .qgrid.mt{margin-top:0}
+.am .qcard{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(180px,1fr);gap:8px 40px;align-items:center;padding:26px 0;border:0;border-bottom:1px solid var(--c-border);background:none;box-shadow:none;border-radius:0}
+.am .qcard .stars{grid-column:1}.am .qcard blockquote{grid-column:1;font-size:clamp(18px,2vw,24px)}.am .qcard figcaption{grid-column:2;grid-row:1/span 2}
+@media(max-width:700px){.am .qcard{grid-template-columns:1fr}.am .qcard figcaption{grid-column:1;grid-row:auto}}
+
+.am .masonry{display:grid!important;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.4vw,18px);columns:auto}
+.am .masonry .mi{margin:0}.am .masonry .mi .ph{aspect-ratio:4/3!important}
+@media(max-width:700px){.am .masonry{grid-template-columns:1fr 1fr}}
+
+.am .split.w2{display:block}
+.am .feat{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;margin-bottom:clamp(24px,4vw,48px)}
+.am .feat h2{font-size:clamp(26px,3.6vw,48px);line-height:1.04}
+.am .articles.two{grid-template-columns:repeat(3,1fr)!important}
+@media(max-width:800px){.am .feat{grid-template-columns:1fr}.am .articles.two{grid-template-columns:1fr!important}}
+.am .faq{max-width:none;columns:2 340px;column-gap:clamp(24px,5vw,72px)}.am .faq details{break-inside:avoid}
+
+.am .pricing{display:block;border-top:2px solid var(--c-primary)}
+.am .pricing .card{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr) auto;gap:10px 28px;align-items:center;padding:24px 0;border:0;border-bottom:1px solid var(--c-border);border-radius:0;background:none!important;box-shadow:none;transform:none!important;color:inherit!important}
+.am .pricing .card h3,.am .pricing .card .amt{color:var(--c-primary)!important;margin:0}
+.am .pricing .card.hl{background:color-mix(in srgb,var(--c-accent) 12%,var(--c-surface))!important}
+.am .pricing ul{margin:0;display:flex;gap:6px 16px;flex-wrap:wrap}.am .pricing li{font-size:14px}
+@media(max-width:820px){.am .pricing .card{grid-template-columns:1fr auto}.am .pricing ul{grid-column:1/-1}}
+
+.am .cinfo{display:block;border-top:2px solid var(--c-primary)}
+.am .cinfo .card{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:baseline;padding:14px 0;border:0;border-bottom:1px solid var(--c-border);border-radius:0;background:none;box-shadow:none}
+.am .cinfo .card h3{font:700 12px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin:0}.am .cinfo .card p{margin:0}
+.am .sec.dark{background:none;color:var(--c-text);border-top:3px solid var(--c-primary);border-bottom:3px solid var(--c-primary)}.am .sec.dark h2,.am .sec.dark p{color:var(--c-text)}
+.am .steps b{font-size:clamp(42px,6vw,84px);line-height:1;color:var(--c-accent);letter-spacing:-.02em;display:block}.am .steps>div{border-top:0;border-left:1px solid var(--c-border);padding-left:20px}
+
+.am .tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border-top:3px solid var(--c-primary)}
+.am .tl>div{padding:20px 18px 20px 0;border-right:1px solid var(--c-border)}.am .tl>div:last-child{border-right:0}
+.am .tl b{display:block;font-size:clamp(36px,5vw,64px);line-height:1;color:var(--c-accent);margin-bottom:8px}
+
+.am .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--c-primary)}
+.am .vals .card{border:0;border-right:1px solid var(--c-border);border-radius:0;background:none;box-shadow:none;padding:24px 22px}.am .vals .card:last-child{border-right:0}
+@media(max-width:700px){.am .vals{grid-template-columns:1fr}.am .vals .card{border-right:0;border-bottom:1px solid var(--c-border)}}
+</style><header class="am-head"><a class="am-logo" href="{{p:home}}"><i></i>Autoline</a><ul class="am-nav"><li><a href="{{p:shop}}">Inventory</a></li><li><a href="{{p:quote}}">Finance</a></li><li><a href="{{p:booking}}">Test drive</a></li><li><a href="{{p:services}}">Service</a></li><li class="more"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Main</h4><a href="{{p:home}}">Home</a><a href="{{p:about}}">About</a><a href="{{p:services}}">Service Centre</a><a href="{{p:service}}">Single Service</a><a href="{{p:pricing}}">Finance</a><a href="{{p:contact}}">Contact</a></div><div><h4>Shop</h4><a href="{{p:shop}}">Inventory</a><a href="{{p:product}}">Single Vehicle</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a></div><div><h4>Proof</h4><a href="{{p:testimonials}}">Testimonials</a><a href="{{p:team}}">Team</a><a href="{{p:projects}}">Sold</a><a href="{{p:project}}">Single Sold car</a><a href="{{p:gallery}}">Gallery</a></div><div><h4>Content</h4><a href="{{p:blog}}">News</a><a href="{{p:post}}">Single post</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Special</h4><a href="{{p:booking}}">Book test drive</a><a href="{{p:quote}}">Sell your car</a></div><div><h4>Utility</h4><a href="{{p:careers}}">Careers</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a><a href="{{p:coming-soon}}">Coming soon</a></div></div></li><li><a class="am-cta" href="{{p:quote}}">Value my car</a></li></ul><details class="am-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:about}}">About</a><a href="{{p:services}}">Service Centre</a><a href="{{p:service}}">Single Service</a><a href="{{p:pricing}}">Finance</a><a href="{{p:contact}}">Contact</a><a href="{{p:shop}}">Inventory</a><a href="{{p:product}}">Single Vehicle</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a><a href="{{p:testimonials}}">Testimonials</a><a href="{{p:team}}">Team</a><a href="{{p:projects}}">Sold</a><a href="{{p:project}}">Single Sold car</a><a href="{{p:gallery}}">Gallery</a><a href="{{p:blog}}">News</a><a href="{{p:post}}">Single post</a><a href="{{p:faq}}">FAQ</a><a href="{{p:booking}}">Book test drive</a><a href="{{p:quote}}">Sell your car</a><a href="{{p:careers}}">Careers</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a><a href="{{p:coming-soon}}">Coming soon</a></nav></details></header><div class="am">

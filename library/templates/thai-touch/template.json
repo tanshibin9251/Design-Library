@@ -1,0 +1,108 @@
+{
+ "format": "fragments",
+ "slug": "thai-touch",
+ "name": "Thai Touch",
+ "zh": "泰式触感",
+ "tag": "Warm hand-drawn Thai massage site: arched photography, dotted-leader treatment menu, therapist profiles and gift vouchers.",
+ "colors": {
+  "primary": "#5a3418",
+  "secondary": "#7b5a2e",
+  "text": "#3a2614",
+  "accent": "#b8860b",
+  "surface": "#fbf3e1",
+  "border": "#e6d6b3"
+ },
+ "fonts": {
+  "head": "Gloock",
+  "body": "Karla"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "400",
+  "hcase": "none",
+  "hls": "0",
+  "h1": "84px",
+  "h2": "48px",
+  "h3": "26px",
+  "pad": "92px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "20px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "massage",
+  "health"
+ ],
+ "styles": [
+  "warm",
+  "handdrawn",
+  "organic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Spa"
+  },
+  {
+   "slug": "menu",
+   "label": "Treatment menu",
+   "group": "Spa"
+  },
+  {
+   "slug": "treatment",
+   "label": "Treatment",
+   "group": "Spa"
+  },
+  {
+   "slug": "therapists",
+   "label": "Our therapists",
+   "group": "Spa"
+  },
+  {
+   "slug": "packages",
+   "label": "Couple & group packages",
+   "group": "Spa"
+  },
+  {
+   "slug": "vouchers",
+   "label": "Gift vouchers",
+   "group": "Spa"
+  },
+  {
+   "slug": "book",
+   "label": "Book a treatment",
+   "group": "Visit"
+  },
+  {
+   "slug": "story",
+   "label": "Our story",
+   "group": "Visit"
+  },
+  {
+   "slug": "find",
+   "label": "Find us",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "Before you come",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

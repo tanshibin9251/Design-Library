@@ -1,0 +1,137 @@
+{
+ "format": "fragments",
+ "slug": "hope-foundation",
+ "name": "Hope Foundation",
+ "zh": "希望基金会",
+ "tag": "Charity site with a donation card that translates amounts into outcomes, three impact numbers and a campaign thermometer.",
+ "colors": {
+  "primary": "#2b2f6e",
+  "secondary": "#f7d6c4",
+  "text": "#2a2a3a",
+  "accent": "#ef7b45",
+  "surface": "#fffaf5",
+  "border": "#eadfd6"
+ },
+ "fonts": {
+  "head": "Crimson Text",
+  "body": "Cabin"
+ },
+ "tok": {
+  "hlh": "1.12",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "0",
+  "h1": "72px",
+  "h2": "42px",
+  "h3": "24px",
+  "pad": "76px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "8px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "nonprofit"
+ ],
+ "styles": [
+  "warm",
+  "editorial",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "What We Do",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Programme",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Donate",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Impact",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Impact story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Stories",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "careers",
+   "label": "Get Involved",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

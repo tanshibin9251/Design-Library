@@ -1,0 +1,61 @@
+<style>
+/* Oakline — template-specific styles (tokens only, no hex) */
+.ok-rail{display:flex;gap:26px;list-style:none;font:600 13px var(--f-body);letter-spacing:.04em}
+.ok-bar{background:var(--c-secondary);color:var(--c-surface);font:500 12.5px var(--f-body);letter-spacing:.03em;text-align:center;padding:9px 16px}
+.ok-bar b{color:color-mix(in srgb,var(--c-accent) 55%,#fff)}
+.ok-hero{display:grid;grid-template-columns:minmax(320px,5fr) 7fr;min-height:min(86vh,760px)}
+.ok-hero-l{padding:clamp(32px,5vw,80px) clamp(20px,4vw,64px);display:flex;flex-direction:column;justify-content:space-between;gap:36px;border-right:1px solid var(--c-border)}
+.ok-hero-l h1{font-size:clamp(44px,6.4vw,var(--h1));line-height:.98;letter-spacing:-.02em}
+.ok-rooms{display:flex;flex-wrap:wrap;gap:8px}
+.ok-rooms a{border:1px solid var(--c-border);border-radius:99px;padding:.5em 1.1em;font:600 13px var(--f-body);text-decoration:none}
+.ok-rooms a:hover,.ok-rooms a.on{background:var(--c-primary);color:var(--c-surface);border-color:var(--c-primary)}
+.ok-scene{position:relative;min-height:420px}
+.ok-scene .ph{position:absolute;inset:0;border-radius:0;height:100%}
+.ok-pin{position:absolute;z-index:2}
+.ok-pin>button{width:34px;height:34px;border-radius:50%;border:2px solid var(--c-surface);background:var(--c-accent);color:var(--c-surface);font:700 16px/1 var(--f-body);cursor:pointer;box-shadow:0 0 0 0 color-mix(in srgb,var(--c-accent) 60%,transparent);animation:ok-pulse 2.4s infinite}
+.ok-pin .tip{position:absolute;left:44px;top:50%;translate:0 -50%;min-width:200px;background:var(--c-surface);border:1px solid var(--c-border);padding:12px 14px;border-radius:var(--radius);opacity:0;pointer-events:none;transition:opacity .2s;font:500 13px var(--f-body)}
+.ok-pin .tip b{display:block;font:600 15px var(--f-head);margin-bottom:2px}
+.ok-pin:hover .tip,.ok-pin:focus-within .tip{opacity:1;pointer-events:auto}
+@keyframes ok-pulse{70%{box-shadow:0 0 0 14px transparent}}
+.ok-roomtiles{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-block:1px solid var(--c-border)}
+.ok-roomtiles a{padding:30px 22px 26px;border-right:1px solid var(--c-border);text-decoration:none;display:flex;flex-direction:column;gap:46px;transition:background .25s}
+.ok-roomtiles a:last-child{border-right:0}
+.ok-roomtiles a:hover{background:color-mix(in srgb,var(--c-primary) 8%,var(--c-surface))}
+.ok-roomtiles small{font:600 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.ok-roomtiles h3{font-size:clamp(22px,2.2vw,30px)}
+.ok-swatches{display:flex;flex-wrap:wrap;gap:22px 34px;align-items:flex-end}
+.ok-sw{display:flex;flex-direction:column;gap:10px;align-items:flex-start;font:600 13px var(--f-body);text-decoration:none}
+.ok-sw i{width:84px;height:84px;border-radius:50%;border:1px solid var(--c-border);background:var(--s);box-shadow:inset 0 0 0 5px var(--c-surface),inset 0 0 0 6px color-mix(in srgb,var(--c-text) 12%,transparent)}
+.ok-sw small{opacity:.6;font-weight:500}
+.ok-prods{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 22px}
+.ok-prod{text-decoration:none;display:flex;flex-direction:column;gap:6px}
+.ok-prod .ph{border-radius:2px}
+.ok-prod .lead-t{position:absolute;left:10px;top:10px;z-index:2;background:var(--c-surface);padding:.3em .7em;border-radius:99px;font:600 11px var(--f-body)}
+.ok-prod h3{font-size:19px;margin-top:8px}
+.ok-prod .dim{font:500 12.5px var(--f-body);opacity:.62}
+.ok-prod .row{display:flex;justify-content:space-between;align-items:center}
+.ok-dots{display:flex;gap:5px}.ok-dots i{width:13px;height:13px;border-radius:50%;background:var(--s);border:1px solid color-mix(in srgb,var(--c-text) 22%,transparent)}
+.ok-craft{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--c-border)}
+.ok-craft>div{padding:clamp(24px,3vw,44px);border-right:1px solid var(--c-border)}.ok-craft>div:last-child{border-right:0}
+.ok-craft .n{font:400 clamp(54px,6vw,92px)/1 var(--f-head);color:var(--c-accent)}
+.ok-craft h3{margin:14px 0 8px}
+.ok-showroom{display:grid;grid-template-columns:1fr 1fr;background:var(--c-primary);color:var(--c-surface)}
+.ok-showroom>div{padding:clamp(32px,5vw,72px)}
+.ok-showroom .ph{height:100%;border-radius:0;min-height:300px}
+.ok-showroom h2{color:inherit;margin-bottom:12px}
+.ok-showroom .btn{background:var(--c-surface);color:var(--c-primary);border-color:var(--c-surface)}
+.ok-filter{display:grid;grid-template-columns:230px 1fr;gap:clamp(24px,4vw,56px)}
+.ok-side h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
+.ok-side ul{list-style:none;margin-bottom:28px;display:grid;gap:8px;font:500 14px var(--f-body)}
+.ok-side li a{text-decoration:none;display:flex;justify-content:space-between}.ok-side li a:hover,.ok-side li a.on{color:var(--c-accent);font-weight:700}
+.ok-side li small{opacity:.5}
+.ok-specs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--c-border);margin:22px 0}
+.ok-specs div{padding:12px 0;border-bottom:1px solid var(--c-border);display:flex;justify-content:space-between;font:500 14px var(--f-body)}
+.ok-specs div:nth-child(odd){padding-right:18px}.ok-specs div:nth-child(even){padding-left:18px;border-left:1px solid var(--c-border)}
+.ok-finish{display:flex;gap:12px;margin:8px 0 20px}
+.ok-finish button{width:44px;height:44px;border-radius:50%;border:1px solid var(--c-border);background:var(--s);cursor:pointer;outline-offset:3px}
+.ok-finish button[aria-pressed=true]{outline:2px solid var(--c-accent)}
+.ok-ship{background:color-mix(in srgb,var(--c-primary) 7%,var(--c-surface));padding:14px 16px;border-radius:var(--radius);font:500 13.5px var(--f-body)}
+@media(max-width:960px){.ok-hero,.ok-showroom,.ok-filter{grid-template-columns:1fr}.ok-hero-l{border-right:0}.ok-roomtiles{grid-template-columns:repeat(2,1fr)}.ok-roomtiles a{border-bottom:1px solid var(--c-border)}.ok-prods{grid-template-columns:repeat(2,1fr)}.ok-craft{grid-template-columns:1fr}.ok-craft>div{border-right:0;border-bottom:1px solid var(--c-border)}.ok-side{display:none}}
+@media(prefers-reduced-motion:reduce){.ok-pin>button{animation:none}}
+/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.shoptop{flex-wrap:wrap;gap:8px}.shoptop .sort{width:100%}.shoptop select{max-width:100%}.ok-prods{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}.ok-pin .tip{left:auto;right:44px;min-width:170px}.ok-scene{overflow:hidden;min-height:340px}.ok-hero h1{font-size:clamp(38px,11vw,60px)}.ok-roomtiles a{padding:20px 14px;gap:24px}.ok-swatches{gap:18px 22px}.ok-sw i{width:64px;height:64px}.ok-specs{grid-template-columns:1fr}.ok-specs div:nth-child(even){padding-left:0;border-left:0}}</style><div class="ok-bar">Made to order in Malaysia · <b>Free delivery &amp; assembly</b> in Klang Valley</div><header class="nav"><div class="wrap"><a class="logo" href="{{p:home}}">Oakline</a><ul class="ok-rail"><li><a href="{{p:shop}}">Living</a></li><li><a href="{{p:shop}}">Dining</a></li><li><a href="{{p:shop}}">Bedroom</a></li><li><a href="{{p:shop}}">Workspace</a></li><li><a href="{{p:materials}}">Woods</a></li><li class="more"><a href="#" tabindex="0">All pages ▾</a><div class="dd"><div><h4>Main</h4><a href="{{p:home}}">Home</a><a href="{{p:about}}">Our workshop</a><a href="{{p:contact}}">Showroom</a></div><div><h4>Shop</h4><a href="{{p:shop}}">Shop all</a><a href="{{p:product}}">Single product</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a></div><div><h4>Special</h4><a href="{{p:materials}}">Woods & finishes</a><a href="{{p:delivery}}">Delivery & assembly</a></div><div><h4>Content</h4><a href="{{p:faq}}">FAQ</a><a href="{{p:blog}}">Journal</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="btn" href="{{p:cart}}">Cart (2)</a></div></header>

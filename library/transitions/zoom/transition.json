@@ -1,0 +1,8 @@
+{
+ "slug": "zoom",
+ "name": "Zoom",
+ "zh": "缩放",
+ "tag": "The new page grows into view while the old one recedes.",
+ "group": "Soft",
+ "license": "自写，无第三方代码"
+}

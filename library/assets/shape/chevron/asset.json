@@ -1,0 +1,17 @@
+{
+ "slug": "chevron",
+ "name": "Chevron",
+ "zh": "箭头角",
+ "cat": "shape",
+ "file": "chevron.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "arrow",
+  "direction"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

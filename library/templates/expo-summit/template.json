@@ -1,0 +1,97 @@
+{
+ "format": "fragments",
+ "slug": "expo-summit",
+ "name": "Nexus Summit",
+ "zh": "亚洲产品设计峰会",
+ "tag": "High-energy conference site with a gradient hero, live-style countdown, Day 1/Day 2 agenda tabs, speaker grid and ticket tiers.",
+ "colors": {
+  "primary": "#6d28d9",
+  "secondary": "#4b5563",
+  "text": "#0b0b12",
+  "accent": "#06b6d4",
+  "surface": "#ffffff",
+  "border": "#e5e7eb"
+ },
+ "fonts": {
+  "head": "Red Hat Display",
+  "body": "Red Hat Text"
+ },
+ "tok": {
+  "hlh": ".95",
+  "hw": "900",
+  "hcase": "none",
+  "hls": "-.04em",
+  "h1": "124px",
+  "h2": "54px",
+  "h3": "22px",
+  "pad": "84px",
+  "ew": "800",
+  "stat": "var(--c-primary)",
+  "radius": "22px"
+ },
+ "types": [
+  "landing"
+ ],
+ "industries": [
+  "events",
+  "media"
+ ],
+ "styles": [
+  "bold",
+  "maximal",
+  "playful"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Event"
+  },
+  {
+   "slug": "agenda",
+   "label": "Agenda",
+   "group": "Event"
+  },
+  {
+   "slug": "speakers",
+   "label": "Speakers",
+   "group": "Event"
+  },
+  {
+   "slug": "tickets",
+   "label": "Tickets",
+   "group": "Event"
+  },
+  {
+   "slug": "venue",
+   "label": "Venue & travel",
+   "group": "Event"
+  },
+  {
+   "slug": "sponsors",
+   "label": "Sponsors",
+   "group": "Event"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Event"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Event"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

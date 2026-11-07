@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1200">
+<title>PC Gaming Expo · poster 1200×1697</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded:400,600,800|Jost:300,400,500,600,700|Noto+Sans+SC:400,700&display=swap">
+<style>
+:root{
+  --c-primary:#FF6A00;      /* organizer orange, taken from the logo */
+  --c-secondary:#1A1D22;
+  --c-text:#F4F4F2;
+  --c-accent:#FFB070;
+  --c-surface:#0B0D10;
+  --c-border:#2A2E35;
+  --c-mute:#9AA0AA;
+  --on-primary:#111111;
+  --f-head:'Unbounded','Noto Sans SC',sans-serif;
+  --f-body:'Jost','Noto Sans SC',sans-serif;
+}
+html,body{margin:0;background:#fff}
+.poster{position:relative;width:1200px;height:1697px;overflow:hidden;background:var(--c-surface);color:var(--c-text);font-family:var(--f-body);box-sizing:border-box}
+.poster *{box-sizing:border-box;margin:0}
+/* backdrop: faint grid + warm floor glow + diagonal light band */
+.bg{position:absolute;inset:0;background:
+  radial-gradient(900px 700px at 50% 36%,rgba(255,106,0,.22),transparent 70%),
+  linear-gradient(180deg,#14171c 0%,var(--c-surface) 55%,#07080a 100%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--c-border) 1px,transparent 1px),linear-gradient(90deg,var(--c-border) 1px,transparent 1px);background-size:80px 80px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%)}
+.band{position:absolute;right:-120px;top:-60px;width:620px;height:300px;background:linear-gradient(100deg,rgba(255,255,255,.10),rgba(255,255,255,0));transform:skewX(-32deg)}
+.dots{position:absolute;right:0;top:0;width:430px;height:260px;background-image:radial-gradient(var(--c-primary) 3px,transparent 3.6px);background-size:18px 18px;-webkit-mask-image:linear-gradient(225deg,#000,transparent 70%);mask-image:linear-gradient(225deg,#000,transparent 70%);opacity:.8}
+/* header */
+.logo{position:absolute;left:64px;top:44px;width:430px;height:auto}
+.ed{position:absolute;right:64px;top:92px;font:600 20px/1 var(--f-body);letter-spacing:.42em;text-transform:uppercase;color:var(--c-text)}
+.presents{position:absolute;left:0;right:0;top:238px;text-align:center;font:500 22px/1 var(--f-body);letter-spacing:.7em;text-transform:uppercase;color:var(--c-mute)}
+/* hero: GPU fan echoing the logo's ring + arrow */
+.hero{position:absolute;left:50%;top:300px;width:640px;height:640px;margin-left:-320px}
+.glow{position:absolute;inset:-60px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,0,.55),rgba(255,106,0,0) 66%)}
+.shell{position:absolute;inset:0;border-radius:50%;background:#101215;border:16px solid #1d2026;box-shadow:0 0 0 3px #343943,0 40px 80px -20px rgba(0,0,0,.8),inset 0 0 60px rgba(0,0,0,.8)}
+.blades{position:absolute;inset:34px;border-radius:50%;background:repeating-conic-gradient(from 8deg,rgba(255,106,0,.95) 0 20deg,rgba(255,106,0,.10) 20deg 40deg);-webkit-mask-image:radial-gradient(circle,transparent 0 17%,#000 18% 100%);mask-image:radial-gradient(circle,transparent 0 17%,#000 18% 100%);filter:saturate(1.1)}
+.swirl{position:absolute;inset:34px;border-radius:50%;background:conic-gradient(from 0deg,rgba(11,13,16,0) 0 20%,rgba(11,13,16,.85) 40%,rgba(11,13,16,0) 62%);}
+.ring{position:absolute;inset:-30px;border-radius:50%;border:12px solid #ececec;border-top-color:transparent;border-right-color:transparent;transform:rotate(-12deg);opacity:.92}
+.hub{position:absolute;left:50%;top:50%;width:200px;height:200px;margin:-100px 0 0 -100px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2b2f37,#0e1013);border:6px solid #343943;display:flex;align-items:center;justify-content:center}
+.hub svg{width:130px;height:130px}
+.ph{position:absolute;left:50%;top:50%;transform:translate(-50%,200px);font-size:18px;letter-spacing:.14em;color:var(--c-mute);white-space:nowrap}
+/* stat ribbons (like the team badges in the reference, but ours are stats) */
+.rib{position:absolute;top:690px;height:74px;display:flex;align-items:center;padding:0 26px;background:rgba(255,106,0,.16);border-top:2px solid var(--c-primary);border-bottom:2px solid var(--c-primary);font:800 30px/1 var(--f-head);letter-spacing:.02em}
+.rib small{font:500 16px/1.2 var(--f-body);letter-spacing:.26em;text-transform:uppercase;color:var(--c-accent);margin-left:14px}
+.rib.l{left:0;width:300px;padding-left:64px}
+.rib.r{right:0;width:300px;justify-content:flex-end;padding-right:64px}
+/* title */
+.t1{position:absolute;left:0;right:0;top:985px;text-align:center;font:800 104px/1 var(--f-head);letter-spacing:.01em;text-transform:uppercase}
+.t2{position:absolute;left:0;right:0;top:1090px;text-align:center;font:800 290px/1 var(--f-head);letter-spacing:.01em;text-transform:uppercase;color:var(--c-text)}
+.t2 i{font-style:normal;color:var(--c-primary)}
+/* info */
+.info{position:absolute;left:0;right:0;top:1418px;text-align:center}
+.when{font:500 30px/1.2 var(--f-body);letter-spacing:.1em;text-transform:uppercase}
+.when b{display:inline-block;width:2px;height:28px;background:var(--c-primary);margin:0 22px;vertical-align:-5px}
+.venue{margin-top:16px;font:700 32px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase}
+.addr{margin-top:6px;font:400 26px/1.3 var(--f-body);color:var(--c-mute)}
+.url{position:absolute;left:50%;bottom:46px;transform:translateX(-50%);display:flex;align-items:center;gap:0}
+.url span{display:block;padding:15px 44px;background:var(--c-primary);color:var(--on-primary);font:700 26px/1 var(--f-body);letter-spacing:.12em;text-transform:lowercase}
+.url::before,.url::after{content:"";width:130px;height:54px;background-image:radial-gradient(var(--c-primary) 2.4px,transparent 3px);background-size:11px 11px}
+.url::before{-webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000)}
+.url::after{-webkit-mask-image:linear-gradient(270deg,transparent,#000);mask-image:linear-gradient(270deg,transparent,#000)}
+</style></head>
+<body>
+<div class="poster">
+  <div class="bg"></div><div class="grid"></div><div class="band"></div><div class="dots"></div>
+
+  <img class="logo" src="organizer-logo.png" alt="GrowNotic">
+  <div class="ed">Edition 01 · 2026</div>
+  <div class="presents">Presents</div>
+
+  <div class="hero">
+    <div class="glow"></div>
+    <div class="shell"></div>
+    <div class="blades"></div>
+    <div class="swirl"></div>
+    <div class="ring"></div>
+    <div class="hub">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M26 74 L66 34 M66 34 L40 34 M66 34 L66 60" stroke="#FF6A00" stroke-width="14" stroke-linecap="square" fill="none"/></svg>
+    </div>
+  </div>
+
+  <div class="rib l">50+<small>Brands</small></div>
+  <div class="rib r"><small>Live rigs</small>300+</div>
+
+  <div class="t1">PC Gaming</div>
+  <div class="t2">Ex<i>p</i>o</div>
+
+  <div class="info">
+    <div class="when">10:00 AM – 8:00 PM<b></b>14 – 16 NOVEMBER 2026</div>
+    <div class="venue">Venue Name · Exhibition Hall</div>
+    <div class="addr">123 Anywhere St., Any City, ST 12345</div>
+  </div>
+
+  <div class="url"><span>www.yourevent.com</span></div>
+</div>
+</body></html>

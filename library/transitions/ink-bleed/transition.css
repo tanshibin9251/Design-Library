@@ -1,0 +1,8 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@property --pt-r { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@keyframes pt-in { from { --pt-r:0% } to { --pt-r:56% } }
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;mix-blend-mode:normal;-webkit-mask-image:radial-gradient(circle at 18% 28%,#000 calc(var(--pt-r)*1),transparent calc(var(--pt-r)*1 + 12%)),radial-gradient(circle at 78% 22%,#000 calc(var(--pt-r)*0.9),transparent calc(var(--pt-r)*0.9 + 12%)),radial-gradient(circle at 64% 82%,#000 calc(var(--pt-r)*1.05),transparent calc(var(--pt-r)*1.05 + 12%)),radial-gradient(circle at 24% 86%,#000 calc(var(--pt-r)*0.8),transparent calc(var(--pt-r)*0.8 + 12%)),radial-gradient(circle at 50% 50%,#000 calc(var(--pt-r)*1.1),transparent calc(var(--pt-r)*1.1 + 12%));mask-image:radial-gradient(circle at 18% 28%,#000 calc(var(--pt-r)*1),transparent calc(var(--pt-r)*1 + 12%)),radial-gradient(circle at 78% 22%,#000 calc(var(--pt-r)*0.9),transparent calc(var(--pt-r)*0.9 + 12%)),radial-gradient(circle at 64% 82%,#000 calc(var(--pt-r)*1.05),transparent calc(var(--pt-r)*1.05 + 12%)),radial-gradient(circle at 24% 86%,#000 calc(var(--pt-r)*0.8),transparent calc(var(--pt-r)*0.8 + 12%)),radial-gradient(circle at 50% 50%,#000 calc(var(--pt-r)*1.1),transparent calc(var(--pt-r)*1.1 + 12%));}

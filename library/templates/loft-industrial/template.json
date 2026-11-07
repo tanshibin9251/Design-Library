@@ -1,0 +1,112 @@
+{
+ "format": "fragments",
+ "slug": "loft-industrial",
+ "name": "Loft Industrial",
+ "zh": "工业阁楼",
+ "tag": "Dark bento-grid store for steel and leather furniture, with spec-sheet product pages and a trade programme.",
+ "colors": {
+  "primary": "#2a2a2a",
+  "secondary": "#8a8f94",
+  "text": "#ebe6db",
+  "accent": "#e0793a",
+  "surface": "#131313",
+  "border": "#343434"
+ },
+ "fonts": {
+  "head": "Big Shoulders Display",
+  "body": "IBM Plex Sans"
+ },
+ "tok": {
+  "hlh": ".92",
+  "hw": "800",
+  "hcase": "uppercase",
+  "hls": ".005em",
+  "h1": "112px",
+  "h2": "56px",
+  "h3": "26px",
+  "pad": "88px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "ecommerce"
+ ],
+ "industries": [
+  "furniture",
+  "interior"
+ ],
+ "styles": [
+  "dark",
+  "bento",
+  "maximal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "collection",
+   "label": "Collection",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Spec sheet",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "trade",
+   "label": "Trade & fit-outs",
+   "group": "Main"
+  },
+  {
+   "slug": "projects",
+   "label": "Installed",
+   "group": "Main"
+  },
+  {
+   "slug": "materials",
+   "label": "Steel & leather",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Workshop",
+   "group": "Main"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Support"
+  },
+  {
+   "slug": "journal",
+   "label": "Field notes",
+   "group": "Support"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

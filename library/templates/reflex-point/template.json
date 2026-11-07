@@ -1,0 +1,103 @@
+{
+ "format": "fragments",
+ "slug": "reflex-point",
+ "name": "Reflex Point",
+ "zh": "足点",
+ "tag": "Minimal Japanese reflexology studio: fixed vertical sidebar, vertical headline, interactive foot reflex map and course tickets.",
+ "colors": {
+  "primary": "#2f3d33",
+  "secondary": "#7d8a7e",
+  "text": "#26302a",
+  "accent": "#d94f30",
+  "surface": "#f7f5ef",
+  "border": "#d8d6cb"
+ },
+ "fonts": {
+  "head": "Shippori Mincho",
+  "body": "Zen Kaku Gothic New"
+ },
+ "tok": {
+  "hlh": "1.3",
+  "hw": "500",
+  "hcase": "none",
+  "hls": ".06em",
+  "h1": "88px",
+  "h2": "44px",
+  "h3": "26px",
+  "pad": "110px",
+  "ew": "500",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "massage",
+  "health"
+ ],
+ "styles": [
+  "japanese",
+  "minimal",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Practice"
+  },
+  {
+   "slug": "treatments",
+   "label": "Treatments",
+   "group": "Practice"
+  },
+  {
+   "slug": "map",
+   "label": "Reflex map",
+   "group": "Practice"
+  },
+  {
+   "slug": "tickets",
+   "label": "Course tickets",
+   "group": "Practice"
+  },
+  {
+   "slug": "practitioner",
+   "label": "Practitioner",
+   "group": "Practice"
+  },
+  {
+   "slug": "reserve",
+   "label": "Reserve",
+   "group": "Visit"
+  },
+  {
+   "slug": "access",
+   "label": "Access & hours",
+   "group": "Visit"
+  },
+  {
+   "slug": "notes",
+   "label": "Journal",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

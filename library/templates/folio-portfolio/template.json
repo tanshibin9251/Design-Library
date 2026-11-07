@@ -1,0 +1,82 @@
+{
+ "format": "fragments",
+ "slug": "folio-portfolio",
+ "name": "Aria Lim Portfolio",
+ "zh": "设计师作品集",
+ "tag": "Minimal designer portfolio: oversized name, a numbered work index with hover thumbnails, CV table and a giant email link.",
+ "colors": {
+  "primary": "#111111",
+  "secondary": "#6b6b64",
+  "text": "#111111",
+  "accent": "#b4ff3a",
+  "surface": "#f3f1ea",
+  "border": "#cfcbbf"
+ },
+ "fonts": {
+  "head": "Instrument Serif",
+  "body": "Instrument Sans"
+ },
+ "tok": {
+  "hlh": ".9",
+  "hw": "400",
+  "hcase": "none",
+  "hls": "-.03em",
+  "h1": "220px",
+  "h2": "60px",
+  "h3": "30px",
+  "pad": "96px",
+  "ew": "500",
+  "stat": "var(--c-text)",
+  "radius": "6px"
+ },
+ "types": [
+  "portfolio"
+ ],
+ "industries": [
+  "agency",
+  "photography"
+ ],
+ "styles": [
+  "minimal",
+  "typographic",
+  "editorial"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Index",
+   "group": "Folio"
+  },
+  {
+   "slug": "work",
+   "label": "Work",
+   "group": "Folio"
+  },
+  {
+   "slug": "project",
+   "label": "Project",
+   "group": "Folio"
+  },
+  {
+   "slug": "about",
+   "label": "About & CV",
+   "group": "Folio"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Folio"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

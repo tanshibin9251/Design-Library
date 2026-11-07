@@ -1,0 +1,93 @@
+{
+ "format": "fragments",
+ "slug": "court-line",
+ "name": "Court Line",
+ "zh": "球场线",
+ "tag": "Light sports-brand site drawn in badminton-court geometry: hairline zones, mono dimension labels, a court diagram hero, strictly black / grey / white.",
+ "colors": {
+  "primary": "#0b0b0c",
+  "secondary": "#131416",
+  "text": "#17181a",
+  "accent": "#45484f",
+  "surface": "#ffffff",
+  "border": "#dcdde0"
+ },
+ "fonts": {
+  "head": "Bricolage Grotesque",
+  "body": "Instrument Sans"
+ },
+ "tok": {
+  "hlh": "1.02",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.025em",
+  "h1": "112px",
+  "h2": "52px",
+  "h3": "26px",
+  "h1big": "140px",
+  "pad": "96px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "ecommerce"
+ ],
+ "industries": [
+  "sports"
+ ],
+ "styles": [
+  "minimal",
+  "geometric",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "products",
+   "label": "Products",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "cookie-policy",
+   "label": "Cookie policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "terms",
+   "label": "Terms & conditions",
+   "group": "Utility"
+  },
+  {
+   "slug": "sitemap",
+   "label": "Sitemap",
+   "group": "Utility"
+  }
+ ]
+}

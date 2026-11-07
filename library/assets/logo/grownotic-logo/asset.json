@@ -1,0 +1,19 @@
+{
+ "slug": "grownotic-logo",
+ "name": "GrowNotic logo",
+ "zh": "",
+ "cat": "logo",
+ "file": "grownotic-logo.png",
+ "format": "png",
+ "width": 1600,
+ "height": 416,
+ "tags": [
+  "organizer",
+  "client",
+  "orange",
+  "pc-expo"
+ ],
+ "license": "local_only",
+ "source": "Client-supplied (PC Gaming Expo organiser)",
+ "recolor": false
+}

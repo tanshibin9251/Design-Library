@@ -1,0 +1,13 @@
+{
+ "slug": "gpu-expo-poster",
+ "name": "GPU Expo Poster",
+ "zh": "显卡科技展览海报",
+ "tag": "近黑底 + 橙色 RGB 光效的三风扇显卡主视觉，宽体巨型标题，适合电竞 / PC 硬件 / 科技展会。",
+ "type": "poster",
+ "size": {"label": "Instagram portrait 4:5", "w": 1080, "h": 1350},
+ "styles": ["futuristic", "dark", "bold"],
+ "industries": ["gaming", "tech", "events"],
+ "colors": {"primary": "#FF6A00", "secondary": "#1A1D22", "text": "#F4F4F2", "accent": "#FFB070", "surface": "#0B0D10", "border": "#2A2E35"},
+ "fonts": {"head": "Unbounded", "body": "Jost"},
+ "license": "库内自有"
+}

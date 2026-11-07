@@ -1,0 +1,48 @@
+<style>
+/* Heirloom Classic — tokens only */
+.hl-top{background:var(--c-primary);color:var(--on-primary);text-align:center;font:500 11px var(--f-body);letter-spacing:.3em;text-transform:uppercase;padding:9px}
+.hl-head{border-bottom:1px solid var(--c-border);background:var(--c-surface);position:sticky;top:0;z-index:30}
+.hl-head .in{max-width:var(--w);margin:auto;padding:14px 20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.hl-head ul{display:flex;gap:30px;list-style:none;font:500 12px var(--f-body);letter-spacing:.22em;text-transform:uppercase}
+.hl-head ul.r{justify-content:flex-end}
+.hl-head ul a{text-decoration:none;padding-bottom:4px;border-bottom:1px solid transparent}.hl-head ul a:hover{border-color:var(--c-accent);color:var(--c-accent)}
+.hl-logo{text-align:center;text-decoration:none;font:500 30px/1 var(--f-head);letter-spacing:.14em;text-transform:uppercase}
+.hl-logo small{display:block;font:400 10px var(--f-body);letter-spacing:.5em;margin-top:6px;color:var(--c-accent)}
+.hl-head .more{position:relative}
+.hl-frame{border:1px solid var(--c-accent);outline:1px solid var(--c-accent);outline-offset:-9px;padding:clamp(40px,6vw,90px);text-align:center;position:relative}
+.hl-frame::before,.hl-frame::after{content:"❖";position:absolute;left:50%;translate:-50% 0;background:var(--c-surface);color:var(--c-accent);padding:0 14px;font-size:16px}
+.hl-frame::before{top:-12px}.hl-frame::after{bottom:-12px}
+.hl-hero{padding:clamp(30px,5vw,70px) 20px}
+.hl-hero h1{font-size:clamp(46px,8vw,var(--h1));font-weight:400;line-height:1;letter-spacing:.01em}
+.hl-hero h1 i{color:var(--c-accent)}
+.hl-hero p{max-width:52ch;margin:20px auto 30px;font:italic 400 20px/1.6 var(--f-head)}
+.hl-rule{display:flex;align-items:center;gap:18px;color:var(--c-accent);margin:26px auto;max-width:360px}
+.hl-rule::before,.hl-rule::after{content:"";flex:1;height:1px;background:currentColor}
+.hl-btn{display:inline-block;padding:1em 2.4em;border:1px solid var(--c-accent);font:500 12px var(--f-body);letter-spacing:.28em;text-transform:uppercase;text-decoration:none;background:var(--c-accent);color:var(--c-surface)}
+.hl-btn.o{background:none;color:var(--c-text)}.hl-btn:hover{background:var(--c-primary);border-color:var(--c-primary);color:var(--on-primary)}
+.hl-sec{padding:var(--pad) 0}
+.hl-title{text-align:center;margin-bottom:46px}
+.hl-title .num{font:400 13px var(--f-body);letter-spacing:.4em;color:var(--c-accent);text-transform:uppercase}
+.hl-title h2{font-weight:400;margin-top:10px}
+.hl-col{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--c-border)}
+.hl-col a{padding:24px 24px 30px;text-align:center;text-decoration:none;border-right:1px solid var(--c-border);display:block}
+.hl-col a:last-child{border-right:0}
+.hl-col .roman{font:400 38px var(--f-head);color:var(--c-accent);margin:18px 0 4px}
+.hl-col h3{font-weight:400;letter-spacing:.06em;text-transform:uppercase;font-size:22px}
+.hl-col p{font:italic 400 17px var(--f-head);opacity:.75;margin-top:6px}
+.hl-col .ph{aspect-ratio:3/4;border-radius:0}
+.hl-bespoke{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--c-primary)}
+.hl-bespoke>div{padding:clamp(30px,5vw,70px)}
+.hl-bespoke .d{background:var(--c-primary);color:var(--on-primary)}.hl-bespoke .d h2{color:inherit;font-weight:400}
+.hl-steps{list-style:none;counter-reset:s;display:grid;gap:18px}
+.hl-steps li{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent);padding-bottom:16px}
+.hl-steps li::before{content:counter(s,upper-roman);font:400 26px var(--f-head);color:var(--c-accent)}
+.hl-piece{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.hl-dl{display:grid;grid-template-columns:140px 1fr;gap:10px 20px;font:400 15px var(--f-body);border-top:1px solid var(--c-border);padding-top:20px;margin-top:20px}
+.hl-dl dt{font:500 11px var(--f-body);letter-spacing:.25em;text-transform:uppercase;color:var(--c-accent);padding-top:3px}
+.hl-quote{text-align:center;max-width:780px;margin:auto}
+.hl-quote blockquote{font:italic 400 clamp(26px,3.4vw,40px)/1.35 var(--f-head)}
+.hl-quote cite{display:block;margin-top:18px;font:500 11px var(--f-body);letter-spacing:.3em;text-transform:uppercase;color:var(--c-accent);font-style:normal}
+@media(max-width:900px){.hl-head .in{grid-template-columns:1fr}.hl-head ul{display:none}.hl-col,.hl-bespoke,.hl-piece{grid-template-columns:1fr}.hl-col a{border-right:0;border-bottom:1px solid var(--c-border)}}
+.hl-head .more{position:relative}.hl-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:22px 34px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:50;text-align:left;text-transform:none;letter-spacing:0;font-family:var(--f-body)}.hl-head .more:hover .dd,.hl-head .more:focus-within .dd{display:grid}.hl-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.hl-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none}.hl-head .dd a:hover{color:var(--c-accent);background:none;opacity:1}
+/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.hl-frame{padding:34px 18px}.hl-hero h1{font-size:clamp(34px,10vw,52px)}.hl-hero p{font-size:17px}.hl-btn{padding:.9em 1.4em;display:block;margin:8px 0}.hl-col a{padding:18px}}</style><div class="hl-top">Appointments at our Kuala Lumpur salon · Complimentary courier within Malaysia</div><header class="hl-head"><div class="in"><ul><li><a href="{{p:collections}}">Collections</a></li><li><a href="{{p:bespoke}}">Bespoke</a></li><li><a href="{{p:restoration}}">Restoration</a></li></ul><a class="hl-logo" href="{{p:home}}">Wardlaw<small>Furniture Makers · Est. 1962</small></a><ul class="r"><li><a href="{{p:atelier}}">The Atelier</a></li><li><a href="{{p:visit}}">Visit</a></li><li class="more"><a href="#" tabindex="0">Index ▾</a><div class="dd"><div><h4>Maison</h4><a href="{{p:home}}">Home</a><a href="{{p:collections}}">Collections</a><a href="{{p:collection}}">Single collection</a><a href="{{p:piece}}">The piece</a><a href="{{p:journal}}">Chronicle</a><a href="{{p:visit}}">Visit the salon</a></div><div><h4>Atelier</h4><a href="{{p:enquire}}">Request a quotation</a><a href="{{p:bespoke}}">Bespoke commissions</a><a href="{{p:atelier}}">The atelier</a><a href="{{p:provenance}}">Provenance & timber</a><a href="{{p:restoration}}">Restoration</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul></div></header>

@@ -1,0 +1,55 @@
+<style>
+/* Trailhead Outdoor — tokens only */
+.th-bar{background:var(--c-primary);color:var(--on-primary);font:600 12.5px var(--f-body);display:flex;gap:26px;justify-content:center;padding:8px 14px;flex-wrap:wrap;letter-spacing:.02em}
+.th-bar b{color:var(--c-accent)}
+.th-head{background:var(--c-surface);border-bottom:2px solid var(--c-text);position:sticky;top:0;z-index:40}
+.th-head .in{max-width:var(--w);margin:auto;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;padding:14px 20px}
+.th-logo{font:700 24px var(--f-head);text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+.th-logo svg{width:34px;height:34px}
+.th-act{display:flex;gap:6px;list-style:none;justify-content:center;font:700 14px var(--f-body)}
+.th-act>li>a{display:flex;align-items:center;gap:7px;padding:.55em 1em;border-radius:99px;text-decoration:none}
+.th-act>li>a i{width:.55em;height:.55em;border-radius:50%;background:var(--d)}
+.th-act>li>a:hover{background:color-mix(in srgb,var(--c-primary) 12%,var(--c-surface))}
+.th-pack{background:var(--c-accent);color:var(--c-text);border-radius:8px;padding:.6em 1.1em;font:700 14px var(--f-body);text-decoration:none}
+.th-head .more{position:relative}
+.th-hero{position:relative;min-height:min(86vh,720px);display:flex;align-items:flex-end;color:var(--on-primary);overflow:hidden}
+.th-hero .ph{position:absolute;inset:0;border-radius:0;height:100%}
+.th-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,color-mix(in srgb,var(--c-primary) 92%,#000) 0,transparent 65%)}
+.th-hero .in{position:relative;z-index:2;max-width:var(--w);margin:auto;width:100%;padding:0 20px 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:end}
+.th-hero h1{font-weight:700;font-size:clamp(46px,7.4vw,var(--h1));line-height:.98;color:var(--on-primary);letter-spacing:-.02em}
+.th-cond{background:color-mix(in srgb,var(--c-surface) 94%,transparent);color:var(--c-text);padding:18px 20px;border-radius:12px;font:500 14px var(--f-body)}
+.th-cond h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px;opacity:.6}
+.th-cond li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--c-border)}
+.th-cond li:last-child{border:0}
+.th-cond .ok{color:var(--c-primary)}.th-cond .warn{color:var(--c-accent)}
+.th-topo{position:relative;background-color:var(--c-surface);background-image:radial-gradient(ellipse at 20% 30%,transparent 0 22%,color-mix(in srgb,var(--c-border) 70%,transparent) 22.3% 22.8%,transparent 23% 31%,color-mix(in srgb,var(--c-border) 70%,transparent) 31.3% 31.8%,transparent 32% 40%,color-mix(in srgb,var(--c-border) 70%,transparent) 40.3% 40.8%,transparent 41%),radial-gradient(ellipse at 85% 70%,transparent 0 18%,color-mix(in srgb,var(--c-border) 70%,transparent) 18.3% 18.8%,transparent 19% 27%,color-mix(in srgb,var(--c-border) 70%,transparent) 27.3% 27.8%,transparent 28%)}
+.th-acts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.th-act-card{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:3/4;display:flex;align-items:flex-end;color:var(--on-primary);text-decoration:none}
+.th-act-card .ph{position:absolute;inset:0;border-radius:0;height:100%}
+.th-act-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 55%)}
+.th-act-card div{position:relative;z-index:2;padding:18px}
+.th-act-card h3{color:var(--on-primary);font-size:28px}
+.th-act-card small{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.th-prods{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.th-p{text-decoration:none;display:flex;flex-direction:column;gap:8px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:14px;padding:12px;transition:translate .2s,box-shadow .2s}
+.th-p:hover{translate:0 -4px;box-shadow:0 14px 28px -14px color-mix(in srgb,var(--c-text) 50%,transparent)}
+.th-p .ph{aspect-ratio:1;border-radius:10px}
+.th-p h3{font-size:19px}
+.th-chips{display:flex;gap:6px;flex-wrap:wrap}
+.th-chips span{font:600 11.5px var(--f-body);padding:.25em .65em;border-radius:6px;background:color-mix(in srgb,var(--c-primary) 10%,var(--c-surface));color:var(--c-primary)}
+.th-p .row{display:flex;justify-content:space-between;align-items:center;font:700 17px var(--f-body)}
+.th-diff{display:inline-flex;gap:3px;align-items:center;font:700 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase}
+.th-diff i{width:9px;height:9px;border-radius:50%;background:var(--c-border)}.th-diff i.on{background:var(--c-accent)}
+.th-trip{display:grid;grid-template-columns:1fr 1.2fr;gap:0;border-radius:18px;overflow:hidden;background:var(--c-primary);color:var(--on-primary)}
+.th-trip>div{padding:clamp(26px,4vw,54px)}
+.th-trip h2{color:inherit}
+.th-trip .sel{display:grid;gap:10px;margin:18px 0}
+.th-trip select{background:color-mix(in srgb,var(--on-primary) 10%,transparent);color:inherit;border:1px solid color-mix(in srgb,var(--on-primary) 30%,transparent);padding:.8em;border-radius:8px;font:600 15px var(--f-body)}
+.th-trip option{color:var(--c-text)}
+.th-spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.th-spec div{border:1px solid var(--c-border);border-radius:10px;padding:12px;text-align:center;background:var(--c-surface)}
+.th-spec b{display:block;font:700 22px var(--f-head);color:var(--c-primary)}.th-spec small{font:600 11px var(--f-body);letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+.th-foot{background:var(--c-primary);color:var(--on-primary)}
+@media(max-width:900px){.th-head .in{grid-template-columns:1fr auto}.th-act{display:none}.th-hero .in,.th-trip{grid-template-columns:1fr}.th-acts,.th-prods{grid-template-columns:repeat(2,1fr)}.th-spec{grid-template-columns:repeat(2,1fr)}}
+.th-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);border-radius:12px;box-shadow:0 24px 50px -18px rgba(0,0,0,.35);min-width:500px;z-index:50;text-align:left;font-family:var(--f-body)}.th-head .more:hover .dd,.th-head .more:focus-within .dd{display:grid}.th-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55}.th-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-decoration:none;border:0;background:none}.th-head .dd a:hover{color:var(--c-accent)}
+/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.th-hero{min-height:560px}.th-hero h1{font-size:clamp(36px,10.5vw,54px)}.th-acts,.th-prods{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}.th-p h3{font-size:16px}.th-diff{flex-wrap:wrap}.th-p{padding:8px}.th-bar{font-size:11.5px;gap:6px 16px}.th-trip>div{padding:24px}}</style><div class="th-bar"><span>Trail report: <b>Gunung Datuk — dry, 24°C</b></span><span>Free shipping over RM 250</span><span>Rent before you buy</span></div><header class="th-head"><div class="in"><a class="th-logo" href="{{p:home}}"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M2 34 L15 10 L22 22 L27 14 L38 34Z" fill="var(--c-primary)"/><path d="M15 10 L18.5 16.5 L14 15Z" fill="var(--c-surface)"/><circle cx="31" cy="9" r="4" fill="var(--c-accent)"/></svg>Ridgeline</a><ul class="th-act"><li><a href="{{p:shop}}"><i style="--d:var(--c-primary)"></i>Hike</a></li><li><a href="{{p:shop}}"><i style="--d:var(--c-accent)"></i>Camp</a></li><li><a href="{{p:shop}}"><i style="--d:var(--c-secondary)"></i>Climb</a></li><li><a href="{{p:shop}}"><i style="--d:var(--c-text)"></i>Paddle</a></li><li><a href="{{p:guides}}">Guides</a></li><li class="more"><a href="#" tabindex="0">All ▾</a><div class="dd"><div><h4>Main</h4><a href="{{p:home}}">Home</a></div><div><h4>Shop</h4><a href="{{p:shop}}">Gear by activity</a><a href="{{p:product}}">Product</a><a href="{{p:cart}}">Pack</a><a href="{{p:checkout}}">Checkout</a></div><div><h4>Explore</h4><a href="{{p:guides}}">Trail guides</a><a href="{{p:guide}}">Single guide</a><a href="{{p:packing}}">Packing lists</a><a href="{{p:rentals}}">Rent gear</a></div><div><h4>Support</h4><a href="{{p:stores}}">Outfitter shops</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="th-pack" href="{{p:cart}}">Pack (2)</a></div></header>

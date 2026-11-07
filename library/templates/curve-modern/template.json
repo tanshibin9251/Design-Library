@@ -1,0 +1,112 @@
+{
+ "format": "fragments",
+ "slug": "curve-modern",
+ "name": "Curve Modern",
+ "zh": "圆润现代",
+ "tag": "Round, colour-blocked furniture store with a floating pill nav, sticker badges and a colour quiz.",
+ "colors": {
+  "primary": "#e4572e",
+  "secondary": "#3a6ea5",
+  "text": "#1c1b22",
+  "accent": "#ffc83d",
+  "surface": "#fff7ec",
+  "border": "#1c1b22"
+ },
+ "fonts": {
+  "head": "Plus Jakarta Sans",
+  "body": "DM Sans"
+ },
+ "tok": {
+  "hlh": ".95",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.04em",
+  "h1": "128px",
+  "h2": "60px",
+  "h3": "24px",
+  "pad": "96px",
+  "ew": "800",
+  "stat": "var(--c-primary)",
+  "radius": "32px",
+  "h1big": "128px"
+ },
+ "types": [
+  "ecommerce"
+ ],
+ "industries": [
+  "furniture"
+ ],
+ "styles": [
+  "clay",
+  "maximal",
+  "playful"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "bag",
+   "label": "Bag",
+   "group": "Shop"
+  },
+  {
+   "slug": "pay",
+   "label": "Pay",
+   "group": "Shop"
+  },
+  {
+   "slug": "rooms",
+   "label": "Room ideas",
+   "group": "Main"
+  },
+  {
+   "slug": "colours",
+   "label": "Colour club",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "Our story",
+   "group": "Main"
+  },
+  {
+   "slug": "help",
+   "label": "Help centre",
+   "group": "Support"
+  },
+  {
+   "slug": "reviews",
+   "label": "Reviews",
+   "group": "Support"
+  },
+  {
+   "slug": "contact",
+   "label": "Say hi",
+   "group": "Support"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

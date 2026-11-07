@@ -1,0 +1,51 @@
+{
+ "format": "fragments",
+ "slug": "grownotic",
+ "name": "Grow Notic",
+ "zh": "成长轨道",
+ "tag": "Orbit: an open ring and a rising arrow, taken from a wordmark. Near-black and warm white in alternating bands, one orange, wide-tracked caps.",
+ "colors": {
+  "primary": "#141310",
+  "secondary": "#C2410C",
+  "text": "#1C1A15",
+  "accent": "#F96405",
+  "surface": "#F6F5F2",
+  "border": "#DAD7CF"
+ },
+ "fonts": {
+  "head": "Montserrat",
+  "body": "DM Sans"
+ },
+ "tok": {
+  "hlh": "1.04",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "-.02em",
+  "h1": "112px",
+  "h2": "60px",
+  "h3": "26px",
+  "pad": "112px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "6px",
+  "fsb": "17px",
+  "h1big": "140px"
+ },
+ "types": ["company", "portfolio"],
+ "industries": ["agency", "tech"],
+ "styles": ["dark", "geometric", "typographic"],
+ "license": "库内自有",
+ "pages": [
+  {"slug": "home", "label": "Home", "group": "Main"},
+  {"slug": "services", "label": "Services", "group": "Main"},
+  {"slug": "about", "label": "About", "group": "Main"},
+  {"slug": "contact", "label": "Contact", "group": "Main"},
+  {"slug": "portfolio", "label": "Portfolio", "group": "Work"},
+  {"slug": "case", "label": "Case study", "group": "Work"},
+  {"slug": "blog", "label": "Blog", "group": "Content"},
+  {"slug": "post", "label": "Single post", "group": "Content"},
+  {"slug": "learning", "label": "Learning", "group": "Content"},
+  {"slug": "privacy", "label": "Privacy & Cookies", "group": "Utility"},
+  {"slug": "404", "label": "404 error", "group": "Utility"}
+ ]
+}

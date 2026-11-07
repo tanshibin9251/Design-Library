@@ -1,0 +1,152 @@
+{
+ "format": "fragments",
+ "slug": "civic-hall",
+ "name": "Civic Hall",
+ "zh": "市政厅",
+ "tag": "Municipal service directory: accessibility toolbar with text size and high contrast, task-first hero search, bin-day lookup and council meeting list.",
+ "colors": {
+  "primary": "#3f2a73",
+  "secondary": "#5b5675",
+  "text": "#1b1b1b",
+  "accent": "#ffdd00",
+  "surface": "#ffffff",
+  "border": "#b9b4c9"
+ },
+ "fonts": {
+  "head": "Atkinson Hyperlegible",
+  "body": "Atkinson Hyperlegible"
+ },
+ "tok": {
+  "hlh": "1.15",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "0",
+  "h1": "60px",
+  "h2": "36px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "blog"
+ ],
+ "industries": [
+  "government"
+ ],
+ "styles": [
+  "corporate",
+  "minimal",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Fees & Permits",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Community Projects",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Project",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "News & Notices",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "schedule",
+   "label": "Council meetings",
+   "group": "Special"
+  },
+  {
+   "slug": "booking",
+   "label": "Report an issue",
+   "group": "Special"
+  },
+  {
+   "slug": "newsletter",
+   "label": "Notices by email",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

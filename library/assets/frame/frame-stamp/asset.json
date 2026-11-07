@@ -1,0 +1,18 @@
+{
+ "slug": "frame-stamp",
+ "name": "Postage stamp",
+ "zh": "邮票边",
+ "cat": "frame",
+ "file": "frame-stamp.svg",
+ "format": "svg",
+ "width": 300,
+ "height": 360,
+ "tags": [
+  "stamp",
+  "retro",
+  "perforated"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

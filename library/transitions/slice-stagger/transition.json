@@ -1,0 +1,8 @@
+{
+ "slug": "slice-stagger",
+ "name": "Slice stagger",
+ "zh": "条带依次升起",
+ "tag": "The new page rises in five vertical strips, one after another from left to right, until they meet.",
+ "group": "Pattern",
+ "license": "自写，无第三方代码"
+}

@@ -1,0 +1,67 @@
+<!-- Highlighted Plan — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-ph{width:min(1000px,100%);display:grid;gap:2.4em;text-align:center}
+.fx-ph h2{font-size:clamp(2em,4.6vw,3em)}.fx-ph .sub{opacity:.65;margin-top:.5em}
+.fx-ph .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2em;align-items:center;text-align:left}
+.fx-ph .plan{position:relative;padding:1.8em;border:1px solid var(--border);border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 94%,var(--text));display:grid;gap:1.1em;transition:transform calc(.35s/var(--speed)) ease,box-shadow calc(.35s/var(--speed)) ease}
+.fx-ph .plan:hover{transform:translateY(-6px);box-shadow:0 26px 40px -28px color-mix(in srgb,var(--text) 60%,transparent)}
+.fx-ph .plan h3{font-size:1.2em}.fx-ph .d{opacity:.65;font-size:.9em}
+.fx-ph .price b{font:600 3em/1 var(--font-heading)}.fx-ph .price small{opacity:.6;margin-left:.3em}
+.fx-ph ul{list-style:none;margin:0;padding:0;display:grid;gap:.6em;font-size:.93em}
+.fx-ph li{display:flex;gap:.65em;align-items:center}.fx-ph li::before{content:"✓";flex:none;width:1.5em;height:1.5em;border-radius:50%;display:grid;place-items:center;font-size:.72em;font-weight:800;background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--text)}
+.fx-ph .btn{display:block;text-align:center;padding:.9em 1em;border-radius:var(--radius);font-weight:700;text-decoration:none;border:1.5px solid var(--primary);color:var(--primary);transition:background .25s,color .25s}
+.fx-ph .btn:hover{background:var(--primary);color:var(--on-primary)}.fx-ph .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-ph .feat{background:var(--primary);color:var(--on-primary);border-color:var(--primary);padding:2.3em 1.8em;transform:scale(1.04);box-shadow:0 30px 50px -30px var(--primary)}
+.fx-ph .feat:hover{transform:scale(1.04) translateY(-6px)}
+.fx-ph .feat .d{opacity:.8}.fx-ph .feat li::before{background:color-mix(in srgb,var(--on-primary) 20%,transparent);color:var(--on-primary)}
+.fx-ph .feat .btn{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}.fx-ph .feat .btn:hover{filter:brightness(1.08)}
+.fx-ph .feat .btn:focus-visible{outline-color:var(--on-primary)}
+.fx-ph .rib{position:absolute;top:1.1em;right:1.1em;padding:.3em .8em;border-radius:99px;font-size:.72em;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--on-accent)}
+@media(max-width:860px){.fx-ph .plans{grid-template-columns:1fr}.fx-ph .feat,.fx-ph .feat:hover{transform:none}
+.fx-ph .feat.is-tap{transform:none}}
+@media(prefers-reduced-motion:reduce){.fx-ph .plan{transition:none}.fx-ph .plan:hover{transform:none}.fx-ph .feat:hover{transform:scale(1.04)}
+.fx-ph .plan.is-tap{transform:none}
+.fx-ph .feat.is-tap{transform:scale(1.04)}}
+/* touch: :hover mirrored as .is-tap */
+.fx-ph .plan.is-tap{transform:translateY(-6px);box-shadow:0 26px 40px -28px color-mix(in srgb,var(--text) 60%,transparent)}
+.fx-ph .btn.is-tap{background:var(--primary);color:var(--on-primary)}
+.fx-ph .feat.is-tap{transform:scale(1.04) translateY(-6px)}
+.fx-ph .feat .btn.is-tap{filter:brightness(1.08)}
+
+</style>
+
+<div class="fx fx-ph"><div><h2>Pick the plan that fits</h2><p class="sub">Every plan includes hosting, SSL and updates.</p></div><div class="plans">
+<article class="plan"><h3>Basic</h3><p class="d">Everything you need to get online.</p><div class="price"><b>$9</b><small>/ month</small></div><ul><li>1 website</li><li>Free SSL</li><li>Email support</li></ul><a class="btn" href="#">Get Basic</a></article>
+<article class="plan feat"><span class="rib">Most popular</span><h3>Pro</h3><p class="d">Best for growing businesses.</p><div class="price"><b>$29</b><small>/ month</small></div><ul><li>10 websites</li><li>Custom domains</li><li>Advanced analytics</li><li>Priority support</li></ul><a class="btn" href="#">Get Pro</a></article>
+<article class="plan"><h3>Scale</h3><p class="d">For teams with high traffic.</p><div class="price"><b>$79</b><small>/ month</small></div><ul><li>Unlimited websites</li><li>Roles &amp; SSO</li><li>99.99% uptime SLA</li></ul><a class="btn" href="#">Get Scale</a></article>
+</div></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

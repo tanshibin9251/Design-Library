@@ -1,0 +1,103 @@
+{
+ "format": "fragments",
+ "slug": "commit-camp",
+ "name": "Commit Camp",
+ "zh": "编程训练营",
+ "tag": "Online coding bootcamp platform in an IDE shell: file-tree navigation, terminal hero, git-log roadmap and a live HTML/CSS playground.",
+ "colors": {
+  "primary": "#e6edf3",
+  "secondary": "#8b949e",
+  "text": "#c9d1d9",
+  "accent": "#3fb950",
+  "surface": "#0d1117",
+  "border": "#30363d"
+ },
+ "fonts": {
+  "head": "Geist Mono",
+  "body": "Geist"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.02em",
+  "h1": "64px",
+  "h2": "40px",
+  "h3": "20px",
+  "pad": "84px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "6px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "coding",
+  "education"
+ ],
+ "styles": [
+  "dark",
+  "futuristic",
+  "monochrome"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Learn"
+  },
+  {
+   "slug": "courses",
+   "label": "Courses",
+   "group": "Learn"
+  },
+  {
+   "slug": "course",
+   "label": "Course: Web Dev 101",
+   "group": "Learn"
+  },
+  {
+   "slug": "lesson",
+   "label": "Lesson player",
+   "group": "Learn"
+  },
+  {
+   "slug": "roadmap",
+   "label": "Roadmap",
+   "group": "Learn"
+  },
+  {
+   "slug": "playground",
+   "label": "Playground",
+   "group": "Learn"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "Camp"
+  },
+  {
+   "slug": "mentors",
+   "label": "Mentors",
+   "group": "Camp"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Camp"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

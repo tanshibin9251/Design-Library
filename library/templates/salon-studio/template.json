@@ -1,0 +1,103 @@
+{
+ "format": "fragments",
+ "slug": "salon-studio",
+ "name": "Maison Verde",
+ "zh": "绿荫美发沙龙",
+ "tag": "Bold hair-salon site with an arched photo collage, expandable price list, stylist cards with next-available chips and a before/after slider.",
+ "colors": {
+  "primary": "#14803c",
+  "secondary": "#6b4c4c",
+  "text": "#1d1a1a",
+  "accent": "#ff8fa3",
+  "surface": "#f7efe9",
+  "border": "#e3d6cc"
+ },
+ "fonts": {
+  "head": "Syne",
+  "body": "Albert Sans"
+ },
+ "tok": {
+  "hlh": ".95",
+  "hw": "700",
+  "hcase": "uppercase",
+  "hls": "-.02em",
+  "h1": "104px",
+  "h2": "52px",
+  "h3": "22px",
+  "pad": "92px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "16px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "beauty",
+  "fashion"
+ ],
+ "styles": [
+  "bold",
+  "playful",
+  "pastel"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Salon"
+  },
+  {
+   "slug": "services",
+   "label": "Services & prices",
+   "group": "Salon"
+  },
+  {
+   "slug": "stylists",
+   "label": "Stylists",
+   "group": "Salon"
+  },
+  {
+   "slug": "stylist",
+   "label": "Stylist profile",
+   "group": "Salon"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Salon"
+  },
+  {
+   "slug": "packages",
+   "label": "Packages",
+   "group": "Salon"
+  },
+  {
+   "slug": "book",
+   "label": "Book",
+   "group": "Visit"
+  },
+  {
+   "slug": "contact",
+   "label": "Visit us",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

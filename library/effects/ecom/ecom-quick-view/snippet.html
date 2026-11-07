@@ -1,0 +1,116 @@
+<!-- Quick view — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-qv{position:relative;width:min(920px,100%);height:640px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:color-mix(in srgb,var(--surface) 94%,var(--text))}.fx-qv .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.7em 1.15em;border-radius:var(--radius);font:600 .92em var(--font-body);cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text);transition:background calc(.2s/var(--speed)),color calc(.2s/var(--speed)),transform calc(.2s/var(--speed)),border-color calc(.2s/var(--speed))}
+.fx-qv .btn:hover{border-color:var(--primary);color:var(--primary)}
+.fx-qv .btn.pri{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.fx-qv .btn.pri:hover{background:color-mix(in srgb,var(--primary) 85%,var(--text));color:var(--on-primary)}
+.fx-qv .btn.acc{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.fx-qv .btn:active{transform:translateY(1px)}
+.fx-qv :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fx-qv .scrim{position:absolute;inset:0;z-index:20;display:grid;place-items:center;padding:1em;background:color-mix(in srgb,#0b0e14 48%,transparent);backdrop-filter:blur(2px);visibility:hidden;opacity:0;transition:opacity calc(.25s/var(--speed)),visibility 0s linear calc(.25s/var(--speed))}
+.fx-qv .scrim.open{visibility:visible;opacity:1;transition-delay:0s}
+.fx-qv .pg{position:absolute;inset:0;padding:1.3em 1.5em;overflow:hidden}
+.fx-qv .pg h2{font-size:1.5em;margin-bottom:.9em}
+.fx-qv .gr{display:grid;grid-template-columns:repeat(3,1fr);gap:1em}
+.fx-qv .th{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden}.fx-qv .th .fx-art{position:absolute;inset:0}
+.fx-qv .qvb{position:absolute;left:50%;bottom:.7em;transform:translate(-50%,calc(100% + 1em));white-space:nowrap;padding:.6em 1.1em;border:0;border-radius:99px;background:var(--surface);color:var(--text);font:700 .82em var(--font-body);cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,.45);transition:transform calc(.35s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-qv .it:hover .qvb,.fx-qv .qvb:focus-visible{transform:translate(-50%,0)}
+@media(hover:none){.fx-qv .qvb{transform:translate(-50%,0)}}
+.fx-qv .nm{display:flex;justify-content:space-between;gap:.5em;margin-top:.7em;font-size:.92em}.fx-qv .nm span{font-weight:700}.fx-qv .nm s{opacity:.5;font-weight:400;margin-left:.4em}
+.fx-qv .dlg{width:min(720px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--border);border-radius:calc(var(--radius) + 4px);box-shadow:0 30px 60px -20px rgba(0,0,0,.5);transform:translateY(14px) scale(.97);transition:transform calc(.35s/var(--speed)) cubic-bezier(.2,.8,.2,1);position:relative}
+.fx-qv .scrim.open .dlg{transform:none}
+.fx-qv .dlg>.fx-art{min-height:20em}
+.fx-qv .dt{padding:1.6em 1.5em 1.4em;display:grid;gap:.9em;align-content:start}
+.fx-qv .dt small{font-size:.74em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.fx-qv .dt h3{font-size:1.6em}.fx-qv .stars{font-size:.85em;color:var(--accent);letter-spacing:.1em}.fx-qv .stars span{color:var(--text);opacity:.55;letter-spacing:0;margin-left:.4em}
+.fx-qv .pp{font:600 1.4em var(--font-heading)}.fx-qv .pp s{font-size:.7em;opacity:.5;margin-left:.4em;font-weight:400}
+.fx-qv .dt p{opacity:.7;font-size:.9em}
+.fx-qv .lab{font-size:.74em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.65;margin-bottom:.45em}
+.fx-qv .opt{display:flex;gap:.45em;flex-wrap:wrap;border:0;margin:0;padding:0}
+.fx-qv .opt label{position:relative}.fx-qv .opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.fx-qv .opt .s{display:grid;place-items:center;min-width:2.6em;padding:.45em .7em;border:1.5px solid var(--border);border-radius:calc(var(--radius) - 3px);font-size:.85em;font-weight:600;transition:all .2s}
+.fx-qv .opt input:checked+.s{border-color:var(--primary);background:var(--primary);color:var(--on-primary)}
+.fx-qv .opt input:focus-visible+.s{outline:2px solid var(--accent);outline-offset:2px}
+.fx-qv .opt .c{width:1.9em;height:1.9em;border-radius:50%;padding:0;min-width:0;background:var(--c);box-shadow:inset 0 0 0 3px var(--surface)}
+.fx-qv .opt input:checked+.c{background:var(--c);border-color:var(--primary)}
+.fx-qv .buy{display:flex;gap:.6em;align-items:stretch}
+.fx-qv .qty{display:inline-flex;align-items:center;border:1.5px solid var(--border);border-radius:var(--radius)}
+.fx-qv .qty button{all:unset;cursor:pointer;width:2.2em;height:2.6em;text-align:center;font-size:1.05em}.fx-qv .qty button:focus-visible{outline:2px solid var(--accent)}.fx-qv .qty button:hover{color:var(--primary)}
+.fx-qv .qty output{min-width:1.6em;text-align:center;font-weight:700;font-size:.95em}
+.fx-qv .buy .btn{flex:1}.fx-qv .more{font-size:.85em;color:var(--primary);font-weight:700;text-decoration:none}
+.fx-qv .x{position:absolute;right:.7em;top:.7em;z-index:3;width:2.3em;height:2.3em;border-radius:50%;border:0;background:var(--surface);cursor:pointer;color:var(--text);box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+@media(max-width:620px){.fx-qv .dlg{grid-template-columns:1fr}.fx-qv .dlg>.fx-art{min-height:9em}.fx-qv .gr{grid-template-columns:1fr 1fr}.fx-qv .gr .it:nth-child(3){display:none}}
+@media(prefers-reduced-motion:reduce){.fx-qv .dlg,.fx-qv .qvb{transition:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-qv .btn.is-tap{border-color:var(--primary);color:var(--primary)}
+.fx-qv .btn.pri.is-tap{background:color-mix(in srgb,var(--primary) 85%,var(--text));color:var(--on-primary)}
+.fx-qv .it.is-tap .qvb{transform:translate(-50%,0)}
+.fx-qv .qty button.is-tap{color:var(--primary)}
+
+</style>
+
+<div class="fx fx-qv"><div class="pg"><h2>New this week</h2><div class="gr"><article class="it"><div class="th"><div class="fx-art a3"></div><button class="qvb" data-i="0">Quick view</button></div><div class="nm"><b>Linen overshirt</b><span>$128</span></div></article><article class="it"><div class="th"><div class="fx-art a2"></div><button class="qvb" data-i="1">Quick view</button></div><div class="nm"><b>Stoneware pour-over</b><span>$64<s>$80</s></span></div></article><article class="it"><div class="th"><div class="fx-art "></div><button class="qvb" data-i="2">Quick view</button></div><div class="nm"><b>Canvas weekender</b><span>$156</span></div></article></div></div>
+<div class="scrim" aria-hidden="true"><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="qv-t"><button class="x" aria-label="Close quick view" data-close>&#10005;</button><div class="fx-art"></div>
+<div class="dt"><small id="qv-c">Menswear</small><h3 id="qv-t">Linen overshirt</h3><div class="stars" aria-label="Rated 4.8 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;<span>4.8 · 126 reviews</span></div><div class="pp" id="qv-p">$128</div><p>Washed European linen with a relaxed boxy cut and corozo buttons. Gets softer with every wear.</p>
+<fieldset class="opt" aria-label="Colour"><legend class="lab" style="padding:0">Colour</legend><label><input type="radio" name="qvc" checked aria-label="Sage"><span class="s c" style="--c:color-mix(in srgb,var(--primary) 60%,#fff)"></span></label><label><input type="radio" name="qvc" aria-label="Clay"><span class="s c" style="--c:color-mix(in srgb,var(--accent) 60%,#fff)"></span></label><label><input type="radio" name="qvc" aria-label="Ink"><span class="s c" style="--c:var(--text)"></span></label></fieldset>
+<fieldset class="opt" aria-label="Size"><legend class="lab" style="padding:0">Size</legend><label><input type="radio" name="qvs"><span class="s">S</span></label><label><input type="radio" name="qvs" checked><span class="s">M</span></label><label><input type="radio" name="qvs"><span class="s">L</span></label><label><input type="radio" name="qvs"><span class="s">XL</span></label></fieldset>
+<div class="buy"><div class="qty"><button aria-label="Decrease quantity" data-q="-1">&minus;</button><output aria-live="polite">1</output><button aria-label="Increase quantity" data-q="1">+</button></div><button class="btn pri" data-add>Add to bag</button></div><a class="more" href="#">View full details &rarr;</a></div></div></div></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-qv'),pg=root.querySelector('.pg'),sc=root.querySelector('.scrim'),dlg=root.querySelector('.dlg'),op=null,q=1;
+function focusables(c){return [].slice.call(c.querySelectorAll('button,input,select,textarea,a[href],[tabindex]:not([tabindex="-1"])')).filter(function(e){return !e.disabled&&e.offsetParent!==null})}
+function trap(e,c){if(e.key!=='Tab')return;var f=focusables(c);if(!f.length)return;var a=f[0],z=f[f.length-1];
+if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+
+var out=root.querySelector('output'),add=root.querySelector('[data-add]'),art=dlg.querySelector('.fx-art');var arts=['','a2','a3'];
+var items=root.querySelectorAll('.it');
+function open(b){op=b;var it=b.closest('.it');dlg.querySelector('#qv-t').textContent=it.querySelector('.nm b').textContent;
+var sp=it.querySelector('.nm span'),s=sp.querySelector('s');dlg.querySelector('#qv-p').innerHTML=sp.innerHTML;
+art.className='fx-art '+it.querySelector('.fx-art').className.replace('fx-art','').trim();
+q=1;out.textContent=1;add.textContent='Add to bag';sc.classList.add('open');sc.setAttribute('aria-hidden','false');pg.inert=true;requestAnimationFrame(function(){dlg.querySelector('.x').focus()})}
+function close(){if(!sc.classList.contains('open'))return;sc.classList.remove('open');sc.setAttribute('aria-hidden','true');pg.inert=false;if(op)op.focus()}
+root.querySelectorAll('.qvb').forEach(function(b){b.addEventListener('click',function(){open(b)})});
+root.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',close)});
+sc.addEventListener('mousedown',function(e){if(e.target===sc)close()});
+root.querySelectorAll('[data-q]').forEach(function(b){b.addEventListener('click',function(){q=Math.max(1,Math.min(9,q+ +b.dataset.q));out.textContent=q})});
+add.addEventListener('click',function(){add.textContent='Added ✓';setTimeout(function(){add.textContent='Add to bag'},1600)});
+document.addEventListener('keydown',function(e){if(!sc.classList.contains('open'))return;if(e.key==='Escape')close();else trap(e,dlg)});})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

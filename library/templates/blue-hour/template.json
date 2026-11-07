@@ -1,0 +1,95 @@
+{
+ "format": "fragments",
+ "slug": "blue-hour",
+ "name": "Blue Hour",
+ "zh": "蓝调时刻",
+ "tag": "An immersive photo-expedition site: type that holds a moving picture, a pinned scene stack, an image that follows your cursor, a route that draws itself and prints that ripple. Night-violet with first-light gold.",
+ "colors": {
+  "primary": "#f3ecdf",
+  "secondary": "#9a93d0",
+  "text": "#e9e6f3",
+  "accent": "#f2b84b",
+  "surface": "#0e0c22",
+  "border": "#2a2650"
+ },
+ "fonts": {
+  "head": "Josefin Sans",
+  "body": "Source Serif 4"
+ },
+ "tok": {
+  "hlh": "1.02",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.015em",
+  "h1": "104px",
+  "h2": "58px",
+  "h3": "26px",
+  "pad": "112px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "14px"
+ },
+ "types": [
+  "portfolio",
+  "company",
+  "blog"
+ ],
+ "industries": [
+  "travel",
+  "photography"
+ ],
+ "styles": [
+  "photo",
+  "darkluxury",
+  "typographic",
+  "aurora"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home: the blue hour",
+   "group": "Explore"
+  },
+  {
+   "slug": "expeditions",
+   "label": "Departures (list + filter)",
+   "group": "Explore"
+  },
+  {
+   "slug": "expedition",
+   "label": "Expedition: Lofoten in winter",
+   "group": "Explore"
+  },
+  {
+   "slug": "journal",
+   "label": "Field journal",
+   "group": "Read"
+  },
+  {
+   "slug": "story",
+   "label": "Story: Eleven minutes of blue",
+   "group": "Read"
+  },
+  {
+   "slug": "prints",
+   "label": "Prints (liquid distort)",
+   "group": "Shop"
+  },
+  {
+   "slug": "about",
+   "label": "The studio",
+   "group": "Studio"
+  },
+  {
+   "slug": "contact",
+   "label": "Enquire",
+   "group": "Studio"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

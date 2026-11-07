@@ -1,0 +1,62 @@
+<style>
+/* Casa Makeover — pastel playful, tokens only */
+.cm-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--c-surface) 90%,transparent);backdrop-filter:blur(10px)}
+.cm-head .in{max-width:var(--w);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.cm-logo{font:700 26px var(--f-head);text-decoration:none;display:flex;align-items:center;gap:8px;color:var(--c-primary)}
+.cm-logo i{width:30px;height:30px;border-radius:10px 10px 10px 2px;background:var(--c-secondary);display:block;rotate:-8deg}
+.cm-head ul{display:flex;gap:6px;list-style:none;font:700 15px var(--f-body)}
+.cm-head ul>li>a{display:block;padding:.55em 1em;border-radius:99px;text-decoration:none}
+.cm-head ul>li>a:hover{background:color-mix(in srgb,var(--c-secondary) 30%,var(--c-surface))}
+.cm-pill{background:var(--c-primary);color:var(--on-primary);border-radius:99px;padding:.7em 1.4em;font:700 15px var(--f-body);text-decoration:none;display:inline-block;transition:translate .15s,background .15s}
+.cm-pill:hover{translate:0 -2px;background:var(--c-text)}
+.cm-pill.p{background:var(--c-secondary);color:var(--c-text)}.cm-pill.t{background:var(--c-accent);color:var(--c-text)}
+.cm-hero{position:relative;padding:clamp(40px,6vw,90px) 20px 0;max-width:var(--w);margin:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+.cm-hero h1{font-size:clamp(46px,7.4vw,var(--h1));line-height:.98;letter-spacing:-.02em}
+.cm-hero h1 u{text-decoration:none;background:linear-gradient(0deg,color-mix(in srgb,var(--c-accent) 55%,transparent) 36%,transparent 36%)}
+.cm-hero h1 span{color:var(--c-primary)}
+.cm-hero p{font:600 19px/1.5 var(--f-body);max-width:40ch;margin:18px 0 26px;opacity:.85}
+.cm-ticks{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font:700 14px var(--f-body)}
+.cm-ticks span::before{content:"✓";display:inline-grid;place-items:center;width:1.4em;height:1.4em;border-radius:50%;background:var(--c-accent);margin-right:6px;font-size:.8em}
+.cm-art{position:relative;aspect-ratio:1}
+.cm-art .blob{position:absolute;inset:4%;background:var(--c-secondary);border-radius:58% 42% 55% 45%/48% 55% 45% 52%;opacity:.55;animation:cm-b 12s ease-in-out infinite alternate}
+.cm-art .ph{position:absolute;inset:12% 10% 14% 14%;border-radius:36px;rotate:3deg}
+.cm-bub{position:absolute;background:var(--c-surface);border-radius:20px 20px 20px 4px;padding:12px 16px;font:700 14px var(--f-body);box-shadow:0 12px 30px -10px color-mix(in srgb,var(--c-primary) 40%,transparent)}
+.cm-bub.a{left:-2%;top:12%}.cm-bub.b{right:-2%;bottom:16%;border-radius:20px 20px 4px 20px;background:var(--c-accent)}
+@keyframes cm-b{to{border-radius:45% 55% 42% 58%/55% 45% 55% 45%;rotate:12deg}}
+.cm-wave{display:block;width:100%;height:60px;fill:var(--f)}
+.cm-sec{padding:var(--pad) 20px}.cm-sec>.in{max-width:var(--w);margin:auto}
+.cm-sec.tint{background:color-mix(in srgb,var(--c-secondary) 22%,var(--c-surface))}
+.cm-sec.tint2{background:color-mix(in srgb,var(--c-accent) 22%,var(--c-surface))}
+.cm-t{text-align:center;margin-bottom:40px}.cm-t small{font:700 13px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--c-primary)}.cm-t h2{margin-top:6px}
+.cm-pk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:end}
+.cm-pkc{background:var(--c-surface);border-radius:32px;padding:30px;border:3px solid var(--bd);position:relative}
+.cm-pkc.hl{padding-block:44px;background:var(--c-primary);color:var(--on-primary);border-color:var(--c-primary)}
+.cm-pkc.hl h3,.cm-pkc.hl .am{color:inherit}
+.cm-pkc .tag{position:absolute;top:-16px;left:50%;translate:-50% 0;background:var(--c-accent);color:var(--c-text);padding:.3em 1em;border-radius:99px;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.cm-pkc .am{font:700 38px var(--f-head);color:var(--c-primary);margin:8px 0 14px}
+.cm-pkc ul{list-style:none;display:grid;gap:9px;margin:0 0 22px;font:600 15px var(--f-body)}
+.cm-pkc li::before{content:"✓";margin-right:9px;color:var(--c-secondary);font-weight:800}
+.cm-pkc.hl li::before{color:var(--c-accent)}
+.cm-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cm-ba figure{margin:0;background:var(--c-surface);border-radius:28px;overflow:hidden;border:3px solid var(--c-border)}
+.cm-ba .pair{display:grid;grid-template-columns:1fr 1fr}
+.cm-ba .pair .ph{border-radius:0;aspect-ratio:3/4}
+.cm-ba .pair .ph:first-child{filter:grayscale(.9) brightness(.9)}
+.cm-ba figcaption{padding:14px 18px;font:700 15px var(--f-body);display:flex;justify-content:space-between}
+.cm-ba figcaption span{color:var(--c-primary)}
+.cm-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.cm-step{background:var(--c-surface);border-radius:28px;padding:26px;counter-increment:s;position:relative}
+.cm-step::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:16px 16px 16px 4px;background:var(--bg);font:700 22px var(--f-head);margin-bottom:14px}
+.cm-calc{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:start}
+.cm-room{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 24px}
+.cm-room label{cursor:pointer}.cm-room label{position:relative}.cm-room input{position:absolute;opacity:0}
+.cm-room span{display:inline-block;padding:.7em 1.2em;border-radius:99px;background:var(--c-surface);border:3px solid var(--c-border);font:700 15px var(--f-body);transition:all .15s}
+.cm-room input:checked+span{background:var(--c-secondary);border-color:var(--c-secondary)}
+.cm-room input:focus-visible+span{outline:3px solid var(--c-primary);outline-offset:2px}
+.cm-sum{background:var(--c-primary);color:var(--on-primary);border-radius:32px;padding:30px}
+.cm-sum h3{color:inherit}.cm-sum .big{font:700 clamp(40px,5vw,60px)/1 var(--f-head);color:var(--c-accent);margin:10px 0 14px}
+.cm-foot{background:var(--c-primary);color:var(--on-primary);border-radius:48px 48px 0 0;margin-top:30px}
+@media(max-width:900px){.cm-head ul{display:none}.cm-hero,.cm-calc{grid-template-columns:1fr}.cm-pk,.cm-ba,.cm-steps{grid-template-columns:1fr}.cm-steps{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.cm-art .blob{animation:none}.cm-pill{transition:none}}
+.cm-head .more{position:relative}.cm-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:24px;box-shadow:0 24px 50px -18px rgba(0,0,0,.25);}.cm-head .more:hover .dd,.cm-head .more:focus-within .dd{display:grid}.cm-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.cm-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.cm-head .dd a:hover{color:var(--c-accent);opacity:1}
+/* m-fix */html,body{overflow-x:clip}img,video,svg{max-width:100%}@media(max-width:700px){.cm-art{overflow:hidden;max-width:100%}.cm-art .ph{inset:10% 6% 14% 6%}.cm-bub.a{left:0}.cm-bub.b{right:0}.cm-hero h1{font-size:clamp(38px,11.5vw,56px)}.cm-pkc.hl{padding-block:30px}.cm-steps{grid-template-columns:1fr}.cm-room span{padding:.65em 1em}}</style><header class="cm-head"><div class="in"><a class="cm-logo" href="{{p:home}}"><i></i>casa glow</a><ul><li><a href="{{p:packages}}">Packages</a></li><li><a href="{{p:calculator}}">Budget buddy</a></li><li><a href="{{p:gallery}}">Before &amp; after</a></li><li><a href="{{p:how}}">How it works</a></li><li class="more"><a href="#" tabindex="0">More ▾</a><div class="dd"><div><h4>Start</h4><a href="{{p:home}}">Home</a><a href="{{p:packages}}">Packages</a><a href="{{p:calculator}}">Budget buddy</a><a href="{{p:quiz}}">Style quiz</a></div><div><h4>Look</h4><a href="{{p:gallery}}">Before & afters</a><a href="{{p:reviews}}">Happy homes</a><a href="{{p:how}}">How it works</a></div><div><h4>Help</h4><a href="{{p:faq}}">Questions</a><a href="{{p:contact}}">Say hello</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="cm-pill" href="{{p:contact}}">Get a free plan</a></div></header>

@@ -1,0 +1,107 @@
+{
+ "format": "fragments",
+ "slug": "ippon-dojo",
+ "name": "Ippon Dojo",
+ "zh": "一本道場",
+ "tag": "Japanese martial-arts dojo: brush-drawn enso hero, caution-yellow tape, belt-rank ladder and a filterable weekly timetable.",
+ "colors": {
+  "primary": "#111111",
+  "secondary": "#6b6b6b",
+  "text": "#1a1a1a",
+  "accent": "#f2c200",
+  "surface": "#f4f2ec",
+  "border": "#111111"
+ },
+ "fonts": {
+  "head": "Yuji Boku",
+  "body": "BIZ UDPGothic"
+ },
+ "tok": {
+  "hlh": "1.15",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".04em",
+  "h1": "120px",
+  "h2": "56px",
+  "h3": "24px",
+  "pad": "96px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "fitness"
+ ],
+ "styles": [
+  "japanese",
+  "bold",
+  "monochrome"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Dojo"
+  },
+  {
+   "slug": "classes",
+   "label": "Classes",
+   "group": "Dojo"
+  },
+  {
+   "slug": "timetable",
+   "label": "Timetable",
+   "group": "Dojo"
+  },
+  {
+   "slug": "ranks",
+   "label": "Belt ranks",
+   "group": "Dojo"
+  },
+  {
+   "slug": "sensei",
+   "label": "Sensei",
+   "group": "Dojo"
+  },
+  {
+   "slug": "etiquette",
+   "label": "Dojo etiquette",
+   "group": "Dojo"
+  },
+  {
+   "slug": "trial",
+   "label": "Free trial",
+   "group": "Join"
+  },
+  {
+   "slug": "pricing",
+   "label": "Membership",
+   "group": "Join"
+  },
+  {
+   "slug": "news",
+   "label": "News & events",
+   "group": "Join"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Join"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

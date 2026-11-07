@@ -1,0 +1,18 @@
+{
+ "slug": "grid-lines",
+ "name": "Grid lines",
+ "zh": "网格线",
+ "cat": "background",
+ "file": "grid-lines.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 400,
+ "tags": [
+  "grid",
+  "tech",
+  "blueprint"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

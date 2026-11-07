@@ -1,0 +1,8 @@
+{
+ "slug": "wipe-up",
+ "name": "Wipe Up",
+ "zh": "上擦除",
+ "tag": "A clean horizontal edge wipes the new page into place.",
+ "group": "Wipe",
+ "license": "自写，无第三方代码"
+}

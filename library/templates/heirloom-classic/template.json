@@ -1,0 +1,113 @@
+{
+ "format": "fragments",
+ "slug": "heirloom-classic",
+ "name": "Heirloom Classic",
+ "zh": "传世古典",
+ "tag": "Symmetrical, gold-framed classic furniture house with Roman-numeral collections and quotation-led enquiry instead of a cart.",
+ "colors": {
+  "primary": "#4a1c24",
+  "secondary": "#7a6a52",
+  "text": "#2a1e1a",
+  "accent": "#a8803a",
+  "surface": "#f8f3e8",
+  "border": "#d9ccb0"
+ },
+ "fonts": {
+  "head": "Newsreader",
+  "body": "Jost"
+ },
+ "tok": {
+  "hlh": "1.02",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".01em",
+  "h1": "92px",
+  "h2": "50px",
+  "h3": "26px",
+  "pad": "112px",
+  "ew": "500",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "ecommerce"
+ ],
+ "industries": [
+  "furniture",
+  "interior"
+ ],
+ "styles": [
+  "elegant",
+  "artdeco",
+  "editorial"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Maison"
+  },
+  {
+   "slug": "collections",
+   "label": "Collections",
+   "group": "Maison"
+  },
+  {
+   "slug": "collection",
+   "label": "Single collection",
+   "group": "Maison"
+  },
+  {
+   "slug": "piece",
+   "label": "The piece",
+   "group": "Maison"
+  },
+  {
+   "slug": "enquire",
+   "label": "Request a quotation",
+   "group": "Atelier"
+  },
+  {
+   "slug": "bespoke",
+   "label": "Bespoke commissions",
+   "group": "Atelier"
+  },
+  {
+   "slug": "atelier",
+   "label": "The atelier",
+   "group": "Atelier"
+  },
+  {
+   "slug": "provenance",
+   "label": "Provenance & timber",
+   "group": "Atelier"
+  },
+  {
+   "slug": "restoration",
+   "label": "Restoration",
+   "group": "Atelier"
+  },
+  {
+   "slug": "journal",
+   "label": "Chronicle",
+   "group": "Maison"
+  },
+  {
+   "slug": "visit",
+   "label": "Visit the salon",
+   "group": "Maison"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

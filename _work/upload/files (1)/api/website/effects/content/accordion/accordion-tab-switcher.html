@@ -1,0 +1,71 @@
+<!-- Tab switcher — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-tabs{width:min(760px,100%);display:grid;gap:1.4em}
+.fx-tabs h2{font-size:clamp(1.7em,4vw,2.4em);text-align:center}
+.fx-tabs .tl{position:relative;display:flex;gap:.2em;padding:.3em;border-radius:99px;background:color-mix(in srgb,var(--text) 7%,var(--surface));border:1px solid var(--border);overflow-x:auto;scrollbar-width:none;justify-self:center;max-width:100%}
+.fx-tabs .tl::-webkit-scrollbar{display:none}
+.fx-tabs .ind{position:absolute;top:.3em;bottom:.3em;left:0;width:var(--w,0);transform:translateX(var(--x,0));border-radius:99px;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.18),0 0 0 1px var(--border);transition:transform calc(.4s/var(--speed)) cubic-bezier(.3,.8,.2,1),width calc(.4s/var(--speed)) cubic-bezier(.3,.8,.2,1)}
+.fx-tabs .tb{all:unset;position:relative;z-index:1;cursor:pointer;padding:.65em 1.25em;border-radius:99px;font:600 .92em var(--font-body);white-space:nowrap;opacity:.62;transition:opacity calc(.2s/var(--speed)),color calc(.2s/var(--speed))}
+.fx-tabs .tb:hover{opacity:1}.fx-tabs .tb[aria-selected=true]{opacity:1;color:var(--primary)}
+.fx-tabs .tb:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fx-tabs .pn{display:grid}
+.fx-tabs .pp{grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:1.6em;align-items:center;padding:1.5em;border:1px solid var(--border);border-radius:calc(var(--radius) + 2px);background:color-mix(in srgb,var(--surface) 94%,var(--text));opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity calc(.4s/var(--speed)),transform calc(.4s/var(--speed)),visibility 0s linear calc(.4s/var(--speed))}
+.fx-tabs .pp.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.fx-tabs .pp .fx-art{aspect-ratio:4/3;border-radius:calc(var(--radius) - 2px)}
+.fx-tabs .pp h3{font-size:1.5em;margin-bottom:.5em}.fx-tabs .pp p{opacity:.72}
+.fx-tabs .pp a{display:inline-block;margin-top:.9em;color:var(--primary);font-weight:700;text-decoration:none}.fx-tabs .pp a:focus-visible{outline:2px solid var(--accent)}
+@media(max-width:620px){.fx-tabs .pp{grid-template-columns:1fr}.fx-tabs .pp .fx-art{aspect-ratio:16/8}}
+@media(prefers-reduced-motion:reduce){.fx-tabs .ind,.fx-tabs .pp{transition:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-tabs .tb.is-tap{opacity:1}
+
+</style>
+
+<div class="fx fx-tabs"><h2>Everything in one place</h2><div class="tl" role="tablist" aria-label="Product sections"><i class="ind" aria-hidden="true"></i><button class="tb" role="tab" id="tb0" aria-controls="pn0" aria-selected="true" tabindex="0">Overview</button><button class="tb" role="tab" id="tb1" aria-controls="pn1" aria-selected="false" tabindex="-1">Workflow</button><button class="tb" role="tab" id="tb2" aria-controls="pn2" aria-selected="false" tabindex="-1">Pricing</button><button class="tb" role="tab" id="tb3" aria-controls="pn3" aria-selected="false" tabindex="-1">Support</button></div><div class="pn"><section class="pp on" id="pn0" role="tabpanel" aria-labelledby="tb0" tabindex="0"><div class="fx-art "></div><div><h3>A calmer way to run your studio</h3><p>One workspace for briefs, files and feedback, so nothing lives in someone’s inbox. Projects have a single source of truth from the first call to the final invoice.</p><a href="#">Learn more &rarr;</a></div></section><section class="pp" id="pn1" role="tabpanel" aria-labelledby="tb1" tabindex="0"><div class="fx-art a2"></div><div><h3>From brief to handover</h3><p>Templates for every stage, automatic reminders for approvals and a clear history of who decided what and when.</p><a href="#">Learn more &rarr;</a></div></section><section class="pp" id="pn2" role="tabpanel" aria-labelledby="tb2" tabindex="0"><div class="fx-art a3"></div><div><h3>Simple, honest plans</h3><p>Start free with two projects. Studio is $24 per seat each month, billed yearly, with unlimited projects and guests.</p><a href="#">Learn more &rarr;</a></div></section><section class="pp" id="pn3" role="tabpanel" aria-labelledby="tb3" tabindex="0"><div class="fx-art "></div><div><h3>A human on the other end</h3><p>Email replies within one working day. Studio customers also get a monthly check-in call with someone who knows your setup.</p><a href="#">Learn more &rarr;</a></div></section></div></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-tabs'),tl=root.querySelector('.tl'),tb=[].slice.call(root.querySelectorAll('.tb')),pp=[].slice.call(root.querySelectorAll('.pp')),ind=root.querySelector('.ind'),cur=0;
+function place(first){var b=tb[cur];ind.style.setProperty('--x',b.offsetLeft+'px');ind.style.setProperty('--w',b.offsetWidth+'px');var l=b.offsetLeft-(tl.clientWidth-b.offsetWidth)/2;if(tl.scrollWidth>tl.clientWidth)tl.scrollTo({left:l,behavior:first?'auto':'smooth'})}
+function sel(n,f){cur=n;tb.forEach(function(b,k){b.setAttribute('aria-selected',k===n);b.tabIndex=k===n?0:-1});pp.forEach(function(p,k){p.classList.toggle('on',k===n)});place();if(f)tb[n].focus()}
+tb.forEach(function(b,k){b.addEventListener('click',function(){sel(k)});b.addEventListener('keydown',function(e){var n=k;if(e.key==='ArrowRight')n=(k+1)%tb.length;else if(e.key==='ArrowLeft')n=(k-1+tb.length)%tb.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tb.length-1;else return;e.preventDefault();sel(n,true)})});
+ind.style.transition='none';place(true);requestAnimationFrame(function(){ind.style.transition=''});addEventListener('resize',function(){place(true)});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){place(true)});
+if('ResizeObserver' in window)new ResizeObserver(function(){place(true)}).observe(tl)})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

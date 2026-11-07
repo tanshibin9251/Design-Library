@@ -1,0 +1,173 @@
+{
+ "format": "fragments",
+ "slug": "fixit-home",
+ "name": "FixIt Home Services",
+ "zh": "到家维修",
+ "tag": "Handyman service: phone bar header, a three-tap job estimator that returns a price range, and job-ticket price cards with punched edges.",
+ "colors": {
+  "primary": "#2d4a6b",
+  "secondary": "#cfd8e3",
+  "text": "#1f2d3d",
+  "accent": "#ff7a1a",
+  "surface": "#fbf7f0",
+  "border": "#d8dee6"
+ },
+ "fonts": {
+  "head": "Passion One",
+  "body": "Barlow"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "400",
+  "hcase": "uppercase",
+  "hls": ".01em",
+  "h1": "104px",
+  "h2": "52px",
+  "h3": "26px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "12px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "homeservices",
+  "construction"
+ ],
+ "styles": [
+  "playful",
+  "bold",
+  "warm"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Price Guide",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Service Packs",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Pack",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Recent Jobs",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Job",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Home Tips",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Book a technician",
+   "group": "Special"
+  },
+  {
+   "slug": "quote",
+   "label": "Instant quote",
+   "group": "Special"
+  },
+  {
+   "slug": "service-areas",
+   "label": "Service areas",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

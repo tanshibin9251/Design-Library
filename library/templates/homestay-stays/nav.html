@@ -1,0 +1,39 @@
+<style>
+/* Rumah Singgah — tokens only */
+.hs-head{background:color-mix(in srgb,var(--c-surface) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-border);position:sticky;top:0;z-index:40}
+.hs-head .in{max-width:var(--w);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;gap:14px}
+.hs-logo{font:600 25px var(--f-head);text-decoration:none;display:flex;gap:8px;align-items:center;color:var(--c-primary)}
+.hs-logo svg{width:28px;height:28px}
+.hs-head ul{display:flex;gap:22px;list-style:none;font:600 15px var(--f-body)}.hs-head ul a{text-decoration:none}.hs-head ul a:hover{color:var(--c-accent)}
+.hs-btn{background:var(--c-primary);color:var(--on-primary);padding:.75em 1.4em;border-radius:10px;font:700 14px var(--f-body);text-decoration:none;display:inline-block}
+.hs-btn.o{background:none;color:var(--c-primary);box-shadow:inset 0 0 0 2px var(--c-primary)}
+.hs-hero{position:relative;min-height:min(78vh,640px);display:flex;align-items:flex-end;overflow:hidden}
+.hs-hero .ph{position:absolute;inset:0;border-radius:0;height:100%}
+.hs-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,color-mix(in srgb,var(--c-text) 70%,transparent),transparent 60%)}
+.hs-hero .in{position:relative;z-index:2;max-width:var(--w);margin:auto;width:100%;padding:0 20px 40px}
+.hs-hero h1{font-size:clamp(40px,6.4vw,var(--h1));color:var(--on-primary);line-height:1;max-width:14ch}
+.hs-search{margin-top:22px;background:var(--c-surface);border-radius:16px;padding:10px;display:grid;grid-template-columns:1.2fr 1fr 1fr .8fr auto;gap:8px;box-shadow:0 20px 40px -20px color-mix(in srgb,#000 50%,transparent);max-width:880px}
+.hs-search label{display:block;padding:6px 12px;border-right:1px solid var(--c-border)}.hs-search label:nth-last-child(2){border:0}
+.hs-search small{display:block;font:700 11px var(--f-body);letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.hs-search input,.hs-search select{border:0;background:transparent;font:600 15px var(--f-body);color:var(--c-text);width:100%;padding:2px 0}
+.hs-sec{padding:var(--pad) 20px}.hs-sec>.in{max-width:var(--w);margin:auto}
+.hs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 20px}
+.hs-card{text-decoration:none;display:block}
+.hs-card .ph{aspect-ratio:4/3;border-radius:16px}
+.hs-card .t{display:flex;justify-content:space-between;gap:10px;margin-top:10px}.hs-card h3{font:600 20px var(--f-head)}
+.hs-card .r{font:700 14px var(--f-body);white-space:nowrap}.hs-card .r::before{content:"★ ";color:var(--c-accent)}
+.hs-card small{opacity:.7;display:block}.hs-card .p{margin-top:4px;font:700 17px var(--f-body)}.hs-card .p span{font-weight:500;opacity:.7}
+.hs-am{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.hs-am span{font:600 12.5px var(--f-body);background:color-mix(in srgb,var(--c-primary) 10%,var(--c-surface));border-radius:99px;padding:.2em .7em}
+.hs-g{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px;border-radius:18px;overflow:hidden}
+.hs-g .ph{border-radius:0;height:100%}.hs-g .ph:first-child{grid-row:span 2}
+.hs-book{position:sticky;top:90px;border:1px solid var(--c-border);border-radius:18px;padding:22px;box-shadow:0 24px 50px -30px color-mix(in srgb,var(--c-text) 60%,transparent);background:var(--c-surface)}
+.hs-book .pr{font:700 26px var(--f-head)}.hs-book .pr small{font:500 14px var(--f-body);opacity:.7}
+.hs-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font:600 14px var(--f-body)}
+.hs-cal b{font:700 11px var(--f-body);opacity:.55;text-transform:uppercase;padding:6px 0}
+.hs-cal span{padding:10px 0;border-radius:10px;background:color-mix(in srgb,var(--c-primary) 8%,var(--c-surface))}
+.hs-cal span.x{background:none;text-decoration:line-through;opacity:.35}.hs-cal span.s{background:var(--c-primary);color:var(--on-primary)}.hs-cal span.m{background:color-mix(in srgb,var(--c-primary) 28%,var(--c-surface))}
+.hs-foot{background:var(--c-text);color:var(--c-surface)}
+@media(max-width:860px){.hs-head ul{display:none}.hs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hs-search{grid-template-columns:1fr 1fr}.hs-search label{border:0}.hs-g{grid-template-columns:1fr 1fr;grid-template-rows:180px 120px 120px}.hs-g .ph:first-child{grid-column:span 2;grid-row:span 1}.hs-book{position:static}}
+@media(max-width:520px){.hs-grid{grid-template-columns:1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}.hs-head .more{position:relative}.hs-head .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:20px 30px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:500px;z-index:60;text-align:left;font-family:var(--f-body);text-transform:none;letter-spacing:0;font-style:normal;border-radius:14px;}.hs-head .more:hover .dd,.hs-head .more:focus-within .dd{display:grid}.hs-head .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px;opacity:.55;color:inherit}.hs-head .dd a{display:block;padding:4px 0;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;border:0;height:auto;opacity:.85;color:inherit;text-decoration:none;background:none;transform:none}.hs-head .dd a:hover{color:var(--c-accent);opacity:1}
+h1,h2,h3{color:var(--c-text)}.hs-hero h1{color:var(--on-primary)}</style><header class="hs-head"><div class="in"><a class="hs-logo" href="{{p:home}}"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 16 16 5l13 11v11H3z"/><path d="M12 27v-8h8v8"/></svg>Rumah Singgah</a><ul><li><a href="{{p:stays}}">Stays</a></li><li><a href="{{p:experiences}}">Experiences</a></li><li><a href="{{p:guide}}">Local guide</a></li><li class="more" style="position:relative"><a href="#" tabindex="0">More ▾</a><div class="dd"><div><h4>Stay</h4><a href="{{p:home}}">Home</a><a href="{{p:stays}}">All stays</a><a href="{{p:stay}}">Stay detail</a><a href="{{p:availability}}">Availability</a></div><div><h4>Explore</h4><a href="{{p:experiences}}">Experiences</a><a href="{{p:guide}}">Local guide</a><a href="{{p:contact}}">Contact host</a><a href="{{p:faq}}">Booking FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="hs-btn" href="{{p:availability}}">Check dates</a></div></header>

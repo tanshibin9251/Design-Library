@@ -1,0 +1,42 @@
+<!-- Letter Reveal — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-let{text-align:center;display:grid;gap:1em;justify-items:center;max-width:980px}
+.fx-let h1{font-size:clamp(2.6em,7.5vw,5.6em);line-height:1.05;cursor:pointer}
+.fx-let .w{display:inline-block;white-space:nowrap}
+.fx-let .c{display:inline-block;opacity:0;transform:translateY(.7em) rotate(5deg);animation:fxlet calc(.75s/var(--speed)) cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*38ms/var(--speed))}
+.fx-let h1 em{font-style:italic;color:var(--accent)}
+.fx-let small{opacity:.5;font-size:.85em}
+@keyframes fxlet{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.fx-let .c{animation:none;opacity:1;transform:none}}
+</style>
+
+<div class="fx fx-let"><h1 data-split>Words that arrive with a little grace</h1><small>Click the headline to replay</small></div>
+
+<script>
+(function(){function split(h){var t=h.getAttribute('data-text')||h.textContent;h.setAttribute('data-text',t);h.textContent='';var i=0;
+t.split(' ').forEach(function(w,wi,a){var s=document.createElement('span');s.className='w';w.split('').forEach(function(ch){var c=document.createElement('span');c.className='c';c.style.setProperty('--i',i++);c.textContent=ch;s.appendChild(c)});h.appendChild(s);if(wi<a.length-1){h.appendChild(document.createTextNode(' '));i++}})}
+document.querySelectorAll('.fx-let [data-split]').forEach(function(h){split(h);h.addEventListener('click',function(){split(h)})})})();
+</script>

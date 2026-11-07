@@ -1,0 +1,103 @@
+{
+ "format": "fragments",
+ "slug": "plainspeak-english",
+ "name": "Plainspeak English",
+ "zh": "英语课程",
+ "tag": "Swiss-grid online English school: numbered 12-column header, giant wordmark hero, table-row course list and a one-question-at-a-time CEFR level check.",
+ "colors": {
+  "primary": "#111111",
+  "secondary": "#6b6b6b",
+  "text": "#1a1a1a",
+  "accent": "#e10600",
+  "surface": "#f4f4f0",
+  "border": "#cfcfc8"
+ },
+ "fonts": {
+  "head": "Schibsted Grotesk",
+  "body": "Public Sans"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.035em",
+  "h1": "150px",
+  "h2": "52px",
+  "h3": "26px",
+  "pad": "100px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "language",
+  "education"
+ ],
+ "styles": [
+  "swiss",
+  "typographic",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Learn"
+  },
+  {
+   "slug": "courses",
+   "label": "Courses",
+   "group": "Learn"
+  },
+  {
+   "slug": "course",
+   "label": "Course: Everyday Conversation",
+   "group": "Learn"
+  },
+  {
+   "slug": "lesson",
+   "label": "Lesson",
+   "group": "Learn"
+  },
+  {
+   "slug": "level",
+   "label": "Level check",
+   "group": "Learn"
+  },
+  {
+   "slug": "method",
+   "label": "Method",
+   "group": "School"
+  },
+  {
+   "slug": "tutors",
+   "label": "Tutors",
+   "group": "School"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "School"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "School"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

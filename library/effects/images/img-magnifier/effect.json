@@ -1,0 +1,12 @@
+{
+ "slug": "img-magnifier",
+ "cat": "images",
+ "name": "Hover magnifier",
+ "zh": "放大镜",
+ "tech": "css+js",
+ "tag": "A round lens follows the pointer (or finger) and shows a 2.5× zoom of the image underneath. Hidden for keyboard users, who get the full image anyway.",
+ "bleed": false,
+ "css": ".fx-mag{width:min(520px,100%)}\n.fx-mag .im{position:relative;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;cursor:crosshair;touch-action:none;--z:2.5}\n.fx-mag .im .fx-art{position:absolute;inset:0;border-radius:0}\n.fx-mag .im .fx-art::before{width:34%;right:12%;top:18%;opacity:.5}\n.fx-mag .lens{position:absolute;width:9em;height:9em;border-radius:50%;border:3px solid var(--surface);box-shadow:0 8px 24px color-mix(in srgb,#000 30%,transparent);pointer-events:none;overflow:hidden;opacity:0;transition:opacity calc(.2s/var(--speed));translate:-50% -50%}\n.fx-mag .im.on .lens{opacity:1}\n.fx-mag .lens .zoom{position:absolute;width:calc(100%*var(--z)*var(--wr,5));height:calc(100%*var(--z)*var(--hr,4))}\n.fx-mag .hint{margin-top:.7em;font-size:.88em;opacity:.65}\n@media(prefers-reduced-motion:reduce){.fx-mag .lens{transition:none}}",
+ "html": "<div class=\"fx fx-mag\"><div class=\"im\" aria-label=\"Product image. Move the pointer to magnify.\"><div class=\"fx-art\"></div><div class=\"lens\" aria-hidden=\"true\"><div class=\"zoom\"></div></div></div><p class=\"hint\">Move over the image to zoom</p></div>",
+ "js": "(function(){var im=document.querySelector('.fx-mag .im'),lens=im.querySelector('.lens'),zoom=lens.querySelector('.zoom'),art=im.querySelector('.fx-art');\nvar z=2.5;zoom.appendChild(art.cloneNode(true));var zi=zoom.firstChild;zi.style.cssText='position:absolute;left:0;top:0;border-radius:0';\nfunction move(e){var b=im.getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;\nif(x<0||y<0||x>b.width||y>b.height){im.classList.remove('on');return}\nim.classList.add('on');lens.style.left=x+'px';lens.style.top=y+'px';var lw=lens.offsetWidth;\nzi.style.width=b.width*z+'px';zi.style.height=b.height*z+'px';zoom.style.width=zi.style.width;zoom.style.height=zi.style.height;\nzoom.style.left=(lw/2-x*z)+'px';zoom.style.top=(lw/2-y*z)+'px'}\nim.addEventListener('pointermove',move);im.addEventListener('pointerdown',move);im.addEventListener('pointerleave',function(){im.classList.remove('on')})})();"
+}

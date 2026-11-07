@@ -1,0 +1,95 @@
+{
+ "format": "fragments",
+ "slug": "petal-desk",
+ "name": "Petal Desk",
+ "zh": "花瓣项目台",
+ "tag": "Warm project & task desk for web freelancers: floating dock nav, colour-block accordion tasks, scalloped phase path, tickable steps and a hand-drawn how-to guide.",
+ "colors": {
+  "primary": "#4a2c36",
+  "secondary": "#5e7d68",
+  "text": "#3a2a30",
+  "accent": "#b8525a",
+  "surface": "#f8f2eb",
+  "border": "#e6d6cb"
+ },
+ "fonts": {
+  "head": "Fraunces",
+  "body": "Hanken Grotesk"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "-.02em",
+  "h1": "54px",
+  "h2": "32px",
+  "h3": "21px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "20px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "agency",
+  "saas",
+  "homeservices"
+ ],
+ "styles": [
+  "warm",
+  "organic",
+  "handdrawn",
+  "editorial"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Today (dashboard)",
+   "group": "Workspace"
+  },
+  {
+   "slug": "projects",
+   "label": "Projects",
+   "group": "Workspace"
+  },
+  {
+   "slug": "project",
+   "label": "Project: phases & tasks",
+   "group": "Workspace"
+  },
+  {
+   "slug": "clients",
+   "label": "Clients",
+   "group": "People"
+  },
+  {
+   "slug": "client-new",
+   "label": "Add client & project",
+   "group": "People"
+  },
+  {
+   "slug": "templates",
+   "label": "Task templates",
+   "group": "Library"
+  },
+  {
+   "slug": "template-edit",
+   "label": "Template + how-to editor",
+   "group": "Library"
+  },
+  {
+   "slug": "login",
+   "label": "Sign in",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

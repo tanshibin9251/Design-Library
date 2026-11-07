@@ -1,0 +1,18 @@
+{
+ "slug": "scanlines",
+ "name": "Scanlines",
+ "zh": "扫描线",
+ "cat": "texture",
+ "file": "scanlines.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "crt",
+  "tech",
+  "overlay"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

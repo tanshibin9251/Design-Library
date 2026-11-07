@@ -1,0 +1,18 @@
+{
+ "slug": "slash-bar",
+ "name": "Slash bar",
+ "zh": "斜切条",
+ "cat": "shape",
+ "file": "slash-bar.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 100,
+ "tags": [
+  "slant",
+  "sport",
+  "bold"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

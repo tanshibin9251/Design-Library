@@ -1,0 +1,511 @@
+const DATA=window.DL_DATA;DATA.graphics=DATA.graphics||[];DATA.assets=DATA.assets||[];DATA.acats=DATA.acats||[];DATA.agroups=DATA.agroups||[];DATA.gtypes=DATA.gtypes||[];
+/* demo documents are built in the browser from small pieces, so the page data stays light */
+const FXREP=(base,pairs)=>pairs.reduce((a,[k,v])=>a.replace(k,()=>v),base);
+DATA.effects.forEach(e=>{let d;Object.defineProperty(e,'demo',{get(){return d||(d=FXREP(DATA.fxbase,[['__STAGE__',e.bleed?'bleed':''],['__FXCSS__',e.css],['__FXHTML__',e.html],['__FXJS__',e.js?'<script>'+e.js+'<\/script>':'']]))}})});
+DATA.transitions.forEach(t=>{let a,b;Object.defineProperty(t,'demo',{get(){return a||(a=FXREP(DATA.ptbase,[['/*__PTCSS__*/',t.css]]))}});Object.defineProperty(t,'demoAuto',{get(){return b||(b=FXREP(DATA.ptbaseAuto,[['/*__PTCSS__*/',t.css]]))}})});
+const KEYS=['primary','secondary','text','accent','surface','border'];
+const LAB={primary:['Primary','主色'],secondary:['Secondary','副色'],text:['Text','正文'],accent:['Accent','强调'],surface:['Surface','底色'],border:['Border','分隔线']};
+const FONTS=['Lora','Mulish','Inter','Poppins','Montserrat','Work Sans','Lato','DM Sans','Manrope','Plus Jakarta Sans','Outfit','Playfair Display','Fraunces','Cormorant Garamond','EB Garamond','Newsreader','Merriweather','DM Serif Display','Crimson Pro','Libre Baskerville','Source Sans 3','Source Serif 4','Archivo','Anton','Bebas Neue','Oswald','Space Grotesk','Noto Sans SC','Noto Serif SC'];
+const SEC={template:['Templates','网站模板','tpl'],effect:['Effects','动效','fx'],transition:['Page Transitions','页面转场','tr'],graphic:['Graphics','平面设计','gr'],asset:['Assets','素材库','as']};
+const DOMS={website:['Website','网站','web',['template','effect','transition']],graphic:['Graphic','平面','gfx',['graphic','asset']]};
+const I=(n,c='')=>`<svg class="ico${c?' '+c:''}" aria-hidden="true" focusable="false"><use href="#i-${n}"/></svg>`;
+const LOGO='<svg class="logo" viewBox="0 0 294 44" role="img" aria-label="Design Library"><use href="#logo"/></svg>';
+const PT_EASE=[['cubic-bezier(.7,0,.2,1)','Smooth in-out'],['ease','Ease'],['ease-in-out','Ease in-out'],['cubic-bezier(.2,.8,.2,1)','Quick out'],['cubic-bezier(.34,1.56,.64,1)','Springy'],['linear','Linear']];
+const FG=[['type','Site type',DATA.types.map(([id,name])=>({id,name})),'types'],['ind','Industry',DATA.inds,'ind'],['sty','Style',DATA.styletax,'styles']];
+const TL=Object.fromEntries(DATA.types),IL=Object.fromEntries(DATA.inds.map(i=>[i.id,i.name])),YL=Object.fromEntries(DATA.styletax.map(i=>[i.id,i.name]));
+const DFX={primary:'#1f2a44',secondary:'#4b5675',text:'#1f2328',accent:'#e8590c',surface:'#faf8f5',border:'#e6e0d6',head:'Lora',body:'Mulish',radius:12,scale:100,speed:100};
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const sg=(k,d)=>{try{return localStorage.getItem(k)||d}catch(e){return d}},ss=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const S={live:true,theme:sg('theme','dark'),dom:sg('dom','website')==='graphic'?'graphic':'website',gf:{type:[],sty:[]},ac:'all',acol:'#111111',abg:'chk',sec:'template',q:'',f:{type:[],ind:[],sty:[]},soon:{},sort:'featured',ecat:'all',tech:'',route:null,page:'home',dev:'desktop',cmp:false,drawer:false,tab:'style',etab:null,pcat:'all',col:{}};
+if(S.dom==='graphic')S.sec='graphic';
+const C={},CACHE={};
+/* ---------- favourites: kept in this browser only ---------- */
+let FAV=[];try{FAV=JSON.parse(sg('dl_favs','[]'))}catch(e){}FAV=Array.isArray(FAV)?FAV.filter(s=>typeof s==='string'&&s.includes(':')):[];
+const isFav=(k,s)=>FAV.includes(k+':'+s);
+function toggleFav(k,s){const key=k+':'+s,i=FAV.indexOf(key);i<0?FAV.push(key):FAV.splice(i,1);ss('dl_favs',JSON.stringify(FAV));return i<0}
+const items=k=>k==='effect'?DATA.effects:k==='transition'?DATA.transitions:k==='graphic'?DATA.graphics:k==='asset'?DATA.assets:DATA.templates;
+const esc=s=>s.replace(/&/g,'&amp;').replace(/"/g,'&quot;'),esc2=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1600)}
+function copy(t,m){const f=()=>{const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{document.execCommand('copy');toast(m||'Copied')}catch(e){toast('Copy failed')}a.remove()};if(navigator.clipboard&&isSecureContext)navigator.clipboard.writeText(t).then(()=>toast(m||'Copied'),f);else f()}
+function applyTheme(){document.documentElement.setAttribute('data-theme',S.theme);ss('theme',S.theme)}
+const themeBtn=()=>`<button class="ibtn" data-theme-toggle title="Switch light / dark">${I(S.theme==='dark'?'sun':'moon')}</button>`;
+/* ---------- state ---------- */
+const px=(v,d)=>{const m=/([\d.]+)px/.exec(v||'');return m?parseFloat(m[1]):d};
+const REFW=1440;
+function st(kind,x){if(kind==='asset')return{};if(kind==='graphic')return gcols(x);if(kind==='effect')return C.fx||(C.fx={...DFX});if(kind==='transition')return C.pt||(C.pt={...DFX,radius:12,dur:600,ease:PT_EASE[0][0],color:DFX.accent});return C[x.slug]||(C[x.slug]={...x.colors,head:x.fonts.head,body:x.fonts.body,scale:100,radius:px(x.tok.radius,8),pad:px(x.tok.pad,88),padU:'px',w:1300,wU:'px',pt:'none',ptdur:600})}
+const ptCSS=slug=>{const t=DATA.transitions.find(a=>a.slug===slug);return t?t.css:''};
+function sizes(x){const t=st('template',x),k=t.scale/100,T=x.tok,base=px(T.pad,88);
+ return{h1:Math.round(px(T.h1,56)*k)+'px',h2:Math.round(px(T.h2,40)*k)+'px',h3:Math.round(px(T.h3,22)*k)+'px',h1big:Math.round(px(T.h1big||T.h1,56)*k)+'px',body:Math.round(px(T.fsb,16)*k)+'px',radius:t.radius+'px',pad:(t.padU==='px'?t.pad:Math.round(base*t.pad/100))+'px',w:t.w+t.wU}}
+const CJK=",'Noto Sans SC','Noto Serif SC',sans-serif";
+function tplVars(x){const t=st('template',x),z=sizes(x),T=x.tok,v={};
+ KEYS.forEach(k=>v['--c-'+k]=t[k]);
+ Object.assign(v,{'--radius':z.radius,'--hlh':T.hlh,'--hw':T.hw,'--hcase':T.hcase,'--hls':T.hls,'--h1':z.h1,'--h2':z.h2,'--h3':z.h3,'--h1big':z.h1big,'--pad':z.pad,'--ew':T.ew,'--fs-body':z.body,'--stat':T.stat,'--w':z.w,'--pt-dur':t.ptdur+'ms','--pt-ease':PT_EASE[0][0],'--pt-color':t.accent});return v}
+function payload(kind,x){const t=st(kind,x);
+ if(kind==='transition'){const v={};KEYS.forEach(k=>v['--'+k]=t[k]);v['--radius']=t.radius+'px';v['--pt-dur']=t.dur+'ms';v['--pt-ease']=t.ease;v['--pt-color']=t.color;return{type:'dl-set',vars:v,head:t.head,body:t.body,ptcss:x.css}}
+ if(kind==='effect'){const v={};KEYS.forEach(k=>v['--'+k]=t[k]);v['--radius']=t.radius+'px';v['--scale']=t.scale/100;v['--speed']=t.speed/100;return{type:'dl-set',vars:v,head:t.head,body:t.body}}
+ return{type:'dl-set',vars:tplVars(x),head:t.head,body:t.body,ptcss:t.pt==='none'?'':ptCSS(t.pt)}}
+function push(){if(!S.route)return;const k=S.route.kind,x=cur();if(k==='graphic'){gapply();return}$$('iframe[data-live]').forEach(f=>f.contentWindow&&f.contentWindow.postMessage(payload(k,x),'*'))}
+function lum(h){const n=parseInt(h.slice(1),16),a=[n>>16&255,n>>8&255,n&255].map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]}
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const onc=h=>lum(h)>.45?'#111111':'#ffffff';
+const gfonts=t=>'https://fonts.googleapis.com/css?family='+[...new Set([t.head,t.body,'Noto Sans SC'])].map(f=>f.replace(/ /g,'+')+':300,400,500,600,700,800').join('|')+'&display=swap';
+/* ---------- compose a template into HTML ---------- */
+const FILE={home:{html:'index.html',php:'index.php'}};
+const href=(slug,ext)=>slug==='home'?'index.'+ext:slug+'.'+ext;
+function rootCSS(x,static_){const t=st('template',x),v=tplVars(x);
+ v['--f-head']=`'${t.head}'${CJK}`;v['--f-body']=`'${t.body}'${CJK}`;
+ if(static_){['primary','secondary','accent','surface'].forEach(k=>v['--on-'+k]=onc(t[k]))}
+ return':root{\n'+Object.entries(v).map(([k,a])=>`  ${k}: ${a};`).join('\n')+'\n}'}
+const links=(html,fn)=>html.replace(/\{\{p:([\w-]+)\}\}/g,(_,s)=>fn(s));
+const RAWJS="<script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';if(h.indexOf('#/')===0){e.preventDefault();parent.postMessage({type:'dl-page',page:h.slice(2)},'*')}});parent.postMessage({type:'dl-ready'},'*')<\/script>";
+function rawDoc(x,start){let h=links(x.pages[start]||x.pages.home||'',s=>'#/'+s);return /<\/body>/i.test(h)?h.replace(/<\/body>/i,()=>RAWJS+'</body>'):h+RAWJS}
+function previewDoc(x,start,onlyHome){if(x.format==='documents')return rawDoc(x,start);const t=st('template',x),r=onlyHome?['home']:Object.keys(x.pages);
+ const mains=r.map(s=>`<main data-page="${s}"${s===start?' class="on"':''}>${x.pages[s]}</main>`).join('');
+ return links(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="${gfonts(t)}"><style>${rootCSS(x,false)}\n${DATA.css}</style><style id="ptcss">${t.pt==='none'?'':ptCSS(t.pt)}</style>${!onlyHome&&S.live&&DATA.livecss?`<style>${DATA.livecss}</style>`:''}</head><body>${x.nav}${mains}${x.foot}<script>window.START=${JSON.stringify(start)};window.PTON=${t.pt!=='none'};${DATA.runtime}<\/script>${!onlyHome&&S.live&&DATA.livejs?`<script>window.LIVE=${JSON.stringify(x.live||[])};${DATA.livejs}<\/script>`:''}</body></html>`,s=>'#/'+s)}
+function thumbDoc(x){return CACHE['t'+x.slug]||(CACHE['t'+x.slug]=previewDoc(x,'home',true))}
+/* single standalone page (inline css) */
+function pageFile(x,slug,ext){const t=st('template',x),pg=x.pages[slug]||x.pages.home;
+ return links(`<!doctype html>\n<html lang="en"><head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>${esc2(x.pagelist.find(p=>p.slug===slug).label)} · ${esc2(x.name)}</title>\n<link rel="stylesheet" href="${gfonts(t)}">\n<style>\n${rootCSS(x,true)}\n${styleCSS(x)}</style>\n</head><body${lum(t.surface)<.25?' class="dk"':''}>\n${x.nav}\n<main>${pg}</main>\n${x.foot}\n</body></html>\n`,s=>href(s,ext))}
+/* ---------- zip (store only) ---------- */
+const CRCT=(()=>{const t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+const crc32=b=>{let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=CRCT[(c^b[i])&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0};
+function makeZip(files){const enc=new TextEncoder(),parts=[],cd=[];let off=0;const d=new Date(),dt=((d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1)),dd=(((d.getFullYear()-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate());
+ const u16=n=>[n&255,(n>>8)&255],u32=n=>[n&255,(n>>8)&255,(n>>16)&255,(n>>>24)&255];
+ files.forEach(f=>{const nm=enc.encode(f.name),data=enc.encode(f.data),crc=crc32(data);
+  const lh=new Uint8Array([0x50,0x4b,3,4,...u16(20),...u16(0x0800),...u16(0),...u16(dt),...u16(dd),...u32(crc),...u32(data.length),...u32(data.length),...u16(nm.length),...u16(0)]);
+  parts.push(lh,nm,data);
+  cd.push(new Uint8Array([0x50,0x4b,1,2,...u16(20),...u16(20),...u16(0x0800),...u16(0),...u16(dt),...u16(dd),...u32(crc),...u32(data.length),...u32(data.length),...u16(nm.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(off)]),nm);
+  off+=lh.length+nm.length+data.length});
+ const cdsz=cd.reduce((a,b)=>a+b.length,0);
+ const end=new Uint8Array([0x50,0x4b,5,6,...u16(0),...u16(0),...u16(files.length),...u16(files.length),...u32(cdsz),...u32(off),...u16(0)]);
+ return new Blob([...parts,...cd,end],{type:'application/zip'})}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);toast('Downloading '+name)}
+/* ---------- exports: template ---------- */
+const tokensCSS=x=>{const t=st('template',x);return`/* ${x.name} — design tokens. Edit here, every page updates. */\n@import url('${gfonts(t)}');\n\n${rootCSS(x,true)}\n`};
+const styleCSS=x=>DATA.css.replace('main[data-page]{display:none}main[data-page].on{display:block}\n','')+(x&&st('template',x).pt!=='none'?'\n/* page transition: '+st('template',x).pt+' */\n'+ptCSS(st('template',x).pt):'');
+const slugName=x=>x.slug;
+function readme(x,kind){const n=Object.keys(x.pages).length;return`# ${x.name}\n\nExported from Design Library · ${n} pages · ${kind}\n\n## Structure\n- assets/css/tokens.css  ← colours, fonts, sizes, content width, section spacing\n- assets/css/style.css   ← components and layout (uses the tokens)\n${kind==='PHP'?'- includes/header.php, includes/footer.php  ← shared header and footer\n- *.php  ← one file per page\n':'- *.html  ← one file per page\n'}\n## Customise\nOpen assets/css/tokens.css and change the variables. Pages: ${x.pagelist.map(p=>p.label).join(', ')}.\n\nAll text and images are placeholders — replace them with your own.\n`}
+function zipHTML(x){const f=[];Object.keys(x.pages).forEach(s=>{const d=pageFile(x,s,'html').replace(/<style>[\s\S]*?<\/style>/,'<link rel="stylesheet" href="assets/css/tokens.css">\n<link rel="stylesheet" href="assets/css/style.css">').replace(/<link rel="stylesheet" href="https:\/\/fonts[^>]*>\n/,'');f.push({name:href(s,'html'),data:d})});
+ f.push({name:'assets/css/tokens.css',data:tokensCSS(x)},{name:'assets/css/style.css',data:styleCSS(x)},{name:'README.md',data:readme(x,'HTML')});return f}
+function zipPHP(x){const t=st('template',x),f=[];const nav=links(x.nav,s=>href(s,'php')),foot=links(x.foot,s=>href(s,'php'));
+ f.push({name:'includes/header.php',data:`<?php\n// Usage in a page:  $title = 'About'; include 'includes/header.php';\n$title = $title ?? '${x.name.replace(/'/g,"\\'")}';\n$dark = ${lum(t.surface)<.25?'true':'false'};\n?>\n<!doctype html>\n<html lang="en"><head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<title><?= htmlspecialchars($title) ?> · ${esc2(x.name)}</title>\n<link rel="stylesheet" href="assets/css/tokens.css">\n<link rel="stylesheet" href="assets/css/style.css">\n</head><body<?= $dark ? ' class="dk"' : '' ?>>\n${nav}\n<main>\n`},{name:'includes/footer.php',data:`</main>\n${foot}\n</body></html>\n`});
+ Object.keys(x.pages).forEach(s=>{const lab=x.pagelist.find(p=>p.slug===s).label;f.push({name:href(s,'php'),data:`<?php $title = '${lab.replace(/'/g,"\\'")}'; include 'includes/header.php'; ?>\n${links(x.pages[s],q=>href(q,'php'))}\n<?php include 'includes/footer.php'; ?>\n`})});
+ f.push({name:'assets/css/tokens.css',data:tokensCSS(x)},{name:'assets/css/style.css',data:styleCSS(x)},{name:'.htaccess',data:'# Optional: serve /about instead of /about.php\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteRule ^([a-z0-9-]+)/?$ $1.php [L]\n'},{name:'README.md',data:readme(x,'PHP')});return f}
+function elGlobals(x){const t=st('template',x),z=sizes(x);return JSON.stringify({template:x.slug,global_colors:{primary:t.primary,secondary:t.secondary,text:t.text,accent:t.accent,custom:{surface:t.surface,border:t.border}},global_fonts:{headings:t.head,body:t.body},sizes:{h1:z.h1,h2:z.h2,h3:z.h3,body:z.body},radius:z.radius,section_padding:z.pad,content_width:z.w,pages:x.pagelist.map(p=>p.slug)},null,2)}
+function elPrompt(x){const t=st('template',x),z=sizes(x);return`# Build "${x.name}" in Elementor\n\nYou are working in WordPress with Elementor (Pro) through MCP. Recreate this template.\n\n## 1. Site Settings › Global Colors\nPrimary ${t.primary} · Secondary ${t.secondary} · Text ${t.text} · Accent ${t.accent} · Surface ${t.surface} · Border ${t.border}\n\n## 2. Global Fonts\nHeadings: ${t.head} · Body: ${t.body}\nH1 ${z.h1} / H2 ${z.h2} / H3 ${z.h3} / Body ${z.body}\n\n## 3. Layout\nContent width ${z.w} · Section padding ${z.pad} vertical · Border radius ${z.radius}\n\n## 4. Pages to create (use the HTML files in /html as the visual reference)\n${x.pagelist.map(p=>`- ${p.label} (${p.slug}) — html/${p.slug}.html`).join('\n')}\n\n## Rules\n- Bind every colour and font to the Global Colors / Fonts above. Never hard-code hex.\n- Use native widgets (Heading, Text, Button, Image Box, Icon List, Form). Use the HTML widget only for effects.\n- Build the header and footer once as Theme Builder templates; use the Menu widget for navigation.\n`}
+function elKit(x){const f=[{name:'README.md',data:`# ${x.name} — Elementor kit\n\n- global-style.json: colours, fonts, sizes\n- prompt-for-claude-code.md: paste into Claude Code (with your Elementor MCP) to build the site\n- html/: every page as standalone HTML — open in a browser for reference or paste into an Elementor HTML widget\n- tokens.css: Additional CSS for Elementor › Site Settings\n\nNote: this is not an Elementor .json import file. Elementor builds are best recreated with native widgets; the prompt and globals make that fast.\n`},{name:'global-style.json',data:elGlobals(x)},{name:'prompt-for-claude-code.md',data:elPrompt(x)},{name:'tokens.css',data:tokensCSS(x)}];Object.keys(x.pages).forEach(s=>f.push({name:'html/'+s+'.html',data:pageFile(x,s,'html')}));return f}
+const EXPT={
+ css:x=>tokensCSS(x),json:x=>elGlobals(x),globals:x=>elGlobals(x),prompt:x=>elPrompt(x),
+ page:x=>pageFile(x,S.page,'html'),
+ php:x=>`<?php $title = '${x.pagelist.find(p=>p.slug===S.page).label}'; include 'includes/header.php'; ?>\n${links(x.pages[S.page],q=>href(q,'php'))}\n<?php include 'includes/footer.php'; ?>`};
+/* ---------- exports: effects ---------- */
+const fxVars=()=>{const t=st('effect');return`:root{\n${KEYS.map(k=>`  --${k}: ${t[k]};`).join('\n')}\n  --on-primary: ${onc(t.primary)};\n  --on-accent: ${onc(t.accent)};\n  --font-heading: '${t.head}', 'Noto Serif SC', serif;\n  --font-body: '${t.body}', 'Noto Sans SC', sans-serif;\n  --radius: ${t.radius}px;\n  --scale: ${t.scale/100};   /* text size multiplier */\n  --speed: ${t.speed/100};   /* animation speed multiplier */\n}`};
+const fxSnippet=x=>{const t=st('effect');return`<!-- ${x.name} — paste where you want it -->\n<link rel="stylesheet" href="${gfonts(t)}">\n<style>\n${fxVars()}\n\n${x.css}\n</style>\n\n${x.html}\n${x.js?`\n<script>\n${x.js}\n<\/script>`:''}`};
+/* ---------- json site / transition exports ---------- */
+function jsonSite(x){const t=st('template',x),z=sizes(x),c={};KEYS.forEach(k=>c[k]=t[k]);
+ return JSON.stringify({format:'design-library-site@1',template:x.slug,name:x.name,tokens:{colors:c,fonts:{heading:t.head,body:t.body},sizes:{h1:z.h1,h2:z.h2,h3:z.h3,body:z.body},radius:z.radius,section_padding:z.pad,content_width:z.w},page_transition:{name:t.pt,duration_ms:t.ptdur,css:t.pt==='none'?'':ptCSS(t.pt)},taxonomy:{types:x.types,industries:x.ind,styles:x.styles},nav_html:x.nav,footer_html:x.foot,css:styleCSS(x),pages:x.pagelist.map(p=>({slug:p.slug,label:p.label,group:p.group,html:x.pages[p.slug]}))},null,2)}
+const ptVars=x=>{const t=st('transition',x);return`:root {\n  --pt-dur: ${t.dur}ms;\n  --pt-ease: ${t.ease};\n  --pt-color: ${t.color};\n}`};
+const ptSnippet=x=>`/* Page transition — ${x.name} */\n${ptVars(x)}\n\n${x.css}`;
+const ptUse=x=>`HOW TO USE — ${x.name}\n\n1) Static HTML / PHP site (multi-page)\n   Paste the CSS into your shared stylesheet (e.g. assets/css/style.css).\n   Every page that loads it animates on navigation. No JavaScript needed.\n\n2) Single-page app / custom JS\n   Wrap your DOM update:\n   document.startViewTransition(() => { render(newPage); });\n   The same CSS drives the animation.\n\n3) Elementor\n   Site Settings › Custom CSS › paste the CSS. Works on normal page-to-page links.\n\n4) Keep the header still\n   The snippet already sets  .nav { view-transition-name: site-nav }.\n   Change the selector if your header uses another class.\n\nBrowser support: Chrome / Edge 126+ and Safari 18.2+ animate between pages.\nBrowsers without support (e.g. Firefox) simply navigate normally — nothing breaks.\nPlease respect reduced motion:\n   @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }`;
+/* ---------- routing / filtering ---------- */
+const go=h=>{location.hash=h};
+/* the list view lives in the URL (#/?s=template&ind=restaurant&sty=warm&q=cafe), so refresh, Back and shared links keep the same filters */
+function listQS(){const p=new URLSearchParams(),put=(k,v)=>{if(Array.isArray(v)?v.length:v)p.set(k,Array.isArray(v)?v.join(','):v)},sec=S.sec;
+ p.set('s',sec);put('q',S.q.trim());
+ if(sec==='template'){put('type',S.f.type);put('ind',S.f.ind);put('sty',S.f.sty);if(S.sort!=='featured')put('sort',S.sort)}
+ else if(sec==='effect'){if(S.ecat!=='all')put('ec',S.ecat);put('tech',S.tech)}
+ else if(sec==='transition')put('tg',S.tgrp);
+ else if(sec==='graphic'){put('gt',S.gf.type);put('gs',S.gf.sty)}
+ else if(S.ac!=='all')put('ac',S.ac);
+ return'?'+p.toString().replace(/%2C/gi,',')}
+const lh=()=>'#/'+listQS();
+const backHash=()=>S.from==='saved'?'#/saved':lh();
+function syncList(){try{const h=lh();if(location.hash!==h)history.replaceState(null,'',h)}catch(e){}}
+function applyQS(qs){const p=new URLSearchParams(qs),g=k=>p.get(k)||'',l=k=>g(k)?g(k).split(',').filter(Boolean):[],sec=g('s');
+ if(!SEC.hasOwnProperty(sec))return;
+ S.sec=sec;S.dom=(sec==='graphic'||sec==='asset')?'graphic':'website';ss('dom',S.dom);S.q=g('q');
+ S.f={type:l('type'),ind:l('ind'),sty:l('sty')};FG.forEach(([k,,opts])=>{S.f[k]=S.f[k].filter(id=>opts.some(o=>o.id===id))});
+ S.sort=['az','pages','newest'].includes(g('sort'))?g('sort'):'featured';
+ S.ecat=g('ec')&&ecat(g('ec'))?g('ec'):'all';S.tech=['css','js'].includes(g('tech'))?g('tech'):'';
+ S.tgrp=DATA.ptgroups.includes(g('tg'))?g('tg'):'';
+ S.gf={type:l('gt').filter(id=>GT[id]),sty:l('gs').filter(id=>YL[id])};
+ S.ac=g('ac')&&AC[g('ac')]?g('ac'):'all'}
+function parse(){const h=location.hash;S.guide=h==='#/guide';S.saved=h==='#/saved';const m=/^#\/(\w+)\/([\w-]+)(?:\/([\w-]+))?/.exec(h);S.route=m?{kind:m[1],slug:m[2]}:null;S.page=m&&m[3]?m[3]:'home';
+ if(!m&&h.indexOf('#/?')===0)applyQS(h.slice(3));
+ if(S.route){if(S.route.kind==='graphic'){S.dom='graphic';S.sec='graphic'}else if(S.route.kind==='asset'){S.dom='graphic';S.sec='asset'}else{S.dom='website';S.sec=SEC.hasOwnProperty(S.route.kind)?S.route.kind:'template'}}}
+addEventListener('hashchange',()=>{parse();S.drawer=false;S.etab=null;render()});
+/* search: every word must match; a word also matches its synonyms (cafe = coffee = 咖啡). Add words to SYN, one group per line. */
+const SYN=[
+ ['cafe','café','coffee','bakery','咖啡','咖啡店','烘焙','面包'],
+ ['restaurant','dining','food','culinary','kitchen','餐厅','餐饮','美食','饭店'],
+ ['shop','store','ecommerce','e-commerce','commerce','retail','网店','商店','电商','商城','卖'],
+ ['portfolio','folio','gallery','showcase','作品集','作品'],
+ ['company','corporate','business','enterprise','公司','企业','官网'],
+ ['blog','magazine','news','journal','博客','杂志','文章','新闻'],
+ ['landing','campaign','launch','落地页','推广','活动页'],
+ ['education','school','tuition','course','learning','academy','教育','学校','补习','课程','培训','学习'],
+ ['health','clinic','medical','wellness','spa','massage','健康','诊所','医疗','按摩','养生'],
+ ['fitness','gym','sport','sports','workout','健身','运动'],
+ ['beauty','salon','cosmetic','skincare','美容','美发','护肤','化妆'],
+ ['event','events','wedding','festival','expo','活动','婚礼','展会','节日'],
+ ['travel','tour','hotel','homestay','resort','trip','旅游','旅行','酒店','民宿'],
+ ['property','realestate','estate','housing','房产','地产','房屋'],
+ ['interior','furniture','decor','renovation','家具','室内','装修','装饰'],
+ ['tech','saas','software','startup','technology','科技','软件','创业'],
+ ['pet','pets','宠物'],
+ ['law','legal','lawyer','律师','法律'],
+ ['dark','night','black','深色','暗色','黑色'],
+ ['minimal','clean','simple','minimalist','简约','极简','简洁'],
+ ['playful','fun','colorful','cute','活泼','可爱','缤纷'],
+ ['elegant','luxury','premium','luxe','高端','优雅','奢华','高级'],
+ ['warm','cozy','handcrafted','温暖','温馨','手作'],
+ ['japanese','japan','日式','日本','和风'],
+ ['poster','flyer','海报','传单'],
+ ['banner','ads','横幅','广告'],
+ ['thumbnail','cover','缩略图','封面'],
+ ['hover','悬停','鼠标'],
+ ['scroll','scrolling','滚动'],
+ ['button','cta','按钮'],
+ ['animation','animated','motion','动画','动效'],
+ ['font','typography','typographic','字体','排版'],
+ ['transition','转场','过渡'],
+ ['icon','icons','图标'],
+ ['background','texture','背景','纹理'],
+ ['logo','brand','branding','标志','品牌'],
+];
+const isCJK=s=>/[㐀-鿿]/.test(s);
+const ALT={};
+function altsOf(tok){if(ALT[tok])return ALT[tok];const o=[];SYN.forEach(g=>{if(g.some(t=>isCJK(t)?(isCJK(tok)&&tok.includes(t)):t===tok))g.forEach(t=>{if(t!==tok&&!o.includes(t))o.push(t)})});return ALT[tok]=o}
+const WRE={};
+function wordHit(h,a){if(isCJK(a))return h.includes(a);const r=WRE[a]||(WRE[a]=new RegExp('(^|[^a-z0-9])'+a.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![a-z0-9])'));return r.test(h)}
+const HAY=new WeakMap();
+const hayOf=x=>{let h=HAY.get(x);if(h===undefined){h=(x.name+' '+(x.zh||'')+' '+(x.tag||'')+' '+x.slug+' '+(x.types||[]).map(t=>TL[t]+' '+t).join(' ')+' '+(x.ind||[]).map(t=>IL[t]+' '+t).join(' ')+' '+(x.styles||[]).map(t=>YL[t]+' '+t).join(' ')+' '+(x.pagelist||[]).map(p=>p.label).join(' ')+' '+(x.cat||'')+' '+(x.group||'')+' '+(x.type||'')+' '+(x.size?x.size.label:'')+' '+(x.tags||[]).join(' ')).toLowerCase();HAY.set(x,h)}return h};
+const matchQ=(x,q)=>{const h=hayOf(x);return q.split(/\s+/).filter(Boolean).every(t=>h.includes(t)||altsOf(t).some(a=>wordHit(h,a)))};
+/* nothing found: suggest the closest site type / industry / style, and say where else the words do match */
+const lev=(a,b)=>{const d=[];for(let i=0;i<=a.length;i++){d[i]=[i];for(let j=1;j<=b.length;j++)d[i][j]=i?Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)):j}return d[a.length][b.length]};
+function suggestions(q){const toks=q.split(/\s+/).filter(Boolean),out=[];
+ FG.forEach(([k,,opts])=>opts.forEach(o=>{const words=(o.id+' '+o.name).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+  const hit=toks.some(t=>[t,...altsOf(t)].some(a=>!isCJK(a)&&words.some(w=>w===a||w.startsWith(a)&&a.length>=3))||(t.length>=4&&!isCJK(t)&&words.some(w=>w.length>=4&&lev(t,w)<=1)));
+  if(hit&&DATA.templates.some(x=>x[FG.find(g=>g[0]===k)[3]].includes(o.id)))out.push({k,id:o.id,name:o.name})}));
+ return out.slice(0,6)}
+function otherHits(q){return DOMS[S.dom][3].filter(k=>k!==S.sec).map(k=>[k,items(k).filter(x=>matchQ(x,q)).length]).filter(a=>a[1])}
+function passes(x,skip){const q=S.q.trim().toLowerCase();if(q&&!matchQ(x,q))return false;for(const[k,,,f]of FG){if(k===skip)continue;if(S.f[k].length&&!S.f[k].some(v=>x[f].includes(v)))return false}return true}
+const nFilters=()=>FG.reduce((a,g)=>a+S.f[g[0]].length,0);
+function list(){const q=S.q.trim().toLowerCase();let a;
+ if(S.sec==='template'){a=DATA.templates.filter(x=>passes(x,null));
+  if(S.sort==='az')a=[...a].sort((p,q2)=>p.name.localeCompare(q2.name));else if(S.sort==='pages')a=[...a].sort((p,q2)=>q2.pagelist.length-p.pagelist.length);else if(S.sort==='newest')a=[...a].reverse()}
+ else if(S.sec==='effect'){a=DATA.effects.filter(x=>(!q||matchQ(x,q))&&(S.ecat==='all'||x.cat===S.ecat)&&(!S.tech||x.tech===S.tech))}
+ else if(S.sec==='graphic')a=DATA.graphics.filter(x=>gpasses(x,null));
+ else if(S.sec==='asset')a=DATA.assets.filter(x=>(!q||matchQ(x,q))&&(S.ac==='all'||x.cat===S.ac));
+ else a=DATA.transitions.filter(x=>(!q||matchQ(x,q))&&(!S.tgrp||x.group===S.tgrp));
+ return a}
+const ecat=id=>DATA.ecats.find(c=>c.id===id);
+/* ---------- sidebar ---------- */
+function fgroup(g){const[k,title,opts,field]=g,T=DATA.templates,sel=S.f[k];
+ const rows=opts.map(o=>({o,total:T.filter(x=>x[field].includes(o.id)).length,n:T.filter(x=>passes(x,k)&&x[field].includes(o.id)).length}));
+ const live=rows.filter(r=>r.total).sort((a,b)=>b.total-a.total),soon=rows.filter(r=>!r.total),open=!S.col[k];
+ const row=r=>`<button class="li fl ${sel.includes(r.o.id)?'on':''} ${r.n||sel.includes(r.o.id)?'':'dim'}" data-f="${k}:${r.o.id}"><i class="ck">${sel.includes(r.o.id)?I('check'):''}</i><span class="nm">${r.o.name}</span><span class="n">${r.n}</span></button>`;
+ let h=`<div class="grp"><h6 class="tg" data-col="${k}"><span>${title}${sel.length?` <b class="badge">${sel.length}</b>`:''}</span><i>${I(open?'chd':'chr')}</i></h6>`;
+ if(open){h+=live.map(row).join('');if(soon.length)h+=`<button class="li moresoon" data-soon="${k}">${S.soon[k]?'− Hide':'+ Show'} ${soon.length} coming soon</button>`+(S.soon[k]?soon.map(r=>`<div class="li soon"><i class="ck"></i><span class="nm">${r.o.name}</span><span class="n s">soon</span></div>`).join(''):'')}
+ return h+'</div>'}
+function sideHTML(){const cn=k=>items(k).length;
+ let h=`<div class="mhead"><span>Filters</span><button class="btn ghost" data-sidetoggle aria-label="Close filters">${I('x')}</button></div><div class="grp nav"><h6>${DOMS[S.dom][0]}</h6>${DOMS[S.dom][3].map(k=>`<button data-sec="${k}" class="${S.sec===k?'on':''}"><span class="ic">${I(SEC[k][2])}</span>${SEC[k][0]}<span class="n">${cn(k)}</span></button>`).join('')}</div>`;
+ if(S.sec==='asset')h+=assetSide();
+ else if(S.sec==='graphic')h+=gfilterHTML();
+ else if(S.sec==='template'){if(nFilters())h+=`<button class="clearall" data-fclear>${I('reset')} Clear ${nFilters()} filter${nFilters()>1?'s':''}</button>`;h+=FG.map(fgroup).join('')}
+ else if(S.sec==='effect'){const cnt=id=>DATA.effects.filter(e=>e.cat===id).length;
+  h+=`<div class="grp"><h6>Technology</h6>${[['','Any'],['css','Pure CSS'],['js','Needs JS']].map(([k,n])=>`<button class="li ${S.tech===k?'on':''}" data-tech="${k}">${n}</button>`).join('')}</div>`;
+  h+=`<div class="grp"><h6>Categories</h6><button class="li ${S.ecat==='all'?'on':''}" data-ecat="all">All effects<span class="n">${cn('effect')}</span></button>`;
+  DATA.egroups.forEach(g=>{h+=`<div class="sub">${g}</div>`;DATA.ecats.filter(c=>c.group===g).forEach(c=>{const n=cnt(c.id);h+=`<button class="li ${S.ecat===c.id?'on':''} ${n?'':'soon'}" data-ecat="${c.id}">${c.name}<span class="n ${n?'':'s'}">${n||'soon'}</span></button>`})});h+='</div>'}
+ else h+=`<div class="grp"><h6>Style</h6><button class="li ${!S.tgrp?'on':''}" data-tgrp="">All<span class="n">${cn('transition')}</span></button>${DATA.ptgroups.map(g=>`<button class="li ${S.tgrp===g?'on':''}" data-tgrp="${g}">${g}<span class="n">${DATA.transitions.filter(t=>t.group===g).length}</span></button>`).join('')}</div><div class="callout" style="margin:0 0 0 0">${I('tr')}<span>Pick one here, or choose it inside any template's <b>Customize › Page transition</b>.</span></div>`;
+ return h+`<div class="mfoot"><button class="btn dark block" data-sidetoggle>Show ${list().length} results</button></div>`}
+/* ---------- list ---------- */
+const pvImg=(k,x)=>`<img class="pimg" src="previews/website/${k==='t'?'templates/'+x.pg:'effects/'+x.eg+'/'+x.cat}/${x.slug}.jpg?v=${x.pv}" loading="lazy" decoding="async" width="640" height="400" alt="">`;
+function card(x,kind){const o=`data-open="${kind}/${x.slug}"`;if(kind==='graphic')return gcard(x);if(kind==='asset')return acard(x);
+ if(kind==='effect'&&x.pv)return`<button class="card" ${o}><div class="thumb">${pvImg('e',x)}<span class="openchip">Preview ${I('ext')}</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="tag ${x.tech==='css'?'t-pk':'t-p'}">${x.tech==='css'?'Pure CSS':'Needs JS'}</span><span class="tag t-x">${ecat(x.cat).name}</span></div></div></button>`;
+ if(kind==='template'&&x.pv){const sw=['primary','secondary','accent','surface','border'].map(k=>`<i style="background:${x.colors[k]}"></i>`).join('');return`<button class="card" ${o}><div class="thumb">${pvImg('t',x)}<span class="openchip">Open full screen ${I('ext')}</span><span class="pgs">${x.pagelist.length} pages</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="sw">${sw}</span>${x.types.slice(0,2).map(t=>`<span class="tag t-g">${TL[t]}</span>`).join('')}${x.styles.slice(0,2).map(t=>`<span class="tag t-p">${YL[t]}</span>`).join('')}</div></div></button>`}
+ if(kind==='effect')return`<button class="card" ${o}><div class="thumb"><iframe data-thumb srcdoc="${esc(x.demo)}" loading="lazy" tabindex="-1"></iframe><span class="openchip">Preview ${I('ext')}</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="tag ${x.tech==='css'?'t-pk':'t-p'}">${x.tech==='css'?'Pure CSS':'Needs JS'}</span><span class="tag t-x">${ecat(x.cat).name}</span></div></div></button>`;
+ if(kind==='transition')return`<button class="card" ${o}><div class="thumb"><iframe data-thumb srcdoc="${esc(x.demoAuto)}" loading="lazy" tabindex="-1"></iframe><span class="openchip">Try it ${I('ext')}</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="tag t-pk">Pure CSS</span><span class="tag t-x">${x.group}</span></div></div></button>`;
+ const sw=['primary','secondary','accent','surface','border'].map(k=>`<i style="background:${x.colors[k]}"></i>`).join('');
+ return`<button class="card" ${o}><div class="thumb"><iframe data-thumb srcdoc="${esc(thumbDoc(x))}" loading="lazy" tabindex="-1"></iframe><span class="openchip">Open full screen ${I('ext')}</span><span class="pgs">${x.pagelist.length} pages</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="sw">${sw}</span>${x.types.slice(0,2).map(t=>`<span class="tag t-g">${TL[t]}</span>`).join('')}${x.styles.slice(0,2).map(t=>`<span class="tag t-p">${YL[t]}</span>`).join('')}</div></div></button>`}
+/* heart button sits beside the card (a button can't live inside the card button) */
+const favBtn=(k,s,cls)=>{const on=isFav(k,s),t=on?'Remove from My list':'Save to My list';return`<button class="favb ${cls||''} ${on?'on':''}" data-fav="${k}:${s}" aria-pressed="${on}" aria-label="${t}" title="${t}">${I('heart')}</button>`};
+const cardW=(x,k)=>`<div class="cw">${card(x,k)}${favBtn(k,x.slug)}</div>`;
+const fitThumbs=()=>$$('.thumb').forEach(t=>{const f=$('iframe',t);if(!f)return;if(t.dataset.gw){const w=+t.dataset.gw,h=+t.dataset.gh,k=Math.min(t.clientWidth/w,t.clientHeight/h);f.style.width=w+'px';f.style.height=h+'px';f.style.left=(t.clientWidth-w*k)/2+'px';f.style.top=(t.clientHeight-h*k)/2+'px';f.style.transform=`scale(${k})`}else f.style.transform=`scale(${t.clientWidth/1280})`});
+function fchips(){const out=[];FG.forEach(([k,,opts])=>S.f[k].forEach(id=>out.push(`<button class="fchip" data-f="${k}:${id}">${opts.find(o=>o.id===id).name}<i>×</i></button>`)));return out.length?`<div class="fchips">${out.join('')}<button class="fclear" data-fclear>Clear all</button></div>`:''}
+function listInner(){const a=list();let title=SEC[S.sec][0],l1,l2,tools='';
+ if(S.sec==='effect'){const c=S.ecat==='all'?null:ecat(S.ecat);title=c?c.name:'Effects';l1=c?c.desc:'Hover, scroll, text and layout effects for every kind of site. Every one can be recoloured, re-fonted and re-timed in the preview.';l2=c?c.zh:'动效库：每个效果都可以改颜色、字体、圆角和速度。'}
+ else if(S.sec==='asset'){const c=S.ac==='all'?null:AC[S.ac];title=c?c.name:'Assets';l1=c?c.desc:'The parts a graphic is built from: lines, shapes, frames, stickers, icons, textures, backgrounds, plus your own photos and cutouts. Recolour single-colour SVGs, copy them, or hand them to Claude Code as layers.';l2='素材库：线条、形状、边框、贴纸、图标、纹理、背景，以及你自己的照片和抠图。';
+  tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.assets.length} assets</span></div>`}
+ else if(S.sec==='graphic'){title='Graphic designs';l1='Posters, thumbnails, banners and product images as fixed-size, recolourable HTML/CSS designs. Each one has a recipe (layout traits plus a list of things to avoid) that Claude Code can follow to make a brand-new design.';l2='平面设计库：海报、缩略图、横幅、产品图。每张都有设计配方，可让 Claude Code 照着做出全新的图。';
+  tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.graphics.length} designs</span></div>${gchips()}`}
+ else if(S.sec==='transition'){l1='Smooth transitions between pages — pure CSS, using the View Transitions API. Try one here, then switch it on inside any template.';l2='页面转场：纯 CSS，可在任意模板的 Customize 里直接启用并预览。'}
+ else{l1='Complete multi-page website templates. Open one full screen, click through every page from its menu, recolour and resize it, then copy the code or download the whole site.';l2='完整的多页面网站模板：全屏预览、点菜单浏览所有页面、改色改字体，最后复制代码或打包下载。';
+  tools=`<div class="toolbar"><span class="muted">${a.length} of ${DATA.templates.length} templates</span><label class="sortl">Sort <select data-sort>${[['featured','Featured'],['az','A → Z'],['pages','Most pages'],['newest','Newest']].map(([v,n])=>`<option value="${v}" ${S.sort===v?'selected':''}>${n}</option>`).join('')}</select></label></div>${fchips()}`}
+ let body;
+ if(!a.length){if(S.sec==='effect'&&S.ecat!=='all'&&!S.q&&!S.tech){const c=ecat(S.ecat);body=`<div class="soonbox"><h3>Coming soon</h3><p>No ${c.name.toLowerCase()} effects yet — this category is ready and waiting.</p><div class="meta"><span class="lbl">Planned</span>${c.planned.map(p=>`<span class="tag t-x">${p}</span>`).join('')}</div></div>`}
+  else{const qq=S.q.trim().toLowerCase(),sg2=qq&&S.sec==='template'?suggestions(qq):[],oh=qq?otherHits(qq):[];
+   body=`<div class="empty">Nothing matches.${S.sec==='template'&&nFilters()?'<br><button class="btn" style="margin-top:18px;font-family:var(--fb)" data-fclear>Clear filters</button>':''}${sg2.length?`<div class="sugg"><span>Did you mean</span>${sg2.map(s=>`<button class="fchip" data-suggest="${s.k}:${s.id}">${s.name}</button>`).join('')}</div>`:''}${oh.length?`<div class="sugg"><span>Also found in</span>${oh.map(([k,n])=>`<button class="fchip" data-sec="${k}">${SEC[k][0]} · ${n}</button>`).join('')}</div>`:''}</div>`}}
+ else body=`<div class="grid${S.sec==='asset'?' agrid':''}">${a.map(x=>cardW(x,S.sec)).join('')}</div>`;
+ return`<div class="head"><div class="eyebrow"><span class="tag t-g">${SEC[S.sec][0]}</span><span>${S.sec==='template'?'HTML · CSS · JS · PHP · Elementor':S.sec==='effect'?'Copy-paste CSS & JS':S.sec==='graphic'?'HTML · CSS → PNG':S.sec==='asset'?'SVG · PNG · layers':'CSS · View Transitions'}</span></div><h1 class="title">${title}</h1><p class="lede">${l1}<span class="zh">${l2}</span></p></div>${S.sec==='template'?scenesHTML():''}${tools}${body}`}
+/* "I'm building…" shortcuts: each one just pre-selects site type / industry filters (ids from taxonomy.json) */
+const SCENES=[
+ ['restaurant','Restaurant & café','餐厅 / 咖啡店',{ind:['restaurant','culinary']}],
+ ['shop','Online shop','网店',{type:['ecommerce']}],
+ ['business','Business site','公司官网',{ind:['corporate','agency','saas','finance','legal','tech']}],
+ ['portfolio','Portfolio','作品集',{type:['portfolio']}],
+ ['education','Education','教育 / 补习',{ind:['education','language','coding','exam']}],
+ ['health','Health & wellness','健康 / 养生',{ind:['health','medical','massage','fitness']}]];
+const sceneF=f=>{const o={type:[],ind:[],sty:[]};FG.forEach(([k,,opts])=>{o[k]=(f[k]||[]).filter(id=>opts.some(p=>p.id===id))});return o};
+const sceneN=f=>DATA.templates.filter(x=>FG.every(([k,,,fld])=>!f[k].length||f[k].some(v=>x[fld].includes(v)))).length;
+function scenesHTML(){if(nFilters()||S.q.trim())return'';
+ const L=SCENES.map(([id,en,zh,f])=>({id,en,zh,n:sceneN(sceneF(f))})).filter(s=>s.n>=3);if(!L.length)return'';
+ return`<div class="scenes"><span class="sl">I'm building<small>我要做</small></span>${L.map(s=>`<button class="scn" data-scene="${s.id}">${s.en}<small>${s.zh}</small><i>${s.n}</i></button>`).join('')}</div>`}
+function home(){return`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a>${domSwitch()}<div class="hr"><label class="search">${I('search')}<input id="q" placeholder="${S.dom==='graphic'?(S.sec==='asset'?'Search assets: frame, grain, arrow…':'Search posters, thumbnails, styles…'):'Search templates, pages, effects…'}" value="${S.q.replace(/"/g,'&quot;')}"><kbd>/</kbd></label><a class="toplink" href="#/saved" aria-label="My list">${I('heart')}<span class="lbl"> My list</span><b class="fcount">${FAV.length||''}</b></a><a class="toplink" href="#/guide">Guide</a>${themeBtn()}</div></div></header>
+ <div class="mbar" id="mbar">${mbarHTML()}</div><div class="sbk" data-sidetoggle></div>
+ <div class="layout"><aside class="side" id="side">${sideHTML()}</aside><main id="main">${listInner()}</main></div>`}
+function mbarHTML(){const nf=S.sec==='asset'?(S.ac!=='all'?1:0):S.sec==='graphic'?nGF():S.sec==='template'?nFilters():(S.sec==='effect'&&S.ecat!=='all'?1:0)+(S.sec==='effect'&&S.tech?1:0);
+ return`<div class="mtabs">${DOMS[S.dom][3].map(k=>`<button data-sec="${k}" class="${S.sec===k?'on':''}">${SEC[k][0]}<span class="n">${items(k).length}</span></button>`).join('')}</div><button class="btn mfilter" data-sidetoggle>${I('filter')} Filters${nf?`<span class="badge">${nf}</span>`:''}</button>`}
+/* ---------- palettes ---------- */
+function palPicker(){const cats=DATA.pcats,all=DATA.palettes;const cur=S.pcat==='all'?all:all.filter(p=>p.cat===S.pcat);
+ const opts=`<option value="all" ${S.pcat==='all'?'selected':''}>All palettes (${all.length})</option>`+cats.map(c=>{const n=all.filter(p=>p.cat===c.id).length;return`<option value="${c.id}" ${S.pcat===c.id?'selected':''}>${c.name} (${n||'soon'})</option>`}).join('');
+ const g=cur.length?`<div class="pgrid">${cur.map(p=>`<button class="pt" data-pal="${all.indexOf(p)}" title="${p.name}"><span class="st">${p.c.slice(0,5).map(c=>`<i style="background:${c}"></i>`).join('')}</span><small>${p.name}</small></button>`).join('')}</div>`:`<div class="pmini">Coming soon — palettes for this group will be added.</div>`;
+ return`<h5>Quick palettes <em>${cur.length}</em></h5><select class="pcat" data-pcat>${opts}</select>${g}`}
+const fopts=(cur,def)=>{const l=[...new Set([def,...FONTS])];if(!l.includes(cur))l.unshift(cur);return l.map(f=>`<option ${f===cur?'selected':''}>${f}</option>`).join('')};
+const crows=(t,ks)=>ks.map(k=>`<div class="crow"><input type="color" data-k="${k}" value="${t[k]}"><span>${LAB[k][0]}<small>${LAB[k][1]}</small></span><input type="text" data-t="${k}" value="${t[k]}" maxlength="7" spellcheck="false"></div>`).join('');
+/* ---------- viewer ---------- */
+const DEVS=[['desktop','Desktop'],['tablet','Tablet'],['mobile','Mobile']];
+const cur=()=>items(S.route.kind).find(x=>x.slug===S.route.slug);
+const GROUPS=['Main','Shop','Proof','Content','Special','Utility'];
+function dimRow(key,label,t,x){const u=t[key+'U'],isW=key==='w';
+ const rng=isW?(u==='px'?[900,1800,10]:[50,100,1]):(u==='px'?[24,240,2]:[50,160,1]);
+ return`<div class="frow"><label>${label}<b id="v-${key}">${t[key]}${u}</b></label><div class="dimrow"><input type="range" data-dim="${key}" min="${rng[0]}" max="${rng[1]}" step="${rng[2]}" value="${t[key]}"><input type="number" class="num" data-dimnum="${key}" min="${rng[0]}" max="${rng[1]}" value="${t[key]}"><span class="seg"><button class="${u==='px'?'on':''}" data-unit="${key}:px">px</button><button class="${u==='%'?'on':''}" data-unit="${key}:%">%</button></span></div></div>`}
+const ptOpts=cur_=>`<option value="none" ${cur_==='none'?'selected':''}>None</option>`+DATA.ptgroups.map(g=>`<optgroup label="${g}">${DATA.transitions.filter(t=>t.group===g).map(t=>`<option value="${t.slug}" ${cur_===t.slug?'selected':''}>${t.name}</option>`).join('')}</optgroup>`).join('');
+const dlCard=(title,tag,tc,desc,btn,id)=>`<div class="dlcard"><h4>${title} <span class="tag ${tc}">${tag}</span></h4><p>${desc}</p><button class="btn dark" data-dl="${id}">${I('dl')} ${btn}</button></div>`;
+function rawDrawer(x){const n=Object.keys(x.pages).length,pl=x.pagelist.find(p=>p.slug===S.page)||x.pagelist[0];
+ let h=`<div class="dtabs"><button class="on">Imported template</button><button class="x" data-drawer="close">×</button></div><div class="dbody"><div class="callout">${I('imp')}<span><b>Imported template.</b> It was collected from outside the library as finished pages, so colours and fonts can't be changed here — edit its CSS instead. Everything else works: browse the pages, copy code, download.</span></div><h5>Download</h5>${dlCard('Site files','.zip','t-g',`${n} pages exactly as imported, with internal links set to .html.`,'Download site','zip-raw')}<h5>This page — ${esc2(pl.label)}</h5><div class="btnrow"><button class="btn dark" data-copyfn="rawpage">Copy HTML</button><button class="btn" data-dl="page-html">${I('dl')} .html</button></div>`;
+ return h+'</div>'}
+EXPT.rawpage=x=>links(x.pages[S.page]||x.pages.home,q=>href(q,'html'));
+function drawerHTML(){const {kind}=S.route,x=cur();if(!x)return'';if(kind==='graphic')return gdrawer(x);if(kind==='template'&&x.format==='documents')return rawDrawer(x);
+ const tabs=kind==='template'?[['style','Customize'],['exp','Export']]:[['style','Customize'],['exp','Code']];
+ let h=`<div class="dtabs">${tabs.map(([k,n])=>`<button data-tab="${k}" class="${S.tab===k?'on':''}">${n}</button>`).join('')}<button class="x" data-drawer="close">×</button></div><div class="dbody">`;
+ const t=st(kind,x);
+ if(S.tab==='style'){
+  if(kind==='effect')h+=`${palPicker()}<h5>Colors</h5>${crows(t,['primary','accent','surface','text'])}<div class="ratio" id="ratio"></div><h5>Fonts</h5><div class="frow"><label>Heading</label><select class="fs" data-font="head">${fopts(t.head,'Lora')}</select></div><div class="frow"><label>Body</label><select class="fs" data-font="body">${fopts(t.body,'Mulish')}</select></div><h5>Shape, size & motion</h5><div class="frow"><label>Corner radius <b id="v-radius">${t.radius}px</b></label><input type="range" data-r="radius" min="0" max="40" value="${t.radius}"></div><div class="frow"><label>Text size <b id="v-scale">${t.scale}%</b></label><input type="range" data-r="scale" min="70" max="140" value="${t.scale}"></div><div class="frow"><label>Animation speed <b id="v-speed">${t.speed}%</b></label><input type="range" data-r="speed" min="25" max="250" value="${t.speed}"></div><button class="btn block" data-reset>${I('reset')} Reset</button><div class="callout">${I('info')}<span>These settings apply to <b>every effect</b> you open, so you can pick a look once and browse the whole library in it.</span></div>`;
+  else if(kind==='transition')h+=`${palPicker()}<h5>Colors</h5>${crows(t,['primary','accent','surface','text'])}<h5>Fonts</h5><div class="frow"><label>Heading</label><select class="fs" data-font="head">${fopts(t.head,'Lora')}</select></div><div class="frow"><label>Body</label><select class="fs" data-font="body">${fopts(t.body,'Mulish')}</select></div><h5>Transition</h5><div class="frow"><label>Duration <b id="v-dur">${t.dur}ms</b></label><input type="range" data-r="dur" min="200" max="1800" step="50" value="${t.dur}"></div><div class="frow"><label>Easing</label><select class="fs" data-ease>${PT_EASE.map(([v,n])=>`<option value="${v}" ${t.ease===v?'selected':''}>${n}</option>`).join('')}</select></div><div class="crow" style="grid-template-columns:30px 1fr 86px"><input type="color" data-k="color" value="${t.color}"><span>Flash colour<small>for Colour Flash</small></span><input type="text" data-t="color" value="${t.color}" maxlength="7" spellcheck="false"></div><button class="btn block" data-ptplay>${I('play')} Play transition</button><button class="btn block" data-reset style="margin-top:8px">${I('reset')} Reset</button>`;
+  else h+=`${palPicker()}<h5>Colors</h5>${crows(t,KEYS)}<div class="ratio" id="ratio"></div><h5>Fonts</h5><div class="frow"><label>Heading</label><select class="fs" data-font="head">${fopts(t.head,x.fonts.head)}</select></div><div class="frow"><label>Body</label><select class="fs" data-font="body">${fopts(t.body,x.fonts.body)}</select></div><h5>Layout</h5>${dimRow('w','Content width',t,x)}${dimRow('pad','Section spacing',t,x)}<h5>Size & shape</h5><div class="frow"><label>Text size <b id="v-scale">${t.scale}%</b></label><input type="range" data-r="scale" min="70" max="140" value="${t.scale}"></div><div class="frow"><label>Corner radius <b id="v-radius">${t.radius}px</b></label><input type="range" data-r="radius" min="0" max="32" value="${t.radius}"></div><h5>Page transition</h5><div class="frow"><label>Transition</label><select class="fs" data-pt>${ptOpts(t.pt)}</select></div><div class="frow"><label>Duration <b id="v-ptdur">${t.ptdur}ms</b></label><input type="range" data-r="ptdur" min="200" max="1500" step="50" value="${t.ptdur}"></div><button class="btn block" data-ptdemo>${I('play')} Preview transition</button><button class="btn block" data-reset style="margin-top:8px">${I('reset')} Reset to original</button><div class="callout">${I('info')}<span>Default content width is <b>1300px</b>. Use <b>%</b> for a fluid layout. The page transition plays when you switch pages and is included in the export.</span></div>`}
+ else if(kind==='effect'){
+  const tb=[['snip','Snippet'],['vars','CSS variables']];if(!S.etab||!tb.find(a=>a[0]===S.etab))S.etab=tb[0][0];
+  h+=`<div class="etabs">${tb.map(([k,n])=>`<button class="btn ${S.etab===k?'on':''}" data-et="${k}">${n}</button>`).join('')}</div><div class="code"><button class="copy" data-copyfn="${S.etab}">Copy</button>${esc2(S.etab==='snip'?fxSnippet(x):fxVars())}</div><div class="callout">${I('code')}<span><b>HTML / PHP.</b> Paste the snippet into your page. Keep the variables in <code>tokens.css</code> to share them.</span></div><div class="callout">${I('layers')}<span><b>Elementor.</b> Paste into an <b>HTML widget</b>. Colors come from the variables at the top.</span></div>`}
+ else if(kind==='transition'){
+  const tb=[['css','CSS'],['use','How to use']];if(!S.etab||!tb.find(a=>a[0]===S.etab))S.etab=tb[0][0];
+  h+=`<div class="etabs">${tb.map(([k,n])=>`<button class="btn ${S.etab===k?'on':''}" data-et="${k}">${n}</button>`).join('')}</div><div class="code"><button class="copy" data-copyfn="${S.etab}">Copy</button>${esc2(S.etab==='css'?ptSnippet(x):ptUse(x))}</div>`}
+ else{
+  const n=Object.keys(x.pages).length,pl=x.pagelist.find(p=>p.slug===S.page)||x.pagelist[0];
+  const tb=[['dl','Download'],['page','This page'],['css','Global CSS'],['tok','Tokens JSON'],['prompt','Claude Code prompt']];
+  if(!S.etab||!tb.find(a=>a[0]===S.etab))S.etab='dl';
+  h+=`<div class="etabs">${tb.map(([k,nm])=>`<button class="btn ${S.etab===k?'on':''}" data-et="${k}">${nm}</button>`).join('')}</div>`;
+  if(S.etab==='dl'){
+   h+=`<h5>Code</h5>${dlCard('HTML site','.zip','t-g',`${n} pages as plain .html files, one tokens.css, no dependencies. Open index.html to run it.`,'Download HTML site','zip-html')}${dlCard('PHP site','.zip','t-p',`Same pages as .php with a shared header and footer. Upload to public_html on Hostinger.`,'Download PHP site','zip-php')}<h5>Elementor</h5>${dlCard('Elementor kit','.zip','t-pk','Global style JSON, a ready-made Claude Code prompt, tokens.css and every page as reference HTML.','Download Elementor kit','zip-el')}<h5>JSON</h5>${dlCard('JSON site','.json','t-b',`One file with tokens, navigation, footer, CSS and all ${n} pages — made for Claude Code and MCP.`,'Download JSON site','json-site')}<div class="callout">${I('code')}<span>Every download uses your <b>current</b> colors, fonts, width, spacing and page transition. Change anything in Customize and download again.</span></div><div class="callout">${I('layers')}<span><b>Elementor note.</b> The kit is not an Elementor import file. Rebuild with native widgets — the prompt and globals make Claude Code do it quickly via MCP.</span></div>`}
+  else if(S.etab==='page'){
+   const code=pageFile(x,S.page,'html');
+   h+=`<p class="pnote">Page: <b>${esc2(pl.label)}</b> — switch pages in the bar at the top.</p><div class="btnrow"><button class="btn dark" data-copyfn="page">Copy HTML</button><button class="btn" data-dl="page-html">${I('dl')} .html</button><button class="btn" data-copyfn="php">Copy PHP</button><button class="btn" data-dl="page-php">${I('dl')} .php</button><button class="btn" data-copyfn="widget">Copy for Elementor widget</button></div><div class="code small">${esc2(code.slice(0,2600))}<br>…<br><span class="faint">(${Math.round(code.length/1024)} KB — use Copy or Download for the whole file)</span></div>`}
+  else h+=`<div class="code"><button class="copy" data-copyfn="${S.etab}">Copy</button>${esc2(EXPT[S.etab](x))}</div>`}
+ return h+'</div>'}
+function pageSel(x){const g={};x.pagelist.forEach(p=>(g[p.group]=g[p.group]||[]).push(p));
+ return`<select class="pgsel" data-pagesel title="Switch page">${[...GROUPS.filter(k=>g[k]),...Object.keys(g).filter(k=>!GROUPS.includes(k))].map(k=>`<optgroup label="${k}">${g[k].map(p=>`<option value="${p.slug}" ${S.page===p.slug?'selected':''}>${p.label}</option>`).join('')}</optgroup>`).join('')}</select>`}
+function viewer(){const {kind,slug}=S.route,arr=items(kind),i=arr.findIndex(a=>a.slug===slug),x=arr[i];if(!x)return'<div class="empty">Not found</div>';
+ const pv=arr[(i-1+arr.length)%arr.length],nx=arr[(i+1)%arr.length],isT=kind==='template',isP=kind==='transition';
+ const src=isT?previewDoc(x,S.page,false):x.demo,orig=isT?previewDoc({...x,slug:'__o'+x.slug},S.page,false):x.demo;
+ const fr=(lab,lv)=>`<div class="pane">${lab?`<span class="plabel">${lab}</span>`:''}<div class="frame"><iframe ${lv?'data-live':''} srcdoc="${esc(lv?src:orig)}"></iframe></div></div>`;
+ const stage=S.cmp&&!isP&&x.format!=='documents'?fr('Original',false)+fr('Your version',true):fr('',true);
+ return`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div>${isT?pageSel(x):isP?`<button class="btn" data-ptplay>${I('play')} Play</button>`:''}<div class="dev">${DEVS.map(([k,n])=>`<button data-dev="${k}" class="${S.dev===k?'on':''}">${n}</button>`).join('')}</div><span class="sp"></span>${isP||x.format==='documents'?'':`<button class="btn ${S.cmp?'on':''}" data-cmp>${I('cmp')} Compare</button>`}${isT&&x.format!=='documents'&&(x.live||[]).length?`<button class="btn ${S.live?'on':''}" data-live title="Live effects in the preview">${I('fx')} Live</button>`:''}<button class="btn ghost" data-nav="${kind}/${pv.slug}" title="Previous (←)" aria-label="Previous">${I('chl')}</button><button class="btn ghost" data-nav="${kind}/${nx.slug}" title="Next (→)" aria-label="Next">${I('chr')}</button>${favBtn(kind,slug,'ibtn')}${themeBtn()}<button class="btn" data-drawer="exp">${isT?'Export':'Code'}</button><button class="btn dark" data-drawer="style">${x.format==='documents'?'Info':'Customize'}</button></div><div class="vstage ${S.dev}">${stage}<aside class="drawer ${S.drawer?'open':''}" id="drawer">${S.drawer?drawerHTML():''}</aside></div></div>`}
+function syncRatio(){const e=$('#ratio');if(!e||!S.route)return;const t=st(S.route.kind,cur()),f=r=>`<b class="${r>=4.5?'good':'bad'}">${r.toFixed(1)}:1 ${I(r>=4.5?'check':'x')}</b>`;e.innerHTML=`Contrast · text/surface ${f(ratio(t.text,t.surface))} · primary/surface ${f(ratio(t.primary,t.surface))}`}
+function refreshDrawer(){const d=$('#drawer');if(!d)return;d.classList.toggle('open',S.drawer);d.innerHTML=S.drawer?drawerHTML():'';syncRatio()}
+function loadFull(x){if(x.loading)return;x.loading=true;
+ fetch('api/website/templates/'+x.pg+'/'+x.slug+'/'+x.slug+'.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(j=>{x.pages=j.pages;if(j.nav!=null)x.nav=j.nav;if(j.foot!=null)x.foot=j.foot;x.full=true;x.loading=false;render()}).catch(()=>{x.loading=false;$('#app').innerHTML=`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button></div><div class="empty">Could not load this template.<br><small>Open the site through its web address (the template files are loaded from /api/).</small></div></div>`})}
+const loadingView=x=>`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div></div><div class="loading"><i></i>Loading ${x.pagelist.length} pages…</div></div>`;
+function guideView(){return`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a><div class="hr"><a class="toplink" href="#/">${I('chl')} Library</a>${themeBtn()}</div></div></header><main class="guide">${DATA.guide}</main>`}
+/* ---------- My list: saved picks, with a ready-to-paste brief for Claude Code ---------- */
+const KORDER=['template','effect','transition','graphic','asset'];
+const savedEntries=()=>FAV.map(key=>{const i=key.indexOf(':'),k=key.slice(0,i),s=key.slice(i+1);return{key,k,s,x:SEC.hasOwnProperty(k)?items(k).find(a=>a.slug===s):null}});
+function pickLine(k,x){const q=v=>'"'+v+'"';
+ if(k==='template'){const t=C[x.slug];
+  if(x.format==='documents')return`- Template ${q(x.name)}: export_site(slug=${q(x.slug)}, dest_dir="<project folder>", ext="php")  # imported page set, colours and fonts cannot be changed by parameter`;
+  if(!t)return`- Template ${q(x.name)}: export_site(slug=${q(x.slug)}, dest_dir="<project folder>", ext="php")  # template defaults, nothing customised yet`;
+  const a=[`slug=${q(x.slug)}`,'dest_dir="<project folder>"','ext="php"',...KEYS.map(c=>`${c}=${q(t[c])}`),`heading_font=${q(t.head)}`,`body_font=${q(t.body)}`,`text_scale=${+(t.scale/100).toFixed(2)}`,`radius_px=${t.radius}`,`section_padding=${q(t.pad+t.padU)}`,`content_width=${q(t.w+t.wU)}`];
+  if(t.pt!=='none')a.push(`page_transition=${q(t.pt)}`,`transition_ms=${t.ptdur}`);
+  return`- Template ${q(x.name)}: export_site(${a.join(', ')})`}
+ if(k==='effect'){const t=C.fx;return`- Effect ${q(x.name)}: get_effect(${q(x.slug)})`+(t?`  # my look: ${KEYS.map(c=>c+' '+t[c]).join(', ')}; fonts ${t.head} / ${t.body}; radius ${t.radius}px; text ${t.scale}%; speed ${t.speed}%`:'')}
+ if(k==='transition'){const t=C.pt;return`- Page transition ${q(x.name)}: get_transition(${q(x.slug)})`+(t?`  # my settings: ${t.dur}ms, easing ${t.ease}, flash colour ${t.color}`:'')}
+ if(k==='graphic'){const t=GST[x.slug];return`- Graphic ${q(x.name)} (${x.type} ${x.size.w}x${x.size.h}): get_graphic(${q(x.slug)}, format="doc") first, then export_graphic(slug=${q(x.slug)}, dest_dir="<project folder>"`+(t?`, ${KEYS.map(c=>`${c}=${q(t[c])}`).join(', ')}, heading_font=${q(t.head)}, body_font=${q(t.body)}`:'')+`)`+(t?'':'  # recipe defaults')}
+ return`- Asset ${q(x.name)} (${x.cat}): get_asset(${q(x.slug)}${x.format==='svg'?', color='+q(S.acol):''}), or export_asset(${q(x.slug)}, dest_dir="<project folder>")`}
+function savedPrompt(){const E=savedEntries().filter(e=>e.x),lines=KORDER.map(k=>E.filter(e=>e.k===k).map(e=>pickLine(k,e.x))).flat();
+ return`I picked these from Design Library. Use the design-library MCP if it is registered (library_overview, get_template, export_site …). If it is not, read library/catalog.json and each item's TEMPLATE.md / EFFECT.md / DESIGN.md instead.\n\n## My picks\n${lines.join('\n')}\n\n## How to work\n1. Read each pick's doc before building (get_template(slug, format="doc"), get_graphic(slug, format="doc")). Its composition traits and "don't" list are required, not optional.\n2. Brand colours and fonts go in through the parameters above. Do not export and then hand-edit hex values.\n3. All copy and images in the picks are placeholders. Replace them with my real content; where I have no image, mark it "缺图" and list what is missing.\n4. Chinese text needs a Noto Sans SC / Noto Serif SC fallback, and no italic on Chinese headings.\n5. Tell me which files you changed so I can upload them myself.\n\n## My project\n- Goal and audience: <what I am building, for whom>\n- Project folder (absolute path): <dest_dir>\n- Brand and content: <colours, fonts, logo, text, images>\n`}
+function savedInner(){const L=savedEntries(),ok=L.filter(e=>e.x),gone=L.filter(e=>!e.x);
+ let h=`<div class="head"><div class="eyebrow"><span class="tag t-g">My list</span><span>Saved in this browser only</span></div><h1 class="title">My list</h1><p class="lede">Tap the heart on any card to keep it here, then hand your picks to Claude Code in one go.<span class="zh">点卡片上的爱心把候选收在这里；挑好后一键交给 Claude Code。只保存在这个浏览器里。</span></p></div>`;
+ if(!L.length)return h+`<div class="empty">Nothing saved yet.<br><a class="btn" style="margin-top:18px;font-family:var(--fb)" href="${lh()}">Browse the library</a></div>`;
+ h+=`<div class="stb"><span class="muted">${ok.length} saved</span><span class="sp"></span>${ok.length?`<button class="btn dark" data-savedcopy="prompt">${I('code')} Copy for Claude Code</button><button class="btn" data-savedcopy="slugs">Copy list</button>`:''}<button class="btn" data-savedclear>Clear all</button></div>`;
+ KORDER.forEach(k=>{const g=ok.filter(e=>e.k===k);if(g.length)h+=`<h2 class="sech">${SEC[k][0]}<em>${g.length}</em></h2><div class="grid${k==='asset'?' agrid':''}">${g.map(e=>cardW(e.x,k)).join('')}</div>`});
+ if(gone.length)h+=`<div class="gonebox"><p>These saved items are no longer in the library:</p>${gone.map(e=>`<div class="gone"><code>${esc2(e.key)}</code><button class="btn" data-fav="${esc(e.key)}">Remove</button></div>`).join('')}</div>`;
+ return h}
+const savedView=()=>`<header class="top"><div class="in"><a class="brand" href="#/" aria-label="Design Library, home">${LOGO}</a><div class="hr"><a class="toplink" href="${lh()}">${I('chl')} Library</a>${themeBtn()}</div></div></header><main class="savedpage" id="main">${savedInner()}</main>`;
+function render(){const wasRoute=!!$('.viewer');document.body.classList.remove('side-open');document.body.style.overflow=S.route?'hidden':'';
+ if(S.guide){document.title='Guide · Design Library';$('#app').innerHTML=guideView();scrollTo(0,0);return}
+ if(S.route&&S.route.kind==='template'){const x=cur();if(x&&!x.full){document.title=x.name+' · Design Library';$('#app').innerHTML=loadingView(x);loadFull(x);return}}
+ if(S.route&&S.route.kind==='asset'){const x=cur();if(x&&x.format==='svg'&&x.svg===undefined){document.title=x.name+' · Design Library';$('#app').innerHTML=`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b></div></div><div class="loading"><i></i>Loading…</div></div>`;
+  if(!x.fetching){x.fetching=true;fetch(aurl(x)).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{x.svg=t.replace(/<svg /,'<svg style="width:100%;height:100%" ');x.fetching=false;render()}).catch(()=>{x.fetching=false;x.svg='';render()})}return}}
+ if(S.route&&S.route.kind==='effect'){const x=cur();if(x&&x.slim&&!x.dl){document.title=x.name+' · Design Library';$('#app').innerHTML=`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div></div><div class="loading"><i></i>Loading…</div></div>`;
+  if(!x.fetching){x.fetching=true;fetch('api/website/fx/'+x.eg+'/'+x.cat+'/'+x.slug+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{Object.assign(x,j);x.slim=false;x.dl=true;x.fetching=false;render()}).catch(()=>{x.fetching=false;$('#app').innerHTML=`<div class="empty">Could not load this effect.<br><button class="btn" style="margin-top:18px" data-back>${I('chl')} Back</button></div>`})}return}}
+ document.title=S.route&&cur()?cur().name+' · Design Library':'Design Library';
+ if(S.saved&&!S.route)document.title='My list · Design Library';
+ $('#app').innerHTML=S.route?(S.route.kind==='graphic'?gviewer():S.route.kind==='asset'?aviewer():viewer()):S.saved?savedView():home();
+ if(S.route){if(S.drawer)refreshDrawer();scrollTo(0,0);fitG()}else{fitThumbs();const q=$('#q');if(q&&S.focusQ){q.focus();q.setSelectionRange(q.value.length,q.value.length);S.focusQ=false}
+  if(wasRoute&&S.listY)scrollTo(0,S.listY);else if(S.saved)scrollTo(0,0);
+  if(!S.saved)syncList()}}
+function relist(){$('#main').innerHTML=listInner();$('#side').innerHTML=sideHTML();const mb=$('#mbar');if(mb)mb.innerHTML=mbarHTML();fitThumbs();syncList()}
+function setHash(){try{history.replaceState(null,'','#/'+S.route.kind+'/'+S.route.slug+(S.page&&S.page!=='home'?'/'+S.page:''))}catch(e){}}
+function pageWidget(x){const pg=x.pages[S.page]||x.pages.home;return`<style>\n${rootCSS(x,true)}\n${styleCSS(x)}</style>\n${links(x.nav,s=>href(s,'html'))}\n<main>${links(pg,s=>href(s,'html'))}</main>\n${links(x.foot,s=>href(s,'html'))}`}
+EXPT.widget=pageWidget;EXPT.tok=x=>elGlobals(x);
+function doDownload(w){const x=cur(),n=x.slug;
+ if(w==='a-file'){const a=cur();if(a.format==='svg')download(a.slug+'.svg',acolored(a),'image/svg+xml');else{const l=document.createElement('a');l.href=aurl(a);l.download=a.file;document.body.appendChild(l);l.click();l.remove()}}
+ else if(w==='g-html')download(n+'.html',gdoc(x,gcols(x)),'text/html');
+ else if(w==='g-doc')download(n+'-DESIGN.md',x.design||'','text/markdown');
+ else if(w==='zip-html')download(n+'-html-site.zip',makeZip(zipHTML(x)));
+ else if(w==='zip-php')download(n+'-php-site.zip',makeZip(zipPHP(x)));
+ else if(w==='zip-el')download(n+'-elementor-kit.zip',makeZip(elKit(x)));
+ else if(w==='zip-raw')download(n+'-site.zip',makeZip(Object.keys(x.pages).map(s=>({name:href(s,'html'),data:links(x.pages[s],q=>href(q,'html'))}))));
+ else if(w==='json-site')download(n+'.site.json',jsonSite(x),'application/json');
+ else if(w==='page-html')download(href(S.page,'html'),x.format==='documents'?EXPT.rawpage(x):pageFile(x,S.page,'html'),'text/html');
+ else if(w==='page-php')download(href(S.page,'php'),EXPT.php(x),'text/plain')}
+/* ---------- graphic domain (posters / thumbnails / banners / product images) ---------- */
+const GST={};
+const GT=Object.fromEntries((DATA.gtypes||[]).map(t=>[t.id,t]));
+const gbase=x=>({...x.colors,head:x.fonts.head,body:x.fonts.body});
+const gcols=x=>GST[x.slug]||(GST[x.slug]=gbase(x));
+function gvars(t){const v={};KEYS.forEach(k=>v['--c-'+k]=t[k]);['primary','secondary','accent','surface'].forEach(k=>v['--on-'+k]=onc(t[k]));v['--f-head']=`'${t.head}'${CJK}`;v['--f-body']=`'${t.body}'${CJK}`;return v}
+const gcss=t=>':root{'+Object.entries(gvars(t)).map(([k,v])=>k+':'+v).join(';')+'}';
+function gdoc(x,t){t=t||gbase(x);return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=${x.size.w}"><title>${esc2(x.name)} · ${x.size.w}×${x.size.h}</title><link rel="stylesheet" href="${gfonts(t)}"><style>\n${gcss(t)}\nhtml,body{margin:0;background:#fff}\n</style></head><body>\n${x.html}\n</body></html>\n`}
+function gpasses(x,skip){const q=S.q.trim().toLowerCase();if(q&&!matchQ(x,q))return false;
+ if(skip!=='type'&&S.gf.type.length&&!S.gf.type.includes(x.type))return false;
+ if(skip!=='sty'&&S.gf.sty.length&&!S.gf.sty.some(v=>x.styles.includes(v)))return false;return true}
+const nGF=()=>S.gf.type.length+S.gf.sty.length;
+const domSwitch=()=>`<div class="domsw" role="tablist">${Object.entries(DOMS).map(([k,v])=>`<button data-dom="${k}" class="${S.dom===k?'on':''}"><span>${I(v[2])}</span>${v[0]}<small>${v[1]}</small></button>`).join('')}</div>`;
+function gfilterHTML(){const G=DATA.graphics;let h='';if(nGF())h+=`<button class="clearall" data-gclear>${I('reset')} Clear ${nGF()} filter${nGF()>1?'s':''}</button>`;
+ const grp=(k,title,opts,get)=>{const rows=opts.map(o=>({o,total:G.filter(x=>get(x,o.id)).length,n:G.filter(x=>gpasses(x,k)&&get(x,o.id)).length})).filter(r=>r.total||k==='type'),sel=S.gf[k];
+  return`<div class="grp"><h6>${title}${sel.length?` <b class="badge">${sel.length}</b>`:''}</h6>`+rows.map(r=>`<button class="li fl ${sel.includes(r.o.id)?'on':''} ${r.n||sel.includes(r.o.id)?'':'dim'}" data-gf="${k}:${r.o.id}"><i class="ck">${sel.includes(r.o.id)?I('check'):''}</i><span class="nm">${r.o.name}</span><span class="n ${r.total?'':'s'}">${r.total?r.n:'soon'}</span></button>`).join('')+'</div>'};
+ return h+grp('type','Type',DATA.gtypes,(x,id)=>x.type===id)+grp('sty','Style',DATA.styletax,(x,id)=>x.styles.includes(id))+`<div class="callout" style="margin:0">${I('gr')}<span>Each design has a <b>recipe</b> (layout traits and a don't list). Ask Claude Code to make a new one from it.</span></div>`}
+function gchips(){const out=[];S.gf.type.forEach(id=>out.push(`<button class="fchip" data-gf="type:${id}">${(GT[id]||{name:id}).name}<i>×</i></button>`));S.gf.sty.forEach(id=>out.push(`<button class="fchip" data-gf="sty:${id}">${YL[id]||id}<i>×</i></button>`));return out.length?`<div class="fchips">${out.join('')}<button class="fclear" data-gclear>Clear all</button></div>`:''}
+function gcard(x){const sw=['primary','secondary','accent','surface','border'].map(k=>`<i style="background:${x.colors[k]}"></i>`).join('');
+ return`<button class="card" data-open="graphic/${x.slug}"><div class="thumb gth" data-gw="${x.size.w}" data-gh="${x.size.h}"><iframe srcdoc="${esc(gdoc(x))}" loading="lazy" tabindex="-1"></iframe><span class="openchip">Open ${I('ext')}</span><span class="pgs">${x.size.w}×${x.size.h}</span></div><div class="cb"><h3>${x.name}<span class="zh">${x.zh}</span></h3><p>${x.tag}</p><div class="meta"><span class="sw">${sw}</span><span class="tag t-g">${(GT[x.type]||{name:x.type}).name}</span>${x.styles.slice(0,2).map(t=>`<span class="tag t-p">${YL[t]||t}</span>`).join('')}</div></div></button>`}
+function fitG(){const s=$('.gstage'),w=$('#gwrap'),f=$('#gframe');if(!s||!w||!f)return;const x=cur();if(!x)return;const k=Math.min(1,(s.clientWidth-48)/x.size.w,(s.clientHeight-48)/x.size.h);w.style.width=Math.round(x.size.w*k)+'px';w.style.height=Math.round(x.size.h*k)+'px';f.style.transform=`scale(${k})`}
+function gapply(){const x=cur(),t=gcols(x),f=$('#gframe');if(!f)return;
+ if(f.dataset.fonts!==t.head+'|'+t.body){f.dataset.fonts=t.head+'|'+t.body;f.srcdoc=gdoc(x,t);return}
+ const d=f.contentDocument;if(d&&d.documentElement)Object.entries(gvars(t)).forEach(([k,v])=>d.documentElement.style.setProperty(k,v))}
+function gviewer(){const x=cur();if(!x)return'<div class="empty">Not found</div>';const arr=DATA.graphics,i=arr.indexOf(x),pv=arr[(i-1+arr.length)%arr.length],nx=arr[(i+1)%arr.length],t=gcols(x);
+ return`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh}</span></div><span class="tag t-g">${x.size.w}×${x.size.h}</span><span class="sp"></span><button class="btn ghost" data-nav="graphic/${pv.slug}" title="Previous (←)" aria-label="Previous">${I('chl')}</button><button class="btn ghost" data-nav="graphic/${nx.slug}" title="Next (→)" aria-label="Next">${I('chr')}</button>${favBtn('graphic',x.slug,'ibtn')}${themeBtn()}<button class="btn" data-drawer="doc">Recipe</button><button class="btn" data-drawer="exp">Export</button><button class="btn dark" data-drawer="style">Customize</button></div><div class="vstage gstage"><div class="gwrap" id="gwrap"><iframe id="gframe" data-fonts="${t.head}|${t.body}" style="width:${x.size.w}px;height:${x.size.h}px" srcdoc="${esc(gdoc(x,t))}"></iframe></div><aside class="drawer ${S.drawer?'open':''}" id="drawer">${S.drawer?drawerHTML():''}</aside></div></div>`}
+function gdrawer(x){const t=gcols(x),tabs=[['style','Customize'],['doc','Recipe'],['exp','Export']];if(!tabs.find(a=>a[0]===S.tab))S.tab='style';
+ let h=`<div class="dtabs">${tabs.map(([k,n])=>`<button data-tab="${k}" class="${S.tab===k?'on':''}">${n}</button>`).join('')}<button class="x" data-drawer="close">×</button></div><div class="dbody">`;
+ if(S.tab==='style')h+=`${palPicker()}<h5>Colors</h5>${crows(t,KEYS)}<div class="ratio" id="ratio"></div><h5>Fonts</h5><div class="frow"><label>Heading</label><select class="fs" data-font="head">${fopts(t.head,x.fonts.head)}</select></div><div class="frow"><label>Body</label><select class="fs" data-font="body">${fopts(t.body,x.fonts.body)}</select></div><button class="btn block" data-reset style="margin-top:8px">${I('reset')} Reset to original</button><div class="callout">${I('info')}<span>Colors and fonts are CSS variables (<code>--c-primary</code>, <code>--f-head</code> …). The layout stays the same. To make a different design, use the <b>Recipe</b> with Claude Code.</span></div>`;
+ else if(S.tab==='doc')h+=`<div class="btnrow"><button class="btn dark" data-copyfn="grecipe">Copy recipe</button><button class="btn" data-dl="g-doc">${I('dl')} DESIGN.md</button></div><div class="code small">${esc2(x.design||'No recipe yet.')}</div>`;
+ else h+=`${dlCard('Standalone HTML','.html','t-g',`Exact ${x.size.w}×${x.size.h} canvas with your current colors and fonts. Open it in a browser and screenshot at that size to get a PNG.`,'Download HTML','g-html')}<h5>Canva</h5><div class="btnrow"><button class="btn dark" data-copyfn="gcanva">Copy Canva prompt</button></div><div class="callout">${I('palette')}<span><b>Make it in Canva.</b> Paste this prompt into <b>Claude Desktop</b> with the Canva connector on. It carries the size, colors, fonts and the full recipe, so Canva builds a new design instead of copying a template.</span></div><h5>Claude Code</h5><div class="btnrow"><button class="btn" data-copyfn="ghtml">Copy HTML</button><button class="btn" data-copyfn="gprompt">Copy Claude Code prompt</button></div><div class="callout">${I('fx')}<span><b>Make a new one.</b> Paste the prompt into Claude Code. It reads this recipe and designs a new ${(GT[x.type]||{name:x.type}).name.toLowerCase()} in the same style with your own content.</span></div>`;
+ return h+'</div>'}
+EXPT.grecipe=x=>x.design||'';EXPT.ghtml=x=>gdoc(x,gcols(x));
+EXPT.gcanva=x=>{const t=gcols(x),T=(GT[x.type]||{name:x.type}).name.toLowerCase();return`Use Canva to create a NEW ${T} design in the style of "${x.name}". Do not copy or reuse any existing Canva template; build it from scratch using the recipe below.\n\n## Canvas\nCustom size ${x.size.w} × ${x.size.h} px (${x.size.label}).\n\n## Colors (use exactly these hex values)\nPrimary ${t.primary} · Secondary ${t.secondary} · Text ${t.text} · Accent ${t.accent} · Surface/background ${t.surface} · Border/lines ${t.border}\n\n## Fonts\nHeadings: ${t.head} · Body: ${t.body}. If a font is not available in Canva, pick the closest one and tell me which. For Chinese text use Noto Sans SC or Noto Serif SC, and never italic for Chinese headings.\n\n## Design recipe (layout traits, things to avoid, tone). Follow it closely\n${x.design||x.tag}\n\n## Rules\n- Replace all placeholder text with my content below.\n- Where I give no image, leave a clearly labelled placeholder ("缺图") and list what is missing at the end.\n- Keep text large enough to read at small size.\n- When done, give me the Canva edit link and export a PNG.\n\n## My content\n<headline, supporting text, date/price/CTA, brand name, and any images or logo I upload>`};
+EXPT.gprompt=x=>{const t=gcols(x);return`Use the Design Library graphic "${x.name}" (${x.slug}, ${x.type} ${x.size.w}×${x.size.h}) as the reference and design a NEW ${x.type}. Do not copy it.\n\n1. Read its recipe (MCP get_graphic("${x.slug}", format="doc") or library/graphics/${x.slug}/DESIGN.md). Follow the layout traits and the don't list.\n2. Keep the canvas ${x.size.w}×${x.size.h}. Colours and fonts only through CSS variables (current: primary ${t.primary}, secondary ${t.secondary}, text ${t.text}, accent ${t.accent}, surface ${t.surface}, border ${t.border}; fonts ${t.head} / ${t.body}).\n3. Replace all placeholder text with my content. Where I give no image, keep the "缺图" placeholder and tell me.\n4. Chinese text needs Noto Sans SC / Noto Serif SC fallback, and no italic on Chinese headings.\n5. Export a PNG by screenshotting the page at exactly ${x.size.w}×${x.size.h}.\n\nMy brief: <describe the ${x.type} here>`};
+/* ---------- assets (graphic domain): lines, shapes, frames, textures, photos … ---------- */
+const AC=Object.fromEntries((DATA.acats||[]).map(c=>[c.id,c]));
+const aurl=x=>'api/graphic/assets/'+x.cat+'/'+x.file;
+const acolored=x=>(x.svg||'').replace(/currentColor/g,S.acol);
+function assetSide(){const A=DATA.assets,n=id=>A.filter(a=>a.cat===id).length;
+ let h=`<div class="grp"><h6>Categories</h6><button class="li ${S.ac==='all'?'on':''}" data-acat="all">All assets<span class="n">${A.length}</span></button>`;
+ (DATA.agroups||[]).forEach(g=>{h+=`<div class="sub">${g}</div>`;DATA.acats.filter(c=>c.group===g).forEach(c=>{const k=n(c.id);h+=`<button class="li ${S.ac===c.id?'on':''} ${k?'':'soon'}" data-acat="${c.id}">${c.name}<span class="n ${k?'':'s'}">${k||'soon'}</span></button>`})});
+ return h+`</div><div class="callout" style="margin:0">${I('as')}<span>Build a design from layers: a real photo or cutout, a background, lines and frames, a texture on top. Add your own photos with <code>tools/ingest_asset.py</code>.</span></div>`}
+function acard(x){return`<button class="card acard" data-open="asset/${x.slug}"><div class="athumb"><img src="${aurl(x)}" loading="lazy" decoding="async" alt=""></div><div class="cb"><h3>${x.name}</h3><p class="ameta">${AC[x.cat]?AC[x.cat].name:x.cat} · ${x.format.toUpperCase()}${x.w?' · '+x.w+'×'+x.h:''}</p></div></button>`}
+function aviewer(){const x=cur();if(!x)return'<div class="empty">Not found</div>';const arr=DATA.assets,i=arr.indexOf(x),pv=arr[(i-1+arr.length)%arr.length],nx=arr[(i+1)%arr.length],isSvg=x.format==='svg';
+ const prev=isSvg?`<div class="aprev" id="apreview" style="color:${S.acol}">${x.svg||''}</div>`:`<div class="aprev" id="apreview"><img src="${aurl(x)}" alt=""></div>`;
+ return`<div class="viewer"><div class="vbar"><button class="btn ghost" data-back>${I('chl')} Back</button><div class="vt"><b>${x.name}</b><span class="zh">${x.zh||''}</span></div><span class="tag t-g">${AC[x.cat]?AC[x.cat].name:x.cat}</span><span class="sp"></span><button class="btn ghost" data-nav="asset/${pv.slug}" title="Previous (←)" aria-label="Previous">${I('chl')}</button><button class="btn ghost" data-nav="asset/${nx.slug}" title="Next (→)" aria-label="Next">${I('chr')}</button>${favBtn('asset',x.slug,'ibtn')}${themeBtn()}</div>
+ <div class="vstage astage"><div class="abg ${S.abg}" id="abg">${prev}</div><aside class="apanel">
+  ${isSvg?`<h5>Color</h5><div class="crow" style="grid-template-columns:30px 1fr 86px"><input type="color" data-acolor value="${S.acol}"><span>Fill<small>currentColor</small></span><input type="text" data-acolor value="${S.acol}" maxlength="7" spellcheck="false"></div>`:''}
+  <h5>Background</h5><div class="seg">${[['chk','Checker'],['lt','Light'],['dk','Dark']].map(([k,n])=>`<button class="${S.abg===k?'on':''}" data-abg="${k}">${n}</button>`).join('')}</div>
+  <h5>Use</h5><div class="btnrow">${isSvg?`<button class="btn dark" data-copyfn="asvg">Copy SVG</button><button class="btn" data-dl="a-file">${I('dl')} .svg</button>`:`<button class="btn dark" data-dl="a-file">${I('dl')} ${x.format}</button>`}<button class="btn" data-copyfn="ause">Copy usage note</button></div>
+  <h5>Info</h5><div class="ainfo"><div><b>File</b> ${x.cat}/${x.file}</div>${x.w?`<div><b>Size</b> ${x.w}×${x.h}px</div>`:''}<div><b>Tags</b> ${(x.tags||[]).join(', ')||'—'}</div><div><b>Path</b> <code>/api/graphic/assets/${x.cat}/${x.file}</code></div></div>
+  <div class="callout">${I('as')}<span>${isSvg?'Single-colour SVG: paste inline and set <code>color</code> in CSS to recolour. Textures are meant to sit on top with <code>mix-blend-mode</code>.':'Raster asset: place it as a layer with <code>object-fit</code>; keep transparent PNGs for cutouts.'}</span></div>
+ </aside></div></div>`}
+function aSetColor(v){if(!/^#[0-9a-fA-F]{6}$/.test(v))return;S.acol=v;const p=$('#apreview');if(p)p.style.color=v;$$('[data-acolor]').forEach(e=>{if(e.value!==v)e.value=v})}
+EXPT.asvg=x=>acolored(x);
+EXPT.ause=x=>`Asset: ${x.name} (${x.slug}) — ${x.cat}, ${x.format}${x.w?', '+x.w+'×'+x.h:''}\nFile: library/assets/${x.cat}/${x.slug}/${x.file}\nPublic: /api/graphic/assets/${x.cat}/${x.file}\n`+(x.format==='svg'?`Single-colour SVG (fill = currentColor). Inline it and set CSS color: ${S.acol}.\n`:'Raster image: use as a layer (img / background-image).\n')+`Use it as one layer of a larger design. Keep colours on CSS variables where possible.`;
+/* ---------- events ---------- */
+function setDim(key,val,unit){const t=st('template',cur());if(unit){const base=px(cur().tok.pad,88);if(key==='w'){t.w=unit==='%'?Math.min(100,Math.round(t.w/REFW*100)):Math.round(t.w*REFW/1000)*10;if(unit==='px')t.w=Math.max(900,Math.min(1800,Math.round(t.w/10)*10));if(unit==='%')t.w=Math.max(50,t.w)}
+  else{t.pad=unit==='%'?Math.round(t.pad/base*100):Math.round(t.pad/100*base);t.pad=unit==='%'?Math.max(50,Math.min(160,t.pad)):Math.max(24,Math.min(240,t.pad))}t[key+'U']=unit}
+ else t[key]=+val;push()}
+const ptDemo=()=>{const t=S.route.kind==='template'?st('template',cur()).ptdur:st('transition',cur()).dur;$$('iframe[data-live]').forEach(f=>f.contentWindow&&f.contentWindow.postMessage({type:'dl-pt-demo',ms:t},'*'))};
+const UNIT={radius:'px',ptdur:'ms',dur:'ms',scale:'%',speed:'%'};
+document.addEventListener('click',e=>{const c=s=>e.target.closest(s);let el;
+ if(el=c('[data-gcopy]')){copy($('pre',el.parentElement).innerText,'Copied');return}
+ if(c('[data-theme-toggle]')){S.theme=S.theme==='dark'?'light':'dark';applyTheme();$$('[data-theme-toggle]').forEach(b=>b.innerHTML=I(S.theme==='dark'?'sun':'moon'));return}
+ if(c('[data-sidetoggle]')){document.body.classList.toggle('side-open');return}
+ if(el=c('[data-dom]')){S.dom=el.dataset.dom;S.sec=DOMS[S.dom][3][0];S.q='';ss('dom',S.dom);render();return}
+ if(el=c('[data-gf]')){const[a,v]=el.dataset.gf.split(':'),l=S.gf[a],i=l.indexOf(v);i<0?l.push(v):l.splice(i,1);relist();return}
+ if(c('[data-gclear]')){S.gf={type:[],sty:[]};relist();return}
+ if(el=c('[data-acat]')){S.ac=el.dataset.acat;relist();scrollTo(0,0);return}
+ if(el=c('[data-abg]')){S.abg=el.dataset.abg;$$('[data-abg]').forEach(b=>b.classList.toggle('on',b===el));const g=$('#abg');if(g)g.className='abg '+S.abg;return}
+ if(el=c('[data-sec]')){S.sec=el.dataset.sec;relist();return}
+ if(el=c('[data-f]')){const[a,v]=el.dataset.f.split(':'),l=S.f[a],i=l.indexOf(v);i<0?l.push(v):l.splice(i,1);relist();return}
+ if(c('[data-fclear]')){S.f={type:[],ind:[],sty:[]};relist();return}
+ if(el=c('[data-soon]')){S.soon[el.dataset.soon]=!S.soon[el.dataset.soon];$('#side').innerHTML=sideHTML();return}
+ if(el=c('[data-col]')){S.col[el.dataset.col]=!S.col[el.dataset.col];$('#side').innerHTML=sideHTML();return}
+ if(c('[data-tech]')){S.tech=c('[data-tech]').dataset.tech;relist();return}
+ if(c('[data-tgrp]')){S.tgrp=c('[data-tgrp]').dataset.tgrp;relist();return}
+ if(c('[data-ecat]')){S.ecat=c('[data-ecat]').dataset.ecat;relist();scrollTo(0,0);return}
+ if(el=c('[data-scene]')){const sc=SCENES.find(a=>a[0]===el.dataset.scene);if(sc){S.f=sceneF(sc[3]);S.q='';const qi=$('#q');if(qi)qi.value='';relist()}return}
+ if(el=c('[data-suggest]')){const v=el.dataset.suggest,i=v.indexOf(':');S.f={type:[],ind:[],sty:[]};S.f[v.slice(0,i)]=[v.slice(i+1)];S.q='';const qi=$('#q');if(qi)qi.value='';relist();return}
+ if(el=c('[data-fav]')){const v=el.dataset.fav,i=v.indexOf(':'),on=toggleFav(v.slice(0,i),v.slice(i+1)),t=on?'Remove from My list':'Save to My list';
+  $$('[data-fav]').forEach(b=>{if(b.dataset.fav!==v)return;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.title=t;b.setAttribute('aria-label',t)});
+  $$('.fcount').forEach(n=>n.textContent=FAV.length||'');
+  if(S.saved&&!S.route){$('#main').innerHTML=savedInner();fitThumbs()}
+  toast(on?'Saved to My list':'Removed from My list');return}
+ if(el=c('[data-savedcopy]')){const p=el.dataset.savedcopy==='prompt';copy(p?savedPrompt():savedEntries().filter(e=>e.x).map(e=>e.key).join('\n'),p?'Copied. Paste it into Claude Code':'Copied');return}
+ if(c('[data-savedclear]')){if(confirm('Remove all '+FAV.length+' saved items?')){FAV=[];ss('dl_favs','[]');$('#main').innerHTML=savedInner();$$('.fcount').forEach(n=>n.textContent='')}return}
+ if(el=c('[data-open]')){if(!S.route){S.listY=scrollY;S.from=S.saved?'saved':'list'}S.page='home';go('#/'+el.dataset.open);return}
+ if(el=c('[data-nav]')){S.page='home';go('#/'+el.dataset.nav);return}
+ if(c('[data-back]')){go(backHash());return}
+ if(el=c('[data-dev]')){S.dev=el.dataset.dev;render();return}
+ if(c('[data-live]')){S.live=!S.live;render();return}
+ if(c('[data-cmp]')){S.cmp=!S.cmp;render();return}
+ if(c('[data-ptplay],[data-ptdemo]')){ptDemo();return}
+ if(el=c('[data-drawer]')){const v=el.dataset.drawer;if(v==='close')S.drawer=false;else if(S.drawer&&S.tab===v)S.drawer=false;else{S.drawer=true;S.tab=v}refreshDrawer();return}
+ if(el=c('[data-tab]')){S.tab=el.dataset.tab;refreshDrawer();return}
+ if(el=c('[data-et]')){S.etab=el.dataset.et;refreshDrawer();return}
+ if(el=c('[data-pal]')){const p=DATA.palettes[+el.dataset.pal],t=st(S.route.kind,cur());KEYS.forEach((k,i)=>t[k]=p.c[i]);if(S.route.kind==='transition')t.color=p.c[3];push();refreshDrawer();return}
+ if(el=c('[data-unit]')){const[k,u]=el.dataset.unit.split(':');if(st('template',cur())[k+'U']!==u){setDim(k,null,u);refreshDrawer()}return}
+ if(c('[data-reset]')){const k=S.route.kind;if(k==='effect')delete C.fx;else if(k==='transition')delete C.pt;else if(k==='graphic')delete GST[S.route.slug];else delete C[S.route.slug];push();refreshDrawer();return}
+ if(el=c('[data-dl]')){doDownload(el.dataset.dl);return}
+ if(el=c('[data-copyfn]')){const x=cur(),k=el.dataset.copyfn,kind=S.route.kind;copy(kind==='effect'?(k==='snip'?fxSnippet(x):fxVars()):kind==='transition'?(k==='css'?ptSnippet(x):ptUse(x)):EXPT[k](x),'Copied');return}
+ });
+document.addEventListener('input',e=>{const t=e.target;
+ if(t.id==='q'){S.q=t.value;relist();return}
+ if(t.dataset.acolor!==undefined){aSetColor(t.value);return}
+ if(!S.route)return;const k=S.route.kind,v=st(k,cur());
+ if(t.dataset.k){v[t.dataset.k]=t.value;$(`[data-t=${t.dataset.k}]`).value=t.value}
+ else if(t.dataset.t&&/^#[0-9a-fA-F]{6}$/.test(t.value)){v[t.dataset.t]=t.value;$(`[data-k=${t.dataset.t}]`).value=t.value}
+ else if(t.dataset.r){v[t.dataset.r]=+t.value;$('#v-'+t.dataset.r).textContent=t.value+(UNIT[t.dataset.r]||'%')}
+ else if(t.dataset.dim||t.dataset.dimnum){const key=t.dataset.dim||t.dataset.dimnum;let val=+t.value;if(t.dataset.dimnum){if(!val)return;const r=[t.min,t.max].map(Number);val=Math.max(r[0],Math.min(r[1],val));$(`[data-dim=${key}]`).value=val}else $(`[data-dimnum=${key}]`).value=val;v[key]=val;$('#v-'+key).textContent=val+v[key+'U'];push();return}
+ else return;push();syncRatio()});
+document.addEventListener('change',e=>{const t=e.target;
+ if(t.dataset.sort!==undefined){S.sort=t.value;relist();return}
+ if(t.dataset.pcat!==undefined){S.pcat=t.value;refreshDrawer();return}
+ if(t.dataset.font&&S.route){st(S.route.kind,cur())[t.dataset.font]=t.value;push();return}
+ if(t.dataset.pt!==undefined){st('template',cur()).pt=t.value;push();setTimeout(ptDemo,250);return}
+ if(t.dataset.ease!==undefined){st('transition',cur()).ease=t.value;push();setTimeout(ptDemo,200);return}
+ if(t.dataset.pagesel!==undefined){S.page=t.value;if(cur().format==='documents')$$('iframe[data-live]').forEach(f=>f.srcdoc=rawDoc(cur(),S.page));else $$('iframe').forEach(f=>f.contentWindow.postMessage({type:'dl-goto',page:S.page},'*'));setHash();if(S.drawer&&S.tab==='exp')refreshDrawer()}});
+addEventListener('message',e=>{const d=e.data;if(!d)return;
+ if(d.type==='dl-ready'&&S.route)push();
+ if(d.type==='dl-page'&&S.route){S.page=d.page;if(cur().format==='documents'){$$('iframe[data-live]').forEach(f=>f.srcdoc=rawDoc(cur(),S.page))}const s=$('[data-pagesel]');if(s)s.value=S.page;setHash();$$('iframe').forEach(f=>{if(f.contentWindow!==e.source)f.contentWindow.postMessage({type:'dl-goto',page:S.page},'*')});if(S.drawer&&S.tab==='exp'&&S.etab==='page')refreshDrawer()}});
+addEventListener('resize',()=>{fitThumbs();fitG()});
+(function(){let x0=null;addEventListener('touchstart',e=>{const s=e.target.closest&&e.target.closest('#side');x0=s&&document.body.classList.contains('side-open')?e.touches[0].clientX:null},{passive:true});addEventListener('touchend',e=>{if(x0===null)return;if(e.changedTouches[0].clientX-x0<-70)document.body.classList.remove('side-open');x0=null},{passive:true})})();
+addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('side-open')){document.body.classList.remove('side-open');return}const typing=/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
+ if(e.key==='/'&&!typing&&!S.route){e.preventDefault();$('#q')&&$('#q').focus()}
+ else if(e.key==='Escape'){if(S.drawer){S.drawer=false;refreshDrawer()}else if(S.route)go(backHash())}
+ else if(S.route&&!typing&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){const arr=items(S.route.kind),i=arr.findIndex(x=>x.slug===S.route.slug),n=arr[(i+(e.key==='ArrowRight'?1:-1)+arr.length)%arr.length];S.page='home';go('#/'+S.route.kind+'/'+n.slug)}});
+applyTheme();parse();render();

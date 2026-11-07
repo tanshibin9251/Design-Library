@@ -1,0 +1,152 @@
+{
+ "format": "fragments",
+ "slug": "enterprise-blue",
+ "name": "Enterprise Blue",
+ "zh": "企业蓝",
+ "tag": "Reliable and orderly. Reads like a well-set annual report.",
+ "colors": {
+  "primary": "#1E3A5F",
+  "secondary": "#334155",
+  "text": "#1F2937",
+  "accent": "#2563EB",
+  "surface": "#F9FAFB",
+  "border": "#E5E7EB"
+ },
+ "fonts": {
+  "head": "Source Sans 3",
+  "body": "Source Sans 3"
+ },
+ "tok": {
+  "radius": "6px",
+  "hlh": "1.12",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "60px",
+  "h2": "40px",
+  "h3": "22px",
+  "pad": "88px",
+  "ew": "600",
+  "stat": "var(--c-accent)"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "corporate",
+  "tech"
+ ],
+ "styles": [
+  "corporate",
+  "swiss"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Engagements",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Case Studies",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Case Study",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Insights",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "industries",
+   "label": "Industries",
+   "group": "Special"
+  },
+  {
+   "slug": "resources",
+   "label": "Resources",
+   "group": "Special"
+  },
+  {
+   "slug": "book-call",
+   "label": "Book a call",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

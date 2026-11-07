@@ -1,0 +1,87 @@
+<style>
+/* Sugar & Crumb — baking and dessert recipe site, tokens only */
+body{background-image:radial-gradient(circle,color-mix(in srgb,var(--c-secondary) 55%,transparent) 0 2px,transparent 3px);background-size:34px 34px;background-color:var(--c-surface)}
+.sc-head{text-align:center;padding:clamp(16px,2vw,26px) clamp(14px,4vw,50px) 0;position:relative}
+.sc-logo{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--c-primary)}
+.sc-logo b{font:800 clamp(30px,4vw,48px)/1 var(--f-head);letter-spacing:.01em}
+.sc-logo b span{color:var(--c-accent)}
+.sc-logo small{font:700 11px var(--f-body);letter-spacing:.34em;text-transform:uppercase;margin-top:6px;color:var(--c-secondary)}
+.sc-nav{display:flex;justify-content:center;gap:10px;margin:18px 0 0;list-style:none;flex-wrap:wrap}
+.sc-nav a{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px 999px 14px 14px;text-decoration:none;font:800 14px var(--f-head);color:var(--c-primary);background:var(--bg,var(--c-secondary));border:2px solid var(--c-primary);border-bottom-width:5px;transition:transform .15s}
+.sc-nav a:hover{transform:translateY(-3px)}
+.sc-nav li:nth-child(1) a{--bg:var(--c-secondary)}.sc-nav li:nth-child(2) a{--bg:var(--c-accent)}.sc-nav li:nth-child(3) a{--bg:color-mix(in srgb,var(--c-primary) 30%,var(--c-surface))}.sc-nav li:nth-child(4) a{--bg:color-mix(in srgb,var(--c-accent) 40%,var(--c-surface))}
+.sc-nav .more{position:relative}
+.sc-nav .dd{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 6px);display:none;grid-template-columns:repeat(4,minmax(120px,1fr));gap:14px 26px;padding:20px 24px;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:20px;min-width:580px;z-index:60;text-align:left}
+.sc-nav .more:hover .dd,.sc-nav .more:focus-within .dd{display:grid}
+.sc-nav .dd h4{font:800 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-primary);margin-bottom:6px}
+.sc-nav .dd a{display:block;min-height:0;padding:5px 0;border:0;background:none;border-radius:0;font:600 14px var(--f-body)}
+.sc-m{display:none}
+.sc-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;border:2px solid var(--c-primary);border-bottom-width:5px;border-radius:999px 999px 14px 14px;padding:0 18px;font:800 13px var(--f-head);letter-spacing:.1em;background:var(--c-secondary);margin:14px auto 0;width:max-content}
+.sc-m summary::-webkit-details-marker{display:none}
+.sc-m nav{display:grid;margin:10px 0 0;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:20px;padding:8px 18px;text-align:left}
+.sc-m nav a{padding:12px 0;border-bottom:2px dotted var(--c-border);text-decoration:none;font:600 15px var(--f-body);min-height:44px}
+@media(max-width:860px){.sc-nav{display:none}.sc-m{display:block}}
+.sc-sec{padding:clamp(34px,5vw,76px) clamp(16px,5vw,80px)}
+.sc-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,5vw,80px);align-items:center;padding:clamp(30px,5vw,70px) clamp(16px,5vw,80px)}
+.sc-hero h1{font:800 clamp(40px,6vw,var(--h1))/1.05 var(--f-head);color:var(--c-primary)}
+.sc-hero h1 em{font-style:normal;color:var(--c-accent);display:inline-block;transform:rotate(-2deg)}
+.sc-hero p{font:600 18px/1.7 var(--f-body);margin:18px 0 26px;max-width:40ch}
+@media(max-width:860px){.sc-hero{grid-template-columns:1fr}}
+.sc-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--c-primary);color:var(--on-primary);text-decoration:none;font:800 15px var(--f-head);border:2px solid var(--c-primary);border-bottom-width:5px;cursor:pointer}
+.sc-btn:hover{transform:translateY(-2px)}
+.sc-btn.y{background:var(--c-accent);color:var(--on-accent)}.sc-btn.o{background:var(--c-surface);color:var(--c-primary)}
+/* CSS layer cake */
+.sc-cake{width:min(100%,400px);margin:0 auto;position:relative;padding-top:60px}
+.sc-cake .t{height:86px;border-radius:22px 22px 10px 10px;border:3px solid var(--c-primary);position:relative;margin:0 auto}
+.sc-cake .t::before{content:"";position:absolute;left:-3px;right:-3px;top:-3px;height:30px;border-radius:22px 22px 0 0;background:var(--c-surface);border:3px solid var(--c-primary);border-bottom:0;clip-path:polygon(0 0,100% 0,100% 100%,92% 60%,84% 100%,76% 60%,68% 100%,60% 60%,52% 100%,44% 60%,36% 100%,28% 60%,20% 100%,12% 60%,4% 100%,0 70%)}
+.sc-cake .t1{width:46%;background:var(--c-secondary);z-index:3;margin-bottom:-3px}
+.sc-cake .t2{width:68%;background:color-mix(in srgb,var(--c-accent) 70%,var(--c-surface));margin-bottom:-3px}
+.sc-cake .t3{width:90%;background:color-mix(in srgb,var(--c-primary) 25%,var(--c-surface))}
+.sc-cake .cherry{position:absolute;left:50%;top:6px;width:42px;height:42px;margin-left:-21px;border-radius:50%;background:var(--c-primary);border:3px solid var(--c-primary)}
+.sc-cake .cherry::before{content:"";position:absolute;left:50%;bottom:90%;width:3px;height:22px;background:var(--c-primary);transform:rotate(18deg);transform-origin:bottom}
+.sc-cake .plate{height:18px;width:104%;margin:0 -2%;border-radius:0 0 30px 30px;background:var(--c-primary)}
+.sc-cake .flag{position:absolute;right:0;top:20px;background:var(--c-accent);color:var(--on-accent);font:800 15px var(--f-head);padding:10px 14px;border-radius:14px;border:3px solid var(--c-primary);transform:rotate(8deg)}
+.sc-h{display:flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.sc-h h2{font:800 clamp(26px,3.4vw,var(--h2)) var(--f-head);color:var(--c-primary)}
+.sc-h span{background:var(--c-accent);color:var(--on-accent);border:2px solid var(--c-primary);padding:3px 14px;border-radius:999px;font:800 12px var(--f-head);letter-spacing:.1em}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,32px)}
+.sc-card{display:grid;text-decoration:none;background:var(--c-surface);border:3px solid var(--c-primary);border-radius:28px;overflow:hidden;transition:transform .2s}
+.sc-card:hover{transform:rotate(-1deg) translateY(-4px)}
+.sc-card .ph{aspect-ratio:5/4;border-bottom:3px solid var(--c-primary);background:radial-gradient(circle at 32% 38%,var(--c1,var(--c-accent)) 0 18%,transparent 19%),radial-gradient(circle at 70% 60%,var(--c2,var(--c-secondary)) 0 24%,transparent 25%),color-mix(in srgb,var(--c-secondary) 35%,var(--c-surface));position:relative}
+.sc-card .ph::after{content:"缺图";position:absolute;right:10px;bottom:8px;font:800 10px var(--f-body);letter-spacing:.14em;background:var(--c-surface);padding:2px 8px;border-radius:99px}
+.sc-card .b{padding:18px 20px 22px;display:grid;gap:6px}
+.sc-card h3{font:800 22px/1.15 var(--f-head);color:var(--c-primary)}
+.sc-card .m{display:flex;gap:10px;flex-wrap:wrap;font:700 12px var(--f-body);color:var(--c-primary)}
+.sc-card .m span{background:color-mix(in srgb,var(--c-secondary) 55%,var(--c-surface));padding:3px 10px;border-radius:99px}
+@media(max-width:900px){.sc-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.sc-grid{grid-template-columns:1fr}}
+/* pan converter */
+.sc-conv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,50px);align-items:start}
+@media(max-width:860px){.sc-conv{grid-template-columns:1fr}}
+.sc-box{background:var(--c-surface);border:3px solid var(--c-primary);border-radius:28px;padding:clamp(20px,2.6vw,34px)}
+.sc-box h3{font:800 22px var(--f-head);margin-bottom:14px}
+.sc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.sc-box label{display:grid;gap:6px;font:800 12px var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--c-primary)}
+.sc-box select,.sc-box input{border:2px solid var(--c-primary);border-radius:14px;background:var(--c-surface);min-height:48px;padding:0 14px;font:700 16px var(--f-body);color:var(--c-text);width:100%}
+.sc-res{background:var(--c-accent);color:var(--on-accent);border-radius:28px;border:3px solid var(--c-primary);padding:clamp(24px,3vw,40px);text-align:center}
+.sc-res .x{font:800 clamp(56px,9vw,100px)/1 var(--f-head)}
+.sc-res p{font:700 16px/1.7 var(--f-body);margin-top:8px}
+.sc-res .t{display:inline-block;margin-top:14px;background:var(--c-surface);color:var(--c-primary);border-radius:999px;padding:6px 18px;font:800 14px var(--f-head)}
+.sc-tbl{width:100%;border-collapse:separate;border-spacing:0;border:3px solid var(--c-primary);border-radius:20px;overflow:hidden;background:var(--c-surface)}
+.sc-tbl th,.sc-tbl td{padding:14px 16px;text-align:left;border-bottom:2px dotted var(--c-secondary);font:600 15px var(--f-body)}
+.sc-tbl th{background:var(--c-secondary);font:800 13px var(--f-head);letter-spacing:.1em;text-transform:uppercase;color:var(--c-primary)}
+.sc-tbl tr:last-child td{border-bottom:0}
+.sc-ing{list-style:none}.sc-ing li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:2px dotted var(--c-secondary);font:700 15px var(--f-body)}
+.sc-steps{counter-reset:s;list-style:none;display:grid;gap:16px}
+.sc-steps li{counter-increment:s;display:grid;grid-template-columns:46px 1fr;gap:14px;font:600 16px/1.8 var(--f-body)}
+.sc-steps li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--c-accent);color:var(--on-accent);border:2px solid var(--c-primary);font:800 20px var(--f-head)}
+.sc-foot{background:var(--c-primary);color:var(--on-primary);margin-top:clamp(34px,5vw,80px);border-radius:48px 48px 0 0;padding:clamp(34px,4vw,60px) clamp(16px,5vw,80px) 22px;position:relative}
+.sc-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,6vw,90px)}
+.sc-foot .big{font:800 34px var(--f-head)}
+.sc-foot h4{font:800 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:10px}
+.sc-foot ul{list-style:none}.sc-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:600 14px var(--f-body);min-height:32px}
+.sc-foot .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sc-foot .copy{margin-top:26px;font:600 12px var(--f-body);opacity:.75}
+@media(max-width:800px){.sc-foot .top{grid-template-columns:1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+@media(prefers-reduced-motion:reduce){.sc-nav a,.sc-card,.sc-btn{transition:none}}
+</style><header class="sc-head"><a class="sc-logo" href="{{p:home}}"><b>Sugar <span>&amp;</span> Crumb</b><small>Baking &amp; dessert recipes</small></a><ul class="sc-nav"><li><a href="{{p:recipes}}">All bakes</a></li><li><a href="{{p:pans}}">Pan converter</a></li><li><a href="{{p:conversions}}">Conversions</a></li><li><a href="{{p:troubleshoot}}">Why did it sink?</a></li><li class="more"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Bake</h4><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">All bakes</a><a href="{{p:recipe}}">Recipe: Vanilla sponge</a></div><div><h4>Tools</h4><a href="{{p:pans}}">Pan converter</a><a href="{{p:conversions}}">Cups, grams & oven temps</a><a href="{{p:troubleshoot}}">Why did it sink?</a></div><div><h4>Kitchen</h4><a href="{{p:about}}">About</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><details class="sc-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">All bakes</a><a href="{{p:recipe}}">Recipe: Vanilla sponge</a><a href="{{p:pans}}">Pan converter</a><a href="{{p:conversions}}">Cups, grams & oven temps</a><a href="{{p:troubleshoot}}">Why did it sink?</a><a href="{{p:about}}">About</a><a href="{{p:faq}}">FAQ</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details></header>

@@ -1,0 +1,9 @@
+<section class="cc-sec"><div class="cc-cm">// playground.html</div><h1 class="cc-h1" style="font-size:clamp(28px,4vw,48px)">Playground</h1><p style="margin:14px 0 22px;color:var(--c-secondary)">Edit HTML and CSS on the left. The preview runs in a sandbox, no scripts.</p><div class="cc-play"><textarea id="cc-src" spellcheck="false" aria-label="HTML editor">&lt;h1>Hello, camp&lt;/h1>
+&lt;p>Edit me. The preview updates as you type.&lt;/p>
+&lt;button>Click&lt;/button>
+
+&lt;style>
+  body{font-family:system-ui;padding:24px}
+  h1{color:#2563eb}
+  button{padding:8px 16px;border-radius:6px}
+&lt;/style></textarea><iframe id="cc-out" sandbox title="Preview"></iframe></div></section><script>(function(){var t=document.getElementById("cc-src"),f=document.getElementById("cc-out");if(!t)return;function u(){f.srcdoc=t.value}t.addEventListener("input",u);u()})();</script>

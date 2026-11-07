@@ -1,0 +1,18 @@
+{
+ "slug": "halftone-dots",
+ "name": "Halftone dots",
+ "zh": "半调圆点",
+ "cat": "texture",
+ "file": "halftone-dots.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "halftone",
+  "pop",
+  "overlay"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

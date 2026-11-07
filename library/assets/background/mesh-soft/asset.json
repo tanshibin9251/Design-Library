@@ -1,0 +1,18 @@
+{
+ "slug": "mesh-soft",
+ "name": "Soft mesh",
+ "zh": "柔和渐变团",
+ "cat": "background",
+ "file": "mesh-soft.svg",
+ "format": "svg",
+ "width": 800,
+ "height": 600,
+ "tags": [
+  "gradient",
+  "soft",
+  "mesh"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

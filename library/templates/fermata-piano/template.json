@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "fermata-piano",
+ "name": "Fermata Piano",
+ "zh": "钢琴课程",
+ "tag": "Online piano school on sheet-music paper: five-line staff header with notes as nav links, playable on-page keyboard, concert-programme course list and a metronome.",
+ "colors": {
+  "primary": "#201c17",
+  "secondary": "#8a7d68",
+  "text": "#2a251f",
+  "accent": "#0f7b7b",
+  "surface": "#f5efe0",
+  "border": "#d8cdb4"
+ },
+ "fonts": {
+  "head": "Old Standard TT",
+  "body": "Libre Franklin"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "400",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "84px",
+  "h2": "44px",
+  "h3": "24px",
+  "pad": "92px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "music",
+  "education"
+ ],
+ "styles": [
+  "elegant",
+  "editorial",
+  "typographic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Learn"
+  },
+  {
+   "slug": "courses",
+   "label": "Programme",
+   "group": "Learn"
+  },
+  {
+   "slug": "course",
+   "label": "Course: Piano from Zero",
+   "group": "Learn"
+  },
+  {
+   "slug": "lesson",
+   "label": "Lesson & metronome",
+   "group": "Learn"
+  },
+  {
+   "slug": "keyboard",
+   "label": "Keyboard",
+   "group": "Learn"
+  },
+  {
+   "slug": "teachers",
+   "label": "Teachers",
+   "group": "School"
+  },
+  {
+   "slug": "pricing",
+   "label": "Tuition",
+   "group": "School"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "School"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "slug": "triangle",
+ "name": "Triangle",
+ "zh": "三角形",
+ "cat": "shape",
+ "file": "triangle.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 180,
+ "tags": [
+  "basic",
+  "triangle"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

@@ -1,0 +1,136 @@
+<style>
+/* Tsukimi Ryokan — japanese night inn, tokens only */
+.ts-head{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;padding:0 clamp(18px,4vw,56px);min-height:76px;background:color-mix(in srgb,var(--c-surface) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--c-border)}
+.ts-logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--c-primary);font:400 20px var(--f-head);letter-spacing:.3em}
+.ts-logo i{width:18px;height:18px;border-radius:50%;background:var(--c-primary);box-shadow:inset -6px -2px 0 var(--c-surface)}
+.ts-logo small{display:block;font:300 10px var(--f-body);letter-spacing:.34em;color:var(--c-secondary);margin-top:5px}
+.ts-nav{display:flex;justify-content:center;gap:clamp(14px,2.4vw,40px);list-style:none}
+.ts-nav a{display:flex;align-items:baseline;gap:8px;text-decoration:none;font:300 13px var(--f-body);letter-spacing:.22em;text-transform:uppercase;padding:14px 4px;min-height:44px;color:var(--c-text)}
+.ts-nav a b{font:400 14px var(--f-head);color:var(--c-accent);letter-spacing:0}
+.ts-nav a:hover{color:var(--c-primary)}
+.ts-nav .more{position:relative}
+.ts-nav .dd{position:absolute;right:-60px;top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:20px 30px;padding:24px 28px;background:var(--c-surface);border:1px solid var(--c-border);min-width:640px;z-index:60}
+.ts-nav .more:hover .dd,.ts-nav .more:focus-within .dd{display:grid}
+.ts-nav .dd h4{font:600 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:8px}
+.ts-nav .dd a{padding:5px 0;min-height:0;font-size:14px;letter-spacing:.04em;text-transform:none;display:block}
+.ts-key{display:grid;place-items:center;min-height:44px;padding:0 24px;background:var(--c-accent);color:var(--on-accent);text-decoration:none;font:400 14px var(--f-head);letter-spacing:.3em}
+.ts-key:hover{filter:brightness(1.12)}
+.ts-m{display:none}
+.ts-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;font:300 12px var(--f-body);letter-spacing:.22em}
+.ts-m summary::-webkit-details-marker{display:none}
+.ts-m nav{position:absolute;left:0;right:0;top:100%;background:var(--c-surface);border-bottom:1px solid var(--c-border);padding:12px 20px 22px;display:grid}
+.ts-m nav a{padding:12px 4px;border-bottom:1px solid var(--c-border);text-decoration:none;font:300 15px var(--f-body);letter-spacing:.1em;min-height:44px}
+@media(max-width:960px){.ts-head{grid-template-columns:auto 1fr auto auto}.ts-nav{display:none}.ts-m{display:block;justify-self:end}}
+
+.ts-sec{padding:var(--pad) clamp(20px,6vw,100px)}
+.ts-k{display:flex;align-items:center;gap:16px;margin-bottom:34px;font:300 12px var(--f-body);letter-spacing:.34em;text-transform:uppercase;color:var(--c-secondary)}
+.ts-k b{font:400 20px var(--f-head);color:var(--c-accent);letter-spacing:0}
+.ts-k::after{content:"";flex:1;height:1px;background:var(--c-border)}
+.ts-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.9em 2.4em;border:1px solid var(--c-primary);color:var(--c-primary);text-decoration:none;font:300 13px var(--f-body);letter-spacing:.32em;text-transform:uppercase;background:none;cursor:pointer;transition:background .3s,color .3s}
+.ts-btn:hover{background:var(--c-primary);color:var(--c-surface)}
+.ts-btn.f{background:var(--c-accent);border-color:var(--c-accent);color:var(--on-accent)}.ts-btn.f:hover{filter:brightness(1.12);background:var(--c-accent);color:var(--on-accent)}
+.ts-ph{position:relative;min-height:220px;background:
+ repeating-linear-gradient(90deg,transparent 0 59px,color-mix(in srgb,var(--c-primary) 10%,transparent) 59px 60px),
+ repeating-linear-gradient(0deg,transparent 0 59px,color-mix(in srgb,var(--c-primary) 10%,transparent) 59px 60px),
+ linear-gradient(160deg,color-mix(in srgb,var(--c-primary) 12%,var(--c-surface)),color-mix(in srgb,var(--c-accent) 14%,var(--c-surface)))}
+.ts-ph::after{content:attr(data-l);position:absolute;left:14px;bottom:12px;font:400 10px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-secondary)}
+
+/* hero: moon behind shoji lattice */
+.ts-hero{position:relative;min-height:min(100vh,880px);display:grid;align-items:end;overflow:hidden;padding:clamp(80px,12vw,160px) clamp(20px,6vw,100px) clamp(36px,5vw,70px)}
+.ts-lattice{position:absolute;inset:0;pointer-events:none;background:
+ repeating-linear-gradient(90deg,transparent 0 calc(12.5% - 1px),color-mix(in srgb,var(--c-primary) 20%,transparent) calc(12.5% - 1px) 12.5%),
+ repeating-linear-gradient(0deg,transparent 0 calc(16.666% - 1px),color-mix(in srgb,var(--c-primary) 20%,transparent) calc(16.666% - 1px) 16.666%);
+ -webkit-mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%)}
+.ts-moon{position:absolute;right:clamp(20px,9vw,150px);top:clamp(90px,12vw,150px);width:clamp(170px,26vw,380px);aspect-ratio:1;filter:drop-shadow(0 0 40px color-mix(in srgb,var(--c-primary) 35%,transparent))}
+.ts-moon svg{width:100%;height:100%;display:block}
+.ts-hero-in{position:relative;max-width:760px}
+.ts-hero h1{font-size:clamp(46px,8vw,var(--h1));letter-spacing:.16em;color:var(--c-primary);font-weight:400;margin:14px 0 22px;line-height:1.25}
+.ts-hero .en{font:300 12px var(--f-body);letter-spacing:.38em;text-transform:uppercase;color:var(--c-secondary)}
+.ts-hero p.lead{font:300 17px/2 var(--f-body);max-width:46ch}
+.ts-tonight{position:absolute;right:clamp(20px,6vw,100px);bottom:clamp(36px,5vw,70px);text-align:right;font:300 12px var(--f-body);letter-spacing:.3em;text-transform:uppercase;color:var(--c-secondary)}
+.ts-tonight b{display:block;font:400 clamp(24px,3vw,36px) var(--f-head);letter-spacing:.2em;color:var(--c-primary);text-transform:none;margin-top:8px}
+@media(max-width:800px){.ts-tonight{position:static;text-align:left;margin-top:36px}.ts-moon{opacity:.55}}
+
+/* rooms: fusuma accordion */
+.ts-rooms{display:flex;gap:0;height:min(70vh,560px);min-height:420px;border:1px solid var(--c-border)}
+.ts-room{position:relative;flex:1;overflow:hidden;text-decoration:none;border-right:1px solid var(--c-border);transition:flex .7s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;justify-content:space-between;padding:26px 24px;min-width:0;background:var(--c-surface)}
+.ts-room:last-child{border-right:0}
+.ts-room.on{flex:3.4;background:color-mix(in srgb,var(--c-primary) 6%,var(--c-surface))}
+.ts-room .n{font:400 clamp(30px,3vw,44px) var(--f-head);color:var(--c-accent)}
+.ts-room h3{font:400 22px var(--f-head);letter-spacing:.2em;color:var(--c-primary);white-space:nowrap}
+.ts-room .d{font:300 15px/1.9 var(--f-body);max-width:34ch;opacity:0;transform:translateY(10px);transition:opacity .5s .15s,transform .5s .15s;margin-top:10px}
+.ts-room.on .d{opacity:1;transform:none}
+.ts-room .pr{font:300 12px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary);margin-top:12px;opacity:0;transition:opacity .5s .2s}
+.ts-room.on .pr{opacity:1}
+@media(max-width:800px){.ts-rooms{flex-direction:column;height:auto}.ts-room,.ts-room.on{flex:none;border-right:0;border-bottom:1px solid var(--c-border);min-height:150px}.ts-room .d,.ts-room .pr{opacity:1;transform:none}}
+
+/* seasons */
+.ts-seasons{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border)}
+.ts-seasons>div{padding:34px 24px 38px;border-right:1px solid var(--c-border);display:grid;gap:10px;align-content:start}
+.ts-seasons>div:last-child{border-right:0}
+.ts-seasons .k{font:400 clamp(70px,9vw,130px)/1 var(--f-head);color:transparent;-webkit-text-stroke:1px var(--c-primary);transition:color .5s}
+.ts-seasons>div:hover .k{color:color-mix(in srgb,var(--c-primary) 22%,transparent)}
+.ts-seasons h3{font:400 17px var(--f-head);letter-spacing:.24em}
+.ts-seasons p{font:300 14px/1.9 var(--f-body);opacity:.85}
+@media(max-width:800px){.ts-seasons{grid-template-columns:1fr 1fr}.ts-seasons>div:nth-child(2n){border-right:0}.ts-seasons>div{border-bottom:1px solid var(--c-border)}}
+
+/* kaiseki timeline */
+.ts-course{position:relative;margin-left:8px}
+.ts-course::before{content:"";position:absolute;left:78px;top:6px;bottom:6px;width:1px;background:var(--c-border)}
+.ts-course li{list-style:none;display:grid;grid-template-columns:70px 1fr;gap:0 52px;padding:22px 0;position:relative}
+.ts-course li::before{content:"";position:absolute;left:73px;top:34px;width:11px;height:11px;border-radius:50%;background:var(--c-surface);border:1px solid var(--c-primary)}
+.ts-course .jp{font:400 28px var(--f-head);color:var(--c-primary);letter-spacing:.1em;text-align:right}
+.ts-course h3{font:400 19px var(--f-head);letter-spacing:.14em;margin-bottom:4px;padding-left:40px}
+.ts-course p{font:300 15px/1.9 var(--f-body);padding-left:40px;opacity:.85;max-width:52ch}
+@media(max-width:600px){.ts-course::before{left:46px}.ts-course li{grid-template-columns:40px 1fr;gap:0 26px}.ts-course li::before{left:41px}.ts-course h3,.ts-course p{padding-left:14px}.ts-course .jp{font-size:20px}}
+
+/* tables & cards */
+.ts-tbl{width:100%;border-collapse:collapse;font:300 15px var(--f-body)}
+.ts-tbl th,.ts-tbl td{padding:18px 12px;border-top:1px solid var(--c-border);text-align:left}
+.ts-tbl th{font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary)}
+.ts-tbl tr:last-child td{border-bottom:1px solid var(--c-border)}
+.ts-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--c-border)}
+.ts-plans>div{padding:40px 30px;border-right:1px solid var(--c-border);display:grid;gap:12px;align-content:start}
+.ts-plans>div:last-child{border-right:0}
+.ts-plans .jp{font:400 38px var(--f-head);color:var(--c-accent)}
+.ts-plans h3{font:400 20px var(--f-head);letter-spacing:.18em}
+.ts-plans .pr{font:400 28px var(--f-head);letter-spacing:.06em;margin-top:6px}
+.ts-plans li{list-style:none;font:300 14px/1.8 var(--f-body);padding:8px 0;border-top:1px solid var(--c-border)}
+@media(max-width:800px){.ts-plans{grid-template-columns:1fr}.ts-plans>div{border-right:0;border-bottom:1px solid var(--c-border)}}
+.ts-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.ts-two h2{font-weight:400;letter-spacing:.14em;margin-bottom:18px}
+.ts-two p{font:300 16px/2 var(--f-body);max-width:46ch}
+@media(max-width:800px){.ts-two{grid-template-columns:1fr}}
+.ts-gal{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:10px}
+.ts-gal .a{grid-column:span 3;grid-row:span 2}.ts-gal .b{grid-column:span 2;grid-row:span 1}.ts-gal .c{grid-column:span 1;grid-row:span 2}.ts-gal .d{grid-column:span 2;grid-row:span 2}
+.ts-gal .ts-ph{min-height:0;height:100%}
+@media(max-width:700px){.ts-gal{grid-template-columns:1fr 1fr;grid-auto-rows:130px}.ts-gal .a,.ts-gal .b,.ts-gal .c,.ts-gal .d{grid-column:span 1;grid-row:span 1}.ts-gal .a{grid-column:span 2}}
+.ts-est{border:1px solid var(--c-border);padding:30px;display:grid;gap:12px}
+.ts-est div{display:flex;justify-content:space-between;font:300 15px var(--f-body)}
+.ts-est .t{border-top:1px solid var(--c-border);padding-top:16px;font:400 24px var(--f-head);letter-spacing:.06em;color:var(--c-primary)}
+.ts-kv{display:grid;grid-template-columns:150px 1fr;gap:0}
+.ts-kv dt,.ts-kv dd{padding:18px 0;border-top:1px solid var(--c-border)}
+.ts-kv dt{font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary);padding-top:22px}
+.ts-kv dd{font:300 16px/1.8 var(--f-body)}
+@media(max-width:600px){.ts-kv{grid-template-columns:1fr}.ts-kv dt{border-top:1px solid var(--c-border);padding-bottom:0}.ts-kv dd{border-top:0;padding-top:4px}}
+
+/* footer */
+.ts-foot{border-top:1px solid var(--c-border);padding:clamp(48px,6vw,90px) clamp(20px,6vw,100px) 30px}
+.ts-foot-top{display:grid;grid-template-columns:1.2fr 2fr;gap:clamp(30px,6vw,100px)}
+.ts-foot .big{font:400 30px var(--f-head);letter-spacing:.34em;color:var(--c-primary)}
+.ts-foot h4{font:400 11px var(--f-body);letter-spacing:.26em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:12px}
+.ts-foot ul{list-style:none}.ts-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:300 14px var(--f-body);min-height:32px}.ts-foot li a:hover{color:var(--c-primary)}
+.ts-foot .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ts-foot .copy{margin-top:46px;padding-top:18px;border-top:1px solid var(--c-border);font:300 12px var(--f-body);letter-spacing:.2em;color:var(--c-secondary);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:800px){.ts-foot-top{grid-template-columns:1fr}.ts-foot .cols{grid-template-columns:1fr 1fr}}
+.faq summary{letter-spacing:.1em}
+html,body{overflow-x:clip}img,video,svg{max-width:100%}
+@media(max-width:700px){.ts-sec{padding-left:18px;padding-right:18px}.ts-hero{padding-left:18px;padding-right:18px}}
+@media(prefers-reduced-motion:reduce){.ts-room,.ts-room .d,.ts-room .pr{transition:none}}
+</style>
+<header class="ts-head">
+<a class="ts-logo" href="{{p:home}}"><i></i><span>月見荘<small>TSUKIMI INN</small></span></a>
+<ul class="ts-nav"><li><a href="{{p:rooms}}"><b>一</b>Rooms</a></li><li><a href="{{p:kaiseki}}"><b>二</b>Dinner</a></li><li><a href="{{p:onsen}}"><b>三</b>Onsen</a></li><li><a href="{{p:seasons}}"><b>四</b>Seasons</a></li><li class="more"><a href="#" tabindex="0"><b>他</b>More</a><div class="dd"><div><h4>Stay</h4><a href="{{p:home}}">Home</a><a href="{{p:rooms}}">Rooms</a><a href="{{p:room}}">Room: Tsuki</a><a href="{{p:plans}}">Plans & rates</a><a href="{{p:reserve}}">Reserve</a></div><div><h4>Experience</h4><a href="{{p:kaiseki}}">Kaiseki dinner</a><a href="{{p:onsen}}">Onsen</a><a href="{{p:seasons}}">Four seasons</a><a href="{{p:gallery}}">Gallery</a></div><div><h4>Visit</h4><a href="{{p:access}}">Access</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul>
+<details class="ts-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:rooms}}">Rooms</a><a href="{{p:room}}">Room: Tsuki</a><a href="{{p:plans}}">Plans & rates</a><a href="{{p:reserve}}">Reserve</a><a href="{{p:kaiseki}}">Kaiseki dinner</a><a href="{{p:onsen}}">Onsen</a><a href="{{p:seasons}}">Four seasons</a><a href="{{p:gallery}}">Gallery</a><a href="{{p:access}}">Access</a><a href="{{p:faq}}">FAQ</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details>
+<a class="ts-key" href="{{p:reserve}}">予約</a>
+</header>

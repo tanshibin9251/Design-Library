@@ -1,0 +1,18 @@
+{
+ "slug": "starburst-16",
+ "name": "Starburst 16",
+ "zh": "16 角放射星",
+ "cat": "shape",
+ "file": "starburst-16.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "burst",
+  "badge",
+  "sale"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

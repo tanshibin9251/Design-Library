@@ -1,0 +1,8 @@
+{
+ "slug": "fade",
+ "name": "Fade",
+ "zh": "淡入淡出",
+ "tag": "The classic cross-fade. Safe on every kind of site.",
+ "group": "Soft",
+ "license": "自写，无第三方代码"
+}

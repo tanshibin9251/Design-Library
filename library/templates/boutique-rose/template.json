@@ -1,0 +1,166 @@
+{
+ "format": "fragments",
+ "slug": "boutique-rose",
+ "name": "Boutique Rose",
+ "zh": "精品玫瑰",
+ "tag": "Fashion lookbook: snap-scrolling looks and a complete-the-look panel that totals a whole outfit with size picker.",
+ "colors": {
+  "primary": "#2a1f2d",
+  "secondary": "#f2d3da",
+  "text": "#2a1f2d",
+  "accent": "#d94f70",
+  "surface": "#fbf5f3",
+  "border": "#ead9da"
+ },
+ "fonts": {
+  "head": "Bodoni Moda",
+  "body": "Figtree"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "500",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "104px",
+  "h2": "52px",
+  "h3": "24px",
+  "pad": "76px",
+  "ew": "500",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "ecommerce"
+ ],
+ "industries": [
+  "fashion"
+ ],
+ "styles": [
+  "elegant",
+  "editorial",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Gift Cards",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Lookbook",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Look",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "lookbook",
+   "label": "Lookbook",
+   "group": "Special"
+  },
+  {
+   "slug": "size-guide",
+   "label": "Size guide",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

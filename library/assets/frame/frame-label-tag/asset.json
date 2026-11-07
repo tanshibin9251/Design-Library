@@ -1,0 +1,18 @@
+{
+ "slug": "frame-label-tag",
+ "name": "Label tag",
+ "zh": "标签牌",
+ "cat": "frame",
+ "file": "frame-label-tag.svg",
+ "format": "svg",
+ "width": 300,
+ "height": 140,
+ "tags": [
+  "tag",
+  "price",
+  "label"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

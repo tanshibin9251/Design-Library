@@ -1,0 +1,64 @@
+<!-- Follower Dot — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-cf{position:relative;overflow:hidden;min-height:100vh;display:grid;place-items:center;text-align:center;padding:2em;background:var(--surface)}
+.fx-cf .in{display:grid;gap:1.2em;justify-items:center;max-width:720px;position:relative}
+.fx-cf .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-cf h1{font-size:clamp(2.4em,6.4vw,4.6em)}.fx-cf p{opacity:.68;font-size:1.1em;max-width:42ch}
+.fx-cf .row{display:flex;gap:.9em;flex-wrap:wrap;justify-content:center;margin-top:.4em}
+.fx-cf .btn{padding:.9em 1.7em;border-radius:99px;font-weight:700;text-decoration:none;background:var(--primary);color:var(--on-primary);border:1.5px solid var(--primary)}
+.fx-cf .btn.ghost{background:transparent;color:var(--primary)}
+.fx-cf .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-cf .dot,.fx-cf .ring{position:absolute;left:0;top:0;pointer-events:none;border-radius:50%;opacity:0;z-index:5;will-change:transform}
+.fx-cf .dot{width:.55em;height:.55em;margin:-.275em 0 0 -.275em;background:var(--accent)}
+.fx-cf .ring{width:2.6em;height:2.6em;margin:-1.3em 0 0 -1.3em;border:1.5px solid var(--primary);transition:width calc(.3s/var(--speed)),height calc(.3s/var(--speed)),margin calc(.3s/var(--speed)),background calc(.3s/var(--speed)),border-color calc(.3s/var(--speed))}
+.fx-cf.on{cursor:none}.fx-cf.on a,.fx-cf.on button{cursor:none}
+.fx-cf.on.vis .dot,.fx-cf.on.vis .ring{opacity:1}
+.fx-cf.hov .ring{width:4.6em;height:4.6em;margin:-2.3em 0 0 -2.3em;background:color-mix(in srgb,var(--accent) 22%,transparent);border-color:var(--accent)}
+.fx-cf.press .ring{width:1.8em;height:1.8em;margin:-.9em 0 0 -.9em}
+@media(hover:none),(pointer:coarse){.fx-cf .dot,.fx-cf .ring{display:none}}
+.fx-cf .rip{position:absolute;width:3.2em;height:3.2em;margin:-1.6em 0 0 -1.6em;border-radius:50%;border:2px solid var(--accent);pointer-events:none;animation:fxcf-rip calc(.7s/var(--speed)) ease-out forwards}
+@keyframes fxcf-rip{from{transform:scale(.2);opacity:.9}to{transform:scale(1.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){.fx-cf .rip{animation-duration:.01s}}
+
+</style>
+
+<section class="fx fx-cf"><div class="in"><span class="eye">Interactive</span><h1>Move the cursor, slowly</h1><p>A small dot stays exact while a soft ring trails behind and grows when you reach for something clickable.</p><div class="row"><a class="btn" href="#">View projects</a><a class="btn ghost" href="#">About the studio</a></div></div><i class="dot"></i><i class="ring"></i></section>
+
+<script>
+(function(){document.querySelectorAll('.fx-cf').forEach(function(r){
+if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var d=r.querySelector('.dot'),g=r.querySelector('.ring'),tx=0,ty=0,rx=0,ry=0,run=false,first=true;r.classList.add('on');
+function draw(){rx+=(tx-rx)*.16;ry+=(ty-ry)*.16;d.style.transform='translate3d('+tx+'px,'+ty+'px,0)';g.style.transform='translate3d('+rx+'px,'+ry+'px,0)';
+if(Math.abs(tx-rx)>.1||Math.abs(ty-ry)>.1)requestAnimationFrame(draw);else run=false}
+r.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var b=r.getBoundingClientRect();tx=e.clientX-b.left;ty=e.clientY-b.top;
+if(first){rx=tx;ry=ty;first=false}r.classList.add('vis');r.classList.toggle('hov',!!e.target.closest('a,button'));if(!run){run=true;requestAnimationFrame(draw)}});
+r.addEventListener('pointerleave',function(){r.classList.remove('vis','hov','press')});
+r.addEventListener('pointerdown',function(){r.classList.add('press')});addEventListener('pointerup',function(){r.classList.remove('press')})})})();
+/* touch: tap ripple instead of a pointer follower */
+if(!matchMedia('(hover:hover) and (pointer:fine)').matches){document.querySelectorAll('.fx-cf').forEach(function(r){
+r.addEventListener('pointerdown',function(e){var b=r.getBoundingClientRect(),i=document.createElement('i');i.className='rip';i.style.left=(e.clientX-b.left)+'px';i.style.top=(e.clientY-b.top)+'px';r.appendChild(i);setTimeout(function(){i.remove()},800)})})}
+
+</script>

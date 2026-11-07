@@ -1,0 +1,7 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@keyframes pt-in { from { clip-path:inset(100% 0 0 0) } to { clip-path:inset(0 0 0 0) } }
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;mix-blend-mode:normal}

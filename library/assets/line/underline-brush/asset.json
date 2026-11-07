@@ -1,0 +1,18 @@
+{
+ "slug": "underline-brush",
+ "name": "Brush underline",
+ "zh": "毛笔下划线",
+ "cat": "line",
+ "file": "underline-brush.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 40,
+ "tags": [
+  "underline",
+  "brush",
+  "handmade"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

@@ -1,0 +1,168 @@
+{
+ "format": "fragments",
+ "slug": "fitness-energy",
+ "name": "Fitness Energy",
+ "zh": "活力健身",
+ "tag": "Strength gym: pulsing live-count header, class board with spots-left bars you can book, and a heart-rate zone calculator driven by an age slider.",
+ "colors": {
+  "primary": "#1a0f2e",
+  "secondary": "#08d9d6",
+  "text": "#1a0f2e",
+  "accent": "#ff2e63",
+  "surface": "#f4f1f8",
+  "border": "#d9d0e6"
+ },
+ "fonts": {
+  "head": "Teko",
+  "body": "Heebo"
+ },
+ "tok": {
+  "hlh": ".95",
+  "hw": "600",
+  "hcase": "uppercase",
+  "hls": ".01em",
+  "h1": "132px",
+  "h2": "56px",
+  "h3": "28px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing",
+  "ecommerce"
+ ],
+ "industries": [
+  "fitness"
+ ],
+ "styles": [
+  "bold",
+  "dark",
+  "geometric"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Programs",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Program",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Membership",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Store",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Gear",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Transformations",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Transformation",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Blog",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "schedule",
+   "label": "Class schedule",
+   "group": "Special"
+  },
+  {
+   "slug": "trial",
+   "label": "Free trial",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

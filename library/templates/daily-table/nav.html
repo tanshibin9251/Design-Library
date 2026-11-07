@@ -1,0 +1,91 @@
+<style>
+/* Daily Table — weeknight recipes + planner, tokens only */
+.dt-util{background:var(--c-primary);color:var(--on-primary);font:500 13px var(--f-body);padding:8px clamp(14px,4vw,56px);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.dt-util a{color:inherit}
+.dt-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(14px,3vw,40px);padding:0 clamp(14px,4vw,56px);min-height:76px;background:var(--c-surface);border-bottom:1px solid var(--c-border);position:sticky;top:0;z-index:50}
+.dt-logo{font:700 28px var(--f-head);color:var(--c-primary);text-decoration:none;letter-spacing:-.01em}
+.dt-logo i{font-style:normal;color:var(--c-accent)}
+.dt-tabs{display:flex;gap:clamp(4px,1.4vw,24px);list-style:none}
+.dt-tabs a{display:inline-flex;align-items:center;min-height:76px;padding:0 6px;text-decoration:none;font:600 16px var(--f-body);color:var(--c-text);border-bottom:3px solid transparent}
+.dt-tabs a:hover{border-bottom-color:var(--c-accent)}
+.dt-tabs .more{position:relative}
+.dt-tabs .dd{position:absolute;left:0;top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:16px 26px;padding:22px 26px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;box-shadow:0 20px 40px -22px color-mix(in srgb,var(--c-primary) 45%,transparent);min-width:600px;z-index:60}
+.dt-tabs .more:hover .dd,.dt-tabs .more:focus-within .dd{display:grid}
+.dt-tabs .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:6px}
+.dt-tabs .dd a{display:block;min-height:0;padding:5px 0;border:0;font-weight:500}
+.dt-cta{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;background:var(--c-accent);color:var(--on-accent);text-decoration:none;font:700 15px var(--f-body)}
+.dt-m{display:none;position:relative}
+.dt-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;border:1px solid var(--c-primary);border-radius:999px;padding:0 14px;font:700 12px var(--f-body);letter-spacing:.14em}
+.dt-m summary::-webkit-details-marker{display:none}
+.dt-m nav{position:absolute;right:0;top:100%;min-width:240px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:12px;padding:8px 18px;display:grid;z-index:60}
+.dt-m nav a{padding:12px 0;border-bottom:1px solid var(--c-border);text-decoration:none;font:600 15px var(--f-body);min-height:44px}
+@media(max-width:900px){.dt-tabs,.dt-cta{display:none}.dt-head{grid-template-columns:1fr auto}.dt-m{display:block}}
+
+.dt-sec{padding:clamp(34px,5vw,72px) clamp(14px,4vw,56px)}
+.dt-hero{padding:clamp(34px,5vw,70px) clamp(14px,4vw,56px) 0}
+.dt-hero h1{font:700 clamp(42px,7vw,var(--h1))/1 var(--f-head);letter-spacing:-.02em;color:var(--c-primary);max-width:15ch}
+.dt-hero h1 em{color:var(--c-accent);font-style:italic}
+.dt-hero p{font:400 20px/1.55 var(--f-body);margin:16px 0 24px;max-width:46ch}
+.dt-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;background:var(--c-primary);color:var(--on-primary);text-decoration:none;font:700 16px var(--f-body);border:2px solid var(--c-primary);cursor:pointer}
+.dt-btn:hover{background:var(--c-accent);border-color:var(--c-accent);color:var(--on-accent)}
+.dt-btn.o{background:transparent;color:var(--c-primary)}.dt-btn.o:hover{background:var(--c-primary);color:var(--on-primary);border-color:var(--c-primary)}
+.dt-week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:clamp(28px,4vw,54px)}
+.dt-day{background:color-mix(in srgb,var(--c-surface) 40%,#fff);border:1px solid var(--c-border);border-radius:14px;padding:14px 12px;display:grid;gap:6px;align-content:start;min-height:130px}
+.dt-day b{font:700 12px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-secondary)}
+.dt-day span{font:700 16px/1.25 var(--f-head);color:var(--c-primary)}
+.dt-day em{font:500 13px var(--f-body);font-style:normal;color:var(--c-secondary)}
+.dt-day.today{border:2px solid var(--c-accent);background:color-mix(in srgb,var(--c-accent) 8%,var(--c-surface))}
+@media(max-width:900px){.dt-week{grid-template-columns:repeat(2,1fr)}.dt-day{min-height:0}}
+.dt-h{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.dt-h h2{font:700 clamp(26px,3.2vw,var(--h2)) var(--f-head);letter-spacing:-.01em;color:var(--c-primary)}
+.dt-h a{font:700 15px var(--f-body);color:var(--c-accent)}
+.dt-list{display:grid;gap:14px}
+.dt-row{display:grid;grid-template-columns:160px 1fr auto;gap:clamp(14px,2vw,28px);align-items:center;padding:12px;border:1px solid var(--c-border);border-radius:16px;background:color-mix(in srgb,var(--c-surface) 40%,#fff);text-decoration:none;transition:border-color .15s,transform .15s}
+.dt-row:hover{border-color:var(--c-primary);transform:translateX(4px)}
+.dt-row .ph{aspect-ratio:1;border-radius:12px;background:radial-gradient(circle at 35% 38%,var(--c1,var(--c-accent)) 0 20%,transparent 21%),radial-gradient(circle at 66% 62%,var(--c2,var(--c-secondary)) 0 24%,transparent 25%),color-mix(in srgb,var(--c-primary) 8%,var(--c-surface));position:relative}
+.dt-row .ph::after{content:"缺图";position:absolute;left:8px;bottom:6px;font:700 10px var(--f-body);letter-spacing:.12em;color:var(--c-primary)}
+.dt-row h3{font:700 clamp(20px,2.2vw,26px)/1.15 var(--f-head);color:var(--c-primary);letter-spacing:-.01em}
+.dt-row p{font:400 16px/1.5 var(--f-body);margin-top:4px;opacity:.85}
+.dt-row .tg{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.dt-row .tg span{font:700 12px var(--f-body);background:color-mix(in srgb,var(--c-primary) 8%,transparent);padding:3px 10px;border-radius:99px;color:var(--c-primary)}
+.dt-row .tm{font:700 22px var(--f-head);color:var(--c-primary);text-align:right}.dt-row .tm small{display:block;font:600 11px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--c-secondary)}
+.dt-row.hide{display:none}
+@media(max-width:700px){.dt-row{grid-template-columns:100px 1fr}.dt-row .tm{display:none}}
+.dt-wrap{display:grid;grid-template-columns:230px 1fr;gap:clamp(20px,4vw,56px);align-items:start}
+@media(max-width:860px){.dt-wrap{grid-template-columns:1fr}}
+.dt-rail{position:sticky;top:96px;display:grid;gap:22px}
+.dt-rail h4{font:700 12px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:8px}
+.dt-rail label{display:flex;gap:10px;align-items:center;min-height:44px;font:600 16px var(--f-body);cursor:pointer}
+.dt-rail input{width:20px;height:20px;accent-color:var(--c-accent);min-height:0;padding:0}
+@media(max-width:860px){.dt-rail{position:static;grid-template-columns:repeat(3,1fr);gap:8px 20px}}
+.dt-plan{display:grid;gap:10px;max-width:760px}
+.dt-plan label{display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center;padding:10px 14px;border:1px solid var(--c-border);border-radius:14px;background:color-mix(in srgb,var(--c-surface) 40%,#fff)}
+.dt-plan label b{font:700 14px var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--c-primary)}
+.dt-plan select{min-height:46px;border:1px solid var(--c-border);border-radius:10px;padding:0 12px;font:600 16px var(--f-body);background:var(--c-surface);color:var(--c-text);width:100%}
+.dt-shop{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,50px);align-items:start}
+@media(max-width:860px){.dt-shop{grid-template-columns:1fr}}
+.dt-box{border:1px solid var(--c-border);border-radius:18px;padding:clamp(20px,2.6vw,32px);background:color-mix(in srgb,var(--c-surface) 40%,#fff)}
+.dt-box h3{font:700 24px var(--f-head);margin-bottom:12px}
+.dt-ul{list-style:none}
+.dt-ul li{display:flex;gap:12px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--c-border);font:600 17px var(--f-body);min-height:46px}
+.dt-ul input{width:22px;height:22px;accent-color:var(--c-accent);padding:0;min-height:0;flex:none}
+.dt-ul input:checked+span{text-decoration:line-through;opacity:.5}
+.dt-ul small{margin-left:auto;font:600 12px var(--f-body);color:var(--c-secondary)}
+.dt-rec{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr);gap:clamp(20px,4vw,60px);align-items:start}
+@media(max-width:860px){.dt-rec{grid-template-columns:1fr}}
+.dt-steps{counter-reset:s;list-style:none;display:grid;gap:20px}
+.dt-steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px;font:400 19px/1.65 var(--f-body)}
+.dt-steps li::before{content:counter(s);font:700 38px/1 var(--f-head);color:var(--c-accent)}
+.dt-facts{display:flex;gap:28px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);margin:18px 0 26px}
+.dt-facts b{display:block;font:700 24px var(--f-head);color:var(--c-primary)}.dt-facts span{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-secondary)}
+.dt-foot{background:var(--c-primary);color:var(--on-primary);margin-top:clamp(34px,5vw,80px);padding:clamp(34px,4vw,60px) clamp(14px,4vw,56px) 22px}
+.dt-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,6vw,90px)}
+.dt-foot .big{font:700 32px var(--f-head)}.dt-foot .big i{color:var(--c-accent);font-style:normal}
+.dt-foot h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:10px}
+.dt-foot ul{list-style:none}.dt-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:500 15px var(--f-body);min-height:32px}
+.dt-foot .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dt-foot .copy{margin-top:26px;font:500 12px var(--f-body);opacity:.7}
+@media(max-width:800px){.dt-foot .top{grid-template-columns:1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+@media(prefers-reduced-motion:reduce){.dt-row{transition:none}}
+</style><div class="dt-util"><span>Free weekly meal plan, every Sunday</span><a href="{{p:planner}}">Plan this week →</a></div><header class="dt-head"><a class="dt-logo" href="{{p:home}}">daily table<i>.</i></a><ul class="dt-tabs"><li><a href="{{p:recipes}}">Recipes</a></li><li><a href="{{p:planner}}">Planner</a></li><li><a href="{{p:shopping}}">Shopping list</a></li><li><a href="{{p:staples}}">Pantry</a></li><li class="more"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Cook</h4><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">All recipes</a><a href="{{p:recipe}}">Recipe: Sheet-pan chicken</a></div><div><h4>Plan</h4><a href="{{p:planner}}">Weekly planner</a><a href="{{p:shopping}}">Shopping list</a><a href="{{p:staples}}">Pantry staples</a></div><div><h4>Table</h4><a href="{{p:about}}">About</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="dt-cta" href="{{p:planner}}">Plan my week</a><details class="dt-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">All recipes</a><a href="{{p:recipe}}">Recipe: Sheet-pan chicken</a><a href="{{p:planner}}">Weekly planner</a><a href="{{p:shopping}}">Shopping list</a><a href="{{p:staples}}">Pantry staples</a><a href="{{p:about}}">About</a><a href="{{p:faq}}">FAQ</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details></header>

@@ -1,0 +1,158 @@
+{
+ "format": "fragments",
+ "slug": "neon-nexus",
+ "name": "Nexus AI",
+ "zh": "未来科技",
+ "tag": "Paper-white AI platform site: live request/response demo with streaming output, model price table, usage-cost estimator and changelog.",
+ "colors": {
+  "primary": "#1a1a1a",
+  "secondary": "#6b6a63",
+  "text": "#1f1e1b",
+  "accent": "#ff5c35",
+  "surface": "#f6f4ef",
+  "border": "#dcd8cd"
+ },
+ "fonts": {
+  "head": "Rethink Sans",
+  "body": "Karla"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.035em",
+  "h1": "84px",
+  "h2": "44px",
+  "h3": "22px",
+  "pad": "88px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "10px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "tech",
+  "saas"
+ ],
+ "styles": [
+  "minimal",
+  "typographic",
+  "editorial"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Platform",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Product",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Customers",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Customer story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Developers",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "changelog",
+   "label": "Changelog",
+   "group": "Special"
+  },
+  {
+   "slug": "signup",
+   "label": "Sign up",
+   "group": "Special"
+  },
+  {
+   "slug": "integrations",
+   "label": "Integrations",
+   "group": "Special"
+  },
+  {
+   "slug": "features",
+   "label": "Features",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

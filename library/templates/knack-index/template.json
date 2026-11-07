@@ -1,0 +1,93 @@
+{
+ "format": "fragments",
+ "slug": "knack-index",
+ "name": "Knack Index",
+ "zh": "生活知识",
+ "tag": "Everyday know-how site: giant live-search hero, colour-banded index cards that expand in place, tip of the day, A–Z index and tick-off checklists.",
+ "colors": {
+  "primary": "#2b2d42",
+  "secondary": "#8d99ae",
+  "text": "#2b2d42",
+  "accent": "#ff7f6e",
+  "surface": "#f5f3ee",
+  "border": "#ddd8cc"
+ },
+ "fonts": {
+  "head": "Gabarito",
+  "body": "Hanken Grotesk"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.03em",
+  "h1": "92px",
+  "h2": "44px",
+  "h3": "22px",
+  "pad": "76px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "14px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "lifestyle",
+  "education"
+ ],
+ "styles": [
+  "bento",
+  "playful",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Find"
+  },
+  {
+   "slug": "topics",
+   "label": "Topics",
+   "group": "Find"
+  },
+  {
+   "slug": "atoz",
+   "label": "A–Z index",
+   "group": "Find"
+  },
+  {
+   "slug": "guide",
+   "label": "Guide: Remove a red wine stain",
+   "group": "Read"
+  },
+  {
+   "slug": "checklists",
+   "label": "Checklists",
+   "group": "Read"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Info"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Info"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+<style>
+.fh-nav{display:flex;list-style:none;align-items:center;gap:4px}
+.fh-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:inherit}
+.fh-nav .more{position:relative}
+.fh-nav .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:16px 26px;padding:22px 26px;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);min-width:620px;z-index:60;text-align:left;box-shadow:0 26px 50px -28px rgba(0,0,0,.4)}
+.fh-nav .more:hover .dd,.fh-nav .more:focus-within .dd{display:grid}
+.fh-nav .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent);margin-bottom:6px}
+.fh-nav .dd a{display:block;min-height:0;padding:5px 0;color:var(--c-text);background:none;border:0;border-radius:0;font:500 15px var(--f-body);letter-spacing:0;text-transform:none}
+.fh-m{display:none;position:relative;margin-left:auto}
+.fh-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;padding:0 14px;border:2px solid currentColor;font:700 12px var(--f-body);letter-spacing:.14em}
+.fh-m summary::-webkit-details-marker{display:none}
+.fh-m nav{position:absolute;right:0;top:100%;min-width:250px;background:var(--c-surface);color:var(--c-text);border:2px solid var(--c-primary);padding:8px 18px;display:grid;z-index:60}
+.fh-m nav a{padding:12px 0;border-bottom:1px solid var(--c-border);text-decoration:none;font:600 15px var(--f-body);min-height:44px}
+@media(max-width:900px){.fh-nav{display:none}.fh-m{display:block}}
+.fh-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,5vw,80px)}
+.fh-foot .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fh-foot h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:10px}
+.fh-foot ul{list-style:none}.fh-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:500 15px var(--f-body);min-height:34px;color:inherit}
+.fh-foot .copy{margin-top:24px;font:500 12px var(--f-body);opacity:.75}
+@media(max-width:860px){.fh-foot .top{grid-template-columns:1fr}.fh-foot .cols{grid-template-columns:1fr 1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+/* FixIt Home v2 — handyman service with a three-step job estimator, tokens only */
+.fh-call{background:var(--c-accent);color:var(--on-accent);display:flex;justify-content:center;gap:16px;flex-wrap:wrap;align-items:center;font:700 15px var(--f-body);padding:8px 14px;letter-spacing:.04em}
+.fh-call a{color:inherit;font:400 24px var(--f-head);letter-spacing:.04em;text-decoration:none}
+.fh-head{display:flex;align-items:center;gap:20px;padding:0 clamp(14px,4vw,56px);min-height:76px;background:var(--c-surface);position:sticky;top:0;z-index:50;border-bottom:4px solid var(--c-primary)}
+.fh-logo{font:400 30px var(--f-head);text-transform:uppercase;color:var(--c-primary);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.fh-logo i{width:30px;height:30px;background:var(--c-accent);border-radius:6px;position:relative;display:inline-block;transform:rotate(-8deg)}
+.fh-logo i::after{content:"";position:absolute;left:11px;top:-4px;width:8px;height:22px;background:var(--c-primary);border-radius:3px;transform:rotate(30deg)}
+.fh-nav{margin-left:auto}.fh-nav a{padding:0 14px;font:700 16px var(--f-body);color:var(--c-text)}.fh-nav a:hover{color:var(--c-accent)}
+.fh-cta{background:var(--c-primary);color:var(--on-primary)!important;border-radius:6px;margin-left:8px;padding:0 20px!important}
+.fh-sec{padding:clamp(34px,5vw,72px) clamp(14px,4vw,56px)}
+.fh-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);align-items:start;padding:clamp(28px,5vw,64px) clamp(14px,4vw,56px)}
+@media(max-width:900px){.fh-hero{grid-template-columns:1fr}}
+.fh-hero h1{font:400 clamp(44px,7vw,var(--h1))/.98 var(--f-head);text-transform:uppercase;color:var(--c-primary)}
+.fh-hero h1 em{font-style:normal;color:var(--c-accent)}
+.fh-hero p{font:500 19px/1.7 var(--f-body);margin:16px 0 22px;max-width:36ch}
+.fh-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:8px;background:var(--c-accent);color:var(--on-accent);font:400 22px var(--f-head);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer}
+.fh-btn:hover{background:var(--c-primary);color:var(--on-primary)}
+.fh-w{background:var(--c-surface);border:4px solid var(--c-primary);border-radius:16px;padding:clamp(16px,2.2vw,28px);box-shadow:8px 8px 0 var(--c-accent)}
+.fh-w h2{font:400 28px var(--f-head);text-transform:uppercase;color:var(--c-primary);margin-bottom:10px}
+.fh-q{margin-bottom:14px}.fh-q b{display:flex;gap:10px;align-items:center;font:700 14px var(--f-body);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.fh-q b i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--c-primary);color:var(--on-primary);font:400 16px var(--f-head);font-style:normal}
+.fh-op{display:flex;gap:6px;flex-wrap:wrap}
+.fh-op button{min-height:46px;padding:0 16px;border:2px solid var(--c-primary);border-radius:8px;background:transparent;color:var(--c-primary);font:700 15px var(--f-body);cursor:pointer}
+.fh-op button[aria-pressed=true]{background:var(--c-primary);color:var(--on-primary)}
+.fh-est{background:var(--c-primary);color:var(--on-primary);border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.fh-est b{font:400 38px var(--f-head);color:var(--c-accent)}.fh-est small{display:block;font:600 13px var(--f-body);opacity:.85}
+.fh-tk{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:800px){.fh-tk{grid-template-columns:1fr}}
+.fh-t{background:var(--c-surface);border:3px solid var(--c-primary);border-radius:12px;padding:18px 20px;position:relative;display:grid;gap:6px;align-content:start}
+.fh-t::before,.fh-t::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--c-surface);border:3px solid var(--c-primary);transform:translateY(-50%)}.fh-t::before{left:-14px;clip-path:inset(0 0 0 50%)}.fh-t::after{right:-14px;clip-path:inset(0 50% 0 0)}
+.fh-t h3{font:400 26px var(--f-head);text-transform:uppercase;color:var(--c-primary)}.fh-t p{font:500 15px/1.6 var(--f-body)}.fh-t .pr{font:400 22px var(--f-head);color:var(--c-accent);border-top:3px dashed var(--c-primary);padding-top:8px}
+.fh-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.fh-h h2{font:400 clamp(28px,3.8vw,var(--h2)) var(--f-head);text-transform:uppercase;color:var(--c-primary)}
+.fh-foot{background:var(--c-primary);color:var(--on-primary);margin-top:clamp(30px,5vw,70px);padding:clamp(34px,5vw,60px) clamp(14px,4vw,56px) 22px}
+.fh-foot .big{font:400 36px var(--f-head);text-transform:uppercase}
+.fh .pagehead{background:color-mix(in srgb,var(--c-secondary) 14%,var(--c-surface));border-left:10px solid var(--c-accent)}.fh .pagehead .wrap{padding-left:clamp(20px,3vw,40px)}.fh .card,.fh .scard,.fh .qcard,.fh .pcard,.fh .person{background:var(--c-surface);border:3px solid var(--c-primary);box-shadow:5px 5px 0 var(--c-accent)}.fh .eyebrow{display:inline-block;background:var(--c-accent);color:var(--on-accent);padding:4px 12px;border-radius:99px;opacity:1}.fh .alt{background:color-mix(in srgb,var(--c-secondary) 12%,var(--c-surface))}/*presets*/
+
+.fh .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:sv}
+.fh .scard{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:1;padding:clamp(18px,2.4vw,32px);border:0;border-radius:0;box-shadow:none;background:color-mix(in srgb,var(--c-primary) 92%,var(--c-surface));color:var(--on-primary);counter-increment:sv}
+.fh .scard:nth-child(3n+2){background:var(--c-accent);color:var(--on-accent)}
+.fh .scard:nth-child(3n){background:color-mix(in srgb,var(--c-secondary) 55%,var(--c-surface));color:var(--c-text)}
+.fh .scard::before{content:counter(sv,decimal-leading-zero);font:700 13px var(--f-body);letter-spacing:.16em;opacity:.8}
+.fh .scard .ph{display:none}.fh .scard h3{color:inherit;font-size:clamp(22px,2.4vw,32px)}.fh .scard p{color:inherit;opacity:.85}.fh .scard .m{color:inherit;display:flex;gap:12px;font-size:13px}
+@media(max-width:800px){.fh .svc{grid-template-columns:1fr 1fr}.fh .scard{aspect-ratio:auto;min-height:200px}}@media(max-width:520px){.fh .svc{grid-template-columns:1fr}}
+
+.fh .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px}
+.fh .person{background:color-mix(in srgb,var(--c-surface) 20%,#fff);padding:12px 12px 18px;box-shadow:0 16px 26px -18px rgba(0,0,0,.45);border:0;transform:rotate(-1.4deg);transition:transform .2s}
+.fh .person:nth-child(2n){transform:rotate(1.2deg)}.fh .person:nth-child(3n){transform:rotate(-.5deg)}
+.fh .person:hover{transform:rotate(0) translateY(-4px)}
+
+.fh .qgrid{display:block;columns:2 300px;column-gap:20px}.fh .qgrid.mt{margin-top:20px}
+.fh .qcard{break-inside:avoid;margin-bottom:20px}
+
+.fh .masonry{display:grid!important;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.4vw,18px);columns:auto}
+.fh .masonry .mi{margin:0}.fh .masonry .mi .ph{aspect-ratio:4/3!important}
+@media(max-width:700px){.fh .masonry{grid-template-columns:1fr 1fr}}
+
+.fh .split.w2{display:block}
+.fh .feat{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;margin-bottom:clamp(24px,4vw,48px)}
+.fh .feat h2{font-size:clamp(26px,3.6vw,48px);line-height:1.04}
+.fh .articles.two{grid-template-columns:repeat(3,1fr)!important}
+@media(max-width:800px){.fh .feat{grid-template-columns:1fr}.fh .articles.two{grid-template-columns:1fr!important}}
+
+.fh .faq{display:grid;gap:10px}
+.fh .faq details{border:1px solid var(--c-primary);padding:6px 18px;background:var(--c-surface)}.fh .faq details[open]{background:color-mix(in srgb,var(--c-accent) 10%,var(--c-surface))}
+
+.fh .pricing .card{border:2px solid var(--c-primary);background:var(--c-surface)!important;box-shadow:none;border-radius:0;color:var(--c-text)!important;transform:none!important}
+.fh .pricing .card.hl{border-width:4px;background:var(--c-surface)!important}
+.fh .pricing .card.hl h3,.fh .pricing .card.hl .amt{color:var(--c-primary)!important}.fh .pricing .card.hl li::before{color:var(--c-accent)!important}
+.fh .split{display:block;max-width:760px;margin:0 auto}.fh .cinfo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.fh .sec.dark{background:var(--c-accent);color:var(--on-accent)}.fh .sec.dark h2,.fh .sec.dark p{color:var(--on-accent)}.fh .sec.dark .btn{background:var(--c-primary);border-color:var(--c-primary);color:var(--on-primary)}
+.fh .steps b{font-size:clamp(42px,6vw,84px);line-height:1;color:var(--c-accent);letter-spacing:-.02em;display:block}.fh .steps>div{border-top:0;border-left:1px solid var(--c-border);padding-left:20px}
+
+.fh .tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border-top:3px solid var(--c-primary)}
+.fh .tl>div{padding:20px 18px 20px 0;border-right:1px solid var(--c-border)}.fh .tl>div:last-child{border-right:0}
+.fh .tl b{display:block;font-size:clamp(36px,5vw,64px);line-height:1;color:var(--c-accent);margin-bottom:8px}
+
+.fh .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--c-primary)}
+.fh .vals .card{border:0;border-right:1px solid var(--c-border);border-radius:0;background:none;box-shadow:none;padding:24px 22px}.fh .vals .card:last-child{border-right:0}
+@media(max-width:700px){.fh .vals{grid-template-columns:1fr}.fh .vals .card{border-right:0;border-bottom:1px solid var(--c-border)}}
+</style><div class="fh-call"><span>Same-day callouts, 7 days a week</span><a href="tel:0312345678">03 1234 5678</a></div><header class="fh-head"><a class="fh-logo" href="{{p:home}}"><i></i>FixIt Home</a><ul class="fh-nav"><li><a href="{{p:services}}">Services</a></li><li><a href="{{p:pricing}}">Prices</a></li><li><a href="{{p:service-areas}}">Areas</a></li><li><a href="{{p:blog}}">Home tips</a></li><li class="more"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Main</h4><a href="{{p:home}}">Home</a><a href="{{p:about}}">About</a><a href="{{p:services}}">Services</a><a href="{{p:service}}">Single Service</a><a href="{{p:pricing}}">Price Guide</a><a href="{{p:contact}}">Contact</a></div><div><h4>Shop</h4><a href="{{p:shop}}">Service Packs</a><a href="{{p:product}}">Single Pack</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a></div><div><h4>Proof</h4><a href="{{p:testimonials}}">Testimonials</a><a href="{{p:team}}">Team</a><a href="{{p:projects}}">Recent Jobs</a><a href="{{p:project}}">Single Job</a><a href="{{p:gallery}}">Gallery</a></div><div><h4>Content</h4><a href="{{p:blog}}">Home Tips</a><a href="{{p:post}}">Single post</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Special</h4><a href="{{p:booking}}">Book a technician</a><a href="{{p:quote}}">Instant quote</a><a href="{{p:service-areas}}">Service areas</a></div><div><h4>Utility</h4><a href="{{p:careers}}">Careers</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a><a href="{{p:coming-soon}}">Coming soon</a></div></div></li><li><a class="fh-cta" href="{{p:booking}}">Book a visit</a></li></ul><details class="fh-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:about}}">About</a><a href="{{p:services}}">Services</a><a href="{{p:service}}">Single Service</a><a href="{{p:pricing}}">Price Guide</a><a href="{{p:contact}}">Contact</a><a href="{{p:shop}}">Service Packs</a><a href="{{p:product}}">Single Pack</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a><a href="{{p:testimonials}}">Testimonials</a><a href="{{p:team}}">Team</a><a href="{{p:projects}}">Recent Jobs</a><a href="{{p:project}}">Single Job</a><a href="{{p:gallery}}">Gallery</a><a href="{{p:blog}}">Home Tips</a><a href="{{p:post}}">Single post</a><a href="{{p:faq}}">FAQ</a><a href="{{p:booking}}">Book a technician</a><a href="{{p:quote}}">Instant quote</a><a href="{{p:service-areas}}">Service areas</a><a href="{{p:careers}}">Careers</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a><a href="{{p:coming-soon}}">Coming soon</a></nav></details></header><div class="fh">

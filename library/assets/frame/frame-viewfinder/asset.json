@@ -1,0 +1,18 @@
+{
+ "slug": "frame-viewfinder",
+ "name": "Viewfinder",
+ "zh": "取景框",
+ "cat": "frame",
+ "file": "frame-viewfinder.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 300,
+ "tags": [
+  "camera",
+  "tech",
+  "focus"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

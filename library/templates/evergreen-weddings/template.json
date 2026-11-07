@@ -1,0 +1,162 @@
+{
+ "format": "fragments",
+ "slug": "evergreen-weddings",
+ "name": "Evergreen Weddings",
+ "zh": "常青婚礼",
+ "tag": "Invitation-suite wedding planner: double-framed invitation hero with countdown, tickable planning timeline and a budget donut that follows a slider.",
+ "colors": {
+  "primary": "#4b5d52",
+  "secondary": "#d9c7b8",
+  "text": "#34403a",
+  "accent": "#c7826b",
+  "surface": "#fbf8f3",
+  "border": "#e4dacd"
+ },
+ "fonts": {
+  "head": "Gilda Display",
+  "body": "Questrial"
+ },
+ "tok": {
+  "hlh": "1.15",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".02em",
+  "h1": "84px",
+  "h2": "46px",
+  "h3": "24px",
+  "pad": "88px",
+  "ew": "400",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "events"
+ ],
+ "styles": [
+  "elegant",
+  "minimal",
+  "organic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Wedding Services",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Packages",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Venues",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Venue",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Real Weddings",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Wedding",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Enquire",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

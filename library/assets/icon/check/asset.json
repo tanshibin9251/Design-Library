@@ -1,0 +1,17 @@
+{
+ "slug": "check",
+ "name": "Check",
+ "zh": "对勾",
+ "cat": "icon",
+ "file": "check.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "done",
+  "ok"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

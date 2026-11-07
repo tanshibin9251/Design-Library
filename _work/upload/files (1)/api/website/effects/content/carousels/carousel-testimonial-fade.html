@@ -1,0 +1,70 @@
+<!-- Testimonial fade — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-tfade{width:min(780px,100%);text-align:center;display:grid;gap:1.6em;justify-items:center}
+.fx-tfade .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.fx-tfade .qm{font:600 4.5em/.5 var(--font-heading);color:var(--accent);opacity:.5;height:.5em;margin-top:.3em}
+.fx-tfade .sl{display:grid;width:100%;position:relative}
+.fx-tfade .s{grid-area:1/1;display:grid;gap:1.4em;justify-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity calc(.7s/var(--speed)) ease,transform calc(.7s/var(--speed)) ease,visibility 0s linear calc(.7s/var(--speed))}
+.fx-tfade .s.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.fx-tfade blockquote{margin:0;font:500 clamp(1.25em,3.4vw,1.8em)/1.42 var(--font-heading);max-width:30em}
+.fx-tfade .who{display:flex;align-items:center;gap:.8em;text-align:left}
+.fx-tfade .av{width:3em;height:3em;border-radius:50%;display:grid;place-items:center;font:700 .9em var(--font-body);color:var(--on-primary);background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 50%,var(--accent)))}
+.fx-tfade .av.b{background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,var(--primary)));color:var(--on-accent)}
+.fx-tfade .av.c{background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 60%,#000),var(--primary))}
+.fx-tfade .who b{display:block}.fx-tfade .who small{opacity:.62}
+.fx-tfade .ctl{display:flex;align-items:center;gap:1.1em}
+.fx-tfade .ctl button{all:unset;cursor:pointer;width:2.6em;height:2.6em;border-radius:50%;border:1.5px solid var(--border);display:grid;place-items:center;transition:all calc(.2s/var(--speed))}
+.fx-tfade .ctl button:hover{border-color:var(--primary);color:var(--primary)}.fx-tfade .ctl button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fx-tfade .dots{display:flex;gap:.55em}.fx-tfade .dots button{width:.65em;height:.65em;border:0;padding:0;background:color-mix(in srgb,var(--text) 22%,transparent);position:relative;overflow:hidden}
+.fx-tfade .dots button[aria-selected=true]{width:2em;border-radius:99px;background:color-mix(in srgb,var(--text) 18%,transparent)}
+.fx-tfade .dots button[aria-selected=true]::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0);animation:fxtfp calc(var(--dur,6s)/var(--speed)) linear forwards}
+.fx-tfade .paused .dots button[aria-selected=true]::after{animation:none;transform:scaleX(1)}
+.fx-tfade .noap .dots button[aria-selected=true]::after{animation:none;transform:scaleX(1)}
+@keyframes fxtfp{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.fx-tfade .s{transition:none;transform:none}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-tfade .ctl button.is-tap{border-color:var(--primary);color:var(--primary)}
+
+</style>
+
+<div class="fx fx-tfade" aria-roledescription="carousel" aria-label="Customer testimonials"><span class="eye">Kind words</span><div class="qm" aria-hidden="true">&ldquo;</div><div class="sl" aria-live="off"><figure class="s on" role="group" aria-roledescription="slide" aria-label="1 of 3" style="margin:0"><blockquote>We went from a vague idea to a launched site in six weeks, and every detail felt considered. Our customers keep telling us how calm the new site feels.</blockquote><figcaption class="who"><span class="av " aria-hidden="true">AO</span><span><b>Amara Okafor</b><small>Founder, Oak & Ivy</small></span></figcaption></figure><figure class="s" role="group" aria-roledescription="slide" aria-label="2 of 3" style="margin:0"><blockquote>They listen first and design second. That sounds obvious, but it is rare, and it is the reason the work has held up so well for three years.</blockquote><figcaption class="who"><span class="av b" aria-hidden="true">DR</span><span><b>Daniel Reyes</b><small>Head of Brand, Northwind</small></span></figcaption></figure><figure class="s" role="group" aria-roledescription="slide" aria-label="3 of 3" style="margin:0"><blockquote>The handover was the best I have experienced: clear documents, a tidy file system and a team that was still answering questions months later.</blockquote><figcaption class="who"><span class="av c" aria-hidden="true">MT</span><span><b>Mei Tanaka</b><small>Operations Lead, Fieldnote</small></span></figcaption></figure></div><div class="ctl"><button data-d="-1" aria-label="Previous testimonial">&larr;</button><div class="dots" role="tablist" aria-label="Choose testimonial"><button role="tab" aria-label="Testimonial 1" aria-selected="true"></button><button role="tab" aria-label="Testimonial 2" aria-selected="false"></button><button role="tab" aria-label="Testimonial 3" aria-selected="false"></button></div><button data-pp aria-label="Pause autoplay">&#10073;&#10073;</button><button data-d="1" aria-label="Next testimonial">&rarr;</button></div></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-tfade'),sl=[].slice.call(root.querySelectorAll('.s')),ds=[].slice.call(root.querySelectorAll('.dots button')),pp=root.querySelector('[data-pp]'),i=0,tm=null,auto=!matchMedia('(prefers-reduced-motion:reduce)').matches,DUR=6000;
+function show(n){i=(n+sl.length)%sl.length;sl.forEach(function(s,k){s.classList.toggle('on',k===i);s.setAttribute('aria-hidden',k!==i)});ds.forEach(function(d,k){d.setAttribute('aria-selected',k===i);d.blur;});
+var a=ds[i];a.style.setProperty('--dur',DUR/1000+'s');if(auto){a.style.animation='none';void a.offsetWidth;a.style.animation=''}sched()}
+function sched(){clearTimeout(tm);root.classList.toggle('noap',!auto);root.querySelector('.sl').setAttribute('aria-live',auto?'off':'polite');if(auto)tm=setTimeout(function(){show(i+1)},DUR)}
+function setAuto(o){auto=o;pp.innerHTML=o?'&#10073;&#10073;':'&#9654;';pp.setAttribute('aria-label',o?'Pause autoplay':'Start autoplay');show(i)}
+root.querySelectorAll('[data-d]').forEach(function(b){b.addEventListener('click',function(){show(i+ +b.dataset.d)})});
+ds.forEach(function(d,k){d.addEventListener('click',function(){show(k)})});pp.addEventListener('click',function(){setAuto(!auto)});
+root.addEventListener('mouseenter',function(){clearTimeout(tm);root.classList.add('paused')});root.addEventListener('mouseleave',function(){root.classList.remove('paused');sched()});
+if(!auto)pp.innerHTML='&#9654;';sl.forEach(function(s,k){s.setAttribute('aria-hidden',k!==0)});show(0)})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

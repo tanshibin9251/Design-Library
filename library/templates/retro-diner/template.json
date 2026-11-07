@@ -1,0 +1,168 @@
+{
+ "format": "fragments",
+ "slug": "retro-diner",
+ "name": "Sunny's Diner",
+ "zh": "阳光餐厅",
+ "tag": "1950s diner: chequerboard band, red counter header, tap-to-order printed receipt pad with serrated edge and milkshake of the month.",
+ "colors": {
+  "primary": "#c8102e",
+  "secondary": "#00a3a1",
+  "text": "#14213d",
+  "accent": "#14213d",
+  "surface": "#fff4e0",
+  "border": "#14213d"
+ },
+ "fonts": {
+  "head": "Bungee",
+  "body": "Manrope"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "400",
+  "hcase": "uppercase",
+  "hls": ".01em",
+  "h1": "80px",
+  "h2": "40px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "landing",
+  "ecommerce"
+ ],
+ "industries": [
+  "restaurant"
+ ],
+ "styles": [
+  "retro",
+  "playful",
+  "bold"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Specials",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Special",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Party Packages",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Order Online",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Dish",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Photo",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "News",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "menu",
+   "label": "Menu",
+   "group": "Special"
+  },
+  {
+   "slug": "reservations",
+   "label": "Book a table",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

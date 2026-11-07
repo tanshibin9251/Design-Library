@@ -1,0 +1,50 @@
+<!-- Logo Marquee — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-mq{width:min(1180px,100%);display:grid;gap:2.2em;text-align:center}
+.fx-mq h2{font-size:clamp(1.8em,4vw,2.6em)}
+.fx-mq .row{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.fx-mq .track{display:flex;gap:1em;width:max-content;animation:fxmq calc(32s/var(--speed)) linear infinite}
+.fx-mq .row.rev .track{animation-direction:reverse}.fx-mq .row:hover .track{animation-play-state:paused}
+.fx-mq .logo{display:inline-flex;align-items:center;gap:.6em;padding:.8em 1.4em;border:1px solid var(--border);border-radius:999px;background:color-mix(in srgb,var(--surface) 94%,var(--text));font:600 1.05em var(--font-heading);white-space:nowrap}
+.fx-mq .logo i{width:.9em;height:.9em;border-radius:30%;background:var(--accent)}.fx-mq .logo:nth-child(3n) i{background:var(--primary);border-radius:50%}.fx-mq .logo:nth-child(3n+1) i{border-radius:0;transform:rotate(45deg)}
+@keyframes fxmq{to{transform:translateX(calc(-50% - .5em))}}
+@media(prefers-reduced-motion:reduce){.fx-mq .track{animation:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-mq .row.is-tap .track{animation-play-state:paused}
+
+</style>
+
+<div class="fx fx-mq"><h2>Trusted by people with good taste</h2>
+<div class="row"><div class="track" data-dup><span class="logo"><i></i>Northwind</span><span class="logo"><i></i>Lumen & Co</span><span class="logo"><i></i>Fieldnote</span><span class="logo"><i></i>Harbor</span><span class="logo"><i></i>Oak & Ivy</span><span class="logo"><i></i>Paperplane</span><span class="logo"><i></i>Meridian</span></div></div>
+<div class="row rev"><div class="track" data-dup><span class="logo"><i></i>Atlas</span><span class="logo"><i></i>Bright Labs</span><span class="logo"><i></i>Juniper</span><span class="logo"><i></i>Copperline</span><span class="logo"><i></i>Slate</span><span class="logo"><i></i>Wildflower</span><span class="logo"><i></i>Tidewater</span></div></div></div>
+
+<script>
+document.querySelectorAll('.fx-mq [data-dup]').forEach(function(t){t.innerHTML+=t.innerHTML});
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

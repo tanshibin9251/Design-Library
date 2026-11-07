@@ -1,0 +1,143 @@
+{
+ "format": "fragments",
+ "slug": "dental-care",
+ "name": "Smile Dental",
+ "zh": "微笑牙科",
+ "tag": "Appointment-first dental site: booking bar under the headline with earliest slots, before/after slider, tick-box cost guide and initial-avatar dentists.",
+ "colors": {
+  "primary": "#20354f",
+  "secondary": "#bfe3dc",
+  "text": "#20354f",
+  "accent": "#f08a6c",
+  "surface": "#fffaf5",
+  "border": "#f0e1d6"
+ },
+ "fonts": {
+  "head": "Outfit",
+  "body": "Karla"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "600",
+  "hcase": "none",
+  "hls": "-.02em",
+  "h1": "72px",
+  "h2": "42px",
+  "h3": "22px",
+  "pad": "76px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "18px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "medical",
+  "health"
+ ],
+ "styles": [
+  "minimal",
+  "pastel",
+  "playful"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Treatments",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Treatment",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Prices",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Smile Stories",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Smile story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Dental Tips",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Book appointment",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

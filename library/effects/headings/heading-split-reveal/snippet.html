@@ -1,0 +1,53 @@
+<!-- Split Reveal — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+@keyframes fxhs-up{from{transform:translateY(112%) rotate(2deg)}to{transform:none}}@keyframes fxhs-fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.fx-hsr{width:min(940px,100%);display:grid;gap:1.6em;justify-items:start}
+.fx-hsr .eye{font-size:.78em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);animation:fxhs-fade calc(.7s/var(--speed)) both}
+.fx-hsr h2{font-size:clamp(2.4em,7vw,5.6em);line-height:1.04;letter-spacing:-.02em}
+.fx-hsr .ln{display:block;overflow:hidden;padding:.08em 0 .16em;margin:-.08em 0 -.16em}
+.fx-hsr .ln>span{display:block;transform-origin:left bottom;animation:fxhs-up calc(1s/var(--speed)) cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.1s + var(--i)*130ms/var(--speed))}
+.fx-hsr em{font-style:italic;color:var(--primary)}
+.fx-hsr .sub{max-width:34em;opacity:.72;font-size:1.12em;animation:fxhs-fade calc(.9s/var(--speed)) .7s both}
+.fx-hsr .rp{all:unset;box-sizing:border-box;cursor:pointer;padding:.55em 1.1em;border:1px solid var(--border);border-radius:999px;font:700 .85em var(--font-body);animation:fxhs-fade calc(.9s/var(--speed)) .9s both;transition:background .2s}
+.fx-hsr .rp:hover{background:color-mix(in srgb,var(--text) 6%,transparent)}.fx-hsr .rp:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-hsr.rst *{animation:none!important}
+@media(prefers-reduced-motion:reduce){.fx-hsr *{animation:none!important}}
+/* touch: :hover mirrored as .is-tap */
+.fx-hsr .rp.is-tap{background:color-mix(in srgb,var(--text) 6%,transparent)}
+
+</style>
+
+<div class="fx fx-hsr"><span class="eye">Studio · Lisbon</span>
+<h2 aria-label="We turn quiet ideas into loud, lovely things people use."><span class="ln" aria-hidden="true"><span style="--i:0">We turn quiet ideas</span></span><span class="ln" aria-hidden="true"><span style="--i:1">into loud, lovely</span></span><span class="ln" aria-hidden="true"><span style="--i:2"><em>things people use.</em></span></span></h2>
+<p class="sub">Each line slides up from behind its own mask, so the headline assembles itself as you read.</p><button class="rp" type="button">Replay ↻</button></div>
+
+<script>
+document.querySelectorAll('.fx-hsr').forEach(function(r){r.querySelector('.rp').addEventListener('click',function(){r.classList.add('rst');void r.offsetWidth;r.classList.remove('rst')})});
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

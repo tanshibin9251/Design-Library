@@ -1,0 +1,49 @@
+<!-- Sticky buy bar — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-sbb{width:min(560px,100%);position:relative}
+.fx-sbb .box{height:min(70vh,440px);overflow:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);position:relative}
+.fx-sbb .bar{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:1em;padding:.7em 1em;background:var(--primary);color:var(--on-primary);transform:translateY(-110%);margin-bottom:-3.2em;transition:transform calc(.35s/var(--speed)) cubic-bezier(.2,.8,.2,1);height:3.2em}
+.fx-sbb .bar.on{transform:none}
+.fx-sbb .bar b{flex:1;font-size:.95em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fx-sbb .bar button{background:var(--accent);color:var(--on-accent);border:0;border-radius:99px;padding:.5em 1.1em;font:700 .85em var(--font-body);cursor:pointer}
+.fx-sbb .in{padding:1.2em}.fx-sbb .in .fx-art{aspect-ratio:4/3;border-radius:calc(var(--radius)*.7);margin-bottom:1em}
+.fx-sbb .main{width:100%;background:var(--primary);color:var(--on-primary);border:0;border-radius:99px;padding:.9em;font:700 1em var(--font-body);cursor:pointer;margin:.8em 0 1.4em}
+.fx-sbb p+p{margin-top:.8em;opacity:.75}
+@media(prefers-reduced-motion:reduce){.fx-sbb .bar{transition:none}}
+</style>
+
+<div class="fx fx-sbb"><div class="box" tabindex="0" role="region" aria-label="Product page preview"><div class="bar" aria-hidden="true"><b>Halden Sofa · RM 4,890</b><button type="button" tabindex="-1">Add to cart</button></div><div class="in"><div class="fx-art"></div><h3>Halden Sofa</h3><p style="font-size:1.4em;font-weight:700;margin:.2em 0">RM 4,890</p><button class="main" type="button">Add to cart</button><p>Scroll down inside this box — once the button above leaves the view, the bar pins to the top.</p><p>Solid oak frame, removable covers, 10-year frame warranty. Delivered and assembled.</p><p>Dimensions W 218 × D 94 × H 82 cm. Seat height 44 cm. Weight 58 kg.</p><p>Care: vacuum weekly, spot-clean with mild soap, re-oil the frame once a year.</p><p>Returns: 14 days for standard sizes. Custom sizes are final.</p><p>Delivery: 3–4 weeks. We call to arrange a delivery window.</p></div></div></div>
+
+<script>
+(function(){var r=document.querySelector('.fx-sbb'),box=r.querySelector('.box'),bar=r.querySelector('.bar'),m=r.querySelector('.main');
+if(!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)},{root:box,threshold:0}).observe(m)})();
+</script>

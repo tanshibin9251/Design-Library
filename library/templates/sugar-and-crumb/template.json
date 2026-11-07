@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "sugar-and-crumb",
+ "name": "Sugar & Crumb",
+ "zh": "烘焙甜点",
+ "tag": "Baking and dessert recipe site: sprinkle-dot background, pastel cupcake-label nav, CSS layer-cake hero, gram-first recipes and a pan-size converter.",
+ "colors": {
+  "primary": "#8a3b55",
+  "secondary": "#f7c6c7",
+  "text": "#4a2c35",
+  "accent": "#f2b84b",
+  "surface": "#fff8f2",
+  "border": "#f1d6cf"
+ },
+ "fonts": {
+  "head": "Grandstander",
+  "body": "Mulish"
+ },
+ "tok": {
+  "hlh": "1.1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": ".005em",
+  "h1": "88px",
+  "h2": "44px",
+  "h3": "24px",
+  "pad": "76px",
+  "ew": "800",
+  "stat": "var(--c-primary)",
+  "radius": "28px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "culinary",
+  "restaurant"
+ ],
+ "styles": [
+  "pastel",
+  "playful",
+  "clay"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Bake"
+  },
+  {
+   "slug": "recipes",
+   "label": "All bakes",
+   "group": "Bake"
+  },
+  {
+   "slug": "recipe",
+   "label": "Recipe: Vanilla sponge",
+   "group": "Bake"
+  },
+  {
+   "slug": "pans",
+   "label": "Pan converter",
+   "group": "Tools"
+  },
+  {
+   "slug": "conversions",
+   "label": "Cups, grams & oven temps",
+   "group": "Tools"
+  },
+  {
+   "slug": "troubleshoot",
+   "label": "Why did it sink?",
+   "group": "Tools"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Kitchen"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Kitchen"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

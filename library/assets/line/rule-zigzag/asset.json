@@ -1,0 +1,18 @@
+{
+ "slug": "rule-zigzag",
+ "name": "Zigzag line",
+ "zh": "锯齿线",
+ "cat": "line",
+ "file": "rule-zigzag.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 40,
+ "tags": [
+  "zigzag",
+  "divider",
+  "bold"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

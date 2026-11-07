@@ -1,0 +1,66 @@
+<!-- Horizontal scroll (pinned) — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-hsc{background:var(--surface)}
+.fx-hsc .hint{opacity:.5;font-size:.85em;text-align:center;padding:2em 0}
+.fx-hsc .run{position:relative;height:calc(var(--n,5)*60vh + 40vh)}
+.fx-hsc .pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:1.6em}
+.fx-hsc .hd{width:min(1100px,90%);margin:0 auto}
+.fx-hsc .hd .k{font-size:.78em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.fx-hsc .hd h2{font-size:clamp(1.8em,4.5vw,3em);margin-top:.2em}
+.fx-hsc .track{display:flex;gap:1.4em;padding:0 max(5vw,calc((100vw - 1100px)/2));width:max-content;will-change:transform;transform:translate3d(calc(var(--x,0)*-1px),0,0)}
+.fx-hsc .cd{flex:none;width:min(340px,72vw);aspect-ratio:3/4;border-radius:var(--radius);padding:1.4em;display:flex;flex-direction:column;justify-content:flex-end;color:var(--on-primary);position:relative;overflow:hidden}
+.fx-hsc .cd .fx-art{position:absolute;inset:0}
+.fx-hsc .cd>*:not(.fx-art){position:relative}
+.fx-hsc .cd small{opacity:.85;font-weight:700;letter-spacing:.14em}.fx-hsc .cd b{font:600 1.5em var(--font-heading);margin-top:.2em}.fx-hsc .cd span{opacity:.88;font-size:.92em}
+.fx-hsc .bar{width:min(1100px,90%);margin:0 auto;height:3px;border-radius:3px;background:var(--border);overflow:hidden}
+.fx-hsc .bar i{display:block;height:100%;background:var(--primary);transform-origin:left;transform:scaleX(var(--p,0))}
+@media(prefers-reduced-motion:reduce){.fx-hsc .run{height:auto}.fx-hsc .pin{position:static;height:auto;padding:3em 0}.fx-hsc .track{width:auto;overflow-x:auto;transform:none;scroll-snap-type:x mandatory}.fx-hsc .cd{scroll-snap-align:start}.fx-hsc .bar{display:none}}
+
+</style>
+
+<div class="fx fx-hsc"><p class="hint">Keep scrolling down ↓ — the cards travel sideways</p>
+<div class="run" style="--n:5"><div class="pin"><div class="hd"><span class="k">Selected work</span><h2>Five projects, one scroll</h2></div>
+<div class="track">
+<article class="cd"><div class="fx-art"></div><small>01</small><b>Harbour Café</b><span>Identity &amp; web</span></article>
+<article class="cd"><div class="fx-art a2"></div><small>02</small><b>Northwind</b><span>E-commerce</span></article>
+<article class="cd"><div class="fx-art a3"></div><small>03</small><b>Lumen Clinic</b><span>Booking system</span></article>
+<article class="cd"><div class="fx-art"></div><small>04</small><b>Fieldnote</b><span>Editorial site</span></article>
+<article class="cd"><div class="fx-art a2"></div><small>05</small><b>Orbit Fitness</b><span>Membership app</span></article></div>
+<div class="bar" aria-hidden="true"><i></i></div></div></div>
+<p class="hint">Released — back to normal scrolling</p></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-hsc'),run=root.querySelector('.run'),tr=root.querySelector('.track'),bar=root.querySelector('.bar i'),tk=false;
+function upd(){tk=false;var r=run.getBoundingClientRect(),h=r.height-innerHeight,p=h>0?Math.min(1,Math.max(0,-r.top/h)):0,max=Math.max(0,tr.scrollWidth-innerWidth);
+tr.style.setProperty('--x',p*max);bar.style.setProperty('--p',p)}
+function req(){if(!tk){tk=true;requestAnimationFrame(upd)}}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd()}})();
+</script>

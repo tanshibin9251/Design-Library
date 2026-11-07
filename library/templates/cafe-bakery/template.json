@@ -1,0 +1,97 @@
+{
+ "format": "fragments",
+ "slug": "cafe-bakery",
+ "name": "Crumb & Co",
+ "zh": "面包咖啡馆",
+ "tag": "Craft café and bakery site with a chalkboard of today's bakes, swing-tag product cards and order-ahead pick-up slots.",
+ "colors": {
+  "primary": "#5c6b1e",
+  "secondary": "#8a5a2b",
+  "text": "#2a2418",
+  "accent": "#d9482b",
+  "surface": "#fbf4df",
+  "border": "#d8cfa9"
+ },
+ "fonts": {
+  "head": "Caprasimo",
+  "body": "Outfit"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "400",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "86px",
+  "h2": "46px",
+  "h3": "24px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "14px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "restaurant"
+ ],
+ "styles": [
+  "handdrawn",
+  "warm",
+  "playful"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Café"
+  },
+  {
+   "slug": "menu",
+   "label": "Menu",
+   "group": "Café"
+  },
+  {
+   "slug": "bakes",
+   "label": "Today’s bakes",
+   "group": "Café"
+  },
+  {
+   "slug": "order",
+   "label": "Order ahead",
+   "group": "Café"
+  },
+  {
+   "slug": "catering",
+   "label": "Catering",
+   "group": "Café"
+  },
+  {
+   "slug": "story",
+   "label": "Our story",
+   "group": "Visit"
+  },
+  {
+   "slug": "visit",
+   "label": "Find us",
+   "group": "Visit"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Visit"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

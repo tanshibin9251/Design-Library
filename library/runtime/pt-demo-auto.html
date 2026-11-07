@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link id="gf" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Mulish:wght@400;600;700&display=swap">
+<style>:root{--primary:#1f2a44;--secondary:#4b5675;--text:#1f2328;--accent:#e8590c;--surface:#faf8f5;--border:#e6e0d6;--on-primary:#fff;--on-accent:#fff;--font-heading:'Lora',serif;--font-body:'Mulish',sans-serif;--radius:12px;--pt-dur:600ms;--pt-ease:cubic-bezier(.7,0,.2,1);--pt-color:var(--accent)}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--surface);color:var(--text);font-family:var(--font-body);min-height:100vh}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5}
+.nav b{font:600 22px var(--font-heading);color:var(--primary)}.nav nav{display:flex;gap:26px}.nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px;padding:6px 0;border-bottom:2px solid transparent}.nav a.on{border-color:var(--accent)}
+main[data-page]{display:none;min-height:calc(100vh - 66px);padding:7vh 6vw;align-items:center}main[data-page].on{display:grid}
+h1{font:600 clamp(36px,6vw,76px)/1.05 var(--font-heading);margin:0 0 18px;color:var(--primary);letter-spacing:-.02em;max-width:14ch}p{max-width:48ch;opacity:.8;font-size:1.1em}
+.row{display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center}.art{aspect-ratio:4/3;border-radius:var(--radius);background:linear-gradient(135deg,var(--primary),var(--accent))}
+.pg-about .art{background:linear-gradient(200deg,var(--accent),var(--primary))}.pg-contact .art{background:linear-gradient(160deg,var(--secondary),var(--accent))}
+.btn{display:inline-block;margin-top:22px;background:var(--accent);color:var(--on-accent);padding:.9em 1.6em;border-radius:var(--radius);font-weight:700;text-decoration:none}
+.hint{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--primary);color:var(--on-primary);padding:8px 16px;border-radius:99px;font:700 13px var(--font-body);z-index:9;opacity:.95;white-space:nowrap}
+</style><style id="ptcss">/*__PTCSS__*/</style></head><body><header class="nav"><b>Studio</b><nav><a href="#/home" data-l="home">Home</a><a href="#/about" data-l="about">About</a><a href="#/contact" data-l="contact">Contact</a></nav></header><main data-page="home" class="pg-home on"><div class="row"><div><h1>Pages that feel like one thing.</h1><p>Click any menu link to see the transition play.</p><a class="btn" href="#/about">Next: About →</a></div><div class="art"></div></div></main><main data-page="about" class="pg-about"><div class="row"><div><h1>Move between pages with intent.</h1><p>A good transition tells you where you are going.</p><a class="btn" href="#/contact">Next: Contact →</a></div><div class="art"></div></div></main><main data-page="contact" class="pg-contact"><div class="row"><div><h1>Say hello.</h1><p>Each transition is pure CSS and takes seconds to add.</p><a class="btn" href="#/home">Next: Home →</a></div><div class="art"></div></div></main><script>(function(){var L=function(h){var n=parseInt(h.slice(1),16),a=[n>>16&255,n>>8&255,n&255].map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]};var on=function(h){return L(h)>.45?'#111':'#fff'};var R=document.documentElement;
+var cur='home',AUTO=true,PTON=true;
+function swap(s){document.querySelectorAll('main').forEach(function(m){m.classList.toggle('on',m.dataset.page===s)});document.querySelectorAll('.nav a').forEach(function(a){a.classList.toggle('on',a.dataset.l===s)});cur=s;window.scrollTo(0,0)}
+function go(s){if(s===cur)return;if(document.startViewTransition&&PTON)document.startViewTransition(function(){swap(s)});else swap(s)}
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';if(h.indexOf('#/')===0){e.preventDefault();go(h.slice(2))}});
+addEventListener('message',function(e){var d=e.data;if(!d)return;
+ if(d.type==='dl-set'){var v=d.vars||{};for(var k in v)R.style.setProperty(k,v[k]);if(v['--primary'])R.style.setProperty('--on-primary',on(v['--primary']));if(v['--accent'])R.style.setProperty('--on-accent',on(v['--accent']));
+  if(d.head)R.style.setProperty('--font-heading',"'"+d.head+"','Noto Serif SC',serif");if(d.body)R.style.setProperty('--font-body',"'"+d.body+"','Noto Sans SC',sans-serif");
+  if(typeof d.ptcss==='string'){document.getElementById('ptcss').textContent=d.ptcss;PTON=d.ptcss.length>0}
+  var f=[d.head,d.body].filter(Boolean).map(function(x){return x.replace(/ /g,'+')+':400,600,700'}).join('|');if(f)document.getElementById('gf').href='https://fonts.googleapis.com/css?family='+f+'&display=swap'}
+ if(d.type==='dl-pt-demo'){var o=cur==='home'?'about':'home';go(o);setTimeout(function(){go('home')},1800)}});
+if(AUTO){var seq=['about','contact','home'],i=0;setInterval(function(){go(seq[i++%3])},2200)}
+parent.postMessage({type:'dl-ready'},'*')})();</script></body></html>

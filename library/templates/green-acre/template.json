@@ -1,0 +1,177 @@
+{
+ "format": "fragments",
+ "slug": "green-acre",
+ "name": "Green Acre Farm",
+ "zh": "绿野农场",
+ "tag": "Farm shop: crate-edge double rules, a veg-box builder that lists what is in season this month, and a 12-month harvest calendar with the current month marked.",
+ "colors": {
+  "primary": "#3d2b1f",
+  "secondary": "#ffb703",
+  "text": "#3d2b1f",
+  "accent": "#8ac926",
+  "surface": "#faf6ea",
+  "border": "#e4dcc0"
+ },
+ "fonts": {
+  "head": "Rokkitt",
+  "body": "Catamaran"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "0",
+  "h1": "88px",
+  "h2": "46px",
+  "h3": "26px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "6px"
+ },
+ "types": [
+  "company",
+  "ecommerce"
+ ],
+ "industries": [
+  "agriculture"
+ ],
+ "styles": [
+  "earthy",
+  "organic",
+  "warm"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Farm Boxes",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Box",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Farm Box Plans",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Farm Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "From the Farm",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Farm story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "schedule",
+   "label": "Delivery days",
+   "group": "Special"
+  },
+  {
+   "slug": "booking",
+   "label": "Visit the farm",
+   "group": "Special"
+  },
+  {
+   "slug": "service-areas",
+   "label": "Delivery areas",
+   "group": "Special"
+  },
+  {
+   "slug": "gift-cards",
+   "label": "Gift a box",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

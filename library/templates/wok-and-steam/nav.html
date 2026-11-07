@@ -1,0 +1,110 @@
+<style>
+/* Wok & Steam — Chinese home-cooking recipe site, tokens only */
+.wk-head{background:var(--c-surface);border-bottom:2px solid var(--c-primary);position:sticky;top:0;z-index:50}
+.wk-in{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding:0 clamp(16px,4vw,56px);min-height:76px}
+.wk-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--c-primary)}
+.wk-seal{display:grid;place-items:center;width:44px;height:44px;background:var(--c-accent);color:var(--on-accent);font:400 26px var(--f-head);border-radius:6px;transform:rotate(-4deg)}
+.wk-logo b{font:400 22px var(--f-head);letter-spacing:.06em}
+.wk-logo small{display:block;font:500 10px var(--f-body);letter-spacing:.3em;color:var(--c-secondary);text-transform:uppercase}
+.wk-nav{display:flex;justify-content:center;gap:clamp(6px,1.4vw,22px);list-style:none}
+.wk-nav a{display:flex;flex-direction:column;align-items:center;min-height:44px;justify-content:center;text-decoration:none;font:500 14px var(--f-body);padding:0 8px;line-height:1.1;color:var(--c-text)}
+.wk-nav a span{font:400 12px var(--f-head);color:var(--c-secondary);letter-spacing:.2em}
+.wk-nav a:hover{color:var(--c-accent)}
+.wk-nav .more{position:relative}
+.wk-nav .dd{position:absolute;left:50%;transform:translateX(-50%);top:100%;display:none;grid-template-columns:repeat(4,minmax(120px,1fr));gap:16px 26px;padding:22px 26px;background:var(--c-surface);border:2px solid var(--c-primary);min-width:560px;z-index:60;text-align:left}
+.wk-nav .more:hover .dd,.wk-nav .more:focus-within .dd{display:grid}
+.wk-nav .dd h4{font:700 11px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent);margin-bottom:6px}
+.wk-nav .dd a{display:block;min-height:0;padding:5px 0;text-align:left}
+.wk-find{display:flex;align-items:center;gap:8px;min-height:44px;border:2px solid var(--c-primary);padding:0 14px;border-radius:999px;text-decoration:none;font:500 14px var(--f-body);color:var(--c-primary)}
+.wk-m{display:none}
+.wk-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;border:2px solid var(--c-primary);border-radius:999px;padding:0 14px;font:700 12px var(--f-body);letter-spacing:.14em}
+.wk-m summary::-webkit-details-marker{display:none}
+.wk-m nav{position:absolute;left:0;right:0;top:100%;background:var(--c-surface);border-bottom:2px solid var(--c-primary);padding:6px 18px 16px;display:grid}
+.wk-m nav a{padding:12px 0;border-bottom:1px dashed var(--c-border);text-decoration:none;font:500 15px var(--f-body);min-height:44px}
+@media(max-width:940px){.wk-nav,.wk-find{display:none}.wk-in{grid-template-columns:1fr auto}.wk-m{display:block}}
+
+.wk-sec{padding:clamp(40px,6vw,88px) clamp(16px,4vw,56px)}
+.wk-hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(36px,6vw,84px) clamp(16px,4vw,56px)}
+.wk-hero h1{font:400 clamp(44px,7vw,var(--h1))/1.08 var(--f-head);color:var(--c-primary);letter-spacing:.02em}
+.wk-hero h1 em{font-style:normal;color:var(--c-accent)}
+.wk-hero .sub{font:500 13px var(--f-body);letter-spacing:.3em;color:var(--c-secondary);text-transform:uppercase;display:block;margin-bottom:16px}
+.wk-hero p.lead{font:400 18px/1.8 var(--f-body);margin:20px 0 26px;max-width:42ch}
+@media(max-width:900px){.wk-hero{grid-template-columns:1fr}}
+.wk-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border-radius:999px;background:var(--c-accent);color:var(--on-accent);text-decoration:none;font:700 15px var(--f-body);border:2px solid var(--c-accent);cursor:pointer;transition:transform .15s}
+.wk-btn:hover{transform:scale(1.04)}
+.wk-btn.o{background:transparent;color:var(--c-primary);border-color:var(--c-primary)}
+/* the plate */
+.wk-plate{position:relative;width:min(100%,460px);aspect-ratio:1;margin:0 auto}
+.wk-plate .ring{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--c-surface) 0 52%,var(--c-border) 52.5% 54%,var(--c-surface) 54.5% 70%,var(--c-secondary) 70.5% 72%,var(--c-surface) 72.5%);box-shadow:0 30px 50px -30px color-mix(in srgb,var(--c-primary) 55%,transparent),inset 0 0 0 10px var(--c-surface)}
+.wk-plate .dish{position:absolute;inset:20%;border-radius:50%;background:
+ radial-gradient(circle at 30% 30%,color-mix(in srgb,var(--c-accent) 70%,#fff) 0 7%,transparent 8%),
+ radial-gradient(circle at 62% 38%,var(--c-primary) 0 5%,transparent 6%),radial-gradient(circle at 48% 66%,var(--c-secondary) 0 9%,transparent 10%),radial-gradient(circle at 70% 70%,var(--c-accent) 0 6%,transparent 7%),
+ color-mix(in srgb,var(--c-accent) 38%,var(--c-surface))}
+.wk-steam{position:absolute;left:50%;top:-4%;width:50%;height:30%;transform:translateX(-50%);display:flex;justify-content:space-around;pointer-events:none}
+.wk-steam i{width:10px;height:100%;border-radius:50%;border-left:3px solid color-mix(in srgb,var(--c-secondary) 60%,transparent);animation:wksteam 3.2s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes wksteam{0%{transform:translateY(20px) scaleY(.6);opacity:0}30%{opacity:.9}100%{transform:translateY(-24px) scaleY(1.2);opacity:0}}
+.wk-plate .tag{position:absolute;right:2%;bottom:6%;background:var(--c-primary);color:var(--on-primary);font:400 20px var(--f-head);padding:10px 14px;border-radius:6px;transform:rotate(4deg);letter-spacing:.1em}
+
+.wk-h{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.wk-h h2{font:400 clamp(26px,3.4vw,var(--h2)) var(--f-head);color:var(--c-primary);letter-spacing:.04em}
+.wk-h span{font:500 12px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary)}
+.wk-h::after{content:"";flex:1;min-width:30px;border-top:2px dotted var(--c-secondary);align-self:center}
+.wk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px)}
+.wk-card{display:grid;gap:6px;text-decoration:none;align-content:start;text-align:center}
+.wk-card .pic{aspect-ratio:1;border-radius:50%;border:3px solid var(--c-primary);background:radial-gradient(circle at var(--x,35%) var(--y,35%),var(--c1,var(--c-accent)) 0 14%,transparent 15%),radial-gradient(circle at 62% 66%,var(--c2,var(--c-secondary)) 0 20%,transparent 21%),color-mix(in srgb,var(--c-accent) 14%,var(--c-surface));position:relative;transition:transform .3s}
+.wk-card:hover .pic{transform:rotate(8deg) scale(1.03)}
+.wk-card .pic::after{content:"缺图";position:absolute;left:50%;bottom:10%;transform:translateX(-50%);font:600 10px var(--f-body);letter-spacing:.14em;background:var(--c-surface);padding:2px 8px;border-radius:99px}
+.wk-card h3{font:400 22px var(--f-head);color:var(--c-primary);letter-spacing:.04em;margin-top:10px}
+.wk-card .m{font:500 13px var(--f-body);color:var(--c-secondary)}
+.wk-card .zh{font:400 14px var(--f-head);color:var(--c-accent);letter-spacing:.2em}
+@media(max-width:900px){.wk-grid{grid-template-columns:repeat(2,1fr)}}
+.wk-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.wk-chips button{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--c-primary);background:transparent;color:var(--c-primary);font:600 14px var(--f-body);cursor:pointer}
+.wk-chips button[aria-pressed=true]{background:var(--c-primary);color:var(--on-primary)}
+.wk-card.hide{display:none}
+
+/* recipe */
+.wk-rec{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:clamp(24px,5vw,72px);align-items:start}
+@media(max-width:860px){.wk-rec{grid-template-columns:1fr}}
+.wk-ing{border:2px solid var(--c-primary);border-radius:18px;padding:clamp(20px,2.4vw,30px);background:color-mix(in srgb,var(--c-surface) 50%,#fff);position:sticky;top:96px}
+.wk-ing h3{font:400 24px var(--f-head);letter-spacing:.06em}
+.wk-serv{display:flex;align-items:center;gap:10px;margin:14px 0 18px}
+.wk-serv button{width:44px;height:44px;border-radius:50%;border:2px solid var(--c-primary);background:transparent;font:700 20px var(--f-body);cursor:pointer;color:var(--c-primary)}
+.wk-serv output{font:400 26px var(--f-head);min-width:3ch;text-align:center}
+.wk-ing ul{list-style:none}
+.wk-ing li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dotted var(--c-secondary);font:500 15px/1.5 var(--f-body)}
+.wk-ing li input{width:20px;height:20px;accent-color:var(--c-accent);flex:none;margin-top:2px;padding:0;min-height:0}
+.wk-ing li label{display:flex;justify-content:space-between;gap:12px;flex:1;cursor:pointer}
+.wk-ing li input:checked+label{opacity:.45;text-decoration:line-through}
+.wk-ing .q{font-weight:700;white-space:nowrap}
+@media(max-width:860px){.wk-ing{position:static}}
+.wk-steps{counter-reset:s;list-style:none;display:grid;gap:22px}
+.wk-steps li{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start}
+.wk-steps li::before{content:counter(s,cjk-ideographic);display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--c-primary);color:var(--on-primary);font:400 24px var(--f-head)}
+.wk-steps h3{font:400 22px var(--f-head);letter-spacing:.04em;margin-bottom:4px}
+.wk-steps p{font:400 16px/1.8 var(--f-body)}
+.wk-heat{display:inline-flex;gap:3px;vertical-align:middle;margin-left:8px}.wk-heat i{width:10px;height:14px;background:var(--c-border);border-radius:3px}.wk-heat i.on{background:var(--c-accent)}
+.wk-meta{display:flex;gap:26px;flex-wrap:wrap;margin:20px 0 30px;padding:16px 0;border-top:2px solid var(--c-primary);border-bottom:2px solid var(--c-primary)}
+.wk-meta div b{display:block;font:400 26px var(--f-head);color:var(--c-primary)}.wk-meta div span{font:600 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-secondary)}
+/* picker */
+.wk-pick{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+@media(max-width:860px){.wk-pick{grid-template-columns:1fr}}
+.wk-roll{border:3px solid var(--c-primary);border-radius:24px;padding:clamp(24px,3vw,44px);text-align:center;background:color-mix(in srgb,var(--c-surface) 50%,#fff);min-height:300px;display:grid;place-items:center;align-content:center;gap:10px}
+.wk-roll .zh{font:400 clamp(46px,7vw,84px)/1.1 var(--f-head);color:var(--c-accent)}
+.wk-roll .en{font:400 clamp(22px,3vw,32px) var(--f-head);color:var(--c-primary)}
+.wk-roll p{font:500 15px var(--f-body);color:var(--c-secondary)}
+.wk-tech{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wk-tech>div{border:2px solid var(--c-primary);border-radius:18px;padding:24px;display:grid;gap:8px;align-content:start}
+.wk-tech .zh{font:400 40px var(--f-head);color:var(--c-accent)}.wk-tech h3{font:400 22px var(--f-head)}.wk-tech p{font:400 15px/1.7 var(--f-body)}
+@media(max-width:860px){.wk-tech{grid-template-columns:1fr}}
+.wk-foot{background:var(--c-primary);color:var(--on-primary);margin-top:clamp(40px,6vw,88px);padding:clamp(36px,5vw,64px) clamp(16px,4vw,56px) 22px}
+.wk-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,6vw,100px)}
+.wk-foot .big{font:400 36px var(--f-head);letter-spacing:.08em}
+.wk-foot h4{font:700 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:10px}
+.wk-foot ul{list-style:none}.wk-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:500 14px var(--f-body);min-height:32px}
+.wk-foot .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wk-foot .copy{margin-top:28px;font:500 12px var(--f-body);opacity:.7}
+@media(max-width:800px){.wk-foot .top{grid-template-columns:1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+@media(prefers-reduced-motion:reduce){.wk-steam i{animation:none;opacity:.5}.wk-card .pic,.wk-btn{transition:none}}
+</style><header class="wk-head"><div class="wk-in"><a class="wk-logo" href="{{p:home}}"><span class="wk-seal">家</span><span><b>Wok &amp; Steam</b><small>Chinese home cooking</small></span></a><ul class="wk-nav"><li><a href="{{p:recipes}}">Recipes<span>菜谱</span></a></li><li><a href="{{p:picker}}">Tonight<span>今天</span></a></li><li><a href="{{p:techniques}}">Techniques<span>技法</span></a></li><li><a href="{{p:pantry}}">Pantry<span>调料</span></a></li><li class="more"><a href="#" tabindex="0">More<span>更多</span></a><div class="dd"><div><h4>Cook</h4><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">All recipes</a><a href="{{p:recipe}}">Recipe: Mapo tofu</a><a href="{{p:picker}}">What to eat today</a></div><div><h4>Learn</h4><a href="{{p:techniques}}">Techniques</a><a href="{{p:pantry}}">The pantry</a></div><div><h4>Kitchen</h4><a href="{{p:about}}">About</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li></ul><a class="wk-find" href="{{p:picker}}">今天吃什么 →</a><details class="wk-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:recipes}}">All recipes</a><a href="{{p:recipe}}">Recipe: Mapo tofu</a><a href="{{p:picker}}">What to eat today</a><a href="{{p:techniques}}">Techniques</a><a href="{{p:pantry}}">The pantry</a><a href="{{p:about}}">About</a><a href="{{p:faq}}">FAQ</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details></div></header>

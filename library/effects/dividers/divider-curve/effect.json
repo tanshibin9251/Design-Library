@@ -1,0 +1,12 @@
+{
+ "slug": "divider-curve",
+ "cat": "dividers",
+ "name": "Curve Divider",
+ "zh": "弧形分隔",
+ "tech": "css",
+ "tag": "A soft convex arc rounds the edge of a coloured section.",
+ "bleed": true,
+ "css": ".fx-dcurve .sec{position:relative;flex:1;display:grid;align-content:center;justify-items:center;text-align:center;gap:.8em;padding:5em 1.25em}\n.fx-dcurve .sec h2{font-size:clamp(1.8em,4vw,2.8em);max-width:16em}.fx-dcurve .sec p{opacity:.75;max-width:44ch}\n.fx-dcurve .sec .k{font-size:.75em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.7}\n.fx-dcurve{--cv:clamp(36px,7vw,100px);display:flex;flex-direction:column;background:var(--surface)}\n.fx-dcurve .s1{background:var(--surface);padding-bottom:calc(var(--cv) + 3em)}\n.fx-dcurve .s2{z-index:2;margin-top:calc(var(--cv)*-1);padding:calc(var(--cv) + 3.5em) 1.25em calc(var(--cv) + 3.5em);background:var(--primary);color:var(--on-primary);border-radius:50% 50% 50% 50%/var(--cv) var(--cv) var(--cv) var(--cv)}\n.fx-dcurve .s3{z-index:1;margin-top:calc(var(--cv)*-1);padding-top:calc(var(--cv) + 4em);background:color-mix(in srgb,var(--accent) 14%,var(--surface))}\n.fx-dcurve .s2::after{content:\"\";position:absolute;left:12%;right:12%;bottom:calc(var(--cv)*.5);height:1px;background:color-mix(in srgb,var(--on-primary) 25%,transparent)}",
+ "html": "<div class=\"fx fx-dcurve\"><section class=\"sec s1\"><span class=\"k\">Welcome</span><h2>Round off the edges</h2><p>A single border-radius with a fixed vertical radius gives a shallow, elegant arc.</p></section><section class=\"sec s2\"><span class=\"k\">Featured</span><h2>The curve scales with the page</h2><p>Horizontal radius stays at 50% of the width, the height is a clamp, so it looks right on a phone and a monitor.</p></section><section class=\"sec s3\"><span class=\"k\">Next</span><h2>And the page flows on</h2><p>The following section simply slides underneath the bulge.</p></section></div>",
+ "js": ""
+}

@@ -1,0 +1,56 @@
+<!-- Progress rings — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-ring{width:min(940px,100%);text-align:center;display:grid;gap:2.2em;justify-items:center}
+.fx-ring h2{font-size:clamp(1.9em,4.4vw,2.8em);max-width:18ch}
+.fx-ring .row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2em;width:100%}
+.fx-ring .r{display:grid;justify-items:center;gap:.9em;padding:1.5em .8em;border:1px solid var(--border);border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 94%,var(--text))}
+.fx-ring .rg{position:relative;width:min(8.5em,100%);aspect-ratio:1}
+.fx-ring .rg svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.fx-ring .rg circle{fill:none;stroke-width:7}
+.fx-ring .rg .tk{stroke:color-mix(in srgb,var(--text) 10%,transparent)}
+.fx-ring .rg .bar{stroke:var(--c,var(--primary));stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:calc(100 - var(--p));transition:stroke-dashoffset calc(1.5s/var(--speed)) cubic-bezier(.3,.7,.2,1)}
+.fx-ring .pre .rg .bar{stroke-dashoffset:100;transition:none}
+.fx-ring .r:nth-child(2) .bar{--c:var(--accent)}.fx-ring .r:nth-child(4) .bar{--c:color-mix(in srgb,var(--primary) 55%,var(--accent))}
+.fx-ring .rg .v{position:absolute;inset:0;display:grid;place-items:center;font:600 clamp(1.5em,3.2vw,2em) var(--font-heading);font-variant-numeric:tabular-nums}
+.fx-ring .rg .v sup{font-size:.5em;opacity:.6;top:-.5em;margin-left:1px}
+.fx-ring .l{font-size:.9em;opacity:.7}
+.fx-ring small{opacity:.5}
+@media(max-width:760px){.fx-ring .row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.fx-ring .rg .bar{transition:none}}
+
+</style>
+
+<div class="fx fx-ring"><h2>Quality you can measure</h2><div class="row"><div class="r"><div class="rg" role="img" aria-label="Satisfaction: 96%"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="tk" cx="50" cy="50" r="42" pathLength="100"/><circle class="bar" cx="50" cy="50" r="42" pathLength="100" style="--p:96"/></svg><div class="v" aria-hidden="true"><span><span data-to="96">96</span><sup>%</sup></span></div></div><div class="l">Satisfaction</div></div><div class="r"><div class="rg" role="img" aria-label="On-time delivery: 88%"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="tk" cx="50" cy="50" r="42" pathLength="100"/><circle class="bar" cx="50" cy="50" r="42" pathLength="100" style="--p:88"/></svg><div class="v" aria-hidden="true"><span><span data-to="88">88</span><sup>%</sup></span></div></div><div class="l">On-time delivery</div></div><div class="r"><div class="rg" role="img" aria-label="Repeat clients: 72%"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="tk" cx="50" cy="50" r="42" pathLength="100"/><circle class="bar" cx="50" cy="50" r="42" pathLength="100" style="--p:72"/></svg><div class="v" aria-hidden="true"><span><span data-to="72">72</span><sup>%</sup></span></div></div><div class="l">Repeat clients</div></div><div class="r"><div class="rg" role="img" aria-label="Accessibility score: 100 out of 100"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="tk" cx="50" cy="50" r="42" pathLength="100"/><circle class="bar" cx="50" cy="50" r="42" pathLength="100" style="--p:100"/></svg><div class="v" aria-hidden="true"><span><span data-to="100">100</span></span></div></div><div class="l">Accessibility score</div></div></div><small>Click to replay</small></div>
+
+<script>
+(function(){var root=document.querySelector('.fx-ring');function sp(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed'))||1}
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function run(){root.classList.add('pre');root.querySelectorAll('[data-to]').forEach(function(e){e.textContent=0});void root.offsetWidth;
+if(reduce){root.classList.remove('pre');root.querySelectorAll('[data-to]').forEach(function(e){e.textContent=e.dataset.to});return}
+requestAnimationFrame(function(){root.classList.remove('pre');root.querySelectorAll('[data-to]').forEach(function(el){var to=+el.dataset.to,t0=null,d=1500/sp();function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})})}
+if('IntersectionObserver' in window){root.classList.add('pre');var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){run();io.disconnect()}},{threshold:.3});io.observe(root)}
+root.addEventListener('click',run)})();
+</script>

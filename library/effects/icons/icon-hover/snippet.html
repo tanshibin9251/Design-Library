@@ -1,0 +1,71 @@
+<!-- Icon hover — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-ich{width:min(860px,100%);display:grid;gap:1.6em;text-align:center}
+.fx-ich h2{font-size:clamp(1.7em,4vw,2.4em)}.fx-ich .sub{opacity:.6;margin-top:-1em}
+.fx-ich .g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1em}
+.fx-ich .t{display:grid;justify-items:center;gap:.8em;padding:1.6em .6em 1.2em;border:1px solid var(--border);border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 94%,var(--text));color:var(--primary);text-decoration:none;transition:background calc(.3s/var(--speed)),color calc(.3s/var(--speed)),transform calc(.3s/var(--speed)) cubic-bezier(.2,.8,.2,1),border-color calc(.3s/var(--speed))}
+.fx-ich .t svg{width:2.4em;height:2.4em;overflow:visible}
+.fx-ich .t span{font-size:.85em;font-weight:700;color:var(--text);opacity:.75;transition:color .3s}
+.fx-ich .t:hover,.fx-ich .t:focus-visible{background:var(--primary);color:var(--on-primary);transform:translateY(-4px);border-color:var(--primary)}
+.fx-ich .t:hover span,.fx-ich .t:focus-visible span{color:var(--on-primary);opacity:1}
+.fx-ich .t:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.fx-ich .sw,.fx-ich .fl,.fx-ich .dr,.fx-ich .t svg path,.fx-ich .t svg circle{transform-box:fill-box}
+.fx-ich .t1 .sw{transform-origin:50% 10%}.fx-ich .t1:hover .sw{animation:fxichring calc(.7s/var(--speed)) ease}
+.fx-ich .t2 path{transform-origin:center;transition:fill calc(.3s/var(--speed)),transform calc(.4s/var(--speed)) cubic-bezier(.3,1.8,.5,1)}.fx-ich .t2:hover path{fill:var(--accent);stroke:var(--accent);transform:scale(1.18)}
+.fx-ich .t3 .fl{transform-origin:50% 0;transition:transform calc(.35s/var(--speed))}.fx-ich .t3:hover .fl{transform:scaleY(-.9) translateY(-1px)}
+.fx-ich .t4 .sw{transform-origin:center;transition:transform calc(.8s/var(--speed)) cubic-bezier(.3,.7,.3,1)}.fx-ich .t4:hover .sw{transform:rotate(180deg)}
+.fx-ich .t5 .sw{transition:transform calc(.3s/var(--speed)) cubic-bezier(.2,.8,.2,1)}.fx-ich .t5:hover .sw{transform:translateX(5px)}
+.fx-ich .t6:hover .sw{animation:fxichdl calc(.8s/var(--speed)) ease infinite}
+.fx-ich .t7 .sw{transform-origin:center;transition:transform calc(.35s/var(--speed)) cubic-bezier(.3,1.6,.5,1)}.fx-ich .t7:hover .sw{transform:scale(1.18) rotate(-12deg)}
+.fx-ich .t8 .dr{stroke-dasharray:1;stroke-dashoffset:0}.fx-ich .t8:hover .dr{animation:fxichdraw calc(.6s/var(--speed)) ease}
+@keyframes fxichring{15%{transform:rotate(16deg)}35%{transform:rotate(-14deg)}55%{transform:rotate(9deg)}75%{transform:rotate(-5deg)}to{transform:none}}
+@keyframes fxichdl{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+@keyframes fxichdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media(max-width:640px){.fx-ich .g{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){.fx-ich .t,.fx-ich .t *{transition:none!important;animation:none!important}}
+
+/* touch: :hover mirrored as .is-tap */
+.fx-ich .t.is-tap{background:var(--primary);color:var(--on-primary);transform:translateY(-4px);border-color:var(--primary)}
+.fx-ich .t.is-tap span{color:var(--on-primary);opacity:1}
+.fx-ich .t1.is-tap .sw{animation:fxichring calc(.7s/var(--speed)) ease}
+.fx-ich .t2.is-tap path{fill:var(--accent);stroke:var(--accent);transform:scale(1.18)}
+.fx-ich .t3.is-tap .fl{transform:scaleY(-.9) translateY(-1px)}
+.fx-ich .t4.is-tap .sw{transform:rotate(180deg)}
+.fx-ich .t5.is-tap .sw{transform:translateX(5px)}
+.fx-ich .t6.is-tap .sw{animation:fxichdl calc(.8s/var(--speed)) ease infinite}
+.fx-ich .t7.is-tap .sw{transform:scale(1.18) rotate(-12deg)}
+.fx-ich .t8.is-tap .dr{animation:fxichdraw calc(.6s/var(--speed)) ease}
+
+</style>
+
+<div class="fx fx-ich"><h2>Small gestures, big polish</h2><p class="sub">Hover or tab through the icons.</p><div class="g"><a class="t t1" href="#" aria-label="Notifications"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="sw"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></g></svg><span>Notifications</span></a><a class="t t2" href="#" aria-label="Favourites"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg><span>Favourites</span></a><a class="t t3" href="#" aria-label="Messages"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path class="fl" d="m22 7-10 6L2 7"/></svg><span>Messages</span></a><a class="t t4" href="#" aria-label="Appearance"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="sw"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg><span>Appearance</span></a><a class="t t5" href="#" aria-label="Continue"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="sw"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></g></svg><span>Continue</span></a><a class="t t6" href="#" aria-label="Download"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><g class="sw"><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></g></svg><span>Download</span></a><a class="t t7" href="#" aria-label="Search"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="sw"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></g></svg><span>Search</span></a><a class="t t8" href="#" aria-label="Verified"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path class="dr" pathLength="1" d="m8 12.5 2.8 2.8L16 9.5"/></svg><span>Verified</span></a></div></div>
+
+<script>
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

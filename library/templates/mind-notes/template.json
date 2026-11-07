@@ -1,0 +1,98 @@
+{
+ "format": "fragments",
+ "slug": "mind-notes",
+ "name": "Mind Notes",
+ "zh": "心理学科普",
+ "tag": "Calm plain-language psychology site: reading progress line, breathing-circle hero, flip concept cards, a gentle check-in and guided breathing patterns.",
+ "colors": {
+  "primary": "#3b4a6b",
+  "secondary": "#8fa89b",
+  "text": "#2d3446",
+  "accent": "#c97b63",
+  "surface": "#f4efe9",
+  "border": "#dcd5ca"
+ },
+ "fonts": {
+  "head": "Vollkorn",
+  "body": "Mulish"
+ },
+ "tok": {
+  "hlh": "1.2",
+  "hw": "500",
+  "hcase": "none",
+  "hls": "-.01em",
+  "h1": "76px",
+  "h2": "42px",
+  "h3": "26px",
+  "pad": "96px",
+  "ew": "600",
+  "stat": "var(--c-accent)",
+  "radius": "16px"
+ },
+ "types": [
+  "blog",
+  "company"
+ ],
+ "industries": [
+  "psychology",
+  "health"
+ ],
+ "styles": [
+  "minimal",
+  "organic",
+  "editorial"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Read"
+  },
+  {
+   "slug": "concepts",
+   "label": "Concept cards",
+   "group": "Read"
+  },
+  {
+   "slug": "article",
+   "label": "Article: Why we keep doing what we regret",
+   "group": "Read"
+  },
+  {
+   "slug": "checkin",
+   "label": "Stress check-in",
+   "group": "Practise"
+  },
+  {
+   "slug": "breathe",
+   "label": "Breathing space",
+   "group": "Practise"
+  },
+  {
+   "slug": "books",
+   "label": "Reading list",
+   "group": "Practise"
+  },
+  {
+   "slug": "support",
+   "label": "Getting support",
+   "group": "About"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "About"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

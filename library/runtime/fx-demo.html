@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link id="gf" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>:root{--primary:#1f2a44;--secondary:#4b5675;--text:#1f2328;--accent:#e8590c;--surface:#faf8f5;--border:#e6e0d6;--on-primary:#fff;--on-accent:#fff;--font-heading:'Lora','Noto Serif SC',serif;--font-body:'Mulish','Noto Sans SC',sans-serif;--radius:12px;--scale:1;--speed:1}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}body{background:var(--surface);color:var(--text);font-family:var(--font-body)}
+.stage{min-height:100vh;display:grid;place-items:center;padding:56px 5vw;transition:background .2s}
+.stage.bleed{padding:0;display:block}.stage.bleed>*{width:100%;min-height:100vh}
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+__FXCSS__</style></head><body><div class="stage __STAGE__">__FXHTML__</div>
+<script>
+const L=h=>{const n=parseInt(h.slice(1),16),a=[n>>16&255,n>>8&255,n&255].map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]};
+const on=h=>L(h)>.45?'#111':'#fff';
+addEventListener('message',ev=>{const d=ev.data;if(!d||d.type!=='dl-set')return;const r=document.documentElement.style;
+for(const k in d.vars)r.setProperty(k,d.vars[k]);
+const v=d.vars;if(v['--primary'])r.setProperty('--on-primary',on(v['--primary']));if(v['--accent'])r.setProperty('--on-accent',on(v['--accent']));
+if(d.head)r.setProperty('--font-heading',"'"+d.head+"','Noto Serif SC',serif");if(d.body)r.setProperty('--font-body',"'"+d.body+"','Noto Sans SC',sans-serif");
+const fs=[...new Set([d.head,d.body,'Noto Sans SC'])].filter(Boolean).map(f=>f.replace(/ /g,'+')+':400,500,600,700').join('|');
+document.getElementById('gf').href='https://fonts.googleapis.com/css?family='+fs+'&display=swap';
+});
+parent.postMessage({type:'dl-ready'},'*');
+</script>
+
+__FXJS__</body></html>

@@ -1,0 +1,8 @@
+{
+ "slug": "glitch",
+ "name": "Glitch",
+ "zh": "信号故障",
+ "tag": "A short digital glitch: colour-shifted slices jitter, then the new page snaps in clean.",
+ "group": "Fx",
+ "license": "自写，无第三方代码"
+}

@@ -1,0 +1,107 @@
+{
+ "format": "fragments",
+ "slug": "blueprint-build",
+ "name": "Blueprint Build",
+ "zh": "蓝图营造",
+ "tag": "Drafting-sheet contractor site: grid-paper background, SVG floor plan, Gantt schedule of works, project register and a quick estimator.",
+ "colors": {
+  "primary": "#14407f",
+  "secondary": "#8fb4ea",
+  "text": "#e8f1ff",
+  "accent": "#6ef2c8",
+  "surface": "#0c2d62",
+  "border": "#2d5aa0"
+ },
+ "fonts": {
+  "head": "JetBrains Mono",
+  "body": "Barlow"
+ },
+ "tok": {
+  "hlh": "1.02",
+  "hw": "700",
+  "hcase": "uppercase",
+  "hls": "-.02em",
+  "h1": "76px",
+  "h2": "44px",
+  "h3": "20px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company"
+ ],
+ "industries": [
+  "construction",
+  "homeservices"
+ ],
+ "styles": [
+  "typographic",
+  "geometric",
+  "futuristic"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Sheet"
+  },
+  {
+   "slug": "services",
+   "label": "Services",
+   "group": "Sheet"
+  },
+  {
+   "slug": "process",
+   "label": "Schedule of works",
+   "group": "Sheet"
+  },
+  {
+   "slug": "quote",
+   "label": "Quick quote",
+   "group": "Sheet"
+  },
+  {
+   "slug": "projects",
+   "label": "Project register",
+   "group": "Sheet"
+  },
+  {
+   "slug": "project",
+   "label": "Project file",
+   "group": "Sheet"
+  },
+  {
+   "slug": "materials",
+   "label": "Spec library",
+   "group": "Reference"
+  },
+  {
+   "slug": "licences",
+   "label": "Licences & safety",
+   "group": "Reference"
+  },
+  {
+   "slug": "contact",
+   "label": "Site enquiry",
+   "group": "Reference"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Reference"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

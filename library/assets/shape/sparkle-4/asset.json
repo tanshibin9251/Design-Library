@@ -1,0 +1,18 @@
+{
+ "slug": "sparkle-4",
+ "name": "Sparkle 4",
+ "zh": "四角闪光",
+ "cat": "shape",
+ "file": "sparkle-4.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "sparkle",
+  "shine",
+  "tech"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

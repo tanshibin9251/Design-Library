@@ -1,0 +1,93 @@
+{
+ "format": "fragments",
+ "slug": "wedding-photo",
+ "name": "Frame & Vow",
+ "zh": "婚礼摄影",
+ "tag": "Quiet wedding-photography site with a snap-scrolling polaroid strip, full-bleed love-story tiles and hairline package table.",
+ "colors": {
+  "primary": "#14182b",
+  "secondary": "#8a8576",
+  "text": "#22232b",
+  "accent": "#c8a978",
+  "surface": "#faf7f2",
+  "border": "#ddd6c8"
+ },
+ "fonts": {
+  "head": "Italiana",
+  "body": "Raleway"
+ },
+ "tok": {
+  "hlh": "1.02",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".04em",
+  "h1": "96px",
+  "h2": "46px",
+  "h3": "28px",
+  "pad": "104px",
+  "ew": "500",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "portfolio",
+  "company"
+ ],
+ "industries": [
+  "events",
+  "photography"
+ ],
+ "styles": [
+  "elegant",
+  "photo",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Studio"
+  },
+  {
+   "slug": "stories",
+   "label": "Love stories",
+   "group": "Studio"
+  },
+  {
+   "slug": "story",
+   "label": "A love story",
+   "group": "Studio"
+  },
+  {
+   "slug": "packages",
+   "label": "Packages",
+   "group": "Studio"
+  },
+  {
+   "slug": "about",
+   "label": "About us",
+   "group": "Studio"
+  },
+  {
+   "slug": "enquire",
+   "label": "Check your date",
+   "group": "Enquire"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Enquire"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

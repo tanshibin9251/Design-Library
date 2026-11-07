@@ -1,0 +1,147 @@
+{
+ "format": "fragments",
+ "slug": "bright-academy",
+ "name": "Bright Academy",
+ "zh": "明亮学院",
+ "tag": "Tuition centre with folder-tab nav and a hands-on weekly timetable builder that totals classes and monthly fee, plus a one-page parent report.",
+ "colors": {
+  "primary": "#1f2933",
+  "secondary": "#d9f0a0",
+  "text": "#1f2933",
+  "accent": "#b7e04b",
+  "surface": "#f7f9f2",
+  "border": "#dfe5d2"
+ },
+ "fonts": {
+  "head": "Space Grotesk",
+  "body": "DM Sans"
+ },
+ "tok": {
+  "hlh": "1.08",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.025em",
+  "h1": "72px",
+  "h2": "40px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "12px"
+ },
+ "types": [
+  "landing",
+  "company"
+ ],
+ "industries": [
+  "education"
+ ],
+ "styles": [
+  "bold",
+  "geometric",
+  "minimal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Courses",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Course",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Fees",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Student Work",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Project",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Blog",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "schedule",
+   "label": "Timetable",
+   "group": "Special"
+  },
+  {
+   "slug": "trial",
+   "label": "Free trial",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

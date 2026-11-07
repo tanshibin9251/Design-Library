@@ -1,0 +1,12 @@
+{
+ "slug": "text-letter-reveal",
+ "cat": "text",
+ "name": "Letter Reveal",
+ "zh": "逐字弹出",
+ "tech": "js",
+ "tag": "Headline letters rise in one after another. Click to replay.",
+ "bleed": false,
+ "css": ".fx-let{text-align:center;display:grid;gap:1em;justify-items:center;max-width:980px}\n.fx-let h1{font-size:clamp(2.6em,7.5vw,5.6em);line-height:1.05;cursor:pointer}\n.fx-let .w{display:inline-block;white-space:nowrap}\n.fx-let .c{display:inline-block;opacity:0;transform:translateY(.7em) rotate(5deg);animation:fxlet calc(.75s/var(--speed)) cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*38ms/var(--speed))}\n.fx-let h1 em{font-style:italic;color:var(--accent)}\n.fx-let small{opacity:.5;font-size:.85em}\n@keyframes fxlet{to{opacity:1;transform:none}}\n@media(prefers-reduced-motion:reduce){.fx-let .c{animation:none;opacity:1;transform:none}}",
+ "html": "<div class=\"fx fx-let\"><h1 data-split>Words that arrive with a little grace</h1><small>Click the headline to replay</small></div>",
+ "js": "(function(){function split(h){var t=h.getAttribute('data-text')||h.textContent;h.setAttribute('data-text',t);h.textContent='';var i=0;\nt.split(' ').forEach(function(w,wi,a){var s=document.createElement('span');s.className='w';w.split('').forEach(function(ch){var c=document.createElement('span');c.className='c';c.style.setProperty('--i',i++);c.textContent=ch;s.appendChild(c)});h.appendChild(s);if(wi<a.length-1){h.appendChild(document.createTextNode(' '));i++}})}\ndocument.querySelectorAll('.fx-let [data-split]').forEach(function(h){split(h);h.addEventListener('click',function(){split(h)})})})();"
+}

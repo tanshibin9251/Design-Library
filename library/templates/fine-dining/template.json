@@ -1,0 +1,176 @@
+{
+ "format": "fragments",
+ "slug": "fine-dining",
+ "name": "Fine Dining",
+ "zh": "高端餐饮",
+ "tag": "Hushed, dark and restrained. Like a printed tasting menu.",
+ "colors": {
+  "primary": "#1C1917",
+  "secondary": "#44403C",
+  "text": "#292524",
+  "accent": "#A16207",
+  "surface": "#FAFAF9",
+  "border": "#E7E5E4"
+ },
+ "fonts": {
+  "head": "Cormorant Garamond",
+  "body": "EB Garamond"
+ },
+ "tok": {
+  "radius": "0",
+  "hlh": "1.08",
+  "hw": "600",
+  "hcase": "none",
+  "hls": ".01em",
+  "h1": "76px",
+  "h2": "48px",
+  "h3": "28px",
+  "pad": "104px",
+  "ew": "500",
+  "stat": "var(--c-accent)"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "restaurant"
+ ],
+ "styles": [
+  "elegant",
+  "dark"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Experiences",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Gift Vouchers",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Cellar Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Bottle",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Press",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Feature",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "menu",
+   "label": "Menu",
+   "group": "Special"
+  },
+  {
+   "slug": "wine",
+   "label": "Wine list",
+   "group": "Special"
+  },
+  {
+   "slug": "private-dining",
+   "label": "Private dining",
+   "group": "Special"
+  },
+  {
+   "slug": "reservations",
+   "label": "Reservations",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

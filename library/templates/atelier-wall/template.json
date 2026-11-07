@@ -1,0 +1,99 @@
+{
+ "format": "fragments",
+ "slug": "atelier-wall",
+ "name": "Atelier Wall",
+ "zh": "美术课程",
+ "tag": "Online art school as a gallery: symmetric header, hung-works wall with museum labels and filters, numbered studios and a drag-to-compare before/after slider.",
+ "colors": {
+  "primary": "#121212",
+  "secondary": "#7a7a75",
+  "text": "#1b1b1b",
+  "accent": "#2547d0",
+  "surface": "#fbfaf7",
+  "border": "#e3e1da"
+ },
+ "fonts": {
+  "head": "Epilogue",
+  "body": "Be Vietnam Pro"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.04em",
+  "h1": "130px",
+  "h2": "56px",
+  "h3": "26px",
+  "pad": "100px",
+  "ew": "600",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "landing",
+  "company",
+  "portfolio"
+ ],
+ "industries": [
+  "arts",
+  "education"
+ ],
+ "styles": [
+  "minimal",
+  "editorial",
+  "monochrome"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "School"
+  },
+  {
+   "slug": "studios",
+   "label": "Studios",
+   "group": "School"
+  },
+  {
+   "slug": "studio",
+   "label": "Studio: Drawing Foundations",
+   "group": "School"
+  },
+  {
+   "slug": "wall",
+   "label": "Student wall",
+   "group": "School"
+  },
+  {
+   "slug": "progress",
+   "label": "Before & after",
+   "group": "School"
+  },
+  {
+   "slug": "faculty",
+   "label": "Faculty",
+   "group": "School"
+  },
+  {
+   "slug": "tuition",
+   "label": "Tuition",
+   "group": "Join"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Join"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+<style>
+/* Mind Notes — calm psychology reading site, tokens only */
+.mn-prog{position:fixed;left:0;top:0;height:3px;width:var(--p,0%);background:var(--c-accent);z-index:80;transition:width .1s}
+.mn-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(18px,5vw,72px);min-height:84px;position:relative;z-index:30}
+.mn-logo{font:600 24px var(--f-head);color:var(--c-primary);text-decoration:none;letter-spacing:.01em}
+.mn-logo i{font-style:normal;color:var(--c-accent)}
+.mn-nav{display:flex;gap:clamp(14px,2.4vw,34px);list-style:none;align-items:center}
+.mn-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font:500 15px var(--f-body);color:var(--c-text);border-bottom:1px solid transparent}
+.mn-nav a:hover{border-bottom-color:var(--c-accent);color:var(--c-primary)}
+.mn-nav .more{position:relative}
+.mn-nav .dd{position:absolute;right:0;top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:16px 26px;padding:22px 26px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:16px;box-shadow:0 24px 50px -30px color-mix(in srgb,var(--c-primary) 50%,transparent);min-width:580px;z-index:60}
+.mn-nav .more:hover .dd,.mn-nav .more:focus-within .dd{display:grid}
+.mn-nav .dd h4{font:600 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:6px}
+.mn-nav .dd a{display:block;min-height:0;padding:5px 0;border:0}
+.mn-m{display:none;position:relative}
+.mn-m summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:grid;place-items:center;border:1px solid var(--c-border);border-radius:999px;padding:0 16px;font:500 13px var(--f-body)}
+.mn-m summary::-webkit-details-marker{display:none}
+.mn-m nav{position:absolute;right:0;top:100%;min-width:250px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:16px;padding:8px 18px;display:grid;z-index:60;box-shadow:0 24px 50px -30px color-mix(in srgb,var(--c-primary) 50%,transparent)}
+.mn-m nav a{padding:12px 0;border-bottom:1px solid var(--c-border);text-decoration:none;font:500 15px var(--f-body);min-height:44px}
+@media(max-width:860px){.mn-nav{display:none}.mn-m{display:block}}
+
+.mn-sec{padding:clamp(40px,6vw,96px) clamp(18px,5vw,72px)}
+.mn-narrow{max-width:720px;margin:0 auto}
+.mn-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,6vw,100px);align-items:center;padding:clamp(30px,6vw,90px) clamp(18px,5vw,72px)}
+.mn-hero h1{font:500 clamp(38px,5.6vw,var(--h1))/1.15 var(--f-head);color:var(--c-primary);letter-spacing:-.01em}
+.mn-hero h1 em{color:var(--c-accent);font-style:italic}
+.mn-hero p{font:400 19px/1.85 var(--f-body);margin:20px 0 28px;max-width:44ch}
+@media(max-width:860px){.mn-hero{grid-template-columns:1fr}}
+.mn-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border-radius:999px;background:var(--c-primary);color:var(--on-primary);text-decoration:none;font:500 15px var(--f-body);border:1px solid var(--c-primary);cursor:pointer}
+.mn-btn:hover{background:var(--c-accent);border-color:var(--c-accent);color:var(--on-accent)}
+.mn-btn.o{background:transparent;color:var(--c-primary)}.mn-btn.o:hover{background:var(--c-primary);color:var(--on-primary);border-color:var(--c-primary)}
+/* breathing circle */
+.mn-breath{position:relative;width:min(100%,380px);aspect-ratio:1;margin:0 auto;display:grid;place-items:center}
+.mn-breath .o{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--c-secondary) 55%,var(--c-surface)) 0,color-mix(in srgb,var(--c-secondary) 25%,var(--c-surface)) 60%,transparent 72%);animation:mnbreath 8s ease-in-out infinite}
+.mn-breath .i{position:absolute;inset:26%;border-radius:50%;background:color-mix(in srgb,var(--c-primary) 14%,var(--c-surface));border:1px solid color-mix(in srgb,var(--c-primary) 30%,transparent);animation:mnbreath 8s ease-in-out infinite;animation-delay:-.2s}
+.mn-breath b{position:relative;font:500 22px var(--f-head);color:var(--c-primary);letter-spacing:.04em}
+@keyframes mnbreath{0%,100%{transform:scale(.72)}50%{transform:scale(1)}}
+.mn-h{margin-bottom:28px}
+.mn-h h2{font:500 clamp(26px,3.2vw,var(--h2))/1.2 var(--f-head);color:var(--c-primary)}
+.mn-h p{font:400 17px/1.8 var(--f-body);color:var(--c-secondary);margin-top:6px;max-width:52ch}
+.mn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px)}
+@media(max-width:900px){.mn-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.mn-grid{grid-template-columns:1fr}}
+.mn-flip{perspective:900px;background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:240px;font:inherit;color:inherit}
+.mn-flip .in{position:relative;width:100%;height:100%;min-height:240px;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.mn-flip[aria-pressed=true] .in{transform:rotateY(180deg)}
+.mn-flip .f,.mn-flip .b{position:absolute;inset:0;border-radius:22px;padding:26px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;align-content:space-between;gap:12px}
+.mn-flip .f{background:color-mix(in srgb,var(--c-surface) 40%,#fff);border:1px solid var(--c-border)}
+.mn-flip .b{background:var(--c-primary);color:var(--on-primary);transform:rotateY(180deg)}
+.mn-flip .f span,.mn-flip .b span{font:600 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-secondary)}
+.mn-flip .b span{color:var(--c-secondary)}
+.mn-flip h3{font:500 26px/1.2 var(--f-head);color:var(--c-primary)}
+.mn-flip .b p{font:400 16px/1.7 var(--f-body)}
+.mn-flip .f p{font:400 15px/1.6 var(--f-body);color:var(--c-text);opacity:.8}
+.mn-flip .hint{font:500 13px var(--f-body);color:var(--c-accent)}
+.mn-list a{display:grid;grid-template-columns:auto 1fr auto;gap:20px;padding:26px 0;border-bottom:1px solid var(--c-border);text-decoration:none;align-items:baseline}
+.mn-list a:first-child{border-top:1px solid var(--c-border)}
+.mn-list .n{font:italic 400 18px var(--f-head);color:var(--c-accent)}
+.mn-list h3{font:500 clamp(22px,2.6vw,30px)/1.25 var(--f-head);color:var(--c-primary)}
+.mn-list p{font:400 16px/1.7 var(--f-body);color:var(--c-secondary);margin-top:4px}
+.mn-list .m{font:500 13px var(--f-body);color:var(--c-secondary)}
+.mn-list a:hover h3{color:var(--c-accent)}
+@media(max-width:600px){.mn-list a{grid-template-columns:1fr}}
+.mn-read{font:400 20px/1.95 var(--f-body)}
+.mn-read p{margin-bottom:1.4em;max-width:none}
+.mn-read h2{font:500 30px/1.3 var(--f-head);color:var(--c-primary);margin:1.6em 0 .6em}
+.mn-read blockquote{border-left:3px solid var(--c-accent);padding:4px 0 4px 24px;margin:1.8em 0;font:italic 400 26px/1.5 var(--f-head);color:var(--c-primary)}
+.mn-read .lede::first-letter{font:500 3.6em/.9 var(--f-head);float:left;margin:.08em .1em 0 0;color:var(--c-accent)}
+.mn-meta{display:flex;gap:18px;flex-wrap:wrap;font:500 14px var(--f-body);color:var(--c-secondary);margin:14px 0 36px}
+.mn-note{background:color-mix(in srgb,var(--c-secondary) 20%,var(--c-surface));border-radius:16px;padding:20px 24px;font:400 16px/1.8 var(--f-body)}
+/* check-in */
+.mn-q{border-bottom:1px solid var(--c-border);padding:22px 0}
+.mn-q p{font:400 19px/1.6 var(--f-body);margin-bottom:12px;max-width:none}
+.mn-q .sc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.mn-q label{display:grid;place-items:center;min-height:48px;border:1px solid var(--c-border);border-radius:12px;font:500 14px var(--f-body);cursor:pointer;text-align:center;padding:4px 6px}
+.mn-q label{position:relative;overflow:hidden}.mn-q input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;min-height:0;padding:0;border:0}
+.mn-q input:checked+span{color:var(--on-primary)}
+.mn-q label:has(input:checked){background:var(--c-primary);color:var(--on-primary);border-color:var(--c-primary)}
+.mn-q label:has(input:focus-visible){outline:2px solid var(--c-accent);outline-offset:2px}
+@media(max-width:560px){.mn-q .sc{grid-template-columns:1fr 1fr}}
+.mn-res{margin-top:30px;border-radius:22px;padding:clamp(22px,3vw,40px);background:var(--c-primary);color:var(--on-primary);display:none}
+.mn-res.on{display:block}
+.mn-res h3{font:500 clamp(26px,3vw,36px) var(--f-head);color:var(--on-primary);margin-bottom:10px}
+.mn-res p{font:400 17px/1.8 var(--f-body);max-width:56ch}
+.mn-res .sc{font:500 54px var(--f-head);color:var(--c-secondary)}
+.mn-pat{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.mn-pat button{min-height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--c-primary);background:transparent;font:500 15px var(--f-body);cursor:pointer;color:var(--c-primary)}
+.mn-pat button[aria-pressed=true]{background:var(--c-primary);color:var(--on-primary)}
+.mn-big{width:min(100%,460px);aspect-ratio:1;margin:0 auto;position:relative;display:grid;place-items:center}
+.mn-big .o{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--c-secondary) 60%,var(--c-surface)) 0,color-mix(in srgb,var(--c-secondary) 25%,var(--c-surface)) 62%,transparent 74%);transform:scale(.6);transition:transform var(--t,4s) ease-in-out}
+.mn-big .o.in{transform:scale(1)}
+.mn-big b{position:relative;font:500 clamp(24px,3vw,34px) var(--f-head);color:var(--c-primary);text-align:center}
+.mn-big small{display:block;font:500 15px var(--f-body);color:var(--c-secondary);margin-top:6px}
+.mn-bk{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:700px){.mn-bk{grid-template-columns:1fr}}
+.mn-bk div{border:1px solid var(--c-border);border-radius:18px;padding:24px;background:color-mix(in srgb,var(--c-surface) 40%,#fff)}
+.mn-bk h3{font:500 22px/1.25 var(--f-head);color:var(--c-primary)}
+.mn-bk span{font:500 13px var(--f-body);color:var(--c-secondary)}
+.mn-bk p{font:400 15px/1.75 var(--f-body);margin-top:8px}
+.mn-foot{border-top:1px solid var(--c-border);margin-top:clamp(40px,6vw,96px);padding:clamp(34px,4vw,60px) clamp(18px,5vw,72px) 24px}
+.mn-foot .top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(24px,6vw,90px)}
+.mn-foot .big{font:500 28px var(--f-head);color:var(--c-primary)}
+.mn-foot h4{font:600 11px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:8px}
+.mn-foot ul{list-style:none}.mn-foot li a{display:inline-block;padding:6px 0;text-decoration:none;font:400 15px var(--f-body);min-height:32px}
+.mn-foot .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mn-foot .copy{margin-top:26px;font:400 13px/1.7 var(--f-body);color:var(--c-secondary);max-width:70ch}
+@media(max-width:800px){.mn-foot .top{grid-template-columns:1fr}}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+@media(prefers-reduced-motion:reduce){.mn-breath .o,.mn-breath .i{animation:none}.mn-flip .in,.mn-big .o{transition:none}}
+</style><div class="mn-prog" id="mn-prog"></div><header class="mn-head"><a class="mn-logo" href="{{p:home}}">mind notes<i>.</i></a><ul class="mn-nav"><li><a href="{{p:concepts}}">Concepts</a></li><li><a href="{{p:checkin}}">Check-in</a></li><li><a href="{{p:breathe}}">Breathe</a></li><li><a href="{{p:books}}">Books</a></li><li class="more"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Read</h4><a href="{{p:home}}">Home</a><a href="{{p:concepts}}">Concept cards</a><a href="{{p:article}}">Article: Why we keep doing what we regret</a></div><div><h4>Practise</h4><a href="{{p:checkin}}">Stress check-in</a><a href="{{p:breathe}}">Breathing space</a><a href="{{p:books}}">Reading list</a></div><div><h4>About</h4><a href="{{p:support}}">Getting support</a><a href="{{p:about}}">About</a></div><div><h4>Utility</h4><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></div></div></li><li><a href="{{p:support}}">Support</a></li></ul><details class="mn-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:concepts}}">Concept cards</a><a href="{{p:article}}">Article: Why we keep doing what we regret</a><a href="{{p:checkin}}">Stress check-in</a><a href="{{p:breathe}}">Breathing space</a><a href="{{p:books}}">Reading list</a><a href="{{p:support}}">Getting support</a><a href="{{p:about}}">About</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a></nav></details></header><script>(function(){var b=document.getElementById("mn-prog");if(!b)return;function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;b.style.setProperty("--p",(m>0?h.scrollTop/m*100:0)+"%")}addEventListener("scroll",u,{passive:true});u()})();</script>

@@ -1,0 +1,18 @@
+{
+ "slug": "arrow-long",
+ "name": "Long arrow",
+ "zh": "长箭头",
+ "cat": "line",
+ "file": "arrow-long.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 48,
+ "tags": [
+  "arrow",
+  "pointer",
+  "minimal"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

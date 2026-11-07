@@ -1,0 +1,97 @@
+{
+ "format": "fragments",
+ "slug": "pet-boutique",
+ "name": "Pawsh Pet Boutique",
+ "zh": "宠物精品店",
+ "tag": "Upscale pet boutique and grooming spa with a three-column centred header, circular category entries and size-tiered grooming price cards.",
+ "colors": {
+  "primary": "#1f3d36",
+  "secondary": "#6b7b73",
+  "text": "#16211e",
+  "accent": "#f59e5b",
+  "surface": "#fbf8f3",
+  "border": "#e4ddd2"
+ },
+ "fonts": {
+  "head": "Familjen Grotesk",
+  "body": "Hind"
+ },
+ "tok": {
+  "hlh": ".98",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.04em",
+  "h1": "92px",
+  "h2": "46px",
+  "h3": "22px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "20px"
+ },
+ "types": [
+  "ecommerce",
+  "company"
+ ],
+ "industries": [
+  "pets"
+ ],
+ "styles": [
+  "pastel",
+  "minimal",
+  "earthy"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Shop"
+  },
+  {
+   "slug": "shop",
+   "label": "Shop",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Product",
+   "group": "Shop"
+  },
+  {
+   "slug": "grooming",
+   "label": "Grooming",
+   "group": "Spa"
+  },
+  {
+   "slug": "membership",
+   "label": "Membership",
+   "group": "Spa"
+  },
+  {
+   "slug": "journal",
+   "label": "Journal",
+   "group": "Spa"
+  },
+  {
+   "slug": "visit",
+   "label": "Visit",
+   "group": "Spa"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Spa"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

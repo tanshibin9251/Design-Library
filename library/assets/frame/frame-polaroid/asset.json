@@ -1,0 +1,18 @@
+{
+ "slug": "frame-polaroid",
+ "name": "Polaroid",
+ "zh": "拍立得",
+ "cat": "frame",
+ "file": "frame-polaroid.svg",
+ "format": "svg",
+ "width": 360,
+ "height": 420,
+ "tags": [
+  "photo",
+  "retro",
+  "snapshot"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

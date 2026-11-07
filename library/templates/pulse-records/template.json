@@ -1,0 +1,167 @@
+{
+ "format": "fragments",
+ "slug": "pulse-records",
+ "name": "Pulse Records",
+ "zh": "脉冲唱片",
+ "tag": "Record-label shop with a CSS turntable that spins with 33/45 RPM, a sideways scroll record crate with price stickers and catalogue-number rows.",
+ "colors": {
+  "primary": "#1a35d6",
+  "secondary": "#ff6f91",
+  "text": "#101323",
+  "accent": "#ffd23f",
+  "surface": "#f4efe6",
+  "border": "#101323"
+ },
+ "fonts": {
+  "head": "Rubik Mono One",
+  "body": "Chivo"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "400",
+  "hcase": "uppercase",
+  "hls": "-.01em",
+  "h1": "68px",
+  "h2": "38px",
+  "h3": "22px",
+  "pad": "76px",
+  "ew": "400",
+  "stat": "var(--c-primary)",
+  "radius": "0"
+ },
+ "types": [
+  "portfolio",
+  "ecommerce"
+ ],
+ "industries": [
+  "music"
+ ],
+ "styles": [
+  "neobrutal",
+  "playful",
+  "retro"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Merch",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Merch",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Subscribe",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Releases",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Release",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Artists",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Artists",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Artist",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "News",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "schedule",
+   "label": "Shows",
+   "group": "Special"
+  },
+  {
+   "slug": "booking",
+   "label": "Submit a demo",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

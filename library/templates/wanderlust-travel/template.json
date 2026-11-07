@@ -1,0 +1,163 @@
+{
+ "format": "fragments",
+ "slug": "wanderlust-travel",
+ "name": "Wanderlust",
+ "zh": "漫游旅行",
+ "tag": "Small-group travel: boarding-pass header, clickable route map with day-by-day stops, pace/type filters and a departures table with seats left.",
+ "colors": {
+  "primary": "#b5502d",
+  "secondary": "#2a6f8f",
+  "text": "#2b2118",
+  "accent": "#f2b134",
+  "surface": "#fbf3e4",
+  "border": "#e8d9bd"
+ },
+ "fonts": {
+  "head": "Abril Fatface",
+  "body": "DM Sans"
+ },
+ "tok": {
+  "hlh": "1.05",
+  "hw": "400",
+  "hcase": "none",
+  "hls": "0",
+  "h1": "92px",
+  "h2": "48px",
+  "h3": "26px",
+  "pad": "80px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "18px"
+ },
+ "types": [
+  "company",
+  "landing",
+  "ecommerce"
+ ],
+ "industries": [
+  "travel"
+ ],
+ "styles": [
+  "warm",
+  "retro",
+  "photo"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Destinations",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Destination",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Trip Packages",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Trips",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Trip",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Traveller Stories",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Story",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "Journal",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Plan a trip",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}

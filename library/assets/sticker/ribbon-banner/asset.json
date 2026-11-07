@@ -1,0 +1,18 @@
+{
+ "slug": "ribbon-banner",
+ "name": "Ribbon banner",
+ "zh": "飘带",
+ "cat": "sticker",
+ "file": "ribbon-banner.svg",
+ "format": "svg",
+ "width": 400,
+ "height": 120,
+ "tags": [
+  "ribbon",
+  "title",
+  "label"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

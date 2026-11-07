@@ -1,0 +1,8 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@keyframes pt-out { from { transform:perspective(1800px) rotateY(0deg) } to { transform:perspective(1800px) rotateY(-100deg);filter:brightness(.55) } }
+@keyframes pt-in { from { transform:scale(.92);filter:brightness(.6) } }
+::view-transition-old(root){animation-name:pt-out;z-index:2;transform-origin:0% 50%;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;z-index:1;mix-blend-mode:normal}

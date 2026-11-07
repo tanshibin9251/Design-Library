@@ -1,0 +1,63 @@
+<!-- Snap Carousel — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-car{width:min(1100px,100%);display:grid;gap:1.4em}
+.fx-car .top{display:flex;justify-content:space-between;align-items:end;gap:1em}.fx-car h2{font-size:clamp(1.8em,4vw,2.6em)}
+.fx-car .nav{display:flex;gap:.5em}.fx-car .nav button{width:2.8em;height:2.8em;border-radius:50%;border:1.5px solid var(--primary);background:transparent;color:var(--primary);font-size:1em;cursor:pointer;transition:background .25s,color .25s}
+.fx-car .nav button:hover{background:var(--primary);color:var(--on-primary)}
+.fx-car .track{display:flex;gap:1.2em;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:.4em;scroll-behavior:smooth}.fx-car .track::-webkit-scrollbar{display:none}
+.fx-car .sl{flex:0 0 min(46%,460px);scroll-snap-align:start;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 94%,var(--text))}
+.fx-car .sl .fx-art{aspect-ratio:4/3}.fx-car .sl .cap{padding:1em 1.2em 1.2em;display:grid;gap:.2em}.fx-car .sl b{font:600 1.2em var(--font-heading)}.fx-car .sl span{opacity:.65;font-size:.92em}
+.fx-car .dots{display:flex;gap:.5em;justify-content:center}.fx-car .dots i{width:.55em;height:.55em;border-radius:99px;background:color-mix(in srgb,var(--text) 22%,transparent);transition:width .3s,background .3s}.fx-car .dots i.on{width:1.8em;background:var(--accent)}
+@media(max-width:700px){.fx-car .sl{flex-basis:82%}}
+/* touch: :hover mirrored as .is-tap */
+.fx-car .nav button.is-tap{background:var(--primary);color:var(--on-primary)}
+
+</style>
+
+<div class="fx fx-car"><div class="top"><h2>Recent work</h2><div class="nav"><button data-d="-1" aria-label="Previous">←</button><button data-d="1" aria-label="Next">→</button></div></div>
+<div class="track"><article class="sl"><div class="fx-art"></div><div class="cap"><b>Maison Verde</b><span>Identity & packaging</span></div></article><article class="sl"><div class="fx-art a2"></div><div class="cap"><b>Pulse Festival</b><span>Campaign & web</span></div></article><article class="sl"><div class="fx-art a3"></div><div class="cap"><b>Atlas Coffee</b><span>Brand & retail</span></div></article><article class="sl"><div class="fx-art"></div><div class="cap"><b>Northbound</b><span>Film titles & motion</span></div></article><article class="sl"><div class="fx-art a2"></div><div class="cap"><b>Fieldnote</b><span>Editorial system</span></div></article></div>
+<div class="dots"></div></div>
+
+<script>
+document.querySelectorAll('.fx-car').forEach(function(r){var tr=r.querySelector('.track'),sl=[].slice.call(tr.children),dots=r.querySelector('.dots');
+sl.forEach(function(s,i){var d=document.createElement('i');dots.appendChild(d)});var ds=dots.children;
+function upd(){var w=sl[0].offsetWidth+parseFloat(getComputedStyle(tr).columnGap||16),i=Math.round(tr.scrollLeft/w);for(var k=0;k<ds.length;k++)ds[k].classList.toggle('on',k===i)}
+tr.addEventListener('scroll',upd);r.querySelectorAll('[data-d]').forEach(function(b){b.addEventListener('click',function(){tr.scrollBy({left:(sl[0].offsetWidth+16)*+b.dataset.d,behavior:'smooth'})})});upd()});
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

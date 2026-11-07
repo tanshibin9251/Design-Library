@@ -1,0 +1,64 @@
+<!-- Cart reward tiers bar — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-rwd{width:min(560px,100%);border:1px solid var(--border);border-radius:var(--radius);padding:1.3em 1.4em 1.5em;background:var(--surface)}
+.fx-rwd .msg{font-weight:600;margin-bottom:1.6em;min-height:1.5em}.fx-rwd .msg b{color:var(--accent)}
+.fx-rwd .track{position:relative;height:.55em;border-radius:99px;background:var(--border);margin:0 1.4em 2.8em}
+.fx-rwd .fill{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--primary),var(--accent));width:var(--w,0%);transition:width calc(.6s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-rwd .node{position:absolute;top:50%;left:var(--x);translate:-50% -50%;text-align:center}
+.fx-rwd .node i{display:grid;place-items:center;width:2.1em;height:2.1em;border-radius:50%;background:var(--surface);border:2px solid var(--border);font:700 .8em var(--font-body);font-style:normal;color:color-mix(in srgb,var(--text) 55%,var(--surface));transition:all calc(.3s/var(--speed))}
+.fx-rwd .node.on i{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.fx-rwd .node.pop i{animation:fx-rwd-p calc(.5s/var(--speed))}
+.fx-rwd .node span{position:absolute;top:2.6em;left:50%;translate:-50% 0;white-space:nowrap;font:600 .74em var(--font-body);opacity:.75}
+.fx-rwd .node small{display:block;font-weight:500;opacity:.8}
+@keyframes fx-rwd-p{40%{transform:scale(1.35)}}
+.fx-rwd .ctl{display:flex;gap:.5em;align-items:center;margin-top:.4em;flex-wrap:wrap}
+.fx-rwd .ctl b{margin-right:auto}
+.fx-rwd .ctl button{padding:.5em 1em;border-radius:99px;border:1px solid var(--primary);background:none;color:var(--primary);font:700 .82em var(--font-body);cursor:pointer}
+.fx-rwd .ctl button.p{background:var(--primary);color:var(--on-primary)}
+@media(prefers-reduced-motion:reduce){.fx-rwd .fill,.fx-rwd .node i{transition:none}.fx-rwd .node.pop i{animation:none}}
+</style>
+
+<div class="fx fx-rwd"><p class="msg" id="fx-rwd-m" aria-live="polite"></p><div class="track" id="fx-rwd-t"><div class="fill"></div></div><div class="ctl"><b id="fx-rwd-s">Cart RM 0</b><button type="button" class="p" id="fx-rwd-a">+ Add RM 49 item</button><button type="button" id="fx-rwd-r">Remove</button></div></div>
+
+<script>
+(function(){
+/* ── edit these ─────────────────────────────── */
+var TIERS=[{at:150,label:'Free shipping',tag:'RM 150'},{at:300,label:'Free gift',tag:'RM 300'},{at:500,label:'10% off',tag:'RM 500'}],STEP=49,CUR='RM ';
+/* ───────────────────────────────────────────── */
+var r=document.querySelector('.fx-rwd'),t=r.querySelector('#fx-rwd-t'),f=t.querySelector('.fill'),m=r.querySelector('#fx-rwd-m'),s=r.querySelector('#fx-rwd-s'),max=TIERS[TIERS.length-1].at,total=0,was=[];
+var nodes=TIERS.map(function(x,i){var d=document.createElement('div');d.className='node';d.style.setProperty('--x',(x.at/max*100)+'%');d.innerHTML='<i>'+(i+1)+'</i><span>'+x.label+'<small>'+x.tag+'</small></span>';t.appendChild(d);return d});
+function draw(){f.style.setProperty('--w',Math.min(100,total/max*100)+'%');s.textContent='Cart '+CUR+total;
+ var next=TIERS.filter(function(x){return total<x.at})[0];
+ m.innerHTML=next?'Add <b>'+CUR+(next.at-total)+'</b> more to unlock <b>'+next.label.toLowerCase()+'</b>':'You unlocked every reward 🎉';
+ nodes.forEach(function(n,i){var on=total>=TIERS[i].at;if(on&&!was[i]){n.classList.add('pop');setTimeout(function(){n.classList.remove('pop')},600)}n.classList.toggle('on',on);was[i]=on})}
+r.querySelector('#fx-rwd-a').onclick=function(){total+=STEP;draw()};r.querySelector('#fx-rwd-r').onclick=function(){total=Math.max(0,total-STEP);draw()};
+total=98;draw();was=TIERS.map(function(x){return total>=x.at})})();
+</script>

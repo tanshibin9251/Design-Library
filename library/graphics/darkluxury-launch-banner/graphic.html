@@ -1,0 +1,28 @@
+<style>
+.g-dl{position:relative;width:1500px;height:500px;overflow:hidden;background:radial-gradient(900px 420px at 24% 55%,var(--c-secondary),var(--c-surface));color:var(--c-text);font-family:var(--f-body);box-sizing:border-box}
+.g-dl *{box-sizing:border-box;margin:0}
+.g-dl .frame{position:absolute;inset:26px;border:1px solid var(--c-border)}
+.g-dl .frame::after{content:"";position:absolute;inset:8px;border:1px solid var(--c-border);opacity:.5}
+.g-dl .arch{position:absolute;left:150px;bottom:26px;width:330px;height:420px;border:2px solid var(--c-primary);border-bottom:0;border-radius:165px 165px 0 0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--c-primary);font-size:20px;letter-spacing:.12em;line-height:1.6;padding:30px;opacity:.9}
+.g-dl .arch::before{content:"";position:absolute;inset:14px 14px 0;border:1px solid var(--c-border);border-bottom:0;border-radius:151px 151px 0 0}
+.g-dl .copy{position:absolute;left:640px;top:50%;transform:translateY(-50%);width:700px}
+.g-dl .eyebrow{font-size:20px;letter-spacing:.42em;text-transform:uppercase;color:var(--c-primary);display:flex;align-items:center;gap:20px}
+.g-dl .eyebrow::before{content:"";width:64px;height:1px;background:var(--c-primary)}
+.g-dl h1{font-family:var(--f-head);font-weight:500;font-size:96px;line-height:.98;letter-spacing:-.01em;margin:22px 0 18px}
+.g-dl h1 em{font-style:italic;color:var(--c-accent)}
+.g-dl p{font-size:22px;line-height:1.6;font-weight:300;max-width:500px;opacity:.8}
+.g-dl .cta{display:inline-flex;align-items:center;gap:16px;margin-top:30px;padding:16px 34px;border:1px solid var(--c-primary);color:var(--c-accent);font-size:18px;letter-spacing:.3em;text-transform:uppercase}
+.g-dl .cta::after{content:"";width:34px;height:1px;background:currentColor}
+.g-dl .corner{position:absolute;right:56px;top:50px;font-size:16px;letter-spacing:.35em;text-transform:uppercase;color:var(--c-primary)}
+</style>
+<div class="g-dl">
+  <div class="frame"></div>
+  <div class="arch">缺图<br>产品抠图<br>透明 PNG</div>
+  <div class="corner">Maison Aurel · N°7</div>
+  <div class="copy">
+    <div class="eyebrow">The new collection</div>
+    <h1>Evening, <em>distilled.</em></h1>
+    <p>A limited run of 700 bottles. Amber, oud and a trace of smoke.</p>
+    <span class="cta">Discover</span>
+  </div>
+</div>

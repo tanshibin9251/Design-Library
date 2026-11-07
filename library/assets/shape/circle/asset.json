@@ -1,0 +1,17 @@
+{
+ "slug": "circle",
+ "name": "Circle",
+ "zh": "圆",
+ "cat": "shape",
+ "file": "circle.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "basic",
+  "circle"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

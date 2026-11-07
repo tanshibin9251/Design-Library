@@ -1,0 +1,87 @@
+{
+ "format": "fragments",
+ "slug": "app-landing",
+ "name": "Pocket App Landing",
+ "zh": "应用落地页",
+ "tag": "Light app landing page with a gradient headline, a CSS-drawn phone with floating cards, feature tiles, monthly/yearly pricing toggle and a changelog.",
+ "colors": {
+  "primary": "#6d4aff",
+  "secondary": "#6b7280",
+  "text": "#11121a",
+  "accent": "#14c8a8",
+  "surface": "#fbfbff",
+  "border": "#e6e6f2"
+ },
+ "fonts": {
+  "head": "Onest",
+  "body": "Onest"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "800",
+  "hcase": "none",
+  "hls": "-.04em",
+  "h1": "96px",
+  "h2": "46px",
+  "h3": "22px",
+  "pad": "84px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "26px"
+ },
+ "types": [
+  "landing"
+ ],
+ "industries": [
+  "saas",
+  "tech"
+ ],
+ "styles": [
+  "glass",
+  "futuristic",
+  "bento"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "App"
+  },
+  {
+   "slug": "features",
+   "label": "Features",
+   "group": "App"
+  },
+  {
+   "slug": "pricing",
+   "label": "Pricing",
+   "group": "App"
+  },
+  {
+   "slug": "download",
+   "label": "Download",
+   "group": "App"
+  },
+  {
+   "slug": "changelog",
+   "label": "What’s new",
+   "group": "App"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "App"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

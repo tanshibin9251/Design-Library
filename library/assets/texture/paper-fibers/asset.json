@@ -1,0 +1,18 @@
+{
+ "slug": "paper-fibers",
+ "name": "Paper fibres",
+ "zh": "纸纤维",
+ "cat": "texture",
+ "file": "paper-fibers.svg",
+ "format": "svg",
+ "width": 600,
+ "height": 600,
+ "tags": [
+  "paper",
+  "organic",
+  "overlay"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

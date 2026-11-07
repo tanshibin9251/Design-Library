@@ -1,0 +1,103 @@
+{
+ "format": "fragments",
+ "slug": "casa-makeover",
+ "name": "Casa Makeover",
+ "zh": "居家焕新",
+ "tag": "Friendly pastel home-makeover site with wave dividers, public package prices, a budget buddy calculator and before/after cards.",
+ "colors": {
+  "primary": "#6c4ad9",
+  "secondary": "#ff8fa3",
+  "text": "#2b2540",
+  "accent": "#2ec4b6",
+  "surface": "#fff9f2",
+  "border": "#e8dff5"
+ },
+ "fonts": {
+  "head": "Quicksand",
+  "body": "Nunito"
+ },
+ "tok": {
+  "hlh": "1",
+  "hw": "700",
+  "hcase": "none",
+  "hls": "-.02em",
+  "h1": "88px",
+  "h2": "48px",
+  "h3": "24px",
+  "pad": "88px",
+  "ew": "700",
+  "stat": "var(--c-primary)",
+  "radius": "24px"
+ },
+ "types": [
+  "company",
+  "landing"
+ ],
+ "industries": [
+  "homeservices",
+  "interior"
+ ],
+ "styles": [
+  "pastel",
+  "playful",
+  "clay"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Start"
+  },
+  {
+   "slug": "packages",
+   "label": "Packages",
+   "group": "Start"
+  },
+  {
+   "slug": "calculator",
+   "label": "Budget buddy",
+   "group": "Start"
+  },
+  {
+   "slug": "quiz",
+   "label": "Style quiz",
+   "group": "Start"
+  },
+  {
+   "slug": "gallery",
+   "label": "Before & afters",
+   "group": "Look"
+  },
+  {
+   "slug": "reviews",
+   "label": "Happy homes",
+   "group": "Look"
+  },
+  {
+   "slug": "how",
+   "label": "How it works",
+   "group": "Look"
+  },
+  {
+   "slug": "faq",
+   "label": "Questions",
+   "group": "Help"
+  },
+  {
+   "slug": "contact",
+   "label": "Say hello",
+   "group": "Help"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

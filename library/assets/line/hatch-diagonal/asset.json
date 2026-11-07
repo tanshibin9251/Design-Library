@@ -1,0 +1,18 @@
+{
+ "slug": "hatch-diagonal",
+ "name": "Diagonal hatch",
+ "zh": "斜线阴影",
+ "cat": "line",
+ "file": "hatch-diagonal.svg",
+ "format": "svg",
+ "width": 200,
+ "height": 200,
+ "tags": [
+  "hatch",
+  "texture",
+  "lines"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

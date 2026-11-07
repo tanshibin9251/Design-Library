@@ -1,0 +1,17 @@
+@view-transition { navigation: auto; }
+::view-transition-group(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--pt-dur, 600ms); animation-timing-function: var(--pt-ease, cubic-bezier(.7,0,.2,1)); animation-fill-mode: both; }
+.nav { view-transition-name: site-nav; }
+@property --pt-h1 { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@property --pt-h2 { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@property --pt-h3 { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@property --pt-h4 { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@property --pt-h5 { syntax:'<percentage>'; inherits:false; initial-value:0%; }
+@keyframes pt-in {
+ 0%{--pt-h1:0%;--pt-h2:0%;--pt-h3:0%;--pt-h4:0%;--pt-h5:0%}
+ 10%{--pt-h2:0%} 20%{--pt-h3:0%} 30%{--pt-h4:0%} 40%{--pt-h5:0%}
+ 50%{--pt-h1:100%} 60%{--pt-h2:100%} 70%{--pt-h3:100%} 80%{--pt-h4:100%} 90%{--pt-h5:100%}
+ 100%{--pt-h1:100%;--pt-h2:100%;--pt-h3:100%;--pt-h4:100%;--pt-h5:100%}
+}
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){animation-name:pt-in;mix-blend-mode:normal;-webkit-mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000);-webkit-mask-size:20.4% var(--pt-h1),20.4% var(--pt-h2),20.4% var(--pt-h3),20.4% var(--pt-h4),20.4% var(--pt-h5);mask-size:20.4% var(--pt-h1),20.4% var(--pt-h2),20.4% var(--pt-h3),20.4% var(--pt-h4),20.4% var(--pt-h5);-webkit-mask-position:0% 100%,25% 100%,50% 100%,75% 100%,100% 100%;mask-position:0% 100%,25% 100%,50% 100%,75% 100%,100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;}

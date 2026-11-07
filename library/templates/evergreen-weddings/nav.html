@@ -1,0 +1,119 @@
+<style>
+/* Evergreen Weddings v2 — invitation-suite wedding planner, tokens only */
+.ew-head{text-align:center;padding:clamp(18px,2.4vw,30px) clamp(14px,4vw,56px) 0;background:var(--c-surface)}
+.ew-mono{display:inline-grid;place-items:center;width:64px;height:64px;border:1px solid var(--c-primary);border-radius:50%;font:400 22px var(--f-head);letter-spacing:.06em;color:var(--c-primary);text-decoration:none;position:relative}
+.ew-mono::after{content:"";position:absolute;inset:4px;border:1px solid color-mix(in srgb,var(--c-primary) 35%,transparent);border-radius:50%}
+.ew-brand{font:400 12px var(--f-body);letter-spacing:.4em;text-transform:uppercase;margin-top:10px;color:var(--c-secondary)}
+.ew-nav{display:flex;justify-content:center;gap:clamp(12px,2.4vw,40px);list-style:none;margin-top:14px;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);flex-wrap:wrap}
+.ew-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 4px;text-decoration:none;font:400 13px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-text)}
+.ew-nav a:hover{color:var(--c-accent)}
+.ew-nav .more{position:relative}
+.ew-nav .dd{position:absolute;left:50%;transform:translateX(-50%);top:100%;display:none;grid-template-columns:repeat(4,minmax(130px,1fr));gap:16px 26px;padding:22px 26px;background:var(--c-surface);border:1px solid var(--c-primary);min-width:620px;z-index:60;text-align:left}
+.ew-nav .more:hover .dd,.ew-nav .more:focus-within .dd{display:grid}
+.ew-nav .dd h4{font:400 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--c-accent);margin-bottom:6px}
+.ew-nav .dd a{display:block;min-height:0;padding:5px 0;letter-spacing:.06em;text-transform:none;font-size:15px}
+.ew-m{display:none}
+.ew-m summary{list-style:none;cursor:pointer;min-height:44px;display:grid;place-items:center;font:400 12px var(--f-body);letter-spacing:.3em;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);margin-top:14px}
+.ew-m summary::-webkit-details-marker{display:none}
+.ew-m nav{display:grid;padding:4px 0 10px;text-align:left}
+.ew-m nav a{padding:12px 8px;border-bottom:1px solid var(--c-border);text-decoration:none;font:400 15px var(--f-body);min-height:44px}
+@media(max-width:860px){.ew-nav{display:none}.ew-m{display:block}}
+.ew-sec{padding:clamp(40px,6vw,92px) clamp(16px,5vw,80px)}
+.ew-card{max-width:760px;margin:clamp(30px,5vw,70px) auto;padding:clamp(34px,5vw,64px) clamp(22px,4vw,56px);border:1px solid var(--c-primary);outline:1px solid var(--c-primary);outline-offset:-10px;text-align:center;background:color-mix(in srgb,var(--c-surface) 30%,#fff);position:relative;box-shadow:0 40px 60px -40px color-mix(in srgb,var(--c-primary) 40%,transparent)}
+.ew-card .k{font:400 12px var(--f-body);letter-spacing:.4em;text-transform:uppercase;color:var(--c-secondary)}
+.ew-card h1{font:400 clamp(40px,7vw,var(--h1))/1.1 var(--f-head);color:var(--c-primary);margin:18px 0 6px;letter-spacing:.02em}
+.ew-card .amp{font:italic 400 28px var(--f-head);color:var(--c-accent);display:block;margin:2px 0}
+.ew-card p{font:400 17px/1.9 var(--f-body);max-width:46ch;margin:14px auto}
+.ew-cd{display:flex;justify-content:center;gap:clamp(14px,3vw,34px);margin:26px 0;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);padding:16px 0}
+.ew-cd b{display:block;font:400 clamp(28px,4vw,42px)/1 var(--f-head);color:var(--c-primary)}
+.ew-cd span{font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary)}
+.ew-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 34px;border:1px solid var(--c-primary);background:var(--c-primary);color:var(--on-primary);font:400 13px var(--f-body);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.ew-btn:hover{background:var(--c-accent);border-color:var(--c-accent);color:var(--on-accent)}
+.ew-btn.o{background:transparent;color:var(--c-primary)}.ew-btn.o:hover{background:var(--c-primary);color:var(--on-primary);border-color:var(--c-primary)}
+.ew-hd{text-align:center;margin-bottom:34px}
+.ew-hd .k{font:400 12px var(--f-body);letter-spacing:.4em;text-transform:uppercase;color:var(--c-accent)}
+.ew-hd h2{font:400 clamp(28px,4vw,var(--h2)) var(--f-head);color:var(--c-primary);margin-top:8px}
+.ew-tl{max-width:760px;margin:0 auto;position:relative;display:grid;gap:0}
+.ew-tl::before{content:"";position:absolute;left:96px;top:10px;bottom:10px;border-left:1px dashed var(--c-secondary)}
+.ew-tl label{display:grid;grid-template-columns:80px 34px 1fr;gap:0 14px;padding:18px 0;cursor:pointer;align-items:start;position:relative}
+.ew-tl label>span:first-child{font:400 14px var(--f-head);letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent);text-align:right;padding-top:2px}
+.ew-tl input{position:absolute;opacity:0;pointer-events:none}
+.ew-tl i{width:18px;height:18px;border-radius:50%;border:1px solid var(--c-primary);background:var(--c-surface);margin:3px auto 0;position:relative;z-index:1;display:block}
+.ew-tl input:checked+i{background:var(--c-primary)}
+.ew-tl input:focus-visible+i{outline:2px solid var(--c-accent);outline-offset:3px}
+.ew-tl b{display:block;font:400 21px var(--f-head);color:var(--c-primary)}
+.ew-tl small{font:400 15px/1.7 var(--f-body);color:var(--c-text);opacity:.85}
+.ew-tl input:checked~span b{text-decoration:line-through;opacity:.5}
+.ew-prog{max-width:760px;margin:0 auto 26px;font:400 12px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary);display:flex;gap:14px;align-items:center}
+.ew-prog div{flex:1;height:2px;background:var(--c-border)}.ew-prog i{display:block;height:100%;width:var(--p,0%);background:var(--c-accent);transition:width .3s}
+.ew-bud{max-width:980px;margin:0 auto;display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(24px,5vw,70px);align-items:center}
+@media(max-width:760px){.ew-bud{grid-template-columns:1fr}}
+.ew-donut{aspect-ratio:1;border-radius:50%;position:relative;background:conic-gradient(var(--c-primary) 0 40%,var(--c-accent) 0 70%,var(--c-secondary) 0 80%,color-mix(in srgb,var(--c-primary) 55%,var(--c-surface)) 0 88%,color-mix(in srgb,var(--c-accent) 50%,var(--c-surface)) 0 95%,var(--c-border) 0)}
+.ew-donut::after{content:"";position:absolute;inset:22%;border-radius:50%;background:var(--c-surface)}
+.ew-donut b{position:absolute;inset:0;display:grid;place-items:center;z-index:1;font:400 clamp(22px,3vw,32px) var(--f-head);color:var(--c-primary);text-align:center;line-height:1.2}
+.ew-donut b small{display:block;font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-secondary)}
+.ew-rng{width:100%;accent-color:var(--c-accent);min-height:44px;padding:0;border:0;background:none;margin:8px 0 18px}
+.ew-li{list-style:none}
+.ew-li li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--c-border);font:400 17px var(--f-body)}
+.ew-li li span:first-child::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--d);margin-right:12px}
+.ew-li b{font:400 17px var(--f-head);color:var(--c-primary)}
+.ew-st{display:grid;grid-template-columns:repeat(3,1fr);max-width:1080px;margin:0 auto;border:1px solid var(--c-primary)}
+.ew-st>div{padding:34px 28px;border-right:1px solid var(--c-primary);text-align:center;display:grid;gap:10px;align-content:start}
+.ew-st>div:last-child{border-right:0}
+.ew-st .n{font:italic 400 26px var(--f-head);color:var(--c-accent)}
+.ew-st h3{font:400 24px var(--f-head);color:var(--c-primary)}
+.ew-st p{font:400 15px/1.8 var(--f-body)}
+@media(max-width:800px){.ew-st{grid-template-columns:1fr}.ew-st>div{border-right:0;border-bottom:1px solid var(--c-primary)}.ew-st>div:last-child{border-bottom:0}}
+.ew-foot{text-align:center;border-top:1px solid var(--c-primary);margin-top:clamp(30px,5vw,70px);padding:clamp(36px,5vw,64px) clamp(16px,5vw,80px) 24px}
+.ew-foot .cols{display:flex;justify-content:center;gap:clamp(20px,5vw,70px);flex-wrap:wrap;margin:26px 0;text-align:left}
+.ew-foot h4{font:400 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--c-accent);margin-bottom:8px}
+.ew-foot ul{list-style:none}.ew-foot li a{display:inline-block;padding:5px 0;text-decoration:none;font:400 15px var(--f-body);min-height:32px}
+.ew-foot .copy{font:400 11px var(--f-body);letter-spacing:.26em;text-transform:uppercase;color:var(--c-secondary)}
+html,body{overflow-x:clip}img,svg{max-width:100%}
+@media(prefers-reduced-motion:reduce){.ew-prog i{transition:none}}
+.ew .pagehead{text-align:center;background:none}.ew .pagehead .crumbs{justify-content:center}.ew .pagehead h1,.ew .pagehead .lead{margin-left:auto;margin-right:auto}.ew .card,.ew .scard,.ew .qcard,.ew .pcard,.ew .person{background:var(--c-surface);border:1px solid var(--c-primary);box-shadow:none}.ew .eyebrow{display:inline-block;border-left:4px solid var(--c-accent);padding-left:10px;letter-spacing:.2em}.ew .alt{background:color-mix(in srgb,var(--c-secondary) 12%,var(--c-surface))}/*presets*/
+
+.ew .svc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:3px solid var(--c-primary)}
+.ew .scard{display:block;padding:clamp(22px,3vw,40px);border:0;border-bottom:1px solid var(--c-primary);border-right:1px solid var(--c-primary);border-radius:0;background:none;box-shadow:none;min-height:240px;transition:background .2s}
+.ew .scard:nth-child(2n){border-right:0}
+.ew .scard .ph{display:none}
+.ew .scard h3{font-size:clamp(28px,3.6vw,50px);line-height:1.02;margin-bottom:12px;letter-spacing:-.02em}
+.ew .scard p{max-width:34ch;opacity:.85}.ew .scard .m{margin-top:16px;display:flex;gap:14px;font:700 12px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-accent)}
+.ew .scard:hover{background:color-mix(in srgb,var(--c-accent) 14%,var(--c-surface))}
+@media(max-width:760px){.ew .svc{grid-template-columns:1fr}.ew .scard{border-right:0;min-height:0}}
+
+.ew .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:30px 20px}
+.ew .person{text-align:center;background:none;border:0;box-shadow:none;padding:0}
+.ew .person .ph{aspect-ratio:1!important;border-radius:50%!important;margin:0 auto 12px;max-width:190px}
+
+.ew .qgrid{display:block}.ew .qgrid.mt{margin-top:0}
+.ew .qcard{max-width:900px;margin:0 auto;padding:clamp(24px,4vw,48px) 0;border:0;border-bottom:1px solid var(--c-border);background:none;box-shadow:none;border-radius:0}
+.ew .qcard blockquote{font-size:clamp(22px,3vw,36px);line-height:1.3;margin:10px 0 18px}
+
+.ew .masonry{columns:4 180px!important;column-gap:6px}.ew .masonry .mi{margin-bottom:6px}
+
+.ew .art .ph,.ew .feat .ph{display:none}
+.ew .art,.ew .feat{border-left:4px solid var(--c-accent);padding:4px 0 4px 20px;margin-bottom:22px}
+.ew .faq summary{font-size:clamp(20px,2.4vw,30px);padding:10px 0}.ew .faq details{padding:14px 0}.ew .faq p{font-size:18px;max-width:60ch}
+
+.ew .pricing .card{border:2px solid var(--c-primary);background:var(--c-surface)!important;box-shadow:none;border-radius:0;color:var(--c-text)!important;transform:none!important}
+.ew .pricing .card.hl{border-width:4px;background:var(--c-surface)!important}
+.ew .pricing .card.hl h3,.ew .pricing .card.hl .amt{color:var(--c-primary)!important}.ew .pricing .card.hl li::before{color:var(--c-accent)!important}
+.ew .split{display:block;max-width:760px;margin:0 auto}.ew .cinfo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.ew .ctaband{display:block;text-align:center}.ew .ctaband h2{max-width:22ch;margin:0 auto}.ew .ctaband .btn{margin-top:22px}
+.ew .steps{display:block;border-left:3px solid var(--c-primary);padding-left:28px}.ew .steps>div{border:0;padding:0 0 26px;position:relative}.ew .steps>div::before{content:"";position:absolute;left:-38px;top:4px;width:14px;height:14px;background:var(--c-accent)}
+
+.ew .tl{display:block;position:relative;max-width:760px;border-left:2px solid var(--c-primary);padding-left:30px}
+.ew .tl>div{position:relative;padding:0 0 28px}.ew .tl>div::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--c-accent);border:3px solid var(--c-surface);box-shadow:0 0 0 2px var(--c-primary)}
+.ew .tl b{font-size:clamp(24px,3vw,36px)}
+
+.ew .vals{display:block;border-top:2px solid var(--c-primary);counter-reset:v}
+.ew .vals .card{display:grid;grid-template-columns:56px 1fr 1.4fr;gap:6px 24px;align-items:baseline;padding:20px 0;border:0;border-bottom:1px solid var(--c-border);border-radius:0;background:none;box-shadow:none}
+.ew .vals .card .ico{background:none;width:auto;height:auto;font:700 14px var(--f-body);letter-spacing:.14em;color:var(--c-accent);margin:0;justify-content:start}
+.ew .vals .card h3{margin:0}.ew .vals .card p{margin:0}
+@media(max-width:700px){.ew .vals .card{grid-template-columns:36px 1fr}.ew .vals .card p{grid-column:2}}
+
+.ew-pk{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--c-primary)}
+.ew-pk>div{padding:34px 28px;border-right:1px solid var(--c-primary);display:grid;gap:10px;align-content:start;text-align:center}.ew-pk>div:last-child{border-right:0}
+.ew-pk .n{font:italic 400 24px var(--f-head);color:var(--c-accent)}.ew-pk h3{font:400 26px var(--f-head);color:var(--c-primary)}.ew-pk .p{font:400 22px var(--f-head);color:var(--c-primary)}.ew-pk li{list-style:none;font:400 15px var(--f-body);padding:8px 0;border-top:1px solid var(--c-border)}
+@media(max-width:800px){.ew-pk{grid-template-columns:1fr}.ew-pk>div{border-right:0;border-bottom:1px solid var(--c-primary)}}</style><header class="ew-head"><a class="ew-mono" href="{{p:home}}">E&amp;W</a><div class="ew-brand">Evergreen Weddings</div><ul class="ew-nav"><li><a href="{{p:services}}">Planning</a></li><li><a href="{{p:gallery}}">Real weddings</a></li><li><a href="{{p:pricing}}">Suites</a></li><li><a href="{{p:shop}}">Stationery</a></li><li><a href="{{p:blog}}">Journal</a></li><li class="more"><a href="#" tabindex="0">More</a><div class="dd"><div><h4>Main</h4><a href="{{p:home}}">Home</a><a href="{{p:about}}">About</a><a href="{{p:services}}">Wedding Services</a><a href="{{p:service}}">Single Service</a><a href="{{p:pricing}}">Packages</a><a href="{{p:contact}}">Contact</a></div><div><h4>Shop</h4><a href="{{p:shop}}">Venues</a><a href="{{p:product}}">Single Venue</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a></div><div><h4>Proof</h4><a href="{{p:testimonials}}">Testimonials</a><a href="{{p:team}}">Team</a><a href="{{p:projects}}">Real Weddings</a><a href="{{p:project}}">Single Wedding</a><a href="{{p:gallery}}">Gallery</a></div><div><h4>Content</h4><a href="{{p:blog}}">Journal</a><a href="{{p:post}}">Single post</a><a href="{{p:faq}}">FAQ</a></div><div><h4>Special</h4><a href="{{p:booking}}">Enquire</a></div><div><h4>Utility</h4><a href="{{p:careers}}">Careers</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a><a href="{{p:coming-soon}}">Coming soon</a></div></div></li></ul><details class="ew-m"><summary>MENU</summary><nav><a href="{{p:home}}">Home</a><a href="{{p:about}}">About</a><a href="{{p:services}}">Wedding Services</a><a href="{{p:service}}">Single Service</a><a href="{{p:pricing}}">Packages</a><a href="{{p:contact}}">Contact</a><a href="{{p:shop}}">Venues</a><a href="{{p:product}}">Single Venue</a><a href="{{p:cart}}">Cart</a><a href="{{p:checkout}}">Checkout</a><a href="{{p:testimonials}}">Testimonials</a><a href="{{p:team}}">Team</a><a href="{{p:projects}}">Real Weddings</a><a href="{{p:project}}">Single Wedding</a><a href="{{p:gallery}}">Gallery</a><a href="{{p:blog}}">Journal</a><a href="{{p:post}}">Single post</a><a href="{{p:faq}}">FAQ</a><a href="{{p:booking}}">Enquire</a><a href="{{p:careers}}">Careers</a><a href="{{p:privacy}}">Privacy policy</a><a href="{{p:404}}">404 error</a><a href="{{p:coming-soon}}">Coming soon</a></nav></details></header><div class="ew">

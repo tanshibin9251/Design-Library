@@ -1,0 +1,54 @@
+<!-- Vertical Timeline — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-tv{width:min(900px,100%);display:grid;gap:2.4em;padding:1em 0 6vh}
+.fx-tv h2{font-size:clamp(1.8em,4vw,2.6em);text-align:center}
+.fx-tv ol{position:relative;list-style:none;margin:0;padding:0;display:grid;gap:2.6em}
+.fx-tv ol::before,.fx-tv ol::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--border)}
+.fx-tv ol::after{bottom:auto;height:var(--prog,100%);background:linear-gradient(var(--primary),var(--accent))}
+.fx-tv li{display:grid;grid-template-columns:1fr 3.4em 1fr;align-items:start}
+.fx-tv .dot{grid-column:2;grid-row:1;justify-self:center;margin-top:.45em;width:1.1em;height:1.1em;border-radius:50%;background:var(--surface);border:2px solid var(--accent);z-index:1;transition:background calc(.4s/var(--speed)),transform calc(.4s/var(--speed))}
+.fx-tv .c{grid-row:1;grid-column:1;text-align:right;display:grid;gap:.35em;padding:1.1em 1.3em;border:1px solid var(--border);border-radius:var(--radius);background:color-mix(in srgb,var(--surface) 94%,var(--text))}
+.fx-tv li:nth-child(even) .c{grid-column:3;text-align:left}
+.fx-tv time{font:700 .8em var(--font-body);letter-spacing:.14em;color:var(--accent)}
+.fx-tv h3{font-size:1.2em}.fx-tv .c p{opacity:.7;font-size:.94em}
+.fx-tv.rdy li{opacity:0;transform:translateY(24px);transition:opacity calc(.7s/var(--speed)),transform calc(.7s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-tv.rdy li.in{opacity:1;transform:none}
+.fx-tv.rdy li.in .dot{background:var(--accent);transform:scale(1.15)}
+@media(max-width:640px){.fx-tv ol::before,.fx-tv ol::after{left:1.1em}.fx-tv li{grid-template-columns:2.2em 1fr}
+.fx-tv .dot{grid-column:1;grid-row:1}.fx-tv .c,.fx-tv li:nth-child(even) .c{grid-column:2;text-align:left}}
+@media(prefers-reduced-motion:reduce){.fx-tv.rdy li{opacity:1;transform:none;transition:none}.fx-tv .dot{transition:none}}
+</style>
+
+<div class="fx fx-tv"><h2>Our story so far</h2><ol><li><span class="dot"></span><div class="c"><time>2019</time><h3>Founded in a spare room</h3><p>Two designers, one shared desk and a stubborn idea about calmer websites.</p></div></li><li><span class="dot"></span><div class="c"><time>2020</time><h3>First ten clients</h3><p>Word of mouth did the marketing. We learned to say no politely.</p></div></li><li><span class="dot"></span><div class="c"><time>2022</time><h3>Opened the studio</h3><p>A proper space with north light, a library and a very good kettle.</p></div></li><li><span class="dot"></span><div class="c"><time>2024</time><h3>Design system toolkit</h3><p>Released the open toolkit now used by more than 4,000 teams.</p></div></li><li><span class="dot"></span><div class="c"><time>2026</time><h3>Looking ahead</h3><p>Smaller projects, deeper partnerships and more time to experiment.</p></div></li></ol></div>
+
+<script>
+(function(){document.querySelectorAll('.fx-tv').forEach(function(r){var ol=r.querySelector('ol'),lis=[].slice.call(ol.children),tk=false;
+r.classList.add('rdy');
+function upd(){tk=false;var vh=innerHeight,rc=ol.getBoundingClientRect(),p=(vh*.62-rc.top)/rc.height;p=Math.max(0,Math.min(1,p));ol.style.setProperty('--prog',(p*100)+'%');
+lis.forEach(function(li){if(li.getBoundingClientRect().top<vh*.88)li.classList.add('in')})}
+function req(){if(!tk){tk=true;requestAnimationFrame(upd)}}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd()})})();
+</script>

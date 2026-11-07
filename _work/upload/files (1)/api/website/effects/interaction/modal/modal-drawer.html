@@ -1,0 +1,89 @@
+<!-- Drawer & draggable bottom sheet — paste where you want it -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700|Mulish:300,400,500,600,700|Noto+Sans+SC:300,400,500,600,700&display=swap">
+<style>
+:root{
+  --primary: #1f2a44;
+  --secondary: #4b5675;
+  --text: #1f2328;
+  --accent: #e8590c;
+  --surface: #faf8f5;
+  --border: #e6e0d6;
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+  --font-heading: 'Lora', 'Noto Serif SC', serif;
+  --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --scale: 1;   /* text size multiplier */
+  --speed: 1;   /* animation speed multiplier */
+}
+
+.fx{font-family:var(--font-body);font-size:calc(16px*var(--scale,1));color:var(--text);line-height:1.55}
+.fx,.fx *,.fx *::before,.fx *::after{box-sizing:border-box}
+.fx{max-width:100%}
+@media (pointer:coarse){.fx :not(.dots)>button,.fx select,.fx summary,.fx [role=button],.fx input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:44px}.fx :not(.dots)>button{min-width:44px}.fx nav a,.fx footer a,.fx header a,.fx li>a{display:inline-flex;align-items:center;min-height:44px}.fx .dots button{min-width:28px;min-height:28px}}
+.fx h1,.fx h2,.fx h3{font-family:var(--font-heading);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+.fx p{margin:0}
+.fx-art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--primary) 45%,var(--accent)))}
+.fx-art::before,.fx-art::after{content:"";position:absolute;border-radius:50%;background:color-mix(in srgb,var(--accent) 60%,#fff);opacity:.35}
+.fx-art::before{width:60%;aspect-ratio:1;right:-12%;top:-20%}.fx-art::after{width:38%;aspect-ratio:1;left:8%;bottom:-18%;opacity:.25;background:#fff}
+.fx-art.a2{background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 40%,var(--primary)))}
+.fx-art.a3{background:linear-gradient(200deg,color-mix(in srgb,var(--primary) 70%,#000),var(--accent))}
+.fx-drw{width:min(560px,100%)}
+.fx-drw .stage{position:relative;height:460px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.fx-drw .main{padding:1.4em}.fx-drw .main p{opacity:.65;margin:.5em 0 1.2em}
+.fx-drw .btns{display:flex;gap:.6em;flex-wrap:wrap}
+.fx-drw .btns button{padding:.7em 1.3em;border-radius:99px;border:1px solid var(--primary);background:none;color:var(--primary);font:700 .9em var(--font-body);cursor:pointer}
+.fx-drw .btns button:first-child{background:var(--primary);color:var(--on-primary)}
+.fx-drw .ov{position:absolute;inset:0;background:color-mix(in srgb,var(--text) 45%,transparent);opacity:0;visibility:hidden;transition:opacity calc(.3s/var(--speed));z-index:4}
+.fx-drw.open .ov{opacity:1;visibility:visible}
+.fx-drw .dr{position:absolute;z-index:5;background:var(--surface);color:var(--text);display:flex;flex-direction:column;visibility:hidden;transition:transform calc(.38s/var(--speed)) cubic-bezier(.2,.8,.2,1),visibility 0s calc(.38s/var(--speed));box-shadow:0 0 40px color-mix(in srgb,#000 30%,transparent)}
+.fx-drw.open .dr{visibility:visible;transform:none!important;transition:transform calc(.38s/var(--speed)) cubic-bezier(.2,.8,.2,1)}
+.fx-drw .dr[data-s=right]{top:0;bottom:0;right:0;width:min(300px,86%);transform:translateX(100%)}
+.fx-drw .dr[data-s=left]{top:0;bottom:0;left:0;width:min(300px,86%);transform:translateX(-100%)}
+.fx-drw .dr[data-s=bottom]{left:0;right:0;bottom:0;height:var(--h,50%);border-radius:1.4em 1.4em 0 0;transform:translateY(100%)}
+.fx-drw .dr.drag{transition:none!important}
+.fx-drw .hd{display:flex;justify-content:space-between;align-items:center;padding:1em 1.2em;border-bottom:1px solid var(--border)}
+.fx-drw .hd h3{font-size:1.15em}
+.fx-drw .x{width:2.2em;height:2.2em;border-radius:50%;border:0;background:color-mix(in srgb,var(--text) 8%,var(--surface));color:var(--text);cursor:pointer;font-size:1.1em}
+.fx-drw .grip{display:none;padding:.7em 0 .2em;cursor:grab;touch-action:none}
+.fx-drw .grip::before{content:"";display:block;width:2.6em;height:.28em;border-radius:99px;background:var(--border);margin:auto}
+.fx-drw .dr[data-s=bottom] .grip{display:block}
+.fx-drw .bd{padding:1.1em 1.2em;overflow:auto;flex:1;display:grid;gap:.5em;align-content:start}
+.fx-drw .bd a,.fx-drw .bd label{display:flex;justify-content:space-between;padding:.75em .9em;border:1px solid var(--border);border-radius:calc(var(--radius)*.6);text-decoration:none;color:var(--text);font-weight:600}
+.fx-drw .bd a:hover{border-color:var(--primary)}
+@media(prefers-reduced-motion:reduce){.fx-drw .dr,.fx-drw .ov{transition:none}}
+/* touch: :hover mirrored as .is-tap */
+.fx-drw .bd a.is-tap{border-color:var(--primary)}
+
+</style>
+
+<div class="fx fx-drw"><div class="stage"><div class="main"><h3>Your page</h3><p>Open a panel from any side. The bottom sheet is draggable.</p><div class="btns"><button type="button" data-o="right">Filters (right)</button><button type="button" data-o="left">Menu (left)</button><button type="button" data-o="bottom">Share (bottom sheet)</button></div></div>
+<div class="ov" aria-hidden="true"></div><div class="dr" role="dialog" aria-modal="true" aria-labelledby="fx-drw-t" data-s="right"><div class="grip" aria-hidden="true"></div><div class="hd"><h3 id="fx-drw-t">Panel</h3><button class="x" type="button" aria-label="Close">✕</button></div><div class="bd" id="fx-drw-b"></div></div></div></div>
+
+<script>
+(function(){var r=document.querySelector('.fx-drw'),dr=r.querySelector('.dr'),ov=r.querySelector('.ov'),T=r.querySelector('#fx-drw-t'),B=r.querySelector('#fx-drw-b'),last=null;
+var C={right:['Filters','<label>In stock only <input type="checkbox"></label><label>Under RM 500 <input type="checkbox"></label><label>Made to order <input type="checkbox"></label><a href="#" onclick="return false">Show 48 results</a>'],
+ left:['Menu','<a href="#" onclick="return false">Shop all</a><a href="#" onclick="return false">New in</a><a href="#" onclick="return false">Journal</a><a href="#" onclick="return false">Contact</a>'],
+ bottom:['Share','<a href="#" onclick="return false">Copy link</a><a href="#" onclick="return false">WhatsApp</a><a href="#" onclick="return false">Email</a><a href="#" onclick="return false">More options</a>']};
+function foc(){return [].slice.call(dr.querySelectorAll('a[href],button,input,select,textarea,[tabindex]:not([tabindex="-1"])')).filter(function(x){return !x.disabled})}
+function open(s,btn){last=btn;dr.dataset.s=s;dr.style.removeProperty('--h');dr.classList.remove('full');T.textContent=C[s][0];B.innerHTML=C[s][1];dr.style.transform='';r.classList.add('open');setTimeout(function(){var f=foc();(f[1]||f[0]).focus({preventScroll:true})},60)}
+function close(){r.classList.remove('open');if(last)last.focus({preventScroll:true})}
+r.querySelectorAll('[data-o]').forEach(function(b){b.onclick=function(){open(b.dataset.o,b)}});
+r.querySelector('.x').onclick=close;ov.onclick=close;
+r.addEventListener('keydown',function(e){if(!r.classList.contains('open'))return;if(e.key==='Escape'){close();return}
+ if(e.key==='Tab'){var f=foc();if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}});
+/* drag the bottom sheet */
+var g=dr.querySelector('.grip'),y0=null,dy=0,t0=0;
+g.addEventListener('pointerdown',function(e){y0=e.clientY;dy=0;t0=Date.now();dr.classList.add('drag');g.setPointerCapture(e.pointerId)});
+g.addEventListener('pointermove',function(e){if(y0===null)return;dy=Math.max(-80,e.clientY-y0);dr.style.transform='translateY('+Math.max(0,dy)+'px)'});
+function end(){if(y0===null)return;var h=dr.offsetHeight,v=dy/Math.max(1,Date.now()-t0);dr.classList.remove('drag');y0=null;
+ if(dy>h*.35||v>.6){dr.style.transform='';close()}
+ else if(Math.abs(dy)<6){dr.classList.toggle('full');dr.style.setProperty('--h',dr.classList.contains('full')?'86%':'50%');dr.style.transform=''}
+ else if(dy<-30){dr.classList.add('full');dr.style.setProperty('--h','86%');dr.style.transform=''}
+ else dr.style.transform=''}
+g.addEventListener('pointerup',end);g.addEventListener('pointercancel',end)})();
+/* fx-touch */
+(function(){if(window.__fxTap)return;window.__fxTap=1;var cur=[];function clr(){cur.forEach(function(e){e.classList.remove('is-tap')});cur=[]}
+document.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')return;clr();var n=e.target.closest&&e.target.closest('.fx');if(!n)return;for(var el=e.target;el&&el!==n.parentNode;el=el.parentNode){if(el.classList){el.classList.add('is-tap');cur.push(el)}}},{passive:true});
+document.addEventListener('pointerup',function(){setTimeout(clr,1400)},{passive:true})})();
+</script>

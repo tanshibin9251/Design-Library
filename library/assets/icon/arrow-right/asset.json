@@ -1,0 +1,17 @@
+{
+ "slug": "arrow-right",
+ "name": "Arrow right",
+ "zh": "右箭头",
+ "cat": "icon",
+ "file": "arrow-right.svg",
+ "format": "svg",
+ "width": 96,
+ "height": 96,
+ "tags": [
+  "arrow",
+  "next"
+ ],
+ "recolor": true,
+ "license": "库内自有",
+ "source": "Design Library generated (tools/gen_assets.py)"
+}

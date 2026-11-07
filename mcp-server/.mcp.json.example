@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "design-library": {
+      "command": "python",
+      "args": ["/把这里改成你的路径/Design Library/mcp-server/server.py"]
+    }
+  }
+}

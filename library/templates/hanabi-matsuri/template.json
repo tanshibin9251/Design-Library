@@ -1,0 +1,101 @@
+{
+ "format": "fragments",
+ "slug": "hanabi-matsuri",
+ "name": "Hanabi Matsuri",
+ "zh": "花火祭",
+ "tag": "Japanese night festival: hanging-lantern navigation, CSS fireworks hero with live countdown, tear-off ticket stubs and a tap-to-read stall map.",
+ "colors": {
+  "primary": "#2a1b3d",
+  "secondary": "#f5b623",
+  "text": "#2a1b3d",
+  "accent": "#e0312f",
+  "surface": "#fff6e2",
+  "border": "#2a1b3d"
+ },
+ "fonts": {
+  "head": "Dela Gothic One",
+  "body": "Kiwi Maru"
+ },
+ "tok": {
+  "hlh": "1.2",
+  "hw": "400",
+  "hcase": "none",
+  "hls": ".04em",
+  "h1": "120px",
+  "h2": "52px",
+  "h3": "26px",
+  "pad": "96px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "landing"
+ ],
+ "industries": [
+  "events"
+ ],
+ "styles": [
+  "japanese",
+  "playful",
+  "maximal"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Festival"
+  },
+  {
+   "slug": "program",
+   "label": "Program",
+   "group": "Festival"
+  },
+  {
+   "slug": "stalls",
+   "label": "Stall map",
+   "group": "Festival"
+  },
+  {
+   "slug": "fireworks",
+   "label": "Fireworks",
+   "group": "Festival"
+  },
+  {
+   "slug": "tickets",
+   "label": "Tickets",
+   "group": "Plan"
+  },
+  {
+   "slug": "access",
+   "label": "Access",
+   "group": "Plan"
+  },
+  {
+   "slug": "volunteer",
+   "label": "Volunteer",
+   "group": "Plan"
+  },
+  {
+   "slug": "news",
+   "label": "News",
+   "group": "Info"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Info"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  }
+ ]
+}

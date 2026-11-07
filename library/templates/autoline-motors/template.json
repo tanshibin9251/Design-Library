@@ -1,0 +1,167 @@
+{
+ "format": "fragments",
+ "slug": "autoline-motors",
+ "name": "Autoline Motors",
+ "zh": "汽车行",
+ "tag": "Dealership with tick-to-compare cars that build a side-by-side spec table (best value highlighted) and a monthly finance estimator.",
+ "colors": {
+  "primary": "#101820",
+  "secondary": "#8d99a6",
+  "text": "#101820",
+  "accent": "#0aa5ff",
+  "surface": "#eef1f4",
+  "border": "#d2d8df"
+ },
+ "fonts": {
+  "head": "Chakra Petch",
+  "body": "Inter"
+ },
+ "tok": {
+  "hlh": "1.06",
+  "hw": "700",
+  "hcase": "uppercase",
+  "hls": ".01em",
+  "h1": "72px",
+  "h2": "40px",
+  "h3": "22px",
+  "pad": "72px",
+  "ew": "700",
+  "stat": "var(--c-accent)",
+  "radius": "0"
+ },
+ "types": [
+  "company",
+  "ecommerce"
+ ],
+ "industries": [
+  "automotive"
+ ],
+ "styles": [
+  "corporate",
+  "futuristic",
+  "monochrome"
+ ],
+ "license": "库内自有",
+ "pages": [
+  {
+   "slug": "home",
+   "label": "Home",
+   "group": "Main"
+  },
+  {
+   "slug": "about",
+   "label": "About",
+   "group": "Main"
+  },
+  {
+   "slug": "services",
+   "label": "Service Centre",
+   "group": "Main"
+  },
+  {
+   "slug": "service",
+   "label": "Single Service",
+   "group": "Main"
+  },
+  {
+   "slug": "pricing",
+   "label": "Finance",
+   "group": "Main"
+  },
+  {
+   "slug": "contact",
+   "label": "Contact",
+   "group": "Main"
+  },
+  {
+   "slug": "shop",
+   "label": "Inventory",
+   "group": "Shop"
+  },
+  {
+   "slug": "product",
+   "label": "Single Vehicle",
+   "group": "Shop"
+  },
+  {
+   "slug": "cart",
+   "label": "Cart",
+   "group": "Shop"
+  },
+  {
+   "slug": "checkout",
+   "label": "Checkout",
+   "group": "Shop"
+  },
+  {
+   "slug": "testimonials",
+   "label": "Testimonials",
+   "group": "Proof"
+  },
+  {
+   "slug": "team",
+   "label": "Team",
+   "group": "Proof"
+  },
+  {
+   "slug": "projects",
+   "label": "Sold",
+   "group": "Proof"
+  },
+  {
+   "slug": "project",
+   "label": "Single Sold car",
+   "group": "Proof"
+  },
+  {
+   "slug": "gallery",
+   "label": "Gallery",
+   "group": "Proof"
+  },
+  {
+   "slug": "blog",
+   "label": "News",
+   "group": "Content"
+  },
+  {
+   "slug": "post",
+   "label": "Single post",
+   "group": "Content"
+  },
+  {
+   "slug": "faq",
+   "label": "FAQ",
+   "group": "Content"
+  },
+  {
+   "slug": "booking",
+   "label": "Book test drive",
+   "group": "Special"
+  },
+  {
+   "slug": "quote",
+   "label": "Sell your car",
+   "group": "Special"
+  },
+  {
+   "slug": "careers",
+   "label": "Careers",
+   "group": "Utility"
+  },
+  {
+   "slug": "privacy",
+   "label": "Privacy policy",
+   "group": "Utility"
+  },
+  {
+   "slug": "404",
+   "label": "404 error",
+   "group": "Utility"
+  },
+  {
+   "slug": "coming-soon",
+   "label": "Coming soon",
+   "group": "Utility"
+  }
+ ]
+}
